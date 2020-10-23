@@ -18,7 +18,7 @@ public class ProtocolServer {
 	public ProtocolServer() {
 		try {
 			ss = new ServerSocket(9500);//포트값
-			System.out.println("서버가 준비 완료되었습니다"); //클라이언트가 낚일때까지 무한정 기다림
+			System.out.println("서버가 준비 완료되었습니다"); //클라이언트가 낚일때까지 무한정 기다림(한 명만 잡을 수 있음)
 			
 			socket = ss.accept(); //클라이언트를 낚아챔
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));

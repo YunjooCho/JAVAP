@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,6 +23,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
+
 public class ChatClient extends JFrame implements ActionListener, Runnable {
 	
 	//0.필드선언
@@ -31,6 +34,7 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 	private Socket socket;
 	private BufferedReader br;
 	private PrintWriter pw; //엔터값 처리하기 편함
+	private BufferedReader keyboard;
 	
 	public ChatClient() {
 		
@@ -56,8 +60,14 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 		//1.프레임 생성
 		setBounds(700,300, 300, 300); 
 		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
+		//setDefaultCloseOperation(EXIT_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) { //x표 누르면 quit가 채팅창에 입력된 것과 같은 효과로 error없이 종료
+				pw.println("quit");
+				pw.flush();
+			}
+		});
 		
 	}//ChatClient()
 	
@@ -118,16 +128,45 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 	}
 	
 
+	
+	
 	@Override
 	public void run() {
-		
+		//9-2. 서버로부터 받는 쪽
+		String line;
+		while(true) {
+			try {
+				line = br.readLine(); //
+				if(line == null || line.toLowerCase().equals("quit")) { //퇴장 코드가 들어오면 연결을 다 끊어줌
+																		 //누군가 대문자로 quit를 사용 했을 수도 있으므로 
+																		 //입력된 값을 모두 소문자로 받음
+																		 //line == null 스레드는 main이 종료되어도 계속 남아있는 경우가 있음
+					br.close();
+					pw.close();
+					socket.close();
+					
+					System.exit(0);
+				}
+				output.append(line + "\n");
+				
+				int pos = output.getText().length(); // TextArea 글자 수 가져오기
+				output.setCaretPosition(pos);        // 위치값에 따라 스크롤이 같이 움직여짐
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}//while
 		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//9-1. 서버로 보내는 쪽
+		//보내기 버튼 누르기 & 텍스트 필드에서 엔터치기
 		//if문 사용할 필요 없음
-		
+		String msg = input.getText();
+		pw.println(msg);
+		pw.flush();
+		input.setText("");
 	}
 	
 	public static void main(String[] args) throws UnknownHostException, IOException {

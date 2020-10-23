@@ -54,11 +54,11 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 		c.add("Center",scroll);
 		
 		
-
 		//1.프레임 생성
 		setBounds(700,300, 300, 300); 
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
 		
 	}//ChatClient()
 	

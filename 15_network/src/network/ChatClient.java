@@ -41,12 +41,11 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 		output.setLineWrap(true);
 		JScrollPane scroll = new JScrollPane(output);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-		output.setEditable(false);
-		
+		output.setEditable(false); //대화창 수정 불가
 		
 		Panel p = new Panel();
 		p.setLayout(new BorderLayout());
-		p.add("Center",input);
+		p.add("Center", input);
 		p.add("East", send);
 				
 		Container c = this.getContentPane();
@@ -69,14 +68,15 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 //													  "서버IP",
 //													  JOptionPane.INFORMATION_MESSAGE);
 		
-		//서버 생성
+		//3.서버 생성
 		String serverIP = JOptionPane.showInputDialog(this, "서버IP를 입력하세요", "192.168.0.17"); //"192.168.0.17"로 초깃값 설정
+																							   //입력한 값을 serverIP에 저장
 		if(serverIP == null || serverIP.length() == 0) { //값이 입력되지 않았을때, 칸은 선택하고 입력하지 않았을때
 			System.out.println("서버IP가 입력되지 않았습니다");
 			System.exit(0);
 		}
 		
-		//닉네임 받기
+		//4.닉네임 받기
 		String nickName = JOptionPane.showInputDialog(this,
 				 									  "닉네임을 입력하세요",
 				 									  "닉네임",
@@ -85,11 +85,11 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 			nickName = "guest";
 		}
 		
-		//소켓생성(핸드폰)
+		//5.소켓생성(핸드폰)
 		try {
 			socket = new Socket(serverIP, 9500); //핸드폰 번호 | 포트번호는 대기실과 채팅창 나눠도 됨
-			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+			br = new BufferedReader(new InputStreamReader(socket.getInputStream())); //소켓에 저장된 값을 받아옴
+			pw = new PrintWriter(new OutputStreamWriter(socket.getOutputStream())); //소켓에 저장된 값을 보내줌
 		} catch (UnknownHostException e) {
 			System.out.println("서버를 찾을 수 없습니다");
 			e.printStackTrace();
@@ -100,17 +100,19 @@ public class ChatClient extends JFrame implements ActionListener, Runnable {
 			System.exit(0);
 		} 
 		
-		//서버로 닉네임만 보내기
+		
+		//6.서버로 닉네임만 보내기
 		pw.println(nickName);
 		pw.flush();
 		
 		
-		//스레드 생성
+		//7.스레드 생성
 		Thread thread = new Thread(this);
 		//스레드 시작 - 스레드 실행(run())
 		thread.start();
 		
-		//이벤트
+		
+		//8.이벤트
 		send.addActionListener(this);
 		input.addActionListener(this); //JTextField에서 엔터
 	}

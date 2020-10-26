@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -35,8 +36,7 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 	private Socket socket;
 	private ObjectInputStream ois;
 	private ObjectOutputStream oos;
-	private List<InfoDTO> list;
-	private String nickName;
+	//private List<InfoDTO> list;
 	
 	
 	public ChatClientObject() {
@@ -64,11 +64,20 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				//★object로 잡아주기
+				if(ois == null || oos == null) System.exit(0);
+				InfoDTO dto = new InfoDTO();
+				dto.setCommand(Info.EXIT);
+				try {
+					oos.writeObject(dto);
+					oos.flush();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 			}
+			
 		});
 		
-		list = new ArrayList<InfoDTO>();
+		
 		
 	}//ChatClientObject 생성자 
 	
@@ -83,8 +92,7 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 			System.exit(0);
 		}
 		
-		//4.닉네임받기
-		
+		//4.사용자로부터 닉네임받기
 		String nickName = JOptionPane.showInputDialog(this, "닉네임을 입력하세요", "닉네임", JOptionPane.INFORMATION_MESSAGE);
 		if(nickName == null || nickName.length() == 0) {
 			//★손님1,손님2,손님3....설정해보기
@@ -93,15 +101,30 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 		
 		//5.소켓생성(핸드폰)
 		try {
+			
 			socket = new Socket(serverIP, 9500);
 			ois = new ObjectInputStream(socket.getInputStream());
 			oos = new ObjectOutputStream(socket.getOutputStream());
 			
 		} catch (IOException e) {
+			System.out.println("서버를 찾을 수 없습니다");
+			e.printStackTrace();
+			System.exit(0);
+		}
+		
+		
+		//6.서버로 닉네임 보내기
+		try {
+			InfoDTO dto = new InfoDTO(); //닉네임 전송용으로 한번 쓰고 버림
+			dto.setCommand(Info.JOIN);
+			dto.setNickName(nickName);
+			oos.writeObject(dto);
+			//list.add(dto);
+			//oos.writeObject(list);
+			oos.flush();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	
-		
 		
 		 Thread thread = new Thread(this);
 		 thread.start();
@@ -114,29 +137,60 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 	
 	@Override
 	public void run() {
-		
-		
+		//서버로 부터 받음
+		while(true) {
+			InfoDTO dto = null;
+			try {
+				dto = (InfoDTO)ois.readObject();
+				//list = (ArrayList)ois.readObject();
+				if(dto.getCommand() == Info.EXIT) { //종료라는 메시지가 들어왔는지
+					ois.close();
+					oos.close();
+					socket.close();
+					System.exit(0);
+				}else if(dto.getCommand() == Info.SEND){
+					
+					output.append(dto.getMessage() + "\n");
+					
+					int pos = output.getText().length(); // TextArea 글자 수 가져오기
+					output.setCaretPosition(pos);        // 위치값에 따라 스크롤이 같이 움직여짐
+					
+				}
+				
+			} catch (ClassNotFoundException | IOException e) {
+				
+				e.printStackTrace();
+			}
+		}//while
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		InfoDTO dto = new InfoDTO();
-		dto.setNickName(nickName);
-		if(nickName != null || nickName.length() != 0) dto.setCommand(Info.JOIN);
-		dto.setMessage(input.getText());
-		input.setText("");
-		dto.setCommand(Info.SEND);
-		input.getText().toLowerCase();
-		if(input.getText().equals("quit")) {
-			dto.setCommand(Info.EXIT);
-		}
-		try {
-			dto = (InfoDTO)ois.readObject();
-			list.add(dto);
-		} catch (ClassNotFoundException | IOException e1) {
-			break;
-		}
+			//서버로 보냄
+			String msg = input.getText();
+			//list = new ArrayList<InfoDTO>();
+			InfoDTO dto = new InfoDTO();			
+			
+			if(msg.toLowerCase().equals("quit")) {
+				dto.setCommand(Info.EXIT);
+			}else {
+				dto.setCommand(Info.SEND);
+				dto.setMessage(msg);
+				
+			}
 		
+			try {
+				oos.writeObject(dto);
+				oos.flush();
+				//list.add(dto);
+				//oos.writeObject(list);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+			
+			input.setText("");
+				
+			
 	}
 	
 	public static void main(String[] args) {

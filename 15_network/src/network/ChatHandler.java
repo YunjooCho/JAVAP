@@ -58,7 +58,7 @@ public class ChatHandler extends Thread {
 			list.remove(this); //현재 핸들러 객체값을 지움
 			broadcast(nickName + "님이 퇴장하였습니다");
 			
-			br.close(); //51번줄 이후에 가도 처리가능
+			br.close(); //51번줄 이후에 해당 코딩이 입력되어있어도 처리가능
 			pw.close();
 			socket.close();
 			

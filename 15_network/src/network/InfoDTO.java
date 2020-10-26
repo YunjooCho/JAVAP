@@ -1,11 +1,14 @@
 package network;
 
+import java.io.Serializable;
+
 enum Info{
 	JOIN, EXIT, SEND
 }
 
-public class InfoDTO {
-	
+public class InfoDTO implements Serializable { //직렬화(객체의 데이터 송수신)를 위해
+	private static final long serialVersionUID = 1L;//직렬화시 버젼이 마음대로 잡히기 때문에 정해줌
+ 	
 	private String nickName;
 	private String message;
 	private Info command;

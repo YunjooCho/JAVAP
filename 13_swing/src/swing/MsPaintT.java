@@ -63,8 +63,8 @@ public class MsPaintT extends JFrame implements ActionListener {
 		y2L = new JLabel("Y2");
 		z1L = new JLabel("Z1");
 		z2L = new JLabel("Z2");
-		x1T = new JTextField("0",4);
-		y1T = new JTextField("0",4);//위에 처럼 문자열("  ")이 아닌 숫자를 입력해서 칸을 넓힐 수 있음
+		x1T = new JTextField("0",4);//문자열("  ")이 아닌 숫자(4)를 입력해서 칸을 넓힐 수 있음, 기본값으로 "0"을 줌
+		y1T = new JTextField("0",4);
 		x2T = new JTextField("0",4);
 		y2T = new JTextField("0",4);
 		z1T = new JTextField("0",4);
@@ -172,15 +172,15 @@ public class MsPaintT extends JFrame implements ActionListener {
 				dto.setZ2(Integer.parseInt(z2T.getText()));
 				
 				//채우기
-				if(fill.isSelected() == true) dto.setFill(true);
+				if(fill.isSelected()) dto.setFill(true);
 				else dto.setFill(false);
 				//dto.setFill(fill.isSelected());
 				
 				//도형
-				if(line.isSelected() == true) dto.setShape(Figure.LINE);
-				else if(circle.isSelected() == true) dto.setShape(Figure.CIRCLE);
-				else if(rect.isSelected() == true) dto.setShape(Figure.RECT);
-				else if(roundRect.isSelected() == true) dto.setShape(Figure.ROUND_RECT);
+				if(line.isSelected()) dto.setShape(Figure.LINE);
+				else if(circle.isSelected()) dto.setShape(Figure.CIRCLE);
+				else if(rect.isSelected()) dto.setShape(Figure.RECT);
+				else if(roundRect.isSelected()) dto.setShape(Figure.ROUND_RECT);
 				//펜은 dragg에 적용 : else if(pen.isSelected() == true) dto.setShape(Figure.PEN);
 				
 				//색

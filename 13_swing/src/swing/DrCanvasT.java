@@ -65,7 +65,6 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 		int x1, y1, x2, y2, z1, z2;
 		//ÀÛ¾÷ µÇµ¹¸®±â
 		//ÁÂÇ¥(6°³)¹× ¼±ÅÃ¿É¼Ç(Ã¤¿ì±â, µµÇü, »ö±ò)¿¡ ´ëÇÑ Á¤º¸¸¦ °¡Áö°í ÀÖ¾î¾ß ÇÔ - Å¬·¡½º·Î Àâ¾ÆÁÜ(ShapeDTO)->¾î·¹ÀÌ¸®½ºÆ®¿¡ º¸°ü
-		//¿¾³¯²¨
 		//¾î·¹ÀÌ¸®½ºÆ® ¾ÈÀÇ µµÇüÀ» ÇÏ³ª¾¿ ²¨³»¼­ ´Ù½Ã ±×·ÁÁØ´Ù(º¹¿ø)
 		
 		//<¼±»ý´Ô Ç®ÀÌ>
@@ -124,63 +123,10 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 		}//for
 		
 		
-//		for(int i = 0; i < mp.getList().size(); i++){
-//		
-//			//int x1, y1, x2, y2, z1, z2;
-//			
-//			x1 = mp.getList().get(i).getX1();
-//			y1 = mp.getList().get(i).getY1();
-//			x2 = mp.getList().get(i).getX2();
-//			y2 = mp.getList().get(i).getY2();
-//			z1 = mp.getList().get(i).getZ1();
-//			z2 = mp.getList().get(i).getZ2();
-//			
-//			switch(mp.getList().get(i).getColor()) {//index°ª °¡Á®¿À±â, getSelectedItem -> ÀúÀåµÈ ¹®ÀÚ¿­À» °¡Á®¿È
-//			case 0 : bufferG.setColor(new Color(255,0,0));
-//					 break;
-//			case 1 : bufferG.setColor(new Color(0,255,0));
-//					 break;
-//			case 2 : bufferG.setColor(new Color(0, 0, 255));
-//					 break;
-//			case 3 : bufferG.setColor(new Color(255, 0, 255));
-//					 break;
-//			case 4 : bufferG.setColor(new Color(0, 255, 255));
-//					 break;
-//			
-//		}
-//			if(mp.getList().get(i).isFill()) {
-//				if(mp.getList().get(i).getShape() == Figure.LINE) {
-//					bufferG.drawLine(x1, y1, x2, y2);
-//					//Math.min(x1,x2), Math.min(y1, y2)·Î ÀÔ·Â
-//				}else if(mp.getList().get(i).getShape() == Figure.CIRCLE) {
-//					bufferG.fillOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
-//				}else if(mp.getList().get(i).getShape() == Figure.RECT) {
-//					bufferG.fillRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
-//				}else if(mp.getList().get(i).getShape() == Figure.ROUND_RECT) {
-//					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //²ÀÁöÁ¡ÀÇ µÕ±Ù ºÎºÐÀÌ ¾ó¸¶³ª µé¾î°¥Áö - 50À¸·Î °íÁ¤µÈ °ªÀ» ³Ö¾îÁÜ(ÀÓÀÇ)
-//				}else if(mp.getList().get(i).getShape() == Figure.PEN) {
-//					bufferG.drawLine(x1, y1, x2, y2);
-//				}
-//			}else {
-//				if(mp.getList().get(i).getShape() == Figure.LINE) {
-//					bufferG.drawLine(x1, y1, x2, y2);
-//				}else if(mp.getList().get(i).getShape() == Figure.CIRCLE) {
-//					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //¿©±â¼­ x2-x1, y2-y1À¸·Î Ç¥±âÇÏ°í ÀÖ±â ¶§¹®¿¡ ´Ù¸¥ ¹æÇâ¿¡¼­ ±×¸®¸é Ç¥±â°¡ ¾ÈµÊ
-//				}else if(mp.getList().get(i).getShape() == Figure.RECT) {
-//					bufferG.drawRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
-//				}else if(mp.getList().get(i).getShape() == Figure.ROUND_RECT) {
-//					bufferG.drawRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2);
-//				}else if(mp.getList().get(i).getShape() == Figure.PEN) {
-//					bufferG.drawLine(x1, y1, x2, y2);
-//				}
-//			}
-//			
-//		}//for¹®
-				
 		
 		//»õ·Î¿î ±×¸²
 		//MsPaintT mp = new MsPaintT(); - »õ·Î ¶Ç ´Ù¸¥ °´Ã¼°¡ »ý¼ºµÇ¹Ç·Î ÇÏ¸é ¾ÈµÊ
-		//ÁÂÇ¥ ¾ò¾î¿È
+		//ÁÂÇ¥ ¾ò¾î¿È(TextField¿¡ ÀúÀåµÈ °ªÀ» ¾ò¾î¿È)
 			x1 = Integer.parseInt(mp.getX1T().getText().trim()); //trim() - ¾ÕµÚ °ø¹éÀ» ¾ø¾Ú
 			y1 = Integer.parseInt(mp.getY1T().getText().trim());
 			x2 = Integer.parseInt(mp.getX2T().getText().trim());
@@ -233,7 +179,7 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 			}
 			
 			paint(g); //paint()¸Þ¼Òµå È£Ãâ
-		}
+		}//update()
 	
 	
 	@Override
@@ -265,3 +211,57 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 //ÁÂÇ¥ÁöÁ¤ µî ÀüºÎ ¹öÆÛ¿¡¼­ ÁöÁ¤ÇÔ(´õºí¹öÆÛ)
 //ÄÝ¹é¸Þ¼ÒµåÀÓ - repaint()ÇÒ¶§ ºÒ¸²
 //update() - paint()¼øÀ¸·Î È£Ãâ
+
+
+//		for(int i = 0; i < mp.getList().size(); i++){
+//		
+//			//int x1, y1, x2, y2, z1, z2;
+//			
+//			x1 = mp.getList().get(i).getX1();
+//			y1 = mp.getList().get(i).getY1();
+//			x2 = mp.getList().get(i).getX2();
+//			y2 = mp.getList().get(i).getY2();
+//			z1 = mp.getList().get(i).getZ1();
+//			z2 = mp.getList().get(i).getZ2();
+//			
+//			switch(mp.getList().get(i).getColor()) {//index°ª °¡Á®¿À±â, getSelectedItem -> ÀúÀåµÈ ¹®ÀÚ¿­À» °¡Á®¿È
+//			case 0 : bufferG.setColor(new Color(255,0,0));
+//					 break;
+//			case 1 : bufferG.setColor(new Color(0,255,0));
+//					 break;
+//			case 2 : bufferG.setColor(new Color(0, 0, 255));
+//					 break;
+//			case 3 : bufferG.setColor(new Color(255, 0, 255));
+//					 break;
+//			case 4 : bufferG.setColor(new Color(0, 255, 255));
+//					 break;
+//			
+//		}
+//			if(mp.getList().get(i).isFill()) {
+//				if(mp.getList().get(i).getShape() == Figure.LINE) {
+//					bufferG.drawLine(x1, y1, x2, y2);
+//					//Math.min(x1,x2), Math.min(y1, y2)·Î ÀÔ·Â
+//				}else if(mp.getList().get(i).getShape() == Figure.CIRCLE) {
+//					bufferG.fillOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
+//				}else if(mp.getList().get(i).getShape() == Figure.RECT) {
+//					bufferG.fillRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
+//				}else if(mp.getList().get(i).getShape() == Figure.ROUND_RECT) {
+//					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //²ÀÁöÁ¡ÀÇ µÕ±Ù ºÎºÐÀÌ ¾ó¸¶³ª µé¾î°¥Áö - 50À¸·Î °íÁ¤µÈ °ªÀ» ³Ö¾îÁÜ(ÀÓÀÇ)
+//				}else if(mp.getList().get(i).getShape() == Figure.PEN) {
+//					bufferG.drawLine(x1, y1, x2, y2);
+//				}
+//			}else {
+//				if(mp.getList().get(i).getShape() == Figure.LINE) {
+//					bufferG.drawLine(x1, y1, x2, y2);
+//				}else if(mp.getList().get(i).getShape() == Figure.CIRCLE) {
+//					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //¿©±â¼­ x2-x1, y2-y1À¸·Î Ç¥±âÇÏ°í ÀÖ±â ¶§¹®¿¡ ´Ù¸¥ ¹æÇâ¿¡¼­ ±×¸®¸é Ç¥±â°¡ ¾ÈµÊ
+//				}else if(mp.getList().get(i).getShape() == Figure.RECT) {
+//					bufferG.drawRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
+//				}else if(mp.getList().get(i).getShape() == Figure.ROUND_RECT) {
+//					bufferG.drawRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2);
+//				}else if(mp.getList().get(i).getShape() == Figure.PEN) {
+//					bufferG.drawLine(x1, y1, x2, y2);
+//				}
+//			}
+//			
+//		}//for¹®

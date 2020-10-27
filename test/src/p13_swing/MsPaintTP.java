@@ -83,6 +83,7 @@ public class MsPaintTP extends JFrame implements ActionListener {
 		p1.add(z1T);
 		p1.add(z2L);
 		p1.add(z2T);
+		p1.add(fill);
 		
 		JPanel p2 = new JPanel();
 		p2.add(line);
@@ -137,7 +138,38 @@ public class MsPaintTP extends JFrame implements ActionListener {
 			}
 		});
 		
-		canvas.addMouse
+		canvas.addMouseMotionListener(new MouseAdapter() {
+			@Override
+			public void mouseDragged(MouseEvent e) {
+				x2T.setText(e.getX() + "");
+				y2T.setText(e.getY() + "");
+				canvas.repaint();
+				
+				//펜기능
+				if(pen.isSelected()) {
+					ShapeDTOP dto = new ShapeDTOP();
+					
+					dto.setX1(Integer.parseInt(x1T.getText()));
+					dto.setY1(Integer.parseInt(y1T.getText()));
+					dto.setX2(Integer.parseInt(x2T.getText()));
+					dto.setY2(Integer.parseInt(y2T.getText()));
+					dto.setZ1(Integer.parseInt(z1T.getText()));
+					dto.setZ2(Integer.parseInt(z2T.getText()));
+					
+					if(fill.isSelected()) dto.setFill(true);
+					else dto.setFill(false);
+					
+					dto.setShape(Figure.PEN); 
+					
+					dto.setColor(combo.getSelectedIndex());
+					
+					list.add(dto);
+					
+					x1T.setText(x2T.getText());
+					y1T.setText(y2T.getText());
+				}
+			}
+		});
 		
 		
 		//2.프레임 생성
@@ -230,8 +262,14 @@ public class MsPaintTP extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new MsPaintTP();
+		if(e.getSource() == draw) {
+			canvas.repaint();
+		}
 		
+	}
+	
+	public static void main(String[] args) {
+		new MsPaintTP();
 	}
 
 }

@@ -210,7 +210,7 @@ public class MsPaintT extends JFrame implements ActionListener {
 					dto.setZ2(Integer.parseInt(z2T.getText()));
 					
 					//채우기(release내용과 같음)
-					if(fill.isSelected() == true) dto.setFill(true);
+					if(fill.isSelected()) dto.setFill(true);
 					else dto.setFill(false);
 					
 					//도형 - pen만 여기서 설정, 나머지 모양은 release에서 설정

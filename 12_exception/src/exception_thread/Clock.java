@@ -12,16 +12,16 @@ import java.util.Date;
 public class Clock extends Frame implements Runnable {
 
 	public Clock() {
-		//1.ÇÁ·¹ÀÓ »ı¼º
-		//this.setFont(new Font("°íµñ", Font.BOLD, 24)); //PLAIN - º¸Åë ±Û¾¾, BOLD - ±½°Ô, ITALIC - ±â¿ïÀÌ±â | °¢°¢ ¼ıÀÚ¸¦ °®°íÀÖÀ½
-		this.setFont(new Font("°íµñ", 1, 24)); //¿©±âÀÇ 1(BOLD)ÀÌ ¹«¾ùÀÎÁö ¾Ë±â ¾î·Á¿ì¹Ç·Î À§ÀÇ Çü½ÄÀ» ´õ ¼±È£
-		this.setForeground(Color.RED); //this»ı·«°¡´É
+		//1.í”„ë ˆì„ ìƒì„±
+		//this.setFont(new Font("ê³ ë”•", Font.BOLD, 24)); //PLAIN - ë³´í†µ ê¸€ì”¨, BOLD - êµµê²Œ, ITALIC - ê¸°ìš¸ì´ê¸° | ê°ê° ìˆ«ìë¥¼ ê°–ê³ ìˆìŒ
+		this.setFont(new Font("ê³ ë”•", 1, 24)); //ì—¬ê¸°ì˜ 1(BOLD)ì´ ë¬´ì—‡ì¸ì§€ ì•Œê¸° ì–´ë ¤ìš°ë¯€ë¡œ ìœ„ì˜ í˜•ì‹ì„ ë” ì„ í˜¸
+		this.setForeground(Color.RED); //thisìƒëµê°€ëŠ¥
 		setBounds(700, 200, 300, 100);
 		setVisible(true);
 		
-		//2.Á¾·á¹öÆ° È°¼ºÈ­
+		//2.ì¢…ë£Œë²„íŠ¼ í™œì„±í™”
 		this.addWindowListener(new WindowAdapter() { 
-			//WindowAdapter - Ãß»óÅ¬·¡½º(Ãß»ó¸Ş¼Òµå°¡ ¾øÀ½-¹İµå½Ã ¿À¹ö¶óÀÌµå ¾ÈÇØµµ µÊ), new»ı¼º ºÒ°¡ -> ÀÍ¸í³»ºÎ Å¬·¡½º¸¸ ÀÖ¾îµµ ¹®Á¦ ¾øÀ½
+			//WindowAdapter - ì¶”ìƒí´ë˜ìŠ¤(ì¶”ìƒë©”ì†Œë“œê°€ ì—†ìŒ-ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë“œ ì•ˆí•´ë„ ë¨), newìƒì„± ë¶ˆê°€ -> ìµëª…ë‚´ë¶€ í´ë˜ìŠ¤ë§Œ ìˆì–´ë„ ë¬¸ì œ ì—†ìŒ
 			@Override
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
@@ -29,40 +29,40 @@ public class Clock extends Frame implements Runnable {
 		});
 		
 		
-		//Á¾·á¹öÆ°ÀÌ µ¿ÀÛÇÏ´Â ½Ã°£º¯°æ Ç¥½Ã
-		//6.½º·¹µå »ı¼º
-		Thread t  = new Thread(this); //³ª¸¦ ½º·¹µå·Î »ı¼ºÇØÁÖ¼¼¿ä
-		//7.½º·¹µå ½ÃÀÛ(½º·¹µå ½ÇÇà - run())
+		//ì¢…ë£Œë²„íŠ¼ì´ ë™ì‘í•˜ëŠ” ì‹œê°„ë³€ê²½ í‘œì‹œ
+		//6.ìŠ¤ë ˆë“œ ìƒì„±
+		Thread t  = new Thread(this); //ë‚˜ë¥¼ ìŠ¤ë ˆë“œë¡œ ìƒì„±í•´ì£¼ì„¸ìš”
+		//7.ìŠ¤ë ˆë“œ ì‹œì‘(ìŠ¤ë ˆë“œ ì‹¤í–‰ - run())
 		t.start();
 	}
 	
 	
-	//5.¿À¹ö¶óÀÌµå, Äİ¹é - start()½ÇÇà½Ã ÀÚµ¿ È£ÃâµÊ
+	//5.ì˜¤ë²„ë¼ì´ë“œ, ì½œë°± - start()ì‹¤í–‰ì‹œ ìë™ í˜¸ì¶œë¨
 	@Override
 	public void run() {
 		while(true) {
-			repaint(); //ÀÌÀü°ÍÀº ¹ö¸®°í »õ·Î ±×¸²
+			repaint(); //ì´ì „ê²ƒì€ ë²„ë¦¬ê³  ìƒˆë¡œ ê·¸ë¦¼
 			try {
-				Thread.sleep(1000); //Ã³¸®¼Óµµ°¡ »¡¶ó ±Û¾¾°¡ Àß ¾Èº¸ÀÓ. Áö±İ ¸í·ÉÀ¸·Î ¿òÁ÷ÀÌ´Â ½Ã°£ÀÌ ±×·¡µµ ÂïÈû
+				Thread.sleep(1000); //ì²˜ë¦¬ì†ë„ê°€ ë¹¨ë¼ ê¸€ì”¨ê°€ ì˜ ì•ˆë³´ì„. ì§€ê¸ˆ ëª…ë ¹ìœ¼ë¡œ ì›€ì§ì´ëŠ” ì‹œê°„ì´ ê·¸ë˜ë„ ì°í˜
 			} catch (InterruptedException e) {
 			e.printStackTrace();
-			} // ±âº»ÀÌ 1000 = 1ÃÊ
+			} // ê¸°ë³¸ì´ 1000 = 1ì´ˆ
 		}
 	}
 	
 	
-	//4.ÇöÀç½Ã°£ Ãâ·Â
-	//SimpleDateFormat HH½Ã mmºĞ ssÃÊ
- 	public void paint(Graphics g) {//CallBack¸Ş¼Òµå
- 		SimpleDateFormat sd = new SimpleDateFormat("HH½Ã mmºĞ ssÃÊ");
+	//4.í˜„ì¬ì‹œê°„ ì¶œë ¥
+	//SimpleDateFormat HHì‹œ mmë¶„ ssì´ˆ
+ 	public void paint(Graphics g) {//CallBackë©”ì†Œë“œ
+ 		SimpleDateFormat sd = new SimpleDateFormat("HHì‹œ mmë¶„ ssì´ˆ");
  		//while(true) {
  			Date date = new Date();
  			g.drawString(sd.format(date), 60, 65);
- 		//}//Á¾·á¹öÆ°ÀÌ ¾È¸ÔÈû
+ 		//}//ì¢…ë£Œë²„íŠ¼ì´ ì•ˆë¨¹í˜
  	}
  	
  	
- 	//3.»ı¼º
+ 	//3.ìƒì„±
 	public static void main(String[] args) {
 		new Clock();
 		
@@ -71,12 +71,12 @@ public class Clock extends Frame implements Runnable {
 
 }
 
-//Component(µµ±¸)
-//¿¬ÇÊ / º¼Ææ
+//Component(ë„êµ¬)
+//ì—°í•„ / ë³¼íœ
 //Button, TextField, Panel
 
-//Container(µµ±¸»óÀÚ)
-//ÇÊÅë
-//Frame(ÃÖÁ¾ÄÁÅ×ÀÌ³Ê), Dialog(ÆË¾÷Ã¢)
-//¸ğ´Ş ´ÙÀÌ¾ó·Î±× - ÇØ´ç ÆË¾÷Ã¢ÀÌ ¶ß¸é ´Ù¸¥ ºÎºĞÀº ¼±ÅÃÇÒ ¼ö ¾øÀ½(´Ù¸¥ ºÎºĞÀÌ Á¤Áö)
-//¸ğ´Ş¸®½º - ´Ù¸¥ ºÎºĞµµ ¿òÁ÷ÀÓ
+//Container(ë„êµ¬ìƒì)
+//í•„í†µ
+//Frame(ìµœì¢…ì»¨í…Œì´ë„ˆ), Dialog(íŒì—…ì°½)
+//ëª¨ë‹¬ ë‹¤ì´ì–¼ë¡œê·¸ - í•´ë‹¹ íŒì—…ì°½ì´ ëœ¨ë©´ ë‹¤ë¥¸ ë¶€ë¶„ì€ ì„ íƒí•  ìˆ˜ ì—†ìŒ(ë‹¤ë¥¸ ë¶€ë¶„ì´ ì •ì§€)
+//ëª¨ë‹¬ë¦¬ìŠ¤ - ë‹¤ë¥¸ ë¶€ë¶„ë„ ì›€ì§ì„

@@ -13,7 +13,7 @@ public class ChatServerObject {
 	public ChatServerObject() {
 		try {
 			ss = new ServerSocket(9500);
-			System.out.println("¼­¹ö°¡ ÁØºñ¿Ï·á µÇ¾ú½À´Ï´Ù");
+			System.out.println("ì„œë²„ê°€ ì¤€ë¹„ì™„ë£Œ ë˜ì—ˆìŠµë‹ˆë‹¤");
 			
 			list = new ArrayList<ChatHandlerObject>();
 			

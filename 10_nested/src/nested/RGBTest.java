@@ -12,35 +12,35 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-//Frame - BorderLayout(µ¿¼­³²ºÏ)
-public class RGBTest extends Frame  {//ActionAdapter ¾øÀ½, implements ActionListener »ç¿ë ¾ÈÇÔ
-	//2-1. ¹öÆ° ÀÛ¼º
-	private Button redBtn, greenBtn, blueBtn; //null°ª
+//Frame - BorderLayout(ë™ì„œë‚¨ë¶)
+public class RGBTest extends Frame  {//ActionAdapter ì—†ìŒ, implements ActionListener ì‚¬ìš© ì•ˆí•¨
+	//2-1. ë²„íŠ¼ ì‘ì„±
+	private Button redBtn, greenBtn, blueBtn; //nullê°’
 	private DrCanvas can;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public RGBTest() {
-		//1.ÇÁ·¹ÀÓ »ı¼º
+		//1.í”„ë ˆì„ ìƒì„±
 		setBounds(400, 100, 300, 400);
 		setVisible(true);
 		
-		//2-2. ¹öÆ° ÀÛ¼º
-		redBtn = new Button("»¡°­"); //ÃÊ±âÈ­
-		greenBtn = new Button("ÃÊ·Ï");
-		blueBtn = new Button("ÆÄ¶û");
+		//2-2. ë²„íŠ¼ ì‘ì„±
+		redBtn = new Button("ë¹¨ê°•"); //ì´ˆê¸°í™”
+		greenBtn = new Button("ì´ˆë¡");
+		blueBtn = new Button("íŒŒë‘");
 		can = new DrCanvas();
 		
-		Panel p = new Panel(); //Panel - FlowLayout(¼ø¼­¹èÄ¡ - Áß¾Ó) - ±ÛÀÚ¼ö¸¸Å­ ÀÚ¸®ÀâÀ½
-		//p.setLayout(new GridLayout(1,3)); //GridLayout(Çà¿­¹èÄ¡, ±Õµî¹è¿­) - ±ÕµîÇÑ Å©±â·Î 1ÁÙ 3Ä­À¸·Î ³ª´©±â
-		p.setLayout(new GridLayout(1, 3, 5, 0));   //new GridLayout(Çà, ¿­, °¡·Î¿©¹é, ¼¼·Î¿©¹é)
+		Panel p = new Panel(); //Panel - FlowLayout(ìˆœì„œë°°ì¹˜ - ì¤‘ì•™) - ê¸€ììˆ˜ë§Œí¼ ìë¦¬ì¡ìŒ
+		//p.setLayout(new GridLayout(1,3)); //GridLayout(í–‰ì—´ë°°ì¹˜, ê· ë“±ë°°ì—´) - ê· ë“±í•œ í¬ê¸°ë¡œ 1ì¤„ 3ì¹¸ìœ¼ë¡œ ë‚˜ëˆ„ê¸°
+		p.setLayout(new GridLayout(1, 3, 5, 0));   //new GridLayout(í–‰, ì—´, ê°€ë¡œì—¬ë°±, ì„¸ë¡œì—¬ë°±)
 		p.add(redBtn);
 		p.add(greenBtn);
 		p.add(blueBtn);
 		
-		//ÀÌº¥Æ®
-		//2-3.¹öÆ° »ı¼º
-		//implements ActionListener »ç¿ë ¾ÈÇÔ -> ÀÍ¸í Å¬·¡½º »ç¿ë
-		this.add("North",p); //ÆÇ³ÚÀ» ÇÁ·¹ÀÓ À§¿¡ Ãß°¡
+		//ì´ë²¤íŠ¸
+		//2-3.ë²„íŠ¼ ìƒì„±
+		//implements ActionListener ì‚¬ìš© ì•ˆí•¨ -> ìµëª… í´ë˜ìŠ¤ ì‚¬ìš©
+		this.add("North",p); //íŒë„¬ì„ í”„ë ˆì„ ìœ„ì— ì¶”ê°€
 		add("Center", can);
 		redBtn.addActionListener(new ActionListener() { 
 			@Override
@@ -62,32 +62,32 @@ public class RGBTest extends Frame  {//ActionAdapter ¾øÀ½, implements ActionList
 		});	
 		
 		
-		//6.Á¾·á¹öÆ° »ı¼º(ÀÍ¸íÅ¬·¡½º)
-		this.addWindowListener(new WindowAdapter() { //WindowAdapter°¡ ±¸Çö, Ãß»ó¸Ş¼Òµå°¡ ¾øÀ½
-			public void windowClosing(WindowEvent e) { //»ç¿ëÀÚ°¡ »ç¿ëÇÏ°í ½ÍÀº ³»¿ë¸¸ ¿À¹ö¶óÀÌµå
+		//6.ì¢…ë£Œë²„íŠ¼ ìƒì„±(ìµëª…í´ë˜ìŠ¤)
+		this.addWindowListener(new WindowAdapter() { //WindowAdapterê°€ êµ¬í˜„, ì¶”ìƒë©”ì†Œë“œê°€ ì—†ìŒ
+			public void windowClosing(WindowEvent e) { //ì‚¬ìš©ìê°€ ì‚¬ìš©í•˜ê³  ì‹¶ì€ ë‚´ìš©ë§Œ ì˜¤ë²„ë¼ì´ë“œ
 				System.exit(0);
 			}
 		});
 	}
 	
-	//Canvas - null(Layout(µ¿¼­³²ºÏ)ÀÌ ¾øÀ½)
-	class DrCanvas extends Canvas{ //ÇÁ·¹ÀÓ À§¿¡ Äµ¹ö½º¸¦ »ı¼º
+	//Canvas - null(Layout(ë™ì„œë‚¨ë¶)ì´ ì—†ìŒ)
+	class DrCanvas extends Canvas{ //í”„ë ˆì„ ìœ„ì— ìº”ë²„ìŠ¤ë¥¼ ìƒì„±
 		public DrCanvas() {
 			this.setBackground(new Color(255,255,0));	
 		}
 		
 		@Override
 		public void paint(Graphics g) { 
-			//ÇÁ·¹ÀÓ¿¡ ÆäÀÎÆ® ±â´É ±¸Çö - ÇÁ·¹ÀÓ À§¿¡ Äµ¹ö½º°¡ ÀÖ±â ¶§¹®¿¡ DrCanvas Å¬·¡½º ¾È¿¡ ±¸ÇöÇØ¾ß ³»¿ëÀÌ º¸ÀÓ
-			g.drawString("³ë¶õ»ö Äµ¹ö½º", 100, 100);
+			//í”„ë ˆì„ì— í˜ì¸íŠ¸ ê¸°ëŠ¥ êµ¬í˜„ - í”„ë ˆì„ ìœ„ì— ìº”ë²„ìŠ¤ê°€ ìˆê¸° ë•Œë¬¸ì— DrCanvas í´ë˜ìŠ¤ ì•ˆì— êµ¬í˜„í•´ì•¼ ë‚´ìš©ì´ ë³´ì„
+			g.drawString("ë…¸ë€ìƒ‰ ìº”ë²„ìŠ¤", 100, 100);
 		}
 	}
 	
 	
-	//ActionPerformance ¿À¹ö¶óÀÌµå - implements ActionListener »ç¿ë¾ÈÇÔ
-	//2-4. ¹öÆ° »ı¼º
+	//ActionPerformance ì˜¤ë²„ë¼ì´ë“œ - implements ActionListener ì‚¬ìš©ì•ˆí•¨
+	//2-4. ë²„íŠ¼ ìƒì„±
 //	@Override
-//	public void actionPerformed(ActionEvent e) { //ÇÁ·¹ÀÓ À§¿¡ Äµ¹ö½º°¡ ÀÖÀ¸¹Ç·Î, Äµ¹ö½ºÀÇ »ö»óÀ» º¯°æ
+//	public void actionPerformed(ActionEvent e) { //í”„ë ˆì„ ìœ„ì— ìº”ë²„ìŠ¤ê°€ ìˆìœ¼ë¯€ë¡œ, ìº”ë²„ìŠ¤ì˜ ìƒ‰ìƒì„ ë³€ê²½
 //		if(e.getSource() == redBtn) {
 //			can.setBackground(new Color(255, 0, 0));
 //		}else if(e.getSource() == greenBtn) {
@@ -98,7 +98,7 @@ public class RGBTest extends Frame  {//ActionAdapter ¾øÀ½, implements ActionList
 //	}
 	
 	
-	//5.»ı¼º
+	//5.ìƒì„±
 	public static void main(String[] args) {
 		new RGBTest();
 		
@@ -107,14 +107,14 @@ public class RGBTest extends Frame  {//ActionAdapter ¾øÀ½, implements ActionList
 }
 
 
-//CanvasÅ¬·¡½º¸¦ »ç¿ë(ÀÏ¹İÅ¬·¡½º)
-//API¿¡ Canvas´Â »ó¼ÓÇØ¼­ »ç¿ëÇÏµµ·Ï ¸í½ÃµÇ¾î ÀÖ´Ù.
-//±×·¯³ª ÇöÀç FrameÅ¬·¡½º¸¦ »ó¼Ó¹Ş°í ÀÖ±â¶§¹®¿¡ ´ÙÁß»ó¼Ó ºÒ°¡ÇÏ¹Ç·Î CanvasÀÇ »ó¼ÓÀÌ ºÒ°¡
-//ÇØ°á¹æ¹ı1. ³»ºÎÅ¬·¡½º »ç¿ë - º» Å¬·¡½º(¿ÜºÎÅ¬·¡½º°¡ µÊ)ÀÇ ¸â¹ö¸¦ ¹Ù·Î »ç¿ëÇÏ´Â °ÍÀÌ °¡´É (ÀÌ¹ø¿¡ »ç¿ëÇÑ ¹æ¹ı)
-//ÇØ°á¹æ¹ı2. »õ·Î Å¬·¡½º¸¦ »ı¼ºÇÏ¿© CanvasÅ¬·¡½º »ó¼Ó - setter/getter ÀÛ¼ºÀÌ ÇÊ¿ä 
-//               ¡ÚÇØ°á¹æ¹ı2°¡ ½Ç¹«¿¡¼­ ÀÚÁÖ »ç¿ë
+//Canvasí´ë˜ìŠ¤ë¥¼ ì‚¬ìš©(ì¼ë°˜í´ë˜ìŠ¤)
+//APIì— CanvasëŠ” ìƒì†í•´ì„œ ì‚¬ìš©í•˜ë„ë¡ ëª…ì‹œë˜ì–´ ìˆë‹¤.
+//ê·¸ëŸ¬ë‚˜ í˜„ì¬ Frameí´ë˜ìŠ¤ë¥¼ ìƒì†ë°›ê³  ìˆê¸°ë•Œë¬¸ì— ë‹¤ì¤‘ìƒì† ë¶ˆê°€í•˜ë¯€ë¡œ Canvasì˜ ìƒì†ì´ ë¶ˆê°€
+//í•´ê²°ë°©ë²•1. ë‚´ë¶€í´ë˜ìŠ¤ ì‚¬ìš© - ë³¸ í´ë˜ìŠ¤(ì™¸ë¶€í´ë˜ìŠ¤ê°€ ë¨)ì˜ ë©¤ë²„ë¥¼ ë°”ë¡œ ì‚¬ìš©í•˜ëŠ” ê²ƒì´ ê°€ëŠ¥ (ì´ë²ˆì— ì‚¬ìš©í•œ ë°©ë²•)
+//í•´ê²°ë°©ë²•2. ìƒˆë¡œ í´ë˜ìŠ¤ë¥¼ ìƒì„±í•˜ì—¬ Canvasí´ë˜ìŠ¤ ìƒì† - setter/getter ì‘ì„±ì´ í•„ìš” 
+//               â˜…í•´ê²°ë°©ë²•2ê°€ ì‹¤ë¬´ì—ì„œ ìì£¼ ì‚¬ìš©
 
-//Ãß»ó¸Ş¼Òµå¸¦ °¡Á®´Ù ¾²´Â °æ¿ì »ç¿ëÀº 2°¡Áö ¹æ¹ıÀÌ ÀÖÀ½
-//1.Ãß»óÅ¬·¡½º
-//2.ÀÎÅÍÆäÀÌ½º
-//Å¬·¡½º´Â ´ÜÀÏ»ó¼ÓÀÌ±â ¶§¹®¿¡ ÀÎÅÍÆäÀÌ½º¸¦ ÅëÇØ »ç¿ëÇÏ´Â °ÍÀ» ¼±È£ÇÔ(ÀÎÅÍÆäÀÌ½º´Â ´ÙÁß »ó¼Ó(...Àº ¾Æ´ÏÁö¸¸)ÀÌ °¡´ÉÇÏ±â ¶§¹®¿¡
+//ì¶”ìƒë©”ì†Œë“œë¥¼ ê°€ì ¸ë‹¤ ì“°ëŠ” ê²½ìš° ì‚¬ìš©ì€ 2ê°€ì§€ ë°©ë²•ì´ ìˆìŒ
+//1.ì¶”ìƒí´ë˜ìŠ¤
+//2.ì¸í„°í˜ì´ìŠ¤
+//í´ë˜ìŠ¤ëŠ” ë‹¨ì¼ìƒì†ì´ê¸° ë•Œë¬¸ì— ì¸í„°í˜ì´ìŠ¤ë¥¼ í†µí•´ ì‚¬ìš©í•˜ëŠ” ê²ƒì„ ì„ í˜¸í•¨(ì¸í„°í˜ì´ìŠ¤ëŠ” ë‹¤ì¤‘ ìƒì†(...ì€ ì•„ë‹ˆì§€ë§Œ)ì´ ê°€ëŠ¥í•˜ê¸° ë•Œë¬¸ì—

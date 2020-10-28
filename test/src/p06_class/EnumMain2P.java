@@ -4,7 +4,7 @@ package p06_class;
 
 enum EnumColor2{
 	
-	RED("»¡°­"), GREEN("ÃÊ·Ï"), BLUE("ÆÄ¶û"), MAGENTA("º¸¶ó");
+	RED("ë¹¨ê°•"), GREEN("ì´ˆë¡"), BLUE("íŒŒë‘"), MAGENTA("ë³´ë¼");
 	
 	private String colorName;
 	

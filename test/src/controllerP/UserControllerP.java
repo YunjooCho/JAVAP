@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import modelP.UserDTOP;
 
 public class UserControllerP {
-	//3.·Î±×ÀÎ ¸Ş¼Òµå
-	//µ¥ÀÌÅÍº£ÀÌ½º°¡ ¾øÀ¸¹Ç·Î ¾î·¹ÀÌ¸®½ºÆ® ¼±¾ğ
+	//3.ë¡œê·¸ì¸ ë©”ì†Œë“œ
+	//ë°ì´í„°ë² ì´ìŠ¤ê°€ ì—†ìœ¼ë¯€ë¡œ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ì„ ì–¸
 	private ArrayList<UserDTOP> list;
 	
-	//4.»ı¼ºÀÚ
+	//4.ìƒì„±ì
 	public UserControllerP() {
 		
 		list = new ArrayList<>();
@@ -17,27 +17,27 @@ public class UserControllerP {
 		u1.setId(1);
 		u1.setUserId("admin");
 		u1.setPassword("111");
-		u1.setNickname("¿î¿µÀÚ");
+		u1.setNickname("ìš´ì˜ì");
 		
 		UserDTOP u2 = new UserDTOP();
 		u1.setId(2);
 		u1.setUserId("a");
 		u1.setPassword("222");
-		u1.setNickname("È¸¿øA");
+		u1.setNickname("íšŒì›A");
 		
 		UserDTOP u3 = new UserDTOP();
 		u1.setId(3);
 		u1.setUserId("b");
 		u1.setPassword("333");
-		u1.setNickname("È¸¿øB");
+		u1.setNickname("íšŒì›B");
 		
 		list.add(u1);
 		list.add(u2);
-		list.add(u3);//¾î·¹ÀÌ¸®½ºÆ®¿¡ °´Ã¼ Ãß°¡
+		list.add(u3);//ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ê°ì²´ ì¶”ê°€
 		
 	}
 	
-	//5.·Î±×ÀÎ ¸Ş¼Òµå
+	//5.ë¡œê·¸ì¸ ë©”ì†Œë“œ
 	public UserDTOP logIn(UserDTOP attempt) {
 		UserDTOP logIn = null;
 		for(UserDTOP u : list) {
@@ -49,7 +49,7 @@ public class UserControllerP {
 	}
 	
 	
-	//8. Áßº¹È®ÀÎ ¸Ş¼Òµå
+	//8. ì¤‘ë³µí™•ì¸ ë©”ì†Œë“œ
 	public boolean isDuplicatedUserID(String id) {
 		for(UserDTOP u : list) {
 			if(u.getUserId().equals(id)) {
@@ -59,7 +59,7 @@ public class UserControllerP {
 		return false;
 	}
 	
-	//9-2.»õ·Î µî·ÏµÈ °´Ã¼¸¦ ¾î·¹ÀÌ¸®½ºÆ®¿¡ Ãß°¡
+	//9-2.ìƒˆë¡œ ë“±ë¡ëœ ê°ì²´ë¥¼ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 	public void insert(UserDTOP newPerson) {
 		list.add(newPerson);
 	}

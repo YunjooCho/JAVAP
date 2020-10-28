@@ -12,7 +12,7 @@ import java.util.Date;
 public class ClockP extends Frame implements Runnable {
 
 	public ClockP() {
-		this.setFont(new Font("µ¸¿ò", Font.BOLD, 24));
+		this.setFont(new Font("ë‹ì›€", Font.BOLD, 24));
 		setForeground(Color.RED);
 		setBounds(700,200,300,100);
 		setVisible(true);
@@ -44,7 +44,7 @@ public class ClockP extends Frame implements Runnable {
 	}
 	
 	public void paint(Graphics g) {
-		SimpleDateFormat sd = new SimpleDateFormat("HH½Ã mmºĞ ssÃÊ");
+		SimpleDateFormat sd = new SimpleDateFormat("HHì‹œ mmë¶„ ssì´ˆ");
 		Date date = new Date();
 		g.drawString(sd.format(date), 60, 65);
 	}

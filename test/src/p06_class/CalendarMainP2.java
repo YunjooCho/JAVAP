@@ -6,37 +6,37 @@ import java.io.InputStreamReader;
 import java.util.Calendar;
 
 /*
-³âµµ ÀÔ·Â : 2002
-¿ù ÀÔ·Â : 10   
+ë…„ë„ ì…ë ¥ : 2002
+ì›” ì…ë ¥ : 10   
 
-ÀÏ  	 ¿ù  	  È­  	     ¼ö      ¸ñ      ±İ      Åä
+ì¼  	 ì›”  	  í™”  	     ìˆ˜      ëª©      ê¸ˆ      í† 
          1    2    3    4    5
 6    7    8    9    10   11   12
 13   14   15   16   17   18   19
 20   21   22   23   24   25   26
 27   28   29   30   31
 
-±âº»»ı¼ºÀÚ - ³âµµ, ¿ù ÀÔ·Â
-calculator() - ¸Å´Ş 1ÀÏÀÌ ¹«½¼ ¿äÀÏ·Î ½ÃÀÛ?, ¸Å´Ş ³¡³ª´Â ÀÏ? //¸Ş¼Òµå 2°³ Ã£¾Æº¸±â(+1°³ getÀÇ ¹İ´ë ¸Ş¼Òµå)
-display() - Ãâ·Â
+ê¸°ë³¸ìƒì„±ì - ë…„ë„, ì›” ì…ë ¥
+calculator() - ë§¤ë‹¬ 1ì¼ì´ ë¬´ìŠ¨ ìš”ì¼ë¡œ ì‹œì‘?, ë§¤ë‹¬ ëë‚˜ëŠ” ì¼? //ë©”ì†Œë“œ 2ê°œ ì°¾ì•„ë³´ê¸°(+1ê°œ getì˜ ë°˜ëŒ€ ë©”ì†Œë“œ)
+display() - ì¶œë ¥
 */
-//ÇöÀç ½Ã°£À» ¹Ş¾Æ¿È
+//í˜„ì¬ ì‹œê°„ì„ ë°›ì•„ì˜´
 
 public class CalendarMainP2 {
 
-	//1.ÇÊµå¸í ¼±¾ğ
+	//1.í•„ë“œëª… ì„ ì–¸
 	private int year, month, week, lastDay;
 	
 	
 	public CalendarMainP2() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("³âµµ ÀÔ·Â : ");
+		System.out.print("ë…„ë„ ì…ë ¥ : ");
 		year = Integer.parseInt(br.readLine());
-		System.out.print("¿ù ÀÔ·Â : ");
+		System.out.print("ì›” ì…ë ¥ : ");
 		month = Integer.parseInt(br.readLine());
 		while(month < 1 || month > 12) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-			System.out.print("¿ù ÀÔ·Â : ");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+			System.out.print("ì›” ì…ë ¥ : ");
 			month = Integer.parseInt(br.readLine());
 		}
 	}
@@ -49,7 +49,7 @@ public class CalendarMainP2 {
 	}
 	
 	public void disp() {
-		System.out.println("ÀÏ\t¿ù\tÈ­\t¼ö\t¸ñ\t±İ\tÅä");
+		System.out.println("ì¼\tì›”\tí™”\tìˆ˜\tëª©\tê¸ˆ\tí† ");
 		for(int i = 1; i < week; i++) {
 			System.out.print("\t");
 		}

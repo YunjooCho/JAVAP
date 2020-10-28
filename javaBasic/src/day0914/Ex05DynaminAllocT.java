@@ -2,72 +2,72 @@ package day0914;
 
 public class Ex05DynaminAllocT {
 	
-	   // µ¿ÀûÇÒ´çÀ» À§ÇÑ ¿©·¯°¡Áö ¸Þ¼Òµå¸¦ ¸¸µé¾îº¸ÀÚ
+	   // ë™ì í• ë‹¹ì„ ìœ„í•œ ì—¬ëŸ¬ê°€ì§€ ë©”ì†Œë“œë¥¼ ë§Œë“¤ì–´ë³´ìž
 
-	   // 1. ¹è¿­ÀÇ ÇöÀç Å©±â¸¦ È®ÀÎÇÏ´Â size() ¸Þ¼Òµå
+	   // 1. ë°°ì—´ì˜ í˜„ìž¬ í¬ê¸°ë¥¼ í™•ì¸í•˜ëŠ” size() ë©”ì†Œë“œ
 	   static int size(int[] arr) {
 	      return arr.length;
 	   }
 	   
-	   // 2. ¹è¿­¿¡ »õ·Î¿î ¿ä¼Ò¸¦ Ãß°¡ÇÏ´Â ¸Þ¼Òµå
+	   // 2. ë°°ì—´ì— ìƒˆë¡œìš´ ìš”ì†Œë¥¼ ì¶”ê°€í•˜ëŠ” ë©”ì†Œë“œ
 	   static int[] add(int[] arr, int element) {
-	      //¿ì¸®°¡ ÆÄ¶ó¹ÌÅÍ·Î ¹ÞÀº element¸¦ 
-	      //arr¿¡ Ãß°¡ÇÒ°ÍÀÎµ¥
-	      //¹«Á¶°Ç arrÀÇ °¡Àå ¸ÇµÚ¿¡ ºÙ¿©ÁÙ °ÍÀÌ´Ù.
-	      //ÇÏÁö¸¸ ¿ì¸®°¡ arr¿¡ Å©±â¸¦ À¯µ¿ÀûÀ¸·Î º¯°æÀ» ÇØ¾ßÇÏ±â ¶§¹®¿¡
-	      //1. arrÀ» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÏ°í
-	      //2. ÇöÀçÅ©±â+1ÀÇ Å©±â·Î ÃÊ±âÈ­ÇÏ°í
-	      //3. ÀÓ½Ã ¹è¿­¿¡ º¹»çÇØ³õÀº °ªµéÀ» º¹»çÇÏ°í
-	      //4. ¸Ç ¸¶Áö¸· À§Ä¡¿¡ element¸¦ Ãß°¡ÇØ¼­
-	      //5. arrÀ» return ÇØÁÖ¾î¾ß ÇÑ´Ù.
+	      //ìš°ë¦¬ê°€ íŒŒë¼ë¯¸í„°ë¡œ ë°›ì€ elementë¥¼ 
+	      //arrì— ì¶”ê°€í• ê²ƒì¸ë°
+	      //ë¬´ì¡°ê±´ arrì˜ ê°€ìž¥ ë§¨ë’¤ì— ë¶™ì—¬ì¤„ ê²ƒì´ë‹¤.
+	      //í•˜ì§€ë§Œ ìš°ë¦¬ê°€ arrì— í¬ê¸°ë¥¼ ìœ ë™ì ìœ¼ë¡œ ë³€ê²½ì„ í•´ì•¼í•˜ê¸° ë•Œë¬¸ì—
+	      //1. arrì„ ìž„ì‹œ ë°°ì—´ì— ë³µì‚¬í•˜ê³ 
+	      //2. í˜„ìž¬í¬ê¸°+1ì˜ í¬ê¸°ë¡œ ì´ˆê¸°í™”í•˜ê³ 
+	      //3. ìž„ì‹œ ë°°ì—´ì— ë³µì‚¬í•´ë†“ì€ ê°’ë“¤ì„ ë³µì‚¬í•˜ê³ 
+	      //4. ë§¨ ë§ˆì§€ë§‰ ìœ„ì¹˜ì— elementë¥¼ ì¶”ê°€í•´ì„œ
+	      //5. arrì„ return í•´ì£¼ì–´ì•¼ í•œë‹¤.
 	      
-	      //ÀÓ½Ã ¹è¿­À» ¼±¾ðÇØº¸ÀÚ
-	      //ÀÓ½Ã ¹è¿­ÀÇ Å©±â´Â ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â arrÀÇ Å©±â¿Í °°´Ù.
+	      //ìž„ì‹œ ë°°ì—´ì„ ì„ ì–¸í•´ë³´ìž
+	      //ìž„ì‹œ ë°°ì—´ì˜ í¬ê¸°ëŠ” íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ arrì˜ í¬ê¸°ì™€ ê°™ë‹¤.
 	      int size = arr.length;
 	      
 	      int[] temp = new int[size];
 	      
-	      //ÀÓ½Ã ¹è¿­¿¡ ÇöÀç arrÀÇ °ªµéÀ» Â÷·Ê´ë·Î º¹»çÇØÁÖÀÚ
+	      //ìž„ì‹œ ë°°ì—´ì— í˜„ìž¬ arrì˜ ê°’ë“¤ì„ ì°¨ë¡€ëŒ€ë¡œ ë³µì‚¬í•´ì£¼ìž
 	      for(int i = 0; i < size; i++) {
 	         temp[i] = arr[i];
 	      }
 	      
-	      // ÇöÀç ¹è¿­À» ÇöÀç Å©±â + 1·Î ÃÊ±âÈ­ÇØÁØ´Ù.
-	      // new ¸¦ ¸¸³ª´Â ¼ø°£
-	      // ±âÁ¸¿¡ ¹è¿­¿¡ µé¾î°¡ ÀÖ´ø ¸ðµç °ªµéÀº
-	      // ´Ù »ç¶óÁø´Ù
-	      // ÇöÀç arrÀº ±âº»Çü µ¥ÀÌÅÍÅ¸ÀÔÀÎ intÀÇ ¹è¿­ÀÌ±â ¶§¹®¿¡
-	      // ¸ðµç ÀÎµ¦½º°¡ 0À¸·Î ÃÊ±âÈ­µÈ´Ù.
+	      // í˜„ìž¬ ë°°ì—´ì„ í˜„ìž¬ í¬ê¸° + 1ë¡œ ì´ˆê¸°í™”í•´ì¤€ë‹¤.
+	      // new ë¥¼ ë§Œë‚˜ëŠ” ìˆœê°„
+	      // ê¸°ì¡´ì— ë°°ì—´ì— ë“¤ì–´ê°€ ìžˆë˜ ëª¨ë“  ê°’ë“¤ì€
+	      // ë‹¤ ì‚¬ë¼ì§„ë‹¤
+	      // í˜„ìž¬ arrì€ ê¸°ë³¸í˜• ë°ì´í„°íƒ€ìž…ì¸ intì˜ ë°°ì—´ì´ê¸° ë•Œë¬¸ì—
+	      // ëª¨ë“  ì¸ë±ìŠ¤ê°€ 0ìœ¼ë¡œ ì´ˆê¸°í™”ëœë‹¤.
 	      
-	      // µû¶ó¼­ ¹è¿­ÀÇ ÇöÀç ³»¿ëÀ» À¯Áö¸¦ ÇÑÃ¤ Å©±â¸¦ ´Ã¸®±â À§ÇØ¼­´Â
-	      // ÇöÀç ¹è¿­ÀÇ ³»¿ëÀ» ÀÓ½Ã ¹è¿­¿¡ ÀúÀåÇÏ°í
-	      // Å©±â¸¦ ´Ã¸®°í
-	      // ÀÓ½Ã ¹è¿­ÀÇ °ªµéÀ» ´Ù½Ã º¹»çÇØ¿Í¾ß ÇÑ´Ù.
+	      // ë”°ë¼ì„œ ë°°ì—´ì˜ í˜„ìž¬ ë‚´ìš©ì„ ìœ ì§€ë¥¼ í•œì±„ í¬ê¸°ë¥¼ ëŠ˜ë¦¬ê¸° ìœ„í•´ì„œëŠ”
+	      // í˜„ìž¬ ë°°ì—´ì˜ ë‚´ìš©ì„ ìž„ì‹œ ë°°ì—´ì— ì €ìž¥í•˜ê³ 
+	      // í¬ê¸°ë¥¼ ëŠ˜ë¦¬ê³ 
+	      // ìž„ì‹œ ë°°ì—´ì˜ ê°’ë“¤ì„ ë‹¤ì‹œ ë³µì‚¬í•´ì™€ì•¼ í•œë‹¤.
 	      arr = new int[size+1];
 	      
-	      // ÇöÀç ¹è¿­ÀÇ ÀÓ½Ã ¹è¿­ÀÇ °ªÀ» Â÷·Ê´ë·Î º¹»çÇØÁÖÀÚ
+	      // í˜„ìž¬ ë°°ì—´ì˜ ìž„ì‹œ ë°°ì—´ì˜ ê°’ì„ ì°¨ë¡€ëŒ€ë¡œ ë³µì‚¬í•´ì£¼ìž
 	      for(int i = 0; i < size; i++) {
 	         arr[i] = temp[i];
 	      }
 	      
 	      // int[] arr = new int[4]
-	      // ÇØ´ç ¹è¿­ÀÇ °¡Àå ¸¶Áö¸· index ¹øÈ£´Â ¸î¹øÀÎ°¡?
+	      // í•´ë‹¹ ë°°ì—´ì˜ ê°€ìž¥ ë§ˆì§€ë§‰ index ë²ˆí˜¸ëŠ” ëª‡ë²ˆì¸ê°€?
 	      // 3
-	      // ÇöÀç Å©±â´Â?
+	      // í˜„ìž¬ í¬ê¸°ëŠ”?
 	      // 4
 	      
-	      // arrÀÇ Å©±â¸¦ 1 ´Ã¸®¸é
-	      // »õ·Î¿î Å©±â´Â?
+	      // arrì˜ í¬ê¸°ë¥¼ 1 ëŠ˜ë¦¬ë©´
+	      // ìƒˆë¡œìš´ í¬ê¸°ëŠ”?
 	      // 5
-	      // ´Ã¾î³­ ¹è¿­ÀÇ °¡Àå ¸¶Áö¸· ÀÎµ¦½º ¹øÈ£´Â?
+	      // ëŠ˜ì–´ë‚œ ë°°ì—´ì˜ ê°€ìž¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ ë²ˆí˜¸ëŠ”?
 	      // 4
 	      
-	      // arrÀÇ °¡Àå ¸¶Áö¸· index¸¦ element·Î ÃÊ±âÈ­ÇØÁÖÀÚ
-	      // arrÀÌ Ã³À½ ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Ã¶§ 
-	      // °¡Àå ¸¶Áö¸· ÀÎµ¦½º´Â ÇöÀç Å©±â - 1ÀÌ´Ù.
-	      // Áï size - 1ÀÌ´Ù.
-	      // ÇÏÁö¸¸ ÀÌÁ¦´Â Å©±â°¡ 1 ´Ã¾î³µÀ¸¹Ç·Î
-	      // °¡Àå ¸¶Áö¸· ÀÎµ¦½º´Â size°¡ µÈ´Ù.
+	      // arrì˜ ê°€ìž¥ ë§ˆì§€ë§‰ indexë¥¼ elementë¡œ ì´ˆê¸°í™”í•´ì£¼ìž
+	      // arrì´ ì²˜ìŒ íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¬ë•Œ 
+	      // ê°€ìž¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ëŠ” í˜„ìž¬ í¬ê¸° - 1ì´ë‹¤.
+	      // ì¦‰ size - 1ì´ë‹¤.
+	      // í•˜ì§€ë§Œ ì´ì œëŠ” í¬ê¸°ê°€ 1 ëŠ˜ì–´ë‚¬ìœ¼ë¯€ë¡œ
+	      // ê°€ìž¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ëŠ” sizeê°€ ëœë‹¤.
 	      
 	      arr[size] = element;
 	      
@@ -75,14 +75,14 @@ public class Ex05DynaminAllocT {
 	      return arr;
 	   }
 	   
-	   //ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â ¹è¿­¿¡ ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â °ªÀÌ Á¸ÀçÇÏ´ÂÁö Ã¼Å©ÇÏ´Â contains ¸Þ¼Òµå
+	   //íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ë°°ì—´ì— íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ê°’ì´ ì¡´ìž¬í•˜ëŠ”ì§€ ì²´í¬í•˜ëŠ” contains ë©”ì†Œë“œ
 	   static boolean contains(int[] arr, int element) {
-	      //for¹®À» ÀÌ¿ëÇØ¼­
-	      //arrÀÇ °¢ ÀÎµ¦½º¿Í element¸¦ ºñ±³ÇØ¼­ °°À¸¸é return true¸¦ ÇÑ´Ù.
+	      //forë¬¸ì„ ì´ìš©í•´ì„œ
+	      //arrì˜ ê° ì¸ë±ìŠ¤ì™€ elementë¥¼ ë¹„êµí•´ì„œ ê°™ìœ¼ë©´ return trueë¥¼ í•œë‹¤.
 	      for(int i = 0; i < arr.length; i++) {
 	         if(arr[i] == element) {
-	            //i¹øÂ° ÀÎµ¦½º¿Í elementÀÇ °ªÀÌ °°À¸¹Ç·Î 
-	            //return true ÇØÁØ´Ù.
+	            //ië²ˆì§¸ ì¸ë±ìŠ¤ì™€ elementì˜ ê°’ì´ ê°™ìœ¼ë¯€ë¡œ 
+	            //return true í•´ì¤€ë‹¤.
 	            return true;
 	         }
 	      }
@@ -90,20 +90,20 @@ public class Ex05DynaminAllocT {
 	      return false;
 	   }
 	   
-	   //ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â ¹è¿­¿¡ ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â °ªÀÌ ¸î¹ø ÀÎµ¦½º¿¡ ÀÖ´ÂÁö È®ÀÎÇØÁÖ´Â indexOf¸Þ¼Òµå
-	   static int indexOf(int[] arr, int element) {//defaultÁ¢±ÙÀÚ, packageÁ¢±ÙÀÚ
-	      //¿©±â¼­ ¿©·¯ºÐµéÀÌ ÇÑ°¡Áö °í¹ÎÇØº¼ °ÍÀº
-	      //¸¸¾à element°¡ arr¿¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù¸é
-	      //¿ì¸®°¡ ¾î¶² °ªÀ» ¸®ÅÏÇØÁÖ¾î¾ß ÇÒ±î?
-	      //ÀÎµ¦½º´Â ¹«Á¶°Ç 0ºÎÅÍ arrÀÇ Å©±â - 1ÀÌ±â ¶§¹®¿¡
-	      //¾çÀÇ Á¤¼ö·Î ¿ì¸®°¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù´Â Ç¥½ÃÇØÁÖ±â Èûµé´Ù.
-	      //µû¶ó¼­ À½ÀÇ Á¤¼öÁß¿¡¼­ °¡Àå °£´ÜÇÑ "-1"À» ¸®ÅÏÇØ¼­
-	      //¸¸¾à ¹è¿­¿¡ ÇØ´ç ¿¤¸®¸àÆ®°¡ Á¸ÀçÇÏÁö ¾ÊÀ¸¸é 
-	      //ÀÎµ¦½º´Â -1À» ¸®ÅÏÇØÁÖ¸é µÈ´Ù.
+	   //íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ë°°ì—´ì— íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ê°’ì´ ëª‡ë²ˆ ì¸ë±ìŠ¤ì— ìžˆëŠ”ì§€ í™•ì¸í•´ì£¼ëŠ” indexOfë©”ì†Œë“œ
+	   static int indexOf(int[] arr, int element) {//defaultì ‘ê·¼ìž, packageì ‘ê·¼ìž
+	      //ì—¬ê¸°ì„œ ì—¬ëŸ¬ë¶„ë“¤ì´ í•œê°€ì§€ ê³ ë¯¼í•´ë³¼ ê²ƒì€
+	      //ë§Œì•½ elementê°€ arrì— ì¡´ìž¬í•˜ì§€ ì•ŠëŠ”ë‹¤ë©´
+	      //ìš°ë¦¬ê°€ ì–´ë–¤ ê°’ì„ ë¦¬í„´í•´ì£¼ì–´ì•¼ í• ê¹Œ?
+	      //ì¸ë±ìŠ¤ëŠ” ë¬´ì¡°ê±´ 0ë¶€í„° arrì˜ í¬ê¸° - 1ì´ê¸° ë•Œë¬¸ì—
+	      //ì–‘ì˜ ì •ìˆ˜ë¡œ ìš°ë¦¬ê°€ ì¡´ìž¬í•˜ì§€ ì•ŠëŠ”ë‹¤ëŠ” í‘œì‹œí•´ì£¼ê¸° íž˜ë“¤ë‹¤.
+	      //ë”°ë¼ì„œ ìŒì˜ ì •ìˆ˜ì¤‘ì—ì„œ ê°€ìž¥ ê°„ë‹¨í•œ "-1"ì„ ë¦¬í„´í•´ì„œ
+	      //ë§Œì•½ ë°°ì—´ì— í•´ë‹¹ ì—˜ë¦¬ë©˜íŠ¸ê°€ ì¡´ìž¬í•˜ì§€ ì•Šìœ¼ë©´ 
+	      //ì¸ë±ìŠ¤ëŠ” -1ì„ ë¦¬í„´í•´ì£¼ë©´ ëœë‹¤.
 	      
-	      //for¹®À» µ¹·Á¼­ 
-	      //¸¸¾à i¹øÂ° ÀÎµ¦½º °ªÀÌ element¿Í °°À¸¸é
-	      //i¸¦ ¸®ÅÏÇØÁÖ¸é µÈ´Ù.
+	      //forë¬¸ì„ ëŒë ¤ì„œ 
+	      //ë§Œì•½ ië²ˆì§¸ ì¸ë±ìŠ¤ ê°’ì´ elementì™€ ê°™ìœ¼ë©´
+	      //ië¥¼ ë¦¬í„´í•´ì£¼ë©´ ëœë‹¤.
 	      for(int i = 0; i < arr.length; i++) {
 	         if(arr[i] == element) {
 	            return i;
@@ -126,123 +126,123 @@ public class Ex05DynaminAllocT {
 	      
 	      int[] arr = new int[0];
 	      
-	      System.out.println("arrÀÇ ÇöÀçÅ©±â: "+size(arr));
+	      System.out.println("arrì˜ í˜„ìž¬í¬ê¸°: "+size(arr));
 	      
 	      arr = add(arr, 10);
-	      System.out.println("arrÀÇ ÇöÀçÅ©±â: "+size(arr));
+	      System.out.println("arrì˜ í˜„ìž¬í¬ê¸°: "+size(arr));
 	      for(int i = 0; i < arr.length; i++) {
 	         System.out.println(arr[i]);
 	      }
 	      
 	      arr = add(arr, 5);
-	      System.out.println("arrÀÇ ÇöÀçÅ©±â: "+size(arr));
+	      System.out.println("arrì˜ í˜„ìž¬í¬ê¸°: "+size(arr));
 	      for(int i = 0; i < arr.length; i++) {
 	         System.out.println(arr[i]);
 	      }
 	      
 	      arr = add(arr,4);
-	      System.out.println("arrÀÇ ÇöÀçÅ©±â: "+size(arr));
+	      System.out.println("arrì˜ í˜„ìž¬í¬ê¸°: "+size(arr));
 	      for(int i = 0; i < arr.length; i++) {
 	         System.out.println(arr[i]);
 	      }
 	      
-	      //¿ì¸®°¡ arrÀ» add ¸Þ¼ÒµåÀÇ °á°ú°ªÀ¸·Î µ¤¾î¾º¿ï´ë¸¶´Ù
-	      //arrÀÇ °ªÀÌ À¯Áö°¡ µÇ¸é¼­ ´Ã¾î³ª´Â °ÍÀ» È®ÀÎÇÒ ¼ö ÀÖ´Ù!
+	      //ìš°ë¦¬ê°€ arrì„ add ë©”ì†Œë“œì˜ ê²°ê³¼ê°’ìœ¼ë¡œ ë®ì–´ì”Œìš¸ëŒ€ë§ˆë‹¤
+	      //arrì˜ ê°’ì´ ìœ ì§€ê°€ ë˜ë©´ì„œ ëŠ˜ì–´ë‚˜ëŠ” ê²ƒì„ í™•ì¸í•  ìˆ˜ ìžˆë‹¤!
 	      
-	      //contains ¸Þ¼Òµå¸¦ ½ÇÇàÇÑ °á°ú°ª
+	      //contains ë©”ì†Œë“œë¥¼ ì‹¤í–‰í•œ ê²°ê³¼ê°’
 	      System.out.println("===========contains()=============");
-	      //arr¿¡ 5°¡ Á¸ÀçÇÕ´Ï±î?
+	      //arrì— 5ê°€ ì¡´ìž¬í•©ë‹ˆê¹Œ?
 	      System.out.println("contains(arr, 5): "+contains(arr, 5));
-	      //arr¿¡ 25°¡ Á¸ÀçÇÕ´Ï±î?
+	      //arrì— 25ê°€ ì¡´ìž¬í•©ë‹ˆê¹Œ?
 	      System.out.println("contains(arr, 25): "+contains(arr, 25));
 	      
 	      System.out.println("===========indexOf()=============");
-	      //arr ¿¡¼­ 5ÀÇ ÀÎµ¦½º´Â ¾ó¸¶ÀÔ´Ï±î?
+	      //arr ì—ì„œ 5ì˜ ì¸ë±ìŠ¤ëŠ” ì–¼ë§ˆìž…ë‹ˆê¹Œ?
 	      System.out.println("indexOf(arr, 5): " + indexOf(arr, 5));
-	      //arr ¿¡¼­ 25ÀÇ ÀÎµ¦½º´Â ¾ó¸¶ÀÔ´Ï±î?
+	      //arr ì—ì„œ 25ì˜ ì¸ë±ìŠ¤ëŠ” ì–¼ë§ˆìž…ë‹ˆê¹Œ?
 	      System.out.println("indexOf(arr, 25): " + indexOf(arr, 25));
 	      
 	      arr = add(arr, 5);
 	      arr = add(arr, 4);
 	      arr = add(arr, 12);
 	      arr = add(arr, 51);
-	      //removeÀü arr ³»¿ë Ãâ·Â
-	      System.out.println("remove Àü arr ³»¿ë Ãâ·Â");
+	      //removeì „ arr ë‚´ìš© ì¶œë ¥
+	      System.out.println("remove ì „ arr ë‚´ìš© ì¶œë ¥");
 	      for(int i = 0; i < arr.length; i++) {
 	         System.out.printf("arr[%d]: %d\n", i, arr[i]);
 	      }
 	      
-	      //removeByIndex(arr, 0) ÀÌÈÄ
-	      System.out.println("removeByIndex(arr, 0) ½ÇÇà");
+	      //removeByIndex(arr, 0) ì´í›„
+	      System.out.println("removeByIndex(arr, 0) ì‹¤í–‰");
 	      arr = removeByIndex(arr, 0);
 	      for(int i = 0; i < arr.length; i++) {
 	         System.out.printf("arr[%d]: %d\n", i, arr[i]);
 	      }
 	      
-	      //removeByIndex(arr, 5) ÀÌÈÄ
-	      System.out.println("removeByIndex(arr, 5) ½ÇÇà");
+	      //removeByIndex(arr, 5) ì´í›„
+	      System.out.println("removeByIndex(arr, 5) ì‹¤í–‰");
 	      arr = removeByIndex(arr, 5);
 	      for(int i = 0; i < arr.length; i++) {
 	         System.out.printf("arr[%d]: %d\n", i, arr[i]);
 	      }
 	   }
 	   
-	   // ¹è¿­¿¡¼­ ÇØ´ç ÀÎµ¦½ºÀÇ ¿ä¼Ò¸¦ »èÁ¦ÇÏ´Â ¸Þ¼Òµå removeByIndex
-	   // ÀÚ ¿ì¸®°¡ ¹è¿­¿¡ ¿ä¼Ò¸¦ Ãß°¡ÇÏ´Ï±ñ Å©±â°¡ ´Ã¾î³µ´Ù.
-	   // ±×·¸´Ù¸é ¿ì¸®°¡ ¹è¿­¿¡ ¿ä¼Ò¸¦ »èÁ¦ÇÏ¸é? Å©±â°¡ ÁÙ¾î¾ß ÇÑ´Ù!
+	   // ë°°ì—´ì—ì„œ í•´ë‹¹ ì¸ë±ìŠ¤ì˜ ìš”ì†Œë¥¼ ì‚­ì œí•˜ëŠ” ë©”ì†Œë“œ removeByIndex
+	   // ìž ìš°ë¦¬ê°€ ë°°ì—´ì— ìš”ì†Œë¥¼ ì¶”ê°€í•˜ë‹ˆê¹ í¬ê¸°ê°€ ëŠ˜ì–´ë‚¬ë‹¤.
+	   // ê·¸ë ‡ë‹¤ë©´ ìš°ë¦¬ê°€ ë°°ì—´ì— ìš”ì†Œë¥¼ ì‚­ì œí•˜ë©´? í¬ê¸°ê°€ ì¤„ì–´ì•¼ í•œë‹¤!
 	   
 	   static int[] removeByIndex(int[] arr, int index) {
-	      //¸ÕÀú Á¦°ÅÇÏ±â Àü¿¡ ÇØ´ç ÀÎµ¦½º°¡
-	      //°¡´ÉÇÑ indexÀÎÁö ºÎÅÍ Ã¼Å©ÇÑ´Ù.
-	      //¸¸¾à ºÒ°¡´ÉÇÑ ÀÎµ¦½º¶ó¸é arrÀ» ±×´ë·Î ¸®ÅÏÇØÁÖ¸é µÈ´Ù.
+	      //ë¨¼ì € ì œê±°í•˜ê¸° ì „ì— í•´ë‹¹ ì¸ë±ìŠ¤ê°€
+	      //ê°€ëŠ¥í•œ indexì¸ì§€ ë¶€í„° ì²´í¬í•œë‹¤.
+	      //ë§Œì•½ ë¶ˆê°€ëŠ¥í•œ ì¸ë±ìŠ¤ë¼ë©´ arrì„ ê·¸ëŒ€ë¡œ ë¦¬í„´í•´ì£¼ë©´ ëœë‹¤.
 	      
-	      //ÀÎµ¦½º°¡ °¡´ÉÇÑ ¹üÀ§´Â ¸îºÎÅÍ ¸îÀÎ°¡? 0ºÎÅÍ arr.length - 1
+	      //ì¸ë±ìŠ¤ê°€ ê°€ëŠ¥í•œ ë²”ìœ„ëŠ” ëª‡ë¶€í„° ëª‡ì¸ê°€? 0ë¶€í„° arr.length - 1
 	      if(index < 0 || index >= arr.length) {
 	         return arr;
 	      }
 	      
-	      //¹è¿­ÀÇ °ªÀ» ÀÓ½Ã º¸°üÇÒ temp¸¦ ¸¸µé¾îÁÖÀÚ
-	      //tempÀÇ Å©±â´Â ¾ó¸¶ÀÎ°¡?
+	      //ë°°ì—´ì˜ ê°’ì„ ìž„ì‹œ ë³´ê´€í•  tempë¥¼ ë§Œë“¤ì–´ì£¼ìž
+	      //tempì˜ í¬ê¸°ëŠ” ì–¼ë§ˆì¸ê°€?
 	      int[] temp = new int[arr.length];
 	      
-	      //ÀÓ½Ã ¹è¿­¿¡ ÇöÀç °ªÀ» for¹®À» ÀÌ¿ëÇØ¼­ º¹»çÇØÁÖÀÚ
+	      //ìž„ì‹œ ë°°ì—´ì— í˜„ìž¬ ê°’ì„ forë¬¸ì„ ì´ìš©í•´ì„œ ë³µì‚¬í•´ì£¼ìž
 	      for(int i = 0; i < arr.length; i++) {
 	         temp[i] = arr[i];
 	      }
 	      
-	      // arrÀ» »õ·Î ÃÊ±âÈ­ÇØÁÖÀÚ
-	      // ÀÌ¶§ arrÀÇ Å©±â´Â ¾ó¸¶ÀÎ°¡?
+	      // arrì„ ìƒˆë¡œ ì´ˆê¸°í™”í•´ì£¼ìž
+	      // ì´ë•Œ arrì˜ í¬ê¸°ëŠ” ì–¼ë§ˆì¸ê°€?
 	      arr = new int[arr.length - 1];
 	      
-	      //¸¸¾à ÇØ´ç ÀÎµ¦½º°¡ Á¸ÀçÇÏ¸é
-	      //¿ì¸®´Â 3°¡Áö °æ¿ì¿¡ ³õÀÎ´Ù.
-	      //1. ÀÎµ¦½º°¡ 0ÀÏ¶§
-	      //   ÀÎµ¦½º°¡ 0ÀÌ¸é ¿ì¸®´Â »õ·Î ¸¸µç arr¿¡ tempÀÇ 1¹øºÎÅÍ ³¡±îÁö º¹»çÇØÁÖ¸é µÈ´Ù!
-	      //   Áï °¡Àå ¾Õ¿¡ ÀÎµ¦½º¸¦ Á¦¿ÜÇÏ°í º¹»çÇÏ¸é µÈ´Ù.
+	      //ë§Œì•½ í•´ë‹¹ ì¸ë±ìŠ¤ê°€ ì¡´ìž¬í•˜ë©´
+	      //ìš°ë¦¬ëŠ” 3ê°€ì§€ ê²½ìš°ì— ë†“ì¸ë‹¤.
+	      //1. ì¸ë±ìŠ¤ê°€ 0ì¼ë•Œ
+	      //   ì¸ë±ìŠ¤ê°€ 0ì´ë©´ ìš°ë¦¬ëŠ” ìƒˆë¡œ ë§Œë“  arrì— tempì˜ 1ë²ˆë¶€í„° ëê¹Œì§€ ë³µì‚¬í•´ì£¼ë©´ ëœë‹¤!
+	      //   ì¦‰ ê°€ìž¥ ì•žì— ì¸ë±ìŠ¤ë¥¼ ì œì™¸í•˜ê³  ë³µì‚¬í•˜ë©´ ëœë‹¤.
 	      if(index == 0) {
 	         for(int i = 1; i < temp.length; i++) {
-	            //ÇÏÁö¸¸ ¿©±â¼­ ÇÑ°¡Áö ÁÖÀÇÇØ¾ßÇÒ °ÍÀº
-	            //tempÀÇ 1¹øÂ° °ªÀ»
-	            //arrÀÇ 0¹øÂ° Ä­¿¡ ³Ö°í
-	            //ÇÑÄ­¾¿ ¶¯°Ü¿Í¾ß ÇÑ´Ù´Â °ÍÀÌ´Ù.
+	            //í•˜ì§€ë§Œ ì—¬ê¸°ì„œ í•œê°€ì§€ ì£¼ì˜í•´ì•¼í•  ê²ƒì€
+	            //tempì˜ 1ë²ˆì§¸ ê°’ì„
+	            //arrì˜ 0ë²ˆì§¸ ì¹¸ì— ë„£ê³ 
+	            //í•œì¹¸ì”© ë•¡ê²¨ì™€ì•¼ í•œë‹¤ëŠ” ê²ƒì´ë‹¤.
 	            arr[i-1] = temp[i];
 	         }
 	      }else if(index == temp.length - 1) {
-	         //2. ÀÎµ¦½º°¡ °¡Àå ¸¶Áö¸·ÀÏ¶§
-	         //ÀÌ¶§´Â tempÀÇ 0¹øºÎÅÍ temp.length - 2±îÁö¸¦
-	         //arr¿¡ º¹»çÇØÁÖ¸é µÈ´Ù.
-	         for(int i = 0; i < temp.length - 1; i++) { //temp.length - 1  : ³¡¹è¿­µµ ¿Å±âÁö ¾ÊÀ»°Å¶ó¼­ 
-	        	                                        //¸¶Áö¸· ¹è¿­(temp.length-1)º¸´Ù ´õ ÀÛÀº °ª¸¸ for¹®À¸·Î È®ÀÎ
+	         //2. ì¸ë±ìŠ¤ê°€ ê°€ìž¥ ë§ˆì§€ë§‰ì¼ë•Œ
+	         //ì´ë•ŒëŠ” tempì˜ 0ë²ˆë¶€í„° temp.length - 2ê¹Œì§€ë¥¼
+	         //arrì— ë³µì‚¬í•´ì£¼ë©´ ëœë‹¤.
+	         for(int i = 0; i < temp.length - 1; i++) { //temp.length - 1  : ëë°°ì—´ë„ ì˜®ê¸°ì§€ ì•Šì„ê±°ë¼ì„œ 
+	        	                                        //ë§ˆì§€ë§‰ ë°°ì—´(temp.length-1)ë³´ë‹¤ ë” ìž‘ì€ ê°’ë§Œ forë¬¸ìœ¼ë¡œ í™•ì¸
 	            arr[i] = temp[i];
 	         }
 	      }else {
-	         //3. ÀÎµ¦½º°¡ Áß°£ÀÏ¶§
+	         //3. ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ë•Œ
 	         for(int i = 0; i < temp.length; i++) {
 	            if(i < index) {
-	               //0~indexÀÌÀü±îÁö º¹»ç
+	               //0~indexì´ì „ê¹Œì§€ ë³µì‚¬
 	               arr[i] = temp[i];
 	            }else if(i > index){
-	               //ÀÎµ¦½º ´ÙÀ½ºÎÅÍ ³¡±îÁö º¹»ç
+	               //ì¸ë±ìŠ¤ ë‹¤ìŒë¶€í„° ëê¹Œì§€ ë³µì‚¬
 	               //temp = [0, 1, 2, 3, 4, 5, 6, 7]
 	               //index = 5
 	               //arr = [0, 1, 2, 3, 4, 6, 7]

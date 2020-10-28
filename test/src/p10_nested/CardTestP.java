@@ -10,11 +10,11 @@ import java.awt.event.WindowEvent;
 
 public class CardTestP {
 	
-	//1. ÇÊµå ¼±¾ğ
+	//1. í•„ë“œ ì„ ì–¸
 	private Frame frame;
 	private CardLayout card;
 	
-	//2. »ı¼ºÀÚ
+	//2. ìƒì„±ì
 	public CardTestP() {
 		frame = new Frame();
 		card = new CardLayout();
@@ -23,7 +23,7 @@ public class CardTestP {
 		
 		Panel[] p = new Panel[6];
 		Color[] color = {Color.RED, Color.BLUE, Color.GREEN, Color.CYAN, Color.MAGENTA, Color.YELLOW};
-		String[] name = {"»¡°­", "ÆÄ¶û", "ÃÊ·Ï", "Ã»·Ï", "ÀÚÁÖ", "³ë¶û"};
+		String[] name = {"ë¹¨ê°•", "íŒŒë‘", "ì´ˆë¡", "ì²­ë¡", "ìì£¼", "ë…¸ë‘"};
 		
 		for(int i = 0; i < p.length; i++) {
 			p[i] = new Panel();

@@ -1,5 +1,5 @@
 package p09_interface;
 
-public interface InterC extends InterA, InterB { //ÀÎÅÍÆäÀÌ½º´Â ´ÙÁß»ó¼ÓÀÌ °¡´ÉÇÏ´Ù
+public interface InterC extends InterA, InterB { //ì¸í„°í˜ì´ìŠ¤ëŠ” ë‹¤ì¤‘ìƒì†ì´ ê°€ëŠ¥í•˜ë‹¤
 
 }

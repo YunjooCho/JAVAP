@@ -2,8 +2,8 @@ package day0910P;
 
 
 
-//±¸±¸´Ü ¸¸µé±â
-//ÀÔ·Â¹ŞÀº ¼ıÀÚÀÇ ´Ü Ãâ·ÂÇÏ±â
+//êµ¬êµ¬ë‹¨ ë§Œë“¤ê¸°
+//ì…ë ¥ë°›ì€ ìˆ«ìì˜ ë‹¨ ì¶œë ¥í•˜ê¸°
 
 import java.io.IOException;
 
@@ -11,12 +11,12 @@ public class Ex03NestedForP02 {
 
 	public static void main(String[] args) throws IOException{
 		
-		//º¯¼ö
+		//ë³€ìˆ˜
 		int user;
 		int dan;
 		
-		//¹İº¹¹®(±¸±¸´Ü)
-		System.out.print("¿øÇÏ´Â ´ÜÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		//ë°˜ë³µë¬¸(êµ¬êµ¬ë‹¨)
+		System.out.print("ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		user = System.in.read() - 48;
 		for(int i = 1; i <= user; i++) {
 			for(int j = 1; j <= 9; j++) {

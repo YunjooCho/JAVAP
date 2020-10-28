@@ -9,40 +9,40 @@ import java.net.URL;
 public class URLTest2 {
 	
 	
-	//private static String line; 21¹ø ÁÙ ¿©±â¼­ ¼±¾ğÇØµµ °á°ú°ª ¶È°°ÀÌ ³ª¿È, ÃÊ±âÈ­ ºÒÇÊ¿ä
+	//private static String line; 21ë²ˆ ì¤„ ì—¬ê¸°ì„œ ì„ ì–¸í•´ë„ ê²°ê³¼ê°’ ë˜‘ê°™ì´ ë‚˜ì˜´, ì´ˆê¸°í™” ë¶ˆí•„ìš”
 	
 	public static void main(String[] args) throws IOException {
 		URL url = new URL("http://www.liebli.com/");
 		BufferedReader buffer = new BufferedReader(new InputStreamReader(url.openStream()));
-		//InputStreamReader - À¥ ºê¶ó¿ìÀú, Å°º¸µå, ¼ÒÄÏ µîÀ» ÅëÇØ Á¤º¸¸¦ ¹Ş¾ÆµéÀÏ ¶§
-		//BufferedReader - ÇÑ ÁÙ ¾¿ ÀĞ¾î¿È
-		String line = null; //Áö¿ªº¯¼ö¶ó ¾²·¹±â°ªÀ» Áã°íÀÖÀ½
+		//InputStreamReader - ì›¹ ë¸Œë¼ìš°ì €, í‚¤ë³´ë“œ, ì†Œì¼“ ë“±ì„ í†µí•´ ì •ë³´ë¥¼ ë°›ì•„ë“¤ì¼ ë•Œ
+		//BufferedReader - í•œ ì¤„ ì”© ì½ì–´ì˜´
+		String line = null; //ì§€ì—­ë³€ìˆ˜ë¼ ì“°ë ˆê¸°ê°’ì„ ì¥ê³ ìˆìŒ
 		int index;
 		int count = 0;
-		while((line = buffer.readLine()) != null) { //À¥ ºê¶ó¿ìÀú(È¨ÆäÀÌÁö)ÀÇ ¼Ò½ºÄÚµå´Â ¿©·¯ÁÙÀÌ¹Ç·Î ³¡ÁÙ(null)¿¡ °¥¶§±îÁö ÀĞ¾îµéÀÌ±â À§ÇØ while¹® »ç¿ë
-			line = line.toLowerCase();//°¡Á®¿Â µ¥ÀÌÅÍ¸¦ ÀüºÎ ¼Ò¹®ÀÚ·Î ¹Ù²ãÁÜ(À¥ ºê¶ó¿ìÀú°¡ ¾Æ´Ñ console·Î ºÒ·¯¿À°í ÀÖ´Â °ªÀ» ¹Ù²Ş)
-									  //line = À» ÇØÁà¼­ ¿øº»À» µ¤¾î¹ö¸²
+		while((line = buffer.readLine()) != null) { //ì›¹ ë¸Œë¼ìš°ì €(í™ˆí˜ì´ì§€)ì˜ ì†ŒìŠ¤ì½”ë“œëŠ” ì—¬ëŸ¬ì¤„ì´ë¯€ë¡œ ëì¤„(null)ì— ê°ˆë•Œê¹Œì§€ ì½ì–´ë“¤ì´ê¸° ìœ„í•´ whileë¬¸ ì‚¬ìš©
+			line = line.toLowerCase();//ê°€ì ¸ì˜¨ ë°ì´í„°ë¥¼ ì „ë¶€ ì†Œë¬¸ìë¡œ ë°”ê¿”ì¤Œ(ì›¹ ë¸Œë¼ìš°ì €ê°€ ì•„ë‹Œ consoleë¡œ ë¶ˆëŸ¬ì˜¤ê³  ìˆëŠ” ê°’ì„ ë°”ê¿ˆ)
+									  //line = ì„ í•´ì¤˜ì„œ ì›ë³¸ì„ ë®ì–´ë²„ë¦¼
 			index = 0;
-			while((index = line.indexOf("14k", index)) != -1) { //Ã³À½ ÇÑ¹ø Ã£¾Æµµ ½ÃÀÛÀÎµ¦½º°¡ °°À¸¹Ç·Î µŞÁÙÀº ´õ ÀÌ»ó Ã£Áö ¾ÊÀ½, 
-								 							 //ÇØ´ç ¹®ÀÚ¸¦ Ã£À¸¸é ½ÃÀÛÀÎµ¦½º¸¦ ±× ´ÙÀ½ À§Ä¡ºÎÅÍ Ã£µµ·Ï  ÇØ¾ßÇÔ
-								    						 //14k 3±ÛÀÚÀÌ¹Ç·Î indexOf()ÀÇ °á°ú°ª + 3À» ÇØ¾ßÇÔ
-				index += ("14k".length()); //"14k".length() = 3(14kÀÇ ±ÛÀÚ¼ö)
+			while((index = line.indexOf("14k", index)) != -1) { //ì²˜ìŒ í•œë²ˆ ì°¾ì•„ë„ ì‹œì‘ì¸ë±ìŠ¤ê°€ ê°™ìœ¼ë¯€ë¡œ ë’·ì¤„ì€ ë” ì´ìƒ ì°¾ì§€ ì•ŠìŒ, 
+								 							 //í•´ë‹¹ ë¬¸ìë¥¼ ì°¾ìœ¼ë©´ ì‹œì‘ì¸ë±ìŠ¤ë¥¼ ê·¸ ë‹¤ìŒ ìœ„ì¹˜ë¶€í„° ì°¾ë„ë¡  í•´ì•¼í•¨
+								    						 //14k 3ê¸€ìì´ë¯€ë¡œ indexOf()ì˜ ê²°ê³¼ê°’ + 3ì„ í•´ì•¼í•¨
+				index += ("14k".length()); //"14k".length() = 3(14kì˜ ê¸€ììˆ˜)
 				count++;
 			}
 		}//while
-		System.out.println("14kÀÇ °¹¼ö = " + count);
+		System.out.println("14kì˜ ê°¯ìˆ˜ = " + count);
 		buffer.close();
 	}
 }
 
 
-//´ë¼Ò¹®ÀÚ ±¸º°¾øÀÌ ´Ù Ã£À¸¼¼¿ä 14k 14K
-//meta Á¤º¸
+//ëŒ€ì†Œë¬¸ì êµ¬ë³„ì—†ì´ ë‹¤ ì°¾ìœ¼ì„¸ìš” 14k 14K
+//meta ì •ë³´
 //Script - Java Script
 
 
-//³» Ç®ÀÌ
-//while((line = buffer.readLine()) != null) { //À¥ ºê¶ó¿ìÀú(È¨ÆäÀÌÁö)ÀÇ ¼Ò½ºÄÚµå´Â ¿©·¯ÁÙÀÌ¹Ç·Î ³¡ÁÙ(null)¿¡ °¥¶§±îÁö ÀĞ¾îµéÀÌ±â À§ÇØ while¹® »ç¿ë
+//ë‚´ í’€ì´
+//while((line = buffer.readLine()) != null) { //ì›¹ ë¸Œë¼ìš°ì €(í™ˆí˜ì´ì§€)ì˜ ì†ŒìŠ¤ì½”ë“œëŠ” ì—¬ëŸ¬ì¤„ì´ë¯€ë¡œ ëì¤„(null)ì— ê°ˆë•Œê¹Œì§€ ì½ì–´ë“¤ì´ê¸° ìœ„í•´ whileë¬¸ ì‚¬ìš©
 //	System.out.println(line + "\n");
 //	while(line.indexOf("14K") > 0 || line.indexOf("14k") >= 0) {
 //		count++;

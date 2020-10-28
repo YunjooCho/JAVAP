@@ -6,11 +6,11 @@ import static java.lang.System.out;
 public class StackTestP {
 
 	public static void main(String[] args) {
-		String[] groupA = {"¿ìÁîº£Å°½ºÅº", "Äí¿şÀÌÆ®", "»ç¿ìµğ","´ëÇÑ¹Î±¹"};
+		String[] groupA = {"ìš°ì¦ˆë² í‚¤ìŠ¤íƒ„", "ì¿ ì›¨ì´íŠ¸", "ì‚¬ìš°ë””","ëŒ€í•œë¯¼êµ­"};
 		Stack<String> stack = new Stack<String>();
 		
 		for(int i = 0; i < groupA.length; i++) {
-			stack.push(groupA[i]); //ÇÑ¹®ÀåÀÏ¶§´Â {}À» »ı·«ÇÏ´Â °æ¿ìµµ ÀÖÀ½
+			stack.push(groupA[i]); //í•œë¬¸ì¥ì¼ë•ŒëŠ” {}ì„ ìƒëµí•˜ëŠ” ê²½ìš°ë„ ìˆìŒ
 		}
 		
 		while( ! stack.isEmpty()) out.println(stack.pop());

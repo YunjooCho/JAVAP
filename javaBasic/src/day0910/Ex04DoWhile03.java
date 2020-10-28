@@ -8,36 +8,36 @@ public class Ex04DoWhile03 {
 
 	public static void main(String[] args) throws IOException {
 		
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//±âÁ¸ whileÀÇ °æ¿ì¿¡´Â
-		//while ¿·ÀÇ Á¶°Ç½ÄÀÌ false°¡ ³ª¿À¸é
-		//¹İº¹ÀÌ Áß´ÜµÇ°í
-		//true°¡ ³ª¿À¸é ¹İº¹µÇ´Â Çü½ÄÀÌ¾ú´Ù.
-		System.out.println("¼ıÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+		//ê¸°ì¡´ whileì˜ ê²½ìš°ì—ëŠ”
+		//while ì˜†ì˜ ì¡°ê±´ì‹ì´ falseê°€ ë‚˜ì˜¤ë©´
+		//ë°˜ë³µì´ ì¤‘ë‹¨ë˜ê³ 
+		//trueê°€ ë‚˜ì˜¤ë©´ ë°˜ë³µë˜ëŠ” í˜•ì‹ì´ì—ˆë‹¤.
+		System.out.println("ìˆ«ìë¥¼ í•˜ë‚˜ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 		int number = Integer.parseInt(bufferedReader.readLine());
 		while(number < 0) { 
-			System.out.println("ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
-			System.out.print("¼ıÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ìì—°ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
+			System.out.print("ìˆ«ìë¥¼ í•˜ë‚˜ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			number = Integer.parseInt(bufferedReader.readLine());
 		}
 		
-		//À§ while¹®ÀÇ °æ¿ì
-		//»ç¿ëÀÚ°¡ ¸Ç Ã³À½¿¡ 0º¸´Ù Å©°Å³ª °°Àº ¼ö¸¦ ÀÔ·ÂÇÏ¸é
-		//number < 0 ÀÌ¶ó´Â Á¶°Ç½ÄÀÌ false°¡ ³ª¿À¹Ç·Î
-		//¹İº¹ÀÌ µÇÁö ¾Ê°Ô µÈ´Ù.(while¹® ÀÚÃ¼°¡ ½ÇÇàÀÌ ¾ÈµÊ)
-		System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ıÀÚ : " + number); //0º¸´Ù Å©°Å³ª °°¾Æ¾ß ½ÇÇàµÊ
+		//ìœ„ whileë¬¸ì˜ ê²½ìš°
+		//ì‚¬ìš©ìê°€ ë§¨ ì²˜ìŒì— 0ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ì€ ìˆ˜ë¥¼ ì…ë ¥í•˜ë©´
+		//number < 0 ì´ë¼ëŠ” ì¡°ê±´ì‹ì´ falseê°€ ë‚˜ì˜¤ë¯€ë¡œ
+		//ë°˜ë³µì´ ë˜ì§€ ì•Šê²Œ ëœë‹¤.(whileë¬¸ ìì²´ê°€ ì‹¤í–‰ì´ ì•ˆë¨)
+		System.out.println("ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ«ì : " + number); //0ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ì•„ì•¼ ì‹¤í–‰ë¨
 		
 		
 		
-		//±×¿¡ ¹İÇØ¼­ do while ±¸Á¶¿¡¼­´Â
-		//¹«Á¶°Ç ÇÑ¹øÀº ½ÇÇàÀÌ µÈ´Ù.
+		//ê·¸ì— ë°˜í•´ì„œ do while êµ¬ì¡°ì—ì„œëŠ”
+		//ë¬´ì¡°ê±´ í•œë²ˆì€ ì‹¤í–‰ì´ ëœë‹¤.
 		do {
-			System.out.println("µÎ ¿ÍÀÏ Ã¹¹øÂ° ÁÙ");
+			System.out.println("ë‘ ì™€ì¼ ì²«ë²ˆì§¸ ì¤„");
 		}while(number < 0);
-		//¿©±â°¡ true°¡ ³ª¿À¸é do¹®ÀÌ ¹İº¹ 
-		//0º¸´Ù ÀÛÀº ¼ö°¡ ³ª¿À¸é ¹İº¹
+		//ì—¬ê¸°ê°€ trueê°€ ë‚˜ì˜¤ë©´ doë¬¸ì´ ë°˜ë³µ 
+		//0ë³´ë‹¤ ì‘ì€ ìˆ˜ê°€ ë‚˜ì˜¤ë©´ ë°˜ë³µ
 	}
 
 }

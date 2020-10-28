@@ -4,42 +4,42 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//2°³ÀÇ ¹è¿­À» µ¿½Ã¿¡ »ç¿ëÇØ¼­
-//ÀÌ¸§°ú ÃÑÁ¡À» µ¿½Ã¿¡ °ü¸®ÇØº¸ÀÚ(5¸í)
+//2ê°œì˜ ë°°ì—´ì„ ë™ì‹œì— ì‚¬ìš©í•´ì„œ
+//ì´ë¦„ê³¼ ì´ì ì„ ë™ì‹œì— ê´€ë¦¬í•´ë³´ì(5ëª…)
 
 public class Ex01ArrayP {
 	
 	final static int SIZE = 5;
 
 	public static void main(String[] args) throws IOException {
-	//¸Ş¸ğ¸®»ı¼º
+	//ë©”ëª¨ë¦¬ìƒì„±
 	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-	//ÀÌ¸§À» ´ã´çÇÒ ¹è¿­À» ÇÏ³ª ¸¸µéÀÚ	
+	//ì´ë¦„ì„ ë‹´ë‹¹í•  ë°°ì—´ì„ í•˜ë‚˜ ë§Œë“¤ì	
 	String[] nameArray = new String[SIZE];
 		
-	//ÃÑÁ¡À» ´ã´çÇÒ ¹è¿­À» ÇÏ³ª ¸¸µéÀÚ
+	//ì´ì ì„ ë‹´ë‹¹í•  ë°°ì—´ì„ í•˜ë‚˜ ë§Œë“¤ì
 	int[] totArray = new int[SIZE];	
 		
-	//Â÷·Ê´ë·Î ÀÔ·ÂÀ» ÇØº¸ÀÚ
+	//ì°¨ë¡€ëŒ€ë¡œ ì…ë ¥ì„ í•´ë³´ì
 	for(int i = 0; i < nameArray.length; i++) {
-		System.out.println((i+1) + "¹ø ÇĞ»ıÀÇ ÀÌ¸§ ÀÔ·Â : ");
+		System.out.println((i+1) + "ë²ˆ í•™ìƒì˜ ì´ë¦„ ì…ë ¥ : ");
 		nameArray[i] = bufferedReader.readLine();
 		
-		System.out.println(nameArray[i] + "ÇĞ»ıÀÇ ÃÑÁ¡ : ");
+		System.out.println(nameArray[i] + "í•™ìƒì˜ ì´ì  : ");
 		totArray[i] = Integer.parseInt(bufferedReader.readLine());
 		while(totArray[i] < 0 || totArray[i] > 100) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-			System.out.println(nameArray[i] + "ÇĞ»ıÀÇ ÃÑÁ¡ : ");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+			System.out.println(nameArray[i] + "í•™ìƒì˜ ì´ì  : ");
 			totArray[i] = Integer.parseInt(bufferedReader.readLine());
 		}//while
 	
 		
 	}
-	 //º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¸é ±× ÇĞ»ıÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ°Ô ¸¸µé¾îº¸ÀÚ
-	System.out.println("Ãâ·ÂÀ» Èñ¸ÁÇÏ´Â ÇĞ»ıÀÇ ¹øÈ£(1~5) : ");
+	 //ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ë©´ ê·¸ í•™ìƒì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ê²Œ ë§Œë“¤ì–´ë³´ì
+	System.out.println("ì¶œë ¥ì„ í¬ë§í•˜ëŠ” í•™ìƒì˜ ë²ˆí˜¸(1~5) : ");
 	int selectNumber = Integer.parseInt(bufferedReader.readLine());
-	System.out.printf(selectNumber + "¹ø ÇĞ»ıÀÇ ÀÌ¸§ : %s, ÃÑÁ¡ : %d", nameArray[selectNumber-1], totArray[selectNumber-1]);	
+	System.out.printf(selectNumber + "ë²ˆ í•™ìƒì˜ ì´ë¦„ : %s, ì´ì  : %d", nameArray[selectNumber-1], totArray[selectNumber-1]);	
    
 	
 	}

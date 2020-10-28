@@ -12,21 +12,21 @@ import java.awt.event.WindowEvent;
 
 public class TimerP extends Frame implements ActionListener, Runnable{
 
-	//1.ÇÊµå »ı¼º
+	//1.í•„ë“œ ìƒì„±
 	private Label label;
 	private Button startBtn, stopBtn;
 	
-	//6.¼ıÀÚ¼¼±â µ¿ÀÛ
+	//6.ìˆ«ìì„¸ê¸° ë™ì‘
 	private boolean aa = true;
 	
 	public TimerP() {
-		//3.¶óº§, ¹öÆ° »ı¼º
-		setLayout(null); //À§Ä¡¸¦ Àâ¾Æ ÁÖ¾î¾ß ÇÔ
+		//3.ë¼ë²¨, ë²„íŠ¼ ìƒì„±
+		setLayout(null); //ìœ„ì¹˜ë¥¼ ì¡ì•„ ì£¼ì–´ì•¼ í•¨
 		label = new Label();
-		label.setFont(new Font("°íµñÃ¼", Font.BOLD, 70));
+		label.setFont(new Font("ê³ ë”•ì²´", Font.BOLD, 70));
 		label.setForeground(Color.RED);
-		startBtn = new Button("½ÃÀÛ");
-		stopBtn = new Button("Á¤Áö");
+		startBtn = new Button("ì‹œì‘");
+		stopBtn = new Button("ì •ì§€");
 		
 		
 		label.setBounds(50, 50, 100, 100);
@@ -41,11 +41,11 @@ public class TimerP extends Frame implements ActionListener, Runnable{
 		startBtn.setEnabled(true);
 		stopBtn.setEnabled(false);
 		
-		//2.ÇÁ·¹ÀÓ »ı¼º
+		//2.í”„ë ˆì„ ìƒì„±
 		setBounds(800, 300, 300, 200);
 		setVisible(true);
 		setResizable(false);
-		setTitle("Å¸ÀÌ¸Ó");
+		setTitle("íƒ€ì´ë¨¸");
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -53,13 +53,13 @@ public class TimerP extends Frame implements ActionListener, Runnable{
 			}
 		});
 		
-		//5.ÀÌº¥Æ®
+		//5.ì´ë²¤íŠ¸
 		startBtn.addActionListener(this);
 		stopBtn.addActionListener(this);
 	}
 	
 
-	//4.¹öµç Å¬¸¯½Ã ÀÛµ¿
+	//4.ë²„ë“  í´ë¦­ì‹œ ì‘ë™
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Thread t;
@@ -82,7 +82,7 @@ public class TimerP extends Frame implements ActionListener, Runnable{
 	}
 	
 	
-	//7.run() ±¸Çö
+	//7.run() êµ¬í˜„
 	@Override
 	public void run() {
 		for(int i = 1; i <= 100; i++) {

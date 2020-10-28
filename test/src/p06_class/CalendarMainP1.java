@@ -1,39 +1,39 @@
 package p06_class;
 /*
-³âµµ ÀÔ·Â : 2002
-¿ù ÀÔ·Â : 10   
+ë…„ë„ ì…ë ¥ : 2002
+ì›” ì…ë ¥ : 10   
 
-ÀÏ  	 ¿ù  	  È­  	     ¼ö      ¸ñ      ±İ      Åä
+ì¼  	 ì›”  	  í™”  	     ìˆ˜      ëª©      ê¸ˆ      í† 
          1    2    3    4    5
 6    7    8    9    10   11   12
 13   14   15   16   17   18   19
 20   21   22   23   24   25   26
 27   28   29   30   31
 
-±âº»»ı¼ºÀÚ - ³âµµ, ¿ù ÀÔ·Â
-calculator() - ¸Å´Ş 1ÀÏÀÌ ¹«½¼ ¿äÀÏ·Î ½ÃÀÛ?, ¸Å´Ş ³¡³ª´Â ÀÏ? //¸Ş¼Òµå 2°³ Ã£¾Æº¸±â(+1°³ getÀÇ ¹İ´ë ¸Ş¼Òµå)
-display() - Ãâ·Â
+ê¸°ë³¸ìƒì„±ì - ë…„ë„, ì›” ì…ë ¥
+calculator() - ë§¤ë‹¬ 1ì¼ì´ ë¬´ìŠ¨ ìš”ì¼ë¡œ ì‹œì‘?, ë§¤ë‹¬ ëë‚˜ëŠ” ì¼? //ë©”ì†Œë“œ 2ê°œ ì°¾ì•„ë³´ê¸°(+1ê°œ getì˜ ë°˜ëŒ€ ë©”ì†Œë“œ)
+display() - ì¶œë ¥
 */
-//ÇöÀç ½Ã°£À» ¹Ş¾Æ¿È
+//í˜„ì¬ ì‹œê°„ì„ ë°›ì•„ì˜´
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Calendar;
 
 public class CalendarMainP1 {
-	//ÇÊµå ¼±¾ğ
+	//í•„ë“œ ì„ ì–¸
 	private int year, month, week, lastDay;
 	private BufferedReader br;
 	
 	public CalendarMainP1() throws IOException {
 		br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("³âµµ ÀÔ·Â : ");
+		System.out.print("ë…„ë„ ì…ë ¥ : ");
 		year = Integer.parseInt(br.readLine());
-		System.out.print("¿ù ÀÔ·Â : ");
+		System.out.print("ì›” ì…ë ¥ : ");
 		month = Integer.parseInt(br.readLine());
 		while(month < 1 || month > 12) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
-			System.out.print("¿ù ÀÔ·Â : ");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
+			System.out.print("ì›” ì…ë ¥ : ");
 			month  = Integer.parseInt(br.readLine());
 		}
 	}
@@ -41,15 +41,15 @@ public class CalendarMainP1 {
 	public void calculator() {
 		Calendar cal = Calendar.getInstance();
 		cal.set(year, month - 1, 1); 
-		//CalendarÅ¬·¡½ºÀÇ Æ¯¼ºÀÎ ÇöÀç ½Ã½ºÅÛÀÇ ³¯Â¥¿Í ½Ã°£À» °¡Á®¿À´Â °ÍÀÌ ¾Æ´Ñ 
-		//ÀÔ·Â ¹ŞÀº ³âµµ, ÀÔ·Â¹ŞÀº ´Ş, ¸Å¿ù 1ÀÏ·Î ¼³Á¤
+		//Calendarí´ë˜ìŠ¤ì˜ íŠ¹ì„±ì¸ í˜„ì¬ ì‹œìŠ¤í…œì˜ ë‚ ì§œì™€ ì‹œê°„ì„ ê°€ì ¸ì˜¤ëŠ” ê²ƒì´ ì•„ë‹Œ 
+		//ì…ë ¥ ë°›ì€ ë…„ë„, ì…ë ¥ë°›ì€ ë‹¬, ë§¤ì›” 1ì¼ë¡œ ì„¤ì •
 		week = cal.get(cal.DAY_OF_WEEK);
 		lastDay = cal.getActualMaximum(cal.DAY_OF_MONTH);
 	}
 	
 	public void display() {
 		System.out.println("week = " + week);
-		System.out.println("ÀÏ\t¿ù\tÈ­\t¼ö\t¸ñ\t±İ\tÅä");
+		System.out.println("ì¼\tì›”\tí™”\tìˆ˜\tëª©\tê¸ˆ\tí† ");
 		for(int i = 1; i < week; i++) {
 			System.out.print("\t");
 		}

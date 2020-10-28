@@ -3,65 +3,65 @@ package collection;
 import java.text.DecimalFormat;
 
 /*
-¼ºÀû°ü¸® ÇÁ·Î±×·¥
+ì„±ì ê´€ë¦¬ í”„ë¡œê·¸ëž¨
 
-1. ¹øÈ£, ÀÌ¸§, ±¹¾î, ¿µ¾î, ¼öÇÐÁ¡¼ö¸¦ ÀÔ·ÂÇÏ¿© ÃÑÁ¡°ú Æò±ÕÀ» ±¸ÇÏ½Ã¿À
-2. °¢ ±â´É¿¡ µû¶ó 3°³ÀÇ Å¬·¡½º·Î ³ª´©¾î ÀÛ¼ºÇÏ½Ã¿À
-     SungJukDTO.java - 1ÀÎºÐ
+1. ë²ˆí˜¸, ì´ë¦„, êµ­ì–´, ì˜ì–´, ìˆ˜í•™ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì—¬ ì´ì ê³¼ í‰ê· ì„ êµ¬í•˜ì‹œì˜¤
+2. ê° ê¸°ëŠ¥ì— ë”°ë¼ 3ê°œì˜ í´ëž˜ìŠ¤ë¡œ ë‚˜ëˆ„ì–´ ìž‘ì„±í•˜ì‹œì˜¤
+     SungJukDTO.java - 1ì¸ë¶„
      SungJukService.java
-     SungJukMain.java - È£Ãâ¸¸, ¿©±â´Â ÀÛ¼ºÇÑ ³»¿ë ÀÌ»ó ¼öÁ¤, ÀÔ·ÂÀÌ ºÒÇÊ¿ä
-3.Æò±ÕÀº ¼Ò¼öÀÌÇÏ 3Â°ÀÚ¸®±îÁö Ãâ·Â
-  ¼Ò¼öÀÌÇÏ ÀÚ¸®°ªÀÌ 0ÀÌ¸é Ãâ·ÂÇÏÁö ¾Ê´Â´Ù
-  92.000 ¡æ 92·Î Ãâ·ÂÇÏ½Ã¿À
-4. ¹øÈ£´Â Áßº¹µÇÁö¾Ê°Ô ÀÔ·ÂÇÑ´Ù
-5. ÀÌ¸§Àº Áßº¹µÇ¾îµµ µÊ(Áßº¹ µÇ´Â °æ¿ì ´ÙÀ½¹øÈ£°¡ ÇÒ´çµÊ, ¶È°°Àº ÀÌ¸§À» ÀÔ·ÂÇØº¸±â)
+     SungJukMain.java - í˜¸ì¶œë§Œ, ì—¬ê¸°ëŠ” ìž‘ì„±í•œ ë‚´ìš© ì´ìƒ ìˆ˜ì •, ìž…ë ¥ì´ ë¶ˆí•„ìš”
+3.í‰ê· ì€ ì†Œìˆ˜ì´í•˜ 3ì§¸ìžë¦¬ê¹Œì§€ ì¶œë ¥
+  ì†Œìˆ˜ì´í•˜ ìžë¦¬ê°’ì´ 0ì´ë©´ ì¶œë ¥í•˜ì§€ ì•ŠëŠ”ë‹¤
+  92.000 â†’ 92ë¡œ ì¶œë ¥í•˜ì‹œì˜¤
+4. ë²ˆí˜¸ëŠ” ì¤‘ë³µë˜ì§€ì•Šê²Œ ìž…ë ¥í•œë‹¤
+5. ì´ë¦„ì€ ì¤‘ë³µë˜ì–´ë„ ë¨(ì¤‘ë³µ ë˜ëŠ” ê²½ìš° ë‹¤ìŒë²ˆí˜¸ê°€ í• ë‹¹ë¨, ë˜‘ê°™ì€ ì´ë¦„ì„ ìž…ë ¥í•´ë³´ê¸°)
 
 menu()
 *****************
-   1. ÀÔ·Â  //¾î·Á¿ò
-   2. Ãâ·Â
-   3. °Ë»ö
-   4. »èÁ¦  //¾î·Á¿ò
-   5. Á¤·Ä  //³»ÀÏ °­»ç´ÔÀÌ¶û ÇÒ ¿¹Á¤
-   6. ³¡
+   1. ìž…ë ¥  //ì–´ë ¤ì›€
+   2. ì¶œë ¥
+   3. ê²€ìƒ‰
+   4. ì‚­ì œ  //ì–´ë ¤ì›€
+   5. ì •ë ¬  //ë‚´ì¼ ê°•ì‚¬ë‹˜ì´ëž‘ í•  ì˜ˆì •
+   6. ë
 *****************
-   ¹øÈ£ : 8
-1~6Áß¿¡ ¼±ÅÃÇÏ¼¼¿ä
+   ë²ˆí˜¸ : 8
+1~6ì¤‘ì— ì„ íƒí•˜ì„¸ìš”
 
 insertArticle()
-¹øÈ£ ÀÔ·Â :
-ÀÌ¸§ ÀÔ·Â :
-±¹¾î ÀÔ·Â :
-¿µ¾î ÀÔ·Â :
-¼öÇÐ ÀÔ·Â :
+ë²ˆí˜¸ ìž…ë ¥ :
+ì´ë¦„ ìž…ë ¥ :
+êµ­ì–´ ìž…ë ¥ :
+ì˜ì–´ ìž…ë ¥ :
+ìˆ˜í•™ ìž…ë ¥ :
 
 printArticle()
-¹øÈ£          ÀÌ¸§         ±¹¾î        ¿µ¾î          ¼öÇÐ         ÃÑÁ¡           Æò±Õ
-15      È«±æµ¿        90      92      91      xxx      xx.xxx
-30      ¶ÇÄ¡           85      92      100     xxx      xx.xxx
+ë²ˆí˜¸          ì´ë¦„         êµ­ì–´        ì˜ì–´          ìˆ˜í•™         ì´ì            í‰ê· 
+15      í™ê¸¸ë™        90      92      91      xxx      xx.xxx
+30      ë˜ì¹˜           85      92      100     xxx      xx.xxx
 
 searchArticle()
-°Ë»ö ÇÒ ÀÌ¸§ ÀÔ·Â : ÄÚ³­
-Ã£°íÀÚ ÇÏ´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù
+ê²€ìƒ‰ í•  ì´ë¦„ ìž…ë ¥ : ì½”ë‚œ
+ì°¾ê³ ìž í•˜ëŠ” ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤
 
-°Ë»ö ÇÒ ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-¹øÈ£   ÀÌ¸§   ±¹¾î   ¿µ¾î   ¼öÇÐ   ÃÑÁ¡   Æò±Õ
-15      È«±æµ¿   90      92      91      xxx      xx.xxx
-16      È«±æµ¿   89      45      78      xxx      xx.xxx
+ê²€ìƒ‰ í•  ì´ë¦„ ìž…ë ¥ : í™ê¸¸ë™
+ë²ˆí˜¸   ì´ë¦„   êµ­ì–´   ì˜ì–´   ìˆ˜í•™   ì´ì    í‰ê· 
+15      í™ê¸¸ë™   90      92      91      xxx      xx.xxx
+16      í™ê¸¸ë™   89      45      78      xxx      xx.xxx
 
-deleteArticle() - ¶È°°Àº ÀÌ¸§ÀÌ ÀÖÀ¸¸é ÇØ´ç ÀÌ¸§À» ¸ðµÎ »èÁ¦
-»èÁ¦ ÇÒ ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ¿´½À´Ï´Ù
+deleteArticle() - ë˜‘ê°™ì€ ì´ë¦„ì´ ìžˆìœ¼ë©´ í•´ë‹¹ ì´ë¦„ì„ ëª¨ë‘ ì‚­ì œ
+ì‚­ì œ í•  ì´ë¦„ ìž…ë ¥ : í™ê¸¸ë™
+ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤
 
 sortArticle()
-1. ÀÌ¸§À¸·Î ¿À¸§Â÷¼ø
-2. ÃÑÁ¡À¸·Î ³»¸²Â÷¼ø
-3. ÀÌÀü¸Þ´º
- ¹øÈ£ ÀÔ·Â : 
+1. ì´ë¦„ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ
+2. ì´ì ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ
+3. ì´ì „ë©”ë‰´
+ ë²ˆí˜¸ ìž…ë ¥ : 
 
 */
 public class SungJukDTO implements Comparable<SungJukDTO>{
-	//1.ÇÊµå ¼±¾ð
+	//1.í•„ë“œ ì„ ì–¸
 	private int no;
 	private String name;
 	private int kor;
@@ -70,7 +70,7 @@ public class SungJukDTO implements Comparable<SungJukDTO>{
 	private int tot;
 	private double avg;
 	
-	//2.Ä¸½¶È­
+	//2.ìº¡ìŠí™”
 	public void setNo(int no) {
 		this.no = no;
 	}
@@ -123,10 +123,10 @@ public class SungJukDTO implements Comparable<SungJukDTO>{
 	
 	public void calc() {
 		tot = kor + eng + math;
-		avg = tot / 3.0; //avg = tot / 3.; ->ÀÌ°Íµµ »ç¿ë°¡´É
+		avg = tot / 3.0; //avg = tot / 3.; ->ì´ê²ƒë„ ì‚¬ìš©ê°€ëŠ¥
 	}
 	
-	//printerArticle¿¡¼­ Ãâ·Â½Ã »ç¿ë
+	//printerArticleì—ì„œ ì¶œë ¥ì‹œ ì‚¬ìš©
 	@Override
 	public String toString() {
 		DecimalFormat df = new DecimalFormat("#.###");
@@ -140,8 +140,8 @@ public class SungJukDTO implements Comparable<SungJukDTO>{
 	}
 	
 	
-	//sortÇÔ¼ö°¡ ºÒ·¯¼­ »ç¿ë, ´©°¡ Å«Áö ÀÛÀºÁö ±âÁØÁ¡À» ¾Ë·ÁÁÖ¸é sort°¡ Á¤·Ä
-	public int compareTo(SungJukDTO s) { //Comparator, ÇÊµå¿¡ ÀúÀåµÈ °ª°ú ÆÄ¶ó¹ÌÅÍ(¾îµð¼­ ¿Â °ª?), ³»¸²Â÷¼ø
+	//sortí•¨ìˆ˜ê°€ ë¶ˆëŸ¬ì„œ ì‚¬ìš©, ëˆ„ê°€ í°ì§€ ìž‘ì€ì§€ ê¸°ì¤€ì ì„ ì•Œë ¤ì£¼ë©´ sortê°€ ì •ë ¬
+	public int compareTo(SungJukDTO s) { //Comparator, í•„ë“œì— ì €ìž¥ëœ ê°’ê³¼ íŒŒë¼ë¯¸í„°(ì–´ë””ì„œ ì˜¨ ê°’?), ë‚´ë¦¼ì°¨ìˆœ
 		if(this.tot < s.tot) {
 			return 1;
 		}else if(this.tot > s.tot) {

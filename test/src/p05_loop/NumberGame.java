@@ -5,56 +5,56 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-¼ıÀÚ¸ÂÃß±â °ÔÀÓ
-1~100»çÀÌÀÇ ³­¼ö¸¦ ¹ß»ıÇÏ¿© ¸ÂÃß´Â °ÔÀÓ
+ìˆ«ìë§ì¶”ê¸° ê²Œì„
+1~100ì‚¬ì´ì˜ ë‚œìˆ˜ë¥¼ ë°œìƒí•˜ì—¬ ë§ì¶”ëŠ” ê²Œì„
 
-[½ÇÇà°á°ú]
-¼ıÀÚ ÀÔ·Â : 50
-50º¸´Ù Å®´Ï´Ù
+[ì‹¤í–‰ê²°ê³¼]
+ìˆ«ì ì…ë ¥ : 50
+50ë³´ë‹¤ í½ë‹ˆë‹¤
 
-¼ıÀÚ ÀÔ·Â : 90
-90º¸´Ù ÀÛ½À´Ï´Ù
+ìˆ«ì ì…ë ¥ : 90
+90ë³´ë‹¤ ì‘ìŠµë‹ˆë‹¤
 
 ...
 
-¼ıÀÚ ÀÔ·Â : 87
-µùµ¿µ­ xx¹ø¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù        
+ìˆ«ì ì…ë ¥ : 87
+ë”©ë™ë… xxë²ˆë§Œì— ë§ì¶”ì…¨ìŠµë‹ˆë‹¤        
 
 continue(Y/N) : n
-ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù
+í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤
  */
 
-//XX¹ø a++ 
-//while(true){ //À§´Â while¹® ÇÏ³ª & continued¿¡¼­ while¹® 2°³
+//XXë²ˆ a++ 
+//while(true){ //ìœ„ëŠ” whileë¬¸ í•˜ë‚˜ & continuedì—ì„œ whileë¬¸ 2ê°œ
 //break;
 //}
-//for(;;){ <-¹«ÇÑ·çÇÁ
+//for(;;){ <-ë¬´í•œë£¨í”„
 //}
 //for(;true;){
 //}
-//continue(Y/N)  if¹®? - È¥ÀÚ ¸øÇÏ°ÚÀ¸¸é ³»ÀÏ ¼±»ı´ÔÀÌ¶û °°ÀÌ while ¾ÈÀÇ while
+//continue(Y/N)  ifë¬¸? - í˜¼ì ëª»í•˜ê² ìœ¼ë©´ ë‚´ì¼ ì„ ìƒë‹˜ì´ë‘ ê°™ì´ while ì•ˆì˜ while
 
 public class NumberGame {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//a~b »çÀÌÀÇ ³­¼ö ¹ß»ı => (int)(math.random()*(b-a+1) + a);
+		//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(b-a+1) + a);
 		int number = (int)(Math.random()*100 + 1);
 		int input;
 		int count = 0;
 		while(true) {
 			
 			++count;
-			System.out.print("¼ıÀÚ ÀÔ·Â :");
+			System.out.print("ìˆ«ì ì…ë ¥ :");
 			input = Integer.parseInt(br.readLine());
 			
 			if(input < number) {
-				System.out.println(input + " º¸´Ù Å®´Ï´Ù");
+				System.out.println(input + " ë³´ë‹¤ í½ë‹ˆë‹¤");
 			}else if(input > number) {
-				System.out.println(input + "º¸´Ù ÀÛ½À´Ï´Ù");
+				System.out.println(input + "ë³´ë‹¤ ì‘ìŠµë‹ˆë‹¤");
 			}else {
-				System.out.println("µùµ¿µ­~ " + count + "¹ø¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù.");
+				System.out.println("ë”©ë™ë…~ " + count + "ë²ˆë§Œì— ë§ì¶”ì…¨ìŠµë‹ˆë‹¤.");
 				System.out.print("continue(Y/N)? ");
 				String yn = br.readLine().toUpperCase();
 				while(true) {
@@ -62,7 +62,7 @@ public class NumberGame {
 					break;
 				}
 				if(yn.equals("N")) {
-					System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+					System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 					break;
 				}
 			}

@@ -25,12 +25,12 @@ public class Packman extends Frame implements KeyListener, Runnable {
 
 	
 	
-	//1.¸ÔÀÌ ÀÌ¹ÌÁö 20, 20 (o)
+	//1.ë¨¹ì´ ì´ë¯¸ì§€ 20, 20 (o)
 	//Image foodImg (o)
-	//int[] foodx, foody -> 5°³ÀÇ ¸ÔÀÌ¸¦ »Ñ¸°´Ù for¹®µ¹·Á¼­ x, y¿¡ Áı¾î³Ö±â (o)
-	//³­¼ö·Î ÁÂÇ¥ ¹ß»ı 0~500(o)
-	//ÆÑ¸Ç À§Ä¡(x - 25, y - 25)  == À½½Ä À§Ä¡(foodx[0], foody[0]) : À½½ÄÀ§Ä¡¸¦ -100, -100À¸·Î Áö¿ò
-	//Á¤È®ÇÑ À§Ä¡°¡ ¾Æ´Ñ ¹Ù¿î´õ¸®(±Ù»çÄ¡)¿¡ Á¢±ÙÇÏ¸é ¸ÔÀº°É·Î Ãë±Ş - ¸ÔÀÌÀÇ Å©±â¸¦ °¡»óÀ¸·Î ´õ Å©°Ô ÀâÀ½(20,20º¸´Ù Å©°Ô »ı°¢ - foodx[0] -5 , foody[0]-5, foodx[0] + 25, foody[0] + 25 )
+	//int[] foodx, foody -> 5ê°œì˜ ë¨¹ì´ë¥¼ ë¿Œë¦°ë‹¤ forë¬¸ëŒë ¤ì„œ x, yì— ì§‘ì–´ë„£ê¸° (o)
+	//ë‚œìˆ˜ë¡œ ì¢Œí‘œ ë°œìƒ 0~500(o)
+	//íŒ©ë§¨ ìœ„ì¹˜(x - 25, y - 25)  == ìŒì‹ ìœ„ì¹˜(foodx[0], foody[0]) : ìŒì‹ìœ„ì¹˜ë¥¼ -100, -100ìœ¼ë¡œ ì§€ì›€
+	//ì •í™•í•œ ìœ„ì¹˜ê°€ ì•„ë‹Œ ë°”ìš´ë”ë¦¬(ê·¼ì‚¬ì¹˜)ì— ì ‘ê·¼í•˜ë©´ ë¨¹ì€ê±¸ë¡œ ì·¨ê¸‰ - ë¨¹ì´ì˜ í¬ê¸°ë¥¼ ê°€ìƒìœ¼ë¡œ ë” í¬ê²Œ ì¡ìŒ(20,20ë³´ë‹¤ í¬ê²Œ ìƒê° - foodx[0] -5 , foody[0]-5, foodx[0] + 25, foody[0] + 25 )
 	
 	
 	public Packman() {
@@ -46,16 +46,16 @@ public class Packman extends Frame implements KeyListener, Runnable {
 		
 		this.addKeyListener(this);
 		
-		//½º·¹µå »ı¼º
+		//ìŠ¤ë ˆë“œ ìƒì„±
 		 Thread t = new Thread(this);
-		//½º·¹µå ½ÇÇà
+		//ìŠ¤ë ˆë“œ ì‹¤í–‰
 		 t.start();
  
-		 //¸ÔÀÌ ¸¸µé±â
+		 //ë¨¹ì´ ë§Œë“¤ê¸°
 		 for(int i = 0; i < foodx.length; i++) {
-			//³­¼ö -ÄÄÇ»ÅÍ°¡ ¹«ÀÛÀ§·Î ¹ß»ıÇÏ´Â ¼ö, 0 <= ³­¼ö < 1 (½Ç¼öÇü)
-			//a~b »çÀÌÀÇ ³­¼ö ¹ß»ı => (int)(math.random()*(b-a+1) + a);
-			//¿µ¿ªÀÇ ¹üÀ§´Â 50~450À¸·Î ÀâÀ½(¸ÔÀÌ°¡ °ø°£¿¡¼­ Â©¸®´Â ÀÏÀÌ ¾øµµ·Ï)
+			//ë‚œìˆ˜ -ì»´í“¨í„°ê°€ ë¬´ì‘ìœ„ë¡œ ë°œìƒí•˜ëŠ” ìˆ˜, 0 <= ë‚œìˆ˜ < 1 (ì‹¤ìˆ˜í˜•)
+			//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(b-a+1) + a);
+			//ì˜ì—­ì˜ ë²”ìœ„ëŠ” 50~450ìœ¼ë¡œ ì¡ìŒ(ë¨¹ì´ê°€ ê³µê°„ì—ì„œ ì§¤ë¦¬ëŠ” ì¼ì´ ì—†ë„ë¡)
 			 foodx[i] = (int)(Math.random()*401) + 50;
 			 foody[i] = (int)(Math.random()*401) + 50;	
 			 
@@ -70,23 +70,23 @@ public class Packman extends Frame implements KeyListener, Runnable {
 	
 	public void paint(Graphics g) {
 		
-		img = Toolkit.getDefaultToolkit().getImage("pacman.png"); //ÇÊµå·Î Àâ¾Æµµ µÊ, ÀÌ °æ¿ì¿¡´Â »ı¼ºÀÚ¿¡¼­ »ı¼º
-		g.drawImage(img, x, y, x+50, y+50, sel*50, 0, sel*50+50, 50, this); //¡Ú¡ÚÁÂÇ¥ ±ÔÄ¢Ã£±â, ¼±»ı´Ô Ç®ÀÌ ½Ä °è»êÇÏ±â
+		img = Toolkit.getDefaultToolkit().getImage("pacman.png"); //í•„ë“œë¡œ ì¡ì•„ë„ ë¨, ì´ ê²½ìš°ì—ëŠ” ìƒì„±ìì—ì„œ ìƒì„±
+		g.drawImage(img, x, y, x+50, y+50, sel*50, 0, sel*50+50, 50, this); //â˜…â˜…ì¢Œí‘œ ê·œì¹™ì°¾ê¸°, ì„ ìƒë‹˜ í’€ì´ ì‹ ê³„ì‚°í•˜ê¸°
 
 		for(int i = 0; i < foodx.length; i++) {
-			foodImg = Toolkit.getDefaultToolkit().getImage("food.jpg"); //ÇÊµå·Î Àâ¾Æµµ µÊ, ÀÌ °æ¿ì¿¡´Â »ı¼ºÀÚ¿¡¼­ »ı¼º
-			g.drawImage(foodImg, foodx[i], foody[i], this);	//¿©±â´Â x,yÁÂÇ¥¸¸ ¹è¿­À» ÅëÇØ¼­ ÀÔ·Â(ÆÑ¸ÇÃ³·³ ¿©·¯ ÆÄ¶ó¹ÌÅÍ¸¦ ÀÔ·ÂÇÒ ÇÊ¿ä ¾øÀ½)
+			foodImg = Toolkit.getDefaultToolkit().getImage("food.jpg"); //í•„ë“œë¡œ ì¡ì•„ë„ ë¨, ì´ ê²½ìš°ì—ëŠ” ìƒì„±ìì—ì„œ ìƒì„±
+			g.drawImage(foodImg, foodx[i], foody[i], this);	//ì—¬ê¸°ëŠ” x,yì¢Œí‘œë§Œ ë°°ì—´ì„ í†µí•´ì„œ ì…ë ¥(íŒ©ë§¨ì²˜ëŸ¼ ì—¬ëŸ¬ íŒŒë¼ë¯¸í„°ë¥¼ ì…ë ¥í•  í•„ìš” ì—†ìŒ)
 			g.drawString("-", foodx[i], foody[i]);
 		}
 		
-		g.drawString("¹è°íÆÄ", x, y);
+		g.drawString("ë°°ê³ íŒŒ", x, y);
 		
 		
-		//¡Ú¡Ú¡ÚÀÌºÎºĞ °è»êÇØ¼­ ±ÔÄ¢Ã£±â
+		//â˜…â˜…â˜…ì´ë¶€ë¶„ ê³„ì‚°í•´ì„œ ê·œì¹™ì°¾ê¸°
 		//sel*50, 0, sel*50, 50
-		//¿ŞÂÊ         0, 0,  50, 50 sel = 0
+		//ì™¼ìª½         0, 0,  50, 50 sel = 0
 		//       50, 0, 100, 50 sel = 1
-		//¿À¸¥ÂÊ   100, 0, 150, 50 sel = 2
+		//ì˜¤ë¥¸ìª½   100, 0, 150, 50 sel = 2
 		//      150, 0, 200, 50 sel = 3
 		
 		/*
@@ -96,20 +96,20 @@ public class Packman extends Frame implements KeyListener, Runnable {
 		dy1 the y coordinate of the first corner of thedestination rectangle.
 		dx2 the x coordinate of the second corner of thedestination rectangle.
 		dy2 the y coordinate of the second corner of thedestination rectangle.
-		sx1 the x coordinate of the first corner of thesource rectangle. //±×¸²ÀÇ ¿ŞÂÊÀ§  x
-		sy1 the y coordinate of the first corner of thesource rectangle. //±×¸²ÀÇ ¿ŞÂÊ À§ y
-		sx2 the x coordinate of the second corner of thesource rectangle.//±×¸²ÀÇ ¿À¸¥ÂÊ ¾Æ·¡ x
-		sy2 the y coordinate of the second corner of thesource rectangle.//±×¸²ÀÇ ¿À¸¥ÂÊ ¾Æ·¡ y
+		sx1 the x coordinate of the first corner of thesource rectangle. //ê·¸ë¦¼ì˜ ì™¼ìª½ìœ„  x
+		sy1 the y coordinate of the first corner of thesource rectangle. //ê·¸ë¦¼ì˜ ì™¼ìª½ ìœ„ y
+		sx2 the x coordinate of the second corner of thesource rectangle.//ê·¸ë¦¼ì˜ ì˜¤ë¥¸ìª½ ì•„ë˜ x
+		sy2 the y coordinate of the second corner of thesource rectangle.//ê·¸ë¦¼ì˜ ì˜¤ë¥¸ìª½ ì•„ë˜ y
 		observer object to be notified as more of the image isscaled and converted.
 	    */
 
 	}
 	
 	
-    //¿À¹ö¶óÀÌµå
+    //ì˜¤ë²„ë¼ì´ë“œ
 	public void run() {
 		while(true) {
-			if(sel % 2 == 0) { //¹İº¹¹® + ¹ø°¥¾Æ°¡¸é¼­ ³ª¿Àµµ·Ï º¯°æ
+			if(sel % 2 == 0) { //ë°˜ë³µë¬¸ + ë²ˆê°ˆì•„ê°€ë©´ì„œ ë‚˜ì˜¤ë„ë¡ ë³€ê²½
 				sel++;
 			}else {
 				sel--;
@@ -124,9 +124,9 @@ public class Packman extends Frame implements KeyListener, Runnable {
 //			System.out.println("x= " + x);
 //			System.out.println("y= " + y);
 			
-			//½Ä»ç
-			//x,y´Â °è¼Ó ¿òÁ÷ÀÓ
-			for(int i = 0; i < foodx.length; i++) { //¼ø¼­»ó°ü¾øÀÌ while¹® ¾È¿¡¸¸ ÀÖÀ¸¸é µÊ
+			//ì‹ì‚¬
+			//x,yëŠ” ê³„ì† ì›€ì§ì„
+			for(int i = 0; i < foodx.length; i++) { //ìˆœì„œìƒê´€ì—†ì´ whileë¬¸ ì•ˆì—ë§Œ ìˆìœ¼ë©´ ë¨
 //				System.out.println("foodx[" + i + "] = " + foodx[i]);
 //				System.out.println("foody[" + i + "] = " + foody[i]);
 //				if(x + 25 >= foodx[i] - 5 && x + 25 <= foodx[i] + 25) {
@@ -134,23 +134,23 @@ public class Packman extends Frame implements KeyListener, Runnable {
 //						if(y + 25 >= foody[j] - 5 && y + 25 <= foody[j]) {
 //							foodx[i] = -100;
 //							foody[j] = -100;
-//							System.out.println("¸Ô¾ú´Ù");
+//							System.out.println("ë¨¹ì—ˆë‹¤");
 //						}
 //					}
 //				}
 				if(x + 25 >= foodx[i] - 5 && x + 25 <= foodx[i] + 20 && y + 25 >= foody[i] - 5 && y + 25 <= foody[i] + 20) {
-					foodx[i] = -100; //ÇÑ¹ø ±×¸° ±×¸²Àº Áö¿ï ¼ö ¾øÀ¸¹Ç·Î ÁÂÇ¥¸¦ º¸ÀÌÁö ¾Ê´Â °÷¿¡ ´Ù½Ã ±×¸®µµ·Ï ÇÔ
+					foodx[i] = -100; //í•œë²ˆ ê·¸ë¦° ê·¸ë¦¼ì€ ì§€ìš¸ ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ì¢Œí‘œë¥¼ ë³´ì´ì§€ ì•ŠëŠ” ê³³ì— ë‹¤ì‹œ ê·¸ë¦¬ë„ë¡ í•¨
 					foody[i] = -100;
-//					System.out.println("¸Ô¾ú´Ù");
+//					System.out.println("ë¨¹ì—ˆë‹¤");
 				}
 			}
 			
 			repaint();
 			try {
-				Thread.sleep(100); //Ã³¸®¼Óµµ°¡ »¡¶ó ±Û¾¾°¡ Àß ¾Èº¸ÀÓ. Áö±İ ¸í·ÉÀ¸·Î ¿òÁ÷ÀÌ´Â ½Ã°£ÀÌ ±×·¡µµ ÂïÈû
+				Thread.sleep(100); //ì²˜ë¦¬ì†ë„ê°€ ë¹¨ë¼ ê¸€ì”¨ê°€ ì˜ ì•ˆë³´ì„. ì§€ê¸ˆ ëª…ë ¹ìœ¼ë¡œ ì›€ì§ì´ëŠ” ì‹œê°„ì´ ê·¸ë˜ë„ ì°í˜
 			} catch (InterruptedException e) {
 			e.printStackTrace();
-			} // ±âº»ÀÌ 1 / 1000ÃÊ
+			} // ê¸°ë³¸ì´ 1 / 1000ì´ˆ
 		}
 	}
 	
@@ -159,7 +159,7 @@ public class Packman extends Frame implements KeyListener, Runnable {
 	public void keyTyped(KeyEvent e) {}
 
 
-	//ÀÌ¹ÌÁö¸¦ »õ·Î »ı¼ºÇÏ´Â °ÍÀÌ ¾Æ´Ñ ¾È¿¡ ÀÖ´Â °ªÀ» º¯°æÇÏ¿© ´Ù¸¥ ±×¸²À» Ãâ·ÂÇÏµµ·ÏÇÔ
+	//ì´ë¯¸ì§€ë¥¼ ìƒˆë¡œ ìƒì„±í•˜ëŠ” ê²ƒì´ ì•„ë‹Œ ì•ˆì— ìˆëŠ” ê°’ì„ ë³€ê²½í•˜ì—¬ ë‹¤ë¥¸ ê·¸ë¦¼ì„ ì¶œë ¥í•˜ë„ë¡í•¨
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -177,7 +177,7 @@ public class Packman extends Frame implements KeyListener, Runnable {
 		}else if(e.getKeyCode() == KeyEvent.VK_ESCAPE) {
 			System.exit(0);
 		}
-		//repaint()¸¦  run()À¸·Î ÀÌµ¿
+		//repaint()ë¥¼  run()ìœ¼ë¡œ ì´ë™
 	}
 
 

@@ -1,14 +1,14 @@
 package collection;
 
 //2020.10.12
-//DTO, VO : 1ÀÎºĞ
-//DAO : µ¥ÀÌÅÍº£ÀÌ½º(Database Access Object)
+//DTO, VO : 1ì¸ë¶„
+//DAO : ë°ì´í„°ë² ì´ìŠ¤(Database Access Object)
 public class PersonDTO implements Comparable<PersonDTO> {//(Comparable)
 	private String name;
 	private int age;
 	
 	public PersonDTO(String name, int age) {
-		//super(); - ÇÊ¿ä¾øÀ¸¸é(»ó¼Ó »ç¿ëÇÏÁö ¾ÊÀ¸¸é) Áö¿ò
+		//super(); - í•„ìš”ì—†ìœ¼ë©´(ìƒì† ì‚¬ìš©í•˜ì§€ ì•Šìœ¼ë©´) ì§€ì›€
 		this.name = name;
 		this.age = age;
 	}
@@ -26,10 +26,10 @@ public class PersonDTO implements Comparable<PersonDTO> {//(Comparable)
 	}
 	
 	//2020.10.13
-	//implement ComparableÀÇ ±¸Çö(¿À¹ö¶óÀÌµù)
+	//implement Comparableì˜ êµ¬í˜„(ì˜¤ë²„ë¼ì´ë”©)
 	@Override
-	public int compareTo(PersonDTO o) { //±âÁØÁ¡ ¼³Á¤, °´Ã¼³¢¸® ºñ±³(Comparable)
-		//¿À¸§Â÷¼ø
+	public int compareTo(PersonDTO o) { //ê¸°ì¤€ì  ì„¤ì •, ê°ì²´ë¼ë¦¬ ë¹„êµ(Comparable)
+		//ì˜¤ë¦„ì°¨ìˆœ
 		/*
 		if(this.age < o.age) return -1;
 		else if(this.age > o.age) return 1;
@@ -37,14 +37,14 @@ public class PersonDTO implements Comparable<PersonDTO> {//(Comparable)
 		else return 0;
 		*/
 		
-		//³»¸²Â÷¼ø
+		//ë‚´ë¦¼ì°¨ìˆœ
 		if(this.age < o.age) return 1;
 		else if(this.age > o.age) return -1;
 		else return 0;
 	}
 	@Override
 	public String toString() {//(Comparable)
-		return "ÀÌ¸§ = " + name + " ³ªÀÌ = " + age;
+		return "ì´ë¦„ = " + name + " ë‚˜ì´ = " + age;
 	}
 	
 	

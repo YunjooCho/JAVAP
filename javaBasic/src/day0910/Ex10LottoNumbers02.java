@@ -1,27 +1,27 @@
 package day0910;
-//·Î¶Ç ¹øÈ£Á¦ÀÛ±â 2¹ø
-//»ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ¸¦ ÀÔ·Â ¹Ş¾Æ¼­
-//6°³°¡ ´Ù ¸ÂÀ»½Ã: 1µî
-//5°³°¡ ¸ÂÀ»½Ã: 2µî
-//4°³: 3µî
-//3°³: 4µî
-//ÀÌ Ãâ·ÂµÇ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-//´Ü »ç¿ëÀÚ°¡ 1~45¸¦ ¹ş¾î³­ °ªÀ» ÀÔ·ÂÇÏ¸é
-//¿Ã¹Ù¸¥ °ªÀ» ÀÔ·ÂÇÒ¶§±îÁö ´Ù½Ã ÀÔ·ÂÀ» ÇÏ°Ô ¸¸µå¼¼¿ä
+//ë¡œë˜ ë²ˆí˜¸ì œì‘ê¸° 2ë²ˆ
+//ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ìë¥¼ ì…ë ¥ ë°›ì•„ì„œ
+//6ê°œê°€ ë‹¤ ë§ì„ì‹œ: 1ë“±
+//5ê°œê°€ ë§ì„ì‹œ: 2ë“±
+//4ê°œ: 3ë“±
+//3ê°œ: 4ë“±
+//ì´ ì¶œë ¥ë˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+//ë‹¨ ì‚¬ìš©ìê°€ 1~45ë¥¼ ë²—ì–´ë‚œ ê°’ì„ ì…ë ¥í•˜ë©´
+//ì˜¬ë°”ë¥¸ ê°’ì„ ì…ë ¥í• ë•Œê¹Œì§€ ë‹¤ì‹œ ì…ë ¥ì„ í•˜ê²Œ ë§Œë“œì„¸ìš”
 
-//ÇÁ·Î±×·¥ ¿¹½Ã:
-//·Î¶Ç¹øÈ£ ÃßÃ· ¿Ï·á
-//1¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 3
-//2¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 1
-//3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 1000
-//Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.
-//3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: -150
-//Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.
-//3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 43
-//4¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 23
-//5¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 12
-//6¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 11
-//ÃÑ 4°³ ¸ÂÃß¼Ì½À´Ï´Ù. 3µî ´çÃ·ÀÔ´Ï´Ù!!! (55ºĞ±îÁö)
+//í”„ë¡œê·¸ë¨ ì˜ˆì‹œ:
+//ë¡œë˜ë²ˆí˜¸ ì¶”ì²¨ ì™„ë£Œ
+//1ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 3
+//2ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 1
+//3ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 1000
+//ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.
+//3ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: -150
+//ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.
+//3ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 43
+//4ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 23
+//5ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 12
+//6ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 11
+//ì´ 4ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 3ë“± ë‹¹ì²¨ì…ë‹ˆë‹¤!!! (55ë¶„ê¹Œì§€)
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,41 +35,41 @@ public class Ex10LottoNumbers02 {
 	final static int MAX = 45;
 	
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//·Î¶Ç ¹øÈ£¸¦ ÀúÀåÇÒ ÀÎÆ®¹è¿­À» ¸¸µé¾îÁÖÀÚ
+		//ë¡œë˜ ë²ˆí˜¸ë¥¼ ì €ì¥í•  ì¸íŠ¸ë°°ì—´ì„ ë§Œë“¤ì–´ì£¼ì
 		int[] lottoNumbers = new int[SIZE];
 		int count = 1;
 		int user;
 		int correct = 0;
 				
-		//³­¼ö
+		//ë‚œìˆ˜
 		Random random = new Random();
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			
-			lottoNumbers[i] = random.nextInt(MAX) + 1; //0~44¿¡ +1¾¿ 
+			lottoNumbers[i] = random.nextInt(MAX) + 1; //0~44ì— +1ì”© 
 		}
-		//Áßº¹ Á¤¸®
+		//ì¤‘ë³µ ì •ë¦¬
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			for(int j = 0; j < lottoNumbers.length; j++) {
 				
 				if(i != j && lottoNumbers[i] == lottoNumbers[j]) {
-					lottoNumbers[i] = random.nextInt(MAX) + 1; //i¿¡ »õ·Î¿î °ªÀ» ³ÖÀ½
-					j = -1; //ÀÌÈÄ j++ÀÌ ½ÇÇàµÇ¹Ç·Î -1 -> 0À¸·Î ¹Ù²î¾î Ã³À½ºÎÅÍ °Ë»ç½ÃÀÛ (i´Â Áßº¹ÀÌ °ËÃâµÈ °ªÀÏ ¶§ºÎÅÍ ½ÃÀÛ(i = 4)
+					lottoNumbers[i] = random.nextInt(MAX) + 1; //iì— ìƒˆë¡œìš´ ê°’ì„ ë„£ìŒ
+					j = -1; //ì´í›„ j++ì´ ì‹¤í–‰ë˜ë¯€ë¡œ -1 -> 0ìœ¼ë¡œ ë°”ë€Œì–´ ì²˜ìŒë¶€í„° ê²€ì‚¬ì‹œì‘ (iëŠ” ì¤‘ë³µì´ ê²€ì¶œëœ ê°’ì¼ ë•Œë¶€í„° ì‹œì‘(i = 4)
 			
-				}//jÀÇ if¹®
+				}//jì˜ ifë¬¸
 				
-			}//for Áßº¹ j¹®
+			}//for ì¤‘ë³µ jë¬¸
 				
 				
 
-		}//for Áßº¹ i¹®
-//		System.out.println("Áßº¹Á¦°Å ÈÄ");
-//		for(int i = 0; i < lottoNumbers.length; i++) {//for Áßº¹ Ãâ·Â
+		}//for ì¤‘ë³µ ië¬¸
+//		System.out.println("ì¤‘ë³µì œê±° í›„");
+//		for(int i = 0; i < lottoNumbers.length; i++) {//for ì¤‘ë³µ ì¶œë ¥
 //			System.out.println(lottoNumbers[i]);
 //			
-//		}//for Áßº¹ Ãâ·Â
+//		}//for ì¤‘ë³µ ì¶œë ¥
 //		
 		for(int i = 0; i < lottoNumbers.length - 1; i++) {
 	         if(lottoNumbers[i] > lottoNumbers[i+1]) {
@@ -80,29 +80,29 @@ public class Ex10LottoNumbers02 {
 	         }
 	      }
 	      
-//	      System.out.println("Á¤·Ä ÈÄ");
+//	      System.out.println("ì •ë ¬ í›„");
 //	      
 //	      for(int i = 0; i < lottoNumbers.length; i++) {
 //	         System.out.println(lottoNumbers[i]);
 //	      }
 		
 		
-		for(int i = 0; i <= lottoNumbers.length - 1; i++) {//ÀÔ·Â
+		for(int i = 0; i <= lottoNumbers.length - 1; i++) {//ì…ë ¥
 			
-			System.out.println(count + "¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.println(count + "ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			user = Integer.parseInt(bufferedReader.readLine());
-			//user´Â ¹è¿­ÀÌ ¾Æ´Ñ °è¼Ó µ¤¾î¾²¿öÁü, ÀÔ·Â -> ÀÔ·Â°ª°ú ¹è¿­¿¡ ÀúÀåµÈ °ª ºñ±³ -> correctÁõ°¡(¶Ç´Â º¯È­¾øÀ½) -> ÀÔ·Â°ª ´ÙÀ½ ÀÔ·Â ¼ıÀÚ·Î ÃÊ±âÈ­ ¼ø¼­
+			//userëŠ” ë°°ì—´ì´ ì•„ë‹Œ ê³„ì† ë®ì–´ì“°ì›Œì§, ì…ë ¥ -> ì…ë ¥ê°’ê³¼ ë°°ì—´ì— ì €ì¥ëœ ê°’ ë¹„êµ -> correctì¦ê°€(ë˜ëŠ” ë³€í™”ì—†ìŒ) -> ì…ë ¥ê°’ ë‹¤ìŒ ì…ë ¥ ìˆ«ìë¡œ ì´ˆê¸°í™” ìˆœì„œ
 			if( user < 1 || user > 45 ) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-				System.out.println(count + "¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+				System.out.println(count + "ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 				user = Integer.parseInt(bufferedReader.readLine());
 			}
 			if ( user == lottoNumbers[i]) {
 				correct++;
 			}
 			count++;
-			System.out.println("ÃÑ" + correct + "°³ ¸ÂÃß¼Ì½À´Ï´Ù");
-		}//ÀÔ·Â for¹®
+			System.out.println("ì´" + correct + "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤");
+		}//ì…ë ¥ forë¬¸
 		
 		
 		

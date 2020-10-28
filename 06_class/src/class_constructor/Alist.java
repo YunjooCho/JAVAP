@@ -1,7 +1,7 @@
 package class_constructor;
 
 public class Alist {
-/*<º¹½À ¼ø¼­>
+/*<ë³µìŠµ ìˆœì„œ>
 1.PersonMain
 2.ThisTest
 3.Compute

@@ -11,32 +11,32 @@ public class StringTest2T {
 		String str, target, replaceing;
 		int index, count;
 		
-		System.out.println("¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.println("ë¬¸ìì—´ ì…ë ¥ : ");
 		str = br.readLine();
 		
-		System.out.println("ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.println("í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : ");
 		target = br.readLine();
 		
-		System.out.println("¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.println("ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : ");
 		replaceing = br.readLine();
 		
 		if(str.length() < target.length()) {
-			System.out.println("ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ Å©±â°¡ ÀÛ½À´Ï´Ù");
+			System.out.println("ì…ë ¥í•œ ë¬¸ìì—´ì˜ í¬ê¸°ê°€ ì‘ìŠµë‹ˆë‹¤");
 		}else {
 			str = str.toLowerCase();
 			target = target.toLowerCase();
 			
 			index = count = 0;
-			while((index = str.indexOf(target,index)) != -1) {//str¾È¿¡ target¹®ÀÚ¿­ÀÌ ÀÖÀ¸¸é
-				System.out.println("index1 = " + index);//³»°¡ È®ÀÎ¿ëÀ¸·Î ÀÛ¼ºÇÑ°Í
-				//target¹®ÀÚ¿­ÀÌ ÀÖ´Â °÷À» index(0)¹øÂ° ¹®ÀÚ¿­ºÎÅÍ Ã£À½
+			while((index = str.indexOf(target,index)) != -1) {//strì•ˆì— targetë¬¸ìì—´ì´ ìˆìœ¼ë©´
+				System.out.println("index1 = " + index);//ë‚´ê°€ í™•ì¸ìš©ìœ¼ë¡œ ì‘ì„±í•œê²ƒ
+				//targetë¬¸ìì—´ì´ ìˆëŠ” ê³³ì„ index(0)ë²ˆì§¸ ë¬¸ìì—´ë¶€í„° ì°¾ìŒ
 				index += target.length(); //index = index + target.length();
-				System.out.println("index2 = " + index);//³»°¡ È®ÀÎ¿ëÀ¸·Î ÀÛ¼ºÇÑ°Í
+				System.out.println("index2 = " + index);//ë‚´ê°€ í™•ì¸ìš©ìœ¼ë¡œ ì‘ì„±í•œê²ƒ
 				count++;
 			}
 			
 			System.out.println(str.replace(target, replaceing));
-			System.out.println(count + "°³ Ä¡È¯");
+			System.out.println(count + "ê°œ ì¹˜í™˜");
 		}
 	}
 

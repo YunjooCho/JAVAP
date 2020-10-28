@@ -5,26 +5,26 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-°ÅµìÁ¦°öÀ» ±¸ÇÏ½Ã¿À
-xÀÇ y½ÂÀ» °è»êÇÏ½Ã¿À
+ê±°ë“­ì œê³±ì„ êµ¬í•˜ì‹œì˜¤
+xì˜ yìŠ¹ì„ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-x°ª ÀÔ·Â : 2
-y°ª ÀÔ·Â : 5
-2ÀÇ 5½Â xx   (2*2*2*2*2)
+[ì‹¤í–‰ê²°ê³¼]
+xê°’ ì…ë ¥ : 2
+yê°’ ì…ë ¥ : 5
+2ì˜ 5ìŠ¹ xx   (2*2*2*2*2)
 
-x°ª ÀÔ·Â : 3
-y°ª ÀÔ·Â : 4
-3ÀÇ 4½Â xx   (3*3*3*3)
+xê°’ ì…ë ¥ : 3
+yê°’ ì…ë ¥ : 4
+3ì˜ 4ìŠ¹ xx   (3*3*3*3)
  */
 public class ForTest5 {
 
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		System.out.print("x°ª ÀÔ·Â : ");
+		System.out.print("xê°’ ì…ë ¥ : ");
 		int x = Integer.parseInt(br.readLine());
-		System.out.print("y°ª ÀÔ·Â : ");
+		System.out.print("yê°’ ì…ë ¥ : ");
 		int y = Integer.parseInt(br.readLine());
 		
 		int calc = 1;
@@ -32,7 +32,7 @@ public class ForTest5 {
 		for(int i = 1; i <= y; i++) {
 			calc *= x;
 		}
-		System.out.println(x + "ÀÇ " + y + "½Â : " + calc);
+		System.out.println(x + "ì˜ " + y + "ìŠ¹ : " + calc);
 	}
 
 }

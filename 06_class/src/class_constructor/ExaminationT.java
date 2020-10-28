@@ -3,33 +3,33 @@ package class_constructor;
 import java.util.Scanner;
 
 public class ExaminationT {
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private String name;
-	private String dap; //"12311" - StringÀº ¹®ÀÚÀÇ ¹è¿­ÀÌ¶ó´Â Æ¯¼º ÀÌ¿ë
+	private String dap; //"12311" - Stringì€ ë¬¸ìì˜ ë°°ì—´ì´ë¼ëŠ” íŠ¹ì„± ì´ìš©
 	private char[] ox;
 	private int score;
-	public static final String JUNG = "11111"; //Á¤´ä
+	public static final String JUNG = "11111"; //ì •ë‹µ
 	
-	//2.»ı¼ºÀÚ - µ¥ÀÌÅÍÀÔ·Â
-	//ScannerÅ¬·¡½º
-	//1¹ø¹®Á¦
+	//2.ìƒì„±ì - ë°ì´í„°ì…ë ¥
+	//Scannerí´ë˜ìŠ¤
+	//1ë²ˆë¬¸ì œ
 	public ExaminationT() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 		this.name = scanner.next();
-		System.out.print("´ä ÀÔ·Â : ");
+		System.out.print("ë‹µ ì…ë ¥ : ");
 		this.dap = scanner.next();
 		
-		ox = new char[dap.length()]; //¡ÚÂ÷ÀÌÁ¡	
+		ox = new char[dap.length()]; //â˜…ì°¨ì´ì 	
 	}
 	
 	
-	//3.¸Ş¼Òµå ÀÛ¼º
+	//3.ë©”ì†Œë“œ ì‘ì„±
 	public void compare() {
-		for(int i = 0; i < ox.length; i++) {//¡ÚÂ÷ÀÌÁ¡
+		for(int i = 0; i < ox.length; i++) {//â˜…ì°¨ì´ì 
 			if(dap.charAt(i) == JUNG.charAt(i)) {
 				ox[i] = 'O';
-				score += 20; //¡ÚÂ÷ÀÌÁ¡
+				score += 20; //â˜…ì°¨ì´ì 
 			}else {
 				ox[i] = 'X';
 			}
@@ -40,7 +40,7 @@ public class ExaminationT {
 		return name;
 	}
 	
-	public char[] getOX() {//¹è¿­¸íÀº ÁÖ¼Ò¸¦ °¡Áö°í ÀÖ´Ù(µ¥ÀÌÅÍ°ªÀ» °®°íÀÖ´Â °ÍÀÌ ¾Æ´Ô)
+	public char[] getOX() {//ë°°ì—´ëª…ì€ ì£¼ì†Œë¥¼ ê°€ì§€ê³  ìˆë‹¤(ë°ì´í„°ê°’ì„ ê°–ê³ ìˆëŠ” ê²ƒì´ ì•„ë‹˜)
 		return ox;
 	}
 	

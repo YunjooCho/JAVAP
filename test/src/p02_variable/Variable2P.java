@@ -2,14 +2,14 @@ package p02_variable;
 
 public class Variable2P {
 	
-	int a; //ÇÊµå(Å¬·¡½º ¹Ø¿¡ ÀÖÀ½), ÀÎ½ºÅÏ½º º¯¼ö, ÃÊ±âÈ­ µÇ¾î ÀÖÀ½(a = 0), ¼±¾ğ¹®
-		   //ÇÔ¼ö ¾ÈÀÇ º¯¼ö¿Í ´Ù¸¥ ¸Ş¸ğ¸®¸¦ °¡Áü
+	int a; //í•„ë“œ(í´ë˜ìŠ¤ ë°‘ì— ìˆìŒ), ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜, ì´ˆê¸°í™” ë˜ì–´ ìˆìŒ(a = 0), ì„ ì–¸ë¬¸
+		   //í•¨ìˆ˜ ì•ˆì˜ ë³€ìˆ˜ì™€ ë‹¤ë¥¸ ë©”ëª¨ë¦¬ë¥¼ ê°€ì§
 	
-	static int b; //ÇÊµå(Å¬·¡½º ¹Ø¿¡ ÀâÈ÷´Â º¯¼ö´Â ÀüºÎ ÇÊµå), ¼±¾ğ¹®
-				  //Å¬·¡½ºº¯¼ö(static), ÃÊ±âÈ­ µÇ¾î ÀÖÀ½(b = 0)
+	static int b; //í•„ë“œ(í´ë˜ìŠ¤ ë°‘ì— ì¡íˆëŠ” ë³€ìˆ˜ëŠ” ì „ë¶€ í•„ë“œ), ì„ ì–¸ë¬¸
+				  //í´ë˜ìŠ¤ë³€ìˆ˜(static), ì´ˆê¸°í™” ë˜ì–´ ìˆìŒ(b = 0)
 
 	int c;
-	String d;//StringÇÔ¼ö, ÃÊ±â°ª  = null
+	String d;//Stringí•¨ìˆ˜, ì´ˆê¸°ê°’  = null
 	
 	int e = 5;
 	
@@ -21,15 +21,15 @@ public class Variable2P {
 	}
 	
 	public static void main(String[] args) {
-		int a = 10;//Áö¿ªº¯¼ö - ¸ŞÀÎ¸Ş¼Òµå ¾È¿¡ ÀÖ´Â º¯¼ö
-				   //Áö¿ªº¯¼ö´Â ¾²·¹±â°ªÀ» °®°í ÀÖ¾î ±×´ë·Î Ãâ·ÂÀÌ ¾ÈµÇ¹Ç·Î ÃÊ±âÈ­°¡ ÇÊ¿ä
-				   //¸Ş¼Òµå°¡ ³¡³ª¸é »ç¶óÁü
-		System.out.println("Áö¿ªº¯¼ö a = " + a);
-		System.out.println("ÇÊµå b = " + b);
-		System.out.println("ÇÊµå b = " + Variable2P.b);
-		System.out.println("ÇÊµå a = " + new Variable2P().a);
-		System.out.println("ÇÊµå c = " + new Variable2P().c);
-		System.out.println("ÇÊµå d = " + new Variable2P().d);
+		int a = 10;//ì§€ì—­ë³€ìˆ˜ - ë©”ì¸ë©”ì†Œë“œ ì•ˆì— ìˆëŠ” ë³€ìˆ˜
+				   //ì§€ì—­ë³€ìˆ˜ëŠ” ì“°ë ˆê¸°ê°’ì„ ê°–ê³  ìˆì–´ ê·¸ëŒ€ë¡œ ì¶œë ¥ì´ ì•ˆë˜ë¯€ë¡œ ì´ˆê¸°í™”ê°€ í•„ìš”
+				   //ë©”ì†Œë“œê°€ ëë‚˜ë©´ ì‚¬ë¼ì§
+		System.out.println("ì§€ì—­ë³€ìˆ˜ a = " + a);
+		System.out.println("í•„ë“œ b = " + b);
+		System.out.println("í•„ë“œ b = " + Variable2P.b);
+		System.out.println("í•„ë“œ a = " + new Variable2P().a);
+		System.out.println("í•„ë“œ c = " + new Variable2P().c);
+		System.out.println("í•„ë“œ d = " + new Variable2P().d);
 
 	}
 

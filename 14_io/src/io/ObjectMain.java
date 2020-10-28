@@ -10,18 +10,18 @@ public class ObjectMain {
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException{
 		
-		PersonDTO dto = new PersonDTO("È«±æµ¿", 25, 185.3);
+		PersonDTO dto = new PersonDTO("í™ê¸¸ë™", 25, 185.3);
 		ObjectOutputStream oos;
 		
 		oos = new ObjectOutputStream(new FileOutputStream("result2.txt"));
-		oos.writeObject(dto);//Å¬·¡½º °´Ã¼¸¦ º¸³»ÁÜ
+		oos.writeObject(dto);//í´ë˜ìŠ¤ ê°ì²´ë¥¼ ë³´ë‚´ì¤Œ
 		oos.close();
 		
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("result2.txt"));
-		PersonDTO dto2 = (PersonDTO) ois.readObject(); //ÀÚ½ÄÅ¬·¡½º·Î Çüº¯È¯(´Ù¿î Ä³½ºÆÃ)
-		System.out.println("ÀÌ¸§ = " + dto2.getName());
-		System.out.println("³ªÀÌ = " + dto2.getAge());
-		System.out.println("Å° = " + dto2.getHeight());
+		PersonDTO dto2 = (PersonDTO) ois.readObject(); //ìì‹í´ë˜ìŠ¤ë¡œ í˜•ë³€í™˜(ë‹¤ìš´ ìºìŠ¤íŒ…)
+		System.out.println("ì´ë¦„ = " + dto2.getName());
+		System.out.println("ë‚˜ì´ = " + dto2.getAge());
+		System.out.println("í‚¤ = " + dto2.getHeight());
 		
 		
 				

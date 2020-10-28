@@ -10,19 +10,19 @@ public class URLTest {
 
 	public static void main(String[] args) throws IOException {
 		URL url = new URL("https://www.google.com/index.html");
-		System.out.println("ÇÁ·ÎÅäÄİ  = " + url.getProtocol());
-		System.out.println("È£½ºÆ® = " + url.getHost());
-		System.out.println("Æ÷Æ® = " + url.getPort()); //À§ÀÇ URL¿¡¼­ ¾Æ¹«°Íµµ ±âÀç¸¦ ¾ÈÇØ¼­ °ªÀÌ ¾ø´Ù´Â ¶æÀÇ -1ÀÌ ¹İÈ¯µÊ
-		System.out.println("±âº» Æ÷Æ®  = " + url.getDefaultPort());
-		System.out.println("ÆÄÀÏ = " + url.getFile());
+		System.out.println("í”„ë¡œí† ì½œ  = " + url.getProtocol());
+		System.out.println("í˜¸ìŠ¤íŠ¸ = " + url.getHost());
+		System.out.println("í¬íŠ¸ = " + url.getPort()); //ìœ„ì˜ URLì—ì„œ ì•„ë¬´ê²ƒë„ ê¸°ì¬ë¥¼ ì•ˆí•´ì„œ ê°’ì´ ì—†ë‹¤ëŠ” ëœ»ì˜ -1ì´ ë°˜í™˜ë¨
+		System.out.println("ê¸°ë³¸ í¬íŠ¸  = " + url.getDefaultPort());
+		System.out.println("íŒŒì¼ = " + url.getFile());
 		System.out.println();
 		
 		
-		//IOStream - ÀÔ·Â½ºÆ®¸²
-		//IO·Î °¡Á®¿Â È¨ÆäÀÌÁöÀÇ ¼Ò½ºÄÚµå¸¦ ConsoleÃ¢¿¡ Âï¾î³»±â
-		//openStream() - ¹İÈ¯°ª : InputStream
+		//IOStream - ì…ë ¥ìŠ¤íŠ¸ë¦¼
+		//IOë¡œ ê°€ì ¸ì˜¨ í™ˆí˜ì´ì§€ì˜ ì†ŒìŠ¤ì½”ë“œë¥¼ Consoleì°½ì— ì°ì–´ë‚´ê¸°
+		//openStream() - ë°˜í™˜ê°’ : InputStream
 		BufferedReader buffer = new BufferedReader(new InputStreamReader(url.openStream()));
-		//À¯»çÇÑ ÇüÅÂ : BufferedReader bufferkey = new BufferedReader(new InputStreamReader(System.in));
+		//ìœ ì‚¬í•œ í˜•íƒœ : BufferedReader bufferkey = new BufferedReader(new InputStreamReader(System.in));
 		
 		String line = null;
 		while((line = buffer.readLine()) != null) {

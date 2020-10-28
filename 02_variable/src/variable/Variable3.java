@@ -1,50 +1,50 @@
 package variable;
 
 public class Variable3 {
-	int a; //Å¬·¡½º ¿µ¿ª¿¡ ¸Ş¸ğ¸®
-	static int b; //¸Å´ÏÀú ¼±»ı´Ô
+	int a; //í´ë˜ìŠ¤ ì˜ì—­ì— ë©”ëª¨ë¦¬
+	static int b; //ë§¤ë‹ˆì € ì„ ìƒë‹˜
 	
 	public static void main(String[] args) {
-		int a = 10; //Áö¿ªº¯¼ö, ±âº»Çü
-					//ÇÔ¼ö ¿µ¿ª¿¡ ¸Ş¸ğ¸®
-		  	   		//³ë¶õ¹ØÁÙ - ÃÊ±âÈ­ ÇÊ¿ä
-		System.out.println("Áö¿ªº¯¼ö a = " + a);
+		int a = 10; //ì§€ì—­ë³€ìˆ˜, ê¸°ë³¸í˜•
+					//í•¨ìˆ˜ ì˜ì—­ì— ë©”ëª¨ë¦¬
+		  	   		//ë…¸ë€ë°‘ì¤„ - ì´ˆê¸°í™” í•„ìš”
+		System.out.println("ì§€ì—­ë³€ìˆ˜ a = " + a);
 		
-		Variable3 v; //°´Ã¼
-		//¾Æ·¡ ¼³¸í´ë·Î heap¿µ¿ª¿¡ ÀÌ¸§À» Á¤ÇÒ ¼ö ¾øÀ¸¹Ç·Î ÁÖ¼Ò·Î µé¾î°¨
-		//ÁÖ¼Òº¸°ü(Variable3°¡ ÀÖ´Â °÷À» °¡¸®Å´)
-		//µ¥ÀÌÅÍ »ó¼ö ¾Æ´Ô
+		Variable3 v; //ê°ì²´
+		//ì•„ë˜ ì„¤ëª…ëŒ€ë¡œ heapì˜ì—­ì— ì´ë¦„ì„ ì •í•  ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ì£¼ì†Œë¡œ ë“¤ì–´ê°
+		//ì£¼ì†Œë³´ê´€(Variable3ê°€ ìˆëŠ” ê³³ì„ ê°€ë¦¬í‚´)
+		//ë°ì´í„° ìƒìˆ˜ ì•„ë‹˜
 		v = new Variable3();
-		//Å¬·¡½º »ı¼º + »ı¼ºÀÚ ÇÔ¼ö
-		//heap¿µ¿ª¿¡ »ı¼º
-		//ÀÌ¸§À» Á¤ÇÒ ¼ö ¾øÀ½
-		//Variable3¾ÈÀÇ ¸ğµç ÀÎ½ºÅÏ½º °ª, Å¬·¡½º °ªÀÌ ÀúÀå
-		System.out.println("ÇÊµå a = " + v.a);
+		//í´ë˜ìŠ¤ ìƒì„± + ìƒì„±ì í•¨ìˆ˜
+		//heapì˜ì—­ì— ìƒì„±
+		//ì´ë¦„ì„ ì •í•  ìˆ˜ ì—†ìŒ
+		//Variable3ì•ˆì˜ ëª¨ë“  ì¸ìŠ¤í„´ìŠ¤ ê°’, í´ë˜ìŠ¤ ê°’ì´ ì €ì¥
+		System.out.println("í•„ë“œ a = " + v.a);
 		v.a = 20;
-		//'.' : ~¾È¿¡(¼Ò¼Ó)
-		System.out.println("ÇÊµå a = " + v.a);
+		//'.' : ~ì•ˆì—(ì†Œì†)
+		System.out.println("í•„ë“œ a = " + v.a);
 		
-		Variable3 v2; //°´Ã¼
+		Variable3 v2; //ê°ì²´
 		v2 = new Variable3();
-		//v°¡ ³ªÅ¸³»´Â new Variable3();¿Í´Â ´Ù¸¥ ¸Ş¸ğ¸® »ı¼º
-		System.out.println("ÇÊµå a = " + v2.a);
-		//´Ù¸¥ ¸Ş¸ğ¸® ÀÌ¹Ç·Î °ªÀÌ 20ÀÌ ¾Æ´Ñ ÃÊ±âÈ­°ª 0ÀÌ Ãâ·ÂµÊ
+		//vê°€ ë‚˜íƒ€ë‚´ëŠ” new Variable3();ì™€ëŠ” ë‹¤ë¥¸ ë©”ëª¨ë¦¬ ìƒì„±
+		System.out.println("í•„ë“œ a = " + v2.a);
+		//ë‹¤ë¥¸ ë©”ëª¨ë¦¬ ì´ë¯€ë¡œ ê°’ì´ 20ì´ ì•„ë‹Œ ì´ˆê¸°í™”ê°’ 0ì´ ì¶œë ¥ë¨
 		
 		int sum = v.a + v2.a;
-		System.out.println("ÇÕ = " + sum);
+		System.out.println("í•© = " + sum);
 		
-		System.out.println("ÇÊµå b = " + Variable3.b);
-		System.out.println("ÇÊµå b = " + b);
-		System.out.println("ÇÊµå b = " + v.b);
-		//public class Variable3 ¿µ¿ª ¾ÈÀÌ¹Ç·Î ±×³É »ç¿ë °¡´É
+		System.out.println("í•„ë“œ b = " + Variable3.b);
+		System.out.println("í•„ë“œ b = " + b);
+		System.out.println("í•„ë“œ b = " + v.b);
+		//public class Variable3 ì˜ì—­ ì•ˆì´ë¯€ë¡œ ê·¸ëƒ¥ ì‚¬ìš© ê°€ëŠ¥
 	}
 
 }
 
-//mainÇÔ¼ö´Â ÇÑ ÆÄÀÏ´ç ÇÏ³ª¸¸ Á¸Àç
-//¾Æ·¡¿Í °°Àº °æ¿ì°¡ ÀÖÀ½
+//mainí•¨ìˆ˜ëŠ” í•œ íŒŒì¼ë‹¹ í•˜ë‚˜ë§Œ ì¡´ì¬
+//ì•„ë˜ì™€ ê°™ì€ ê²½ìš°ê°€ ìˆìŒ
 
-//ÆÄÀÏ¸í : Test.java
+//íŒŒì¼ëª… : Test.java
 //		 Test.class
 //		 Sample.class
 

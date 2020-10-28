@@ -5,17 +5,17 @@ import java.util.ArrayList;
 public class PersonMainP {
 
 	public void init() {
-		PersonDTOP aa = new PersonDTOP("È«±æµ¿", 25);
-		PersonDTOP bb = new PersonDTOP("¸ù½ÇÀÌ", 15);
-		PersonDTOP cc = new PersonDTOP("¹¶Ä¡", 15);
+		PersonDTOP aa = new PersonDTOP("í™ê¸¸ë™", 25);
+		PersonDTOP bb = new PersonDTOP("ëª½ì‹¤ì´", 15);
+		PersonDTOP cc = new PersonDTOP("ë­‰ì¹˜", 15);
 		
 		ArrayList<PersonDTOP> list = new ArrayList<PersonDTOP>();
 		list.add(aa);
 		list.add(bb);
 		list.add(cc);
 		for(int i = 0; i < list.size(); i++) {
-			System.out.println("ÀÌ¸§ = " + list.get(i).getName());
-			System.out.println("³ªÀÌ = " + list.get(i).getAge());
+			System.out.println("ì´ë¦„ = " + list.get(i).getName());
+			System.out.println("ë‚˜ì´ = " + list.get(i).getAge());
 		}
 	}
 	

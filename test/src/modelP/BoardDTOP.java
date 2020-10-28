@@ -3,7 +3,7 @@ package modelP;
 import java.util.Calendar;
 
 public class BoardDTOP {
-	//12.±Û¾²±â °Ô½ÃÆÇ¿¡ µé¾î°¥ ÇÊµå¸í / Ä¸½¶È­  / ¿À¹ö¶óÀÌµù
+	//12.ê¸€ì“°ê¸° ê²Œì‹œíŒì— ë“¤ì–´ê°ˆ í•„ë“œëª… / ìº¡ìŠí™”  / ì˜¤ë²„ë¼ì´ë”©
 	private int id;
 	private String title;
 	private int writerId;

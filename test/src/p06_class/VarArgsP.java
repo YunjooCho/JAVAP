@@ -1,13 +1,13 @@
 package p06_class;
 
 public class VarArgsP {
-	//¿À¹ö·Îµå½Ã, ÆÄ¶ó¹ÌÅÍ¸¦ °£ÆíÈ­ÇÏ´Â ¹æ¹ı(°¡º¯ ÀÎÀÚ ¼±¾ğ, ¸Å°³º¯¼öÀÇ µ¿ÀûºĞÇÒ)
+	//ì˜¤ë²„ë¡œë“œì‹œ, íŒŒë¼ë¯¸í„°ë¥¼ ê°„í¸í™”í•˜ëŠ” ë°©ë²•(ê°€ë³€ ì¸ì ì„ ì–¸, ë§¤ê°œë³€ìˆ˜ì˜ ë™ì ë¶„í• )
 	
-	//ÇÊµå¸í ¼±¾ğ
+	//í•„ë“œëª… ì„ ì–¸
 	private int sum;
 	
-	//Sum¸Ş¼Òµå(¿À¹ö·Îµå)
-	//VarArgs»ç¿ëÇÏÁö ¾ÊÀ» ¶§
+	//Sumë©”ì†Œë“œ(ì˜¤ë²„ë¡œë“œ)
+	//VarArgsì‚¬ìš©í•˜ì§€ ì•Šì„ ë•Œ
 //	public int sum(int a, int b) {
 //		sum = a + b;
 //		return sum;
@@ -23,9 +23,9 @@ public class VarArgsP {
 //		return sum;
 //	}
 //	
-	//VarArgs»ç¿ë
-	public int sum(int...ar) {//ÆÄ¶ó¹ÌÅÍ¸¦ µ¿Àû¹è¿­·Î ¹ŞÀ½
-		//ÆÄ¶ó¹ÌÅÍ int¸¦ Object·Î ¹Ù²Ù¸é ¸ğµç µ¥ÀÌÅÍÅ¸ÀÔÀ» ´Ù ¹Ş°Ú´Ù´Â ¶æ - ÀÚµ¿À¸·Î autoBoxing, UnBoxing
+	//VarArgsì‚¬ìš©
+	public int sum(int...ar) {//íŒŒë¼ë¯¸í„°ë¥¼ ë™ì ë°°ì—´ë¡œ ë°›ìŒ
+		//íŒŒë¼ë¯¸í„° intë¥¼ Objectë¡œ ë°”ê¾¸ë©´ ëª¨ë“  ë°ì´í„°íƒ€ì…ì„ ë‹¤ ë°›ê² ë‹¤ëŠ” ëœ» - ìë™ìœ¼ë¡œ autoBoxing, UnBoxing
 		int hap = 0;
 		for(int i  = 1; i < ar.length; i++) {
 			hap += ar[i];
@@ -35,11 +35,11 @@ public class VarArgsP {
 	
 	public static void main(String[] args) {
 		VarArgsP va = new VarArgsP();
-		System.out.println("ÇÕ = " + va.sum(10,20));
-		System.out.println("ÇÕ = " + va.sum(10,'A'));
-		System.out.println("ÇÕ = " + va.sum(10,20,30));
-		System.out.println("ÇÕ = " + va.sum(10,20,30,40));
-		System.out.println("ÇÕ = " + va.sum(10,20,30,100));
+		System.out.println("í•© = " + va.sum(10,20));
+		System.out.println("í•© = " + va.sum(10,'A'));
+		System.out.println("í•© = " + va.sum(10,20,30));
+		System.out.println("í•© = " + va.sum(10,20,30,40));
+		System.out.println("í•© = " + va.sum(10,20,30,100));
 
 	}
 

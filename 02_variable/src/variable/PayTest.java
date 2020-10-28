@@ -1,29 +1,29 @@
 package variable;
 
 /*
-  ÀÌ¸§ÀÌ L(name)ÀÎ »ç¶÷ÀÇ ±âº»±Ş(basePay)ÀÌ 2500000ÀÏ ¶§
- 3.3% ¼¼±İ(tax, 0.033)°ú ¿ù±Ş(salary)¸¦ °è»êÇÏ½Ã¿À
+  ì´ë¦„ì´ L(name)ì¸ ì‚¬ëŒì˜ ê¸°ë³¸ê¸‰(basePay)ì´ 2500000ì¼ ë•Œ
+ 3.3% ì„¸ê¸ˆ(tax, 0.033)ê³¼ ì›”ê¸‰(salary)ë¥¼ ê³„ì‚°í•˜ì‹œì˜¤
   
-  ¼¼±İ = ±âº»±Ş * 3.3%(0.033)
-  ¿ù±Ş = ±âº»±Ş - ¼¼±İ
+  ì„¸ê¸ˆ = ê¸°ë³¸ê¸‰ * 3.3%(0.033)
+  ì›”ê¸‰ = ê¸°ë³¸ê¸‰ - ì„¸ê¸ˆ
 
-<Ãâ·Â³»¿ë>
- [½ÇÇà°á°ú]
- *** LÀÇ ¿ù±Ş ***
- ±âº»±Ş : 2500000¿ø
- ¼¼±İ : 82500¿ø
- ¿ù±Ş : 2417500¿ø 
+<ì¶œë ¥ë‚´ìš©>
+ [ì‹¤í–‰ê²°ê³¼]
+ *** Lì˜ ì›”ê¸‰ ***
+ ê¸°ë³¸ê¸‰ : 2500000ì›
+ ì„¸ê¸ˆ : 82500ì›
+ ì›”ê¸‰ : 2417500ì› 
  
- º¯¼ö : 4°³ 
- ¼÷Á¦ Á¦ÃâX
- Âü°¡ÀÚ Áß ÇÑ»ç¶÷ Âó¾î¼­ ±× »ç¶÷ÀÇ ´äÀ» º¸´Â ¹æ¹ı
- ¼Ò¼ıÁ¡Àº Ç¥±âX, Á¤¼öÇü(±×³É Àß¶óµµ µÇ°í, ¹İ¿Ã¸²µµ °¡´É)
+ ë³€ìˆ˜ : 4ê°œ 
+ ìˆ™ì œ ì œì¶œX
+ ì°¸ê°€ì ì¤‘ í•œì‚¬ëŒ ì°ì–´ì„œ ê·¸ ì‚¬ëŒì˜ ë‹µì„ ë³´ëŠ” ë°©ë²•
+ ì†Œìˆ«ì ì€ í‘œê¸°X, ì •ìˆ˜í˜•(ê·¸ëƒ¥ ì˜ë¼ë„ ë˜ê³ , ë°˜ì˜¬ë¦¼ë„ ê°€ëŠ¥)
  */
 
 public class PayTest {
 
 	public static void main(String[] args) {
-		char name = 'L'; //Áö¿ªº¯¼ö | String name = "L"; °´Ã¼
+		char name = 'L'; //ì§€ì—­ë³€ìˆ˜ | String name = "L"; ê°ì²´
 		int basePay = 2500000;
 		double tax = basePay * 0.033;
 		//int tax = (int)(basePay * 0.033);
@@ -31,12 +31,12 @@ public class PayTest {
 		//int salary = basePay - tax;
 		
 		
-		System.out.println("[½ÇÇà°á°ú]");
-		System.out.println("**** " + name + "ÀÇ ¿ù±Ş ***");
-		System.out.println("±âº»±Ş : " + basePay + "¿ø");
-		System.out.println("¼¼±İ : " + (int)tax + "¿ø");
-		//System.out.println("¼¼±İ : " + String.format("%.0f",tax) + "¿ø");
-		System.out.println("¿ù±Ş : " + (int)salary + "¿ø");
+		System.out.println("[ì‹¤í–‰ê²°ê³¼]");
+		System.out.println("**** " + name + "ì˜ ì›”ê¸‰ ***");
+		System.out.println("ê¸°ë³¸ê¸‰ : " + basePay + "ì›");
+		System.out.println("ì„¸ê¸ˆ : " + (int)tax + "ì›");
+		//System.out.println("ì„¸ê¸ˆ : " + String.format("%.0f",tax) + "ì›");
+		System.out.println("ì›”ê¸‰ : " + (int)salary + "ì›");
 		
 		
 

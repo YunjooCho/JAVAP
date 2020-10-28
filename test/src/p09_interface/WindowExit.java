@@ -19,7 +19,7 @@ public class WindowExit implements WindowListener {
 
 	@Override
 	public void windowClosing(WindowEvent arg0) {
-		System.out.println("ÇÁ·Î±×·¥ °­Á¦ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ëž¨ ê°•ì œ ì¢…ë£Œ");
 		System.exit(0);
 		
 	}

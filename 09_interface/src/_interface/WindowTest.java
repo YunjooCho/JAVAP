@@ -8,59 +8,59 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-//1.FrameÅ¬·¡½º »ó¼Ó
-//3.ÀÎÅÍÆäÀÌ½º
+//1.Frameí´ë˜ìŠ¤ ìƒì†
+//3.ì¸í„°í˜ì´ìŠ¤
 public class WindowTest extends Frame 
 	implements ActionListener, MouseListener, MouseMotionListener {
-	//ÀÚ¹Ù Å¬·¡½º´Â ´ÜÀÏ »ó¼Ó
-	//´Ù¸¥ Å¬·¡½º·ÎºÎÅÍ ¹º°¡ ¹Ş°í ½ÍÀ¸¸é interface
+	//ìë°” í´ë˜ìŠ¤ëŠ” ë‹¨ì¼ ìƒì†
+	//ë‹¤ë¥¸ í´ë˜ìŠ¤ë¡œë¶€í„° ë­”ê°€ ë°›ê³  ì‹¶ìœ¼ë©´ interface
 	
-	//7-1.¹öÆ° »ı¼º
-	private Button exitBtn; //null°ª, »ı¼ºÀÌ ¹İµå½Ã ÇÊ¿ä
+	//7-1.ë²„íŠ¼ ìƒì„±
+	private Button exitBtn; //nullê°’, ìƒì„±ì´ ë°˜ë“œì‹œ í•„ìš”
 	
-	//2.¸Ş¼Òµå ÀÛ¼º
+	//2.ë©”ì†Œë“œ ì‘ì„±
 	public void init() {
 		//7-2.
-		exitBtn = new Button("Á¾·á");
-		//¹èÄ¡
+		exitBtn = new Button("ì¢…ë£Œ");
+		//ë°°ì¹˜
 		this.add("North", exitBtn);
 		
 		
-		//2-1. ÇÁ·¹ÀÓ ¼³Á¤
+		//2-1. í”„ë ˆì„ ì„¤ì •
 		setBounds(900, 100, 300, 400);
 		setVisible(true);
 		
-		//8.ÀÌº¥Æ®
+		//8.ì´ë²¤íŠ¸
 		this.addMouseListener(this);
-		//(this) : À§Ä¡¸¦ ³ªÅ¸³¿, this´Â WindowTestÅ¬·¡½º¿¡¼­ »ı¼ºÇÑ ÇÁ·¹ÀÓÀ» °¡¸®Å´
+		//(this) : ìœ„ì¹˜ë¥¼ ë‚˜íƒ€ëƒ„, thisëŠ” WindowTestí´ë˜ìŠ¤ì—ì„œ ìƒì„±í•œ í”„ë ˆì„ì„ ê°€ë¦¬í‚´
 		this.addMouseMotionListener(this);
-		this.addWindowListener(new WindowExit());//´Ù¸¥ Å¬·¡½º È£Ãâ
+		this.addWindowListener(new WindowExit());//ë‹¤ë¥¸ í´ë˜ìŠ¤ í˜¸ì¶œ
 		exitBtn.addActionListener(this); 
-		//Á¾·á¹öÆ°À» ´©¸£¸é JVMÀÌ this(³» Å¬·¡½º)ÀÇ
-		//ActionListenerÀÇ actionPerformed·Î Ã£¾Æ°¨->System.exit(0)À» ¸¸³ª Á¾·á
+		//ì¢…ë£Œë²„íŠ¼ì„ ëˆ„ë¥´ë©´ JVMì´ this(ë‚´ í´ë˜ìŠ¤)ì˜
+		//ActionListenerì˜ actionPerformedë¡œ ì°¾ì•„ê°->System.exit(0)ì„ ë§Œë‚˜ ì¢…ë£Œ
 	}
 
 	//7-3.ActionListener Override
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("¹öÆ°À¸·Î Á¾·á");
+		System.out.println("ë²„íŠ¼ìœ¼ë¡œ ì¢…ë£Œ");
 		System.exit(0);	
 	}
 	
-	//4. MouseListener Overriding, CallBack¸Ş¼Òµå
+	//4. MouseListener Overriding, CallBackë©”ì†Œë“œ
 	@Override
-	public void mouseClicked(MouseEvent e) {//±¸Çö
-		System.out.println("¸¶¿ì½º Å¬¸¯");
+	public void mouseClicked(MouseEvent e) {//êµ¬í˜„
+		System.out.println("ë§ˆìš°ìŠ¤ í´ë¦­");
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		System.out.println("¸¶¿ì½º IN");
+		System.out.println("ë§ˆìš°ìŠ¤ IN");
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		System.out.println("¸¶¿ì½º OUT");
+		System.out.println("ë§ˆìš°ìŠ¤ OUT");
 	}
 
 	@Override
@@ -73,16 +73,16 @@ public class WindowTest extends Frame
 	//5. MouseMotionListener Overriding
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		System.out.println("¸¶¿ì½º µå·¡±×");
+		System.out.println("ë§ˆìš°ìŠ¤ ë“œë˜ê·¸");
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {}
 	
 	
-	//9.È£Ãâ
+	//9.í˜¸ì¶œ
 	public static void main(String[] args) {
-		new WindowTest().init(); //»ı¼º + »ı¼ºÀÚ + ¸Ş¼Òµå È£Ãâ
+		new WindowTest().init(); //ìƒì„± + ìƒì„±ì + ë©”ì†Œë“œ í˜¸ì¶œ
 	}
 
 	

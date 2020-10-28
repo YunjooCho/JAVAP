@@ -11,38 +11,38 @@ import java.awt.event.WindowEvent;
 
 //CardLayout
 public class CardTest {
-	//1.ÇÊµå ¼±¾ð
-	private Frame frame; //FrameÅ¬·¡½º¸¦ »ó¼Ó¹ÞÁö ¾Ê°í ÇÁ·¹ÀÓ »ý¼ºÇÏ±â, BorderLayout
-	private CardLayout card; //java¿¡ Á¸ÀçÇÏ´Â Å¬·¡½º - ÇÁ·¹ÀÓ À§¿¡ Ä«µå¿Í °°ÀÌ °ã°ãÀÌ ½×ÀÎ ·¹ÀÌ¾Æ¿ôÀ» »ý¼º
+	//1.í•„ë“œ ì„ ì–¸
+	private Frame frame; //Frameí´ëž˜ìŠ¤ë¥¼ ìƒì†ë°›ì§€ ì•Šê³  í”„ë ˆìž„ ìƒì„±í•˜ê¸°, BorderLayout
+	private CardLayout card; //javaì— ì¡´ìž¬í•˜ëŠ” í´ëž˜ìŠ¤ - í”„ë ˆìž„ ìœ„ì— ì¹´ë“œì™€ ê°™ì´ ê²¹ê²¹ì´ ìŒ“ì¸ ë ˆì´ì•„ì›ƒì„ ìƒì„±
 	
-	//2.»ý¼ºÀÚ
+	//2.ìƒì„±ìž
 	public CardTest() {
-		//3.ÇÁ·¹ÀÓ Ã¢ ¸¸µé±â
+		//3.í”„ë ˆìž„ ì°½ ë§Œë“¤ê¸°
 		frame = new Frame();
 		card = new CardLayout();
 		
-		frame.setLayout(card); //¸Þ¼Òµå
-							   //Layout¹Ù²Ù±â BorderLayout -> CardLayout (PanelÀÇ ·¹ÀÌ¾Æ¿ô(FlowLayout)À» GridLayoutÀ¸·Î ¹Ù²Û °ÍÃ³·³)
-							   //Layout¸¶´Ù ¸Þ¼Òµå »ç¿ë¹ýÀÌ ´Ù¸§
+		frame.setLayout(card); //ë©”ì†Œë“œ
+							   //Layoutë°”ê¾¸ê¸° BorderLayout -> CardLayout (Panelì˜ ë ˆì´ì•„ì›ƒ(FlowLayout)ì„ GridLayoutìœ¼ë¡œ ë°”ê¾¼ ê²ƒì²˜ëŸ¼)
+							   //Layoutë§ˆë‹¤ ë©”ì†Œë“œ ì‚¬ìš©ë²•ì´ ë‹¤ë¦„
 		
-		//Panel 6Àå
+		//Panel 6ìž¥
 		Panel[] p = new Panel[6];
 		Color[] color = {Color.RED, Color.GREEN, Color.BLUE, Color.MAGENTA, Color.CYAN, Color.YELLOW};
-		String[] title = {"»¡°­", "ÃÊ·Ï", "ÆÄ¶û", "º¸¶ó", "ÇÏ´Ã", "³ë¶û"}; 
-		//¿©±â°¡ 1Ãþ, 2Ãþ, 3ÃþÀ¸·Î ÀÌ¸§ÀÌ ºÙ¾îÀÖ¾ú´Ù¸é ¾Æ·¡  show¸Þ¼Òµå¿¡¼­ ÇØ´ç Ãþ ÀÌ¸§À» ³ÖÀ¸¸é Ãâ·ÂµÊ
+		String[] title = {"ë¹¨ê°•", "ì´ˆë¡", "íŒŒëž‘", "ë³´ë¼", "í•˜ëŠ˜", "ë…¸ëž‘"}; 
+		//ì—¬ê¸°ê°€ 1ì¸µ, 2ì¸µ, 3ì¸µìœ¼ë¡œ ì´ë¦„ì´ ë¶™ì–´ìžˆì—ˆë‹¤ë©´ ì•„ëž˜  showë©”ì†Œë“œì—ì„œ í•´ë‹¹ ì¸µ ì´ë¦„ì„ ë„£ìœ¼ë©´ ì¶œë ¥ë¨
 		
 		for(int i = 0; i < p.length; i++) {
 			p[i] = new Panel();
 			p[i].setBackground(color[i]);
 			
-			frame.add(p[i], title[i]); //ÇÁ·¹ÀÓ¿¡ Ä«µå¿Í Ä«µåÀÇ ÀÌ¸§À» ¿Ã¸®±â
-			    					   //CardLayoutÀÌ±â ¶§¹®¿¡ µ¿¼­³²ºÏ ÁöÁ¤ÀÌ ¾øÀ½
-			//ÀÌº¥Æ®
+			frame.add(p[i], title[i]); //í”„ë ˆìž„ì— ì¹´ë“œì™€ ì¹´ë“œì˜ ì´ë¦„ì„ ì˜¬ë¦¬ê¸°
+			    					   //CardLayoutì´ê¸° ë•Œë¬¸ì— ë™ì„œë‚¨ë¶ ì§€ì •ì´ ì—†ìŒ
+			//ì´ë²¤íŠ¸
 			p[i].addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
-					//card.show(frame, "º¸¶ó"); //¾îµð¿¡ ¹«¾ùÀ» º¸¿©ÁÙÁö ¼³Á¤
-					card.next(frame); //´ÙÀ½ Ä«µå¸¦ ²¨³»¿È(¾îµð¿¡ º¸¿©ÁÙ °ÍÀÎÁö ¼³Á¤)
+					//card.show(frame, "ë³´ë¼"); //ì–´ë””ì— ë¬´ì—‡ì„ ë³´ì—¬ì¤„ì§€ ì„¤ì •
+					card.next(frame); //ë‹¤ìŒ ì¹´ë“œë¥¼ êº¼ë‚´ì˜´(ì–´ë””ì— ë³´ì—¬ì¤„ ê²ƒì¸ì§€ ì„¤ì •)
 				}
 			});	
 		}
@@ -53,7 +53,7 @@ public class CardTest {
 		frame.setBounds(600, 100, 300, 300);
 		frame.setVisible(true);
 		
-		//5.ÀÌº¥Æ®
+		//5.ì´ë²¤íŠ¸
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
@@ -64,7 +64,7 @@ public class CardTest {
 	
 	
 	public static void main(String[] args) {
-		//4.»ý¼º
+		//4.ìƒì„±
 		new CardTest();
 	}
 

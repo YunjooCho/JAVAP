@@ -9,7 +9,7 @@ public class SwitchTestP {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-		System.out.println("¿øÇÏ´Â ´Ş : ");
+		System.out.println("ì›í•˜ëŠ” ë‹¬ : ");
 		int month = Integer.parseInt(br.readLine());
 		int days;
 		
@@ -31,7 +31,7 @@ public class SwitchTestP {
 					  break;
 			default : days = 0;
 		}
-		System.out.println(month + "¿ùÀº " + days + "ÀÏ ÀÔ´Ï´Ù");
+		System.out.println(month + "ì›”ì€ " + days + "ì¼ ì…ë‹ˆë‹¤");
 	}
 
 }

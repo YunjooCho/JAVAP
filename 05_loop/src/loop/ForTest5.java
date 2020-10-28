@@ -2,19 +2,19 @@ package loop;
 
 
 /*
-°ÅµìÁ¦°öÀ» ±¸ÇÏ½Ã¿À
-xÀÇ y½ÂÀ» °è»êÇÏ½Ã¿À
+ê±°ë“­ì œê³±ì„ êµ¬í•˜ì‹œì˜¤
+xì˜ yìŠ¹ì„ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-x°ª ÀÔ·Â : 2
-y°ª ÀÔ·Â : 5
-2ÀÇ 5½Â xx   (2*2*2*2*2)
+[ì‹¤í–‰ê²°ê³¼]
+xê°’ ì…ë ¥ : 2
+yê°’ ì…ë ¥ : 5
+2ì˜ 5ìŠ¹ xx   (2*2*2*2*2)
 
-x°ª ÀÔ·Â : 3
-y°ª ÀÔ·Â : 4
-3ÀÇ 4½Â xx   (3*3*3*3)
+xê°’ ì…ë ¥ : 3
+yê°’ ì…ë ¥ : 4
+3ì˜ 4ìŠ¹ xx   (3*3*3*3)
  */
-//¡Ú´Ù½Ã Á¤¸®ÇÏ±â!!!!!!!
+//â˜…ë‹¤ì‹œ ì •ë¦¬í•˜ê¸°!!!!!!!
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,7 +24,7 @@ import java.io.InputStreamReader;
 public class ForTest5 {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º 
+		//ë©”ëª¨ë¦¬ ìƒì„± 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int x;
@@ -32,25 +32,25 @@ public class ForTest5 {
 		int calc = 1;
 		
 		
-		//°è»ê
-		for(int j = 1; j <=3; j++) { //ÇØ´ç ³»¿ëÀ» 3¹ø ¹İº¹
+		//ê³„ì‚°
+		for(int j = 1; j <=3; j++) { //í•´ë‹¹ ë‚´ìš©ì„ 3ë²ˆ ë°˜ë³µ
 			
-			//Å°º¸µå ÀÔ·Â
-			System.out.print("x°ª ÀÔ·Â : ");
+			//í‚¤ë³´ë“œ ì…ë ¥
+			System.out.print("xê°’ ì…ë ¥ : ");
 			x = Integer.parseInt(br.readLine());
-			System.out.print("y°ª ÀÔ·Â : ");
+			System.out.print("yê°’ ì…ë ¥ : ");
 			y = Integer.parseInt(br.readLine());
-			//int x = System.in.read()-'0';  ¡Ø-'0' : Á¤¼öÈ­(-48µµ °¡´É)
-			//System.in.read(); -ÇÃ·¯½¬1 ¾ÕÀ¸·Î ÀÌµ¿
-			//System.in.read(); -ÇÃ·¯½¬2 ´ÙÀ½ ÁÙ·Î ÀÌµ¿
-			//int y = System.in.read()-'0';  ¡Ø-'0' : Á¤¼öÈ­(-48µµ °¡´É)
+			//int x = System.in.read()-'0';  â€»-'0' : ì •ìˆ˜í™”(-48ë„ ê°€ëŠ¥)
+			//System.in.read(); -í”ŒëŸ¬ì‰¬1 ì•ìœ¼ë¡œ ì´ë™
+			//System.in.read(); -í”ŒëŸ¬ì‰¬2 ë‹¤ìŒ ì¤„ë¡œ ì´ë™
+			//int y = System.in.read()-'0';  â€»-'0' : ì •ìˆ˜í™”(-48ë„ ê°€ëŠ¥)
 		
 			for(int i = 1; i <= y; i++) {
 			
 			calc *= x;		
 			
 			}//for i
-			System.out.println(x + "ÀÇ " + y + "½Â " + calc);
+			System.out.println(x + "ì˜ " + y + "ìŠ¹ " + calc);
 			calc = 1;
 			System.out.println("--------------------------");
 			

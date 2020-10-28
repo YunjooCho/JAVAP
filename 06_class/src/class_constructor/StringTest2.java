@@ -1,39 +1,39 @@
 package class_constructor;
 
 /*
-Ä¡È¯ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À
-String Å¬·¡½ºÀÇ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ½Ã¿À
-´ë¼Ò¹®ÀÚ »ó°ü¾øÀÌ °³¼ö¸¦ °è»êÇÏ½Ã¿À
+ì¹˜í™˜í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤
+String í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì‹œì˜¤
+ëŒ€ì†Œë¬¸ì ìƒê´€ì—†ì´ ê°œìˆ˜ë¥¼ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-¹®ÀÚ¿­ ÀÔ·Â : aabba
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : cc
+[ì‹¤í–‰ê²°ê³¼]
+ë¬¸ìì—´ ì…ë ¥ : aabba
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : cc
 ccbba
-1¹ø Ä¡È¯
+1ë²ˆ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : aAbbA
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : cc
+ë¬¸ìì—´ ì…ë ¥ : aAbbA
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : cc
 ccbba
-1¹ø Ä¡È¯
+1ë²ˆ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : aabbaa
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : cc
+ë¬¸ìì—´ ì…ë ¥ : aabbaa
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : cc
 ccbbcc
-2¹ø Ä¡È¯
+2ë²ˆ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : AAccaabbaaaaatt
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : dd
+ë¬¸ìì—´ ì…ë ¥ : AAccaabbaaaaatt
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : dd
 ddccddbbddddatt
-4°³ Ä¡È¯
+4ê°œ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : aabb
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aaaaa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : ddddd
-ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ Å©±â°¡ ÀÛ½À´Ï´Ù
+ë¬¸ìì—´ ì…ë ¥ : aabb
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aaaaa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : ddddd
+ì…ë ¥í•œ ë¬¸ìì—´ì˜ í¬ê¸°ê°€ ì‘ìŠµë‹ˆë‹¤
 
 indexOf()
 replace(??, ??)
@@ -44,34 +44,34 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class StringTest2 {
-	//ÇÊµå¸í
+	//í•„ë“œëª…
 	private String inputWord;
 	private String keyWord;
 	private String changeWord;
 	private int count;
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public StringTest2() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.print("ë¬¸ìì—´ ì…ë ¥ : ");
 		this.inputWord = br.readLine().toLowerCase();
-		System.out.print("ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : ");
-		this.keyWord = br.readLine().toLowerCase();//¡Ú¡Ú¡Ú¡Ú¡Ú¶È°°ÀÌ ¼Ò¹®ÀÚ·Î º¯È¯ÇØ¾ßÇÔ
-		System.out.print("¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.print("í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : ");
+		this.keyWord = br.readLine().toLowerCase();//â˜…â˜…â˜…â˜…â˜…ë˜‘ê°™ì´ ì†Œë¬¸ìë¡œ ë³€í™˜í•´ì•¼í•¨
+		System.out.print("ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : ");
 		this.changeWord = br.readLine();
 		
 		while(inputWord.length() < keyWord.length() || inputWord.length() < changeWord.length()) {
-			System.out.println("ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ Å©±â°¡ ÀÛ½À´Ï´Ù.");
-			System.out.print("ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : ");
+			System.out.println("ì…ë ¥í•œ ë¬¸ìì—´ì˜ í¬ê¸°ê°€ ì‘ìŠµë‹ˆë‹¤.");
+			System.out.print("í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : ");
 			this.keyWord = br.readLine();
-			System.out.print("¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : ");
+			System.out.print("ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : ");
 			this.changeWord = br.readLine();
 		}
 	}
 	
 	public void replaceString() {
 		
-		//¡Ú¡Ú¡Ú¡Ú¡ÚÄ¡È¯ È½¼ö È®ÀÎ(¹Ì¿Ï¼º)
+		//â˜…â˜…â˜…â˜…â˜…ì¹˜í™˜ íšŸìˆ˜ í™•ì¸(ë¯¸ì™„ì„±)
 		
 		int index = count = 0;
 		while((index = inputWord.indexOf(keyWord, index)) != -1) {
@@ -80,19 +80,19 @@ public class StringTest2 {
 		}
 		
 		
-		//±ÛÀÚ º¯È¯
+		//ê¸€ì ë³€í™˜
 		inputWord = inputWord.replace(keyWord, changeWord);
-		//¿øº»ÀÇ °ªÀº ¹Ù²îÁö ¾ÊÀ½ : ¿¹)aabbaa aa->cc °á°ú°ª : ccbbcc
-		//¿øº»Àº aabbaa±×´ë·Î
-		//<°­»ç´Ô Ç®ÀÌ>
+		//ì›ë³¸ì˜ ê°’ì€ ë°”ë€Œì§€ ì•ŠìŒ : ì˜ˆ)aabbaa aa->cc ê²°ê³¼ê°’ : ccbbcc
+		//ì›ë³¸ì€ aabbaaê·¸ëŒ€ë¡œ
+		//<ê°•ì‚¬ë‹˜ í’€ì´>
 		
 		
-		//Ãâ·Â
+		//ì¶œë ¥
 		StringBuffer buffer = new StringBuffer();
 		buffer.append(inputWord);
 		System.out.println(buffer);
 		buffer.append(count);
-		buffer.append("¹ø Ä¡È¯");
+		buffer.append("ë²ˆ ì¹˜í™˜");
 		buffer.delete(0, inputWord.length());
 		System.out.println(buffer);
 		
@@ -108,12 +108,12 @@ public class StringTest2 {
 	}
 }
 
-//<Âü°í³»¿ë>
+//<ì°¸ê³ ë‚´ìš©>
 //String str = "aabbaa"
 //System.out.println(str.replace("aa","tt"));
 //System.out.println("str=" + str);
-//¿øº»ÀÇ °ªÀº ¹Ù²îÁö ¾ÊÀ½ : ¿¹)aabbaa aa->tt °á°ú°ª : ttbbtt
-//¿øº»Àº aabbaa±×´ë·Î
+//ì›ë³¸ì˜ ê°’ì€ ë°”ë€Œì§€ ì•ŠìŒ : ì˜ˆ)aabbaa aa->tt ê²°ê³¼ê°’ : ttbbtt
+//ì›ë³¸ì€ aabbaaê·¸ëŒ€ë¡œ
 
 //System.out.println(str.indexOf("aa"));
-//System.out.println(str.indexOf("aa",2));-2¹øÂ°ºÎÅÍ À§Ä¡ Ã£±â
+//System.out.println(str.indexOf("aa",2));-2ë²ˆì§¸ë¶€í„° ìœ„ì¹˜ ì°¾ê¸°

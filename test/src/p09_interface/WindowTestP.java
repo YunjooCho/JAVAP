@@ -16,7 +16,7 @@ public class WindowTestP extends Frame implements ActionListener, MouseListener,
 		setBounds(900, 100, 300, 400);
 		setVisible(true);
 		
-		exitBtn = new Button("Á¾·á");
+		exitBtn = new Button("ì¢…ë£Œ");
 		this.add("South",exitBtn);
 		
 		
@@ -29,7 +29,7 @@ public class WindowTestP extends Frame implements ActionListener, MouseListener,
 	//MouseMotionListener Overriding
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		System.out.println("¸¶¿ì½º µå·¡±×");
+		System.out.println("ë§ˆìš°ìŠ¤ ë“œë˜ê·¸");
 		
 	}
 
@@ -42,19 +42,19 @@ public class WindowTestP extends Frame implements ActionListener, MouseListener,
 	//MouseListener Overriding
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("¸¶¿ì½º Å¬¸¯");
+		System.out.println("ë§ˆìš°ìŠ¤ í´ë¦­");
 		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		System.out.println("¸¶¿ì½º IN");
+		System.out.println("ë§ˆìš°ìŠ¤ IN");
 		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-		System.out.println("¸¶¿ì½º OUT");
+		System.out.println("ë§ˆìš°ìŠ¤ OUT");
 		
 	}
 
@@ -73,7 +73,7 @@ public class WindowTestP extends Frame implements ActionListener, MouseListener,
 	//ActionListener Override
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println("¹öÆ°À¸·Î Á¾·á");
+		System.out.println("ë²„íŠ¼ìœ¼ë¡œ ì¢…ë£Œ");
 		System.exit(0);
 		
 	}

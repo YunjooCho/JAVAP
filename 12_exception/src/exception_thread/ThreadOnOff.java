@@ -11,7 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 
-//Æ²¸°´äÀÓ ThreadOnOffT.java ÂüÁ¶ÇÒ °Í
+//í‹€ë¦°ë‹µìž„ ThreadOnOffT.java ì°¸ì¡°í•  ê²ƒ
 public class ThreadOnOff extends Frame implements Runnable {
 
 	private Label label;
@@ -19,26 +19,26 @@ public class ThreadOnOff extends Frame implements Runnable {
 	private int num = 0;
 	private Thread thread = new Thread(this);
 	
-	//6. ½ÁÀÚ¸ØÃß±â
+	//6. ìŠ·ìžë©ˆì¶”ê¸°
 	private boolean stopCount = true;
 	
 	public ThreadOnOff() {
 		
-		//2.¶óº§ »ý¼ºÇÏ±â
+		//2.ë¼ë²¨ ìƒì„±í•˜ê¸°
 		setLayout(null);
 		label = new Label("0");
-		label.setFont(new Font("°íµñÃ¼", Font.BOLD, 70));
+		label.setFont(new Font("ê³ ë”•ì²´", Font.BOLD, 70));
 		label.setForeground(Color.BLUE);
 		label.setBounds(50, 50, 100, 100);
 		add(label);
 		
-		//3.¹öÆ° »ý¼ºÇÏ±â
-		pushBtn = new Button("´©¸£±â");
+		//3.ë²„íŠ¼ ìƒì„±í•˜ê¸°
+		pushBtn = new Button("ëˆ„ë¥´ê¸°");
 		pushBtn.setBounds(220, 150, 40, 20);
 		add(pushBtn);
 		
 		
-		//1.ÇÁ·¹ÀÓ»ý¼º
+		//1.í”„ë ˆìž„ìƒì„±
 		setBounds(800, 250, 300, 200);
 		setVisible(true);
 		setResizable(false);
@@ -49,7 +49,7 @@ public class ThreadOnOff extends Frame implements Runnable {
 			}
 		});
 		
-		//5.ÀÌº¥Æ®
+		//5.ì´ë²¤íŠ¸
 		pushBtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
@@ -68,7 +68,7 @@ public class ThreadOnOff extends Frame implements Runnable {
 	
 
 	
-	//4. µ¿ÀÛ ±¸ÇöÇÏ±â
+	//4. ë™ìž‘ êµ¬í˜„í•˜ê¸°
 	@Override
 	public void run() {
 		while(true) {
@@ -93,4 +93,4 @@ public class ThreadOnOff extends Frame implements Runnable {
 }
  
 //MouseListner - MousePressed / MouseRelease -> MouseAdapter
-//while¹®
+//whileë¬¸

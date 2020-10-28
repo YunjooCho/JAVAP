@@ -2,57 +2,57 @@ package p06_class;
 
 public class StringTestP {
 	public static void main(String[] args){
-		//¹®ÀÚ¿­ literal»ı¼º
+		//ë¬¸ìì—´ literalìƒì„±
 		String a = "apple"; 
 		String b = "apple";
 		
-		//ÂüÁ¶°ª ºñ±³
-		if(a==b)System.out.println("a¿Í bÀÇ ÂüÁ¶°ªÀº °°´Ù");
-		else System.out.println("a¿Í bÀÇ ÂüÁ¶°ªÀº ´Ù¸£´Ù");
+		//ì°¸ì¡°ê°’ ë¹„êµ
+		if(a==b)System.out.println("aì™€ bì˜ ì°¸ì¡°ê°’ì€ ê°™ë‹¤");
+		else System.out.println("aì™€ bì˜ ì°¸ì¡°ê°’ì€ ë‹¤ë¥´ë‹¤");
 		
-		//¹®ÀÚ¿­ ºñ±³
-		if(a.equals(b))System.out.println("a¿Í bÀÇ ¹®ÀÚ¿­Àº °°´Ù");
-		else System.out.println("a¿Í bÀÇ ¹®ÀÚ¿­Àº ´Ù¸£´Ù");
+		//ë¬¸ìì—´ ë¹„êµ
+		if(a.equals(b))System.out.println("aì™€ bì˜ ë¬¸ìì—´ì€ ê°™ë‹¤");
+		else System.out.println("aì™€ bì˜ ë¬¸ìì—´ì€ ë‹¤ë¥´ë‹¤");
 		System.out.println();
 		
 		
-		//String °´Ã¼ »ı¼º
+		//String ê°ì²´ ìƒì„±
 		String c = new String("apple");
 		String d = new String("apple");
-		//ÂüÁ¶°ª ºñ±³
-		if(c==d) System.out.println("c¿Í dÀÇ ÂüÁ¶°ªÀº °°´Ù");
-		else System.out.println("c¿Í dÀÇ ÂüÁ¶°ªÀº ´Ù¸£´Ù");
-		//¹®ÀÚ¿­ ºñ±³
-		if(c.equals(d)) System.out.println("c¿Í dÀÇ ¹®ÀÚ¿­Àº °°´Ù");
-		else System.out.println("c¿Í dÀÇ ¹®ÀÚ¿­Àº ´Ù¸£´Ù");
+		//ì°¸ì¡°ê°’ ë¹„êµ
+		if(c==d) System.out.println("cì™€ dì˜ ì°¸ì¡°ê°’ì€ ê°™ë‹¤");
+		else System.out.println("cì™€ dì˜ ì°¸ì¡°ê°’ì€ ë‹¤ë¥´ë‹¤");
+		//ë¬¸ìì—´ ë¹„êµ
+		if(c.equals(d)) System.out.println("cì™€ dì˜ ë¬¸ìì—´ì€ ê°™ë‹¤");
+		else System.out.println("cì™€ dì˜ ë¬¸ìì—´ì€ ë‹¤ë¥´ë‹¤");
 		System.out.println();
 		
-		String e = "¿À´Ã ³¯Â¥´Â " + 2020 + 9 + 25;
-		//¾Õ¿¡ ¹®ÀÚ¿­ÀÌ ÀÖ±â ¶§¹®¿¡ µÚ¿¡ ¼ıÀÚ´Â ¿¬»êÀÌ ¾Æ´Ñ °áÇÕÀÌ µÊ
-		//4È¸ ¸Ş¸ğ¸®°¡ »ı¼º(+°¡ ½ÇÇàµÉ¶§¸¶´Ù)
-		//JVM¿¡ ÀÇÇØ¼­ »èÁ¦½Ã Garbage Collector·Î º¸³¿
-		//Garbage Collector°¡ ½ÇÇàµÇ¸é ÄÄÇ»ÅÍ´Â ¸ØÃá´Ù(¸Å¿ì ºü¸¥ ¼Óµµ)
+		String e = "ì˜¤ëŠ˜ ë‚ ì§œëŠ” " + 2020 + 9 + 25;
+		//ì•ì— ë¬¸ìì—´ì´ ìˆê¸° ë•Œë¬¸ì— ë’¤ì— ìˆ«ìëŠ” ì—°ì‚°ì´ ì•„ë‹Œ ê²°í•©ì´ ë¨
+		//4íšŒ ë©”ëª¨ë¦¬ê°€ ìƒì„±(+ê°€ ì‹¤í–‰ë ë•Œë§ˆë‹¤)
+		//JVMì— ì˜í•´ì„œ ì‚­ì œì‹œ Garbage Collectorë¡œ ë³´ëƒ„
+		//Garbage Collectorê°€ ì‹¤í–‰ë˜ë©´ ì»´í“¨í„°ëŠ” ë©ˆì¶˜ë‹¤(ë§¤ìš° ë¹ ë¥¸ ì†ë„)
 		System.out.println("e = " + e);
 		
-		//¹®ÀÚ¿­ Å©±â È®ÀÎ
-		System.out.println("¹®ÀÚ¿­ Å©±â = " + e.length());//°ø¹éµµ ±ÛÀÚ·Î Ãë±Ş
+		//ë¬¸ìì—´ í¬ê¸° í™•ì¸
+		System.out.println("ë¬¸ìì—´ í¬ê¸° = " + e.length());//ê³µë°±ë„ ê¸€ìë¡œ ì·¨ê¸‰
 		System.out.println();
 		
-		//ÇØ´ç ÀÎµ¦½ºÀÇ ¹®ÀÚ¸¦ °¡Á®¿È
+		//í•´ë‹¹ ì¸ë±ìŠ¤ì˜ ë¬¸ìë¥¼ ê°€ì ¸ì˜´
 		for(int i = 0; i < e.length(); i++) {
 			System.out.println(i + " : " + e.charAt(i));
 		}
 		System.out.println();
 		
-		System.out.println("ºÎºĞ ¹®ÀÚ¿­ ÃßÃâ = " + e.substring(7));
-		System.out.println("ºÎºĞ ¹®ÀÚ¿­ ÃßÃâ = " + e.substring(7, 11));
+		System.out.println("ë¶€ë¶„ ë¬¸ìì—´ ì¶”ì¶œ = " + e.substring(7));
+		System.out.println("ë¶€ë¶„ ë¬¸ìì—´ ì¶”ì¶œ = " + e.substring(7, 11));
 		
-		System.out.println("´ë¹®ÀÚ º¯°æ = " + "Hello".toUpperCase());
-		System.out.println("¼Ò¹®ÀÚ º¯°æ = " + "Hello".toLowerCase());
+		System.out.println("ëŒ€ë¬¸ì ë³€ê²½ = " + "Hello".toUpperCase());
+		System.out.println("ì†Œë¬¸ì ë³€ê²½ = " + "Hello".toLowerCase());
 		
-		System.out.println("¹®ÀÚ¿­ °Ë»ö = " + e.indexOf("Â¥"));
-		System.out.println("¹®ÀÚ¿­ °Ë»ö = " + e.indexOf("³¯Â¥"));
-		System.out.println("¹®ÀÚ¿­ °Ë»ö = " + e.indexOf("°³¹ÙºÎ"));
+		System.out.println("ë¬¸ìì—´ ê²€ìƒ‰ = " + e.indexOf("ì§œ"));
+		System.out.println("ë¬¸ìì—´ ê²€ìƒ‰ = " + e.indexOf("ë‚ ì§œ"));
+		System.out.println("ë¬¸ìì—´ ê²€ìƒ‰ = " + e.indexOf("ê°œë°”ë¶€"));
 		
 		
 	}

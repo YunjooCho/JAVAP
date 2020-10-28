@@ -14,20 +14,20 @@ public class AssertP {
 	
 	public void inPut() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("x ют╥б : ");
+		System.out.print("x Л·┘К═╔ : ");
 		x = scanner.nextInt();
-		System.out.print("y ют╥б : ");
+		System.out.print("y Л·┘К═╔ : ");
 		y = scanner.nextInt();
 	}
 	
 	public void outPut() {
-		assert y >= 0 : "y╢б 0╨╦╢ы е╘╟еЁ╙ ╟╟╬ф╬ъ гя╢ы"; //©║╥╞╦ч╫цаЖ
+		assert y >= 0 : "yК┼■ 0КЁ╢К▀╓ М│╛Й╠╟К┌≤ Й╟≥Л∙└Л∙╪ М∙°К▀╓"; //Л≈░К÷╛К╘■Л▀°Л╖─
 		
-		//га╥н╠в╥╔©║╪╜ ╪ЖгЮгр ╫д
+		//М■└К║°Й╥╦К·╗Л≈░Л└° Л┬≤М√┴М∙═ Л▀²
 		for(int i = 1; i <= y; i++) {
 			result *= x;
 		}
-		System.out.println(x + "юг " + y + "╫б : " + result);
+		System.out.println(x + "Л²≤ " + y + "Л┼╧ : " + result);
 	}
 
 }

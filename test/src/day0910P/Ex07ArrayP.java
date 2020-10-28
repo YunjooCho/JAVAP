@@ -1,19 +1,19 @@
 package day0910P;
-//¹è¿­
-//¹è¿­ÀÌ¶õ ¶È°°Àº ÀÚ·áÇüÀÌ ¸ğ¿©ÀÖ´Â °ÍÀ» °¡¸®Å´
+//ë°°ì—´
+//ë°°ì—´ì´ë€ ë˜‘ê°™ì€ ìë£Œí˜•ì´ ëª¨ì—¬ìˆëŠ” ê²ƒì„ ê°€ë¦¬í‚´
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//¿¹½Ã:
-//ÀÎÆ® ¹è¿­ÀÌ¶ó°í ÇÏ¸é
-//ÀÎÆ®°¡ »ç¿ëÀÚ ÁöÁ¤ÇÑ ¸¸Å­ÀÇ °¹¼ö°¡ ¸ğ¿©ÀÖ°í
-//±× ÀüÃ¼¸¦ ÇÏ³ªÀÇ ¹è¿­ÀÌ¶ó°í ÇÑ´Ù
+//ì˜ˆì‹œ:
+//ì¸íŠ¸ ë°°ì—´ì´ë¼ê³  í•˜ë©´
+//ì¸íŠ¸ê°€ ì‚¬ìš©ì ì§€ì •í•œ ë§Œí¼ì˜ ê°¯ìˆ˜ê°€ ëª¨ì—¬ìˆê³ 
+//ê·¸ ì „ì²´ë¥¼ í•˜ë‚˜ì˜ ë°°ì—´ì´ë¼ê³  í•œë‹¤
 public class Ex07ArrayP {
 
 	public static void main(String[] args) throws IOException {
-		//¹è¿­ ¼±¾ğ
+		//ë°°ì—´ ì„ ì–¸
 		int[] arr = new int[5];
 		
 		arr[0] = 15;
@@ -22,7 +22,7 @@ public class Ex07ArrayP {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		for(int i = 0; i < arr.length; i++) {
-			System.out.print(i + "¹ø ÀÎµ¦½º¿¡ ÀÔ·ÂÇÒ °ª : ");
+			System.out.print(i + "ë²ˆ ì¸ë±ìŠ¤ì— ì…ë ¥í•  ê°’ : ");
 			arr[i] = Integer.parseInt(br.readLine());
 			
 		}

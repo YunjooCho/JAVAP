@@ -4,21 +4,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//2.½º·¹µåÈ­
+//2.ìŠ¤ë ˆë“œí™”
 public class ATMTestP implements Runnable {
 
-	//1.ÇÊµå¸í ¼±¾ğ
-	private long deositeMoney = 100000; //ÀÜ¾×
-	private long balance; //Ãâ±İ¾×
+	//1.í•„ë“œëª… ì„ ì–¸
+	private long deositeMoney = 100000; //ì”ì•¡
+	private long balance; //ì¶œê¸ˆì•¡
 	
-	//3.¿À¹ö¶óÀÌµù
+	//3.ì˜¤ë²„ë¼ì´ë”©
 	@Override
 	public synchronized void run() {
 
 		BufferedReader br =  new BufferedReader(new InputStreamReader(System.in));
-		System.out.println(Thread.currentThread().getName() + "´Ô ¾È³çÇÏ¼¼¿ä"); //ÇöÀç ½ÇÇàÁßÀÎ ½º·¹µå°¡ ¹«¾ùÀÎÁö Ãâ·Â
+		System.out.println(Thread.currentThread().getName() + "ë‹˜ ì•ˆë…•í•˜ì„¸ìš”"); //í˜„ì¬ ì‹¤í–‰ì¤‘ì¸ ìŠ¤ë ˆë“œê°€ ë¬´ì—‡ì¸ì§€ ì¶œë ¥
 	
-		System.out.println("Ã£°íÀÚ ÇÏ´Â ±İ¾× ÀÔ·Â : ");
+		System.out.println("ì°¾ê³ ì í•˜ëŠ” ê¸ˆì•¡ ì…ë ¥ : ");
 		try {
 			balance = Long.parseLong(br.readLine());
 		} catch (NumberFormatException | IOException e) {
@@ -28,23 +28,23 @@ public class ATMTestP implements Runnable {
 		if(deositeMoney >= balance) {
 			if(balance % 10000 == 0) {
 				deositeMoney -= balance;
-				System.out.println("ÀÜ¾× : " + deositeMoney + "ÀÔ´Ï´Ù");
+				System.out.println("ì”ì•¡ : " + deositeMoney + "ì…ë‹ˆë‹¤");
 			}else {
-				System.out.println("¸¸¿ø ´ÜÀ§·Î ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ë§Œì› ë‹¨ìœ„ë¡œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 		}else {
-			System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù");
+			System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤");
 		}
 	}
 	
 	public static void main(String[] args) {
-		//4.»ı¼º
+		//4.ìƒì„±
 		ATMTestP atm = new ATMTestP();
 		Thread mom = new Thread(atm);
 		Thread son = new Thread(atm);
 		
-		mom.setName("¾ö¸¶");
-		son.setName("¾Æµé");
+		mom.setName("ì—„ë§ˆ");
+		son.setName("ì•„ë“¤");
 		
 		mom.start();
 		son.start();

@@ -3,11 +3,11 @@ package practice;
 
 public class CompTestP {
 public static void main(String[] args) {
-	//80ÀÌ»ó 100ÀÌÇÏ ? "ÇÕ°İ" : "ºÒÇÕ°İ"
+	//80ì´ìƒ 100ì´í•˜ ? "í•©ê²©" : "ë¶ˆí•©ê²©"
 	int score = 99;
-	String result = score >= 80 && score <= 100 ? "ÇÕ°İ" : "ºÒÇÕ°İ";
+	String result = score >= 80 && score <= 100 ? "í•©ê²©" : "ë¶ˆí•©ê²©";
  	
- 	 	//<if¹®> 100 ~ 90 A, 89 ~ 80 B, 79 ~ 70 C, ³ª¸ÓÁö F
+ 	 	//<ifë¬¸> 100 ~ 90 A, 89 ~ 80 B, 79 ~ 70 C, ë‚˜ë¨¸ì§€ F
  	char grade;
  	
  	if (score >= 90) {
@@ -26,51 +26,51 @@ public static void main(String[] args) {
  		grade = 'F';
  	}
  	 	
- 	System.out.println("1. °á°ú = " + result + "\n     ¼ºÀû = " + grade);
+ 	System.out.println("1. ê²°ê³¼ = " + result + "\n     ì„±ì  = " + grade);
  	System.out.println();
  
  	
 		
-	//scoreÀÇ °ªÀÌ Â¦¼öÀÌ¸é "Â¦¼ö" ¾Æ´Ï¸é "È¦¼ö"¶ó°í Ãâ·Â
+	//scoreì˜ ê°’ì´ ì§ìˆ˜ì´ë©´ "ì§ìˆ˜" ì•„ë‹ˆë©´ "í™€ìˆ˜"ë¼ê³  ì¶œë ¥
  	int evenodd = 100;
- 	String result2 = evenodd % 2 == 0 ? "Â¦¼ö" : "È¦¼ö";
- 	System.out.println("2. Â¦¼ö?È¦¼ö? = " +  result2);
+ 	String result2 = evenodd % 2 == 0 ? "ì§ìˆ˜" : "í™€ìˆ˜";
+ 	System.out.println("2. ì§ìˆ˜?í™€ìˆ˜? = " +  result2);
  	System.out.println();
  
  	
-	//a, bÁß¿¡¼­ Å« °ªÀ» Ãâ·ÂÇÏ½Ã¿À
+	//a, bì¤‘ì—ì„œ í° ê°’ì„ ì¶œë ¥í•˜ì‹œì˜¤
  	int biga = 70, bigb = 1;
  	int result3 = biga > bigb ? biga : bigb;
- 	System.out.println("3. Å« ¼ö : " + result3);
+ 	System.out.println("3. í° ìˆ˜ : " + result3);
  	System.out.println();
  	
 	
-	//c°¡ 2¿Í 3ÀÇ °ø¹è¼öÀÎÁö È®ÀÎ
+	//cê°€ 2ì™€ 3ì˜ ê³µë°°ìˆ˜ì¸ì§€ í™•ì¸
  	int common = 60;
- 	String result4 = common % 2 == 0 && common % 3 == 0 ? "°ø¹è¼ö" : "°ø¹è¼ö ¾Æ´Ô";
- 	System.out.println("4. °á°ú : " + result4);
+ 	String result4 = common % 2 == 0 && common % 3 == 0 ? "ê³µë°°ìˆ˜" : "ê³µë°°ìˆ˜ ì•„ë‹˜";
+ 	System.out.println("4. ê²°ê³¼ : " + result4);
  	System.out.println();
 	
-	//MathÅ¬·¡½º¸¦ ÀÌ¿ëÇÏ¿© 2ÀÇ 5½Â ±¸ÇÏ±â - APIÂüÁ¶(doubleÇü½Ä)
+	//Mathí´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ 2ì˜ 5ìŠ¹ êµ¬í•˜ê¸° - APIì°¸ì¡°(doubleí˜•ì‹)
  	double a = 2.0, b = 5.0;
-	System.out.println("5. " + (int)a + "ÀÇ " + (int)b + "½ÂÀº : " + (int)Math.pow(a, b));
+	System.out.println("5. " + (int)a + "ì˜ " + (int)b + "ìŠ¹ì€ : " + (int)Math.pow(a, b));
 	System.out.println();
 	
 	//<CompTest2>
 	/*
-	 ch¿¡ ÀÖ´Â µ¥ÀÌÅÍ°¡ ´ë¹®ÀÚÀÌ¸é ¼Ò¹®ÀÚ·Î Ãâ·ÂÇÏ°í ¾Æ´Ï¸é(¼Ò¹®ÀÚ) ´ë¹®ÀÚ·Î Ãâ·ÂÇÏ½Ã¿À
+	 chì— ìˆëŠ” ë°ì´í„°ê°€ ëŒ€ë¬¸ìì´ë©´ ì†Œë¬¸ìë¡œ ì¶œë ¥í•˜ê³  ì•„ë‹ˆë©´(ì†Œë¬¸ì) ëŒ€ë¬¸ìë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 	 
-	 [½ÇÇà°á°ú]
+	 [ì‹¤í–‰ê²°ê³¼]
 	  T -> t
 	  
-	  ¶Ç´Â
+	  ë˜ëŠ”
 	  
 	  e -> E
 	 */
 	
 	char alp = 'p';
 	
-	int result5 = alp >= 'A' && alp <= 'Z' ? (int)alp + 32 : alp - 32; //¿¬»êÀÌ µé¾î°¡±â ¶§¹®¿¡ result5´Â int¿©¾ß ÇÔ
-	System.out.println("6. °á°ú : " + alp + " -> " + (char)result5);
+	int result5 = alp >= 'A' && alp <= 'Z' ? (int)alp + 32 : alp - 32; //ì—°ì‚°ì´ ë“¤ì–´ê°€ê¸° ë•Œë¬¸ì— result5ëŠ” intì—¬ì•¼ í•¨
+	System.out.println("6. ê²°ê³¼ : " + alp + " -> " + (char)result5);
   }
 }

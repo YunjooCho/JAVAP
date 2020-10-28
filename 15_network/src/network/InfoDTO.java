@@ -6,8 +6,8 @@ enum Info{
 	JOIN, EXIT, SEND
 }
 
-public class InfoDTO implements Serializable { //Á÷·ÄÈ­(°´Ã¼ÀÇ µ¥ÀÌÅÍ ¼Û¼ö½Å)¸¦ À§ÇØ
-	private static final long serialVersionUID = 1L;//Á÷·ÄÈ­½Ã ¹öÁ¯ÀÌ ¸¶À½´ë·Î ÀâÈ÷±â ¶§¹®¿¡ Á¤ÇØÁÜ
+public class InfoDTO implements Serializable { //ì§ë ¬í™”(ê°ì²´ì˜ ë°ì´í„° ì†¡ìˆ˜ì‹ )ë¥¼ ìœ„í•´
+	private static final long serialVersionUID = 1L;//ì§ë ¬í™”ì‹œ ë²„ì ¼ì´ ë§ˆìŒëŒ€ë¡œ ì¡íˆê¸° ë•Œë¬¸ì— ì •í•´ì¤Œ
  	
 	private String nickName;
 	private String message;
@@ -35,5 +35,5 @@ public class InfoDTO implements Serializable { //Á÷·ÄÈ­(°´Ã¼ÀÇ µ¥ÀÌÅÍ ¼Û¼ö½Å)¸¦ 
 
 }
 
-//BufferedReader, PrintWriter »ç¿ëÇÏÁö ¸»°Í
-//InfoDTO °´Ã¼·Î µ¥ÀÌÅÍ¸¦ ³Ñ±â°í ¹Ş°í - ObjectInputStream, ObjectOutputStream (table¿¡ ÀÎ¼âÇÑ °Í)
+//BufferedReader, PrintWriter ì‚¬ìš©í•˜ì§€ ë§ê²ƒ
+//InfoDTO ê°ì²´ë¡œ ë°ì´í„°ë¥¼ ë„˜ê¸°ê³  ë°›ê³  - ObjectInputStream, ObjectOutputStream (tableì— ì¸ì‡„í•œ ê²ƒ)

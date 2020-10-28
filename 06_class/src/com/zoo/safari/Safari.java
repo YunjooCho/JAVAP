@@ -2,21 +2,21 @@ package com.zoo.safari;
 
 import com.zoo.Zoo;
 
-public class Safari extends Zoo {//Safari°¡ ÀÚ½ÄÅ¬·¡½º Zoo°¡ ºÎ¸ğÅ¬·¡½º
+public class Safari extends Zoo {//Safariê°€ ìì‹í´ë˜ìŠ¤ Zooê°€ ë¶€ëª¨í´ë˜ìŠ¤
 
 	public static void main(String[] args) {
-		 Zoo zoo = new Zoo(); //tiger()°¡ staticÀÌ¸é »ı¼º¾ÈÇØµµ µÊ
-		 zoo.tiger();//Á¢±Ù Á¦ÇÑÀÚ - public : ´Ù¸¥ ÆĞÅ°Áö¶ó ¾ê¸¸ Á¢±Ù °¡´É
-		 //zoo.giraffe(); //error!Á¢±Ù Á¦ÇÑÀÚ - protected : ºÎ¸ğ´Â ÀÚ½Ä¸Ş¼Òµå¿¡ ´ëÇØ ¸ğ¸§
-		 //zoo.elephant(); //error!Á¢±Ù Á¦ÇÑÀÚ - default
-		 //zoo.lion(); //error!Á¢±Ù Á¦ÇÑÀÚ - private
-		 //Zoo zoo = new Safari()µµ privateÂüÁ¶ ¾ÈµÊ
+		 Zoo zoo = new Zoo(); //tiger()ê°€ staticì´ë©´ ìƒì„±ì•ˆí•´ë„ ë¨
+		 zoo.tiger();//ì ‘ê·¼ ì œí•œì - public : ë‹¤ë¥¸ íŒ¨í‚¤ì§€ë¼ ì–˜ë§Œ ì ‘ê·¼ ê°€ëŠ¥
+		 //zoo.giraffe(); //error!ì ‘ê·¼ ì œí•œì - protected : ë¶€ëª¨ëŠ” ìì‹ë©”ì†Œë“œì— ëŒ€í•´ ëª¨ë¦„
+		 //zoo.elephant(); //error!ì ‘ê·¼ ì œí•œì - default
+		 //zoo.lion(); //error!ì ‘ê·¼ ì œí•œì - private
+		 //Zoo zoo = new Safari()ë„ privateì°¸ì¡° ì•ˆë¨
 		 
 		 Safari safari = new Safari();
 		 safari.tiger();
 		 safari.giraffe();
-		 //safari.elephant();//error!Á¢±Ù Á¦ÇÑÀÚ - default
-		 //safari.lion();//error!Á¢±Ù Á¦ÇÑÀÚ - private
+		 //safari.elephant();//error!ì ‘ê·¼ ì œí•œì - default
+		 //safari.lion();//error!ì ‘ê·¼ ì œí•œì - private
 
 	}
 

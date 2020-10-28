@@ -1,19 +1,19 @@
 package nested;
 
-public abstract class AbstractTest { //POJO(Plain Old Java Object) : ±âº»Çü½Ä
-									 //Ãß»ó¸Ş¼Òµå°¡ ÀÖ±â ¶§¹®¿¡ Ãß»óÅ¬·¡½º°¡ µÊ
+public abstract class AbstractTest { //POJO(Plain Old Java Object) : ê¸°ë³¸í˜•ì‹
+									 //ì¶”ìƒë©”ì†Œë“œê°€ ìˆê¸° ë•Œë¬¸ì— ì¶”ìƒí´ë˜ìŠ¤ê°€ ë¨
 	String name;
 	
-//	public void setName(String name) {//±¸Çö - ¸Ş´ºÆÇ, »ı¼ºÀÌ ÇÊ¿ä
+//	public void setName(String name) {//êµ¬í˜„ - ë©”ë‰´íŒ, ìƒì„±ì´ í•„ìš”
 //		this.name = name;
 //	}
-	public abstract void setName(String name);//Ãß»óÅ¬·¡½º
+	public abstract void setName(String name);//ì¶”ìƒí´ë˜ìŠ¤
 	
 	
-	public String getName() {//±¸Çö
+	public String getName() {//êµ¬í˜„
 		return name;
 	}
 }
 
-//Ãß»ó¸Ş¼Òµå°¡ ÀÖÀ¸¸é ¹İµå½Ã Ãß»óÅ¬·¡½ºÀÓ
-//Ãß»óÅ¬·¡½º¶ó°í ÇØ¼­ ¹İµå½Ã Ãß»ó¸Ş¼Òµå°¡ ÀÖ´Â °ÍÀº ¾Æ´Ô
+//ì¶”ìƒë©”ì†Œë“œê°€ ìˆìœ¼ë©´ ë°˜ë“œì‹œ ì¶”ìƒí´ë˜ìŠ¤ì„
+//ì¶”ìƒí´ë˜ìŠ¤ë¼ê³  í•´ì„œ ë°˜ë“œì‹œ ì¶”ìƒë©”ì†Œë“œê°€ ìˆëŠ” ê²ƒì€ ì•„ë‹˜

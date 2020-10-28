@@ -2,10 +2,10 @@ package loop;
 
 public class WhileTest2 {
 	public static void main(String[] args) {
-/*A B C D E F G....X Y Z Ãâ·ÂÇÏµÇ 1ÁÙ¿¡ 7°³¾¿ Ãâ·ÂÇÏ±â
-A ~ Z Ãâ·ÂÇÏµÇ 1ÁÙ¿¡ 7°³¾¿ Ãâ·ÂÇÏ±â
+/*A B C D E F G....X Y Z ì¶œë ¥í•˜ë˜ 1ì¤„ì— 7ê°œì”© ì¶œë ¥í•˜ê¸°
+A ~ Z ì¶œë ¥í•˜ë˜ 1ì¤„ì— 7ê°œì”© ì¶œë ¥í•˜ê¸°
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 A B C D E F G
 H I J K L M N
 O P Q R S T U
@@ -21,7 +21,7 @@ V W X Y Z
 			
 			count++; // 1 2 3 4 5
 			if(count % 7 == 0) System.out.println();
-			//¸î¹øÂ°ÀÎÁö Ç¥½ÃÇÏ´Â º¯¼ö°¡ ÇÊ¿ä
+			//ëª‡ë²ˆì§¸ì¸ì§€ í‘œì‹œí•˜ëŠ” ë³€ìˆ˜ê°€ í•„ìš”
 			
 		}//While
 		

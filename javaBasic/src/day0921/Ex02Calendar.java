@@ -6,66 +6,66 @@ import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-//³¯Â¥¸¦ ´ã´çÇÏ´Â Calendar Å¬·¡½º
+//ë‚ ì§œë¥¼ ë‹´ë‹¹í•˜ëŠ” Calendar í´ë˜ìŠ¤
 public class Ex02Calendar {
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//ÀÚ¹Ù¿¡¼­ ³¯Â¥¸¦ ´ã´çÇÏ´Â Å¬·¡½º´Â ´Ù¾çÇÏ°Ô ÁØºñµÇ¾îÀÖÁö¸¸
-		//±× Áß¿¡¼­ ÀÚ¹Ù°¡1.8¹öÀü ÀÌÈÄ·Î ±ÇÀåÇÏ´Â ³¯Â¥ ´ã´çÅ¬·¡½º´Â
-		//ÀÌ CalendarÅ¬·¡½ºÀÌ´Ù.
+		//ìë°”ì—ì„œ ë‚ ì§œë¥¼ ë‹´ë‹¹í•˜ëŠ” í´ë˜ìŠ¤ëŠ” ë‹¤ì–‘í•˜ê²Œ ì¤€ë¹„ë˜ì–´ìˆì§€ë§Œ
+		//ê·¸ ì¤‘ì—ì„œ ìë°”ê°€1.8ë²„ì „ ì´í›„ë¡œ ê¶Œì¥í•˜ëŠ” ë‚ ì§œ ë‹´ë‹¹í´ë˜ìŠ¤ëŠ”
+		//ì´ Calendarí´ë˜ìŠ¤ì´ë‹¤.
 		
-		//Ä¶¸°´õ °´Ã¼´Â
-		//»ı¼ºÀÚ¸¦ ÅëÇÑ ÃÊ±âÈ­¸¦ ÇÒ ¼ö ¾ø°í
-		//Ç×»ó Calendar.getInstance()·Î ÇöÀç½Ã°£À» ÃÊ±âÈ­ÇØÁÖ¾î¾ßÇÑ´Ù!!!
-		Calendar cal = Calendar.getInstance(); //Ä¶¸°´õ °´Ã¼ÀÇ »ı¼º&ÃÊ±âÈ­
+		//ìº˜ë¦°ë” ê°ì²´ëŠ”
+		//ìƒì„±ìë¥¼ í†µí•œ ì´ˆê¸°í™”ë¥¼ í•  ìˆ˜ ì—†ê³ 
+		//í•­ìƒ Calendar.getInstance()ë¡œ í˜„ì¬ì‹œê°„ì„ ì´ˆê¸°í™”í•´ì£¼ì–´ì•¼í•œë‹¤!!!
+		Calendar cal = Calendar.getInstance(); //ìº˜ë¦°ë” ê°ì²´ì˜ ìƒì„±&ì´ˆê¸°í™”
 		
-		//Calendar°´Ã¼¸¦ ÇÑ¹ø Âï¾îº¸ÀÚ
+		//Calendarê°ì²´ë¥¼ í•œë²ˆ ì°ì–´ë³´ì
 		System.out.println("cal : " + cal);
 		
-		//Calendar°´Ã¼¸¦ Âï¾îº¸¸é, ¿ì¸®°¡ ±×´Ú ¾Ë°í½ÍÁö ¾ÊÀº Á¤º¸¸¦ Æ÷ÇÔÇØ¼­
-		//¸Å¿ì ¾Ë¾Æº¸±â Èûµç ÇüÅÂ°¡ ³ª¿Â´Ù.
+		//Calendarê°ì²´ë¥¼ ì°ì–´ë³´ë©´, ìš°ë¦¬ê°€ ê·¸ë‹¥ ì•Œê³ ì‹¶ì§€ ì•Šì€ ì •ë³´ë¥¼ í¬í•¨í•´ì„œ
+		//ë§¤ìš° ì•Œì•„ë³´ê¸° í˜ë“  í˜•íƒœê°€ ë‚˜ì˜¨ë‹¤.
 		
-		//µû¶ó¼­ Àú ¸ğ¾çÀ» Á» ¿¹»Ú°Ô ²Ù¹Ğ·Á¸é
-		//DateFormatÀÌ¶ó´Â Å¬·¡½º °´Ã¼¸¦ ÀÌ¿ëÇØ¼­
-		//¿ì¸®°¡ Á» ²Ù¸çÁÖ¾î¾ß ÇÑ´Ù.
-		//°¡Àå ¸¹ÀÌ ¾²ÀÌ´Â DateFormatÅ¬·¡½º´Â SimpleDateFormatÀÌ ÀÖ´Ù.
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy³â MM¿ù ddÀÏ HH½Ã mmºĞ ssÃÊ"); 
-		//´ë¼Ò¹®ÀÚ ±¸ºĞ
-		//À§ÀÇ yyyy³â MM¿ù ddÀÏ HH½Ã mmºĞ ssÃÊ¸¦ ¼³¸íÇÏ¸é
-		//yyyy : ¿¬µµ¸¦ 4ÀÚ¸® ¼ıÀÚ·Î Ç¥½Ã
-		//MM : ¿ùÀ» 2ÀÚ¸® ¼ıÀÚ·Î Ç¥½Ã. ¸¸¾à 1~9¿ùÀÌ¸é ¾Õ¿¡ 0À» ºÙ¿©ÁØ´Ù
-		//dd : ÇØ´ç ¿ùÀÇ ¸çÄ¥Â°ÀÎÁö¸¦ 2ÀÚ¸® ¼ıÀÚ·Î Ç¥½Ã
-		//HH : ½Ã°£À» 0~23½Ã ÇüÅÂ·Î Ç¥½Ã(hh´Â 12½Ã°£ ´ÜÀ§·Î Ç¥½Ã)
-		//mm : ½Ã°£À» 0~59ºĞ 2ÀÚ¸®·Î Ç¥½Ã
-		//ss : ÃÊ¸¦ 2ÀÚ¸®·Î Ç¥½Ã
+		//ë”°ë¼ì„œ ì € ëª¨ì–‘ì„ ì¢€ ì˜ˆì˜ê²Œ ê¾¸ë°€ë ¤ë©´
+		//DateFormatì´ë¼ëŠ” í´ë˜ìŠ¤ ê°ì²´ë¥¼ ì´ìš©í•´ì„œ
+		//ìš°ë¦¬ê°€ ì¢€ ê¾¸ë©°ì£¼ì–´ì•¼ í•œë‹¤.
+		//ê°€ì¥ ë§ì´ ì“°ì´ëŠ” DateFormatí´ë˜ìŠ¤ëŠ” SimpleDateFormatì´ ìˆë‹¤.
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyë…„ MMì›” ddì¼ HHì‹œ mmë¶„ ssì´ˆ"); 
+		//ëŒ€ì†Œë¬¸ì êµ¬ë¶„
+		//ìœ„ì˜ yyyyë…„ MMì›” ddì¼ HHì‹œ mmë¶„ ssì´ˆë¥¼ ì„¤ëª…í•˜ë©´
+		//yyyy : ì—°ë„ë¥¼ 4ìë¦¬ ìˆ«ìë¡œ í‘œì‹œ
+		//MM : ì›”ì„ 2ìë¦¬ ìˆ«ìë¡œ í‘œì‹œ. ë§Œì•½ 1~9ì›”ì´ë©´ ì•ì— 0ì„ ë¶™ì—¬ì¤€ë‹¤
+		//dd : í•´ë‹¹ ì›”ì˜ ë©°ì¹ ì§¸ì¸ì§€ë¥¼ 2ìë¦¬ ìˆ«ìë¡œ í‘œì‹œ
+		//HH : ì‹œê°„ì„ 0~23ì‹œ í˜•íƒœë¡œ í‘œì‹œ(hhëŠ” 12ì‹œê°„ ë‹¨ìœ„ë¡œ í‘œì‹œ)
+		//mm : ì‹œê°„ì„ 0~59ë¶„ 2ìë¦¬ë¡œ í‘œì‹œ
+		//ss : ì´ˆë¥¼ 2ìë¦¬ë¡œ í‘œì‹œ
 		System.out.println(sdf.format(cal.getTime()));
 		
-		//±×·¯¸é
-		//¿¬-ÀÏ-¿ù ½Ã-ºĞ-ÃÊ¸¦
-		//¿¬: 4ÀÚ¸®
-		//ÀÏ, ¿ù, ½Ã, ºĞ, ÃÊÀÇ °æ¿ì 1ÀÚ¸®¸é ÇÑÀÚ¸®·Î¸¸ Ç¥½ÃÇÏ·Á¸é
+		//ê·¸ëŸ¬ë©´
+		//ì—°-ì¼-ì›” ì‹œ-ë¶„-ì´ˆë¥¼
+		//ì—°: 4ìë¦¬
+		//ì¼, ì›”, ì‹œ, ë¶„, ì´ˆì˜ ê²½ìš° 1ìë¦¬ë©´ í•œìë¦¬ë¡œë§Œ í‘œì‹œí•˜ë ¤ë©´
 		sdf = new SimpleDateFormat("yyyy-M-d h:m:s");
-		System.out.println(sdf.format(cal.getTime())); //CarTÅ¬·¡½ºÀÇ getPrice¿Í À¯»ç
+		System.out.println(sdf.format(cal.getTime())); //CarTí´ë˜ìŠ¤ì˜ getPriceì™€ ìœ ì‚¬
 		
-		//±×·¯¸é ¿ì¸®°¡ »ç¿ëÀÚ·ÎºÎÅÍ ³â¿ùÀÏ ½ÃºĞÃÊ¸¦ ÀÔ·Â¹Ş¾Æº¸ÀÚ
-		//ÀÌ¶§´Â Calender °´Ã¼¿¡ setYear....µîÀ» »çŸGÇÏ¸é µÈ´Ù.
+		//ê·¸ëŸ¬ë©´ ìš°ë¦¬ê°€ ì‚¬ìš©ìë¡œë¶€í„° ë…„ì›”ì¼ ì‹œë¶„ì´ˆë¥¼ ì…ë ¥ë°›ì•„ë³´ì
+		//ì´ë•ŒëŠ” Calender ê°ì²´ì— setYear....ë“±ì„ ì‚¬ìš¯í•˜ë©´ ëœë‹¤.
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("¿¬ : ");
+		System.out.println("ì—° : ");
 		int year = Integer.parseInt(bufferedReader.readLine());
-		System.out.println("¿ù : ");
+		System.out.println("ì›” : ");
 		int month = Integer.parseInt(bufferedReader.readLine()) - 1;
-		System.out.println("ÀÏ : ");
+		System.out.println("ì¼ : ");
 		int day = Integer.parseInt(bufferedReader.readLine());
 		
-		System.out.println("½Ã : ");
+		System.out.println("ì‹œ : ");
 		int hour = Integer.parseInt(bufferedReader.readLine());
-		System.out.println("ºĞ : ");
+		System.out.println("ë¶„ : ");
 		int minute = Integer.parseInt(bufferedReader.readLine());
-		System.out.println("ÃÊ : ");
+		System.out.println("ì´ˆ : ");
 		int second = Integer.parseInt(bufferedReader.readLine());
-		//Ä¶¸°´õ¿¡¼­ ÇÏ³ª ÁÖÀÇÇØ¾ß ÇÒ Á¡Àº
-		//¿ùÀÇ °æ¿ì 1~12°¡ ¾Æ´Ñ
-		//0~11·Î ÀÎ½ÄÇÏ±â ¶§¹®¿¡(¹è¿­°°ÀÌ)
-		//¸¸¾à 5¿ùÀ» ÀÔ·ÂÇÏ°í ½Í´Ù¸é 4¶ó°í ÀÔ·ÂÇØ¾ßÇÑ´Ù
+		//ìº˜ë¦°ë”ì—ì„œ í•˜ë‚˜ ì£¼ì˜í•´ì•¼ í•  ì ì€
+		//ì›”ì˜ ê²½ìš° 1~12ê°€ ì•„ë‹Œ
+		//0~11ë¡œ ì¸ì‹í•˜ê¸° ë•Œë¬¸ì—(ë°°ì—´ê°™ì´)
+		//ë§Œì•½ 5ì›”ì„ ì…ë ¥í•˜ê³  ì‹¶ë‹¤ë©´ 4ë¼ê³  ì…ë ¥í•´ì•¼í•œë‹¤
 		cal.set(year,month,day,hour,minute,second);
 		System.out.println(sdf.format(cal.getTime()));
 	}

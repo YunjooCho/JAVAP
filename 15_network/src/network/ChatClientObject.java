@@ -25,10 +25,10 @@ import javax.swing.ScrollPaneConstants;
 
 
 
-//¿À¸ñÀÇ ÁÂÇ¥, »ö±ò, »ó´ë¹æ¿¡°Ôµµ Ç¥½Ã
+//ì˜¤ëª©ì˜ ì¢Œí‘œ, ìƒ‰ê¹”, ìƒëŒ€ë°©ì—ê²Œë„ í‘œì‹œ
 public class ChatClientObject extends JFrame implements ActionListener, Runnable {
 
-	//0.ÇÊµå ¼±¾ğ
+	//0.í•„ë“œ ì„ ì–¸
 	private JTextField input;
 	private JButton send;
 	private JTextArea output;
@@ -40,10 +40,10 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 	
 	
 	public ChatClientObject() {
-		super("*~Ã¤ÆÃ¹æ~*");
-		//2.ÄÄÆ÷³ÍÆ® »ı¼º
+		super("*~ì±„íŒ…ë°©~*");
+		//2.ì»´í¬ë„ŒíŠ¸ ìƒì„±
 		input = new JTextField(15);
-		send = new JButton("º¸³»±â");
+		send = new JButton("ë³´ë‚´ê¸°");
 		output = new JTextArea();
 		JScrollPane scroll = new JScrollPane(output);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -58,7 +58,7 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 		c.add("South", p1);
 		
 		
-		//1.ÇÁ·¹ÀÓ ¸¸µé±â
+		//1.í”„ë ˆì„ ë§Œë“¤ê¸°
 		setBounds(700,300, 300, 300); 
 		setVisible(true);
 		addWindowListener(new WindowAdapter() {
@@ -79,27 +79,27 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 		
 		
 		
-	}//ChatClientObject »ı¼ºÀÚ 
+	}//ChatClientObject ìƒì„±ì 
 	
 	
 	private void service() {
 	   
 		
-		 //3.¼­¹ö»ı¼º
-		String serverIP = JOptionPane.showInputDialog(this, "¼­¹öIP¸¦ ÀÔ·ÂÇÏ¼¼¿ä", "192.168.0.17");
+		 //3.ì„œë²„ìƒì„±
+		String serverIP = JOptionPane.showInputDialog(this, "ì„œë²„IPë¥¼ ì…ë ¥í•˜ì„¸ìš”", "192.168.0.17");
 		if(serverIP == null || serverIP.length() == 0) {
-			System.out.println("¼­¹ö°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù");
+			System.out.println("ì„œë²„ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤");
 			System.exit(0);
 		}
 		
-		//4.»ç¿ëÀÚ·ÎºÎÅÍ ´Ğ³×ÀÓ¹Ş±â
-		String nickName = JOptionPane.showInputDialog(this, "´Ğ³×ÀÓÀ» ÀÔ·ÂÇÏ¼¼¿ä", "´Ğ³×ÀÓ", JOptionPane.INFORMATION_MESSAGE);
+		//4.ì‚¬ìš©ìë¡œë¶€í„° ë‹‰ë„¤ì„ë°›ê¸°
+		String nickName = JOptionPane.showInputDialog(this, "ë‹‰ë„¤ì„ì„ ì…ë ¥í•˜ì„¸ìš”", "ë‹‰ë„¤ì„", JOptionPane.INFORMATION_MESSAGE);
 		if(nickName == null || nickName.length() == 0) {
-			//¡Ú¼Õ´Ô1,¼Õ´Ô2,¼Õ´Ô3....¼³Á¤ÇØº¸±â
+			//â˜…ì†ë‹˜1,ì†ë‹˜2,ì†ë‹˜3....ì„¤ì •í•´ë³´ê¸°
 			nickName = "guest";	
 		}
 		
-		//5.¼ÒÄÏ»ı¼º(ÇÚµåÆù)
+		//5.ì†Œì¼“ìƒì„±(í•¸ë“œí°)
 		try {
 			
 			socket = new Socket(serverIP, 9500);
@@ -107,15 +107,15 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 			oos = new ObjectOutputStream(socket.getOutputStream());
 			
 		} catch (IOException e) {
-			System.out.println("¼­¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù");
+			System.out.println("ì„œë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			e.printStackTrace();
 			System.exit(0);
 		}
 		
 		
-		//6.¼­¹ö·Î ´Ğ³×ÀÓ º¸³»±â
+		//6.ì„œë²„ë¡œ ë‹‰ë„¤ì„ ë³´ë‚´ê¸°
 		try {
-			InfoDTO dto = new InfoDTO(); //´Ğ³×ÀÓ Àü¼Û¿ëÀ¸·Î ÇÑ¹ø ¾²°í ¹ö¸²
+			InfoDTO dto = new InfoDTO(); //ë‹‰ë„¤ì„ ì „ì†¡ìš©ìœ¼ë¡œ í•œë²ˆ ì“°ê³  ë²„ë¦¼
 			dto.setCommand(Info.JOIN);
 			dto.setNickName(nickName);
 			oos.writeObject(dto);
@@ -137,13 +137,13 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 	
 	@Override
 	public void run() {
-		//¼­¹ö·Î ºÎÅÍ ¹ŞÀ½
+		//ì„œë²„ë¡œ ë¶€í„° ë°›ìŒ
 		while(true) {
 			InfoDTO dto = null;
 			try {
 				dto = (InfoDTO)ois.readObject();
 				//list = (ArrayList)ois.readObject();
-				if(dto.getCommand() == Info.EXIT) { //Á¾·á¶ó´Â ¸Ş½ÃÁö°¡ µé¾î¿Ô´ÂÁö
+				if(dto.getCommand() == Info.EXIT) { //ì¢…ë£Œë¼ëŠ” ë©”ì‹œì§€ê°€ ë“¤ì–´ì™”ëŠ”ì§€
 					ois.close();
 					oos.close();
 					socket.close();
@@ -152,8 +152,8 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 					
 					output.append(dto.getMessage() + "\n");
 					
-					int pos = output.getText().length(); // TextArea ±ÛÀÚ ¼ö °¡Á®¿À±â
-					output.setCaretPosition(pos);        // À§Ä¡°ª¿¡ µû¶ó ½ºÅ©·ÑÀÌ °°ÀÌ ¿òÁ÷¿©Áü
+					int pos = output.getText().length(); // TextArea ê¸€ì ìˆ˜ ê°€ì ¸ì˜¤ê¸°
+					output.setCaretPosition(pos);        // ìœ„ì¹˜ê°’ì— ë”°ë¼ ìŠ¤í¬ë¡¤ì´ ê°™ì´ ì›€ì§ì—¬ì§
 					
 				}
 				
@@ -166,7 +166,7 @@ public class ChatClientObject extends JFrame implements ActionListener, Runnable
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-			//¼­¹ö·Î º¸³¿
+			//ì„œë²„ë¡œ ë³´ëƒ„
 			String msg = input.getText();
 			//list = new ArrayList<InfoDTO>();
 			InfoDTO dto = new InfoDTO();			

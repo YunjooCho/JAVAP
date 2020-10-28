@@ -7,10 +7,10 @@ import java.io.InputStreamReader;
 
 import day0916.CarT; //ctrl+shift+o
 
-//¸¸¾à ²Ë Â÷¸é
-//°¡Àå ¾Õ¿¡ °ÅºÎÅÍ Á¦°ÅÇÏ°í  ¢º»ı¼ºÀÚÃÊ±âÈ­?³ñ, µŞ¹è¿­À» ¾Õ¹è¿­·Î µ¤¾î¾²±â
-//ÇÑÄ­¾¿ ¶¯°Ü¼­ ¸Ç ¸¶Áö¸·¿¡ µ¤¾î¾º¿ì´Â Çü½ÄÀ¸·Î  ¢ºtemp?³ñ, µŞ¹è¿­À» ¾Õ¹è¿­·Î µ¤¾î¾²±â
-//¹è¿­À» °ü¸®ÇÏ´Â ÇÁ·Î±×·¥
+//ë§Œì•½ ê½‰ ì°¨ë©´
+//ê°€ì¥ ì•ì— ê±°ë¶€í„° ì œê±°í•˜ê³   â–¶ìƒì„±ìì´ˆê¸°í™”?ë†‰, ë’·ë°°ì—´ì„ ì•ë°°ì—´ë¡œ ë®ì–´ì“°ê¸°
+//í•œì¹¸ì”© ë•¡ê²¨ì„œ ë§¨ ë§ˆì§€ë§‰ì— ë®ì–´ì”Œìš°ëŠ” í˜•ì‹ìœ¼ë¡œ  â–¶temp?ë†‰, ë’·ë°°ì—´ì„ ì•ë°°ì—´ë¡œ ë®ì–´ì“°ê¸°
+//ë°°ì—´ì„ ê´€ë¦¬í•˜ëŠ” í”„ë¡œê·¸ë¨
 public class CarEx05 {
 	private static int SIZE = 3;
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -20,81 +20,81 @@ public class CarEx05 {
 			showMenu();
 			int userChoice = Integer.parseInt(bufferedReader.readLine());
 			if(userChoice == 1) {
-				//ÀÔ·Â ¸Ş¼Òµå ½ÇÇà
-				carArray = add(carArray); //carArray¿¡ add¸Ş¼Òµå¿¡¼­ ¹İÈ¯µÈ °ªÀ» µ¤¾î ¾º¿ì±â
+				//ì…ë ¥ ë©”ì†Œë“œ ì‹¤í–‰
+				carArray = add(carArray); //carArrayì— addë©”ì†Œë“œì—ì„œ ë°˜í™˜ëœ ê°’ì„ ë®ì–´ ì”Œìš°ê¸°
 			}else if(userChoice == 2) {
-				//Ãâ·Â ¸Ş¼Òµå ½ÇÇà
+				//ì¶œë ¥ ë©”ì†Œë“œ ì‹¤í–‰
 				printArray(carArray);
 			}else if(userChoice == 3) {
-				//¸Ş½ÃÁö Ãâ·Â ÈÄ Á¾·á
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+				//ë©”ì‹œì§€ ì¶œë ¥ í›„ ì¢…ë£Œ
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 				break;
 			}else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 		
 	}
 	
-	//5. Ãâ·Â ¸Ş¼Òµå
+	//5. ì¶œë ¥ ë©”ì†Œë“œ
 	private static void printArray(CarT[] carArray) {
 		for(int i = 0; i < carArray.length; i++) {
 			if(carArray[i] != null) {
-				System.out.println(carArray[i]); //¹è¿­ÀÌ nullÀÌ ¾Æ´Ò ¶§ Ãâ·Â
+				System.out.println(carArray[i]); //ë°°ì—´ì´ nullì´ ì•„ë‹ ë•Œ ì¶œë ¥
 			}
 		}
 	}
 	
 	
-	//4. 2¿¡¼­ ¹Ş¾Æ¿Â ¼ıÀÚ¸¦ ¹è¿­ÀÇ ÀÎµ¦½º¿¡ ÀÔ·ÂÇÏ°í, ÇØ´ç ¹è¿­¿¡ 3¿¡¼­ ¹Ş¾Æ¿Â °´Ã¼°ªÀ» ÀÔ·Â 
-	private static CarT[] add(CarT[] carArray) throws NumberFormatException, IOException   { //¸®ÅÏÅ¸ÀÔ: ¹è¿­ (ÇüÅÂ : Å¬·¡½º¸í[]) -¸®ÅÏÅ¸ÀÔ¿¡´Â Å¬·¡½º, ¹è¿­ µî ¿©·¯°¡Áö°¡ ¿Ã ¼ö ÀÖÀ½
-		int index = findEmptyIndex(carArray); //¹è¿­À» ÇÑÄ­¾¿ ¶¯°ÜÁÖ°í ¸Ç ¸¶Áö¸· ÀÎµ¦½º¿¡ »õ·Î¿î c°´Ã¼¸¦ ³Ö¾îÁÜ
-										      //2¹ø ¸Ş¼Òµå¿¡¼­ ¹Ş¾Æ¿Â -1, 0, 1, 2°¡ ÀÖÀ½
-		if(index != -1) {                     //-1ÀÌ ¾Æ´Ñ °æ¿ì¸¸ 3¹ø¸Ş¼Òµå°¡ ½ÇÇà
-			//ºóÄ­ÀÌ Á¸ÀçÇÏ¹Ç·Î index ºó Ä­¿¡            
-			//Car °´Ã¼¸¦ ³Ö¾îÁØ´Ù.
-			carArray[index] = setCarInfo();   //3¹ø ¸Ş¼Òµå, ÇØ´ç ¹è¿­¿¡ ¹İÈ¯µÈ °´Ã¼cÁÖ¼Ò°ªÀ» ´ëÀÔ(°´Ã¼c¾È¿¡ Â÷·®Á¤º¸°¡ Á¸Àç)
+	//4. 2ì—ì„œ ë°›ì•„ì˜¨ ìˆ«ìë¥¼ ë°°ì—´ì˜ ì¸ë±ìŠ¤ì— ì…ë ¥í•˜ê³ , í•´ë‹¹ ë°°ì—´ì— 3ì—ì„œ ë°›ì•„ì˜¨ ê°ì²´ê°’ì„ ì…ë ¥ 
+	private static CarT[] add(CarT[] carArray) throws NumberFormatException, IOException   { //ë¦¬í„´íƒ€ì…: ë°°ì—´ (í˜•íƒœ : í´ë˜ìŠ¤ëª…[]) -ë¦¬í„´íƒ€ì…ì—ëŠ” í´ë˜ìŠ¤, ë°°ì—´ ë“± ì—¬ëŸ¬ê°€ì§€ê°€ ì˜¬ ìˆ˜ ìˆìŒ
+		int index = findEmptyIndex(carArray); //ë°°ì—´ì„ í•œì¹¸ì”© ë•¡ê²¨ì£¼ê³  ë§¨ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ì— ìƒˆë¡œìš´ cê°ì²´ë¥¼ ë„£ì–´ì¤Œ
+										      //2ë²ˆ ë©”ì†Œë“œì—ì„œ ë°›ì•„ì˜¨ -1, 0, 1, 2ê°€ ìˆìŒ
+		if(index != -1) {                     //-1ì´ ì•„ë‹Œ ê²½ìš°ë§Œ 3ë²ˆë©”ì†Œë“œê°€ ì‹¤í–‰
+			//ë¹ˆì¹¸ì´ ì¡´ì¬í•˜ë¯€ë¡œ index ë¹ˆ ì¹¸ì—            
+			//Car ê°ì²´ë¥¼ ë„£ì–´ì¤€ë‹¤.
+			carArray[index] = setCarInfo();   //3ë²ˆ ë©”ì†Œë“œ, í•´ë‹¹ ë°°ì—´ì— ë°˜í™˜ëœ ê°ì²´cì£¼ì†Œê°’ì„ ëŒ€ì…(ê°ì²´cì•ˆì— ì°¨ëŸ‰ì •ë³´ê°€ ì¡´ì¬)
 		}else {
-			//index°¡ -1ÀÎ °æ¿ì
-			//¹è¿­ÀÌ ¸ğµÎ ´Ù ²Ë Ã¡À¸¹Ç·Î ¹è¿­À» ÇÑÄ­¾¿ ¶¯°Ü¼­
-			//¸Ç ¸¶Áö¸· Ä­¿¡ »õ·Î ÀÔ·ÂµÈ c¸¦ ³Ö°Ô ¸¸µé¾î ÁÖÀÚ
-			for(int i = 1; i < carArray.length; i++) { //ÃÊ±â°ªÀÌ 1ÀÎ ÀÌÀ¯´Â ¡ÚÄÚµå ÂüÁ¶
-				carArray[i-1] = carArray[i];//¡Ú¾Õ ¹è¿­Àº µŞ¹è¿­·Î µ¤¾î¾¸ ->ÇÑÄ­¾¿ ¶¯°Ü±è
+			//indexê°€ -1ì¸ ê²½ìš°
+			//ë°°ì—´ì´ ëª¨ë‘ ë‹¤ ê½‰ ì°¼ìœ¼ë¯€ë¡œ ë°°ì—´ì„ í•œì¹¸ì”© ë•¡ê²¨ì„œ
+			//ë§¨ ë§ˆì§€ë§‰ ì¹¸ì— ìƒˆë¡œ ì…ë ¥ëœ cë¥¼ ë„£ê²Œ ë§Œë“¤ì–´ ì£¼ì
+			for(int i = 1; i < carArray.length; i++) { //ì´ˆê¸°ê°’ì´ 1ì¸ ì´ìœ ëŠ” â˜…ì½”ë“œ ì°¸ì¡°
+				carArray[i-1] = carArray[i];//â˜…ì• ë°°ì—´ì€ ë’·ë°°ì—´ë¡œ ë®ì–´ì”€ ->í•œì¹¸ì”© ë•¡ê²¨ê¹€
 			}
-			carArray[SIZE - 1] = setCarInfo(); //°¡Àå ¸¶Áö¸· Ä­¿¡ »õ °´Ã¼¸¦ ³Ö¾îÁÜ
-											   //SIZE - 1ÀÌ ¸¶Áö¸· Ä­À» °¡¸®Å°°Ô µÇ´Â ÀÌÀ¯´Â 
-											   //¹è¿­Àº 0 ~ (SIZE - 1)(¹è¿­Å©±â -1)ÀÌ±â ¶§¹®¿¡
+			carArray[SIZE - 1] = setCarInfo(); //ê°€ì¥ ë§ˆì§€ë§‰ ì¹¸ì— ìƒˆ ê°ì²´ë¥¼ ë„£ì–´ì¤Œ
+											   //SIZE - 1ì´ ë§ˆì§€ë§‰ ì¹¸ì„ ê°€ë¦¬í‚¤ê²Œ ë˜ëŠ” ì´ìœ ëŠ” 
+											   //ë°°ì—´ì€ 0 ~ (SIZE - 1)(ë°°ì—´í¬ê¸° -1)ì´ê¸° ë•Œë¬¸ì—
 		}
-		return carArray;                      //°´Ã¼cÁÖ¼Ò°ªÀÌ ÀÔ·ÂµÈ ¹è¿­À» ¹İÈ¯(¼±»ı´Ô: carArrayÀüÃ¼¸¦ ¹İÈ¯)
+		return carArray;                      //ê°ì²´cì£¼ì†Œê°’ì´ ì…ë ¥ëœ ë°°ì—´ì„ ë°˜í™˜(ì„ ìƒë‹˜: carArrayì „ì²´ë¥¼ ë°˜í™˜)
 	}
 	
-	//3.°´Ã¼¿¡ °ªÀ» ³Ö¾îÁÖ´Â ¸Ş¼Òµå
-	private static CarT setCarInfo() throws NumberFormatException, IOException  { //Â÷·®Á¤º¸ ÀÔ·Â
-		                                                                          //¸®ÅÏÅ¸ÀÔ : °´Ã¼ (ÇüÅÂ : Å¬·¡½º¸í)
-		                                                                          //¹İÈ¯µÇ´Â Á¤º¸´Â CarTÅ¬·¡½ºÀÇ °´Ã¼
-																				  //NumberFormatException : ¼ıÀÚ¸¸ ÀÖ¾î¾ß ÇÔ(?)
+	//3.ê°ì²´ì— ê°’ì„ ë„£ì–´ì£¼ëŠ” ë©”ì†Œë“œ
+	private static CarT setCarInfo() throws NumberFormatException, IOException  { //ì°¨ëŸ‰ì •ë³´ ì…ë ¥
+		                                                                          //ë¦¬í„´íƒ€ì… : ê°ì²´ (í˜•íƒœ : í´ë˜ìŠ¤ëª…)
+		                                                                          //ë°˜í™˜ë˜ëŠ” ì •ë³´ëŠ” CarTí´ë˜ìŠ¤ì˜ ê°ì²´
+																				  //NumberFormatException : ìˆ«ìë§Œ ìˆì–´ì•¼ í•¨(?)
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		CarT c = new CarT();//°´Ã¼ ÃÊ±âÈ­(±âº»ÇüÀº 0, ÂüÁ¶ÇüÀº "")
+		CarT c = new CarT();//ê°ì²´ ì´ˆê¸°í™”(ê¸°ë³¸í˜•ì€ 0, ì°¸ì¡°í˜•ì€ "")
 		
-		System.out.print("Â÷·® ¹øÈ£ : ");
+		System.out.print("ì°¨ëŸ‰ ë²ˆí˜¸ : ");
 		c.setNumber(bufferedReader.readLine());
 		
-		System.out.print("Â÷·® Á¾·ù : ");
+		System.out.print("ì°¨ëŸ‰ ì¢…ë¥˜ : ");
 		c.setType(bufferedReader.readLine());
 		
-		System.out.print("Â÷·® ¿¬½Ä : ");
+		System.out.print("ì°¨ëŸ‰ ì—°ì‹ : ");
 		c.setYear(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("Â÷·® °¡°İ : ");
+		System.out.print("ì°¨ëŸ‰ ê°€ê²© : ");
 		c.setPrice(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("Â÷·® »ö»ó : ");
+		System.out.print("ì°¨ëŸ‰ ìƒ‰ìƒ : ");
 		c.setColor(bufferedReader.readLine());
 		
-		return c; //À§¿¡ °ªµéÀÌ ÀúÀåµÈ °´Ã¼c¸¦ ¹İÈ¯(c¿¡ À­ °ªµéÀÌ µé¾î°¡ ÀÖ´Â »óÅÂ°¡ µÊ)
+		return c; //ìœ„ì— ê°’ë“¤ì´ ì €ì¥ëœ ê°ì²´cë¥¼ ë°˜í™˜(cì— ìœ— ê°’ë“¤ì´ ë“¤ì–´ê°€ ìˆëŠ” ìƒíƒœê°€ ë¨)
 	}
 	
-	//2.¹è¿­ÀÌ ºñ¾îÀÖ´ÂÁö Ã£´Â ¸Ş¼Òµå(ºñ¾îÀÖ´Â °æ¿ì¿¡´Â ÇØ´ç ¸Ş¼ÒµåÀÇ ÀÎµ¦½º°ªÀ» ¹İÈ¯, ºñ¾îÀÖÁö ¾ÊÀº °æ¿ì¿¡´Â -1À» ¹İÈ¯)
+	//2.ë°°ì—´ì´ ë¹„ì–´ìˆëŠ”ì§€ ì°¾ëŠ” ë©”ì†Œë“œ(ë¹„ì–´ìˆëŠ” ê²½ìš°ì—ëŠ” í•´ë‹¹ ë©”ì†Œë“œì˜ ì¸ë±ìŠ¤ê°’ì„ ë°˜í™˜, ë¹„ì–´ìˆì§€ ì•Šì€ ê²½ìš°ì—ëŠ” -1ì„ ë°˜í™˜)
 	private static int findEmptyIndex(CarT[] carArray) {
 		for(int i = 0; i < carArray.length; i++) {
 			if(carArray[i] == null) {
@@ -105,10 +105,10 @@ public class CarEx05 {
 	}
 	
 	
-	//1.¸Ş´º ¸Ş¼Òµå
+	//1.ë©”ë‰´ ë©”ì†Œë“œ
 	private static void showMenu() {
-		System.out.println("ºñÆ® Â÷·®°ü¸® ÇÁ·Î±×·¥ ver 2.0");
-		System.out.println("1.ÀÔ·Â   2.Ãâ·Â   3.Á¾·á");
+		System.out.println("ë¹„íŠ¸ ì°¨ëŸ‰ê´€ë¦¬ í”„ë¡œê·¸ë¨ ver 2.0");
+		System.out.println("1.ì…ë ¥   2.ì¶œë ¥   3.ì¢…ë£Œ");
 		System.out.print("> ");
 	}
 }

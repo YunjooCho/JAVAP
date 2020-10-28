@@ -1,8 +1,8 @@
 package util;
-// ¹è¿­ °ü·Ã ¸Ş¼Òµå¸¦ ¸ğ¾ÆµĞ Å¬·¡½º
-//¿©±â¿¡ ¿ì¸®°¡ µ¿ÀûÇÒ´ç¿¡¼­ »ç¿ëÇß´ø ¸Ş¼Òµåµé(indexOf, contains µîµî)À»
-//Student[]°ú Car[]¿¡ »ç¿ëµÉ ¼ö ÀÖ°Ô ¸¸µå¼¼¿ä.
-//¸ğµç ¸Ş¼Òµå´Â static¸Ş¼Òµå¿©¾ß¸¸ ÇÑ´Ù.
+// ë°°ì—´ ê´€ë ¨ ë©”ì†Œë“œë¥¼ ëª¨ì•„ë‘” í´ë˜ìŠ¤
+//ì—¬ê¸°ì— ìš°ë¦¬ê°€ ë™ì í• ë‹¹ì—ì„œ ì‚¬ìš©í–ˆë˜ ë©”ì†Œë“œë“¤(indexOf, contains ë“±ë“±)ì„
+//Student[]ê³¼ Car[]ì— ì‚¬ìš©ë  ìˆ˜ ìˆê²Œ ë§Œë“œì„¸ìš”.
+//ëª¨ë“  ë©”ì†Œë“œëŠ” staticë©”ì†Œë“œì—¬ì•¼ë§Œ í•œë‹¤.
 
 import day0915.Student;
 import day0916.CarT;
@@ -10,133 +10,133 @@ import day0918.Post;
 import day0921.Board;
 
 public class ArrayUtil {
-	//3½Ã±îÁö
-	//¿©±â¿¡ ¿ì¸®°¡ µ¿ÀûÇÒ´ç¿¡¼­ »ç¿ëÇß´ø ¸Ş¼Òµåµé(indexOf, contains µîµî)À»
-	//Student[]°ú Car[]¿¡ »ç¿ëµÉ ¼ö ÀÖ°Ô ¸¸µå¼¼¿ä.
-	//¸ğµç ¸Ş¼Òµå´Â static ¸Ş¼Òµå¿©¾ß¸¸ ÇÑ´Ù.
+	//3ì‹œê¹Œì§€
+	//ì—¬ê¸°ì— ìš°ë¦¬ê°€ ë™ì í• ë‹¹ì—ì„œ ì‚¬ìš©í–ˆë˜ ë©”ì†Œë“œë“¤(indexOf, contains ë“±ë“±)ì„
+	//Student[]ê³¼ Car[]ì— ì‚¬ìš©ë  ìˆ˜ ìˆê²Œ ë§Œë“œì„¸ìš”.
+	//ëª¨ë“  ë©”ì†Œë“œëŠ” static ë©”ì†Œë“œì—¬ì•¼ë§Œ í•œë‹¤.
 	
-	//1. ÇØ´ç ¹è¿­ÀÇ Å©±â¸¦ È®ÀÎÇÏ´Â size()¸Ş¼Òµå
-	//   A. Car[] ¹öÁ¯
+	//1. í•´ë‹¹ ë°°ì—´ì˜ í¬ê¸°ë¥¼ í™•ì¸í•˜ëŠ” size()ë©”ì†Œë“œ
+	//   A. Car[] ë²„ì ¼
 	public static int size(CarT[] carArray) {
 		return carArray.length;
 	}
-	//   B. Student[] ¹öÁ¯
+	//   B. Student[] ë²„ì ¼
 	public static int size(Student[] studentArray) {
 		return studentArray.length;
 	}
 	
-	//  C. Post[] ¹öÀü
+	//  C. Post[] ë²„ì „
 	public static int size(Post[] postArray) {
 		return postArray.length;
 	}
 	
-	//  D. Board[] ¹öÀü
+	//  D. Board[] ë²„ì „
 	public static int size(Board[] boardArray) {
 		return boardArray.length;
 	}
 	
 	
 	
-	//2. ¹è¿­ÀÇ »õ·Î¿î ¿ä¼Ò¸¦ Ãß°¡ÇÏ´Â ¸Ş¼Òµå add()¸Ş¼Òµå - ¿©±â¼­ »õ·Î¿î ¿ä¼Ò¶õ °´Ã¼¸¦ ÀÇ¹Ì, Ãß°¡µÉ °´Ã¼´Â ¸¶Áö¸· ÀÎµ¦½º¿¡ Ãß°¡
-	//   A. Car[] ¹öÁ¯
+	//2. ë°°ì—´ì˜ ìƒˆë¡œìš´ ìš”ì†Œë¥¼ ì¶”ê°€í•˜ëŠ” ë©”ì†Œë“œ add()ë©”ì†Œë“œ - ì—¬ê¸°ì„œ ìƒˆë¡œìš´ ìš”ì†Œë€ ê°ì²´ë¥¼ ì˜ë¯¸, ì¶”ê°€ë  ê°ì²´ëŠ” ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ì— ì¶”ê°€
+	//   A. Car[] ë²„ì ¼
 	public static CarT[] add(CarT[] carArray, CarT c) {
-		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù.
+		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤.
 		int size = carArray.length;
 		CarT[] temp = new CarT[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = carArray[i];
 		}
-		//carArray Å©±â Áõ°¡
+		//carArray í¬ê¸° ì¦ê°€
 		carArray = new CarT[size+1];
-		//tempÀÇ ³»¿ëÀ» carArray¿¡ º¹»ç
+		//tempì˜ ë‚´ìš©ì„ carArrayì— ë³µì‚¬
 		for(int i = 0; i < size; i++) {
 			carArray[i] = temp[i];
 		}
-		//carArrayÀÇ °¡Àå ¸¶Áö¸· Ä­¿¡ c Ãß°¡
+		//carArrayì˜ ê°€ì¥ ë§ˆì§€ë§‰ ì¹¸ì— c ì¶”ê°€
 		carArray[size] = c;
 		return carArray;
 	}
 	
-	//   B. Student[] ¹öÁ¯
+	//   B. Student[] ë²„ì ¼
 	public static Student[] add(Student[] studentArray, Student s) {
-		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù.
+		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤.
 		int size = studentArray.length;
 		Student[] temp = new Student[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = studentArray[i];
 		}
-		//studentArray ÀÇ Å©±â¸¦ 1 ´Ã¸°´Ù.
+		//studentArray ì˜ í¬ê¸°ë¥¼ 1 ëŠ˜ë¦°ë‹¤.
 		studentArray = new Student[size+1];
-		//studentArray¿¡ tempÀÇ °ªÀ» º¹»çÇÑ´Ù.
+		//studentArrayì— tempì˜ ê°’ì„ ë³µì‚¬í•œë‹¤.
 		for(int i = 0; i < size; i++) {
 			studentArray[i] = temp[i];
 		}
-		//studentArrayÀÇ °¡Àå ¸¶Áö¸· Ä­¿¡ s Ãß°¡
-		studentArray[size] = s;//sizeÀÎ ÀÌÀ¯ : ArrayÀÇ Å©±â°¡ size+1·Î Áõ°¡Çß±â ¶§¹®¿¡ size°¡ 
-		 					   //°¡Àå ¸¶Áö¸· ÀÎµ¦½º°¡ µÊ, ¸¶Áö¸· ÀÎµ¦½º¿¡ Ãß°¡ °´Ã¼¸¦ ÀúÀå
+		//studentArrayì˜ ê°€ì¥ ë§ˆì§€ë§‰ ì¹¸ì— s ì¶”ê°€
+		studentArray[size] = s;//sizeì¸ ì´ìœ  : Arrayì˜ í¬ê¸°ê°€ size+1ë¡œ ì¦ê°€í–ˆê¸° ë•Œë¬¸ì— sizeê°€ 
+		 					   //ê°€ì¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê°€ ë¨, ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ì— ì¶”ê°€ ê°ì²´ë¥¼ ì €ì¥
 		
 		return studentArray;
 	}
 	
-	//   C.Post[] ¹öÀü
+	//   C.Post[] ë²„ì „
 	public static Post[] add(Post[] postArray, Post p) {
-		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù
+		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤
 		int size = postArray.length;
 		Post[] temp = new Post[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = postArray[i];
 		}
 		
-		//¹è¿­ÀÇ Å©±â¸¦ 1Áõ°¡(Áõ°¡¿Í µ¿½Ã¿¡ ÃÊ±âÈ­µÊ)
+		//ë°°ì—´ì˜ í¬ê¸°ë¥¼ 1ì¦ê°€(ì¦ê°€ì™€ ë™ì‹œì— ì´ˆê¸°í™”ë¨)
 		postArray = new Post[size + 1];
 		
-		//studentArray¿¡ tempÀÇ °ª º¹»ç
-		for(int i = 0; i < size; i++) { //ÀÓ½Ã ¹è¿­ÀÇ Å©±â¿¡ ¸ÂÃç ÀÛ¼º
+		//studentArrayì— tempì˜ ê°’ ë³µì‚¬
+		for(int i = 0; i < size; i++) { //ì„ì‹œ ë°°ì—´ì˜ í¬ê¸°ì— ë§ì¶° ì‘ì„±
 			postArray[i] = temp[i];
 		}
 		
-		postArray[size] = p; //postArrayÀÇ Å©±â°¡ size+1·Î Áõ°¡Çß±â ¶§¹®¿¡ size°¡ 
-							 //°¡Àå ¸¶Áö¸· ÀÎµ¦½º°¡ µÊ, ¸¶Áö¸· ÀÎµ¦½º¿¡ Ãß°¡ °´Ã¼¸¦ ÀúÀå
+		postArray[size] = p; //postArrayì˜ í¬ê¸°ê°€ size+1ë¡œ ì¦ê°€í–ˆê¸° ë•Œë¬¸ì— sizeê°€ 
+							 //ê°€ì¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê°€ ë¨, ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ì— ì¶”ê°€ ê°ì²´ë¥¼ ì €ì¥
 		
 		return postArray;
 	}
 	
-	//  D.Board[] ¹öÀü
+	//  D.Board[] ë²„ì „
 	public static Board[] add(Board[] boardArray, Board b) {
-		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù
+		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤
 		int size = boardArray.length;
 		Board[] temp = new Board[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = boardArray[i];
 		}
 		
-		//¹è¿­ÀÇ Å©±â¸¦ 1Áõ°¡(Áõ°¡¿Í µ¿½Ã¿¡ ÃÊ±âÈ­µÊ)
+		//ë°°ì—´ì˜ í¬ê¸°ë¥¼ 1ì¦ê°€(ì¦ê°€ì™€ ë™ì‹œì— ì´ˆê¸°í™”ë¨)
 		boardArray = new Board[size + 1];
 		
-		//studentArray¿¡ tempÀÇ °ª º¹»ç
-		for(int i = 0; i < size; i++) { //ÀÓ½Ã ¹è¿­ÀÇ Å©±â¿¡ ¸ÂÃç ÀÛ¼º
+		//studentArrayì— tempì˜ ê°’ ë³µì‚¬
+		for(int i = 0; i < size; i++) { //ì„ì‹œ ë°°ì—´ì˜ í¬ê¸°ì— ë§ì¶° ì‘ì„±
 			boardArray[i] = temp[i];
 		}
 		
-		boardArray[size] = b; //postArrayÀÇ Å©±â°¡ size+1·Î Áõ°¡Çß±â ¶§¹®¿¡ size°¡ 
-							 //°¡Àå ¸¶Áö¸· ÀÎµ¦½º°¡ µÊ, ¸¶Áö¸· ÀÎµ¦½º¿¡ Ãß°¡ °´Ã¼¸¦ ÀúÀå
+		boardArray[size] = b; //postArrayì˜ í¬ê¸°ê°€ size+1ë¡œ ì¦ê°€í–ˆê¸° ë•Œë¬¸ì— sizeê°€ 
+							 //ê°€ì¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê°€ ë¨, ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ì— ì¶”ê°€ ê°ì²´ë¥¼ ì €ì¥
 		
 		return boardArray;
 	}
 	
 	
-	//3. ¹è¿­¿¡ ÇØ´ç ¿ä¼Ò°¡ Á¸ÀçÇÏ´ÂÁö Ã¼Å©ÇÏ´Â contains¸Ş¼Òµå
-	//   A. Car[] ¹è¿­ ¹öÁ¯
+	//3. ë°°ì—´ì— í•´ë‹¹ ìš”ì†Œê°€ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬í•˜ëŠ” containsë©”ì†Œë“œ
+	//   A. Car[] ë°°ì—´ ë²„ì ¼
 	public static boolean contains(CarT[] carArray, CarT c) {
 		for(int i = 0; i < carArray.length; i++) {
-			if(carArray[i].equals(c)) {//'=='´Â ÁÖ¼Ò°ªÀÌ ºñ±³µÇ¹Ç·Î  ¾µ ¼ö ¾øÀ½(Ç×»ó false°¡ ³ª¿È)
+			if(carArray[i].equals(c)) {//'=='ëŠ” ì£¼ì†Œê°’ì´ ë¹„êµë˜ë¯€ë¡œ  ì“¸ ìˆ˜ ì—†ìŒ(í•­ìƒ falseê°€ ë‚˜ì˜´)
 				return true;
 			}
 		}
 		return false;
 	}
 	
-	//   B. Student[] ¹è¿­ ¹öÁ¯
+	//   B. Student[] ë°°ì—´ ë²„ì ¼
 	public static boolean contains(Student[] studentArray, Student s) {
 		for(int i = 0; i < studentArray.length; i++) {
 			if(studentArray[i].equals(s)) {
@@ -146,7 +146,7 @@ public class ArrayUtil {
 		return false;
 	}
 	
-	//   C. Post[] ¹è¿­ ¹öÀü
+	//   C. Post[] ë°°ì—´ ë²„ì „
 	public static boolean contains(Post[] postArray, Post p) {
 		for(int i = 0; i < postArray.length; i++) {
 			if(postArray[i].equals(p)) {
@@ -156,7 +156,7 @@ public class ArrayUtil {
 		return false;
 	}
 	
-	//  D. Board[] ¹è¿­ ¹öÀü
+	//  D. Board[] ë°°ì—´ ë²„ì „
 	public static boolean contains(Board[] boardArray, Board b) {
 		for(int i = 0; i < boardArray.length; i++) {
 			if(boardArray[i].equals(b)) {
@@ -167,8 +167,8 @@ public class ArrayUtil {
 	}
 	
 	
-	//4. ¹è¿­¿¡ ÇØ´ç ¿ä¼Ò°¡ ¸î¹ø ÀÎµ¦½º¿¡ Á¸ÀçÇÏ´ÂÁö Ã¼Å©ÇÏ´Â indexOf ¸Ş¼Òµå
-	//   A. Car[] ¹öÁ¯
+	//4. ë°°ì—´ì— í•´ë‹¹ ìš”ì†Œê°€ ëª‡ë²ˆ ì¸ë±ìŠ¤ì— ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬í•˜ëŠ” indexOf ë©”ì†Œë“œ
+	//   A. Car[] ë²„ì ¼
 	public static int indexOf(CarT[] carArray, CarT c) {
 		for(int i = 0; i < carArray.length; i++) {
 			if(carArray[i].equals(c)) {
@@ -177,7 +177,7 @@ public class ArrayUtil {
 		}
 		return -1;
 	}
-	//   B. Student[] ¹öÁ¯
+	//   B. Student[] ë²„ì ¼
 	public static int indexOf(Student[] studentArray, Student s) {
 		for(int i = 0; i < studentArray.length; i++) {
 			if(studentArray[i].equals(s)) {
@@ -187,8 +187,8 @@ public class ArrayUtil {
 		
 		return -1;
 	}
-	//   C. Post[] ¹öÀü
-	public static int indexOf(Post[] postArray, Post p) { //¼ıÀÚ¸¦ µ¹·ÁÁÖ
+	//   C. Post[] ë²„ì „
+	public static int indexOf(Post[] postArray, Post p) { //ìˆ«ìë¥¼ ëŒë ¤ì£¼
 		for(int i = 0; i < postArray.length; i++) {
 			if(postArray[i].equals(p)) {
 				return i;
@@ -196,8 +196,8 @@ public class ArrayUtil {
 		}
 		return -1;
 	}
-	//  D. Board[] ¹öÀü
-	public static int indexOf(Board[] boardArray, Board b) { //¼ıÀÚ¸¦ µ¹·ÁÁÖ
+	//  D. Board[] ë²„ì „
+	public static int indexOf(Board[] boardArray, Board b) { //ìˆ«ìë¥¼ ëŒë ¤ì£¼
 		for(int i = 0; i < boardArray.length; i++) {
 			if(boardArray[i].equals(b)) {
 				return i;
@@ -206,38 +206,38 @@ public class ArrayUtil {
 		return -1;
 	}
 	
-	//5. ¹è¿­¿¡ ÇØ´ç ÀÎµ¦½º¸¦ »èÁ¦ÇÏ´Â removeByIndex ¸Ş¼Òµå
-	//   A. Car[] ¹öÁ¯
+	//5. ë°°ì—´ì— í•´ë‹¹ ì¸ë±ìŠ¤ë¥¼ ì‚­ì œí•˜ëŠ” removeByIndex ë©”ì†Œë“œ
+	//   A. Car[] ë²„ì ¼
 	public static CarT[] removeByIndex(CarT[] carArray, int index) {
 		
-		// indexÀÇ À¯È¿¼º °ËÁõ- ÆÄ¶ó¹ÌÅÍ·Î ¹ŞÀº index°¡ À¯È¿ÇÑÁö È®ÀÎ
+		// indexì˜ ìœ íš¨ì„± ê²€ì¦- íŒŒë¼ë¯¸í„°ë¡œ ë°›ì€ indexê°€ ìœ íš¨í•œì§€ í™•ì¸
 		if(index < 0 || index >= carArray.length) {
-			return carArray; //Ã³¸® ¾øÀÌ ¹è¿­À» ±×´ë·Î µ¹·ÁÁÜ
+			return carArray; //ì²˜ë¦¬ ì—†ì´ ë°°ì—´ì„ ê·¸ëŒ€ë¡œ ëŒë ¤ì¤Œ
 		}
 		
-		// ÀÓ½Ã¹è¿­¿¡ ÇöÀç ¹è¿­ º¹»ç
+		// ì„ì‹œë°°ì—´ì— í˜„ì¬ ë°°ì—´ ë³µì‚¬
 		CarT[] temp = new CarT[carArray.length];
 		
 		for(int i = 0; i < carArray.length; i++) {
 			temp[i] = carArray[i];
 		}
 				
-		// ¿øº» ¹è¿­ÀÇ Å©±â Ãà¼Ò
+		// ì›ë³¸ ë°°ì—´ì˜ í¬ê¸° ì¶•ì†Œ
 		carArray = new CarT[carArray.length - 1];
 		
-		//indexÀÇ À§Ä¡¿¡ µû¸¥ Àß¶ó³»±â ½ÇÇà
+		//indexì˜ ìœ„ì¹˜ì— ë”°ë¥¸ ì˜ë¼ë‚´ê¸° ì‹¤í–‰
 		if(index == 0) {
-			//1. ÀÎµ¦½º°¡ Á¦ÀÏ ¾ÕÀÏ¶§
+			//1. ì¸ë±ìŠ¤ê°€ ì œì¼ ì•ì¼ë•Œ
 			for(int i = 1; i < temp.length; i++) {
 				carArray[i-1] = temp[i];
 			}
 		}else if(index == temp.length - 1) {
-			//2. ÀÎµ¦½º°¡ Á¦ÀÏ ¸¶Áö¸·ÀÏ¶§
+			//2. ì¸ë±ìŠ¤ê°€ ì œì¼ ë§ˆì§€ë§‰ì¼ë•Œ
 			for(int i = 0; i < temp.length - 1; i++) {
 				carArray[i] = temp[i];
 			}
 		}else {
-			//3. ÀÎµ¦½º°¡ Áß°£ÀÏ¶§
+			//3. ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ë•Œ
 			for(int i = 0; i < temp.length; i++) {
 				if(i < index) {
 					carArray[i] = temp[i];
@@ -249,37 +249,37 @@ public class ArrayUtil {
 		return carArray;
 	}
 	
-	//   B. Student[] ¹öÁ¯
+	//   B. Student[] ë²„ì ¼
 	public static Student[] removeByIndex(Student[] studentArray, int index) {
 		
-		// indexÀÇ À¯È¿¼º °ËÁõ 
+		// indexì˜ ìœ íš¨ì„± ê²€ì¦ 
 		if(index < 0 || index >= studentArray.length) {
 			return studentArray;
 		}
 		
-		// ÀÓ½Ã¹è¿­¿¡ ÇöÀç ¹è¿­ º¹»ç
+		// ì„ì‹œë°°ì—´ì— í˜„ì¬ ë°°ì—´ ë³µì‚¬
 		Student[] temp = new Student[studentArray.length];
 		
 		for(int i = 0; i < studentArray.length; i++) {
 			temp[i] = studentArray[i];
 		}
 				
-		// ¿øº» ¹è¿­ÀÇ Å©±â Ãà¼Ò
+		// ì›ë³¸ ë°°ì—´ì˜ í¬ê¸° ì¶•ì†Œ
 		studentArray = new Student[studentArray.length - 1];
 		
-		//indexÀÇ À§Ä¡¿¡ µû¸¥ Àß¶ó³»±â ½ÇÇà
+		//indexì˜ ìœ„ì¹˜ì— ë”°ë¥¸ ì˜ë¼ë‚´ê¸° ì‹¤í–‰
 		if(index == 0) {
-			//1. ÀÎµ¦½º°¡ Á¦ÀÏ ¾ÕÀÏ¶§
+			//1. ì¸ë±ìŠ¤ê°€ ì œì¼ ì•ì¼ë•Œ
 			for(int i = 1; i < temp.length; i++) {
 				studentArray[i-1] = temp[i];
 			}
 		}else if(index == temp.length - 1) {
-			//2. ÀÎµ¦½º°¡ Á¦ÀÏ ¸¶Áö¸·ÀÏ¶§
+			//2. ì¸ë±ìŠ¤ê°€ ì œì¼ ë§ˆì§€ë§‰ì¼ë•Œ
 			for(int i = 0; i < temp.length - 1; i++) {
 				studentArray[i] = temp[i];
 			}
 		}else {
-			//3. ÀÎµ¦½º°¡ Áß°£ÀÏ¶§
+			//3. ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ë•Œ
 			for(int i = 0; i < temp.length; i++) {
 				if(i < index) {
 					studentArray[i] = temp[i];
@@ -290,36 +290,36 @@ public class ArrayUtil {
 		}
 		return studentArray;
 	}
-	//   C.Post[] ¹öÀü
+	//   C.Post[] ë²„ì „
 	public static Post[] removeByIndex(Post[] postArray, int index) {
-		//indexÀÇ À¯È¿¼º °ËÁõ
+		//indexì˜ ìœ íš¨ì„± ê²€ì¦
 		if(index < 0 || index >= postArray.length) {
 			return postArray;
 		}
 		
-		//ÀÓ½Ã ¹è¿­¿¡ ÇöÀç ¹è¿­ º¹»ç
+		//ì„ì‹œ ë°°ì—´ì— í˜„ì¬ ë°°ì—´ ë³µì‚¬
 		int size = postArray.length; 
 		Post[] temp = new Post[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = postArray[i];
 		}
 		
-		//¿øº» ¹è¿­ÀÇ Å©±â¸¦ 1Ãà¼Ò
+		//ì›ë³¸ ë°°ì—´ì˜ í¬ê¸°ë¥¼ 1ì¶•ì†Œ
 		postArray = new Post[size - 1];
 		
-		//ÀÓ½Ã ¹è¿­À» ¿øº» ¹è¿­¿¡ º¹»ç(À§Ä¡¿¡ µû¸¥ Àß¶ó³»±â ½ÇÇà)
+		//ì„ì‹œ ë°°ì—´ì„ ì›ë³¸ ë°°ì—´ì— ë³µì‚¬(ìœ„ì¹˜ì— ë”°ë¥¸ ì˜ë¼ë‚´ê¸° ì‹¤í–‰)
 		if(index == 0) {
-			//1. »èÁ¦ÇÒ ÀÎµ¦½º°¡ Á¦ÀÏ ¾ÕÀÏ ¶§
+			//1. ì‚­ì œí•  ì¸ë±ìŠ¤ê°€ ì œì¼ ì•ì¼ ë•Œ
 			for(int i = 1; i < temp.length; i++) {
 				postArray[i-1]= temp[i]; // postArray[0]=temp[1]~postArray[size-2]=temp[temp.length-2]
 			}
 		}else if(index == temp.length - 1) {
-			//¡Ú¡Ú¡Ú¡Ú2. »èÁ¦ÇÒ ÀÎµ¦½º°¡ Á¦ÀÏ ¸¶Áö¸· ÀÏ¶§
+			//â˜…â˜…â˜…â˜…2. ì‚­ì œí•  ì¸ë±ìŠ¤ê°€ ì œì¼ ë§ˆì§€ë§‰ ì¼ë•Œ
 			for(int i = 0; i < temp.length - 1; i++) {
 				postArray[i] = temp[i];
 			}
 		}else {
-			//¡Ú¡Ú¡Ú¡Ú3. »èÁ¦ÇÒ ÀÎµ¦½º°¡ Áß°£ÀÏ ¶§
+			//â˜…â˜…â˜…â˜…3. ì‚­ì œí•  ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ ë•Œ
 			for(int i = 0; i < temp.length;i++) {
 				if(i < index) {
 					postArray[i] = temp[i];
@@ -331,36 +331,36 @@ public class ArrayUtil {
 		return postArray;
 	}
 	
-	//  D.Board[] ¹öÀü
+	//  D.Board[] ë²„ì „
 	public static Board[] removeByIndex(Board[] boardArray, int index) {
-		//indexÀÇ À¯È¿¼º °ËÁõ
+		//indexì˜ ìœ íš¨ì„± ê²€ì¦
 		if(index < 0 || index >= boardArray.length) {
 			return boardArray;
 		}
 		
-		//ÀÓ½Ã ¹è¿­¿¡ ÇöÀç ¹è¿­ º¹»ç
+		//ì„ì‹œ ë°°ì—´ì— í˜„ì¬ ë°°ì—´ ë³µì‚¬
 		int size = boardArray.length; 
 		Board[] temp = new Board[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = boardArray[i];
 		}
 		
-		//¿øº» ¹è¿­ÀÇ Å©±â¸¦ 1Ãà¼Ò
+		//ì›ë³¸ ë°°ì—´ì˜ í¬ê¸°ë¥¼ 1ì¶•ì†Œ
 		boardArray = new Board[size - 1];
 		
-		//ÀÓ½Ã ¹è¿­À» ¿øº» ¹è¿­¿¡ º¹»ç(À§Ä¡¿¡ µû¸¥ Àß¶ó³»±â ½ÇÇà)
+		//ì„ì‹œ ë°°ì—´ì„ ì›ë³¸ ë°°ì—´ì— ë³µì‚¬(ìœ„ì¹˜ì— ë”°ë¥¸ ì˜ë¼ë‚´ê¸° ì‹¤í–‰)
 		if(index == 0) {
-			//1. »èÁ¦ÇÒ ÀÎµ¦½º°¡ Á¦ÀÏ ¾ÕÀÏ ¶§
+			//1. ì‚­ì œí•  ì¸ë±ìŠ¤ê°€ ì œì¼ ì•ì¼ ë•Œ
 			for(int i = 1; i < temp.length; i++) {
 				boardArray[i-1]= temp[i]; // postArray[0]=temp[1]~postArray[size-2]=temp[temp.length-2]
 			}
 		}else if(index == temp.length - 1) {
-			//¡Ú¡Ú¡Ú¡Ú2. »èÁ¦ÇÒ ÀÎµ¦½º°¡ Á¦ÀÏ ¸¶Áö¸· ÀÏ¶§
+			//â˜…â˜…â˜…â˜…2. ì‚­ì œí•  ì¸ë±ìŠ¤ê°€ ì œì¼ ë§ˆì§€ë§‰ ì¼ë•Œ
 			for(int i = 0; i < temp.length - 1; i++) {
 				boardArray[i] = temp[i];
 			}
 		}else {
-			//¡Ú¡Ú¡Ú¡Ú3. »èÁ¦ÇÒ ÀÎµ¦½º°¡ Áß°£ÀÏ ¶§
+			//â˜…â˜…â˜…â˜…3. ì‚­ì œí•  ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ ë•Œ
 			for(int i = 0; i < temp.length;i++) {
 				if(i < index) {
 					boardArray[i] = temp[i];
@@ -372,22 +372,22 @@ public class ArrayUtil {
 		return boardArray;
 	}
 	
-	//6. ¹è¿­¿¡¼­ ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â °´Ã¼¸¦ »èÁ¦ÇÏ´Â removeByElement ¸Ş¼Òµå
-	//   A. Student[] ¹öÁ¯
+	//6. ë°°ì—´ì—ì„œ íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ê°ì²´ë¥¼ ì‚­ì œí•˜ëŠ” removeByElement ë©”ì†Œë“œ
+	//   A. Student[] ë²„ì ¼
 	public static Student[] removeByElement(Student[] studentArray, Student s) {
 		return removeByIndex(studentArray, indexOf(studentArray, s));
 	}
-	//   B. Car[] ¹öÁ¯
+	//   B. Car[] ë²„ì ¼
 	public static CarT[] removeByElement(CarT[] carArray, CarT c) {
 		return removeByIndex(carArray, indexOf(carArray, c));
 	}
 	
-	//   C. Post[] ¹öÀü
+	//   C. Post[] ë²„ì „
 	public static Post[] removeByElement(Post[] postArray, Post p) {
 		return removeByIndex(postArray,indexOf(postArray,p));
 	}
 	
-	//  D. Board[] ¹öÀü
+	//  D. Board[] ë²„ì „
 	public static Board[] removeByElement(Board[] boardArray, Board b) {
 		return removeByIndex(boardArray,indexOf(boardArray,b));
 	}

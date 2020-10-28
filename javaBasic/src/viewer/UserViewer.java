@@ -1,5 +1,5 @@
 package viewer;
-//È­¸é¿¡ Ãâ·ÂµÇ´Â print°¡ ÀÖ´Â °ÍµéÀÌ ¸ğ¿©ÀÖÀ½
+//í™”ë©´ì— ì¶œë ¥ë˜ëŠ” printê°€ ìˆëŠ” ê²ƒë“¤ì´ ëª¨ì—¬ìˆìŒ
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,117 +10,117 @@ import util.InputUtil;
 
 public class UserViewer {
 	
-	//¢º6.ÇÊµå¸í ¼³Á¤ / »ı¼ºÀÚ ÀÛ¼º
+	//â–¶6.í•„ë“œëª… ì„¤ì • / ìƒì„±ì ì‘ì„±
 	private UserController userController; 
-	//UserControllerÀÇ ¸Ş¼Òµå(insert(),isDuplicatedUserId(),logIn())¸¦ »ç¿ëÇÏ±â À§ÇØ ÀÔ·Â, ¹öÆÛ¸®´õ¿Í °°À½
+	//UserControllerì˜ ë©”ì†Œë“œ(insert(),isDuplicatedUserId(),logIn())ë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ì…ë ¥, ë²„í¼ë¦¬ë”ì™€ ê°™ìŒ
 	private BufferedReader bufferedReader;
 	private BoardViewer boardViewer;
-	private int id;//È¸¿ø°¡ÀÔ¸Ş¼Òµå°¡ ½ÇÇàµÉ ¶§¸¶´Ù 1¾¿ Áõ°¡(È¸¿ø°¡ÀÔÀÚ ¼ö°¡ ´Ã¶§¸¶´Ù)
-	private UserDTO logInUser; //µ¥ÀÌÅÍº£ÀÌ½º³ª ¼­¹ö°¡ ÀÖ´Ù¸é °Å±â¿¡ ÀúÀå
+	private int id;//íšŒì›ê°€ì…ë©”ì†Œë“œê°€ ì‹¤í–‰ë  ë•Œë§ˆë‹¤ 1ì”© ì¦ê°€(íšŒì›ê°€ì…ì ìˆ˜ê°€ ëŠ˜ë•Œë§ˆë‹¤)
+	private UserDTO logInUser; //ë°ì´í„°ë² ì´ìŠ¤ë‚˜ ì„œë²„ê°€ ìˆë‹¤ë©´ ê±°ê¸°ì— ì €ì¥
 	
 	
-	public UserViewer() {//ÀÌÀü¿¡´Â main¸Ş¼Òµå¿¡¼­ »ç¿ë
+	public UserViewer() {//ì´ì „ì—ëŠ” mainë©”ì†Œë“œì—ì„œ ì‚¬ìš©
 		userController = new UserController();
 		bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		boardViewer = new BoardViewer();
-		id = 4;//UserController¿¡¼­ °´Ã¼ 3°³ ÀÔ·Â ÈÄ¶ó 4ºÎÅÍ ½ÃÀÛ
+		id = 4;//UserControllerì—ì„œ ê°ì²´ 3ê°œ ì…ë ¥ í›„ë¼ 4ë¶€í„° ì‹œì‘
 	}
 	
 	
-	//¢º11-1. È¨ÆäÀÌÁö ÀüÁ¦
-	//11-2´Â ¸ŞÀÎ¸Ş¼Òµå
+	//â–¶11-1. í™ˆí˜ì´ì§€ ì „ì œ
+	//11-2ëŠ” ë©”ì¸ë©”ì†Œë“œ
 	public void index() throws IOException {
 		while(true) {
-			System.out.println("ºñÆ®°Ô½ÃÆÇ");
-			System.out.println("1.·Î±×ÀÎ  2.È¸¿ø°¡ÀÔ  3.Á¾·á");
+			System.out.println("ë¹„íŠ¸ê²Œì‹œíŒ");
+			System.out.println("1.ë¡œê·¸ì¸  2.íšŒì›ê°€ì…  3.ì¢…ë£Œ");
 			int choice = InputUtil.validateInt(1,3);
 			if(choice == 1) {
 				logInUser = logIn();
-				//¹İÈ¯µÈ °ªÀº UserViewer.logIn()->UserController.logIn()->UserViewer.logIn()À» ÅëÇØ 
-				//n¶Ç´Â null°ªÀÌ ¹İÈ¯
+				//ë°˜í™˜ëœ ê°’ì€ UserViewer.logIn()->UserController.logIn()->UserViewer.logIn()ì„ í†µí•´ 
+				//në˜ëŠ” nullê°’ì´ ë°˜í™˜
 				while(logInUser == null) {
-					System.out.println("Àß¸øµÈ ID È¤Àº PWÀÔ´Ï´Ù.");
+					System.out.println("ì˜ëª»ëœ ID í˜¹ì€ PWì…ë‹ˆë‹¤.");
 					logInUser = logIn();
 				}
-				System.out.println("·Î±×ÀÎ ¼º°ø.");
-				System.out.println(logInUser.getNickname() + "´Ô, È¯¿µÇÕ´Ï´Ù!");
-				//¿©±â¼­ getNicknameÀ» ¾µ ¼ö ÀÖ´Â°Ç logInUser = logIn();ÀÌºÎºĞ¿¡¼­ 
-				//¹İÈ¯µÈ °´Ã¼Á¤º¸¸¦ ²ø¾î¿À±â¶§¹®
+				System.out.println("ë¡œê·¸ì¸ ì„±ê³µ.");
+				System.out.println(logInUser.getNickname() + "ë‹˜, í™˜ì˜í•©ë‹ˆë‹¤!");
+				//ì—¬ê¸°ì„œ getNicknameì„ ì“¸ ìˆ˜ ìˆëŠ”ê±´ logInUser = logIn();ì´ë¶€ë¶„ì—ì„œ 
+				//ë°˜í™˜ëœ ê°ì²´ì •ë³´ë¥¼ ëŒì–´ì˜¤ê¸°ë•Œë¬¸
 				boardViewer.setLogInUser(logInUser);
-				showMenu(); //»ó±â ¸Ş¼Òµå·Î ·Î±×ÀÎ ¼º°øÇÏ°í ³ª¸é ¸Ş´º°¡ ¶ä
+				showMenu(); //ìƒê¸° ë©”ì†Œë“œë¡œ ë¡œê·¸ì¸ ì„±ê³µí•˜ê³  ë‚˜ë©´ ë©”ë‰´ê°€ ëœ¸
 			}else if(choice == 2) {
 				register();
 			}else if(choice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}
 		}
 	}
 	
 	
-	//¢º10. ¸Ş´º ¸Ş¼Òµå
-	private void showMenu() throws IOException {//±Û°ú °ü·ÃµÈ ºä¾î
+	//â–¶10. ë©”ë‰´ ë©”ì†Œë“œ
+	private void showMenu() throws IOException {//ê¸€ê³¼ ê´€ë ¨ëœ ë·°ì–´
 		while(true) {
-			System.out.println("1.±Û¾²±â 2.¸ñ·Ïº¸±â 3.·Î±×¾Æ¿ô");
+			System.out.println("1.ê¸€ì“°ê¸° 2.ëª©ë¡ë³´ê¸° 3.ë¡œê·¸ì•„ì›ƒ");
 			int userChoice = InputUtil.validateInt(1,3);
 			if(userChoice == 1) {
-				//±Û¾²±â ¸Ş¼Òµå È£Ãâ
+				//ê¸€ì“°ê¸° ë©”ì†Œë“œ í˜¸ì¶œ
 				boardViewer.writeBoard();
 			}else if(userChoice == 2) {
-				//±Û ¸ñ·Ïº¸±â ¸Ş¼Òµå È£Ãâ
+				//ê¸€ ëª©ë¡ë³´ê¸° ë©”ì†Œë“œ í˜¸ì¶œ
 				boardViewer.selectAll();
 			}else if(userChoice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
-				logInUser = null;//·Î±×ÀÎ -> ·Î±×¾Æ¿ô
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
+				logInUser = null;//ë¡œê·¸ì¸ -> ë¡œê·¸ì•„ì›ƒ
 				break;
 			}
 		}
 	}
 	
-	//¢º9-1.È¸¿ø°¡ÀÔ ¸Ş¼Òµå - CarT³ª Student¿¡¼­ ÇØ¿Ô´ø setInfo()¶û °°Àº ÀÇ¹Ì
+	//â–¶9-1.íšŒì›ê°€ì… ë©”ì†Œë“œ - CarTë‚˜ Studentì—ì„œ í•´ì™”ë˜ setInfo()ë‘ ê°™ì€ ì˜ë¯¸
 	private void register() throws IOException { 
-		//ÀÔ·ÂµÈ °ª°ú °´Ã¼¿¡ ÀÖ´ø °ªµé(id,userId)À» ºñ±³ÇßÀ» ¶§ true¸é ¹İº¹¹®ÀÌ ½ÇÇà
-		//false¸é ¾î·¹ÀÌ¸®½ºÆ®¿¡ Ãß°¡µÊ
-		UserDTO u = new UserDTO();// ¿©ÅÂ±îÁö »ı¼ºÇß´ø °´Ã¼µé°ú´Â ¶Ç ´Ù¸¥ ¸Ş¸ğ¸®¿¡ »ı¼ºµÈ °´Ã¼
+		//ì…ë ¥ëœ ê°’ê³¼ ê°ì²´ì— ìˆë˜ ê°’ë“¤(id,userId)ì„ ë¹„êµí–ˆì„ ë•Œ trueë©´ ë°˜ë³µë¬¸ì´ ì‹¤í–‰
+		//falseë©´ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€ë¨
+		UserDTO u = new UserDTO();// ì—¬íƒœê¹Œì§€ ìƒì„±í–ˆë˜ ê°ì²´ë“¤ê³¼ëŠ” ë˜ ë‹¤ë¥¸ ë©”ëª¨ë¦¬ì— ìƒì„±ëœ ê°ì²´
 		u.setId(id);
-		id++; //»õ·Î¿î µî·ÏÀÌ »ı°åÀ¸¹Ç·Î id´Â ½Äº°À» À§ÇØ »ç¿ëÀÚ ÀÔ·ÂÀÌ ¾ø¾îµµ ÀÚµ¿À¸·Î Áõ°¡
-		System.out.print("È¸¿ø id: ");
+		id++; //ìƒˆë¡œìš´ ë“±ë¡ì´ ìƒê²¼ìœ¼ë¯€ë¡œ idëŠ” ì‹ë³„ì„ ìœ„í•´ ì‚¬ìš©ì ì…ë ¥ì´ ì—†ì–´ë„ ìë™ìœ¼ë¡œ ì¦ê°€
+		System.out.print("íšŒì› id: ");
 		u.setUserId(bufferedReader.readLine());
 		while(userController.isDuplicatedUserId(u.getUserId())) {
-			//¿©±â¼­ u´Â ±âÁ¸ °´Ã¼°¡ ¾Æ´Ñ ¿©±â¼­ »õ·Î »ı¼ºÇÑ °´Ã¼·Î »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ userId°¡ ´ã°ÜÀÖÀ½
-			//Çò°¥¸®¸é 81¹øÁÙ º¯¼ö¸í u°¡ ¾Æ´Ñ newPersonµîÀ¸·Î ¹Ù²ãº¸±â
-			System.out.println("Áßº¹µÈ idÀÔ´Ï´Ù.");
-			System.out.print("È¸¿øid : ");
+			//ì—¬ê¸°ì„œ uëŠ” ê¸°ì¡´ ê°ì²´ê°€ ì•„ë‹Œ ì—¬ê¸°ì„œ ìƒˆë¡œ ìƒì„±í•œ ê°ì²´ë¡œ ì‚¬ìš©ìê°€ ì…ë ¥í•œ userIdê°€ ë‹´ê²¨ìˆìŒ
+			//í—·ê°ˆë¦¬ë©´ 81ë²ˆì¤„ ë³€ìˆ˜ëª… uê°€ ì•„ë‹Œ newPersonë“±ìœ¼ë¡œ ë°”ê¿”ë³´ê¸°
+			System.out.println("ì¤‘ë³µëœ idì…ë‹ˆë‹¤.");
+			System.out.print("íšŒì›id : ");
 			u.setUserId(bufferedReader.readLine());
 		}
-		System.out.print("È¸¿ø pw: ");
+		System.out.print("íšŒì› pw: ");
 		u.setPassword(bufferedReader.readLine());
-		System.out.print("È¸¿ø ´Ğ³×ÀÓ: ");
+		System.out.print("íšŒì› ë‹‰ë„¤ì„: ");
 		u.setNickname(bufferedReader.readLine());
-		userController.insert(u); //UserControllerÀÇ list´Â privateÀÓ¿¡µµ °ÙÅÍ¼ÂÅÍ°¡ ¾øÀ½
-		 						  //list.add(u);¸¦ UserViewer¿¡¼­ Ãß°¡ÇÒ ¼ö ¾øÀ¸¹Ç·Î  
-								  //UserController(Á¢±ÙÁ¦¾îÀÚ private´Â °°Àº Å¬·¡½º¿¡¼­´Â ½ÇÇà°¡´É)¿¡¼­ insert¸Ş¼Òµå·Î ½ÇÇà
+		userController.insert(u); //UserControllerì˜ listëŠ” privateì„ì—ë„ ê²Ÿí„°ì…‹í„°ê°€ ì—†ìŒ
+		 						  //list.add(u);ë¥¼ UserViewerì—ì„œ ì¶”ê°€í•  ìˆ˜ ì—†ìœ¼ë¯€ë¡œ  
+								  //UserController(ì ‘ê·¼ì œì–´ì privateëŠ” ê°™ì€ í´ë˜ìŠ¤ì—ì„œëŠ” ì‹¤í–‰ê°€ëŠ¥)ì—ì„œ insertë©”ì†Œë“œë¡œ ì‹¤í–‰
 	}
 	
 	
-	//¢º7.»ç¿ëÀÚÇÑÅ× id,pw¸¦ ÀÔ·Â¹Ş¾Æ ·Î±×ÀÎ ÇÏ´Â ¸Ş¼Òµå
-	private UserDTO logIn() throws IOException { //UserControllerÀÇ logIn(UserDTO attempt)·Î °ªÀ» ³Ñ°ÜÁÜ
+	//â–¶7.ì‚¬ìš©ìí•œí…Œ id,pwë¥¼ ì…ë ¥ë°›ì•„ ë¡œê·¸ì¸ í•˜ëŠ” ë©”ì†Œë“œ
+	private UserDTO logIn() throws IOException { //UserControllerì˜ logIn(UserDTO attempt)ë¡œ ê°’ì„ ë„˜ê²¨ì¤Œ
 		UserDTO attempt = new UserDTO();
 		System.out.println("id: ");
 		attempt.setUserId(bufferedReader.readLine());
 		System.out.println("PW: ");
 		attempt.setPassword(bufferedReader.readLine());
-		return userController.logIn(attempt); //¢º¿©±â°¡!!!¹Ù·Î!!!userController.logInt()¸Ş¼Òµå È£ÃâÀå¼Ò!!!
-		//¢º2°³ ÀÔ·ÂÇÑ °ÍÀ» ÇÏ³ª¸¸ Ãâ·ÂÇÏ´Â °Í Ã³·³ º¸ÀÌÁö¸¸, attempt°´Ã¼ ¾È¿¡ µÎ °ªÀ» ÀúÀåÇÑ ÈÄ, attemp°´Ã¼¸¦ ¹İÈ¯ÇÏ´Â °ÍÀÓ
+		return userController.logIn(attempt); //â–¶ì—¬ê¸°ê°€!!!ë°”ë¡œ!!!userController.logInt()ë©”ì†Œë“œ í˜¸ì¶œì¥ì†Œ!!!
+		//â–¶2ê°œ ì…ë ¥í•œ ê²ƒì„ í•˜ë‚˜ë§Œ ì¶œë ¥í•˜ëŠ” ê²ƒ ì²˜ëŸ¼ ë³´ì´ì§€ë§Œ, attemptê°ì²´ ì•ˆì— ë‘ ê°’ì„ ì €ì¥í•œ í›„, attempê°ì²´ë¥¼ ë°˜í™˜í•˜ëŠ” ê²ƒì„
 	}
 	
 	
 
-//utilÆĞÅ°Áö¿¡ InputUtilµû·Î ÀÛ¼ºÇÏ¿© ÇÊ¿ä ¾ø¾îÁü
+//utilíŒ¨í‚¤ì§€ì— InputUtilë”°ë¡œ ì‘ì„±í•˜ì—¬ í•„ìš” ì—†ì–´ì§
 //	public int validateInt(int minimum, int maximum) throws IOException {
 //		int parsedValue = stringToInt();
 //		while(parsedValue < minimum || parsedValue > maximum) {
-//			System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+//			System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 //			parsedValue = stringToInt();
 //		}
 //		return parsedValue;
@@ -132,12 +132,12 @@ public class UserViewer {
 //		System.out.print("> ");
 //		String userInput = bufferedReader.readLine();
 //		while(!userInput.matches("\\d*")) {
-//			System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+//			System.out.println("ìˆ«ìë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 //			System.out.print("> ");
 //			userInput = bufferedReader.readLine();
 //		}
 //		return Integer.parseInt(userInput);
-//	}//stringToInt ÀÔ·ÂµÈ ±ÛÀÚ°¡ ¼ıÀÚ¸é Á¤¼öÈ­, ±ÛÀÚ¸é ¹İº¹¹® ½ÇÇà
+//	}//stringToInt ì…ë ¥ëœ ê¸€ìê°€ ìˆ«ìë©´ ì •ìˆ˜í™”, ê¸€ìë©´ ë°˜ë³µë¬¸ ì‹¤í–‰
 //		
 }	
 

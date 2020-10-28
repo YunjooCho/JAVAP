@@ -5,20 +5,20 @@ public class SingleTon {
 	private int num = 3;
 	private static SingleTon instance = null;
 	
-	public static SingleTon getInstance(){ //½Ì±ÛÅæ¸Ş¼Òµå·Î º¸ÆíÀûÀÎ ÀÌ¸§
+	public static SingleTon getInstance(){ //ì‹±ê¸€í†¤ë©”ì†Œë“œë¡œ ë³´í¸ì ì¸ ì´ë¦„
 		if(instance == null) {
-			synchronized (SingleTon.class) { //Å¬·¡½º¸¦ µ¿±âÈ­·Î ¸·¾ÆÁÜ, Ã³À½½ÇÇàÀÌ¸é »ı¼º
-				instance = new SingleTon(); //instance°¡ ÁÖ¼Ò°ªÀ» °¡Áö°Ô µÊ
+			synchronized (SingleTon.class) { //í´ë˜ìŠ¤ë¥¼ ë™ê¸°í™”ë¡œ ë§‰ì•„ì¤Œ, ì²˜ìŒì‹¤í–‰ì´ë©´ ìƒì„±
+				instance = new SingleTon(); //instanceê°€ ì£¼ì†Œê°’ì„ ê°€ì§€ê²Œ ë¨
 			}
 		}
-		return instance; //Ã³À½ ½ÇÇàÀÌ ¾Æ´Ï¸é ¸¸µç °´Ã¼¸¦  return½ÃÄÑÁÜ
+		return instance; //ì²˜ìŒ ì‹¤í–‰ì´ ì•„ë‹ˆë©´ ë§Œë“  ê°ì²´ë¥¼  returnì‹œì¼œì¤Œ
 	}
 	
 	public static void main(String[] args) {
-		//this°¡ ¿µ¿ª°ªÀ» °®°í ÀÖÀ½...?
-		//½Ì±ÛÅæ - ½ÇÇà½Ã ¸Å¹ø °´Ã¼¸¦ »ı¼ºÇÏ´Â °ÍÀÌ ¾Æ´Ñ staticÀÌ¶ó´Â ¸Ş¸ğ¸®ÀÇ Æ¯¼ºÀ» ÀÌ¿ëÇÏ¿© °´Ã¼¸¦ ÇÑ¹ø¸¸ ¸¸µé¾î »ç¿ëÇÏ´Â °Í - ¿¹½Ã : ·Î±×ÀÎ
+		//thisê°€ ì˜ì—­ê°’ì„ ê°–ê³  ìˆìŒ...?
+		//ì‹±ê¸€í†¤ - ì‹¤í–‰ì‹œ ë§¤ë²ˆ ê°ì²´ë¥¼ ìƒì„±í•˜ëŠ” ê²ƒì´ ì•„ë‹Œ staticì´ë¼ëŠ” ë©”ëª¨ë¦¬ì˜ íŠ¹ì„±ì„ ì´ìš©í•˜ì—¬ ê°ì²´ë¥¼ í•œë²ˆë§Œ ë§Œë“¤ì–´ ì‚¬ìš©í•˜ëŠ” ê²ƒ - ì˜ˆì‹œ : ë¡œê·¸ì¸
 		
-		//new½ÃÄÑ¹ö¸®¸é ½Ì±ÛÅæÀÌ ¾Æ´Ô
+		//newì‹œì¼œë²„ë¦¬ë©´ ì‹±ê¸€í†¤ì´ ì•„ë‹˜
 		SingleTon aa = new SingleTon();
 		aa.num++;
 		System.out.println("aa = " + aa);
@@ -33,14 +33,14 @@ public class SingleTon {
 		
 		
 		
-		System.out.println("*** ½Ì±ÛÅæ ***"); //staticÀÌ ½Ì±ÛÅæX, staticÀÇ ±â´ÉÀ» ÀÌ¿ëÇÏ¿© ½Ì±ÛÅæÀ» ¸¸µê
-		SingleTon cc = SingleTon.getInstance(); //»ı¼º
+		System.out.println("*** ì‹±ê¸€í†¤ ***"); //staticì´ ì‹±ê¸€í†¤X, staticì˜ ê¸°ëŠ¥ì„ ì´ìš©í•˜ì—¬ ì‹±ê¸€í†¤ì„ ë§Œë“¦
+		SingleTon cc = SingleTon.getInstance(); //ìƒì„±
 		cc.num++;
 		System.out.println("aa = " + cc);
 		System.out.println("num = " + cc.num);
 		System.out.println();
 		
-		SingleTon dd = SingleTon.getInstance(); //»ı¼º
+		SingleTon dd = SingleTon.getInstance(); //ìƒì„±
 		aa.num++;
 		System.out.println("aa = " + dd);
 		System.out.println("num = " + dd.num);

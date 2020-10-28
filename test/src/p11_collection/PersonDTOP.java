@@ -2,11 +2,11 @@ package p11_collection;
 
 public class PersonDTOP implements Comparable<PersonDTOP> {
 	
-	//1.ÇÊµå ¼±¾ğ
+	//1.í•„ë“œ ì„ ì–¸
 	private String name;
 	private int age;
 	
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public PersonDTOP(String name, int age) {
 		this.name = name;
 		this.age = age;
@@ -20,10 +20,10 @@ public class PersonDTOP implements Comparable<PersonDTOP> {
 	}
 	
 	public String toString() {
-		return "ÀÌ¸§ = " + name + " ³ªÀÌ = " + age;
+		return "ì´ë¦„ = " + name + " ë‚˜ì´ = " + age;
 	}
 
-	//Comparable ÀÎÅÍÆäÀÌ½º ±¸Çö
+	//Comparable ì¸í„°í˜ì´ìŠ¤ êµ¬í˜„
 	@Override
 	public int compareTo(PersonDTOP o) {
 		if(this.age < o.age) return 1;

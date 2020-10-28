@@ -7,37 +7,37 @@ public class VectorTest {
 
 	public static void main(String[] args) {
 		Vector<String> v = new Vector<String>();
-		System.out.println("º¤ÅÍ Å©±â = " + v.size()); //0
-		System.out.println("º¤ÅÍ ¿ë·® = " + v.capacity()); //±âº»¿ë·® 10°³, 10°³¾¿ Áõ°¡
+		System.out.println("ë²¡í„° í¬ê¸° = " + v.size()); //0
+		System.out.println("ë²¡í„° ìš©ëŸ‰ = " + v.capacity()); //ê¸°ë³¸ìš©ëŸ‰ 10ê°œ, 10ê°œì”© ì¦ê°€
 		System.out.println();
 		
-		System.out.println("Ç×¸ñ Ãß°¡");
+		System.out.println("í•­ëª© ì¶”ê°€");
 		for(int i = 1; i <= 10; i++) {
-			v.add(i + ""); //Á¤¼öÇüÀÌ ¸øµé¾î°¡±â ¶§¹®¿¡ ""¸¦ ÀÔ·ÂÇÏ¿© ¹®ÀÚÈ­ÇÔ
+			v.add(i + ""); //ì •ìˆ˜í˜•ì´ ëª»ë“¤ì–´ê°€ê¸° ë•Œë¬¸ì— ""ë¥¼ ì…ë ¥í•˜ì—¬ ë¬¸ìí™”í•¨
 		}
-		System.out.println("º¤ÅÍ Å©±â = " + v.size()); //10
-		System.out.println("º¤ÅÍ ¿ë·® = " + v.capacity()); //10
+		System.out.println("ë²¡í„° í¬ê¸° = " + v.size()); //10
+		System.out.println("ë²¡í„° ìš©ëŸ‰ = " + v.capacity()); //10
 		System.out.println();
 		
 		v.add(5 + "");
-		System.out.println("º¤ÅÍ Å©±â = " + v.size()); //11
-		System.out.println("º¤ÅÍ ¿ë·® = " + v.capacity()); //20
+		System.out.println("ë²¡í„° í¬ê¸° = " + v.size()); //11
+		System.out.println("ë²¡í„° ìš©ëŸ‰ = " + v.capacity()); //20
 		System.out.println();
 		
 		for(int i = 0; i < v.size(); i++) {
-			System.out.println(v.get(i) + "   "); //  1  2  3  4  5  6  7  8  9  10  5 - ÀÔ·Â¼ø¼­¸¦ À¯Áö, ÀÎµ¦½º´Â ¹è¿­°ú °°ÀÌ 0ºÎÅÍ ½ÃÀÛ
+			System.out.println(v.get(i) + "   "); //  1  2  3  4  5  6  7  8  9  10  5 - ì…ë ¥ìˆœì„œë¥¼ ìœ ì§€, ì¸ë±ìŠ¤ëŠ” ë°°ì—´ê³¼ ê°™ì´ 0ë¶€í„° ì‹œì‘
 		}
 		System.out.println();
 		
-		v.remove("5"); // ¾Õ¿¡ ÀÖ´Â 5°¡ Á¦°Å
-		//v.remove(10); //ÀÎµ¦½º¹øÈ£, µÚ¿¡ÀÖ´Â 5°¡ Á¦°Å
+		v.remove("5"); // ì•ì— ìˆëŠ” 5ê°€ ì œê±°
+		//v.remove(10); //ì¸ë±ìŠ¤ë²ˆí˜¸, ë’¤ì—ìˆëŠ” 5ê°€ ì œê±°
 		Iterator<String> it = v.iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next() + "  ");
 		}
 		System.out.println();
 		
-		Vector<String> v2 = new Vector<String>(5,2); //±âº»¿ë·® 5°³, 2°³¾¿ Áõ°¡
+		Vector<String> v2 = new Vector<String>(5,2); //ê¸°ë³¸ìš©ëŸ‰ 5ê°œ, 2ê°œì”© ì¦ê°€
 	}
 
 }

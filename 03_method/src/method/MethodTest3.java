@@ -1,11 +1,11 @@
 package method;
 
 public class MethodTest3 {
-	int a; //ÇÊµå
+	int a; //í•„ë“œ
 	int b;
 	
-	public int sum(int a, int b) {//µ¡¼À ¸Ş¼Òµå - ±¸Çö
-		return a + b;         //¸Ş¼Òµå °ıÈ£ ¾È¿¡ ÀÖ´Â °ª - parameter, argument
+	public int sum(int a, int b) {//ë§ì…ˆ ë©”ì†Œë“œ - êµ¬í˜„
+		return a + b;         //ë©”ì†Œë“œ ê´„í˜¸ ì•ˆì— ìˆëŠ” ê°’ - parameter, argument
 							  //a + b
 	}
 	
@@ -24,14 +24,14 @@ public class MethodTest3 {
 	
 	
 	public static void main(String[] args) {
-		int a = 10; //Áö¿ªº¯¼ö
+		int a = 10; //ì§€ì—­ë³€ìˆ˜
 		
-		//È£Ãâ
+		//í˜¸ì¶œ
 		MethodTest3 mt = new MethodTest3();
-		System.out.println("ÇÕ = " + mt.sum(25, 36));
-		System.out.println("Â÷ = " + mt.sub(25, 36));
-		System.out.println("°ö = " + mt.mul(25, 36));
-		System.out.println("¸ò = " + String.format("%.2f", (mt.div(25, 36))));
+		System.out.println("í•© = " + mt.sum(25, 36));
+		System.out.println("ì°¨ = " + mt.sub(25, 36));
+		System.out.println("ê³± = " + mt.mul(25, 36));
+		System.out.println("ëª« = " + String.format("%.2f", (mt.div(25, 36))));
 	}
 
 }

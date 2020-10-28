@@ -14,32 +14,32 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-//SwingÀ» ÀÌ¿ëÇÏ¿© Ã¢ ¸¸µé±â
-public class SwingTest extends JFrame implements ActionListener { //ºÎ¸ğ°¡ FrameÀÌ¶ó¼­ FrameÀÇ ±â´Éµµ °¡Áö°í ÀÖÀ½
+//Swingì„ ì´ìš©í•˜ì—¬ ì°½ ë§Œë“¤ê¸°
+public class SwingTest extends JFrame implements ActionListener { //ë¶€ëª¨ê°€ Frameì´ë¼ì„œ Frameì˜ ê¸°ëŠ¥ë„ ê°€ì§€ê³  ìˆìŒ
 	private JButton newBtn, exitBtn;
-	private JTextArea area; //TextField´Â ÇÑ ÁÙ, ¿©·¯ ÁÙÀ» ¹ß»ı½ÃÅ³¶© TextArea
+	private JTextArea area; //TextFieldëŠ” í•œ ì¤„, ì—¬ëŸ¬ ì¤„ì„ ë°œìƒì‹œí‚¬ë• TextArea
 	
 	public SwingTest() {
-		//newBtn = new JButton("»õ·Î ¸¸µé±â");
-		//JButtonÀÇ »ı¼ºÀÚ IconÀº ÀÎÅÍÆäÀÌ½º
-		//IconÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ Å¬·¡½º : ImageIcon
-		//ImageIconÀ» ÅëÇØ »ı¼º
-		newBtn = new JButton("»õÆÄÀÏ", new ImageIcon("image/crab.gif"));
-		exitBtn = new JButton("Á¾·á");
+		//newBtn = new JButton("ìƒˆë¡œ ë§Œë“¤ê¸°");
+		//JButtonì˜ ìƒì„±ì Iconì€ ì¸í„°í˜ì´ìŠ¤
+		//Iconì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ í´ë˜ìŠ¤ : ImageIcon
+		//ImageIconì„ í†µí•´ ìƒì„±
+		newBtn = new JButton("ìƒˆíŒŒì¼", new ImageIcon("image/crab.gif"));
+		exitBtn = new JButton("ì¢…ë£Œ");
 		area = new JTextArea();
-		JScrollPane scroll = new JScrollPane(area); //½ºÅ©·Ñ¿¡ TextArea¸¦ ºÙ¿© ÇÁ·¹ÀÓ¿¡ ¿Ã·ÁµÒ
+		JScrollPane scroll = new JScrollPane(area); //ìŠ¤í¬ë¡¤ì— TextAreaë¥¼ ë¶™ì—¬ í”„ë ˆì„ì— ì˜¬ë ¤ë‘ 
 		
 		JPanel p = new JPanel();
 		p.add(newBtn);
 		p.add(exitBtn);
 		
 		
-		Container c = this.getContentPane(); //°á°ú È­¸éÀÌ ´Ş¶óÁö´Â °ÍÀº ¾Æ´ÏÁö¸¸ ³»ºÎÀûÀ¸·Î ÄÜÅ×ÀÌ³Ê¿¡ ÇÑ¹ø Áı¾î³Ö¾î ComponentµéÀ» º¸È£
-		c.add("North", p); //¡Ú¡Ú¡Ú¡ÚÄÜÅ×ÀÌ³Ê °ü·Ã °³³ä Ã£¾Æº¸±â(ÀÎ°­)
+		Container c = this.getContentPane(); //ê²°ê³¼ í™”ë©´ì´ ë‹¬ë¼ì§€ëŠ” ê²ƒì€ ì•„ë‹ˆì§€ë§Œ ë‚´ë¶€ì ìœ¼ë¡œ ì½˜í…Œì´ë„ˆì— í•œë²ˆ ì§‘ì–´ë„£ì–´ Componentë“¤ì„ ë³´í˜¸
+		c.add("North", p); //â˜…â˜…â˜…â˜…ì½˜í…Œì´ë„ˆ ê´€ë ¨ ê°œë… ì°¾ì•„ë³´ê¸°(ì¸ê°•)
 		//add("Center", area);
 		c.add("Center", scroll); 
 		
-		//ÀÌº¥Æ®
+		//ì´ë²¤íŠ¸
 		newBtn.addActionListener(this);
 		exitBtn.addActionListener(this);
 		//this.addWindowListener(this);
@@ -47,19 +47,19 @@ public class SwingTest extends JFrame implements ActionListener { //ºÎ¸ğ°¡ Frame
 		setBounds(700, 100, 300, 400);
 		setVisible(true);
 		setResizable(false);
-		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); // swing¿¡¼­´Â ¾Æ·¡ ÄÚµå°¡ ¾Æ´Ñ ÀÌ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© Ã¢À» Á¾·á½ÃÅ´
-		           								       // ³ªÁß¿¡ Ã¤ÆÃ¿¡¼­ »ó´ë¹æ¿¡°Ôµµ Á¾·á¸¦ ¾Ë¸±¶§ WindowLister»ç¿ë
-													   // ¿©±â¸¦ DO_NOTHING_ON_CLOSE·Î ¹Ù²ŞÀ¸·Î¼­ 56¹øÁÙÀÇ ÄÚµå°¡ Àû¿ë - WindowListener¿¡µµ ¿µÇâÀ» ÁÜ
-													   // ÀÌ ºÎºĞÀ» ´­·¶À» ¶§ Ã¢ÀÌ Á¾·áµÈ °Í Ã³·³ º¸ÀÌÁö¸¸ »ç½ÇÀº Ã¢ÀÌ ¼ûÀº°Í »ÓÀÌ´Ù(µğÆúÆ®°ªÀÌ HIDEÀÓ)
-													   // µû¶ó¼­ ÀÌºÎºĞÀ» ¹Ù²ãÁÖÁö ¾ÊÀ¸¸é ¿ÏÀü Á¾·áµÈ °ÍÀÌ ¾Æ´Ô
+		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE); // swingì—ì„œëŠ” ì•„ë˜ ì½”ë“œê°€ ì•„ë‹Œ ì´ ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ ì°½ì„ ì¢…ë£Œì‹œí‚´
+		           								       // ë‚˜ì¤‘ì— ì±„íŒ…ì—ì„œ ìƒëŒ€ë°©ì—ê²Œë„ ì¢…ë£Œë¥¼ ì•Œë¦´ë•Œ WindowListerì‚¬ìš©
+													   // ì—¬ê¸°ë¥¼ DO_NOTHING_ON_CLOSEë¡œ ë°”ê¿ˆìœ¼ë¡œì„œ 56ë²ˆì¤„ì˜ ì½”ë“œê°€ ì ìš© - WindowListenerì—ë„ ì˜í–¥ì„ ì¤Œ
+													   // ì´ ë¶€ë¶„ì„ ëˆŒë €ì„ ë•Œ ì°½ì´ ì¢…ë£Œëœ ê²ƒ ì²˜ëŸ¼ ë³´ì´ì§€ë§Œ ì‚¬ì‹¤ì€ ì°½ì´ ìˆ¨ì€ê²ƒ ë¿ì´ë‹¤(ë””í´íŠ¸ê°’ì´ HIDEì„)
+													   // ë”°ë¼ì„œ ì´ë¶€ë¶„ì„ ë°”ê¿”ì£¼ì§€ ì•Šìœ¼ë©´ ì™„ì „ ì¢…ë£Œëœ ê²ƒì´ ì•„ë‹˜
 		
-		//swing¿¡¼­ ¾Æ·¡ ÄÚµå¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Æµµ x¸¦ ´©¸£¸é Ã¢ÀÌ ²¨Áö´Âµ¥ Á¾·áµÈ °ÍÀÌ ¾Æ´Ñ Ã¢ÀÌ ¼ûÀº °ÍÀÓ
+		//swingì—ì„œ ì•„ë˜ ì½”ë“œë¥¼ ì…ë ¥í•˜ì§€ ì•Šì•„ë„ xë¥¼ ëˆ„ë¥´ë©´ ì°½ì´ êº¼ì§€ëŠ”ë° ì¢…ë£Œëœ ê²ƒì´ ì•„ë‹Œ ì°½ì´ ìˆ¨ì€ ê²ƒì„
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				int result = JOptionPane.showConfirmDialog(SwingTest.this, "Á¤¸»·Î Á¾·áÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-				                                           //¿©±â¼­ this¸¸ ÀÖÀ¸¸é ÀÍ¸íÅ¬·¡½º¸¦ °¡¸®Å°¹Ç·Î, SwingTest.À» ³Ö¾î ÁÖ¾î¾ß error°¡ ³ªÁö ¾Ê´Â´Ù
-				if(result == 0) System.exit(0); //0ÀÌ ¿¹
+				int result = JOptionPane.showConfirmDialog(SwingTest.this, "ì •ë§ë¡œ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì¢…ë£Œ", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				                                           //ì—¬ê¸°ì„œ thisë§Œ ìˆìœ¼ë©´ ìµëª…í´ë˜ìŠ¤ë¥¼ ê°€ë¦¬í‚¤ë¯€ë¡œ, SwingTest.ì„ ë„£ì–´ ì£¼ì–´ì•¼ errorê°€ ë‚˜ì§€ ì•ŠëŠ”ë‹¤
+				if(result == 0) System.exit(0); //0ì´ ì˜ˆ
 			}
 		});
 	}
@@ -67,27 +67,27 @@ public class SwingTest extends JFrame implements ActionListener { //ºÎ¸ğ°¡ Frame
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == newBtn) {
-			//area.setText(" "); - swingÀº ÇÊ¿ä¾øÀ½
+			//area.setText(" "); - swingì€ í•„ìš”ì—†ìŒ
 			area.setText("");
 			
 		}else if(e.getSource() == exitBtn) {
 			//System.exit(0);
-			int result = JOptionPane.showConfirmDialog(this, "Á¤¸»·Î Á¾·áÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE); //this -> JFRAME
-													  //ÀÍ¸íÅ¬·¡½º°¡ ¾øÀ¸¹Ç·Î ¿©±â¼­´Â this¸¸ ½áµµ µÊ
-			//µ¿ÀÇ¸¦ ±¸ÇÏ´Â ¸Ş¼Òµå
+			int result = JOptionPane.showConfirmDialog(this, "ì •ë§ë¡œ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì¢…ë£Œ", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE); //this -> JFRAME
+													  //ìµëª…í´ë˜ìŠ¤ê°€ ì—†ìœ¼ë¯€ë¡œ ì—¬ê¸°ì„œëŠ” thisë§Œ ì¨ë„ ë¨
+			//ë™ì˜ë¥¼ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
 			/*
 			Parameters:
 				parentComponent - determines the Frame in which the dialog is displayed; if null, or if the parentComponent has no Frame, a default Frame is used.
-				¾îµğ¿¡ ´ëÇØ ½ÇÇàÇÏ´ÂÁö(½ÇÇàÇÏ´Â ´ë»ó)
+				ì–´ë””ì— ëŒ€í•´ ì‹¤í–‰í•˜ëŠ”ì§€(ì‹¤í–‰í•˜ëŠ” ëŒ€ìƒ)
 				message - the Object to display
-				¸Ş½ÃÁö
+				ë©”ì‹œì§€
 				title - the title string for the dialog
-				´ëÈ­»óÀÚÀÇ Å¸ÀÌÆ²
+				ëŒ€í™”ìƒìì˜ íƒ€ì´í‹€
 				optionType - an integer designating the options available on the dialog: YES_NO_OPTION, YES_NO_CANCEL_OPTION, or OK_CANCEL_OPTION
-				¹öÆ° Á¾·ù
+				ë²„íŠ¼ ì¢…ë¥˜
 				messageType - an integer designating the kind of message this is; primarily used to determine the icon from the pluggable Look and Feel: ERROR_MESSAGE, INFORMATION_MESSAGE, WARNING_MESSAGE, QUESTION_MESSAGE, or PLAIN_MESSAGE
-				Ç¥½ÃÇÒ ¾ÆÀÌÄÜ
-				Returns: - Á¤¼öÇüÀ» returnÇÔ
+				í‘œì‹œí•  ì•„ì´ì½˜
+				Returns: - ì •ìˆ˜í˜•ì„ returní•¨
 				an integer indicating the option selected by the user
 				
 		   */
@@ -104,18 +104,18 @@ public class SwingTest extends JFrame implements ActionListener { //ºÎ¸ğ°¡ Frame
 
 }
 
-//awt¿Í ±¸ºĞÇÏ±â À§ÇØ ´ëºÎºĞ J¶ó´Â ¾Õ±ÛÀÚ¸¦ Ãß°¡
-//È®ÀåÆĞÅ°Áö°¡ ÇÊ¿äÇÏ±â ¶§¹®¿¡ javax»ç¿ë
-//FrameÀº Component¸¦ º¸È£ÇÏÁö ¾Ê°í ¹Ù·Î ¿Ã¸²
-//JFrameÀº »óÀÚ ¾È¿¡ Component¸¦ ½ÇÀ½ - Componentº¸È£ 
+//awtì™€ êµ¬ë¶„í•˜ê¸° ìœ„í•´ ëŒ€ë¶€ë¶„ Jë¼ëŠ” ì•ê¸€ìë¥¼ ì¶”ê°€
+//í™•ì¥íŒ¨í‚¤ì§€ê°€ í•„ìš”í•˜ê¸° ë•Œë¬¸ì— javaxì‚¬ìš©
+//Frameì€ Componentë¥¼ ë³´í˜¸í•˜ì§€ ì•Šê³  ë°”ë¡œ ì˜¬ë¦¼
+//JFrameì€ ìƒì ì•ˆì— Componentë¥¼ ì‹¤ìŒ - Componentë³´í˜¸ 
 
 
 //setDefaultCloseOperation
 //DO_NOTHING_ON_CLOSE (defined in WindowConstants)
 // : Don't do anything; require the program to handle the operation in the windowClosing method of a registered WindowListener object.
-//HIDE_ON_CLOSE (defined in WindowConstants) - Ã¢À» ¼û±è
+//HIDE_ON_CLOSE (defined in WindowConstants) - ì°½ì„ ìˆ¨ê¹€
 // : Automatically hide the frame after invoking any registered WindowListener objects.
-//DISPOSE_ON_CLOSE (defined in WindowConstants) - »çÈÄÃ³¸®(¸¹ÀÌ ¾¸)
+//DISPOSE_ON_CLOSE (defined in WindowConstants) - ì‚¬í›„ì²˜ë¦¬(ë§ì´ ì”€)
 // : Automatically hide and dispose the frame after invoking any registered WindowListener objects.
-//EXIT_ON_CLOSE (defined in JFrame) - ¿ÏÀü Á¾·á
+//EXIT_ON_CLOSE (defined in JFrame) - ì™„ì „ ì¢…ë£Œ
 // : Exit the application using the System exit method. Use this only in applications.

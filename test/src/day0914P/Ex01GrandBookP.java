@@ -5,156 +5,156 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Ex01GrandBookP {
-	//»ç¿ëÀÚ·ÎºÎÅÍ ¸îÇĞ³â ¸î¹øÂ° ½ÃÇèÁ¡¼öÀÎÁö ÀÔ·Â ¹Ş¾Æ¼­
-	//ÇØ´ç À§Ä¡¿¡ Á¡¼ö¸¦ ³Ö´Â ÄÚµå¸¦ ±¸ÇöÇÏ½Ã¿À
-	//Á¶°Ç1. Àß¸øµÈ ÇĞ³âÀÌ ÀÔ·ÂµÇÁö ¾Ê°Ô ÇÏ½Ã¿À
-	//Á¶°Ç2. ¸î¹øÂ° ½ÃÇèÁ¤¼ö¸¦ ÀÔ·Â ¹ŞÀ» ¶§ Àß¸ø µÈ ¼ø¼­°¡ ÀÔ·ÂµÇÁö ¾Ê°Ô ÇÏ½Ã¿À
-	//Á¶°Ç3. Á¡¼ö°¡ ¿Ã¹Ù¸¥ Á¡¼ö¸¸ ÀÔ·ÂµÇ±â ÇÏ½Ã¿À
+	//ì‚¬ìš©ìë¡œë¶€í„° ëª‡í•™ë…„ ëª‡ë²ˆì§¸ ì‹œí—˜ì ìˆ˜ì¸ì§€ ì…ë ¥ ë°›ì•„ì„œ
+	//í•´ë‹¹ ìœ„ì¹˜ì— ì ìˆ˜ë¥¼ ë„£ëŠ” ì½”ë“œë¥¼ êµ¬í˜„í•˜ì‹œì˜¤
+	//ì¡°ê±´1. ì˜ëª»ëœ í•™ë…„ì´ ì…ë ¥ë˜ì§€ ì•Šê²Œ í•˜ì‹œì˜¤
+	//ì¡°ê±´2. ëª‡ë²ˆì§¸ ì‹œí—˜ì •ìˆ˜ë¥¼ ì…ë ¥ ë°›ì„ ë•Œ ì˜ëª» ëœ ìˆœì„œê°€ ì…ë ¥ë˜ì§€ ì•Šê²Œ í•˜ì‹œì˜¤
+	//ì¡°ê±´3. ì ìˆ˜ê°€ ì˜¬ë°”ë¥¸ ì ìˆ˜ë§Œ ì…ë ¥ë˜ê¸° í•˜ì‹œì˜¤
 
-	//¿¹½Ã
-	//¸îÇĞ³â Á¡¼öÀÔ´Ï±î? (ÀÔ·Â 4)
-	//¿Ã¹Ù¸£Áö ¾ÊÀº ÇĞ³âÀÔ´Ï´Ù.
-	//¸îÇĞ³â Á¡¼öÀÔ´Ï±î? (ÀÔ·Â 2)
-	//¸î¹øÂ° ½ÃÇèÀÔ´Ï±î? (ÀÔ·Â -2)
-	//¿Ã¹Ù¸£Áö ¾ÊÀº ¼ø¼­ÀÔ´Ï´Ù.
-	//¸î¹øÂ° ½ÃÇèÀÔ´Ï±î? (ÀÔ·Â 1)
-	//¸îÁ¡ÀÔ´Ï±î? (ÀÔ·Â 80)
-	//2ÇĞ³â 1ÇĞ±â Áß°£ °í»ç ±¹¾î¿¡ 80Á¡ÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.
-	//1ÇĞ³â 1ÇĞ±â Áß°£ 
-	//±¹¾î 40 ¿µ¾î 50 ¼öÇĞ 45
+	//ì˜ˆì‹œ
+	//ëª‡í•™ë…„ ì ìˆ˜ì…ë‹ˆê¹Œ? (ì…ë ¥ 4)
+	//ì˜¬ë°”ë¥´ì§€ ì•Šì€ í•™ë…„ì…ë‹ˆë‹¤.
+	//ëª‡í•™ë…„ ì ìˆ˜ì…ë‹ˆê¹Œ? (ì…ë ¥ 2)
+	//ëª‡ë²ˆì§¸ ì‹œí—˜ì…ë‹ˆê¹Œ? (ì…ë ¥ -2)
+	//ì˜¬ë°”ë¥´ì§€ ì•Šì€ ìˆœì„œì…ë‹ˆë‹¤.
+	//ëª‡ë²ˆì§¸ ì‹œí—˜ì…ë‹ˆê¹Œ? (ì…ë ¥ 1)
+	//ëª‡ì ì…ë‹ˆê¹Œ? (ì…ë ¥ 80)
+	//2í•™ë…„ 1í•™ê¸° ì¤‘ê°„ ê³ ì‚¬ êµ­ì–´ì— 80ì ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.
+	//1í•™ë…„ 1í•™ê¸° ì¤‘ê°„ 
+	//êµ­ì–´ 40 ì˜ì–´ 50 ìˆ˜í•™ 45
 	
-    //1.»ó¼ö¼±¾ğ
-	final static int YEAR = 3; // ÇĞ³â
-	final static int TEST_NUMBER = 4;//1ÇĞ±â Áß°£~2ÇĞ±â ±â¸»
+    //1.ìƒìˆ˜ì„ ì–¸
+	final static int YEAR = 3; // í•™ë…„
+	final static int TEST_NUMBER = 4;//1í•™ê¸° ì¤‘ê°„~2í•™ê¸° ê¸°ë§
 	public static void main(String[] args) throws IOException {
-	//0.ÀÔ·Â¸Ş¸ğ¸® »ı¼º
+	//0.ì…ë ¥ë©”ëª¨ë¦¬ ìƒì„±
 	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-	//0.¹è¿­¼±¾ğ
+	//0.ë°°ì—´ì„ ì–¸
 	int[][] korArray = new int[YEAR][TEST_NUMBER];
 	int[][] engArray = new int[YEAR][TEST_NUMBER];
 	int[][] mathArray = new int[YEAR][TEST_NUMBER];
 	
-	//2-2.¸Ş´º ¸Ş¼Òµå Ãâ·Â
+	//2-2.ë©”ë‰´ ë©”ì†Œë“œ ì¶œë ¥
 	while(true) {
 		showMenu();
 		int choice = Integer.parseInt(bufferedReader.readLine());
 		if(choice == 1) {
-			//5-2. ÇĞ³â¼±ÅÃ ¸Ş¼Òµå È£Ãâ
+			//5-2. í•™ë…„ì„ íƒ ë©”ì†Œë“œ í˜¸ì¶œ
 			int year = selectYear(bufferedReader);
-			//6-2. ½ÃÇè¼±ÅÃ ¸Ş¼Òµå È£Ãâ
+			//6-2. ì‹œí—˜ì„ íƒ ë©”ì†Œë“œ í˜¸ì¶œ
 			int testNumber = selectTest(bufferedReader);
-			//7-2. ¼ºÀûÀÔ·Â ¸Ş¼Òµå È£Ãâ
+			//7-2. ì„±ì ì…ë ¥ ë©”ì†Œë“œ í˜¸ì¶œ
 			korArray[year][testNumber] = validateScore(bufferedReader,1);
 			engArray[year][testNumber] = validateScore(bufferedReader,2);
 			mathArray[year][testNumber] = validateScore(bufferedReader,3);
 			
 			
 		}else if(choice == 2) {
-			//5-2. ÇĞ³â¼±ÅÃ ¸Ş¼Òµå È£Ãâ
+			//5-2. í•™ë…„ì„ íƒ ë©”ì†Œë“œ í˜¸ì¶œ
 			int year = selectYear(bufferedReader);
-			//6-2. ½ÃÇè¼±ÅÃ ¸Ş¼Òµå È£Ãâ
+			//6-2. ì‹œí—˜ì„ íƒ ë©”ì†Œë“œ í˜¸ì¶œ
 			int testNumber = selectTest(bufferedReader);
-			//8-2. Ãâ·Â ¸Ş¼Òµå È£Ãâ
+			//8-2. ì¶œë ¥ ë©”ì†Œë“œ í˜¸ì¶œ
 			String message = new String();
 			switch(testNumber){
 				case 1 :
-					message = "1ÇĞ³â Áß°£";
+					message = "1í•™ë…„ ì¤‘ê°„";
 					break;
 				case 2 :
-					message = "1ÇĞ³â ±â¸»";
+					message = "1í•™ë…„ ê¸°ë§";
 					break;
 				case 3 :
-					message = "2ÇĞ³â Áß°£";
+					message = "2í•™ë…„ ì¤‘ê°„";
 					break;
 				case 4 :
-					message = "2ÇĞ³â ±â¸»";
+					message = "2í•™ë…„ ê¸°ë§";
 					break;
 			}
-			System.out.println(year + "ÇĞ³â " + message);
+			System.out.println(year + "í•™ë…„ " + message);
 			printScore(korArray[year][testNumber], engArray[year][testNumber], mathArray[year][testNumber]);
 			
 		}else if(choice == 3) {
-			//3.Á¾·á Ã³¸®
-			System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+			//3.ì¢…ë£Œ ì²˜ë¦¬
+			System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 			break;
 		}else {
-			//4.¿¹¿ÜÀÔ·Â
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ¸Ş´º¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä");
+			//4.ì˜ˆì™¸ì…ë ¥
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ë©”ë‰´ë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”");
 		}
 		
 		
 		
-	}//¸Ş´º while
+	}//ë©”ë‰´ while
 	
-	}//main¸Ş¼Òµå
+	}//mainë©”ì†Œë“œ
 	
-	//2-1.¸Ş´º ¸Ş¼Òµå »ı¼º
+	//2-1.ë©”ë‰´ ë©”ì†Œë“œ ìƒì„±
 	static void showMenu() {
 		System.out.println("===========================");
-		System.out.println("ÄÚµù°íµîÇĞ±³ ¼ºÀû°ü¸® ÇÁ·Î±×·¥");
-		System.out.println("1.ÀÔ·Â   2.Ãâ·Â   3.Á¾·á");
+		System.out.println("ì½”ë”©ê³ ë“±í•™êµ ì„±ì ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		System.out.println("1.ì…ë ¥   2.ì¶œë ¥   3.ì¢…ë£Œ");
 		System.out.println("===========================");
-		System.out.print("¸Ş´º ¼±ÅÃ> ");
+		System.out.print("ë©”ë‰´ ì„ íƒ> ");
 	}
 	
-	//5-1.ÇĞ³â ¼±ÅÃ ¸Ş¼Òµå »ı¼º
+	//5-1.í•™ë…„ ì„ íƒ ë©”ì†Œë“œ ìƒì„±
 	static int selectYear(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		System.out.println("ÇĞ³âÀ» ¼±ÅÃÇØÁÖ¼¼¿ä(1~3)");
+		System.out.println("í•™ë…„ì„ ì„ íƒí•´ì£¼ì„¸ìš”(1~3)");
 		System.out.print("> ");
 		int year = Integer.parseInt(bufferedReader.readLine());
 		while(year < 0 || year > 3) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-			System.out.println("ÇĞ³âÀ» ¼±ÅÃÇØÁÖ¼¼¿ä(1~3)");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+			System.out.println("í•™ë…„ì„ ì„ íƒí•´ì£¼ì„¸ìš”(1~3)");
 			System.out.print("> ");
 			year = Integer.parseInt(bufferedReader.readLine());
 		}//while
-		return year - 1; //¹è¿­ÀÌ¹Ç·Î »ç¿ëÀÚ´Â 1,2,3À» ÀÔ·Â. ½ÇÁ¦ °ªÀº [0][1][2]ÀÔ·Â
-	}//selectYear¸Ş¼Òµå
+		return year - 1; //ë°°ì—´ì´ë¯€ë¡œ ì‚¬ìš©ìëŠ” 1,2,3ì„ ì…ë ¥. ì‹¤ì œ ê°’ì€ [0][1][2]ì…ë ¥
+	}//selectYearë©”ì†Œë“œ
 	
-	//6-1. ½ÃÇè ¼±ÅÃ ¸Ş¼Òµå »ı¼º
+	//6-1. ì‹œí—˜ ì„ íƒ ë©”ì†Œë“œ ìƒì„±
 	static int selectTest(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		System.out.println("½ÃÇèÀ» ¼±ÅÃÇØÁÖ¼¼¿ä");
-		System.out.println("1.1ÇĞ±â Áß°£   2.1ÇĞ±â ±â¸»   3.2ÇĞ±â Áß°£   4.2ÇĞ±â ±â¸»");
+		System.out.println("ì‹œí—˜ì„ ì„ íƒí•´ì£¼ì„¸ìš”");
+		System.out.println("1.1í•™ê¸° ì¤‘ê°„   2.1í•™ê¸° ê¸°ë§   3.2í•™ê¸° ì¤‘ê°„   4.2í•™ê¸° ê¸°ë§");
 		System.out.print("> ");
 		int testNumber = Integer.parseInt(bufferedReader.readLine());
 		while(testNumber < 0 || testNumber > 4) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-			System.out.println("½ÃÇèÀ» ¼±ÅÃÇØÁÖ¼¼¿ä");
-			System.out.println("1.1ÇĞ±â Áß°£   2.1ÇĞ±â ±â¸»   3.2ÇĞ±â Áß°£   4.2ÇĞ±â ±â¸»");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+			System.out.println("ì‹œí—˜ì„ ì„ íƒí•´ì£¼ì„¸ìš”");
+			System.out.println("1.1í•™ê¸° ì¤‘ê°„   2.1í•™ê¸° ê¸°ë§   3.2í•™ê¸° ì¤‘ê°„   4.2í•™ê¸° ê¸°ë§");
 			System.out.print("> ");
 			testNumber = Integer.parseInt(bufferedReader.readLine());			
 		}
-		return testNumber - 1;//¹è¿­ÀÌ¹Ç·Î »ç¿ëÀÚ´Â 1,2,3,4¸¦ ÀÔ·Â. ½ÇÁ¦ °ªÀº [0][1][2][3]ÀÔ·Â
+		return testNumber - 1;//ë°°ì—´ì´ë¯€ë¡œ ì‚¬ìš©ìëŠ” 1,2,3,4ë¥¼ ì…ë ¥. ì‹¤ì œ ê°’ì€ [0][1][2][3]ì…ë ¥
 	}
 	
-	//7-1. ¼ºÀû ÀÔ·Â ¸Ş¼Òµå »ı¼º
+	//7-1. ì„±ì  ì…ë ¥ ë©”ì†Œë“œ ìƒì„±
 	static int validateScore(BufferedReader bufferedReader, int code) throws NumberFormatException, IOException {
 		String message = new String();
 		switch(code) {
 		case 1 :
-			message = "±¹¾î";
+			message = "êµ­ì–´";
 			break;
 		case 2 :
-			message = "¿µ¾î";
+			message = "ì˜ì–´";
 			break;
 		case 3 :
-			message = "¼öÇĞ";
+			message = "ìˆ˜í•™";
 			break;
 		}//switch
-		message += " Á¡¼ö ÀÔ·Â : ";
+		message += " ì ìˆ˜ ì…ë ¥ : ";
 		System.out.print(message);
 		int score = Integer.parseInt(bufferedReader.readLine());
 		while(score < 0 || score > 100) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			System.out.print(message);
 			score = Integer.parseInt(bufferedReader.readLine());
-		}//while¹®
+		}//whileë¬¸
 		return score;
-	}//validateScore¸Ş¼Òµå
+	}//validateScoreë©”ì†Œë“œ
 	
-	//8-1. Ãâ·Â ¸Ş¼Òµå »ı¼º
+	//8-1. ì¶œë ¥ ë©”ì†Œë“œ ìƒì„±
 	static void printScore(int korean, int english, int math) {
-		System.out.printf("±¹¾î :%d, ¿µ¾î :%d, ¼öÇĞ :%d\n", korean, english, math);
+		System.out.printf("êµ­ì–´ :%d, ì˜ì–´ :%d, ìˆ˜í•™ :%d\n", korean, english, math);
 	}
 
 }

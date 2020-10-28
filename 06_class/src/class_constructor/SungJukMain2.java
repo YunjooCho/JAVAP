@@ -1,26 +1,26 @@
 package class_constructor;
 /*
-SungJuk Å¬·¡½º ÀÌ¿ëÇÏ½Ã¿À
-°´Ã¼ ¹è¿­
+SungJuk í´ë˜ìŠ¤ ì´ìš©í•˜ì‹œì˜¤
+ê°ì²´ ë°°ì—´
 
-[½ÇÇà°á°ú]
-ÀÎ¿ø¼ö ÀÔ·Â : 2
+[ì‹¤í–‰ê²°ê³¼]
+ì¸ì›ìˆ˜ ì…ë ¥ : 2
 
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-±¹¾î ÀÔ·Â : 85
-¿µ¾î ÀÔ·Â : 93
-¼öÇĞ ÀÔ·Â : 100
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+êµ­ì–´ ì…ë ¥ : 85
+ì˜ì–´ ì…ë ¥ : 93
+ìˆ˜í•™ ì…ë ¥ : 100
 
-ÀÌ¸§ ÀÔ·Â : ÄÚ³­
-±¹¾î ÀÔ·Â : 75
-¿µ¾î ÀÔ·Â : 86
-¼öÇĞ ÀÔ·Â : 92
+ì´ë¦„ ì…ë ¥ : ì½”ë‚œ
+êµ­ì–´ ì…ë ¥ : 75
+ì˜ì–´ ì…ë ¥ : 86
+ìˆ˜í•™ ì…ë ¥ : 92
 
 ----------------------------------------------------
-ÀÌ¸§      ±¹¾î      ¿µ¾î      ¼öÇĞ      ÃÑÁ¡      Æò±Õ      ÇĞÁ¡
+ì´ë¦„      êµ­ì–´      ì˜ì–´      ìˆ˜í•™      ì´ì       í‰ê·       í•™ì 
 ----------------------------------------------------
-È«±æµ¿   85      93      100
-ÄÚ³­      75      86      92
+í™ê¸¸ë™   85      93      100
+ì½”ë‚œ      75      86      92
  */
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,32 +28,32 @@ import java.io.InputStreamReader;
 
 public class SungJukMain2 {
 
-	//ÇÊµå¼±¾ğ
+	//í•„ë“œì„ ì–¸
 //	static SungJuk[] ar;
 //	static BufferedReader bufferedReader;
 	
 	public static void main(String[] args) throws IOException  {
-		//¼±»ı´ÔÇ®ÀÌ
+		//ì„ ìƒë‹˜í’€ì´
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("ÀÎ¿ø¼ö ÀÔ·Â : ");
+		System.out.print("ì¸ì›ìˆ˜ ì…ë ¥ : ");
 		int count = Integer.parseInt(bufferedReader.readLine());
 		SungJuk[] ar = new SungJuk[count];
 		
 //		bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//		System.out.print("ÀÎ¿ø¼ö ÀÔ·Â : ");
+//		System.out.print("ì¸ì›ìˆ˜ ì…ë ¥ : ");
 //		int count = Integer.parseInt(bufferedReader.readLine());
 //		ar = new SungJuk[count-1];
 		
 		for(int i = 0; i < count; i++) {
 			//add();
-			//¼±»ı´Ô Ç®ÀÌ
-			System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+			//ì„ ìƒë‹˜ í’€ì´
+			System.out.print("ì´ë¦„ ì…ë ¥ : ");
 			String name = bufferedReader.readLine();
-			System.out.print("±¹¾î ÀÔ·Â : ");
+			System.out.print("êµ­ì–´ ì…ë ¥ : ");
 			int kor = Integer.parseInt(bufferedReader.readLine());
-			System.out.print("¿µ¾î ÀÔ·Â : ");
+			System.out.print("ì˜ì–´ ì…ë ¥ : ");
 			int eng = Integer.parseInt(bufferedReader.readLine());
-			System.out.print("¼öÇĞ ÀÔ·Â : ");
+			System.out.print("ìˆ˜í•™ ì…ë ¥ : ");
 			int math = Integer.parseInt(bufferedReader.readLine());
 			ar[i] = new SungJuk(name, kor, eng, math);
 			ar[i].calc();
@@ -61,7 +61,7 @@ public class SungJukMain2 {
 		
 		
 		System.out.println("----------------------------------------------------");
-		System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tÇĞÁ¡");
+		System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \tí•™ì ");
 		System.out.println("----------------------------------------------------");	
 //		for(int i = 0; i < ar.length; i++) {
 //			ar[i].calc();
@@ -73,7 +73,7 @@ public class SungJukMain2 {
 //							   + String.format("%.2f", ar[i].getAvg()) + "\t"
 //			                   + ar[i].getGrade());
 //		}
-		//¼±»ı´Ô Ç®ÀÌ
+		//ì„ ìƒë‹˜ í’€ì´
 		for(SungJuk data : ar) {
 			System.out.println(data.getName()+ "\t" 
 					   + data.getKor() + "\t" 
@@ -92,7 +92,7 @@ public class SungJukMain2 {
 //		int value = Integer.parseInt(bufferedReader.readLine());
 //		
 //		while(value < minimum || value > maximum) {
-//			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+//			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 //			value = Integer.parseInt(bufferedReader.readLine());
 //		}
 //		
@@ -102,36 +102,36 @@ public class SungJukMain2 {
 //	private static SungJuk setInfo() throws IOException {
 //		
 //		SungJuk s = new SungJuk();
-//		System.out.println("ÀÌ¸§ ÀÔ·Â : ");
+//		System.out.println("ì´ë¦„ ì…ë ¥ : ");
 //		s.setName(bufferedReader.readLine());
-//		System.out.println("±¹¾î ÀÔ·Â : ");
+//		System.out.println("êµ­ì–´ ì…ë ¥ : ");
 //		s.setKor(validateNumber(0,100));
-//		System.out.println("¿µ¾î ÀÔ·Â : ");
+//		System.out.println("ì˜ì–´ ì…ë ¥ : ");
 //		s.setEng(validateNumber(0,100));
-//		System.out.println("¼öÇĞ ÀÔ·Â : ");
+//		System.out.println("ìˆ˜í•™ ì…ë ¥ : ");
 //		s.setMath(validateNumber(0,100));
 //	
 //		return s;
 //	}
 //	
 //	private static SungJuk[] add(SungJuk[] ar, SungJuk s) {
-//		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù
+//		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤
 //		int size = ar.length;
 //		SungJuk[] temp = new SungJuk[size];
 //		for(int i = 0; i < size; i++) {
 //			temp[i] = ar[i];
 //		}
 //		
-//		//¹è¿­ÀÇ Å©±â¸¦ 1Áõ°¡(Áõ°¡¿Í µ¿½Ã¿¡ ÃÊ±âÈ­µÊ)
+//		//ë°°ì—´ì˜ í¬ê¸°ë¥¼ 1ì¦ê°€(ì¦ê°€ì™€ ë™ì‹œì— ì´ˆê¸°í™”ë¨)
 //		ar = new SungJuk[size + 1];
 //		
-//		//studentArray¿¡ tempÀÇ °ª º¹»ç
-//		for(int i = 0; i < size; i++) { //ÀÓ½Ã ¹è¿­ÀÇ Å©±â¿¡ ¸ÂÃç ÀÛ¼º
+//		//studentArrayì— tempì˜ ê°’ ë³µì‚¬
+//		for(int i = 0; i < size; i++) { //ì„ì‹œ ë°°ì—´ì˜ í¬ê¸°ì— ë§ì¶° ì‘ì„±
 //			ar[i] = temp[i];
 //		}
 //		
-//		ar[size] = s; //postArrayÀÇ Å©±â°¡ size+1·Î Áõ°¡Çß±â ¶§¹®¿¡ size°¡ 
-//							 //°¡Àå ¸¶Áö¸· ÀÎµ¦½º°¡ µÊ, ¸¶Áö¸· ÀÎµ¦½º¿¡ Ãß°¡ °´Ã¼¸¦ ÀúÀå
+//		ar[size] = s; //postArrayì˜ í¬ê¸°ê°€ size+1ë¡œ ì¦ê°€í–ˆê¸° ë•Œë¬¸ì— sizeê°€ 
+//							 //ê°€ì¥ ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ê°€ ë¨, ë§ˆì§€ë§‰ ì¸ë±ìŠ¤ì— ì¶”ê°€ ê°ì²´ë¥¼ ì €ì¥
 //		
 //		return ar;
 //	}

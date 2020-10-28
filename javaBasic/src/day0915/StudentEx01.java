@@ -4,75 +4,75 @@ import java.io.IOException;
 
 public class StudentEx01 {
 	public static void main(String[] args) throws IOException {
-		//°´Ã¼¸¦ ¸¸µé¾îº¸ÀÚ
+		//ê°ì²´ë¥¼ ë§Œë“¤ì–´ë³´ì
 		
-		Student s1 = new Student("±è¸»ÀÌ", 1, 99, 98, 97);  //ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ
-														  //»ı¼ºÀÚ(ÇÊµå°ª ÃÊ±âÈ­), StudentÅ¬·¡½º´Â ´Ù¸¥ Å¬·¡½ºÆÄÀÏ¿¡¼­ »ı¼ºÇÔ
-														  //Student s1 = new Student(); ÇüÅÂ·Î ±âº» »ç¿ëÇÏ°í ÀÖÁö¸¸, 
-														  //ÀÌ¹ø¿¡´Â StudentÆÄÀÏ¿¡ ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ¸¦ ¸¸µé¾ú±â ¶§¹®¿¡
-									                      //StudentÅ¬·¡½º¿¡ ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ¸¦ ³ÖÀ¸¸é ¿¡·¯¹ß»ı.
-														  //ÆÄ¶ó¹ÌÅÍ µ¥ÀÌÅÍÅ¸ÀÔÀ» º¸°í »ı¼ºÀÚ¸¦ Ã£¾Æ³¿(StudentÆÄÀÏ)
-		s1 = new Student(); //ÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â »ı¼ºÀÚ
-							//Student s1 = new Student(); °á°ú, °ªÀÌ ¾ø¾îÁ®¹ö¸², ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚÀÇ °ªÀÌ ¾ø¾îÁü
-		System.out.printf("ÀÌ¸§ : %s, ID : %d, ±¹¾î : %dÁ¡, ¿µ¾î : %dÁ¡, ¼öÇĞ : %dÁ¡\n", s1.getName(), s1.getId(), s1.getKorean(), s1.getEnglish(), s1.getMath());
-		//°´Ã¼ÀÇ ÇÊµå È¤Àº ¸Ş¼Òµå¸¦ Á¢±ÙÇÒ ¶§¿¡´Â
-		//Á¢±Ù ¿¬»êÀÚ . À» ÀÌŸGÇÏ¸é µÈ´Ù.
+		Student s1 = new Student("ê¹€ë§ì´", 1, 99, 98, 97);  //íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ì
+														  //ìƒì„±ì(í•„ë“œê°’ ì´ˆê¸°í™”), Studentí´ë˜ìŠ¤ëŠ” ë‹¤ë¥¸ í´ë˜ìŠ¤íŒŒì¼ì—ì„œ ìƒì„±í•¨
+														  //Student s1 = new Student(); í˜•íƒœë¡œ ê¸°ë³¸ ì‚¬ìš©í•˜ê³  ìˆì§€ë§Œ, 
+														  //ì´ë²ˆì—ëŠ” StudentíŒŒì¼ì— íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ìë¥¼ ë§Œë“¤ì—ˆê¸° ë•Œë¬¸ì—
+									                      //Studentí´ë˜ìŠ¤ì— íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ìë¥¼ ë„£ìœ¼ë©´ ì—ëŸ¬ë°œìƒ.
+														  //íŒŒë¼ë¯¸í„° ë°ì´í„°íƒ€ì…ì„ ë³´ê³  ìƒì„±ìë¥¼ ì°¾ì•„ëƒ„(StudentíŒŒì¼)
+		s1 = new Student(); //íŒŒë¼ë¯¸í„°ê°€ ì—†ëŠ” ìƒì„±ì
+							//Student s1 = new Student(); ê²°ê³¼, ê°’ì´ ì—†ì–´ì ¸ë²„ë¦¼, íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ìì˜ ê°’ì´ ì—†ì–´ì§
+		System.out.printf("ì´ë¦„ : %s, ID : %d, êµ­ì–´ : %dì , ì˜ì–´ : %dì , ìˆ˜í•™ : %dì \n", s1.getName(), s1.getId(), s1.getKorean(), s1.getEnglish(), s1.getMath());
+		//ê°ì²´ì˜ í•„ë“œ í˜¹ì€ ë©”ì†Œë“œë¥¼ ì ‘ê·¼í•  ë•Œì—ëŠ”
+		//ì ‘ê·¼ ì—°ì‚°ì . ì„ ì´ìš¯í•˜ë©´ ëœë‹¤.
 		
-		s1.setName("Á¶Àç¿µ"); //()¾ÈÀÇ °ªÀ» ÀúÀå nameº¯¼ö¿¡ ÀúÀå
+		s1.setName("ì¡°ì¬ì˜"); //()ì•ˆì˜ ê°’ì„ ì €ì¥ nameë³€ìˆ˜ì— ì €ì¥
 		s1.setKorean(100);
 		s1.setEnglish(90);
 		s1.setMath(91);
 		s1.setId(1);
-		System.out.printf("ÀÌ¸§ : %s, ±¹¾î : %dÁ¡, ¿µ¾î : %dÁ¡, ¼öÇĞ : %dÁ¡\n", s1.getName(), s1.getKorean(), s1.getEnglish(), s1.getMath());
-		System.out.printf("%s ÇĞ»ıÀÇ ÃÑÁ¡ : %dÁ¡ Æò±Õ : %.2f\n", s1.getName(), s1.calculateSum(), s1.calculateAverage());
+		System.out.printf("ì´ë¦„ : %s, êµ­ì–´ : %dì , ì˜ì–´ : %dì , ìˆ˜í•™ : %dì \n", s1.getName(), s1.getKorean(), s1.getEnglish(), s1.getMath());
+		System.out.printf("%s í•™ìƒì˜ ì´ì  : %dì  í‰ê·  : %.2f\n", s1.getName(), s1.calculateSum(), s1.calculateAverage());
 		
-		Student s2 = new Student("±èÃ¶¼ö", 2, 90, 90, 90); //ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ(½ÇÁ¦·Î ¹Ø¿¡ setÀ¸·Î ´Ù½Ã °ªÀ» ÁÖ±â¶§¹®¿¡ ÆÄ¶ó¹ÌÅÍ ¾ø¾îµµµÊ)
+		Student s2 = new Student("ê¹€ì² ìˆ˜", 2, 90, 90, 90); //íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ì(ì‹¤ì œë¡œ ë°‘ì— setìœ¼ë¡œ ë‹¤ì‹œ ê°’ì„ ì£¼ê¸°ë•Œë¬¸ì— íŒŒë¼ë¯¸í„° ì—†ì–´ë„ë¨)
 		s2 = new Student();
-		s2.setName("±èÃ¶¼ö");
+		s2.setName("ê¹€ì² ìˆ˜");
 		s2.setKorean(90);
 		s2.setEnglish(90);
 		s2.setMath(90);
 		s2.setId(2);
-		System.out.printf("ÀÌ¸§ : %s, ±¹¾î : %dÁ¡, ¿µ¾î : %dÁ¡, ¼öÇĞ : %dÁ¡\n", s2.getName(), s2.getKorean(), s2.getEnglish(), s2.getMath());
-		System.out.printf("%s ÇĞ»ıÀÇ ÃÑÁ¡ : %dÁ¡ Æò±Õ : %.2f\n", s2.getName(), s2.calculateSum(), s2.calculateAverage());
-		//Å¬·¡½º´Â Student ÇÏ³ª, ÇÊµå°ª¸¸ ¹Ù²ãÁØ °Í
+		System.out.printf("ì´ë¦„ : %s, êµ­ì–´ : %dì , ì˜ì–´ : %dì , ìˆ˜í•™ : %dì \n", s2.getName(), s2.getKorean(), s2.getEnglish(), s2.getMath());
+		System.out.printf("%s í•™ìƒì˜ ì´ì  : %dì  í‰ê·  : %.2f\n", s2.getName(), s2.calculateSum(), s2.calculateAverage());
+		//í´ë˜ìŠ¤ëŠ” Student í•˜ë‚˜, í•„ë“œê°’ë§Œ ë°”ê¿”ì¤€ ê²ƒ
 		
-		String str1 = new String();//new String()´ë½Å¿¡ nullÀ» ³ÖÀ¸¸é Ãâ·ÂÀÌ µÇÁö ¾Ê°í ¿¡·¯°¡ ¶ä
-								   //ÀÌ ÄÚµå´Â String str1 = ""; ¿Í ¸¶Âù°¡Áö·Î ¾Æ¹«·± °ª(0)ÀÌ ¾ø´Â ½ºÆ®¸µ º¯¼ö·Î ÃÊ±âÈ­ ÇÑ °ÍÀÌ´Ù. 
-		                           //´Ù¸¸ Á» ´õ Á¤¼®ÀûÀÎ Ç¥ÇöÀÌ´Ù.
+		String str1 = new String();//new String()ëŒ€ì‹ ì— nullì„ ë„£ìœ¼ë©´ ì¶œë ¥ì´ ë˜ì§€ ì•Šê³  ì—ëŸ¬ê°€ ëœ¸
+								   //ì´ ì½”ë“œëŠ” String str1 = ""; ì™€ ë§ˆì°¬ê°€ì§€ë¡œ ì•„ë¬´ëŸ° ê°’(0)ì´ ì—†ëŠ” ìŠ¤íŠ¸ë§ ë³€ìˆ˜ë¡œ ì´ˆê¸°í™” í•œ ê²ƒì´ë‹¤. 
+		                           //ë‹¤ë§Œ ì¢€ ë” ì •ì„ì ì¸ í‘œí˜„ì´ë‹¤.
 		System.out.println(str1.length());
 		
 		
 		
 		
-		Student s3 = new Student("abc", 4, 5, 6, 7); //ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ
+		Student s3 = new Student("abc", 4, 5, 6, 7); //íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ì
 		Student s4 = new Student("abc", 4, 5, 6, 7);
 		
 		
 		System.out.println();
-		System.out.println("-»ó¼Ó&¿À¹ö¶óÀÌµù È®ÀÎ-");
+		System.out.println("-ìƒì†&ì˜¤ë²„ë¼ì´ë”© í™•ì¸-");
 		System.out.println("s3 : " + s3);
 		System.out.println("s4 : " + s4);
 		
 		
 		System.out.println("s3.equals(s4) : " + s3.equals(s4));
-			//ÀÌ¸§°ú ÇĞ¹øÀÌ °°À¸¸é °°Àº µ¥ÀÌÅÍ¶ó°í Á¤Çß±â ¶§¹®¿¡(instanceof) Á¡¼ö°¡ Æ²·Áµµ °°´Ù°í ³ª¿È
-		System.out.println("¿À¹ö¶óÀÌµù Àü : false");
-		System.out.println("¿À¹ö¶óÀÌµù ÈÄ : true");
+			//ì´ë¦„ê³¼ í•™ë²ˆì´ ê°™ìœ¼ë©´ ê°™ì€ ë°ì´í„°ë¼ê³  ì •í–ˆê¸° ë•Œë¬¸ì—(instanceof) ì ìˆ˜ê°€ í‹€ë ¤ë„ ê°™ë‹¤ê³  ë‚˜ì˜´
+		System.out.println("ì˜¤ë²„ë¼ì´ë”© ì „ : false");
+		System.out.println("ì˜¤ë²„ë¼ì´ë”© í›„ : true");
 		
 		System.out.println();
-		System.out.println("toString() È®ÀÎ");
+		System.out.println("toString() í™•ì¸");
 		System.out.println(s1);
 		System.out.println("s1.getName().matches(\"\\d*\") : " + s1.getName().matches("\\d*"));
 		System.out.println("s2.getName().matches(\"\\d*\") : " + s2.getName().matches("\\d*"));
 		System.out.println("s1.getName() : " + s1.getName());
 		System.out.println("s2.getName() : " + s2.getName());
-		//System.out.println("s1.getName().matches(\"\\d*\") : " + s1.getKorean().matches("\\d*")); ->koreanÀº intÇüÀÌ¹Ç·Î ºñ±³°¡ ¾ÈµÊ
-		System.out.println("toString()Àü : day0915.Student@4554617c");
-		System.out.println("toString()ÈÄ : ÀÌ¸§ : Á¶Àç¿µ, ÇĞ¹ø : 1, ±¹¾î : 100Á¡, ¿µ¾î : 90Á¡, ¼öÇĞ : 91Á¡");
+		//System.out.println("s1.getName().matches(\"\\d*\") : " + s1.getKorean().matches("\\d*")); ->koreanì€ intí˜•ì´ë¯€ë¡œ ë¹„êµê°€ ì•ˆë¨
+		System.out.println("toString()ì „ : day0915.Student@4554617c");
+		System.out.println("toString()í›„ : ì´ë¦„ : ì¡°ì¬ì˜, í•™ë²ˆ : 1, êµ­ì–´ : 100ì , ì˜ì–´ : 90ì , ìˆ˜í•™ : 91ì ");
 	
 		System.out.println();
-		day0910.Ex07Array.main(args);//publicÀÌ ºÙ¾îÀÖÀ¸¸é È£Ãâ °¡´É
+		day0910.Ex07Array.main(args);//publicì´ ë¶™ì–´ìˆìœ¼ë©´ í˜¸ì¶œ ê°€ëŠ¥
 		
 		
 		

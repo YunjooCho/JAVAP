@@ -5,72 +5,72 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-´õÇÏ±â ¿¬½À ÇÁ·Î±×·¥
-10~99 »çÀÌÀÇ ³­¼ö¸¦ 2°³(a, b) ¹ß»ıÇÏ¿© ÇÕÀ» ±¸ÇÏ´Â ÇÁ·Î±×·¥
-¹®Á¦¼ö´Â ÃÑ 5¹®Á¦¸¦ Á¦°øÇÑ´Ù - for
-1¹®Á¦´ç Á¡¼ö 20Á¡¾¿ °è»ê
+ë”í•˜ê¸° ì—°ìŠµ í”„ë¡œê·¸ë¨
+10~99 ì‚¬ì´ì˜ ë‚œìˆ˜ë¥¼ 2ê°œ(a, b) ë°œìƒí•˜ì—¬ í•©ì„ êµ¬í•˜ëŠ” í”„ë¡œê·¸ë¨
+ë¬¸ì œìˆ˜ëŠ” ì´ 5ë¬¸ì œë¥¼ ì œê³µí•œë‹¤ - for
+1ë¬¸ì œë‹¹ ì ìˆ˜ 20ì ì”© ê³„ì‚°
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 [1] 25 + 36 = 45
-Æ²·È´Ù
+í‹€ë ¸ë‹¤
 
 [2] 78 + 10 = 88
-µùµ¿µ­
+ë”©ë™ë…
 ...
 
 [5] 12 + 25 = 37
-µùµ¿µ­
+ë”©ë™ë…
 
-´ç½ÅÀÇ ÃÑ x¹®Á¦¸¦ ¸ÂÃß¾î¼­ xxÁ¡ ÀÔ´Ï´Ù
+ë‹¹ì‹ ì˜ ì´ xë¬¸ì œë¥¼ ë§ì¶”ì–´ì„œ xxì  ì…ë‹ˆë‹¤
 
-¶Ç ÇÒ·¡ (Y/N) : n
-ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù
+ë˜ í• ë˜ (Y/N) : n
+í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤
  */
 
 public class AddGame {
 
 	public static void main(String[] args) throws IOException {
 		
-		//¸Ş¸ğ¸®»ı¼º
+		//ë©”ëª¨ë¦¬ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int a, b, sum = 0, count = 0 , user, rightanswer = 0;
 		String yn;
 		
-		//³­¼ö
+		//ë‚œìˆ˜
 		a = (int)(Math.random()*90)+10;
 		b = (int)(Math.random()*90)+10;
 		
 	
 		
-		//¹İº¹¹®
+		//ë°˜ë³µë¬¸
 		while(true) {
 			count = 0;
 			rightanswer = 0;
 			
 			for(int i = 1 ; i <= 5; i++) {
 			
-				//¼ıÀÚ¼¼±â
+				//ìˆ«ìì„¸ê¸°
 				count++;
-				//°è»ê
+				//ê³„ì‚°
 				sum = a + b;
 			
 			
-				//Ãâ·Â
+				//ì¶œë ¥
 				System.out.print("[" + count + "]" + a +" + "+ b + " = ");
 			
-				//»ç¿ëÀÚ ÀÔ·Â
+				//ì‚¬ìš©ì ì…ë ¥
 				user = Integer.parseInt(br.readLine());
 			
-				//Á¤´äÈ®ÀÎ
+				//ì •ë‹µí™•ì¸
 				if (sum != user) {
-					System.out.println("Æ²·È´Ù");
+					System.out.println("í‹€ë ¸ë‹¤");
 					a = (int)(Math.random()*90)+1;
 					b = (int)(Math.random()*90)+1;
 				
 				}else {
 					rightanswer++;
-					System.out.println("µùµ¿µ­");
+					System.out.println("ë”©ë™ë…");
 					a = (int)(Math.random()*90)+1;
 					b = (int)(Math.random()*90)+1;
 				}
@@ -78,28 +78,28 @@ public class AddGame {
 			
 			
 			}//for
-			System.out.println("´ç½ÅÀº ÃÑ " + rightanswer + "¹®Á¦¸¦ ¸ÂÃß¾î¼­ " + (rightanswer * 20) + "Á¡ ÀÔ´Ï´Ù");
+			System.out.println("ë‹¹ì‹ ì€ ì´ " + rightanswer + "ë¬¸ì œë¥¼ ë§ì¶”ì–´ì„œ " + (rightanswer * 20) + "ì  ì…ë‹ˆë‹¤");
 		
 			while(true) {
-				System.out.print("¶ÇÇÒ·¡(Y/N) : ");
+				System.out.print("ë˜í• ë˜(Y/N) : ");
 				yn = br.readLine();
 			
-				// Y/y/N/nÀÌ¸é  ºüÁ®³ª°¨
+				// Y/y/N/nì´ë©´  ë¹ ì ¸ë‚˜ê°
 				if(yn.contentEquals("Y")||yn.contentEquals("y")||yn.contentEquals("N")||yn.contentEquals("n")) {
 					break;
 				}else {
-					System.out.println("Àß¸øµÈ ¸í·ÉÀÔ´Ï´Ù");
+					System.out.println("ì˜ëª»ëœ ëª…ë ¹ì…ë‹ˆë‹¤");
 				}
-				//±× ¿ÜÀÇ ±ÛÀÚ´Â ¹İº¹¹® ½ÇÇà
+				//ê·¸ ì™¸ì˜ ê¸€ìëŠ” ë°˜ë³µë¬¸ ì‹¤í–‰
 			
-				}//¶ÇÇÒ·¡ Áú¹®while
-			//N/nÀÌ¸é while ºüÁ®³ª°¨
+				}//ë˜í• ë˜ ì§ˆë¬¸while
+			//N/nì´ë©´ while ë¹ ì ¸ë‚˜ê°
 			if(yn.contentEquals("N")||yn.contentEquals("n")) {
 				break;
 			}
-		}//¶ÇÇÒ·¡ ¹İº¹ while
+		}//ë˜í• ë˜ ë°˜ë³µ while
 		
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 	}
 
 }

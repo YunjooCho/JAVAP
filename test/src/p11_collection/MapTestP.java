@@ -8,24 +8,24 @@ public class MapTestP {
 
 	public static void main(String[] args) {
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("book101", "¹é¼³°øÁÖ");
-		map.put("book201", "ÀÎ¾î°øÁÖ");
-		map.put("book102", "¹é¼³°øÁÖ");
-		map.put("book301", "ÇÇ¿À³ª°øÁÖ");
-		map.put("book101", "¾öÁö°øÁÖ"); 
+		map.put("book101", "ë°±ì„¤ê³µì£¼");
+		map.put("book201", "ì¸ì–´ê³µì£¼");
+		map.put("book102", "ë°±ì„¤ê³µì£¼");
+		map.put("book301", "í”¼ì˜¤ë‚˜ê³µì£¼");
+		map.put("book101", "ì—„ì§€ê³µì£¼"); 
 		
 		System.out.println(map.get("book101"));
 		System.out.println(map.get("book102"));
 		System.out.println();
 		
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("ÄÚµå ÀÔ·Â : ");
+		System.out.print("ì½”ë“œ ì…ë ¥ : ");
 		String input = scanner.next();
 		
 		if(map.containsKey(input)) {
 			System.out.println(map.get(input));
 		}else {
-			System.out.println("¾ø´Â key ÀÔ´Ï´Ù");
+			System.out.println("ì—†ëŠ” key ì…ë‹ˆë‹¤");
 		}
 	}
 

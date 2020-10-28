@@ -6,36 +6,36 @@ import modelP.BoardDTOP;
 
 public class BoardControllerP {
 
-	//13.°Ô½ÃµÈ ±ÛÀ»ÀÇ ¾î·¹ÀÌ¸®½ºÆ® »ı¼º
+	//13.ê²Œì‹œëœ ê¸€ì„ì˜ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ìƒì„±
 	private ArrayList<BoardDTOP> list;
 	
 	public BoardControllerP() {
 		list = new ArrayList<>();
 	}
 	
-	//14.ÀÓ½Ã¸®½ºÆ® »ı¼º
+	//14.ì„ì‹œë¦¬ìŠ¤íŠ¸ ìƒì„±
 	public ArrayList<BoardDTOP> sellectAll(){
 		ArrayList<BoardDTOP> temp = new ArrayList<>();
 		temp.addAll(list);
 		return temp;
 	}
 	
-	//15.°Ô½Ã±Û Ãß°¡ ¸Ş¼Òµå(viewer¿¡¼­ ÀÛ¼ºÇÑ ³»¿ëÀ» Ãß°¡ÇÔ)
+	//15.ê²Œì‹œê¸€ ì¶”ê°€ ë©”ì†Œë“œ(viewerì—ì„œ ì‘ì„±í•œ ë‚´ìš©ì„ ì¶”ê°€í•¨)
 	public void add(BoardDTOP b) {
 		list.add(b);
 	}
 	
-	//16.°Ô½Ã±Û ³»¿ëÀ» Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+	//16.ê²Œì‹œê¸€ ë‚´ìš©ì„ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	public BoardDTOP selectOne(int index) {
 		return list.get(index);
 	}
 	
-	//17.°Ô½Ã±ÛÀ» ¼öÁ¤ÇÏ´Â ¸Ş¼Òµå
+	//17.ê²Œì‹œê¸€ì„ ìˆ˜ì •í•˜ëŠ” ë©”ì†Œë“œ
 	public BoardDTOP update(int index, BoardDTOP b) {
 		return list.set(index, b);
 	}
 	
-	//18.°Ô½Ã±ÛÀ» »èÁ¦ÇÏ´Â ¸Ş¼Òµå
+	//18.ê²Œì‹œê¸€ì„ ì‚­ì œí•˜ëŠ” ë©”ì†Œë“œ
 	public BoardDTOP delete(int index) {
 		return list.remove(index);
 	}

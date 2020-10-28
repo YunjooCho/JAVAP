@@ -8,17 +8,17 @@ import java.awt.Graphics;
 public class WindowTestP extends Frame {
 
 	public WindowTestP() {
-		//1.ÇÁ·¹ÀÓ ¸¸µé±â
-		setTitle("ÀÌ¹ÌÁö");
+		//1.í”„ë ˆì„ ë§Œë“¤ê¸°
+		setTitle("ì´ë¯¸ì§€");
 		setBounds(900, 100, 700, 700);
 		setVisible(true);//callback
 	}
 	
-	public void paint(Graphics g) {//WindowÅ¬·¡½ºÀÇ ¸Ş¼Òµå ¿À¹ö¶óÀÌµå
+	public void paint(Graphics g) {//Windowí´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë“œ
 		//Image img = Toolkit.getDefaultToolkit().getImage("C:\\java_se\\workspace\\08_abstract\\taji.jpg");
 		Image img = Toolkit.getDefaultToolkit().getImage("taji2.jpg");
 		g.drawImage(img, 50, 0, 650, 650, 0, 0, 1000, 1000, this);
-		//°Å²Ù·Î
+		//ê±°ê¾¸ë¡œ
 		//g.drawImage(img, 50, 0, 650, 650, 1000, 1000, 0, 0, this);
 	}
 	

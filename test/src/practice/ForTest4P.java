@@ -3,9 +3,9 @@ package practice;
 public class ForTest4P {
 
 	public static void main(String[] args) {
-		//µÅÁöÀú±İÅë
-		int sum = 0; //ÇÕ
-		int mul = 1; //°ö
+		//ë¼ì§€ì €ê¸ˆí†µ
+		int sum = 0; //í•©
+		int mul = 1; //ê³±
 		
 		for(int i = 1; i <= 10; i++) {
 			

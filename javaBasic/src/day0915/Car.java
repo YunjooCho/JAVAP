@@ -4,11 +4,11 @@ import java.text.DecimalFormat;
 
 public class Car {
 
-	//¼÷Á¦
-	//1.ÇÊµå(¸â¹öº¯¼ö)¼±¾ğ
-	//Car Å¬·¡½ºÀÇ ÇÊµå: Â÷·®¹øÈ£, Â÷·® Á¾·ù, ¿¬½Ä, °¡°İ, »ö±ò
-	//5.private·Î ¼öÁ¤
-	//6.¼ÂÅÍ&°ÙÅÍ ÀÛ¼º
+	//ìˆ™ì œ
+	//1.í•„ë“œ(ë©¤ë²„ë³€ìˆ˜)ì„ ì–¸
+	//Car í´ë˜ìŠ¤ì˜ í•„ë“œ: ì°¨ëŸ‰ë²ˆí˜¸, ì°¨ëŸ‰ ì¢…ë¥˜, ì—°ì‹, ê°€ê²©, ìƒ‰ê¹”
+	//5.privateë¡œ ìˆ˜ì •
+	//6.ì…‹í„°&ê²Ÿí„° ì‘ì„±
 	private String carNumber;
 	public void setCarNumber(String carNumber) {
 		this.carNumber = carNumber;
@@ -53,33 +53,33 @@ public class Car {
 		return color;
 	}
 
-	//¸Ş¼Òµå: ÇöÀç Â÷·®ÀÇ Á¤º¸¸¦ ¿¹»Ú°Ô Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+	//ë©”ì†Œë“œ: í˜„ì¬ ì°¨ëŸ‰ì˜ ì •ë³´ë¥¼ ì˜ˆì˜ê²Œ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	public void printCar(String carNumber, String carType, int carYear, int carPrice, String color) {
-		DecimalFormat df = new DecimalFormat("#,###"); //¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¿Ö ¾ÈµÊ?? df.format(myCar.carPrice)
-		System.out.printf("Â÷·®¹øÈ£: %d, Â÷·® Á¾·ù: %s, ¿¬½Ä: %d, °¡°İ: %d, »ö±ò: %s\n", carNumber, carType, carYear, carPrice, color);
+		DecimalFormat df = new DecimalFormat("#,###"); //â˜…â˜…â˜…â˜…â˜…â˜…ì™œ ì•ˆë¨?? df.format(myCar.carPrice)
+		System.out.printf("ì°¨ëŸ‰ë²ˆí˜¸: %d, ì°¨ëŸ‰ ì¢…ë¥˜: %s, ì—°ì‹: %d, ê°€ê²©: %d, ìƒ‰ê¹”: %s\n", carNumber, carType, carYear, carPrice, color);
 		
 	}
 		
 	
-	//2.ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ
+	//2.íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ì
 	public Car(String carNumber, String carType, int carYear, int carPrice, String color) {
 		
-		this.carNumber = carNumber;//¿©±â¼­ºÎÅÍ
+		this.carNumber = carNumber;//ì—¬ê¸°ì„œë¶€í„°
 		this.carType = carType;
 		this.carYear = carYear;
 		this.carPrice = carPrice;
-		this.color = color;//¿©±â±îÁö ¾øÀ¸¸é
+		this.color = color;//ì—¬ê¸°ê¹Œì§€ ì—†ìœ¼ë©´
 		
 	}
 	
-	//3.ÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â »ı¼ºÀÚ
+	//3.íŒŒë¼ë¯¸í„°ê°€ ì—†ëŠ” ìƒì„±ì
 	public Car() {
 		
-		carNumber = "°¡1011";
+		carNumber = "ê°€1011";
 		carType = "SUV";
 		carYear = 13;
 		carPrice = 300000000;
-		color = "ÇÏ¾á»ö";
+		color = "í•˜ì–€ìƒ‰";
 		printCar(carNumber, carType, carYear, carPrice, color);
 	}
 	

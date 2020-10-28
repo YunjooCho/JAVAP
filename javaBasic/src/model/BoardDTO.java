@@ -3,7 +3,7 @@ package model;
 import java.util.Calendar;
 
 public class BoardDTO {
-	//12.±Û¾²±â °Ô½ÃÆÇ¿¡ µé¾î°¥ ÇÊµå¸í ¼±¾ğ / Ä¸½¶È­ / equals(¿À¹ö¶óÀÌµù)
+	//12.ê¸€ì“°ê¸° ê²Œì‹œíŒì— ë“¤ì–´ê°ˆ í•„ë“œëª… ì„ ì–¸ / ìº¡ìŠí™” / equals(ì˜¤ë²„ë¼ì´ë”©)
 	private int id;
 	private String title;
 	private int writerId;
@@ -55,7 +55,7 @@ public class BoardDTO {
 	}
 	
 	
-	public boolean equals(Object o) { //±Û¾´ »ç¶÷°ú ·Î±×ÀÎÇÑ »ç¶÷ÀÌ °°À¸¸é true ¹İÈ¯
+	public boolean equals(Object o) { //ê¸€ì“´ ì‚¬ëŒê³¼ ë¡œê·¸ì¸í•œ ì‚¬ëŒì´ ê°™ìœ¼ë©´ true ë°˜í™˜
 		if(o instanceof BoardDTO) {
 			BoardDTO b = (BoardDTO) o;
 			if(id == b.id) { //

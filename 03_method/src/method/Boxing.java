@@ -4,17 +4,17 @@ public class Boxing {
 
 	public static void main(String[] args) {
 		int a = 25;
-		double b = (double)a / 3; //°­Á¦Çüº¯È¯ / ÀÚµ¿Çüº¯È¯, Casting, Cast¿¬»ê
+		double b = (double)a / 3; //ê°•ì œí˜•ë³€í™˜ / ìë™í˜•ë³€í™˜, Casting, Castì—°ì‚°
 		
 		
 		int c = 5;
 		Integer d = c; 
-		// Integer °´Ã¼ = int ±âº»Çü ->JDK 5.0 ÀÌ»óºÎÅÍ °¡´ÉÇØÁü(AutoBoxing)
-		//¸Â´Â Çü½Ä(AutoBoxing ¾ÈµÇ´Â °æ¿ì) : Integer d = new Integer(c);
+		// Integer ê°ì²´ = int ê¸°ë³¸í˜• ->JDK 5.0 ì´ìƒë¶€í„° ê°€ëŠ¥í•´ì§(AutoBoxing)
+		//ë§ëŠ” í˜•ì‹(AutoBoxing ì•ˆë˜ëŠ” ê²½ìš°) : Integer d = new Integer(c);
 		
 		Integer e = 5;
-		int f = e; //JDK 5.0 ÀÌ»ó, unAutoBoxing
-		//±âº»Çü = °´Ã¼Çü
+		int f = e; //JDK 5.0 ì´ìƒ, unAutoBoxing
+		//ê¸°ë³¸í˜• = ê°ì²´í˜•
 		//int f = e.intValue();
 	}
 

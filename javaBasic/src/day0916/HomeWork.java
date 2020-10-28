@@ -1,7 +1,7 @@
 package day0916;
-//¼÷Á¦1: °´Ã¼ÁöÇâÀÇ 5¿øÄ¢ Áß Single Responsiblity PrincipleÀ» ÀĞ°í ¼÷ÁöÇÏ¼¼¿ä
-//´ÜÀÏÃ¥ÀÓ¿øÄ¢
-//¼÷Á¦2: CarEx04Arry02¸¦ ¿Ï¼º½ÃÅ°¼¼¿ä
+//ìˆ™ì œ1: ê°ì²´ì§€í–¥ì˜ 5ì›ì¹™ ì¤‘ Single Responsiblity Principleì„ ì½ê³  ìˆ™ì§€í•˜ì„¸ìš”
+//ë‹¨ì¼ì±…ì„ì›ì¹™
+//ìˆ™ì œ2: CarEx04Arry02ë¥¼ ì™„ì„±ì‹œí‚¤ì„¸ìš”
 public class HomeWork {
 	
 	

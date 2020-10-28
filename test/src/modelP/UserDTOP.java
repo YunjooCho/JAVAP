@@ -1,13 +1,13 @@
 package modelP;
 
 public class UserDTOP {
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private  int id;
 	private String userId;
 	private String password;
 	private String nickname;
 	
-	//2.Ä¸½¶È­
+	//2.ìº¡ìŠí™”
 	public int getId() {
 		return id;
 	}
@@ -33,12 +33,12 @@ public class UserDTOP {
 		this.nickname = nickname;
 	}
 	
-	//3.¿À¹ö¶óÀÌµù
-	//ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â °´Ã¼°¡ ÀÌ equals¸Ş¼Òµå¸¦ ½ÇÇàÇÏ´Â °´Ã¼¿Í °°ÀºÁö ºñ±³ÇÏ·Á¸é
-	//1. obj°¡ ÀÌ Å¬·¡½ºÀÇ °´Ã¼ÀÎÁö È®ÀÎÇÑ´Ù
-	//2. obj°¡ ÀÌ Å¬·¡½ºÀÇ °´Ã¼°¡ ¸Â´Ù¸é
-	//   ÇÊµå Áß ¸î¸î Á¤º¸¸¦ ºñ±³ÇØ¼­ °°À» ¶§¿¡¸¸ (ºñ±³ÇÏ±â À§ÇØ Çüº¯È¯ ÇÔ)
-	//   return true ÇØÁØ´Ù.
+	//3.ì˜¤ë²„ë¼ì´ë”©
+	//íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ê°ì²´ê°€ ì´ equalsë©”ì†Œë“œë¥¼ ì‹¤í–‰í•˜ëŠ” ê°ì²´ì™€ ê°™ì€ì§€ ë¹„êµí•˜ë ¤ë©´
+	//1. objê°€ ì´ í´ë˜ìŠ¤ì˜ ê°ì²´ì¸ì§€ í™•ì¸í•œë‹¤
+	//2. objê°€ ì´ í´ë˜ìŠ¤ì˜ ê°ì²´ê°€ ë§ë‹¤ë©´
+	//   í•„ë“œ ì¤‘ ëª‡ëª‡ ì •ë³´ë¥¼ ë¹„êµí•´ì„œ ê°™ì„ ë•Œì—ë§Œ (ë¹„êµí•˜ê¸° ìœ„í•´ í˜•ë³€í™˜ í•¨)
+	//   return true í•´ì¤€ë‹¤.
 	public boolean equals(Object o) {
 		if(o instanceof UserDTOP) {
 			UserDTOP userDTOP = (UserDTOP)o;

@@ -10,10 +10,10 @@ public class SwitchTest {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		
-		System.out.print("¿øÇÏ´Â ¿ù ÀÔ·Â : ");
+		System.out.print("ì›í•˜ëŠ” ì›” ì…ë ¥ : ");
 		int month = Integer.parseInt(br.readLine());
-		//ÀÌ °æ¿ì Å°º¸µå·Î ¹®ÀÚ°¡ ÀÔ·ÂµÇ¸é ¼ıÀÚ·Î º¯È¯ ¾ÈµÊ
-		//char´Â parse¾øÀ½
+		//ì´ ê²½ìš° í‚¤ë³´ë“œë¡œ ë¬¸ìê°€ ì…ë ¥ë˜ë©´ ìˆ«ìë¡œ ë³€í™˜ ì•ˆë¨
+		//charëŠ” parseì—†ìŒ
 		int days;
 		
 		switch(month) {
@@ -24,7 +24,7 @@ public class SwitchTest {
 		case 8 :
 		case 10 :
 		case 12 : days = 31; 
-				break; //switch¸¦ ¹ş¾î³ª¶ó
+				break; //switchë¥¼ ë²—ì–´ë‚˜ë¼
 		case 2 : days = 28; 
 				break;
 		
@@ -34,9 +34,9 @@ public class SwitchTest {
 		case 11 : days = 30;
 				break;
 			
-		default : days = 0; //ÁöÁ¤µÈ ¼ıÀÚ ¿ÜÀÇ °ªÀÌ µé¾î¿Ã ¶§ Ãâ·ÂÇÒ ³»¿ë(ÃÊ±âÈ­¿Í À¯»ç)
+		default : days = 0; //ì§€ì •ëœ ìˆ«ì ì™¸ì˜ ê°’ì´ ë“¤ì–´ì˜¬ ë•Œ ì¶œë ¥í•  ë‚´ìš©(ì´ˆê¸°í™”ì™€ ìœ ì‚¬)
 		}
-		System.out.println(month + "¿ùÀº " + days + "ÀÏ ÀÔ´Ï´Ù");
+		System.out.println(month + "ì›”ì€ " + days + "ì¼ ì…ë‹ˆë‹¤");
 	}
 	
 }

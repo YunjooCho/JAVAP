@@ -3,27 +3,27 @@ package p06_class;
 
 
 /*
-SungJuk Å¬·¡½º ÀÌ¿ëÇÏ½Ã¿À
-°´Ã¼ ¹è¿­
+SungJuk í´ë˜ìŠ¤ ì´ìš©í•˜ì‹œì˜¤
+ê°ì²´ ë°°ì—´
 
-[½ÇÇà°á°ú]
-ÀÎ¿ø¼ö ÀÔ·Â : 2
+[ì‹¤í–‰ê²°ê³¼]
+ì¸ì›ìˆ˜ ì…ë ¥ : 2
 
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-±¹¾î ÀÔ·Â : 85
-¿µ¾î ÀÔ·Â : 93
-¼öÇĞ ÀÔ·Â : 100
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+êµ­ì–´ ì…ë ¥ : 85
+ì˜ì–´ ì…ë ¥ : 93
+ìˆ˜í•™ ì…ë ¥ : 100
 
-ÀÌ¸§ ÀÔ·Â : ÄÚ³­
-±¹¾î ÀÔ·Â : 75
-¿µ¾î ÀÔ·Â : 86
-¼öÇĞ ÀÔ·Â : 92
+ì´ë¦„ ì…ë ¥ : ì½”ë‚œ
+êµ­ì–´ ì…ë ¥ : 75
+ì˜ì–´ ì…ë ¥ : 86
+ìˆ˜í•™ ì…ë ¥ : 92
 
 ----------------------------------------------------
-ÀÌ¸§      ±¹¾î      ¿µ¾î      ¼öÇĞ      ÃÑÁ¡      Æò±Õ      ÇĞÁ¡
+ì´ë¦„      êµ­ì–´      ì˜ì–´      ìˆ˜í•™      ì´ì       í‰ê·       í•™ì 
 ----------------------------------------------------
-È«±æµ¿   85      93      100
-ÄÚ³­      75      86      92
+í™ê¸¸ë™   85      93      100
+ì½”ë‚œ      75      86      92
  */
 
 import java.io.BufferedReader;
@@ -35,18 +35,18 @@ public class SungJukMain2 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		
-		System.out.print("ÀÎ¿ø¼ö ÀÔ·Â : ");
+		System.out.print("ì¸ì›ìˆ˜ ì…ë ¥ : ");
 		int count = Integer.parseInt(br.readLine());
 		SungJuk[] ar = new SungJuk[count];
 		
 		for(int i = 0; i < count; i++) {
-			System.out.print("ÀÌ¸§ ÀÔ·Â :");
+			System.out.print("ì´ë¦„ ì…ë ¥ :");
 			String name = br.readLine();
-			System.out.print("±¹¾î ÀÔ·Â :");
+			System.out.print("êµ­ì–´ ì…ë ¥ :");
 			int kor = Integer.parseInt(br.readLine());
-			System.out.print("¿µ¾î ÀÔ·Â :");
+			System.out.print("ì˜ì–´ ì…ë ¥ :");
 			int eng = Integer.parseInt(br.readLine());
-			System.out.print("¼öÇĞ ÀÔ·Â :");
+			System.out.print("ìˆ˜í•™ ì…ë ¥ :");
 			int math = Integer.parseInt(br.readLine());
 			ar[i] = new SungJuk(name, kor, eng, math);
 			ar[i].calc();
@@ -54,7 +54,7 @@ public class SungJukMain2 {
 		}
 		
 		System.out.println("----------------------------------------------------");
-		System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tÇĞÁ¡");
+		System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \tí•™ì ");
 		System.out.println("----------------------------------------------------");
 		for(SungJuk data : ar) {
 			System.out.println(data.getName()+ "\t" 

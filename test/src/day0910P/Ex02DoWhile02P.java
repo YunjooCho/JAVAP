@@ -1,12 +1,12 @@
 package day0910P;
 
-//»ç¿ëÀÚ·ÎºÎÅÍ Á¡¼ö¸¦ ÀÔ·Â¹Þ¾Æ¼­
-//ÃÑÁ¡À» °è»êÇØÁÖ´Â ÇÁ·Î±×·¥
-//´Ü »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ Á¡¼ö°¡ Àß¸øµÈ Çü½Ä(0º¸´Ù Àû°Å³ª 100º¸´Ù Å« ¼Í¿ì)
-//ÀÏ ¶§¿¡´Â
-//¿Ã¹Ù¸¥ Á¡¼ö°¡ µé¾î¿Ã ¶§ ±îÁö
-//´Ù½Ã ÀÔ·Â¹Þ´Â´Ù.
-//ÀÔ·ÂÀ» ÇÒ ¶§¿¡´Â do whileÀ» »ç¿ëÇÏµµ·Ï ÇÑ´Ù.
+//ì‚¬ìš©ìžë¡œë¶€í„° ì ìˆ˜ë¥¼ ìž…ë ¥ë°›ì•„ì„œ
+//ì´ì ì„ ê³„ì‚°í•´ì£¼ëŠ” í”„ë¡œê·¸ëž¨
+//ë‹¨ ì‚¬ìš©ìžê°€ ìž…ë ¥í•œ ì ìˆ˜ê°€ ìž˜ëª»ëœ í˜•ì‹(0ë³´ë‹¤ ì ê±°ë‚˜ 100ë³´ë‹¤ í° ì…©ìš°)
+//ì¼ ë•Œì—ëŠ”
+//ì˜¬ë°”ë¥¸ ì ìˆ˜ê°€ ë“¤ì–´ì˜¬ ë•Œ ê¹Œì§€
+//ë‹¤ì‹œ ìž…ë ¥ë°›ëŠ”ë‹¤.
+//ìž…ë ¥ì„ í•  ë•Œì—ëŠ” do whileì„ ì‚¬ìš©í•˜ë„ë¡ í•œë‹¤.
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -16,39 +16,39 @@ import java.io.InputStreamReader;
 public class Ex02DoWhile02P {
 
 	public static void main(String[] args) throws IOException {
-		//¸Þ¸ð¸® »ý¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//º¯¼ö 
+		//ë³€ìˆ˜ 
 		int kor = 0, eng = 0, math = 0;
 			
-		//¹Ýº¹¹®		
+		//ë°˜ë³µë¬¸		
 		do {
-			System.out.print("±¹¾î Á¡¼ö ÀÔ·Â : ");
+			System.out.print("êµ­ì–´ ì ìˆ˜ ìž…ë ¥ : ");
 			kor = Integer.parseInt(bufferedReader.readLine());
 			if( kor > 100 || kor < 0) {
-				System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù\n´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");		
+				System.out.println("ìž˜ëª»ëœ í˜•ì‹ìž…ë‹ˆë‹¤\në‹¤ì‹œ ìž…ë ¥í•˜ì„¸ìš”");		
 			}
 		}while (kor > 100 || kor < 0);
 		
 		do {
-			System.out.print("¿µ¾î Á¡¼ö ÀÔ·Â : ");
+			System.out.print("ì˜ì–´ ì ìˆ˜ ìž…ë ¥ : ");
 			eng = Integer.parseInt(bufferedReader.readLine());
 			if( eng > 100 || eng < 0) {
-				System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù\n´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");		
+				System.out.println("ìž˜ëª»ëœ í˜•ì‹ìž…ë‹ˆë‹¤\në‹¤ì‹œ ìž…ë ¥í•˜ì„¸ìš”");		
 			}
 		}while (eng > 100 || eng < 0);
 		
 		do {
-			System.out.print("¼öÇÐ Á¡¼ö ÀÔ·Â : ");
+			System.out.print("ìˆ˜í•™ ì ìˆ˜ ìž…ë ¥ : ");
 			math = Integer.parseInt(bufferedReader.readLine());
 			if( math > 100 || math < 0) {
-				System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù\n´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");		
+				System.out.println("ìž˜ëª»ëœ í˜•ì‹ìž…ë‹ˆë‹¤\në‹¤ì‹œ ìž…ë ¥í•˜ì„¸ìš”");		
 			}
 		}while (math > 100 || math < 0);
 		
 		int tot = kor + eng + math;
-		System.out.println("ÃÑÁ¡ : " + tot);
+		System.out.println("ì´ì  : " + tot);
 	}
 
 }

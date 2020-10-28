@@ -11,23 +11,23 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class Login extends Frame implements ActionListener {
-	private Label idL, pwdL; //¶óº§
-	private TextField idT, pwdT; //ÅØ½ºÆ®»óÀÚ
+	private Label idL, pwdL; //ë¼ë²¨
+	private TextField idT, pwdT; //í…ìŠ¤íŠ¸ìƒì
 	private Button loginBtn, cancleBtn;
 	String id, pwd;
 	
 	public Login() {
-		idL = new Label("¾ÆÀÌµğ");
-		pwdL = new Label("ºñ¹Ğ¹øÈ£");
+		idL = new Label("ì•„ì´ë””");
+		pwdL = new Label("ë¹„ë°€ë²ˆí˜¸");
 		
 		idT = new TextField();
 		pwdT = new TextField();
 		
-		loginBtn = new Button("·Î±×ÀÎ");
-		cancleBtn = new Button("Ãë¼Ò");
+		loginBtn = new Button("ë¡œê·¸ì¸");
+		cancleBtn = new Button("ì·¨ì†Œ");
 		
 		//idL.setLocation(50,80); //x, y
-		//idL.setSize(50, 30);//³Êºñ, ³ôÀÌ
+		//idL.setSize(50, 30);//ë„ˆë¹„, ë†’ì´
 		idL.setBounds(50, 80, 50, 20);
 		this.add(idL);
 		
@@ -46,11 +46,11 @@ public class Login extends Frame implements ActionListener {
 		cancleBtn.setBounds(160, 280, 70, 20);
 		this.add(cancleBtn);
 		
-		setLayout(null); //µ¿¼­³²ºÏ À§Ä¡Á¦ÇÑ ¾ø¾Ö¹ö¸² - ¿øÇÏ´Â À§Ä¡¿¡ ¹èÄ¡ °¡´É
+		setLayout(null); //ë™ì„œë‚¨ë¶ ìœ„ì¹˜ì œí•œ ì—†ì• ë²„ë¦¼ - ì›í•˜ëŠ” ìœ„ì¹˜ì— ë°°ì¹˜ ê°€ëŠ¥
 		setBounds(600, 100, 300, 400);
 		setVisible(true);
 		
-		addWindowListener(new WindowAdapter() {//Ãß»ó¸Ş¼Òµå°¡ ¾ø´Â Ãß»óÅ¬·¡½º
+		addWindowListener(new WindowAdapter() {//ì¶”ìƒë©”ì†Œë“œê°€ ì—†ëŠ” ì¶”ìƒí´ë˜ìŠ¤
 			@Override
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
@@ -68,12 +68,12 @@ public class Login extends Frame implements ActionListener {
 			String id = idT.getText();
 			String pwd = pwdT.getText();
 			new LoginResult(id, pwd);
-			//<´Ù¸¥Ç®ÀÌ> new LoginResult(this);- °´Ã¼ÀÇ ÁÖ¼Ò°ª ³Ñ±â±â
-			// À§ÀÇ id¿Í pwdº¯¼ö´Â ÇÊµå·Î ÁöÁ¤, ¼ÂÅÍ°ÙÅÍ ÇÊ¿ä
+			//<ë‹¤ë¥¸í’€ì´> new LoginResult(this);- ê°ì²´ì˜ ì£¼ì†Œê°’ ë„˜ê¸°ê¸°
+			// ìœ„ì˜ idì™€ pwdë³€ìˆ˜ëŠ” í•„ë“œë¡œ ì§€ì •, ì…‹í„°ê²Ÿí„° í•„ìš”
 		}else if(e.getSource() == cancleBtn) {
-			idT.setText(" "); //¶óº§¿¡ ÀÔ·ÂµÈ ±ÛÀÚ ÃÊ±âÈ­, awtÆ¯¼º»ó Ã³À½ºÎÅÍ ""´Â ¾È¸ÔÈû
+			idT.setText(" "); //ë¼ë²¨ì— ì…ë ¥ëœ ê¸€ì ì´ˆê¸°í™”, awtíŠ¹ì„±ìƒ ì²˜ìŒë¶€í„° ""ëŠ” ì•ˆë¨¹í˜
 			idT.setText("");
-			pwdT.setText(" "); //¶óº§¿¡ ÀÔ·ÂµÈ ±ÛÀÚ ÃÊ±âÈ­, awtÆ¯¼º»ó Ã³À½ºÎÅÍ ""´Â ¾È¸ÔÈû
+			pwdT.setText(" "); //ë¼ë²¨ì— ì…ë ¥ëœ ê¸€ì ì´ˆê¸°í™”, awtíŠ¹ì„±ìƒ ì²˜ìŒë¶€í„° ""ëŠ” ì•ˆë¨¹í˜
 			pwdT.setText("");
 		}
 	}

@@ -4,35 +4,35 @@ import java.util.Scanner;
 
 public class ExceptionTest {
 
-	public static void main(String[] args) { //callBack°ú À¯»ç, JVMÀÌ °¡Àå ¸ÕÀú È£ÃâÇÏ´Â ºÎºĞ, String[] args´Â µé¾î¿À´Â Å¸ÀÔÀÌ ÀüºÎ String&¹è¿­Å¸ÀÔ
-//		System.out.println(args[0]); //±×³É RunAsÇÏ¸é ¿¡·¯³²
-//		                             //¿À¸¥ÂÊ ¸¶¿ì½º - RunAs - Run Configuration - Arguments - Program Arguments¿¡ StringÅ¸ÀÔ °ªÀ» ³Ö°í ½ÇÇà
-//		System.out.println(args[1]); //µÎ°³ÀÇ µ¥ÀÌÅÍ¸¦ ÀÔ·Â(¶ç¾î¾²±â·Î ±¸ºĞ, ¶Ç´Â ""°¡ ÀÖ´Â °æ¿ì ""·Î ÁöÁ¤ÇÑ ¹üÀ§°¡ ¿ì¼±¼øÀ§)ÇÏ¸é ¹è¿­·Î ¹ŞÀ½
-		                             //ÇÏ³ªÀÇ µ¥ÀÌÅÍ¸¸ ÀÔ·ÂÇÏ´Â °æ¿ì, System.out.println(args[1])°¡ ¿¡·¯°¡ ¶ä
+	public static void main(String[] args) { //callBackê³¼ ìœ ì‚¬, JVMì´ ê°€ì¥ ë¨¼ì € í˜¸ì¶œí•˜ëŠ” ë¶€ë¶„, String[] argsëŠ” ë“¤ì–´ì˜¤ëŠ” íƒ€ì…ì´ ì „ë¶€ String&ë°°ì—´íƒ€ì…
+//		System.out.println(args[0]); //ê·¸ëƒ¥ RunAsí•˜ë©´ ì—ëŸ¬ë‚¨
+//		                             //ì˜¤ë¥¸ìª½ ë§ˆìš°ìŠ¤ - RunAs - Run Configuration - Arguments - Program Argumentsì— Stringíƒ€ì… ê°’ì„ ë„£ê³  ì‹¤í–‰
+//		System.out.println(args[1]); //ë‘ê°œì˜ ë°ì´í„°ë¥¼ ì…ë ¥(ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„, ë˜ëŠ” ""ê°€ ìˆëŠ” ê²½ìš° ""ë¡œ ì§€ì •í•œ ë²”ìœ„ê°€ ìš°ì„ ìˆœìœ„)í•˜ë©´ ë°°ì—´ë¡œ ë°›ìŒ
+		                             //í•˜ë‚˜ì˜ ë°ì´í„°ë§Œ ì…ë ¥í•˜ëŠ” ê²½ìš°, System.out.println(args[1])ê°€ ì—ëŸ¬ê°€ ëœ¸
 		               
-		if(args.length > 0) System.out.println(args[0]);//System.out.println(args[1])ÀÇ ¿¡·¯¸¦ throws, try~catch ÇÊ¿ä ¾øÀ½, ÇÁ·Î±×·¥À¸·Î ¸·¾ÆÁÜ
+		if(args.length > 0) System.out.println(args[0]);//System.out.println(args[1])ì˜ ì—ëŸ¬ë¥¼ throws, try~catch í•„ìš” ì—†ìŒ, í”„ë¡œê·¸ë¨ìœ¼ë¡œ ë§‰ì•„ì¤Œ
 		
 		try {
 			Scanner scan = new Scanner(System.in);
-			System.out.print("¼ıÀÚ ÀÔ·Â : ");
+			System.out.print("ìˆ«ì ì…ë ¥ : ");
 			int num2 = scan.nextInt();
 			
-			int num1 = Integer.parseInt(args[0]); //Run ConfigurationÀ¸·Î °ªÀ» ÀÔ·Â
-			//¿À¸¥ÂÊ ¸¶¿ì½º - RunAs - Run Configuration - Arguments - Program Arguments¿¡ È£¶ûÀÌ¶ó°í ÀÔ·ÂÇÑ °æ¿ì ¿©±â¼­ ¿¡·¯°¡ ¶ä
-			//Integer¿¡ ´ëÇØ ¹®ÀÚ¿­À» ÀÔ·ÂÇß±â ¶§¹®¿¡
-			System.out.println(num1 + " / " + num2 + " = " + ((double)num1/num2)); //¿©±â°¡ ³ª´©±â ÀÏ¶§¸¸ catch µÎ¹øÂ°°¡ ½ÇÇàµÊ
-			//doubleÇüÀ¸·Î º¯È¯ÇÏ¸é Infinity°¡ ¶ä(¼Ò¼öÀÚ¸®¸¦ ¾ÇÂø°°ÀÌ °è»êÇÏ·Á°í ÇÏ±â ¶§¹®¿¡)
-		} catch (NumberFormatException e){//¾î¶² ExceptionÀ» ÀâÀ» °ÍÀÎÁö
-			System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
-			//num2¿¡ ¼ıÀÚ¸¦ ÀÔ·ÂÇØµµ num1¿¡ È£¶ûÀÌ°¡ µé¾î°¡ ÀÖ±â ¶§¹®¿¡ ¿¡·¯°¡ ¶ä
-			//Exception in thread "main" java.lang.NumberFormatException: For input string: "È£¶ûÀÌ" ÀÌ ¿¡·¯¸Ş½ÃÁö ´ë½Å Ç¥½ÃµÊ
-		} catch(ArithmeticException e) {//ArithmeticException ÀÌ ¿¹¿ÜÃ³¸® ÀÚÃ¼°¡ »ê¼ö¿¹¿Ü·Î ¸ğµç ¼ö´Â 0À¸·Î ³ª´­ ¼ö ¾ø±â¶§¹®¿¡
-			                			//try¾È¿¡ ÀÖ´Â ³ª´°¼À ½Ä¿¡ ³ª´©´Â °ªÀÌ 0ÀÌ¸é ¿¡·¯°¡ ¶ßµµ·Ï ÇÔ
-										//¼ıÀÚ ÀÔ·Â ºÎºĞ¿¡ 0ÀÌ µé¾î°¡¸é num1 / 0(num2) ÀÌ µÇ¹Ç·Î ¿¡·¯°¡ ¶ä 
-			System.out.println("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù");
-		} finally {//¿¡·¯ À¯¹«¿¡ »ó°ü¾øÀÌ ¹İµå½Ã ½ÇÇàµÇ´Â ºÎºĞ
-			System.out.println("error°¡ ÀÖ°Ç ¾ø°Ç ¹«Á¶°Ç ½ÇÇà!!");
-			//DBÃ³¸®¿¡¼­ ½ÇÇàÇß°Ç ¾ÈÇß°Ç ¹İµå½Ã Á¾·á½ÃÄÑ¾ßÇÒ ¶§ »ç¿ë
+			int num1 = Integer.parseInt(args[0]); //Run Configurationìœ¼ë¡œ ê°’ì„ ì…ë ¥
+			//ì˜¤ë¥¸ìª½ ë§ˆìš°ìŠ¤ - RunAs - Run Configuration - Arguments - Program Argumentsì— í˜¸ë‘ì´ë¼ê³  ì…ë ¥í•œ ê²½ìš° ì—¬ê¸°ì„œ ì—ëŸ¬ê°€ ëœ¸
+			//Integerì— ëŒ€í•´ ë¬¸ìì—´ì„ ì…ë ¥í–ˆê¸° ë•Œë¬¸ì—
+			System.out.println(num1 + " / " + num2 + " = " + ((double)num1/num2)); //ì—¬ê¸°ê°€ ë‚˜ëˆ„ê¸° ì¼ë•Œë§Œ catch ë‘ë²ˆì§¸ê°€ ì‹¤í–‰ë¨
+			//doubleí˜•ìœ¼ë¡œ ë³€í™˜í•˜ë©´ Infinityê°€ ëœ¸(ì†Œìˆ˜ìë¦¬ë¥¼ ì•…ì°©ê°™ì´ ê³„ì‚°í•˜ë ¤ê³  í•˜ê¸° ë•Œë¬¸ì—)
+		} catch (NumberFormatException e){//ì–´ë–¤ Exceptionì„ ì¡ì„ ê²ƒì¸ì§€
+			System.out.println("ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”");
+			//num2ì— ìˆ«ìë¥¼ ì…ë ¥í•´ë„ num1ì— í˜¸ë‘ì´ê°€ ë“¤ì–´ê°€ ìˆê¸° ë•Œë¬¸ì— ì—ëŸ¬ê°€ ëœ¸
+			//Exception in thread "main" java.lang.NumberFormatException: For input string: "í˜¸ë‘ì´" ì´ ì—ëŸ¬ë©”ì‹œì§€ ëŒ€ì‹  í‘œì‹œë¨
+		} catch(ArithmeticException e) {//ArithmeticException ì´ ì˜ˆì™¸ì²˜ë¦¬ ìì²´ê°€ ì‚°ìˆ˜ì˜ˆì™¸ë¡œ ëª¨ë“  ìˆ˜ëŠ” 0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ê¸°ë•Œë¬¸ì—
+			                			//tryì•ˆì— ìˆëŠ” ë‚˜ëˆ—ì…ˆ ì‹ì— ë‚˜ëˆ„ëŠ” ê°’ì´ 0ì´ë©´ ì—ëŸ¬ê°€ ëœ¨ë„ë¡ í•¨
+										//ìˆ«ì ì…ë ¥ ë¶€ë¶„ì— 0ì´ ë“¤ì–´ê°€ë©´ num1 / 0(num2) ì´ ë˜ë¯€ë¡œ ì—ëŸ¬ê°€ ëœ¸ 
+			System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
+		} finally {//ì—ëŸ¬ ìœ ë¬´ì— ìƒê´€ì—†ì´ ë°˜ë“œì‹œ ì‹¤í–‰ë˜ëŠ” ë¶€ë¶„
+			System.out.println("errorê°€ ìˆê±´ ì—†ê±´ ë¬´ì¡°ê±´ ì‹¤í–‰!!");
+			//DBì²˜ë¦¬ì—ì„œ ì‹¤í–‰í–ˆê±´ ì•ˆí–ˆê±´ ë°˜ë“œì‹œ ì¢…ë£Œì‹œì¼œì•¼í•  ë•Œ ì‚¬ìš©
 		}
 		
 	}

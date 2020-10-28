@@ -7,18 +7,18 @@ public class QueueTest {
 
 	public static void main(String[] args) {
 		
-		String[] item = {"¼Ò³ªÅ¸","·º½ºÅæ","Á¦±Ô¾î"};
+		String[] item = {"ì†Œë‚˜íƒ€","ë ‰ìŠ¤í†¤","ì œê·œì–´"};
 		LinkedList<String> q = new LinkedList<String>();
 		
 		for(String n : item)
-			q.offer(n);//¿ä¼Ò Ãß°¡
+			q.offer(n);//ìš”ì†Œ ì¶”ê°€
 		
-		out.println("qÀÇ Å©±â" + q.size() + "\n");
+		out.println("qì˜ í¬ê¸°" + q.size() + "\n");
 		String data = "";
 				
-		while( (data = q.poll()) != null) { //¿ä¼Ò »èÁ¦...?(²¨³»±â)
-			out.println(data + "»èÁ¦!");
-			out.println("qÀÇ Å©±â : " + q.size() + "\n"); //ÀÔ·ÂµÈ ¼ø¼­¿Í °°Àº ¼ø¼­·Î Ãâ·ÂµÊ - FIFO
+		while( (data = q.poll()) != null) { //ìš”ì†Œ ì‚­ì œ...?(êº¼ë‚´ê¸°)
+			out.println(data + "ì‚­ì œ!");
+			out.println("qì˜ í¬ê¸° : " + q.size() + "\n"); //ì…ë ¥ëœ ìˆœì„œì™€ ê°™ì€ ìˆœì„œë¡œ ì¶œë ¥ë¨ - FIFO
 		}//while
 	}
 

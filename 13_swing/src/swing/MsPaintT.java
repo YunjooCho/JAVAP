@@ -1,7 +1,7 @@
 package swing;
 
-//ctrl + shift + f : Á¤·Ä
-//alt + À§¾Æ·¡ : ¼±ÅÃÇÑ ºÎºĞÀÌ ¿òÁ÷ÀÓ
+//ctrl + shift + f : ì •ë ¬
+//alt + ìœ„ì•„ë˜ : ì„ íƒí•œ ë¶€ë¶„ì´ ì›€ì§ì„
 
 import java.awt.Container;
 import java.awt.event.ActionEvent;
@@ -21,9 +21,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-//±×¸²ÆÇ Æ²¸¸ ¸¸µé¾î¿À±â(Ä«ÅåÀÇ »çÁø ÂüÁ¶)
+//ê·¸ë¦¼íŒ í‹€ë§Œ ë§Œë“¤ì–´ì˜¤ê¸°(ì¹´í†¡ì˜ ì‚¬ì§„ ì°¸ì¡°)
 
-//class DrCanvas extends Canvas{    //µû·Î Å¬·¡½º ÀâÀ½
+//class DrCanvas extends Canvas{    //ë”°ë¡œ í´ë˜ìŠ¤ ì¡ìŒ
 //	public void paint(Graphics g) {
 //		g.drawRect(10, 0, 560, 180);
 //		
@@ -32,11 +32,11 @@ import javax.swing.JTextField;
 //}
 
 
-//ÇÁ·¹ÀÓ ±¸¼º(ÄÄÆ÷³ÍÆ®(µµ±¸µé) »ı¼º ¹× ¹èÄ¡)&ÀÌº¥Æ® ¹ß»ı
-//º¹½ÀÇÒ¶§´Â Æ²Àº ³ÀµÎ°í ÀÌº¥Æ® µî¸¸ Áö¿ö¼­ ½Ç½ÀÇØº¸±â
+//í”„ë ˆì„ êµ¬ì„±(ì»´í¬ë„ŒíŠ¸(ë„êµ¬ë“¤) ìƒì„± ë° ë°°ì¹˜)&ì´ë²¤íŠ¸ ë°œìƒ
+//ë³µìŠµí• ë•ŒëŠ” í‹€ì€ ëƒ…ë‘ê³  ì´ë²¤íŠ¸ ë“±ë§Œ ì§€ì›Œì„œ ì‹¤ìŠµí•´ë³´ê¸°
 public class MsPaintT extends JFrame implements ActionListener {
 
-	//1.ÇÊµå ¼±¾ğ
+	//1.í•„ë“œ ì„ ì–¸
 	private JLabel x1L, y1L, x2L, y2L, z1L, z2L;
 	private JTextField x1T, y1T, x2T, y2T, z1T, z2T;
 	private JCheckBox fill;
@@ -47,29 +47,29 @@ public class MsPaintT extends JFrame implements ActionListener {
 	private String[] colorlist;
 	private ArrayList<ShapeDTO> list;
 	
-	//private List<ShapeDTO> list = new ArrayList<ShapeDTO>(); - ºÎ¸ğ·Î Á¢±ÙÇØµµ °¡´É(ÀÌ°É·Î °øºÎÇÏ´Â °ÍÀÌ ÁÁÀ½)
-	//Object ob = new String("»ç°ú"); - »ó¼ÓÀÇ ´ÙÇü¼º
-	//½ºÇÁ¸µ¿¡¼­´Â ÀüºÎ °ÅÀÇ List¸¦ ¸¹ÀÌ ¾¸
-	//½ºÇÁ¸µ ºÎÆ®´Â ÇÁ·¹ÀÓ(?) ¿ÍÄí°¡ ÀÖ¾î¼­ º¯°æÀÌ ÀÖÀ¸¸é ±ú¾ßÇÔ, ½ºÇÁ¸µÀÌ ´ëºÎºĞ ¸¹ÀÌ »ç¿ëÇÏ°í ÀÖÀ½
+	//private List<ShapeDTO> list = new ArrayList<ShapeDTO>(); - ë¶€ëª¨ë¡œ ì ‘ê·¼í•´ë„ ê°€ëŠ¥(ì´ê±¸ë¡œ ê³µë¶€í•˜ëŠ” ê²ƒì´ ì¢‹ìŒ)
+	//Object ob = new String("ì‚¬ê³¼"); - ìƒì†ì˜ ë‹¤í˜•ì„±
+	//ìŠ¤í”„ë§ì—ì„œëŠ” ì „ë¶€ ê±°ì˜ Listë¥¼ ë§ì´ ì”€
+	//ìŠ¤í”„ë§ ë¶€íŠ¸ëŠ” í”„ë ˆì„(?) ì™€ì¿ ê°€ ìˆì–´ì„œ ë³€ê²½ì´ ìˆìœ¼ë©´ ê¹¨ì•¼í•¨, ìŠ¤í”„ë§ì´ ëŒ€ë¶€ë¶„ ë§ì´ ì‚¬ìš©í•˜ê³  ìˆìŒ
 	
 
 
 	public MsPaintT() {
-		super("±×¸² ±×¸®±â");
-		//3.ÇÊµå¸¦ ÀâÀº Ç¥½Ãµµ±¸µé »ı¼º
-		x1L = new JLabel("X1"); //¿ªÇÒ : È­¸é¿¡ ±ÛÀÚ¸¸ Ç¥½Ã
+		super("ê·¸ë¦¼ ê·¸ë¦¬ê¸°");
+		//3.í•„ë“œë¥¼ ì¡ì€ í‘œì‹œë„êµ¬ë“¤ ìƒì„±
+		x1L = new JLabel("X1"); //ì—­í•  : í™”ë©´ì— ê¸€ìë§Œ í‘œì‹œ
 		y1L = new JLabel("Y1");
 		x2L = new JLabel("X2");
 		y2L = new JLabel("Y2");
 		z1L = new JLabel("Z1");
 		z2L = new JLabel("Z2");
-		x1T = new JTextField("0",4);//¹®ÀÚ¿­("  ")ÀÌ ¾Æ´Ñ ¼ıÀÚ(4)¸¦ ÀÔ·ÂÇØ¼­ Ä­À» ³ĞÈú ¼ö ÀÖÀ½, ±âº»°ªÀ¸·Î "0"À» ÁÜ
+		x1T = new JTextField("0",4);//ë¬¸ìì—´("  ")ì´ ì•„ë‹Œ ìˆ«ì(4)ë¥¼ ì…ë ¥í•´ì„œ ì¹¸ì„ ë„“í ìˆ˜ ìˆìŒ, ê¸°ë³¸ê°’ìœ¼ë¡œ "0"ì„ ì¤Œ
 		y1T = new JTextField("0",4);
 		x2T = new JTextField("0",4);
 		y2T = new JTextField("0",4);
 		z1T = new JTextField("0",4);
 		z2T = new JTextField("0",4);
-		fill = new JCheckBox("Ã¤¿ì±â");
+		fill = new JCheckBox("ì±„ìš°ê¸°");
 		
 		JPanel p = new JPanel();
 		p.add(x1L);
@@ -87,24 +87,24 @@ public class MsPaintT extends JFrame implements ActionListener {
 		p.add(fill);
 		
 		
-		//4.¾Æ·§ºÎºĞ »ı¼º
+		//4.ì•„ë«ë¶€ë¶„ ìƒì„±
 		JPanel p2 = new JPanel();
-		line = new JRadioButton("¼±");
-		circle = new JRadioButton("¿ø");
-		rect = new JRadioButton("»ç°¢Çü", true); //true : default°ªÀ¸·Î ½ÇÇà½Ã »ç°¢ÇüÀÌ ¼±ÅÃµÇ¾îÀÖÀ½
-		roundRect = new JRadioButton("µÕ±Ù»ç°¢Çü");
-		pen = new JRadioButton("¿¬ÇÊ");
+		line = new JRadioButton("ì„ ");
+		circle = new JRadioButton("ì›");
+		rect = new JRadioButton("ì‚¬ê°í˜•", true); //true : defaultê°’ìœ¼ë¡œ ì‹¤í–‰ì‹œ ì‚¬ê°í˜•ì´ ì„ íƒë˜ì–´ìˆìŒ
+		roundRect = new JRadioButton("ë‘¥ê·¼ì‚¬ê°í˜•");
+		pen = new JRadioButton("ì—°í•„");
 		
-		ButtonGroup group = new ButtonGroup(); //¶óµğ¿À¹öÆ° Áß Áßº¹¼±ÅÃÀÌ ¾Æ´Ñ ÇÑ¹ø¿¡ ÇÏ³ª¸¸ ¼±ÅÃµÇ°Ô ÇÏ±â À§ÇØ  groupÀ» ¹­¾îÁÜ
+		ButtonGroup group = new ButtonGroup(); //ë¼ë””ì˜¤ë²„íŠ¼ ì¤‘ ì¤‘ë³µì„ íƒì´ ì•„ë‹Œ í•œë²ˆì— í•˜ë‚˜ë§Œ ì„ íƒë˜ê²Œ í•˜ê¸° ìœ„í•´  groupì„ ë¬¶ì–´ì¤Œ
 		group.add(line);
 		group.add(circle);
 		group.add(rect);
 		group.add(roundRect);
 		group.add(pen);
 		
-		colorlist = new String[] {"»¡°­","ÃÊ·Ï","ÆÄ¶û","º¸¶ó","ÇÏ´Ã"};
+		colorlist = new String[] {"ë¹¨ê°•","ì´ˆë¡","íŒŒë‘","ë³´ë¼","í•˜ëŠ˜"};
 		combo = new JComboBox<String>(colorlist);
-		draw = new JButton("±×¸®±â");
+		draw = new JButton("ê·¸ë¦¬ê¸°");
 		
 		p2.add(line);
 		p2.add(circle);
@@ -114,94 +114,94 @@ public class MsPaintT extends JFrame implements ActionListener {
 		p2.add(combo);
 		p2.add(draw);
 		
-		canvas = new DrCanvasT(this); //DrCanvasTÀÇ ÁÖ¼Ò°ªÀ» ¾Ë ¼ö ÀÖÀ½(ÂüÁ¶º¯¼ö canvas)
-									  //this´Â MsPaint¸¦ °¡¸®Å´
+		canvas = new DrCanvasT(this); //DrCanvasTì˜ ì£¼ì†Œê°’ì„ ì•Œ ìˆ˜ ìˆìŒ(ì°¸ì¡°ë³€ìˆ˜ canvas)
+									  //thisëŠ” MsPaintë¥¼ ê°€ë¦¬í‚´
 		
 		
-		//¸ğµç ÄÄÆ÷³ÍÆ®´Â contentPane¿¡ ºÙ¿©¾ß ÇÔ
+		//ëª¨ë“  ì»´í¬ë„ŒíŠ¸ëŠ” contentPaneì— ë¶™ì—¬ì•¼ í•¨
 		Container c = this.getContentPane();	
 		c.add("North",p);
 		c.add("South",p2);
 		c.add("Center",canvas);
 		
-		//ÀÌº¥Æ®
+		//ì´ë²¤íŠ¸
 		draw.addActionListener(this);
 		
 		
 		list = new ArrayList<ShapeDTO>();
-		//mousePressed(~~) - x1, y1 ÁÂÇ¥
-		//mouseDragged(~~) - x2, y2 ÁÂÇ¥	
-		canvas.addMouseListener(new MouseAdapter() { //MouseListener ¸Ş¼Òµå 5°³
-													 //MouseAdapter´Â Ãß»óÅ¬·¡½º - ÀÍ¸í³»ºÎ Å¬·¡½º·Î È°¿ë
-													 //MouseListener¿¡´Â µå·¡±×°¡ ¾ø´Ù
+		//mousePressed(~~) - x1, y1 ì¢Œí‘œ
+		//mouseDragged(~~) - x2, y2 ì¢Œí‘œ	
+		canvas.addMouseListener(new MouseAdapter() { //MouseListener ë©”ì†Œë“œ 5ê°œ
+													 //MouseAdapterëŠ” ì¶”ìƒí´ë˜ìŠ¤ - ìµëª…ë‚´ë¶€ í´ë˜ìŠ¤ë¡œ í™œìš©
+													 //MouseListenerì—ëŠ” ë“œë˜ê·¸ê°€ ì—†ë‹¤
 			@Override
 			public void mousePressed(MouseEvent e) { 
-				x1T.setText(e.getX() + ""); //java¿¡¼­ Á¦°øÇÏ´Â ¸Ş¼Òµå - getX(), getY(), setText()(³»°¡ ¸¸µç°Å ¾Æ´Ô)
+				x1T.setText(e.getX() + ""); //javaì—ì„œ ì œê³µí•˜ëŠ” ë©”ì†Œë“œ - getX(), getY(), setText()(ë‚´ê°€ ë§Œë“ ê±° ì•„ë‹˜)
 				y1T.setText(e.getY() + "");
 			}
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
-			    //¸¶¿ì½º¸¦ ´­·¶´Ù°¡ µå·¡±× ¾ÈÇÏ¸é ±×¸²ÀÌ ¾È±×·ÁÁø´Ù
-				//±Ùµ¥ ¸¶¿ì½º¿¡¼­ ¼ÕÀ» ¶¼¸é list¿¡ ShapeDTO°¡ µé¾î°£´Ù
-				//x2T¿Í y2T´Â ¹Ù²îÁö ¾ÊÀ½
-				//´Ü¼ø Å¬¸¯¸¸À¸·Î ¾î·¹ÀÌ¸®½ºÆ®¿¡ Ãß°¡ µÇ´Â °Í ¹æÁö
+			    //ë§ˆìš°ìŠ¤ë¥¼ ëˆŒë €ë‹¤ê°€ ë“œë˜ê·¸ ì•ˆí•˜ë©´ ê·¸ë¦¼ì´ ì•ˆê·¸ë ¤ì§„ë‹¤
+				//ê·¼ë° ë§ˆìš°ìŠ¤ì—ì„œ ì†ì„ ë–¼ë©´ listì— ShapeDTOê°€ ë“¤ì–´ê°„ë‹¤
+				//x2Tì™€ y2TëŠ” ë°”ë€Œì§€ ì•ŠìŒ
+				//ë‹¨ìˆœ í´ë¦­ë§Œìœ¼ë¡œ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€ ë˜ëŠ” ê²ƒ ë°©ì§€
 			 	if(x2T.getText().equals("0") && y2T.getText().equals("0")) return;
 			 	
-			 	//<¼±»ı´Ô Ç®ÀÌ>
+			 	//<ì„ ìƒë‹˜ í’€ì´>
 			 	//System.out.println(e.getX() + e.getY());
 			 	//int x1 = Integer.parseInt(x1T.getText());
 			 	//int y1 = Integer.parseInt(y1T.getText());
 			 	//if(x1 == e.getX() && y1 == e.getY()) return;
-			 	//x1T.Text´Â ÇÁ·¹½º ÇÑ ÁöÁ¡ÀÇ ÁÂÇ¥, e.getX´Â µå·¡±×ÇÑ ÈÄ ¸¶¿ì½º°¡ °¡¸®Å°°í ÀÖ´Â ÁÂÇ¥ÀÌ¹Ç·Î
-			 	//µå·¡±×(ÀÌµ¿)Çß´Ù¸é µÎ ÁÂÇ¥°¡ ´Ş¶ó¾ßÇÑ´Ù.
-			 	//µå·¡±× ÇÏÁö ¾Ê¾Ò´Ù¸é µÎ ÁÂÇ¥°¡ °°´Ù ±×·¯¹Ç·Î À§ÀÇ if¹®À» Àû¿ëÇÏ¸é µå·¡±× Çß´ÂÁö ÇÏÁö ¾Ê¾Ò´ÂÁö ¾Ë ¼ö ÀÖ´Ù.
+			 	//x1T.TextëŠ” í”„ë ˆìŠ¤ í•œ ì§€ì ì˜ ì¢Œí‘œ, e.getXëŠ” ë“œë˜ê·¸í•œ í›„ ë§ˆìš°ìŠ¤ê°€ ê°€ë¦¬í‚¤ê³  ìˆëŠ” ì¢Œí‘œì´ë¯€ë¡œ
+			 	//ë“œë˜ê·¸(ì´ë™)í–ˆë‹¤ë©´ ë‘ ì¢Œí‘œê°€ ë‹¬ë¼ì•¼í•œë‹¤.
+			 	//ë“œë˜ê·¸ í•˜ì§€ ì•Šì•˜ë‹¤ë©´ ë‘ ì¢Œí‘œê°€ ê°™ë‹¤ ê·¸ëŸ¬ë¯€ë¡œ ìœ„ì˜ ifë¬¸ì„ ì ìš©í•˜ë©´ ë“œë˜ê·¸ í–ˆëŠ”ì§€ í•˜ì§€ ì•Šì•˜ëŠ”ì§€ ì•Œ ìˆ˜ ìˆë‹¤.
 			 	
-				//ÀÌ¹Ì ÀúÀåµÇ¾î ÀÖ´Â °ª(±×¸° °ª)À» ShapeDTO°´Ã¼¿¡ ³Ñ°ÜÁÜ
-			 	//¡Ù¡Ù¡Ù¡Ù¡Ùfor¹® ÇÊ¿ä ¾øÀ½ -> for¹®À» ÀÔ·ÂÇÒ °æ¿ì °´Ã¼°¡ Ãß°¡¾ÈµÊ - ÀÌÀ¯ : ¾ÆÁ÷ °´Ã¼¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Ò´Âµ¥ 
-			 	//     					   Á¶°Ç½Ä¿¡ i < list.size() (°ª : 0)¸¦ ³Ö¾î¼­ ÀÛµ¿ÇÏÁö ¾ÊÀ½
-				//±×¸° °ªÀº ±âÁ¸ÀÇ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© ¹ŞÀ½
+				//ì´ë¯¸ ì €ì¥ë˜ì–´ ìˆëŠ” ê°’(ê·¸ë¦° ê°’)ì„ ShapeDTOê°ì²´ì— ë„˜ê²¨ì¤Œ
+			 	//â˜†â˜†â˜†â˜†â˜†forë¬¸ í•„ìš” ì—†ìŒ -> forë¬¸ì„ ì…ë ¥í•  ê²½ìš° ê°ì²´ê°€ ì¶”ê°€ì•ˆë¨ - ì´ìœ  : ì•„ì§ ê°ì²´ë¥¼ ì…ë ¥í•˜ì§€ ì•Šì•˜ëŠ”ë° 
+			 	//     					   ì¡°ê±´ì‹ì— i < list.size() (ê°’ : 0)ë¥¼ ë„£ì–´ì„œ ì‘ë™í•˜ì§€ ì•ŠìŒ
+				//ê·¸ë¦° ê°’ì€ ê¸°ì¡´ì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ ë°›ìŒ
 				ShapeDTO dto = new ShapeDTO();
-				//ÁÂÇ¥
-				dto.setX1(Integer.parseInt(x1T.getText())); //x1T.getText()°¡ StringÅ¸ÀÔÀÌ¹Ç·Î intÇüÀ¸·Î Çüº¯È¯
-															//dto.setX1()´Â intÇü
+				//ì¢Œí‘œ
+				dto.setX1(Integer.parseInt(x1T.getText())); //x1T.getText()ê°€ Stringíƒ€ì…ì´ë¯€ë¡œ intí˜•ìœ¼ë¡œ í˜•ë³€í™˜
+															//dto.setX1()ëŠ” intí˜•
 				dto.setY1(Integer.parseInt(y1T.getText()));
 				dto.setX2(Integer.parseInt(x2T.getText()));
 				dto.setY2(Integer.parseInt(y2T.getText()));
 				dto.setZ1(Integer.parseInt(z1T.getText()));
 				dto.setZ2(Integer.parseInt(z2T.getText()));
 				
-				//Ã¤¿ì±â
+				//ì±„ìš°ê¸°
 				if(fill.isSelected()) dto.setFill(true);
 				else dto.setFill(false);
 				//dto.setFill(fill.isSelected());
 				
-				//µµÇü
+				//ë„í˜•
 				if(line.isSelected()) dto.setShape(Figure.LINE);
 				else if(circle.isSelected()) dto.setShape(Figure.CIRCLE);
 				else if(rect.isSelected()) dto.setShape(Figure.RECT);
 				else if(roundRect.isSelected()) dto.setShape(Figure.ROUND_RECT);
-				//ÆæÀº dragg¿¡ Àû¿ë : else if(pen.isSelected() == true) dto.setShape(Figure.PEN);
+				//íœì€ draggì— ì ìš© : else if(pen.isSelected() == true) dto.setShape(Figure.PEN);
 				
-				//»ö
+				//ìƒ‰
 				dto.setColor(combo.getSelectedIndex());
 				list.add(dto);
-				System.out.println("listÀÇ °³¼ö : " + list.size());
+				System.out.println("listì˜ ê°œìˆ˜ : " + list.size());
 			}
 		});
 		
-		canvas.addMouseMotionListener(new MouseAdapter() {//MouseMotionListenerµµ MouseAdapter »ç¿ëÇÒ ¼ö ÀÖÀ½
+		canvas.addMouseMotionListener(new MouseAdapter() {//MouseMotionListenerë„ MouseAdapter ì‚¬ìš©í•  ìˆ˜ ìˆìŒ
 			@Override
 			public void mouseDragged(MouseEvent e) {
 				x2T.setText(e.getX() + "");
 				y2T.setText(e.getY() + "");
-				canvas.repaint(); //ÀÜ»óÀÌ º¸ÀÓ repaint() ½ÇÇà ½Ã update()È£Ãâ -> update()°¡ paint()È£Ãâ
+				canvas.repaint(); //ì”ìƒì´ ë³´ì„ repaint() ì‹¤í–‰ ì‹œ update()í˜¸ì¶œ -> update()ê°€ paint()í˜¸ì¶œ
 				
-				//¡Ù¡Ù¡Ù¡Ù¡ÙÆæ ±â´É - ÆæÀº ¸¶¿ì½º¸¦ ³õÀ¸¸é ³¡³ª¹Ç·Î release°¡ ¾Æ´Ñ dragg¿¡¼­ ¼³Á¤ÇÑ´Ù
+				//â˜†â˜†â˜†â˜†â˜†íœ ê¸°ëŠ¥ - íœì€ ë§ˆìš°ìŠ¤ë¥¼ ë†“ìœ¼ë©´ ëë‚˜ë¯€ë¡œ releaseê°€ ì•„ë‹Œ draggì—ì„œ ì„¤ì •í•œë‹¤
 				if(pen.isSelected()) {
-					ShapeDTO dto = new ShapeDTO(); //±×¸²À» º¸Á¸ÇÑ °´Ã¼¿Í´Â ¿¬ÇÊ¿ëÀÇ ¶Ç´Ù¸¥ °´Ã¼ »ı¼º
+					ShapeDTO dto = new ShapeDTO(); //ê·¸ë¦¼ì„ ë³´ì¡´í•œ ê°ì²´ì™€ëŠ” ì—°í•„ìš©ì˜ ë˜ë‹¤ë¥¸ ê°ì²´ ìƒì„±
 					
-					//ÁÂÇ¥(release³»¿ë°ú °°À½)
+					//ì¢Œí‘œ(releaseë‚´ìš©ê³¼ ê°™ìŒ)
 					dto.setX1(Integer.parseInt(x1T.getText())); 
 					dto.setY1(Integer.parseInt(y1T.getText()));
 					dto.setX2(Integer.parseInt(x2T.getText()));
@@ -209,21 +209,21 @@ public class MsPaintT extends JFrame implements ActionListener {
 					dto.setZ1(Integer.parseInt(z1T.getText()));
 					dto.setZ2(Integer.parseInt(z2T.getText()));
 					
-					//Ã¤¿ì±â(release³»¿ë°ú °°À½)
+					//ì±„ìš°ê¸°(releaseë‚´ìš©ê³¼ ê°™ìŒ)
 					if(fill.isSelected()) dto.setFill(true);
 					else dto.setFill(false);
 					
-					//µµÇü - pen¸¸ ¿©±â¼­ ¼³Á¤, ³ª¸ÓÁö ¸ğ¾çÀº release¿¡¼­ ¼³Á¤
+					//ë„í˜• - penë§Œ ì—¬ê¸°ì„œ ì„¤ì •, ë‚˜ë¨¸ì§€ ëª¨ì–‘ì€ releaseì—ì„œ ì„¤ì •
 					dto.setShape(Figure.PEN); 
 					
-					//»ö(release³»¿ë°ú °°À½)
+					//ìƒ‰(releaseë‚´ìš©ê³¼ ê°™ìŒ)
 					dto.setColor(combo.getSelectedIndex());
 					
-					//»ı¼ºÇÑ °´Ã¼¸¦ ¾î·¹ÀÌ¸®½ºÆ®¿¡ Ãß°¡
+					//ìƒì„±í•œ ê°ì²´ë¥¼ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 					list.add(dto);
 					
-					//x2, y2ÀÇ ÁÂÇ¥°ªÀ» x1, y1À¸·Î ³Ñ°ÜÁÜ
-					//³¡³ª´Â ÁÂÇ¥°ªÀ» ´Ù½Ã ½ÃÀÛÁÂÇ¥°ªÀ¸·Î ³Ñ°ÜÁÜÀ¸·Î½á °è¼ÓÇØ¼­ ±×¸²ÀÌ ±×·ÁÁö°Ô µÊ
+					//x2, y2ì˜ ì¢Œí‘œê°’ì„ x1, y1ìœ¼ë¡œ ë„˜ê²¨ì¤Œ
+					//ëë‚˜ëŠ” ì¢Œí‘œê°’ì„ ë‹¤ì‹œ ì‹œì‘ì¢Œí‘œê°’ìœ¼ë¡œ ë„˜ê²¨ì¤Œìœ¼ë¡œì¨ ê³„ì†í•´ì„œ ê·¸ë¦¼ì´ ê·¸ë ¤ì§€ê²Œ ë¨
 					x1T.setText(x2T.getText()); 
 					y1T.setText(y2T.getText());
 					
@@ -233,7 +233,7 @@ public class MsPaintT extends JFrame implements ActionListener {
 		
 		//can.setBackground(Color.WHITE);
 		
-		//2.ÇÁ·¹ÀÓ »ı¼º
+		//2.í”„ë ˆì„ ìƒì„±
 		setBounds(700,300,600,500);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -338,13 +338,13 @@ public class MsPaintT extends JFrame implements ActionListener {
 
 //checkbox
 //jcombobox
-//¼¾ÅÍ¿¡ ±×¸²±×¸± °ø°£ - Canvas
+//ì„¼í„°ì— ê·¸ë¦¼ê·¸ë¦´ ê³µê°„ - Canvas
 
-//1. JOptionPane.showMessageDialog(this, "»ç¿ëÁßÀÎ ¾ÆÀÌµğ ÀÔ´Ï´Ù");
+//1. JOptionPane.showMessageDialog(this, "ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë”” ì…ë‹ˆë‹¤");
 //
 //2. delete()
 //
-//3. ±×¸®ÆÇ - Æ² ¸¸ ÀÛ¼ºÇÏ¼¼¿ä
+//3. ê·¸ë¦¬íŒ - í‹€ ë§Œ ì‘ì„±í•˜ì„¸ìš”
 //Project : 13_swing
 //
 //Class   : MsPaint.java
@@ -356,4 +356,4 @@ public class MsPaintT extends JFrame implements ActionListener {
 //private JComboBox<String> combo;
 //private JButton draw;
 //private DrCanvas can;
-//»çÀÌÁî °íÁ¤ ÇÊ¿ä X
+//ì‚¬ì´ì¦ˆ ê³ ì • í•„ìš” X

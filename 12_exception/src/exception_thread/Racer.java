@@ -5,38 +5,38 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-//¸» ÇÑ¸¶¸®
-public class Racer extends Canvas implements Runnable { //Canvas´Â ÄÁÅ×ÀÌ³Ê¶ó ¾Æ´Ï¶ó ÀÚÃ¼½ÇÇà ¾ÈµÊ, Frame¿¡ ºÙ¿©Áà¾ß ÇÔ
-						   								//µé¾î°¡´Â ³»¿ë¿¡ µû¶ó Å©±â°¡ ÀÚµ¿À¸·Î Á¶ÀıµÊ
-						                                //·¹ÀÌ¾Æ¿ôÀÌ ÀÚÀ¯·Î¿ò
-	//6.ÇÊµå¼±¾ğ													//Racers´Â ½º·¹µå°¡ µÇ°í½ÍÀº Äµ¹ö½ºÀÓ
+//ë§ í•œë§ˆë¦¬
+public class Racer extends Canvas implements Runnable { //CanvasëŠ” ì»¨í…Œì´ë„ˆë¼ ì•„ë‹ˆë¼ ìì²´ì‹¤í–‰ ì•ˆë¨, Frameì— ë¶™ì—¬ì¤˜ì•¼ í•¨
+						   								//ë“¤ì–´ê°€ëŠ” ë‚´ìš©ì— ë”°ë¼ í¬ê¸°ê°€ ìë™ìœ¼ë¡œ ì¡°ì ˆë¨
+						                                //ë ˆì´ì•„ì›ƒì´ ììœ ë¡œì›€
+	//6.í•„ë“œì„ ì–¸													//RacersëŠ” ìŠ¤ë ˆë“œê°€ ë˜ê³ ì‹¶ì€ ìº”ë²„ìŠ¤ì„
 	private Image img;
 	private String name;
 	private int pos;
 	private static int rank = 0;
 	
-	//7.±âº»ÀÚ »ı¼º
+	//7.ê¸°ë³¸ì ìƒì„±
 	public Racer(String name) {
 		this.name = name;
 		img = Toolkit.getDefaultToolkit().getImage("horse.gif");
 		//setBackground(new Color((int)(Math.random()*255+1),(int)(Math.random()*255+1),(int)(Math.random()*255+1)));
 	}
 	
-	//8.±×¸² »ı¼ºÇÏ±â
+	//8.ê·¸ë¦¼ ìƒì„±í•˜ê¸°
 	@Override
 	public void paint(Graphics g) {
-		//g.drawLine(0, this.getSize().height-1, this.getSize().width, this.getSize().height-1); //-1 : Äµ¹ö½º¿Í ¼±ÀÌ °ãÃÄ¼­ ¾Èº¸ÀÓ
+		//g.drawLine(0, this.getSize().height-1, this.getSize().width, this.getSize().height-1); //-1 : ìº”ë²„ìŠ¤ì™€ ì„ ì´ ê²¹ì³ì„œ ì•ˆë³´ì„
 		g.fillRect(0, this.getSize().height/50, this.getSize().width, this.getSize().height/50);
 		g.drawImage(img, pos, 0, 25, this.getSize().height, this); //this = Canvas
 	
 	}
 
 	@Override
-	public void run() { //¿©±â¸¦ ¾î¶² ½º·¹µå°¡ ½ÇÇàÇÒÁö´Â ¿î¿µÃ¼Á¦°¡ °ü¸®
-		for(int i = 0; i < this.getSize().width; i += ((int)(Math.random()*10+1))) { //ÀÌµ¿ÇÒ Å©±â¸¦ ¿©±â¼­ °áÁ¤(´ÜÇ×¿¬»êÀÚ)
+	public void run() { //ì—¬ê¸°ë¥¼ ì–´ë–¤ ìŠ¤ë ˆë“œê°€ ì‹¤í–‰í• ì§€ëŠ” ìš´ì˜ì²´ì œê°€ ê´€ë¦¬
+		for(int i = 0; i < this.getSize().width; i += ((int)(Math.random()*10+1))) { //ì´ë™í•  í¬ê¸°ë¥¼ ì—¬ê¸°ì„œ ê²°ì •(ë‹¨í•­ì—°ì‚°ì)
 			pos = i;
 			RunRace rr = new RunRace();
-			//System.out.println("´Ş·Á¶ó");
+			//System.out.println("ë‹¬ë ¤ë¼");
 			repaint();
 			
 			try {
@@ -48,11 +48,11 @@ public class Racer extends Canvas implements Runnable { //Canvas´Â ÄÁÅ×ÀÌ³Ê¶ó ¾Æ
 		
 		if(pos < this.getSize().width) {
 			for(int i = 0; i < this.getSize().width; i++) {
-				//System.out.println("µµÂø");
+				//System.out.println("ë„ì°©");
 				RunRace rr = new RunRace();
 			}
 			rank++;
-			System.out.println(rank + "µî " + name);
+			System.out.println(rank + "ë“± " + name);
 		}
 	}
 }

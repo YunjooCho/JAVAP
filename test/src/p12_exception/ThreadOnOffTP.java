@@ -15,7 +15,7 @@ import java.awt.event.WindowEvent;
 
 public class ThreadOnOffTP extends Frame implements Runnable{
 	
-	//0.ÇÊµå¼±¾ğ
+	//0.í•„ë“œì„ ì–¸
 	private Label label;
 	private Button pushBtn;
 	private int num = 0;
@@ -24,19 +24,19 @@ public class ThreadOnOffTP extends Frame implements Runnable{
 	
 	public ThreadOnOffTP() {
 		
-		//2.¶óº§ »ı¼º
+		//2.ë¼ë²¨ ìƒì„±
 		label = new Label("0", Label.CENTER);
-		label.setFont(new Font("°íµñÃ¼", Font.BOLD, 70));
+		label.setFont(new Font("ê³ ë”•ì²´", Font.BOLD, 70));
 		label.setForeground(Color.RED);
 		add("Center",label);
 		
-		//3.¹öÆ° »ı¼º
+		//3.ë²„íŠ¼ ìƒì„±
 		Panel p = new Panel(new FlowLayout(FlowLayout.RIGHT));
-		pushBtn = new Button("´©¸£±â");
+		pushBtn = new Button("ëˆ„ë¥´ê¸°");
 		p.add(pushBtn);
 		add("South",p);
 		
-		//1.ÇÁ·¹ÀÓ»ı¼º
+		//1.í”„ë ˆì„ìƒì„±
 		setBounds(800, 250, 300, 200);
 		setVisible(true);
 		setResizable(false);
@@ -47,13 +47,13 @@ public class ThreadOnOffTP extends Frame implements Runnable{
 			}
 		});
 		
-		//4.ÀÌº¥Æ®
+		//4.ì´ë²¤íŠ¸
 		pushBtn.addMouseListener(new MouseAdapter() {
 			Thread thread;
 			@Override
 			public void mousePressed(MouseEvent e) {
 				thread = new Thread(ThreadOnOffTP.this);
-				System.out.println("´©¸£±â t = " + thread);
+				System.out.println("ëˆ„ë¥´ê¸° t = " + thread);
 				thread.start();
 				stopCount = true;
 			}
@@ -61,13 +61,13 @@ public class ThreadOnOffTP extends Frame implements Runnable{
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				thread = null;
-				System.out.println("¼Õ¶¼±â t = " + thread);
+				System.out.println("ì†ë–¼ê¸° t = " + thread);
 				stopCount = false;
 			}
 		});
 	}
 
-	//5.µ¿ÀÛ ±¸ÇöÇÏ±â
+	//5.ë™ì‘ êµ¬í˜„í•˜ê¸°
 	@Override
 	public void run() {
 		while(true) {

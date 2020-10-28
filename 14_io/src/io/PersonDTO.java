@@ -2,15 +2,15 @@ package io;
 
 import java.io.Serializable;
 
-public class PersonDTO implements Serializable { //Serializable¾È ÇÑ °æ¿ì : Exception in thread "main" java.io.NotSerializableException
-												 //Ãß»ó¸Ş¼Òµå°¡ ¾øÀ½
+public class PersonDTO implements Serializable { //Serializableì•ˆ í•œ ê²½ìš° : Exception in thread "main" java.io.NotSerializableException
+												 //ì¶”ìƒë©”ì†Œë“œê°€ ì—†ìŒ
 	
-	//1.ÇÊµå ¼±¾ğ
+	//1.í•„ë“œ ì„ ì–¸
 	private String name;
 	private int age;
 	private double height;
 	
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public PersonDTO(String name, int age, double height) {
 		this.name = name;
 		this.age = age;

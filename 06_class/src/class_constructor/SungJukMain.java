@@ -1,9 +1,9 @@
 package class_constructor;
 /*
-Å¬·¡½º¸í : SungJuk
-ÇÊµå      : name, kor, eng, math, tot, avg, grade
-¸Ş¼Òµå   : »ı¼ºÀÚ 
-        calc() - ÃÑÁ¡, Æò±Õ, ÇĞÁ¡ °è»ê
+í´ë˜ìŠ¤ëª… : SungJuk
+í•„ë“œ      : name, kor, eng, math, tot, avg, grade
+ë©”ì†Œë“œ   : ìƒì„±ì 
+        calc() - ì´ì , í‰ê· , í•™ì  ê³„ì‚°
         getName()
         getKor()
         getEng()
@@ -12,36 +12,36 @@ package class_constructor;
         getAvg()
         getGrade()
       
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 ----------------------------------------------------
-ÀÌ¸§      ±¹¾î      ¿µ¾î      ¼öÇĞ      ÃÑÁ¡      Æò±Õ      ÇĞÁ¡
+ì´ë¦„      êµ­ì–´      ì˜ì–´      ìˆ˜í•™      ì´ì       í‰ê·       í•™ì 
 ----------------------------------------------------
-È«±æµ¿   90      95      100
-ÄÚ³­      100     89      75
-¶ÇÄ¡      75      80      48
+í™ê¸¸ë™   90      95      100
+ì½”ë‚œ      100     89      75
+ë˜ì¹˜      75      80      48
  */
 
 
 
 public class SungJukMain {
 	public static void main(String[] args) {
-		//»ı¼º
-		//°è»ê
-		//Ãâ·Â
+		//ìƒì„±
+		//ê³„ì‚°
+		//ì¶œë ¥
 		
-		SungJuk[] ar = new SungJuk[]{new SungJuk("È«±æµ¿", 90, 95, 100),
-                					 new SungJuk("ÄÚ³­", 100, 89, 75),
-                					 new SungJuk("¶ÇÄ¡", 75, 80, 48)};; 
-        //¼±»ı´Ô Ç®ÀÌ
-        //SungJuk[] ar = new SungJuk[3]; ->¹æ¸¸ ¸¸µé¾îÁ® ÀÖÀ½ 
-        //ar[0] = new SungJuk("È«±æµ¿,90,95,100);
-        //ar[1] = new SungJuk("ÄÚ³­",100,89,75);
-        //ar[2] = new SungJuk("¶ÇÄ¡",75,80,48);
+		SungJuk[] ar = new SungJuk[]{new SungJuk("í™ê¸¸ë™", 90, 95, 100),
+                					 new SungJuk("ì½”ë‚œ", 100, 89, 75),
+                					 new SungJuk("ë˜ì¹˜", 75, 80, 48)};; 
+        //ì„ ìƒë‹˜ í’€ì´
+        //SungJuk[] ar = new SungJuk[3]; ->ë°©ë§Œ ë§Œë“¤ì–´ì ¸ ìˆìŒ 
+        //ar[0] = new SungJuk("í™ê¸¸ë™,90,95,100);
+        //ar[1] = new SungJuk("ì½”ë‚œ",100,89,75);
+        //ar[2] = new SungJuk("ë˜ì¹˜",75,80,48);
                 					 
                
 		
 		System.out.println("----------------------------------------------------");
-		System.out.println("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tÇĞÁ¡");
+		System.out.println("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \tí•™ì ");
 		System.out.println("----------------------------------------------------");
 		for(int i = 0; i < ar.length; i++) {
 			ar[i].calc();

@@ -1,80 +1,80 @@
 package day0914;
 
-//¹İ º°·Î ±¹¿µ¼ö Á¡¼ö¸¦ µû·Î °ü¸®ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇØº¸¼¼¿ä
-//¹İÀÇ ÃÑ °¹¼ö´Â 4°³ÀÔ´Ï´Ù
-//ÇÑ ¹İÀÇ ÃÖ´ë ÇĞ»ı¼ö´Â 10¸íÀÔ´Ï´Ù
-//¸¸¾à ÀÔ·ÂÀÌ ¾ÈµÈ ¹İÀº
-//ÀÔ·ÂÀÌ ¾ÈµÇ¾ú´Ù°í Ãâ·ÂµÇ°Ô ÇÏ¼¼¿ä
+//ë°˜ ë³„ë¡œ êµ­ì˜ìˆ˜ ì ìˆ˜ë¥¼ ë”°ë¡œ ê´€ë¦¬í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•´ë³´ì„¸ìš”
+//ë°˜ì˜ ì´ ê°¯ìˆ˜ëŠ” 4ê°œì…ë‹ˆë‹¤
+//í•œ ë°˜ì˜ ìµœëŒ€ í•™ìƒìˆ˜ëŠ” 10ëª…ì…ë‹ˆë‹¤
+//ë§Œì•½ ì…ë ¥ì´ ì•ˆëœ ë°˜ì€
+//ì…ë ¥ì´ ì•ˆë˜ì—ˆë‹¤ê³  ì¶œë ¥ë˜ê²Œ í•˜ì„¸ìš”
 
-//ÀÔ·ÂÀ» ¼±ÅÃÇÏ¸é
-//¸î ¹İÀÎÁö ÀÔ·ÂÀ» ¹Ş°í
-//±× ¹İÀÇ ÇĞ»ı¼ö¸¦ ÀÔ·Â¹Ş°í
-//±× ¹İ ÇĞ»ıµéÀÇ ±¹¿µ¼ö Á¡¼ö¸¦ Â÷·Ê´ë·Î ÀÔ·Â¹Ş°Ô ÇÏ¼¼¿ä.
+//ì…ë ¥ì„ ì„ íƒí•˜ë©´
+//ëª‡ ë°˜ì¸ì§€ ì…ë ¥ì„ ë°›ê³ 
+//ê·¸ ë°˜ì˜ í•™ìƒìˆ˜ë¥¼ ì…ë ¥ë°›ê³ 
+//ê·¸ ë°˜ í•™ìƒë“¤ì˜ êµ­ì˜ìˆ˜ ì ìˆ˜ë¥¼ ì°¨ë¡€ëŒ€ë¡œ ì…ë ¥ë°›ê²Œ í•˜ì„¸ìš”.
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Ex03MultiArray02 {
-	//1. »ó¼ö¼±¾ğ
-	//ÃÖ´ë ÇĞ»ı¼ö Ã¼Å©¿ë »ó¼ö
+	//1. ìƒìˆ˜ì„ ì–¸
+	//ìµœëŒ€ í•™ìƒìˆ˜ ì²´í¬ìš© ìƒìˆ˜
 	final static int CLASS_NUMBER = 4;
-	//¹İÀÇ ÃÑ °¹¼ö
+	//ë°˜ì˜ ì´ ê°¯ìˆ˜
 	final static int STUDENT_SIZE = 10;
 
 	public static void main(String[] args) throws IOException{
-	//0.ÀÔ·Â¹ŞÀ» ¶§ »ç¿ëÇÒ º¯¼ö(=°´Ã¼)»ı¼º
+	//0.ì…ë ¥ë°›ì„ ë•Œ ì‚¬ìš©í•  ë³€ìˆ˜(=ê°ì²´)ìƒì„±
 	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));	
-	//2.¹è¿­¼±¾ğ -Á¡¼ö¸¦ ÀúÀåÇÒ int[][] socreArray»ı¼º
-	//°ú¸ñº° ¹è¿­ ¸¸µê
-	//¶Ç´Â scoreArray Ä¿´Ù¶õ ¹è¿­À» ¸¸µê
+	//2.ë°°ì—´ì„ ì–¸ -ì ìˆ˜ë¥¼ ì €ì¥í•  int[][] socreArrayìƒì„±
+	//ê³¼ëª©ë³„ ë°°ì—´ ë§Œë“¦
+	//ë˜ëŠ” scoreArray ì»¤ë‹¤ë€ ë°°ì—´ì„ ë§Œë“¦
 	int[][][] scoreArray = new int[CLASS_NUMBER][][];
 	
-	//scoreArray[0]Àº ¹«¾ùÀ» ¶æÇÏ´Â°¡?
-	//scoreArray[0][3] 1¹İ 4¹øÇĞ»ı
-	//scoreArray[0][3][1] 1¹İ 4¹øÇĞ»ı ¿µ¾îÁ¡¼ö
+	//scoreArray[0]ì€ ë¬´ì—‡ì„ ëœ»í•˜ëŠ”ê°€?
+	//scoreArray[0][3] 1ë°˜ 4ë²ˆí•™ìƒ
+	//scoreArray[0][3][1] 1ë°˜ 4ë²ˆí•™ìƒ ì˜ì–´ì ìˆ˜
 	
-	//3-2.¸Ş´º Ãâ·Â
+	//3-2.ë©”ë‰´ ì¶œë ¥
 	while(true) {
 		showMenu();
 	    int selectMenu = Integer.parseInt(bufferedReader.readLine());
 	    if(selectMenu == 1) {
-	    	//7-2.ÀÔ·Â¸Ş¼Òµå Ãâ·Â
+	    	//7-2.ì…ë ¥ë©”ì†Œë“œ ì¶œë ¥
 	    	
-	    	//5-2.¹İ¼±ÅÃ
+	    	//5-2.ë°˜ì„ íƒ
 	    	int classNumber = selectClassNumber(bufferedReader);
-	    	//6-2.ÇĞ»ı¼ö ÀÔ·Â
+	    	//6-2.í•™ìƒìˆ˜ ì…ë ¥
 	    	int studentSize = selectStudentSize(bufferedReader);
 	    	
 
-	    	//ÀÔ·Â(for¹®)
+	    	//ì…ë ¥(forë¬¸)
 	    	scoreArray[classNumber] = new int[studentSize][3];
-	    	 //scoreArrayÀÇ classNumber ÀÎµ¦½º´Â
-	    	 //int 2Â÷¿ø ¹è¿­ÀÌ´Ù
-	    	 //2Â÷¿ø ¹è¿­ÀÌ classNumber¸¸Å­ ¸ğ¿©ÀÖ´Â 3Â÷¿ø ¹è¿­ÀÌ´Ù
-	    	 //3Â÷¿øÀº 2Â÷¿ø ¹è¿­ÀÌ ¸ğ¿©¼­ µÈ°Í, [3]Àº °ú¸ñ¼ö
-	    	 //³²Àº 2Â÷¿ø,1Â÷¿øµµ ÃÊ±âÈ­(3Â÷¿øÀº classNumber = 4·Î »ó¼ö¼±¾ğÇß±â¶§¹®¿¡ ÃÊ±âÈ­¾ÈÇÔ)
-	    	 //¸¸¾à »ó¼ö ¾øÀÌ 3Â÷¿ø ÃÊ±âÈ­ ÇÑ´Ù¸é ¾Æ·¡¿Í °°À½
+	    	 //scoreArrayì˜ classNumber ì¸ë±ìŠ¤ëŠ”
+	    	 //int 2ì°¨ì› ë°°ì—´ì´ë‹¤
+	    	 //2ì°¨ì› ë°°ì—´ì´ classNumberë§Œí¼ ëª¨ì—¬ìˆëŠ” 3ì°¨ì› ë°°ì—´ì´ë‹¤
+	    	 //3ì°¨ì›ì€ 2ì°¨ì› ë°°ì—´ì´ ëª¨ì—¬ì„œ ëœê²ƒ, [3]ì€ ê³¼ëª©ìˆ˜
+	    	 //ë‚¨ì€ 2ì°¨ì›,1ì°¨ì›ë„ ì´ˆê¸°í™”(3ì°¨ì›ì€ classNumber = 4ë¡œ ìƒìˆ˜ì„ ì–¸í–ˆê¸°ë•Œë¬¸ì— ì´ˆê¸°í™”ì•ˆí•¨)
+	    	 //ë§Œì•½ ìƒìˆ˜ ì—†ì´ 3ì°¨ì› ì´ˆê¸°í™” í•œë‹¤ë©´ ì•„ë˜ì™€ ê°™ìŒ
 	    	 //int[][][] scoreArray = new int[4][][]
 	   
-	    	//À§ÀÇ ÄÚµåÀÇ ÀÇ¹Ì´Â
-	    	//scoreArray´Â intÀÇ 3Â÷¿ø ¹è¿­ÀÎµ¥ int 2Â÷¿ø ¹è¿­ÀÌ CLASS_NUMBER°³ ¸¸Å­ ¸ğ¿©ÀÖ´Ù´Â ÀÇ¹Ì°¡ µÈ´Ù
-	    	//¿ì¸®°¡ scoreArray[0]À» »ç¿ëÇÏ·Á¸é
-	    	//±× 0¹øÀÌ ¾î¶² Å©±âÀÇ 2Â÷¿ø ¹è¿­·Î ÀÌ·ç¾îÁ®ÀÖ´ÂÁö¸¦ ÁöÁ¤ÇØ¾ßÇÑ´Ù.
+	    	//ìœ„ì˜ ì½”ë“œì˜ ì˜ë¯¸ëŠ”
+	    	//scoreArrayëŠ” intì˜ 3ì°¨ì› ë°°ì—´ì¸ë° int 2ì°¨ì› ë°°ì—´ì´ CLASS_NUMBERê°œ ë§Œí¼ ëª¨ì—¬ìˆë‹¤ëŠ” ì˜ë¯¸ê°€ ëœë‹¤
+	    	//ìš°ë¦¬ê°€ scoreArray[0]ì„ ì‚¬ìš©í•˜ë ¤ë©´
+	    	//ê·¸ 0ë²ˆì´ ì–´ë–¤ í¬ê¸°ì˜ 2ì°¨ì› ë°°ì—´ë¡œ ì´ë£¨ì–´ì ¸ìˆëŠ”ì§€ë¥¼ ì§€ì •í•´ì•¼í•œë‹¤.
 	    	//scoreArray[0] = new int[studentSize][]
-	    	//ÀÌ·¸°Ô ÀûÀ¸¸é
-	    	//scoreArrayÀÇ 0¹ø ÀÎµ¦½º´Â int°¡ 3°³ ¸ğ¿©ÀÖ´Â int 1Â÷¿ø ¹è¿­ÀÌ studentSize¸¸Å­ º¸¿©ÀÖ´Â int 2Â÷¿ø ¹è¿­ÀÌ´Ù
+	    	//ì´ë ‡ê²Œ ì ìœ¼ë©´
+	    	//scoreArrayì˜ 0ë²ˆ ì¸ë±ìŠ¤ëŠ” intê°€ 3ê°œ ëª¨ì—¬ìˆëŠ” int 1ì°¨ì› ë°°ì—´ì´ studentSizeë§Œí¼ ë³´ì—¬ìˆëŠ” int 2ì°¨ì› ë°°ì—´ì´ë‹¤
 	    	
-	    	//scoreArrayÀÇ classNumber ÀÎµ¦½º´Â int 2Â÷¿ø¹è¿­ÀÌ°í Å©±â´Â 2Â÷¿øÀº studenNumber, 1Â÷¿øÀº 3ÀÇ Å©±â¶õ ÀÇ¹Ì
+	    	//scoreArrayì˜ classNumber ì¸ë±ìŠ¤ëŠ” int 2ì°¨ì›ë°°ì—´ì´ê³  í¬ê¸°ëŠ” 2ì°¨ì›ì€ studenNumber, 1ì°¨ì›ì€ 3ì˜ í¬ê¸°ë€ ì˜ë¯¸
 	    	
-	    	//int[4] ´Â int°¡ 4°³ ¸ğ¿©ÀÖ´Ù
-	    	//int[2][4] ´Â
-	    	//          int°¡ 4°³ º¸¿©ÀÖ´Â ¹è¿­ÀÌ 2°³ ¸ğ¿©ÀÖ´Ù.
+	    	//int[4] ëŠ” intê°€ 4ê°œ ëª¨ì—¬ìˆë‹¤
+	    	//int[2][4] ëŠ”
+	    	//          intê°€ 4ê°œ ë³´ì—¬ìˆëŠ” ë°°ì—´ì´ 2ê°œ ëª¨ì—¬ìˆë‹¤.
 	    	
-	    	//int[5][2][4]´Â
-	    	//			int°¡ 4°³¸ğ¿©ÀÖ´Â ¹è¿­ÀÌ
-	    	//			2°³ ¸ğ¿©¼­ ÇÏ³ªÀÇ ¹è¿­ÀÌ µÇ°í(2Â÷¿ø¹è¿­)
-	    	//			±×·¯ÇÑ ¹è¿­ÀÌ 5°³°¡ ¸ğ¿©ÀÖ´Ù ¶ó´Â ÀÇ¹Ì°¡ µÈ´Ù.
+	    	//int[5][2][4]ëŠ”
+	    	//			intê°€ 4ê°œëª¨ì—¬ìˆëŠ” ë°°ì—´ì´
+	    	//			2ê°œ ëª¨ì—¬ì„œ í•˜ë‚˜ì˜ ë°°ì—´ì´ ë˜ê³ (2ì°¨ì›ë°°ì—´)
+	    	//			ê·¸ëŸ¬í•œ ë°°ì—´ì´ 5ê°œê°€ ëª¨ì—¬ìˆë‹¤ ë¼ëŠ” ì˜ë¯¸ê°€ ëœë‹¤.
 	    	//int[][][] arr = int[5][2][4]
 	    	//            -arr[0]: int[2][4]
 	    	//				  -int[4]
@@ -103,115 +103,115 @@ public class Ex03MultiArray02 {
 	    	//					 int, int, int, int
 	    	
 	    	// int[] arr = new int[5]
-	    	// int°¡ 5°³¸ğÀÎ °Í
+	    	// intê°€ 5ê°œëª¨ì¸ ê²ƒ
 	    	
 	    	// int[][] arr = new int[3][5]
-	    	// ÀÌ°ÍÀº int[]ÀÌ 3°³°¡ ¸ğÀÎ°Ô arrÀÌ´Ù
-	    	// ±×·¸´Ù¸é arr[0]Àº ¹«¾ùÀÎ°¡?
-	    	// int[5]ÀÌ´Ù
-	    	// ´õ ÀÚ¼¼ÇÏ°Ô ¸»ÇÏ¸é arr[0]Àº int ¹è¿­ÀÇ ¹è¿­ÀÌ´Ù
+	    	// ì´ê²ƒì€ int[]ì´ 3ê°œê°€ ëª¨ì¸ê²Œ arrì´ë‹¤
+	    	// ê·¸ë ‡ë‹¤ë©´ arr[0]ì€ ë¬´ì—‡ì¸ê°€?
+	    	// int[5]ì´ë‹¤
+	    	// ë” ìì„¸í•˜ê²Œ ë§í•˜ë©´ arr[0]ì€ int ë°°ì—´ì˜ ë°°ì—´ì´ë‹¤
 	    	
-	    	//°ªÀº scoreArray[i][j][z]¾È¿¡ ÀúÀåµÇÀÖÀ¸´Ï±î
-	    	//print(scoreArray[i]) ÀÌ°Å³ª
-	    	//print(scoreArray[i][j]) ÀÌ·¸°Ô Ãâ·ÂÇÏ¸é 3Â÷¿ø¹è¿­ÀÌ ¾Æ´Ñ ±×³É  1Â÷¿ø, 2Â÷¿ø ¹è¿­·Î ÀÎ½ÄÇØ¼­ ¿À·ù°¡ ³ª°í
-	    	//print(scoreArray[i][j][z])±îÁö ÇØ¾ß °ªÀÌ ³ª¿È
+	    	//ê°’ì€ scoreArray[i][j][z]ì•ˆì— ì €ì¥ë˜ìˆìœ¼ë‹ˆê¹Œ
+	    	//print(scoreArray[i]) ì´ê±°ë‚˜
+	    	//print(scoreArray[i][j]) ì´ë ‡ê²Œ ì¶œë ¥í•˜ë©´ 3ì°¨ì›ë°°ì—´ì´ ì•„ë‹Œ ê·¸ëƒ¥  1ì°¨ì›, 2ì°¨ì› ë°°ì—´ë¡œ ì¸ì‹í•´ì„œ ì˜¤ë¥˜ê°€ ë‚˜ê³ 
+	    	//print(scoreArray[i][j][z])ê¹Œì§€ í•´ì•¼ ê°’ì´ ë‚˜ì˜´
 	    	
 	    	for(int i = 0; i < scoreArray[classNumber].length; i++) {
-	    		System.out.println((i+1)+ "¹ø ÇĞ»ıÀÇ Á¡¼ö ÀÔ·Â : ");
-	    		scoreArray[classNumber][i][0] = validateScore(bufferedReader, 1); //[classNumber¹İ][i¹øÇĞ»ı][0]±¹¾îÁ¡¼ö
-	    		scoreArray[classNumber][i][1] = validateScore(bufferedReader, 2); //[classNumber¹İ][i¹øÇĞ»ı][1]¿µ¾îÁ¡¼ö
-	    		scoreArray[classNumber][i][2] = validateScore(bufferedReader, 3); //[classNumber¹İ][i¹øÇĞ»ı][2]¼öÇĞÁ¡¼ö
-	    		//ÇĞ»ı¼ö¸¸Å­ Á¡¼ö ÀÔ·Â(ÇĞ»ı¼ö´Â À§¿¡¼­ »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °Í)
+	    		System.out.println((i+1)+ "ë²ˆ í•™ìƒì˜ ì ìˆ˜ ì…ë ¥ : ");
+	    		scoreArray[classNumber][i][0] = validateScore(bufferedReader, 1); //[classNumberë°˜][ië²ˆí•™ìƒ][0]êµ­ì–´ì ìˆ˜
+	    		scoreArray[classNumber][i][1] = validateScore(bufferedReader, 2); //[classNumberë°˜][ië²ˆí•™ìƒ][1]ì˜ì–´ì ìˆ˜
+	    		scoreArray[classNumber][i][2] = validateScore(bufferedReader, 3); //[classNumberë°˜][ië²ˆí•™ìƒ][2]ìˆ˜í•™ì ìˆ˜
+	    		//í•™ìƒìˆ˜ë§Œí¼ ì ìˆ˜ ì…ë ¥(í•™ìƒìˆ˜ëŠ” ìœ„ì—ì„œ ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê²ƒ)
 	    	}
 			
 	    	
 	    }else if(selectMenu == 2) {
-	    	//8-2.Ãâ·Â¸Ş¼Òµå
-	    	//5-2¹İ¼±ÅÃ
+	    	//8-2.ì¶œë ¥ë©”ì†Œë“œ
+	    	//5-2ë°˜ì„ íƒ
 	    	int classNumber = selectClassNumber(bufferedReader);
-	    	//ÇØ´ç¹İÀÌ ÃÊ±âÈ­ µÇ¾ú´ÂÁö Ã¼Å©
-	    	//ÃÊ±âÈ­ µÇ¾î ÀÖÀ¸¸é Ãâ·Â
+	    	//í•´ë‹¹ë°˜ì´ ì´ˆê¸°í™” ë˜ì—ˆëŠ”ì§€ ì²´í¬
+	    	//ì´ˆê¸°í™” ë˜ì–´ ìˆìœ¼ë©´ ì¶œë ¥
 	    	if(scoreArray[classNumber] == null) {
-	    		//¾ÆÁ÷ ÃÊ±âÈ­°¡ ¾ÈµÇ¾î ÀÖÀ¸¹Ç·Î °æ°í¸Ş½ÃÁö Ãâ·Â
-				System.out.println("¾ÆÁ÷ ÀÔ·ÂµÇÁö ¾ÊÀº »óÅÂÀÔ´Ï´Ù.");
+	    		//ì•„ì§ ì´ˆê¸°í™”ê°€ ì•ˆë˜ì–´ ìˆìœ¼ë¯€ë¡œ ê²½ê³ ë©”ì‹œì§€ ì¶œë ¥
+				System.out.println("ì•„ì§ ì…ë ¥ë˜ì§€ ì•Šì€ ìƒíƒœì…ë‹ˆë‹¤.");
 			}else {
 				for(int i = 0; i < scoreArray[classNumber].length; i++) {
 					System.out.println("==========================");
-					System.out.println((i+1) + "¹İ ÇĞ»ıÀÇ Á¡¼ö");
-					System.out.printf("±¹¾î: %03dÁ¡ ¿µ¾î: %03dÁ¡ ¼öÇĞ: %03dÁ¡\n",
+					System.out.println((i+1) + "ë°˜ í•™ìƒì˜ ì ìˆ˜");
+					System.out.printf("êµ­ì–´: %03dì  ì˜ì–´: %03dì  ìˆ˜í•™: %03dì \n",
 							scoreArray[classNumber][i][0], scoreArray[classNumber][i][1], scoreArray[classNumber][i][2]);
-				}//À§¿¡ ÇĞ»ıÀÌ¸§ ÀÔ·ÂºÎºĞÀ» Ãâ·Â
+				}//ìœ„ì— í•™ìƒì´ë¦„ ì…ë ¥ë¶€ë¶„ì„ ì¶œë ¥
 			}
 	    	
 	    	
 	    }else if(selectMenu == 3) {
-	    	System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+	    	System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 	    	break;
 	    }else {
-	    	System.out.println("¸Ş´º¸¦ Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-	    	System.out.print("¸Ş´º ¼±ÅÃ> ");
+	    	System.out.println("ë©”ë‰´ë¥¼ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+	    	System.out.print("ë©”ë‰´ ì„ íƒ> ");
 	    	selectMenu = Integer.parseInt(bufferedReader.readLine());
 	    }
 	}
 	}
 	
-	//3-1.¸Ş´º ¸Ş¼Òµå ¸¸µé±â
+	//3-1.ë©”ë‰´ ë©”ì†Œë“œ ë§Œë“¤ê¸°
 	static void showMenu() {
 		System.out.println("==========================");
-		System.out.println("ºñÆ®°íµîÇĞ±³ ±¹¿µ¼ö Á¡¼ö°ü¸® ÇÁ·Î±×·¥");
-		System.out.println("1.ÀÔ·Â\t2.Ãâ·Â\t3.Á¾·á");
+		System.out.println("ë¹„íŠ¸ê³ ë“±í•™êµ êµ­ì˜ìˆ˜ ì ìˆ˜ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		System.out.println("1.ì…ë ¥\t2.ì¶œë ¥\t3.ì¢…ë£Œ");
 		System.out.println("==========================");
-		System.out.print("¸Ş´º ¼±ÅÃ> ");
+		System.out.print("ë©”ë‰´ ì„ íƒ> ");
 	}//showMenu
 	
 	
-	//5. ¹İ¼±ÅÃ ¸Ş¼Òµå ¸¸µé±â
+	//5. ë°˜ì„ íƒ ë©”ì†Œë“œ ë§Œë“¤ê¸°
 	static int selectClassNumber(BufferedReader buffredReader) throws IOException {
-		System.out.print("¹İÀ» ¼±ÅÃÇÏ¼¼¿ä(1~4) :");
+		System.out.print("ë°˜ì„ ì„ íƒí•˜ì„¸ìš”(1~4) :");
 		System.out.print("> ");
 		int classNumber = Integer.parseInt(buffredReader.readLine());
 		while(classNumber < 1 || classNumber > CLASS_NUMBER) {
-			System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-			System.out.print("¹İÀ» ¼±ÅÃÇÏ¼¼¿ä(1~4) :");
+			System.out.println("ì˜ëª»ëœ í˜•ì‹ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			System.out.print("ë°˜ì„ ì„ íƒí•˜ì„¸ìš”(1~4) :");
 			System.out.print("> ");
 			classNumber = Integer.parseInt(buffredReader.readLine());
 		}
-		return classNumber - 1;//¹è¿­Àº[0]ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î -1·Î [0][1][2][3]¿¡ ÇØ´ç
+		return classNumber - 1;//ë°°ì—´ì€[0]ë¶€í„° ì‹œì‘í•˜ë¯€ë¡œ -1ë¡œ [0][1][2][3]ì— í•´ë‹¹
 	}//selectClassNumber
 	
-	//6-1. ÇĞ»ı¼ö ÀÔ·Â ¸Ş¼Òµå
+	//6-1. í•™ìƒìˆ˜ ì…ë ¥ ë©”ì†Œë“œ
 	static int selectStudentSize(BufferedReader bufferedReader) throws IOException{
-		System.out.println("ÇĞ»ıÀÇ ¼ıÀÚ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä :");
+		System.out.println("í•™ìƒì˜ ìˆ«ìë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš” :");
 		System.out.print("> ");
 		int studentSize = Integer.parseInt(bufferedReader.readLine());
 		while(studentSize < 0 || studentSize > STUDENT_SIZE) {
-			System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä");
-			System.out.println("ÇĞ»ıÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä (~10):");
+			System.out.println("ì˜ëª»ëœ í˜•ì‹ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”");
+			System.out.println("í•™ìƒì˜ ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš” (~10):");
 			studentSize = Integer.parseInt(bufferedReader.readLine());
 			}
-		return studentSize; //¿©±â¼­´Â -1 ÇÊ¿ä¾øÀ½, ¹è¿­ÀÇ Å©±â¸¦ ¼³Á¤ÇÏ±â À§ÇÑ ¼ıÀÚÀÌ±â ¶§¹®
+		return studentSize; //ì—¬ê¸°ì„œëŠ” -1 í•„ìš”ì—†ìŒ, ë°°ì—´ì˜ í¬ê¸°ë¥¼ ì„¤ì •í•˜ê¸° ìœ„í•œ ìˆ«ìì´ê¸° ë•Œë¬¸
 	}
 	
-	//7-1. ÀÔ·Â¸Ş¼Òµå ¸¸µé±â
+	//7-1. ì…ë ¥ë©”ì†Œë“œ ë§Œë“¤ê¸°
 	static int validateScore(BufferedReader bufferedReader, int code) throws IOException {
 		String message = new String();
 		switch(code) {
 		case 1:
-			message = "±¹¾î";
+			message = "êµ­ì–´";
 			break;
 		case 2:
-			message = "¿µ¾î";
+			message = "ì˜ì–´";
 			break;
 		case 3:
-			message = "¼öÇĞ";
+			message = "ìˆ˜í•™";
 			break;
 		}
-		message += " Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ";
+		message += " ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ";
 		System.out.println(message);
 		System.out.print("> ");
 		int score = Integer.parseInt(bufferedReader.readLine());
 		while(score < 0 || score > 100) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			System.out.print(message);
 			System.out.print("> ");
 			score = Integer.parseInt(bufferedReader.readLine());
@@ -219,5 +219,5 @@ public class Ex03MultiArray02 {
 		return score;
 	}
 	
-	//8-1. Ãâ·Â¸Ş¼Òµå ¸¸µé±â
+	//8-1. ì¶œë ¥ë©”ì†Œë“œ ë§Œë“¤ê¸°
 }

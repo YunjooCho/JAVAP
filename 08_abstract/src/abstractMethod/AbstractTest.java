@@ -1,23 +1,23 @@
 package abstractMethod;
 
-public abstract class AbstractTest { //POJO(Plain Old Java Object)Çü½Ä - ±âº»Æ²
-	                        //Ãß»ó¸Ş¼Òµå¸¦ °¡Áö°í ÀÖ´Â Å¬·¡½º´Â ¹İµå½Ã Ãß»óÅ¬·¡½º¿©¾ß ÇÑ´Ù
-	//ÇÊµå¸í
+public abstract class AbstractTest { //POJO(Plain Old Java Object)í˜•ì‹ - ê¸°ë³¸í‹€
+	                        //ì¶”ìƒë©”ì†Œë“œë¥¼ ê°€ì§€ê³  ìˆëŠ” í´ë˜ìŠ¤ëŠ” ë°˜ë“œì‹œ ì¶”ìƒí´ë˜ìŠ¤ì—¬ì•¼ í•œë‹¤
+	//í•„ë“œëª…
 	protected String name;
 	
-	//Ä¸½¶È­
-	public abstract void setName(String name);//Ãß»ó¸Ş¼Òµå(¸Ş¼ÒµåÀÇ {}body°¡ ¾øÀ½)
-//	public void setName(String name) {//±¸Çö
+	//ìº¡ìŠí™”
+	public abstract void setName(String name);//ì¶”ìƒë©”ì†Œë“œ(ë©”ì†Œë“œì˜ {}bodyê°€ ì—†ìŒ)
+//	public void setName(String name) {//êµ¬í˜„
 //		this.name = name;
 //	}
-// {} - ¸Ş¼ÒµåÀÇ  Body
+// {} - ë©”ì†Œë“œì˜  Body
 	
-	public String getName() {//±¸Çö
+	public String getName() {//êµ¬í˜„
 		return name;
 	}
 }
 
 
-//1.;À¸·Î ¸Ş¼Òµå ÀÛ¼º Á¾·á({}»ç¿ë¾ÈÇÔ)
-//2.¸Ş¼Òµå¿¡ abstact ¼±¾ğ
-//3.Å¬·¡½º¿¡ abstact ¼±¾ğ
+//1.;ìœ¼ë¡œ ë©”ì†Œë“œ ì‘ì„± ì¢…ë£Œ({}ì‚¬ìš©ì•ˆí•¨)
+//2.ë©”ì†Œë“œì— abstact ì„ ì–¸
+//3.í´ë˜ìŠ¤ì— abstact ì„ ì–¸

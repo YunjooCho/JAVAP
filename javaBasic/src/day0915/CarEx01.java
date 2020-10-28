@@ -1,12 +1,12 @@
 package day0915;
-//¼÷Á¦1: Car Å¬·¡½º¸¦ ¸¸µé¾î¼­ ±× Å¬·¡½º °´Ã¼¸¦ È°¿ëÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇØº¸¼¼¿ä.
-//Car  Å¬·¡½ºÀÇ ÇÊµå: Â÷·®¹øÈ£, Â÷·® Á¾·ù, ¿¬½Ä, °¡°İ, »ö±ò (o)
-//¸Ş¼Òµå: ÇöÀç Â÷·®ÀÇ Á¤º¸¸¦ ¿¹»Ú°Ô Ãâ·ÂÇÏ´Â ¸Ş¼Òµå (o)
-//Â÷·®¿¡ ´ëÇÑ ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ¿Í ÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â »ı¼ºÀÚ (o)
-//Ä¸½¶È­(o)
+//ìˆ™ì œ1: Car í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ì–´ì„œ ê·¸ í´ë˜ìŠ¤ ê°ì²´ë¥¼ í™œìš©í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•´ë³´ì„¸ìš”.
+//Car  í´ë˜ìŠ¤ì˜ í•„ë“œ: ì°¨ëŸ‰ë²ˆí˜¸, ì°¨ëŸ‰ ì¢…ë¥˜, ì—°ì‹, ê°€ê²©, ìƒ‰ê¹” (o)
+//ë©”ì†Œë“œ: í˜„ì¬ ì°¨ëŸ‰ì˜ ì •ë³´ë¥¼ ì˜ˆì˜ê²Œ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ (o)
+//ì°¨ëŸ‰ì— ëŒ€í•œ íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ìì™€ íŒŒë¼ë¯¸í„°ê°€ ì—†ëŠ” ìƒì„±ì (o)
+//ìº¡ìŠí™”(o)
 
-//¼÷Á¦2: StudentÀÇ ³ª¸ÓÁö ÇÊµå¿¡ ´ëÇØ¼­ °ÙÅÍ ¼ÂÅÍ¸¦ ±¸ÇöÇÏ½Ã°í (o)
-//StudentEx.java¸¦ ¾Ë¸Â°Ô °íÄ¡½Ã¿À(o)
+//ìˆ™ì œ2: Studentì˜ ë‚˜ë¨¸ì§€ í•„ë“œì— ëŒ€í•´ì„œ ê²Ÿí„° ì…‹í„°ë¥¼ êµ¬í˜„í•˜ì‹œê³  (o)
+//StudentEx.javaë¥¼ ì•Œë§ê²Œ ê³ ì¹˜ì‹œì˜¤(o)
 
 import java.text.DecimalFormat;
 
@@ -14,46 +14,46 @@ public class CarEx01 {
 
 	
 	public static void main(String[] args) {
-		//°´Ã¼ »ı¼º
-		DecimalFormat df = new DecimalFormat("#,###"); //¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¿Ö ¾ÈµÊ?? df.format(myCar.carPrice)
+		//ê°ì²´ ìƒì„±
+		DecimalFormat df = new DecimalFormat("#,###"); //â˜…â˜…â˜…â˜…â˜…â˜…ì™œ ì•ˆë¨?? df.format(myCar.carPrice)
 		
-		//7. ÇÊµå Ä¸½¶È­ ÈÄ ¼öÁ¤
+		//7. í•„ë“œ ìº¡ìŠí™” í›„ ìˆ˜ì •
 		
-		System.out.println("¡ß¡ß¡ß¡ß¡ß¡ß¡ß³» Â÷Á¤º¸¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß");
-		System.out.println("ÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â »ı¼ºÀÚ »ç¿ë");
+		System.out.println("â—†â—†â—†â—†â—†â—†â—†ë‚´ ì°¨ì •ë³´â—†â—†â—†â—†â—†â—†â—†â—†â—†");
+		System.out.println("íŒŒë¼ë¯¸í„°ê°€ ì—†ëŠ” ìƒì„±ì ì‚¬ìš©");
 		Car myCar = new Car();
 		System.out.println();
 		
 		
-		Car friendCar = new Car("³ª1212", "¼¼´Ü", 10, 20000000,"»¡°­");
-		System.out.println("¡ß¡ß¡ß¡ß¡ß¡ß¡ßÄ£±¸ Â÷Á¤º¸¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß");
-		System.out.println("ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ »ç¿ë");
-		friendCar.setCarNumber("³ª1212");
-		friendCar.setCarType("¼¼´Ü");
+		Car friendCar = new Car("ë‚˜1212", "ì„¸ë‹¨", 10, 20000000,"ë¹¨ê°•");
+		System.out.println("â—†â—†â—†â—†â—†â—†â—†ì¹œêµ¬ ì°¨ì •ë³´â—†â—†â—†â—†â—†â—†â—†â—†â—†");
+		System.out.println("íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ì ì‚¬ìš©");
+		friendCar.setCarNumber("ë‚˜1212");
+		friendCar.setCarType("ì„¸ë‹¨");
 		friendCar.setCarYear(10);
 		friendCar.setCarPrice(20000000);
-		friendCar.setColor("»¡°­");
-		System.out.printf("Â÷·®¹øÈ£: %d, Â÷·® Á¾·ù: %s, ¿¬½Ä: %d, °¡°İ: %d, »ö±ò: %s", friendCar.getCarNumber(), friendCar.getCarType(), friendCar.getCarYear(), friendCar.getCarPrice(), friendCar.getColor());
+		friendCar.setColor("ë¹¨ê°•");
+		System.out.printf("ì°¨ëŸ‰ë²ˆí˜¸: %d, ì°¨ëŸ‰ ì¢…ë¥˜: %s, ì—°ì‹: %d, ê°€ê²©: %d, ìƒ‰ê¹”: %s", friendCar.getCarNumber(), friendCar.getCarType(), friendCar.getCarYear(), friendCar.getCarPrice(), friendCar.getColor());
 		System.out.println();
 		
 		
-//4. Ä¸½¶È­ ÀÌÀü Ãâ·Â		
+//4. ìº¡ìŠí™” ì´ì „ ì¶œë ¥		
 //		Car myCar = new Car();
-//		System.out.println("¡ß¡ß¡ß¡ß¡ß¡ß¡ß³» Â÷Á¤º¸¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß");
-//		System.out.println("ÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â »ı¼ºÀÚ »ç¿ë");
-//		System.out.printf("Â÷·®¹øÈ£: %d, Â÷·® Á¾·ù: %s, ¿¬½Ä: %d, °¡°İ: %d, »ö±ò: %s", myCar.carNumber, myCar.carType, myCar.carYear, myCar.carPrice, myCar.color);
+//		System.out.println("â—†â—†â—†â—†â—†â—†â—†ë‚´ ì°¨ì •ë³´â—†â—†â—†â—†â—†â—†â—†â—†â—†");
+//		System.out.println("íŒŒë¼ë¯¸í„°ê°€ ì—†ëŠ” ìƒì„±ì ì‚¬ìš©");
+//		System.out.printf("ì°¨ëŸ‰ë²ˆí˜¸: %d, ì°¨ëŸ‰ ì¢…ë¥˜: %s, ì—°ì‹: %d, ê°€ê²©: %d, ìƒ‰ê¹”: %s", myCar.carNumber, myCar.carType, myCar.carYear, myCar.carPrice, myCar.color);
 //		System.out.println();
 //		
 //		
 //		Car friendCar = new Car();
-//		System.out.println("¡ß¡ß¡ß¡ß¡ß¡ß¡ßÄ£±¸ Â÷Á¤º¸¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß¡ß");
-//		System.out.println("ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ı¼ºÀÚ »ç¿ë");
+//		System.out.println("â—†â—†â—†â—†â—†â—†â—†ì¹œêµ¬ ì°¨ì •ë³´â—†â—†â—†â—†â—†â—†â—†â—†â—†");
+//		System.out.println("íŒŒë¼ë¯¸í„°ê°€ ìˆëŠ” ìƒì„±ì ì‚¬ìš©");
 //		friendCar.carNumber = 1212;
-//		friendCar.carType = "¼¼´Ü";
+//		friendCar.carType = "ì„¸ë‹¨";
 //		friendCar.carYear = 10;
 //		friendCar.carPrice = 20000000;
-//		friendCar.color = "»¡°­";
-//		System.out.printf("Â÷·®¹øÈ£: %d, Â÷·® Á¾·ù: %s, ¿¬½Ä: %d, °¡°İ: %d, »ö±ò: %s", friendCar.carNumber, friendCar.carType, friendCar.carYear, friendCar.carPrice, friendCar.color);
+//		friendCar.color = "ë¹¨ê°•";
+//		System.out.printf("ì°¨ëŸ‰ë²ˆí˜¸: %d, ì°¨ëŸ‰ ì¢…ë¥˜: %s, ì—°ì‹: %d, ê°€ê²©: %d, ìƒ‰ê¹”: %s", friendCar.carNumber, friendCar.carType, friendCar.carYear, friendCar.carPrice, friendCar.color);
 //		System.out.println();
 		
 	}

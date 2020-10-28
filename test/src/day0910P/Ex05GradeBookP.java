@@ -1,9 +1,9 @@
 package day0910P;
 
-//¼ºÀû °ü¸® ÇÁ·Î±×·¥
-//¿ì¸®°¡ »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·ÂÀ» ¹ÞµÇ
-//Á¦ÀÏ ¸¶Áö¸·¿¡ »ç¿ëÀÚ·ÎºÎÅÍ °è¼ÓÇÒÁö ¸»Áö¸¦ ÀÔ·Â ¹Þ¾Æ¼­
-//¸¸¾à »ç¿ëÀÚ°¡ Á¾·á¸¦ ¼±ÅÃÇÏ¸é ÇÁ·Î±×·¥ÀÌ Á¾·á°¡ µÇ´Â Çü½ÄÀ¸·Î ¸¸µé¾îº¸ÀÚ
+//ì„±ì  ê´€ë¦¬ í”„ë¡œê·¸ëž¨
+//ìš°ë¦¬ê°€ ì‚¬ìš©ìžë¡œë¶€í„° ìž…ë ¥ì„ ë°›ë˜
+//ì œì¼ ë§ˆì§€ë§‰ì— ì‚¬ìš©ìžë¡œë¶€í„° ê³„ì†í• ì§€ ë§ì§€ë¥¼ ìž…ë ¥ ë°›ì•„ì„œ
+//ë§Œì•½ ì‚¬ìš©ìžê°€ ì¢…ë£Œë¥¼ ì„ íƒí•˜ë©´ í”„ë¡œê·¸ëž¨ì´ ì¢…ë£Œê°€ ë˜ëŠ” í˜•ì‹ìœ¼ë¡œ ë§Œë“¤ì–´ë³´ìž
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,19 +12,19 @@ import java.io.InputStreamReader;
 public class Ex05GradeBookP {
 
 	public static void main(String[] args) throws IOException {
-		//¸Þ¸ð¸® »ý¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 	    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	    
-	    //Å°º¸µå·Î Á¡¼ö ÀÔ·Â¹Þ±â
+	    //í‚¤ë³´ë“œë¡œ ì ìˆ˜ ìž…ë ¥ë°›ê¸°
 	    int kor = 0, eng = 0, math = 0, tot;
 	    String yn;
 	    do {
 		    do { 
 		    	
 		    	if(kor > 100 || kor < 0) {
-		    		System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+		    		System.out.println("ìž˜ëª»ëœ í˜•ì‹ìž…ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ ì£¼ì„¸ìš”");
 		    	}
-		    	System.out.println("±¹¾î Á¡¼ö ÀÔ·Â : ");
+		    	System.out.println("êµ­ì–´ ì ìˆ˜ ìž…ë ¥ : ");
 		    	kor = Integer.parseInt(bufferedReader.readLine());
 		    	
 		    }while(kor > 100 || kor < 0);
@@ -32,9 +32,9 @@ public class Ex05GradeBookP {
 		    do { 
 		    	
 		    	if(eng > 100 || eng < 0) {
-		    		System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+		    		System.out.println("ìž˜ëª»ëœ í˜•ì‹ìž…ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ ì£¼ì„¸ìš”");
 		    	}
-		    	System.out.println("¿µ¾î Á¡¼ö ÀÔ·Â : ");
+		    	System.out.println("ì˜ì–´ ì ìˆ˜ ìž…ë ¥ : ");
 		    	eng = Integer.parseInt(bufferedReader.readLine());
 		    	
 		    }while(eng > 100 || eng < 0);
@@ -42,22 +42,22 @@ public class Ex05GradeBookP {
 		    do { 
 		
 		    	if(math > 100 || math < 0) {
-		    		System.out.println("Àß¸øµÈ Çü½ÄÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+		    		System.out.println("ìž˜ëª»ëœ í˜•ì‹ìž…ë‹ˆë‹¤. ë‹¤ì‹œ ìž…ë ¥í•´ ì£¼ì„¸ìš”");
 		    	}
-		    	System.out.println("¼öÇÐ Á¡¼ö ÀÔ·Â : ");
+		    	System.out.println("ìˆ˜í•™ ì ìˆ˜ ìž…ë ¥ : ");
 		    	math = Integer.parseInt(bufferedReader.readLine());
 		
 		    }while(math > 100 || math < 0);
 		    
 		    tot = kor + eng + math;
-		    System.out.println("ÃÑÁ¡ : " + tot);
-		    System.out.println("°è¼Ó ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î?(Y/N)");
+		    System.out.println("ì´ì  : " + tot);
+		    System.out.println("ê³„ì† ìž…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N)");
 		    
-		    //String ÃÊ±âÈ­
+		    //String ì´ˆê¸°í™”
 		    //yn = new String();
 		    yn = bufferedReader.readLine().toUpperCase();
 	    }while(yn.equals("Y"));
-	    System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+	    System.out.println("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 	}
 
 }

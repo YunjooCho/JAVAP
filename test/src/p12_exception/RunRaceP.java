@@ -11,7 +11,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class RunRaceP extends Frame implements ActionListener {
-	//1.ÇÊµå ¼±¾ğ(¹öÆ°, ¸¶¸®¼ö(»ç¿ëÀÚ ÀÔ·Â), ¸¶¸®¼ö¸¸Å­ °´Ã¼»ı¼º)
+	//1.í•„ë“œ ì„ ì–¸(ë²„íŠ¼, ë§ˆë¦¬ìˆ˜(ì‚¬ìš©ì ì…ë ¥), ë§ˆë¦¬ìˆ˜ë§Œí¼ ê°ì²´ìƒì„±)
 	private Button btn;
 	private int count;
 	private RacerP[] r;
@@ -20,14 +20,14 @@ public class RunRaceP extends Frame implements ActionListener {
 		
 	}
 	
-	//2.»ı¼ºÀÚ
-	public RunRaceP(String[] args) { //Run ConfigurationÀ¸·Î °ªÀ» ¹ŞÀ½
-		//4-1.»ı¼º
-		btn = new Button("Ãâ¹ß");
+	//2.ìƒì„±ì
+	public RunRaceP(String[] args) { //Run Configurationìœ¼ë¡œ ê°’ì„ ë°›ìŒ
+		//4-1.ìƒì„±
+		btn = new Button("ì¶œë°œ");
 		count = Integer.parseInt(args[0]);
 		r = new RacerP[count];
 		
-		//8.Äµ¹ö½º¿Í ¹öÆ°À» ¿Ã¸± ÆĞ³Î »ı¼º
+		//8.ìº”ë²„ìŠ¤ì™€ ë²„íŠ¼ì„ ì˜¬ë¦´ íŒ¨ë„ ìƒì„±
 		Panel p = new Panel(new FlowLayout(FlowLayout.RIGHT));
 		p.add(btn);
 		
@@ -45,7 +45,7 @@ public class RunRaceP extends Frame implements ActionListener {
 		add("Center",p2);
 		
 		
-		//3.ÇÁ·¹ÀÓ »ı¼º
+		//3.í”„ë ˆì„ ìƒì„±
 		setBounds(700, 300, 600, 400);
 		setVisible(true);
 		setResizable(false);
@@ -56,11 +56,11 @@ public class RunRaceP extends Frame implements ActionListener {
 			}
 		});
 		
-		//13.ÀÌº¥Æ®
+		//13.ì´ë²¤íŠ¸
 		btn.addActionListener(this);
 	}
 
-	//12.¹öÆ°ÀÇ È°¼ºÈ­, ºñÈ°¼ºÈ­
+	//12.ë²„íŠ¼ì˜ í™œì„±í™”, ë¹„í™œì„±í™”
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		btn.setEnabled(false);
@@ -83,7 +83,7 @@ public class RunRaceP extends Frame implements ActionListener {
 		}
 		
 		if(Integer.parseInt(args[0]) != args.length - 1) {
-			System.out.println("¸»ÀÇ ¸¶¸®¼ö¿Í ÀÌ¸§ÀÇ °¹¼ö°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù");
+			System.out.println("ë§ì˜ ë§ˆë¦¬ìˆ˜ì™€ ì´ë¦„ì˜ ê°¯ìˆ˜ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
 			System.exit(0);
 		}
 		new RunRaceP(args);

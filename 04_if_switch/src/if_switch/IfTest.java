@@ -10,16 +10,16 @@ public class IfTest {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int a;
-		System.out.println("a ÀÔ·Â : ");
+		System.out.println("a ìž…ë ¥ : ");
 		a = Integer.parseInt(br.readLine());
 		
-		if(a >= 50) System.out.println(a + "´Â 50º¸´Ù Å©°Å³ª °°´Ù");
-		else System.out.println(a + "´Â 50º¸´Ù ÀÛ´Ù");
+		if(a >= 50) System.out.println(a + "ëŠ” 50ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ë‹¤");
+		else System.out.println(a + "ëŠ” 50ë³´ë‹¤ ìž‘ë‹¤");
 		System.out.println();
 		
 		
-		if(a % 2 == 0) System.out.println( a + "´Â Â¦¼ö");
-		else System.out.println(a + "´Â È¦¼ö");
+		if(a % 2 == 0) System.out.println( a + "ëŠ” ì§ìˆ˜");
+		else System.out.println(a + "ëŠ” í™€ìˆ˜");
 		System.out.println();
 		
 		if(false) {
@@ -30,11 +30,11 @@ public class IfTest {
 		System.out.println();
 		
 		if(a >= 'A' && a <= 'Z') {
-			System.out.println((char)a + "´Â ´ë¹®ÀÚ");
+			System.out.println((char)a + "ëŠ” ëŒ€ë¬¸ìž");
 		}else if(a >= 'a' && a <= 'z') {
-			System.out.println((char)a + "´Â ¼Ò¹®ÀÚ");
+			System.out.println((char)a + "ëŠ” ì†Œë¬¸ìž");
 		}else {
-			System.out.println((char)a + "´Â ¼ýÀÚÀÌ°Å³ª Æ¯¼ö¹®ÀÚ");
+			System.out.println((char)a + "ëŠ” ìˆ«ìžì´ê±°ë‚˜ íŠ¹ìˆ˜ë¬¸ìž");
 		}
 	 }
 	}

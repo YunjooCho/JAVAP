@@ -1,39 +1,39 @@
 package day0918;
-//¼÷Á¦
-//°Ô½ÃÆÇ À» ¸¸µé¾îº¸¼¼¿ä
-//°Ô½ÃÆÇ¿¡ µé¾î°¥ Á¤º¸: -ÇÊµå
-//Á¦¸ñ
-//³»¿ë
-//ÀÛ¼ºÀÚ
+//ìˆ™ì œ
+//ê²Œì‹œíŒ ì„ ë§Œë“¤ì–´ë³´ì„¸ìš”
+//ê²Œì‹œíŒì— ë“¤ì–´ê°ˆ ì •ë³´: -í•„ë“œ
+//ì œëª©
+//ë‚´ìš©
+//ìž‘ì„±ìž
 
 import day0921.Board;
 
-//°Ô½ÃÆÇ¿¡ ÇÊ¿äÇÑ ±â´É: -¸Þ¼Òµå
-//ÀÛ¼ºÇÏ±â
-//¸ñ·Ïº¸±â
-//°³º°º¸±â
-//¼öÁ¤ÇÏ±â
-//»èÁ¦ÇÏ±â
+//ê²Œì‹œíŒì— í•„ìš”í•œ ê¸°ëŠ¥: -ë©”ì†Œë“œ
+//ìž‘ì„±í•˜ê¸°
+//ëª©ë¡ë³´ê¸°
+//ê°œë³„ë³´ê¸°
+//ìˆ˜ì •í•˜ê¸°
+//ì‚­ì œí•˜ê¸°
 
-//Á¦Ãâ¹æ¹ý:
-//±â´Éº° ½º¼¦À» Âï¾î¼­ ´ÜÅå¹æ¿¡ 
-//¿Ã·ÁÁÖ½Ã¸é µË´Ï´Ù. (ÇÑ¹ø¿¡ ¿©·¯Àå ¹­À½ ¿Ã¸®±â·Î)
+//ì œì¶œë°©ë²•:
+//ê¸°ëŠ¥ë³„ ìŠ¤ìƒ·ì„ ì°ì–´ì„œ ë‹¨í†¡ë°©ì— 
+//ì˜¬ë ¤ì£¼ì‹œë©´ ë©ë‹ˆë‹¤. (í•œë²ˆì— ì—¬ëŸ¬ìž¥ ë¬¶ìŒ ì˜¬ë¦¬ê¸°ë¡œ)
 
-//ºñ°í)
-//1. ¹è¿­ÀÇ µ¿ÀûÇÒ´çÀ» »ç¿ëÇÏ¼¼¿ä(=ArrayUtil¿¡ ¸Þ¼Òµå »õ·Î ¸¸µå¼¼¿ä)
-//ArrayUtil Å¬·¡½º ¾È¿¡ car ¹öÀü ¸¸µç°ÅÃ³·³ post ¹öÀüÀ¸·Î ÇØ¼­ ¸Þ¼Òµå ¸¸µé±â
+//ë¹„ê³ )
+//1. ë°°ì—´ì˜ ë™ì í• ë‹¹ì„ ì‚¬ìš©í•˜ì„¸ìš”(=ArrayUtilì— ë©”ì†Œë“œ ìƒˆë¡œ ë§Œë“œì„¸ìš”)
+//ArrayUtil í´ëž˜ìŠ¤ ì•ˆì— car ë²„ì „ ë§Œë“ ê±°ì²˜ëŸ¼ post ë²„ì „ìœ¼ë¡œ í•´ì„œ ë©”ì†Œë“œ ë§Œë“¤ê¸°
 
 public class Post {
- //ÇÊµå ¼³Á¤
+ //í•„ë“œ ì„¤ì •
  private String title;
  private String contents;
  private String writer;
  
- //ÇÊµå¿¡ ´ëÇÑ Ä¸½¶È­(°ÙÅÍ&¼ÂÅÍ)
- public void setTitle(String title) { //°´Ã¼ÇÊµå¿Í ÆÄ¶ó¹ÌÅÍ¸¦ ¿¬°á(ÆÄ¶ó¹ÌÅÍ °ªÀ» °´Ã¼ÇÊµå¿¡ ÀúÀå)
+ //í•„ë“œì— ëŒ€í•œ ìº¡ìŠí™”(ê²Ÿí„°&ì…‹í„°)
+ public void setTitle(String title) { //ê°ì²´í•„ë“œì™€ íŒŒë¼ë¯¸í„°ë¥¼ ì—°ê²°(íŒŒë¼ë¯¸í„° ê°’ì„ ê°ì²´í•„ë“œì— ì €ìž¥)
 	 this.title = title;
  }
- public String getTitle() { //°´Ã¼ÇÊµå¸¦ È£ÃâµÈ °÷¿¡ ³Ñ°ÜÁÜ
+ public String getTitle() { //ê°ì²´í•„ë“œë¥¼ í˜¸ì¶œëœ ê³³ì— ë„˜ê²¨ì¤Œ
 	 return title;
  }
  
@@ -51,7 +51,7 @@ public class Post {
 	 return writer;
  }
  
- //»ý¼ºÀÚ(ÆÄ¶ó¹ÌÅÍ ¾ø´Â »ý¼ºÀÚ)
+ //ìƒì„±ìž(íŒŒë¼ë¯¸í„° ì—†ëŠ” ìƒì„±ìž)
  public Post() {
 	 title = new String();
 	 contents = new String();

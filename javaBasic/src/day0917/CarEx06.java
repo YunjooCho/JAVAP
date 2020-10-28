@@ -7,62 +7,62 @@ import java.io.InputStreamReader;
 import day0916.CarT;
 import util.ArrayUtil;
 
-//µ¿ÀûÇÒ´çÀÌ µÇ´Â ¹è¿­¹öÀü
+//ë™ì í• ë‹¹ì´ ë˜ëŠ” ë°°ì—´ë²„ì „
 public class CarEx06 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//¹è¿­ ¼±¾ğ(µ¿ÀûÇÒ´ç)
-		CarT[] carArray = new CarT[0];//µ¿ÀûÇÒ´çÀ¸·Î ¹è¿­ÀÇ Å©±â¸¦ Á¶ÀıÇÒ ¿¹Á¤ÀÌ±â ¶§¹®¿¡ 0À» ÀÔ·Â
+		//ë°°ì—´ ì„ ì–¸(ë™ì í• ë‹¹)
+		CarT[] carArray = new CarT[0];//ë™ì í• ë‹¹ìœ¼ë¡œ ë°°ì—´ì˜ í¬ê¸°ë¥¼ ì¡°ì ˆí•  ì˜ˆì •ì´ê¸° ë•Œë¬¸ì— 0ì„ ì…ë ¥
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		while(true) {
 			showMenu();
 			int userChoice = Integer.parseInt(bufferedReader.readLine());
 			if(userChoice == 1) {
-				//carArray Ãß°¡ ¸Ş¼Òµå ½ÇÇà
+				//carArray ì¶”ê°€ ë©”ì†Œë“œ ì‹¤í–‰
 				carArray = add(carArray,bufferedReader);
 			}else if(userChoice == 2) {
-				//carArray Ãâ·Â ¸Ş¼Òµå ½ÇÇà
+				//carArray ì¶œë ¥ ë©”ì†Œë“œ ì‹¤í–‰
 				printArray(carArray);
 			}else if(userChoice == 3){
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-		}//¸Ş´º ¹İº¹while		
+		}//ë©”ë‰´ ë°˜ë³µwhile		
 	}
 	private static void showMenu() {
-		System.out.println("1.ÀÔ·Â 2.Ãâ·Â 3.Á¾·á");
+		System.out.println("1.ì…ë ¥ 2.ì¶œë ¥ 3.ì¢…ë£Œ");
 		System.out.print("> ");
 	}
 	
 	private static CarT[] add(CarT[] carArray, BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		//¹öÆÛµå¸®´õ·Î ÆÄ¶ó¹ÌÅÍ¸¦ °è¼Ó ³Ñ°ÜÁÙ ¿¹Á¤
-		carArray = ArrayUtil.add(carArray,setCarInfo(bufferedReader)); //°´Ã¼ Ãß°¡ÇÏ´Â ¸Ş¼Òµå
-																	   //setCarInfo¿¡¼­ °´Ã¼¿¡ µé¾î°¥ Â÷·®Á¤º¸¸¦ ³Ö¾îÁÜ
+		//ë²„í¼ë“œë¦¬ë”ë¡œ íŒŒë¼ë¯¸í„°ë¥¼ ê³„ì† ë„˜ê²¨ì¤„ ì˜ˆì •
+		carArray = ArrayUtil.add(carArray,setCarInfo(bufferedReader)); //ê°ì²´ ì¶”ê°€í•˜ëŠ” ë©”ì†Œë“œ
+																	   //setCarInfoì—ì„œ ê°ì²´ì— ë“¤ì–´ê°ˆ ì°¨ëŸ‰ì •ë³´ë¥¼ ë„£ì–´ì¤Œ
 		return carArray;
 	}
 	
 	private static CarT setCarInfo(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		//°´Ã¼»ı¼º¸¸, ¹è¿­¿¡ ÀÔ·ÂÀº ÇÏÁö ¾ÊÀ½
-		//ÀÌ ¸Ş¼Òµå°¡ ½ÇÇàµÉ¶§¸¶´Ù »õ·Î¿î c°´Ã¼°¡ »ı¼ºµÇ¾î °¢°¢ÀÇ c¸¶´Ù ÁÖ¼Ò°ªÀÌ ´Ş¶óÁü
-		//ÀÌ ¸Ş¼Òµå Á¾·á ÈÄ¿¡µµ ³»ºÎ¿¡¼­ °´Ã¼c´Â ³²¾ÆÀÖ¾î main¸Ş¼Òµå¿¡¼­ º» ¸Ş¼Òµå°¡ È£ÃâµÈ °÷À¸·Î °ªÀ» ³Ñ°ÜÁÜ
-		//´ÜÃà¹øÈ£ 1,2,3,4....¿Í °°Àº ÀÌ¹ÌÁö
-		//Èü ¸Ş¸ğ¸® ¿µ¿ª - °´Ã¼ÀúÀåµÊ, ½ºÅÃ-?? 
+		//ê°ì²´ìƒì„±ë§Œ, ë°°ì—´ì— ì…ë ¥ì€ í•˜ì§€ ì•ŠìŒ
+		//ì´ ë©”ì†Œë“œê°€ ì‹¤í–‰ë ë•Œë§ˆë‹¤ ìƒˆë¡œìš´ cê°ì²´ê°€ ìƒì„±ë˜ì–´ ê°ê°ì˜ cë§ˆë‹¤ ì£¼ì†Œê°’ì´ ë‹¬ë¼ì§
+		//ì´ ë©”ì†Œë“œ ì¢…ë£Œ í›„ì—ë„ ë‚´ë¶€ì—ì„œ ê°ì²´cëŠ” ë‚¨ì•„ìˆì–´ mainë©”ì†Œë“œì—ì„œ ë³¸ ë©”ì†Œë“œê°€ í˜¸ì¶œëœ ê³³ìœ¼ë¡œ ê°’ì„ ë„˜ê²¨ì¤Œ
+		//ë‹¨ì¶•ë²ˆí˜¸ 1,2,3,4....ì™€ ê°™ì€ ì´ë¯¸ì§€
+		//í™ ë©”ëª¨ë¦¬ ì˜ì—­ - ê°ì²´ì €ì¥ë¨, ìŠ¤íƒ-?? 
 		CarT c = new CarT();
 		
-		System.out.print("Â÷·® ¹øÈ£: ");
+		System.out.print("ì°¨ëŸ‰ ë²ˆí˜¸: ");
 		c.setNumber(bufferedReader.readLine());
 		
-		System.out.print("Â÷·® Á¾·ù: ");
+		System.out.print("ì°¨ëŸ‰ ì¢…ë¥˜: ");
 		c.setType(bufferedReader.readLine());
 		
-		System.out.print("Â÷·® ¿¬½Ä: ");
+		System.out.print("ì°¨ëŸ‰ ì—°ì‹: ");
 		c.setYear(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("Â÷·® °¡°İ: ");
+		System.out.print("ì°¨ëŸ‰ ê°€ê²©: ");
 		c.setPrice(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("Â÷·® »ö»ó: ");
+		System.out.print("ì°¨ëŸ‰ ìƒ‰ìƒ: ");
 		c.setColor(bufferedReader.readLine());
 		
 		return c;

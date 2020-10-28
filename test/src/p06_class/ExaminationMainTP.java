@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class ExaminationMainTP {
 
 	public static void main(String[] args) {
-		//1¹ø¹®Á¦
+		//1ë²ˆë¬¸ì œ
 		ExaminationTP em = new ExaminationTP();
 		em.compare();
-		//Ãâ·Â
-		System.out.println("ÀÌ¸§\t1 2 3 4 5\tÁ¡¼ö");
+		//ì¶œë ¥
+		System.out.println("ì´ë¦„\t1 2 3 4 5\tì ìˆ˜");
 		System.out.print(em.getName() + "\t");
 		
 		for(int i = 0; i < em.getOx().length; i++) {
@@ -19,9 +19,9 @@ public class ExaminationMainTP {
 		System.out.println("\t" + em.getScore());
 		
 		
-		//2¹ø¹®Á¦
+		//2ë²ˆë¬¸ì œ
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("ÀÎ¿ø¼ö ÀÔ·Â : ");
+		System.out.print("ì¸ì›ìˆ˜ ì…ë ¥ : ");
 		int people = scanner.nextInt();
 		
 		ExaminationTP[] ar = new ExaminationTP[people];
@@ -30,7 +30,7 @@ public class ExaminationMainTP {
 			ar[i] = new ExaminationTP();
 			ar[i].compare();
 		}
-		System.out.println("ÀÌ¸§\t1 2 3 4 5\tÁ¡¼ö");
+		System.out.println("ì´ë¦„\t1 2 3 4 5\tì ìˆ˜");
 		for(int j = 0; j < ar.length; j++) {
 			System.out.print(ar[j].getName() + "\t");
 			for(int i = 0; i < ar[j].getOx().length; i++) {

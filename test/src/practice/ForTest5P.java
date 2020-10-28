@@ -1,19 +1,19 @@
 package practice;
 
 /*
-°ÅµìÁ¦°öÀ» ±¸ÇÏ½Ã¿À
-xÀÇ y½ÂÀ» °è»êÇÏ½Ã¿À
+ê±°ë“­ì œê³±ì„ êµ¬í•˜ì‹œì˜¤
+xì˜ yìŠ¹ì„ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-x°ª ÀÔ·Â : 2
-y°ª ÀÔ·Â : 5
-2ÀÇ 5½Â xx   (2*2*2*2*2)
+[ì‹¤í–‰ê²°ê³¼]
+xê°’ ì…ë ¥ : 2
+yê°’ ì…ë ¥ : 5
+2ì˜ 5ìŠ¹ xx   (2*2*2*2*2)
 
-x°ª ÀÔ·Â : 3
-y°ª ÀÔ·Â : 4
-3ÀÇ 4½Â xx   (3*3*3*3)
+xê°’ ì…ë ¥ : 3
+yê°’ ì…ë ¥ : 4
+3ì˜ 4ìŠ¹ xx   (3*3*3*3)
  */
-//¡ÚBuffered »ç¿ë
+//â˜…Buffered ì‚¬ìš©
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,23 +22,23 @@ import java.io.InputStreamReader;
 public class ForTest5P {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//º¯¼ö
+		//ë³€ìˆ˜
 		int x, y, result = 1;
 		
-		//¹«ÇÑÀ¸·Î ¹İº¹
+		//ë¬´í•œìœ¼ë¡œ ë°˜ë³µ
 		while(true) {
 			
 			
-			//Å°º¸µå ÀÔ·Â
-			System.out.print("x°ª ÀÔ·Â : ");
+			//í‚¤ë³´ë“œ ì…ë ¥
+			System.out.print("xê°’ ì…ë ¥ : ");
 			x = Integer.parseInt(br.readLine());
-			System.out.print("y°ª ÀÔ·Â : ");
+			System.out.print("yê°’ ì…ë ¥ : ");
 			y = Integer.parseInt(br.readLine());
 			
-			//°è»ê
+			//ê³„ì‚°
 			for(int i = 1; i <= y; i++) {
 				
 				 result *= x;
@@ -47,9 +47,9 @@ public class ForTest5P {
 			
 			
 			
-			System.out.println(x + "ÀÇ " + y + "½Â " + result); 
+			System.out.println(x + "ì˜ " + y + "ìŠ¹ " + result); 
 			System.out.println("----------------------------");	
-			//¹İº¹¿¡ ´ëÇÑ ÃÊ±âÈ­
+			//ë°˜ë³µì— ëŒ€í•œ ì´ˆê¸°í™”
 			result = 1;
 			
 		}//while

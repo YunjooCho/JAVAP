@@ -8,66 +8,66 @@ public class MethodTest4 {
 	
 	
 	public static void main(String[] args) throws IOException {
-		System.out.println(Math.abs(-25));//¡ÚÄ¿ÇÇ ÀÚÆÇ±â(300) Çü½Ä
-		//MathÅ¬·¡½ºÀÇ abs()¸Ş¼Òµå : Àı´ë°ª ±¸ÇÏ´Â ¸Ş¼Òµå
+		System.out.println(Math.abs(-25));//â˜…ì»¤í”¼ ìíŒê¸°(300) í˜•ì‹
+		//Mathí´ë˜ìŠ¤ì˜ abs()ë©”ì†Œë“œ : ì ˆëŒ€ê°’ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
 		
-		//³­¼ö -ÄÄÇ»ÅÍ°¡ ¹«ÀÛÀ§·Î ¹ß»ıÇÏ´Â ¼ö, 0 <= ³­¼ö < 1 (½Ç¼öÇü)
-		System.out.println("³­¼ö = " + Math.random()); //¡ÚÄ¿ÇÇ ÀÚÆÇ°¡()Çü½Ä
-		//MathÅ¬·¡½ºÀÇ random()¸Ş¼Òµå : ³­¼ö¸¦ ±¸ÇÏ´Â ¸Ş¼Òµå
+		//ë‚œìˆ˜ -ì»´í“¨í„°ê°€ ë¬´ì‘ìœ„ë¡œ ë°œìƒí•˜ëŠ” ìˆ˜, 0 <= ë‚œìˆ˜ < 1 (ì‹¤ìˆ˜í˜•)
+		System.out.println("ë‚œìˆ˜ = " + Math.random()); //â˜…ì»¤í”¼ ìíŒê°€()í˜•ì‹
+		//Mathí´ë˜ìŠ¤ì˜ random()ë©”ì†Œë“œ : ë‚œìˆ˜ë¥¼ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
 		
-		//³­¼ö¸¸ Ã³¸®ÇÏ´Â RandomÅ¬·¡½º
-		Random r = new Random(); //»ı¼º(Static¾Æ´Ô)
-		System.out.println("³­¼ö = " + r.nextDouble()); //nextDouble °´Ã¼
+		//ë‚œìˆ˜ë§Œ ì²˜ë¦¬í•˜ëŠ” Randomí´ë˜ìŠ¤
+		Random r = new Random(); //ìƒì„±(Staticì•„ë‹˜)
+		System.out.println("ë‚œìˆ˜ = " + r.nextDouble()); //nextDouble ê°ì²´
 		
-		//DecimalFormat(NumberFormat)Å¬·¡½ºÀÇ format()¸Ş¼Òµå
-		//¼ıÀÚ¸¦ 3ÀÚ¸®¸¶´Ù , Âï±â
+		//DecimalFormat(NumberFormat)í´ë˜ìŠ¤ì˜ format()ë©”ì†Œë“œ
+		//ìˆ«ìë¥¼ 3ìë¦¬ë§ˆë‹¤ , ì°ê¸°
 		int num = 1234567;
 		DecimalFormat df = new DecimalFormat("#,###");
 		System.out.println(df.format(num));
 		
 		
-		//SystemÅ¬·¡½ºÀÇ inÇÊµå
-		//Å°º¸µå ÀÔ·Â - 1°³ÀÇ ¹®ÀÚ
-		System.out.println("µ¥ÀÌÅÍa : ");
-		char a = (char)System.in.read(); //Áö¿ªº¯¼ö
-		//System.in.read();´Â ±âº» int·Î ¹ŞÀ½
+		//Systemí´ë˜ìŠ¤ì˜ iní•„ë“œ
+		//í‚¤ë³´ë“œ ì…ë ¥ - 1ê°œì˜ ë¬¸ì
+		System.out.println("ë°ì´í„°a : ");
+		char a = (char)System.in.read(); //ì§€ì—­ë³€ìˆ˜
+		//System.in.read();ëŠ” ê¸°ë³¸ intë¡œ ë°›ìŒ
 		
-		//flush -  ¹öÆÛ ºñ¿ì±â
-		System.in.read(); //¢ºÁÙ¹Ù²Ù±â?
-		System.in.read(); //¢ºÁÙ ¾ÕÀ¸·Î°¡±â?
+		//flush -  ë²„í¼ ë¹„ìš°ê¸°
+		System.in.read(); //â–¶ì¤„ë°”ê¾¸ê¸°?
+		System.in.read(); //â–¶ì¤„ ì•ìœ¼ë¡œê°€ê¸°?
 		
-		System.out.println("µ¥ÀÌÅÍb : ");
+		System.out.println("ë°ì´í„°b : ");
 		char b = (char)System.in.read();
-		System.out.println("°á°ú = " + a + "\t" + b);
+		System.out.println("ê²°ê³¼ = " + a + "\t" + b);
 		
-		//»ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö Ãâ·Â(Å¬·¡½º¸íÀÌ ÀÛ¾÷ÇÏ°í ÀÖ´Â Å¬·¡½º) - a¿Í bÁß¿¡¼­ Å« °ªÀ» Ãâ·ÂÇÏ´Â ¸Ş¼Òµå¸¦ »ç¿ëÀÚ°¡ ÀÛ¼º 
-		//mainÇÔ¼ö ¹Û
+		//ì‚¬ìš©ì ì •ì˜ í•¨ìˆ˜ ì¶œë ¥(í´ë˜ìŠ¤ëª…ì´ ì‘ì—…í•˜ê³  ìˆëŠ” í´ë˜ìŠ¤) - aì™€ bì¤‘ì—ì„œ í° ê°’ì„ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œë¥¼ ì‚¬ìš©ìê°€ ì‘ì„± 
+		//mainí•¨ìˆ˜ ë°–
 		MethodTest4 mt = new MethodTest4();
 		char max = mt.big(a,b);
-		System.out.println("Å« °ª = " + max);
+		System.out.println("í° ê°’ = " + max);
 		
 		
 	}
 	
-	public char big(char a, char b){ //»ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö ±¸Çö, parameter(¸Å°³º¯¼ö), argument(ÀÎ¼ö)
+	public char big(char a, char b){ //ì‚¬ìš©ì ì •ì˜ í•¨ìˆ˜ êµ¬í˜„, parameter(ë§¤ê°œë³€ìˆ˜), argument(ì¸ìˆ˜)
 		return a > b ? a : b;
 	}
 	
 }
 
-//ÀÚ¹Ù
-// -main ¸Ş¼Òµå
-// -ÀÚ¹Ù°¡ ¾Æ´Â ÆĞÅ°Áö´Â java.lang
-// -ÀÚ¹Ù´Â ¸ğµç Å¬·¡½º¸¦ java.lang(default package) Ã£´Â´Ù
+//ìë°”
+// -main ë©”ì†Œë“œ
+// -ìë°”ê°€ ì•„ëŠ” íŒ¨í‚¤ì§€ëŠ” java.lang
+// -ìë°”ëŠ” ëª¨ë“  í´ë˜ìŠ¤ë¥¼ java.lang(default package) ì°¾ëŠ”ë‹¤
 
-//¿¹¿ÜÃ³¸® Exception
-//¿À·ù·Î ÀÎÇØ °©ÀÛ½º·´°Ô Áß´Ü µÈ °æ¿ì ÀÔ·ÂµÈ Á¤º¸¸¦ ÀúÀå
+//ì˜ˆì™¸ì²˜ë¦¬ Exception
+//ì˜¤ë¥˜ë¡œ ì¸í•´ ê°‘ì‘ìŠ¤ëŸ½ê²Œ ì¤‘ë‹¨ ëœ ê²½ìš° ì…ë ¥ëœ ì •ë³´ë¥¼ ì €ì¥
 //try~catch
 //throws
-// -try~catch´Â Áö±İ ¸ğ¸£¹Ç·Î JVM¿¡°Ô ¶° ³Ñ±â±â »ç¿ë
-// -ÇÔ¼ö µÚ¿¡ ÀÛ¼º(ÇØ´çÇÔ¼ö(System.in.read();)¸¦ Æ÷ÇÔÇÏ°í ÀÖ´Â mainÇÔ¼ö µÚ¿¡ ÀÔ·Â)
+// -try~catchëŠ” ì§€ê¸ˆ ëª¨ë¥´ë¯€ë¡œ JVMì—ê²Œ ë–  ë„˜ê¸°ê¸° ì‚¬ìš©
+// -í•¨ìˆ˜ ë’¤ì— ì‘ì„±(í•´ë‹¹í•¨ìˆ˜(System.in.read();)ë¥¼ í¬í•¨í•˜ê³  ìˆëŠ” mainí•¨ìˆ˜ ë’¤ì— ì…ë ¥)
 
-//¿£ÅÍÀÇ ¿ªÇÒ(±â´É)
-//1. Ä¿¼­¸¦ ¸Ç ¾ÕÀ¸·Î ÀÌµ¿ -> \r
-//2. ´ÙÀ½ ÁÙ·Î ÀÌµ¿ -> \n
-// =>¿£ÅÍ ¾È¿¡ µÎ ±ÛÀÚ Á¸Àç
+//ì—”í„°ì˜ ì—­í• (ê¸°ëŠ¥)
+//1. ì»¤ì„œë¥¼ ë§¨ ì•ìœ¼ë¡œ ì´ë™ -> \r
+//2. ë‹¤ìŒ ì¤„ë¡œ ì´ë™ -> \n
+// =>ì—”í„° ì•ˆì— ë‘ ê¸€ì ì¡´ì¬

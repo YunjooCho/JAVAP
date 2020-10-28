@@ -7,17 +7,17 @@ import java.io.IOException;
 public class InputTest {
 
 	public static void main(String[] args) throws IOException {
-		//MethodTest4¿¡¼­ Çß´ø ÀÔ·ÂÀº ÇÑ±ÛÀÚ ¹Û¿¡ ÀÔ·ÂÇÒ¼ö ¾øÀ¸¹Ç·Î
-		//¹®ÀÚ¿­À» ÀÔ·ÂÇÏ´Â ¹æ¹ıÀ» ½Ç½Ã
+		//MethodTest4ì—ì„œ í–ˆë˜ ì…ë ¥ì€ í•œê¸€ì ë°–ì— ì…ë ¥í• ìˆ˜ ì—†ìœ¼ë¯€ë¡œ
+		//ë¬¸ìì—´ì„ ì…ë ¥í•˜ëŠ” ë°©ë²•ì„ ì‹¤ì‹œ
 		//IOSteam
 		
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		System.out.println("Á¤¼ö A :");
-		int a = Integer.parseInt(br.readLine()); //ÇÑ ÁÙ,¿£ÅÍ¸¦ Ä¥ ¶§±îÁö ÇÑ ÁÙ·Î Ãë±Ş
-		//br.readLine()´Â ¹®ÀÚ¿­
-		System.out.println("½Ç¼ö B : ");
+		System.out.println("ì •ìˆ˜ A :");
+		int a = Integer.parseInt(br.readLine()); //í•œ ì¤„,ì—”í„°ë¥¼ ì¹  ë•Œê¹Œì§€ í•œ ì¤„ë¡œ ì·¨ê¸‰
+		//br.readLine()ëŠ” ë¬¸ìì—´
+		System.out.println("ì‹¤ìˆ˜ B : ");
 		double b = Double.parseDouble(br.readLine());
 		
 		System.out.println(a + " + " + b + " = " + (a+b));

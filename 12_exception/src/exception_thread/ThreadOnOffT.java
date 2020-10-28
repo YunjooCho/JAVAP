@@ -14,35 +14,35 @@ import java.awt.event.WindowEvent;
 
 public class ThreadOnOffT extends Frame implements Runnable {
 	
-		//0.ÇÊµå¼±¾ð
-		//½ÃÀÛ¹öÆ° ´©¸£¸é ¼ýÀÚ¼¼´Ù°¡ ¼Õ¶¼¸é ¸ØÃß±â
-		private Label label; //¼ýÀÚ Ç¥½Ã¿ë
-		private Button pushBtn; //½ÃÀÛ¹öÆ°
-		private int num = 0; //¼¿ ¼ýÀÚ
-		//private Thread thread = new Thread(this); //¡Ù´Ù¸¥Á¡
+		//0.í•„ë“œì„ ì–¸
+		//ì‹œìž‘ë²„íŠ¼ ëˆ„ë¥´ë©´ ìˆ«ìžì„¸ë‹¤ê°€ ì†ë–¼ë©´ ë©ˆì¶”ê¸°
+		private Label label; //ìˆ«ìž í‘œì‹œìš©
+		private Button pushBtn; //ì‹œìž‘ë²„íŠ¼
+		private int num = 0; //ì…€ ìˆ«ìž
+		//private Thread thread = new Thread(this); //â˜†ë‹¤ë¥¸ì 
 		
-		//6. ½ÁÀÚ¸ØÃß±â
+		//6. ìŠ·ìžë©ˆì¶”ê¸°
 		private boolean stopCount = true;
 		
 		public ThreadOnOffT() {
 			
-			//2.¶óº§ »ý¼ºÇÏ±â
-			//setLayout(null); //¡Ù´Ù¸¥Á¡
+			//2.ë¼ë²¨ ìƒì„±í•˜ê¸°
+			//setLayout(null); //â˜†ë‹¤ë¥¸ì 
 			label = new Label("0", Label.CENTER);
-			label.setFont(new Font("°íµñÃ¼", Font.BOLD, 70));
+			label.setFont(new Font("ê³ ë”•ì²´", Font.BOLD, 70));
 			label.setForeground(Color.BLUE);
-			//label.setBounds(50, 50, 100, 100); //¡Ù´Ù¸¥Á¡
+			//label.setBounds(50, 50, 100, 100); //â˜†ë‹¤ë¥¸ì 
 			add("Center",label);
 			
-			//3.¹öÆ° »ý¼ºÇÏ±â
-			Panel p = new Panel(new FlowLayout(FlowLayout.RIGHT)); //¡Ù´Ù¸¥Á¡, ¹öÆ°À» ¿À¸¥ÂÊÀ¸·Î Á¤·Ä
-			pushBtn = new Button("´©¸£±â");
-			//pushBtn.setBounds(220, 150, 40, 20); //¡Ù´Ù¸¥Á¡
+			//3.ë²„íŠ¼ ìƒì„±í•˜ê¸°
+			Panel p = new Panel(new FlowLayout(FlowLayout.RIGHT)); //â˜†ë‹¤ë¥¸ì , ë²„íŠ¼ì„ ì˜¤ë¥¸ìª½ìœ¼ë¡œ ì •ë ¬
+			pushBtn = new Button("ëˆ„ë¥´ê¸°");
+			//pushBtn.setBounds(220, 150, 40, 20); //â˜†ë‹¤ë¥¸ì 
 			p.add(pushBtn);
 			add("South",p);
 			
 			
-			//1.ÇÁ·¹ÀÓ»ý¼º
+			//1.í”„ë ˆìž„ìƒì„±
 			setBounds(800, 250, 300, 200);
 			setVisible(true);
 			setResizable(false);
@@ -53,30 +53,30 @@ public class ThreadOnOffT extends Frame implements Runnable {
 				}
 			});
 			
-			//4.ÀÌº¥Æ®
+			//4.ì´ë²¤íŠ¸
 			pushBtn.addMouseListener(new MouseAdapter() {
 				Thread thread;
 				@Override
 				public void mousePressed(MouseEvent e) {
-					//Thread thread = new Thread(ThreadOnOffT.this); //¿©±â¼­ this´Â ÀÍ¸íÅ¬·¡½º¸¦ °¡¸®Å´. ÀÍ¸íÀº RunnableÀ» ¾È °®°í ÀÖ´Ù
-																    //±×·¯¹Ç·Î this¸¦ Á¦´ë·Î °¡¸®ÄÑÁà¾ß ÇÔ
+					//Thread thread = new Thread(ThreadOnOffT.this); //ì—¬ê¸°ì„œ thisëŠ” ìµëª…í´ëž˜ìŠ¤ë¥¼ ê°€ë¦¬í‚´. ìµëª…ì€ Runnableì„ ì•ˆ ê°–ê³  ìžˆë‹¤
+																    //ê·¸ëŸ¬ë¯€ë¡œ thisë¥¼ ì œëŒ€ë¡œ ê°€ë¦¬ì¼œì¤˜ì•¼ í•¨
 					thread = new Thread(ThreadOnOffT.this);
-					System.out.println("´©¸£±â t = " + thread); //ÄÜ¼ÖÃ¢¿¡ Ãâ·ÂµÊ
-//					´©¸£±â t = Thread[Thread-2,6,main] - Thread-2 ½º·¹µå ÀÌ¸§ÀÌ °è¼Ó ºÙÀ½ (Thread-1Àº main)
-//					´©¸£±â t = Thread[Thread-3,6,main]
-//					´©¸£±â t = Thread[Thread-4,6,main]
-//					´©¸£±â t = Thread[Thread-5,6,main]
-//					´©¸£±â t = Thread[Thread-6,6,main]
-//					´©¸£±â t = Thread[Thread-7,6,main]
-					thread.start(); //À§ÀÇ µÎ ÁÙÀ» »ý·«ÇÑ ÇüÅÂ
+					System.out.println("ëˆ„ë¥´ê¸° t = " + thread); //ì½˜ì†”ì°½ì— ì¶œë ¥ë¨
+//					ëˆ„ë¥´ê¸° t = Thread[Thread-2,6,main] - Thread-2 ìŠ¤ë ˆë“œ ì´ë¦„ì´ ê³„ì† ë¶™ìŒ (Thread-1ì€ main)
+//					ëˆ„ë¥´ê¸° t = Thread[Thread-3,6,main]
+//					ëˆ„ë¥´ê¸° t = Thread[Thread-4,6,main]
+//					ëˆ„ë¥´ê¸° t = Thread[Thread-5,6,main]
+//					ëˆ„ë¥´ê¸° t = Thread[Thread-6,6,main]
+//					ëˆ„ë¥´ê¸° t = Thread[Thread-7,6,main]
+					thread.start(); //ìœ„ì˜ ë‘ ì¤„ì„ ìƒëžµí•œ í˜•íƒœ
 					stopCount = true;
 				}
 				
 				@Override
 				public void mouseReleased(MouseEvent e) {
-					thread = null; //¿©±â¼­ ½º·¹µå¸¦ Á¾·áÇÏ°í ´Ù½Ã ´©¸£±â ¹öÆ°ÀÌ ´­¸®¸é »õ·Î¿î ½º·¹µå »ý¼º
-					               //°è¼Ó ½º·¹µå°¡ »ì¾ÆÀÖ´Â °æ¿ì ¸Þ¸ð¸®°¡ ÆãÅ©³ª±â ½¬¿ò
-					System.out.println("¼Õ¶¼±â t = " + thread);
+					thread = null; //ì—¬ê¸°ì„œ ìŠ¤ë ˆë“œë¥¼ ì¢…ë£Œí•˜ê³  ë‹¤ì‹œ ëˆ„ë¥´ê¸° ë²„íŠ¼ì´ ëˆŒë¦¬ë©´ ìƒˆë¡œìš´ ìŠ¤ë ˆë“œ ìƒì„±
+					               //ê³„ì† ìŠ¤ë ˆë“œê°€ ì‚´ì•„ìžˆëŠ” ê²½ìš° ë©”ëª¨ë¦¬ê°€ íŽ‘í¬ë‚˜ê¸° ì‰¬ì›€
+					System.out.println("ì†ë–¼ê¸° t = " + thread);
 					stopCount = false;
 				}
 			});
@@ -85,12 +85,12 @@ public class ThreadOnOffT extends Frame implements Runnable {
 		
 
 		
-		//5. µ¿ÀÛ ±¸ÇöÇÏ±â
+		//5. ë™ìž‘ êµ¬í˜„í•˜ê¸°
 		@Override
 		public void run() {
 			while(true) {
 				num++;
-				label.setText(num + ""); //setText¿¡ ±ÛÀÚ°¡ ¿Ã¼ö ¾ø±â ¶§¹®¿¡ ""¸¦ ³Ö¾îÁÜ
+				label.setText(num + ""); //setTextì— ê¸€ìžê°€ ì˜¬ìˆ˜ ì—†ê¸° ë•Œë¬¸ì— ""ë¥¼ ë„£ì–´ì¤Œ
 				
 				if(!stopCount) break;
 				
@@ -110,6 +110,6 @@ public class ThreadOnOffT extends Frame implements Runnable {
 	}
 	 
 	//MouseListner - MousePressed / MouseRelease -> MouseAdapter
-	//while¹®
+	//whileë¬¸
 
 

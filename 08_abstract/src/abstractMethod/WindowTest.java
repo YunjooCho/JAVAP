@@ -8,32 +8,32 @@ import java.awt.Toolkit;
 public class WindowTest extends Frame{
 	
 	public WindowTest() {
-		//1.ÇÁ·¹ÀÓ ¸¸µé±â
-		setTitle("ÀÌ¹ÌÁö"); //FrameÀÇ ¸Ş¼Òµå
-		//super ÀÌ ºÎºĞ ¿Ö super¸¸À¸·Î °¡´ÉÇÑÁö È®ÀÎ : ºÎ¸ğÅ¬·¡½ºÀÎ FrameÀÇ ÆÄ¶ó¹ÌÅÍ ÀÖ´Â »ı¼ºÀÚ - Frame(String title)
-		setBounds(900, 100, 500, 500);//Ã¢ÀÇ Å©±â(ÀüÃ¼È­¸é¿¡¼­ÀÇ x°ª, y°ª, Ã¢ÀÚÃ¼ÀÇ ³Êºñ, Ã¢ÀÚÃ¼ÀÇ ³ôÀÌ)
+		//1.í”„ë ˆì„ ë§Œë“¤ê¸°
+		setTitle("ì´ë¯¸ì§€"); //Frameì˜ ë©”ì†Œë“œ
+		//super ì´ ë¶€ë¶„ ì™œ superë§Œìœ¼ë¡œ ê°€ëŠ¥í•œì§€ í™•ì¸ : ë¶€ëª¨í´ë˜ìŠ¤ì¸ Frameì˜ íŒŒë¼ë¯¸í„° ìˆëŠ” ìƒì„±ì - Frame(String title)
+		setBounds(900, 100, 500, 500);//ì°½ì˜ í¬ê¸°(ì „ì²´í™”ë©´ì—ì„œì˜ xê°’, yê°’, ì°½ìì²´ì˜ ë„ˆë¹„, ì°½ìì²´ì˜ ë†’ì´)
 		setVisible(true);//callback
 	}
 	
-	public void paint(Graphics g) {//WindowÅ¬·¡½ºÀÇ ¸Ş¼Òµå ¿À¹ö¶óÀÌµå
-		//Toolkit t = Toolkit.getDefaultToolkit(); : Ãß»ó¸Ş¼Òµå¶ó¼­ new»ı¼ºÀÌ ¾ÈµÊ 
-		//(Calendar cal = cal.getInstance()¿Í À¯»ç)
-		//Image img = t.getImage("taji.jpg"); //ÀÌ¹ÌÁö ºÒ·¯¿À±â
-		//À§ÀÇ ÄÚµù µÎÁÙÀ» ÇÕÄ£ °Í
+	public void paint(Graphics g) {//Windowí´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë“œ
+		//Toolkit t = Toolkit.getDefaultToolkit(); : ì¶”ìƒë©”ì†Œë“œë¼ì„œ newìƒì„±ì´ ì•ˆë¨ 
+		//(Calendar cal = cal.getInstance()ì™€ ìœ ì‚¬)
+		//Image img = t.getImage("taji.jpg"); //ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸°
+		//ìœ„ì˜ ì½”ë”© ë‘ì¤„ì„ í•©ì¹œ ê²ƒ
 		Image img = Toolkit.getDefaultToolkit().getImage("taji.jpg");
 		
-		//ÀÌ¹ÌÁö ±×¸®±â - Window Å¬·¡½ºÀÇ paint() : ÇÁ·¹ÀÓ ¾È¿¡ ±×¸²À» ±×¸± ¼ö ÀÖÀ½
+		//ì´ë¯¸ì§€ ê·¸ë¦¬ê¸° - Window í´ë˜ìŠ¤ì˜ paint() : í”„ë ˆì„ ì•ˆì— ê·¸ë¦¼ì„ ê·¸ë¦´ ìˆ˜ ìˆìŒ
 		//g.drawImage(img, 100, 100, this);
-		//1.´©°¡ ÀÌ¹ÌÁö¸¦ °®°í ÀÖ´ÂÁö
-		//2.ÇÁ·¹ÀÓÀÇ À§Ä¡
-		//3.¾îµğ¿¡ ±×¸± °Í ÀÎÁö
+		//1.ëˆ„ê°€ ì´ë¯¸ì§€ë¥¼ ê°–ê³  ìˆëŠ”ì§€
+		//2.í”„ë ˆì„ì˜ ìœ„ì¹˜
+		//3.ì–´ë””ì— ê·¸ë¦´ ê²ƒ ì¸ì§€
 		
-		//ÀÌ¹ÌÁö ÀÛ°Ô
+		//ì´ë¯¸ì§€ ì‘ê²Œ
 		/*
 		g.drawImage(img,
-		  50, 50, 400, 400, //È­¸é Å©±â ¡Ú¡Ú¡Ú¡Ú¡Ú¹«¾ùÀ» °¡¸®Å°´Â °ÇÁö Á¤¸®
-		  0, 0, 320, 320, //ÀÌ¹ÌÁö Å©±â  ¡Ú¡Ú¡Ú¡Ú¡Ú¹«¾ùÀ» °¡¸®Å°´Â °ÇÁö Á¤¸®
-		  this);//this ¾îµğ¿¡ ÀÌ¹ÌÁö°¡ ¿Ã·ÁÁú °ÍÀÎÁö Á¤ÀÇ(Å¬·¡½º ´ÜÀ§)
+		  50, 50, 400, 400, //í™”ë©´ í¬ê¸° â˜…â˜…â˜…â˜…â˜…ë¬´ì—‡ì„ ê°€ë¦¬í‚¤ëŠ” ê±´ì§€ ì •ë¦¬
+		  0, 0, 320, 320, //ì´ë¯¸ì§€ í¬ê¸°  â˜…â˜…â˜…â˜…â˜…ë¬´ì—‡ì„ ê°€ë¦¬í‚¤ëŠ” ê±´ì§€ ì •ë¦¬
+		  this);//this ì–´ë””ì— ì´ë¯¸ì§€ê°€ ì˜¬ë ¤ì§ˆ ê²ƒì¸ì§€ ì •ì˜(í´ë˜ìŠ¤ ë‹¨ìœ„)
 		drawImage(Image img, int dx1, int dy1, int dx2, int dy2, int sx1, int sy1, int sx2, int sy2, ImageObserver observer)
 		Draws as much of the specified area of the specified image as is currently 
 		available, scaling it on the fly to fit inside the specified area of 
@@ -41,40 +41,40 @@ public class WindowTest extends Frame{
 		Parameters:
 		img - the specified image to be drawn. This method does nothing if img is null.
 		dx1 - the x coordinate of the first corner of the destination rectangle.
-			¿ŞÂÊ °ø¹é Á¶Àı(Å¬¼ö·Ï ¿ŞÂÊ °ø¹é Ä¿Áü)
+			ì™¼ìª½ ê³µë°± ì¡°ì ˆ(í´ìˆ˜ë¡ ì™¼ìª½ ê³µë°± ì»¤ì§)
 		dy1 - the y coordinate of the first corner of the destination rectangle.
-			À­ÂÊ °ø¹é Á¶Àı(Å¬¼ö·Ï À­ÂÊ °ø¹é Ä¿Áü)
+			ìœ—ìª½ ê³µë°± ì¡°ì ˆ(í´ìˆ˜ë¡ ìœ—ìª½ ê³µë°± ì»¤ì§)
 		dx2 - the x coordinate of the second corner of the destination rectangle.
-			¿À¸¥ÂÊ °ø¹é Á¶Àı(ÀÛÀ»¼ö·Ï ¿À¸¥ÂÊ °ø¹é Ä¿Áü)
+			ì˜¤ë¥¸ìª½ ê³µë°± ì¡°ì ˆ(ì‘ì„ìˆ˜ë¡ ì˜¤ë¥¸ìª½ ê³µë°± ì»¤ì§)
 		dy2 - the y coordinate of the second corner of the destination rectangle.
-			¾Æ·§ÂÊ °ø¹é Á¶Àı(ÀÛÀ»¼ö·Ï ¾Æ·§ÂÊ °ø¹é Ä¿Áü)
+			ì•„ë«ìª½ ê³µë°± ì¡°ì ˆ(ì‘ì„ìˆ˜ë¡ ì•„ë«ìª½ ê³µë°± ì»¤ì§)
 		sx1 - the x coordinate of the first corner of the source rectangle.
 			
 		sy1 - the y coordinate of the first corner of the source rectangle.
 			
 		sx2 - the x coordinate of the second corner of the source rectangle.
-			»çÁø ³Êºñ Á¶Àı(ÀÛÀ»¼ö·Ï »çÁøÀÇ ³Êºñ°¡ Ä¿Áü)
+			ì‚¬ì§„ ë„ˆë¹„ ì¡°ì ˆ(ì‘ì„ìˆ˜ë¡ ì‚¬ì§„ì˜ ë„ˆë¹„ê°€ ì»¤ì§)
 		sy2 - the y coordinate of the second corner of the source rectangle.
-			»çÁø ³ôÀÌ Á¶Àı(ÀÛÀ»¼ö·Ï ³ôÀÌ°¡ Ä¿Áü)
+			ì‚¬ì§„ ë†’ì´ ì¡°ì ˆ(ì‘ì„ìˆ˜ë¡ ë†’ì´ê°€ ì»¤ì§)
 		observer - object to be notified as more of the image is scaled and converted.
-			¾îµğ¿¡¼­ ±¸ÇöµÇ¾î ÀÖ´ÂÁö
+			ì–´ë””ì—ì„œ êµ¬í˜„ë˜ì–´ ìˆëŠ”ì§€
 		*/
 		
-		//°Å²Ù·Î
+		//ê±°ê¾¸ë¡œ
 		g.drawImage(img,
-				  50, 50, 400, 400, //È­¸é Å©±â¡Ú¡Ú¡Ú¡Ú¡Ú¹«¾ùÀ» °¡¸®Å°´Â °ÇÁö Á¤¸®
-				  320, 320, 0, 0, //ÀÌ¹ÌÁö Å©±â¡Ú¡Ú¡Ú¡Ú¡Ú¹«¾ùÀ» °¡¸®Å°´Â °ÇÁö Á¤¸®(¿ŞÂÊ À§ À§Ä¡, ¿À¸¥ÂÊ ¾Æ·¡ À§Ä¡)
+				  50, 50, 400, 400, //í™”ë©´ í¬ê¸°â˜…â˜…â˜…â˜…â˜…ë¬´ì—‡ì„ ê°€ë¦¬í‚¤ëŠ” ê±´ì§€ ì •ë¦¬
+				  320, 320, 0, 0, //ì´ë¯¸ì§€ í¬ê¸°â˜…â˜…â˜…â˜…â˜…ë¬´ì—‡ì„ ê°€ë¦¬í‚¤ëŠ” ê±´ì§€ ì •ë¦¬(ì™¼ìª½ ìœ„ ìœ„ì¹˜, ì˜¤ë¥¸ìª½ ì•„ë˜ ìœ„ì¹˜)
 				  this);
 	}
 	
 	public static void main(String[] args) {
 		
-		//2. ÇÁ·¹ÀÓ »ı¼º
-		new WindowTest(); //¸®¸ğÄÜÀÌ ¾øÀ¸³ª ÁÖ¼Ò¸¦ °¡Áö°í ÀÖÀ½(¹øÈ£Ç¥°¡ ÀÖ¾î °´Ã¼¸íÀÌ ¾ø¾îµµ »ç¿ë°¡´É)
+		//2. í”„ë ˆì„ ìƒì„±
+		new WindowTest(); //ë¦¬ëª¨ì½˜ì´ ì—†ìœ¼ë‚˜ ì£¼ì†Œë¥¼ ê°€ì§€ê³  ìˆìŒ(ë²ˆí˜¸í‘œê°€ ìˆì–´ ê°ì²´ëª…ì´ ì—†ì–´ë„ ì‚¬ìš©ê°€ëŠ¥)
 	}
 }
 
-//ToolkitÅ¬·¡½º - Ãß»óÅ¬·¡½º newToolkit() X
-//ToolkitÅ¬·¡½ºÀÇ »ı¼º¹æ¹ı
-//1.ÀÚ½Ä - Sub class°¡ ¾øÀ½(API)
-//2.¸Ş¼Òµå - getDefaultToolkit() ÁÖ¼Ò°ªÀ» ³Ñ°ÜÁÜ
+//Toolkití´ë˜ìŠ¤ - ì¶”ìƒí´ë˜ìŠ¤ newToolkit() X
+//Toolkití´ë˜ìŠ¤ì˜ ìƒì„±ë°©ë²•
+//1.ìì‹ - Sub classê°€ ì—†ìŒ(API)
+//2.ë©”ì†Œë“œ - getDefaultToolkit() ì£¼ì†Œê°’ì„ ë„˜ê²¨ì¤Œ

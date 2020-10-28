@@ -1,14 +1,14 @@
 package model;
 
 public class UserDTO {
-	//¢º1. ÇÊµå
+	//â–¶1. í•„ë“œ
 	private int id;
 	private String userId;
 	private String password;
 	private String nickname; 
 	
 	
-	//¢º2. Ä¸½¶È­(ÇÊµå°¡ privateÀÌ¹Ç·Î Á¤º¸¸¦ È£ÃâÇÏ°Å³ª ¼³Á¤ÇÒ¶§ °ÙÅÍ/¼ÂÅÍ »ç¿ë)
+	//â–¶2. ìº¡ìŠí™”(í•„ë“œê°€ privateì´ë¯€ë¡œ ì •ë³´ë¥¼ í˜¸ì¶œí•˜ê±°ë‚˜ ì„¤ì •í• ë•Œ ê²Ÿí„°/ì…‹í„° ì‚¬ìš©)
 	public int getId() {
 		return id;
 	}
@@ -37,7 +37,7 @@ public class UserDTO {
 	public boolean equals(Object o) {
 		if(o instanceof UserDTO) {
 			UserDTO userDTO = (UserDTO)o;
-			if(id == userDTO.id && userId.equals(userDTO.userId)) { //¢ºid¿Í userId°¡ °°À¸¸é µ¿ÀÏÀÎ¹°
+			if(id == userDTO.id && userId.equals(userDTO.userId)) { //â–¶idì™€ userIdê°€ ê°™ìœ¼ë©´ ë™ì¼ì¸ë¬¼
 				return true;
 			}
 		}

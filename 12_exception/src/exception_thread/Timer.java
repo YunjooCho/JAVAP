@@ -10,23 +10,23 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class Timer extends Frame implements ActionListener, Runnable { //Ä«µå µÚÁı±â, ¿À¸ñ µî¿¡¼­ »ç¿ëµÊ
+public class Timer extends Frame implements ActionListener, Runnable { //ì¹´ë“œ ë’¤ì§‘ê¸°, ì˜¤ëª© ë“±ì—ì„œ ì‚¬ìš©ë¨
 
-	//2.ÇÊµå¼±¾ğ
+	//2.í•„ë“œì„ ì–¸
 	private Label label;
 	private Button startBtn, stopBtn;
 	
-	//7. ¼ıÀÚ ¸ØÃß±â
+	//7. ìˆ«ì ë©ˆì¶”ê¸°
 	private boolean aa = true;
 	
 	public Timer() {
-		//3.¶óº§&¹öÆ° »ı¼º
-		setLayout(null); //À§Ä¡¸¦ Àâ¾Æ ÁÖ¾î¾ß ÇÔ
+		//3.ë¼ë²¨&ë²„íŠ¼ ìƒì„±
+		setLayout(null); //ìœ„ì¹˜ë¥¼ ì¡ì•„ ì£¼ì–´ì•¼ í•¨
 		label = new Label("0");
-		label.setFont(new Font("°íµñÃ¼", Font.BOLD, 70));
+		label.setFont(new Font("ê³ ë”•ì²´", Font.BOLD, 70));
 		label.setForeground(Color.RED);
-		startBtn = new Button("½ÃÀÛ");
-		stopBtn = new Button("Á¤Áö");
+		startBtn = new Button("ì‹œì‘");
+		stopBtn = new Button("ì •ì§€");
 		
 		label.setBounds(50, 50, 100, 100);
 		startBtn.setBounds(200, 40, 60, 30);
@@ -39,11 +39,11 @@ public class Timer extends Frame implements ActionListener, Runnable { //Ä«µå µÚ
 		startBtn.setEnabled(true);
 		stopBtn.setEnabled(false);
 		
-		//1.ÇÁ·¹ÀÓ ¸¸µé±â
+		//1.í”„ë ˆì„ ë§Œë“¤ê¸°
 		setBounds(800, 300, 300, 200);
 		setVisible(true);
 		setResizable(false);
-		setTitle("Å¸ÀÌ¸Ó");
+		setTitle("íƒ€ì´ë¨¸");
 		
 		
 		addWindowListener(new WindowAdapter() {
@@ -53,24 +53,24 @@ public class Timer extends Frame implements ActionListener, Runnable { //Ä«µå µÚ
 			}
 		});
 		
-		//5.ÀÌº¥Æ®
+		//5.ì´ë²¤íŠ¸
 		startBtn.addActionListener(this);
 		stopBtn.addActionListener(this);
 	}
 	
-	//4. ÀÎÅÍÆäÀÌ½º ±¸Çö, ¿À¹ö¶óÀÌµù
+	//4. ì¸í„°í˜ì´ìŠ¤ êµ¬í˜„, ì˜¤ë²„ë¼ì´ë”©
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			Thread t;
 			if(e.getSource() == startBtn) {
-				t = new Thread(this);  //Å¬·¡½º ¾È¿¡ ÀÖÀ¸¹Ç·Î µû·Î °´Ã¼»ı¼ºÇÏÁö ¸»°í this¸¦ ÀÔ·Â
-				t.start(); //½º·¹µå¸¦ °è¼ÓÇØ¼­ »ı¼º, mainÀÌ ³¡³¯¶§ ±îÁö´Â °ªÀÌ °è¼Ó À¯ÁöµÇ°í ÀÖÀ½
+				t = new Thread(this);  //í´ë˜ìŠ¤ ì•ˆì— ìˆìœ¼ë¯€ë¡œ ë”°ë¡œ ê°ì²´ìƒì„±í•˜ì§€ ë§ê³  thisë¥¼ ì…ë ¥
+				t.start(); //ìŠ¤ë ˆë“œë¥¼ ê³„ì†í•´ì„œ ìƒì„±, mainì´ ëë‚ ë•Œ ê¹Œì§€ëŠ” ê°’ì´ ê³„ì† ìœ ì§€ë˜ê³  ìˆìŒ
 				
 				aa = true;
 				startBtn.setEnabled(false);
 				stopBtn.setEnabled(true);
 			}else if(e.getSource() == stopBtn) {
-				t = null; //½º·¹µå Á¾·á
+				t = null; //ìŠ¤ë ˆë“œ ì¢…ë£Œ
 
 				aa = false;
 				startBtn.setEnabled(true);
@@ -80,14 +80,14 @@ public class Timer extends Frame implements ActionListener, Runnable { //Ä«µå µÚ
 		}
 	
 
-	//6.run() ±¸ÇöÇÏ±â
+	//6.run() êµ¬í˜„í•˜ê¸°
 	@Override
 	public void run() {
 		for(int i = 1; i <= 100; i++) {
 			label.setText(i + "");
 			
-			if(!aa) break; //µğÆúÆ®°¡ true(¼ıÀÚ Ãß°¡)¿¡ ´ëÇØ !¸¦ Àû¿ëÇÏ¸é false°¡ µÇ¹Ç·Î ¹Ø¿¡ try~catch(sleep)ÀÌ ½ÇÇàµÊ 
-			               //¹İ´ë·Î À§¿¡¼­ false°¡ µÈ °æ¿ì Á¶°Ç¿¡ ¸ÂÀ¸¹Ç·Î ºüÁ®³ª°¡Áü
+			if(!aa) break; //ë””í´íŠ¸ê°€ true(ìˆ«ì ì¶”ê°€)ì— ëŒ€í•´ !ë¥¼ ì ìš©í•˜ë©´ falseê°€ ë˜ë¯€ë¡œ ë°‘ì— try~catch(sleep)ì´ ì‹¤í–‰ë¨ 
+			               //ë°˜ëŒ€ë¡œ ìœ„ì—ì„œ falseê°€ ëœ ê²½ìš° ì¡°ê±´ì— ë§ìœ¼ë¯€ë¡œ ë¹ ì ¸ë‚˜ê°€ì§
 			
 			try {
 				Thread.sleep(1000);
@@ -95,7 +95,7 @@ public class Timer extends Frame implements ActionListener, Runnable { //Ä«µå µÚ
 				e.printStackTrace();
 			}
 		}
-		//´Ù½Ã ½ÃÀÛ¹öÆ° È°¼ºÈ­
+		//ë‹¤ì‹œ ì‹œì‘ë²„íŠ¼ í™œì„±í™”
 		startBtn.setEnabled(true);
 		stopBtn.setEnabled(false);
 	}

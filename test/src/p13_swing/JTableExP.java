@@ -6,30 +6,30 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
 
-//2.Å×ÀÌºí ÀÛ¼ºÀ» À§ÇÑ »õ·Î¿î Å¬·¡½º »ı¼º, »ó¼Ó
+//2.í…Œì´ë¸” ì‘ì„±ì„ ìœ„í•œ ìƒˆë¡œìš´ í´ë˜ìŠ¤ ìƒì„±, ìƒì†
 class JTableModelP extends AbstractTableModel{
 
-	Object[][] data = {{"Nari", "¸¶·çÄ¡", new Integer(1234), "¿·ÁıÄ£±¸"},
-			   {"One", "¿ÀÀ±¾Æ", new Integer(1111), "¿¹»ÛÀÌ"},
-			   {"two", "¿ÀÀ±¼­", new Integer(2222), "±Í¿°µÕÀÌ"},
-			   {"three","¾Æ¶óÄ¡", new Integer(3333), "µ¿¾Æ¸® Ä£±¸"}}; //Æ©ÇÃ
+	Object[][] data = {{"Nari", "ë§ˆë£¨ì¹˜", new Integer(1234), "ì˜†ì§‘ì¹œêµ¬"},
+			   {"One", "ì˜¤ìœ¤ì•„", new Integer(1111), "ì˜ˆìœì´"},
+			   {"two", "ì˜¤ìœ¤ì„œ", new Integer(2222), "ê·€ì—¼ë‘¥ì´"},
+			   {"three","ì•„ë¼ì¹˜", new Integer(3333), "ë™ì•„ë¦¬ ì¹œêµ¬"}}; //íŠœí”Œ
 	
-	String[] name = {"¾ÆÀÌµğ", "ÀÌ¸§","ºñ¹Ğ¹øÈ£","±¸ºĞ"}; //ÇÊµå¸í µé
+	String[] name = {"ì•„ì´ë””", "ì´ë¦„","ë¹„ë°€ë²ˆí˜¸","êµ¬ë¶„"}; //í•„ë“œëª… ë“¤
 	
 	
-	//3.¿À¹ö¶óÀÌµù(¹İµå½Ã ¿À¹ö¶óÀÌµùÇØ¾ß Å×ÀÌºíÀ» ¸¸µé ¼ö ÀÖÀ½)
+	//3.ì˜¤ë²„ë¼ì´ë”©(ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë”©í•´ì•¼ í…Œì´ë¸”ì„ ë§Œë“¤ ìˆ˜ ìˆìŒ)
 	@Override
-	public int getRowCount() {//¿­, ÇÊ¼ö·Î ÀÔ·Â
+	public int getRowCount() {//ì—´, í•„ìˆ˜ë¡œ ì…ë ¥
 		return data.length;
 	}
 
 	@Override
-	public int getColumnCount() {//Çà, ÇÊ¼ö·Î ÀÔ·Â
+	public int getColumnCount() {//í–‰, í•„ìˆ˜ë¡œ ì…ë ¥
 		return name.length;
 	}
 
 	@Override
-	public Object getValueAt(int rowIndex, int columnIndex) {//ÇÊ¼ö·Î ÀÔ·Â
+	public Object getValueAt(int rowIndex, int columnIndex) {//í•„ìˆ˜ë¡œ ì…ë ¥
 		return data[rowIndex][columnIndex];
 	}
 	
@@ -50,14 +50,14 @@ class JTableModelP extends AbstractTableModel{
 
 public class JTableExP extends JFrame {
 	
-	//1.Å¬·¡½º »ó¼Ó, ÇÁ·¹ÀÓ »ı¼º
+	//1.í´ë˜ìŠ¤ ìƒì†, í”„ë ˆì„ ìƒì„±
 	JTable table;
 	JTableModelP model;
 	
 	public JTableExP() {
-		model = new JTableModelP(); //Å×ÀÌºí ÀÛ¼º Å¬·¡½º »ı¼º
-		table = new JTable(model); //À§¿¡¼­ ¸ğµ¨À» »ı¼ºÇÑ µÚ °ªÀ» ¹Ş¾Æ¿ÃÁö, Å×ÀÌºí »ı¼º°ú µ¿½Ã¿¡ ¸ğµ¨À» »ı¼ºÇÒÁö °áÁ¤ÇÒ ¼ö ÀÖÀ½
-		add(new JScrollPane(table)); //½ºÅ©·ÑÀ» »ı¼ºÇÏ¸é¼­ Å×ÀÌºí¿¡ ºÙÀÓ
+		model = new JTableModelP(); //í…Œì´ë¸” ì‘ì„± í´ë˜ìŠ¤ ìƒì„±
+		table = new JTable(model); //ìœ„ì—ì„œ ëª¨ë¸ì„ ìƒì„±í•œ ë’¤ ê°’ì„ ë°›ì•„ì˜¬ì§€, í…Œì´ë¸” ìƒì„±ê³¼ ë™ì‹œì— ëª¨ë¸ì„ ìƒì„±í• ì§€ ê²°ì •í•  ìˆ˜ ìˆìŒ
+		add(new JScrollPane(table)); //ìŠ¤í¬ë¡¤ì„ ìƒì„±í•˜ë©´ì„œ í…Œì´ë¸”ì— ë¶™ì„
 		
 		setBounds(200, 200, 300, 300);
 		setVisible(true);

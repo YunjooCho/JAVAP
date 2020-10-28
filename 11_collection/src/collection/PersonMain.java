@@ -7,19 +7,19 @@ import java.util.Iterator;
 public class PersonMain {
 
 	public void init() {
-		PersonDTO aa =  new PersonDTO("È«±æµ¿", 25); //aa,bb,cc - Áö¿ªº¯¼ö, ÁÖ¼Ò°ªÀ» ´ã°í ÀÖÀ½
-		PersonDTO bb =  new PersonDTO("¶ÇÄ¡", 40);
-		PersonDTO cc =  new PersonDTO("µµ¿ì³Ê", 30);
+		PersonDTO aa =  new PersonDTO("í™ê¸¸ë™", 25); //aa,bb,cc - ì§€ì—­ë³€ìˆ˜, ì£¼ì†Œê°’ì„ ë‹´ê³  ìˆìŒ
+		PersonDTO bb =  new PersonDTO("ë˜ì¹˜", 40);
+		PersonDTO cc =  new PersonDTO("ë„ìš°ë„ˆ", 30);
 		
-		ArrayList<PersonDTO> list = new ArrayList<PersonDTO>(); //listµµ ÁÖ¼Ò°ªÀ» ´ã°íÀÖÀ½
+		ArrayList<PersonDTO> list = new ArrayList<PersonDTO>(); //listë„ ì£¼ì†Œê°’ì„ ë‹´ê³ ìˆìŒ
 		list.add(aa); //get(0)
 		list.add(bb); //get(1)
 		list.add(cc); //get(2)
 		for(int i = 0; i < list.size(); i++) { 
-			//¹è¿­ - length, ¹®ÀÚ¿­ - length(), ¾î·¹ÀÌ¸®½ºÆ® - size()
-			//¡Ú¡Ú¿ÖÀÎÁö È®ÀÎÇÏ±â, <>ÀÇ ¿ªÇÒÀÌÇØÇÏ±â - À§¿¡ ¾î·¹ÀÌ¸®½ºÆ® ¼±¾ğÇÒ¶§ <>¸¦ ÀÔ·ÂÇÏÁö ¾Ê¾Ò´õ´Ï ¾Æ·¡¿¡¼­ getName(),getAge()°¡ ¾È¶ä
-			System.out.print("ÀÌ¸§ = " + list.get(i).getName()); 
-			System.out.println(" ³ªÀÌ = " + list.get(i).getAge());
+			//ë°°ì—´ - length, ë¬¸ìì—´ - length(), ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ - size()
+			//â˜…â˜…ì™œì¸ì§€ í™•ì¸í•˜ê¸°, <>ì˜ ì—­í• ì´í•´í•˜ê¸° - ìœ„ì— ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ì„ ì–¸í• ë•Œ <>ë¥¼ ì…ë ¥í•˜ì§€ ì•Šì•˜ë”ë‹ˆ ì•„ë˜ì—ì„œ getName(),getAge()ê°€ ì•ˆëœ¸
+			System.out.print("ì´ë¦„ = " + list.get(i).getName()); 
+			System.out.println(" ë‚˜ì´ = " + list.get(i).getAge());
 		}
 		
 		//return list;

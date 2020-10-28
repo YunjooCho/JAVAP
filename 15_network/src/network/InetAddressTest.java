@@ -3,11 +3,11 @@ package network;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class InetAddressTest {//ÀÏ¹İÅ¬·¡½º(Ãß»óÅ¬·¡½º)
+public class InetAddressTest {//ì¼ë°˜í´ë˜ìŠ¤(ì¶”ìƒí´ë˜ìŠ¤)
 
 	public static void main(String[] args) throws UnknownHostException {
-		//InetAddress naver = new InetAddress(); //error! - InetAddress¿¡´Â ±âº»»ı¼ºÀÚ°¡ ¾øÀ¸¹Ç·Î new·Î »ı¼ººÒ°¡)
-											     //¸Ş¼Òµå·Î »ı¼º
+		//InetAddress naver = new InetAddress(); //error! - InetAddressì—ëŠ” ê¸°ë³¸ìƒì„±ìê°€ ì—†ìœ¼ë¯€ë¡œ newë¡œ ìƒì„±ë¶ˆê°€)
+											     //ë©”ì†Œë“œë¡œ ìƒì„±
 		InetAddress naver = InetAddress.getByName("www.naver.com");
 		InetAddress[] naver2 = InetAddress.getAllByName("www.naver.com");
 		System.out.println("Naver IP = " + naver.getHostAddress()); //125.209.222.142
@@ -16,11 +16,11 @@ public class InetAddressTest {//ÀÏ¹İÅ¬·¡½º(Ãß»óÅ¬·¡½º)
 		}
 		System.out.println();
 		
-		InetAddress local = InetAddress.getLocalHost(); //³» IP¸¦ ¾Ë¾Æ³»´Â ÄÚµå
+		InetAddress local = InetAddress.getLocalHost(); //ë‚´ IPë¥¼ ì•Œì•„ë‚´ëŠ” ì½”ë“œ
 		System.out.println("localhost IP = " + local.getHostAddress()); //192.168.0.17
 		System.out.println();
 		
-		InetAddress[] daum = InetAddress.getAllByName("www.daum.net");//IPÇÏ³ª´ç ÇÏ³ªÀÇ ¹è¿­ Ä­À¸·Î ¹Ş¾Æ¿È
+		InetAddress[] daum = InetAddress.getAllByName("www.daum.net");//IPí•˜ë‚˜ë‹¹ í•˜ë‚˜ì˜ ë°°ì—´ ì¹¸ìœ¼ë¡œ ë°›ì•„ì˜´
 		for(InetAddress data : daum) {
 			System.out.println("Daum IP = " + data.getHostAddress());
 		}

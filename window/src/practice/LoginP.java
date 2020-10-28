@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 
 public class LoginP extends JFrame {
 	
-	//1.ÇÊµå ¼±¾ğ
+	//1.í•„ë“œ ì„ ì–¸
 	private JLabel idL, pwL;
 	private JTextField idT, pwT;
 	private JButton loginBtn, cancleBtn;
@@ -15,8 +15,8 @@ public class LoginP extends JFrame {
 	
 	public LoginP() {
 		
-		idL = new JLabel("¾ÆÀÌµğ");
-		pwL = new JLabel("ºñ¹Ğ¹øÈ£");
+		idL = new JLabel("ì•„ì´ë””");
+		pwL = new JLabel("ë¹„ë°€ë²ˆí˜¸");
 		
 		setLayout(null);
 		setBounds(700, 300, 300, 500);

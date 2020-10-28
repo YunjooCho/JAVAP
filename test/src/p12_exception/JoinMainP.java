@@ -23,18 +23,18 @@ public class JoinMainP {
 
 	public static void main(String[] args) {
 		
-		JoinTestP jt = new JoinTestP(); //½º·¹µå »ı¼º
+		JoinTestP jt = new JoinTestP(); //ìŠ¤ë ˆë“œ ìƒì„±
 		Thread thread = new Thread(jt);
-		System.out.println("½º·¹µå¸¦ ½ÃÀÛÇÏ°Ú½À´Ï´Ù");
+		System.out.println("ìŠ¤ë ˆë“œë¥¼ ì‹œì‘í•˜ê² ìŠµë‹ˆë‹¤");
 		
-		thread.start();//½º·¹µå ½ÇÇà
+		thread.start();//ìŠ¤ë ˆë“œ ì‹¤í–‰
 		try {
 			thread.join();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 		
-		System.out.println("½º·¹µå°¡ Á¾·áµË´Ï´Ù");
+		System.out.println("ìŠ¤ë ˆë“œê°€ ì¢…ë£Œë©ë‹ˆë‹¤");
 
 	}
 

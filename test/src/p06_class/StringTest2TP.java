@@ -5,39 +5,39 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 
 /*
-Ä¡È¯ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À
-String Å¬·¡½ºÀÇ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ½Ã¿À
-´ë¼Ò¹®ÀÚ »ó°ü¾øÀÌ °³¼ö¸¦ °è»êÇÏ½Ã¿À
+ì¹˜í™˜í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤
+String í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì‹œì˜¤
+ëŒ€ì†Œë¬¸ì ìƒê´€ì—†ì´ ê°œìˆ˜ë¥¼ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-¹®ÀÚ¿­ ÀÔ·Â : aabba
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : cc
+[ì‹¤í–‰ê²°ê³¼]
+ë¬¸ìì—´ ì…ë ¥ : aabba
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : cc
 ccbba
-1¹ø Ä¡È¯
+1ë²ˆ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : aAbbA
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : cc
+ë¬¸ìì—´ ì…ë ¥ : aAbbA
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : cc
 ccbba
-1¹ø Ä¡È¯
+1ë²ˆ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : aabbaa
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : cc
+ë¬¸ìì—´ ì…ë ¥ : aabbaa
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : cc
 ccbbcc
-2¹ø Ä¡È¯
+2ë²ˆ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : AAccaabbaaaaatt
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : dd
+ë¬¸ìì—´ ì…ë ¥ : AAccaabbaaaaatt
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : dd
 ddccddbbddddatt
-4°³ Ä¡È¯
+4ê°œ ì¹˜í™˜
 
-¹®ÀÚ¿­ ÀÔ·Â : aabb
-ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : aaaaa
-¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : ddddd
-ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ Å©±â°¡ ÀÛ½À´Ï´Ù
+ë¬¸ìì—´ ì…ë ¥ : aabb
+í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : aaaaa
+ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : ddddd
+ì…ë ¥í•œ ë¬¸ìì—´ì˜ í¬ê¸°ê°€ ì‘ìŠµë‹ˆë‹¤
 
 indexOf()
 replace(??, ??)
@@ -49,29 +49,29 @@ public class StringTest2TP {
 		String str, target, replaceing;
 		int index, count;
 		
-		System.out.println("¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.println("ë¬¸ìì—´ ì…ë ¥ : ");
 		str = br.readLine();
 		
-		System.out.println("ÇöÀç ¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.println("í˜„ì¬ ë¬¸ìì—´ ì…ë ¥ : ");
 		target = br.readLine();
 		
-		System.out.println("¹Ù²Ü ¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.println("ë°”ê¿€ ë¬¸ìì—´ ì…ë ¥ : ");
 		replaceing = br.readLine();
 		
 		if(str.length() < target.length()) {
-			System.out.println("ÀÔ·ÂÇÑ ¹®ÀÚ¿­ÀÇ Å©±â°¡ ÀÛ½À´Ï´Ù.");
+			System.out.println("ì…ë ¥í•œ ë¬¸ìì—´ì˜ í¬ê¸°ê°€ ì‘ìŠµë‹ˆë‹¤.");
 		}else {
 			str = str.toLowerCase();
 			target = target.toLowerCase();
 			
 			index = count = 0;
-			while((index = str.indexOf(target,index)) != -1) { //target¹®ÀÚ¿­ÀÌ ÀÖ´Â °÷À» index(0)¹øÂ° ¹®ÀÚ¿­ºÎÅÍ Ã£À½
+			while((index = str.indexOf(target,index)) != -1) { //targetë¬¸ìì—´ì´ ìˆëŠ” ê³³ì„ index(0)ë²ˆì§¸ ë¬¸ìì—´ë¶€í„° ì°¾ìŒ
 				index += target.length();
 				count++;
 			}
 			
 			System.out.println(str.replace(target, replaceing));
-			System.out.println(count + "°³ Ä¡È¯");
+			System.out.println(count + "ê°œ ì¹˜í™˜");
 		}
 		
 

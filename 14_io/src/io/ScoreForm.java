@@ -19,7 +19,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class ScoreForm extends JFrame implements ActionListener {
 	
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private JLabel hakL, nameL, korL, engL, mathL;
 	private JTextField hakT, nameT, korT, engT, mathT;
 	private JButton inputB, printB, searchB, rankB, saveB, loadB;
@@ -28,14 +28,14 @@ public class ScoreForm extends JFrame implements ActionListener {
 	private Score score;
 	
 	
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public ScoreForm() {
 		
-		hakL = new JLabel("ÇĞ¹ø");
-		nameL = new JLabel("ÀÌ¸§");
-		korL = new JLabel("±¹¾î");
-		engL = new JLabel("¿µ¾î");
-		mathL = new JLabel("¼öÇĞ");
+		hakL = new JLabel("í•™ë²ˆ");
+		nameL = new JLabel("ì´ë¦„");
+		korL = new JLabel("êµ­ì–´");
+		engL = new JLabel("ì˜ì–´");
+		mathL = new JLabel("ìˆ˜í•™");
 	
 		hakT = new JTextField(21);
 		nameT = new JTextField(21);
@@ -43,34 +43,34 @@ public class ScoreForm extends JFrame implements ActionListener {
 		engT = new JTextField(21);
 		mathT = new JTextField(21);
 		
-		inputB = new JButton("ÀÔ·Â");
-		printB = new JButton("Ãâ·Â");
-		searchB = new JButton("ÇĞ¹ø°æ·Â");
-		rankB = new JButton("¼øÀ§");
-		saveB = new JButton("ÆÄÀÏÀúÀå");
-		loadB = new JButton("ÆÄÀÏÀĞ±â");
+		inputB = new JButton("ì…ë ¥");
+		printB = new JButton("ì¶œë ¥");
+		searchB = new JButton("í•™ë²ˆê²½ë ¥");
+		rankB = new JButton("ìˆœìœ„");
+		saveB = new JButton("íŒŒì¼ì €ì¥");
+		loadB = new JButton("íŒŒì¼ì½ê¸°");
 		
 		
 		Vector<String> attribute = new Vector<String>();
-		attribute.add("ÇĞ¹ø");
-		attribute.add("ÀÌ¸§");
-		attribute.add("±¹¾î");
-		attribute.add("¿µ¾î");
-		attribute.add("¼öÇĞ");
-		attribute.add("ÃÑÁ¡");
-		attribute.add("Æò±Õ");
+		attribute.add("í•™ë²ˆ");
+		attribute.add("ì´ë¦„");
+		attribute.add("êµ­ì–´");
+		attribute.add("ì˜ì–´");
+		attribute.add("ìˆ˜í•™");
+		attribute.add("ì´ì ");
+		attribute.add("í‰ê· ");
 		
 		model = new DefaultTableModel(attribute, 0) {
 			@Override
 			public boolean isCellEditable(int row, int column) {
-				if(column != 0) return true; //ÇĞ¹øÀº ¼öÁ¤ÇÒ ¼ö ¾ø°Ô ÇÔ
+				if(column != 0) return true; //í•™ë²ˆì€ ìˆ˜ì •í•  ìˆ˜ ì—†ê²Œ í•¨
 				else return false;
 			}
 		};
 		table = new JTable(model);
 		JScrollPane scroll = new JScrollPane(table);
 		
-		score = new ScoreImpl(); //ÀÚ½ÄÅ¬·¡½º·Î »ı¼º
+		score = new ScoreImpl(); //ìì‹í´ë˜ìŠ¤ë¡œ ìƒì„±
 		
 		JPanel p1 = new JPanel(new FlowLayout(FlowLayout.LEFT,10,38));
 		p1.add(hakL);
@@ -110,7 +110,7 @@ public class ScoreForm extends JFrame implements ActionListener {
 		
 		
 		
-		//<¼±»ı´Ô Ç®ÀÌ>
+		//<ì„ ìƒë‹˜ í’€ì´>
 		//JPanel p1 = new JPanel();
 		//p1.add(hakL); p1.add(hakT);
 		//JPanel p2 = new JPanel();
@@ -124,10 +124,10 @@ public class ScoreForm extends JFrame implements ActionListener {
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		//¿©±â¼­ ÀÌº¥Æ® È£ÃâÇØµµ µÊ
+		//ì—¬ê¸°ì„œ ì´ë²¤íŠ¸ í˜¸ì¶œí•´ë„ ë¨
 	}
 	
-	//ÀÌº¥Æ® Ã³¸® ¸Ş¼Òµå
+	//ì´ë²¤íŠ¸ ì²˜ë¦¬ ë©”ì†Œë“œ
 	public void event() { 
 		inputB.addActionListener(this);
 		printB.addActionListener(this);
@@ -142,14 +142,14 @@ public class ScoreForm extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == inputB) {
-			//µ¥ÀÌÅÍ
+			//ë°ì´í„°
 			String hak = hakT.getText();
 			String name = nameT.getText();
 			int kor = Integer.parseInt(korT.getText().trim());
 			int eng = Integer.parseInt(engT.getText().trim());
 			int math = Integer.parseInt(mathT.getText().trim());
 			
-			//ScoreDTO¿¡ ÀúÀåÇÏ±â
+			//ScoreDTOì— ì €ì¥í•˜ê¸°
 			ScoreDTO dto = new ScoreDTO();
 			dto.setHak(hak);
 			dto.setName(name);
@@ -157,16 +157,16 @@ public class ScoreForm extends JFrame implements ActionListener {
 			dto.setEng(eng);
 			dto.setMath(math);
 			
-			//ÃÑÁ¡, Æò±Õ °è»ê
+			//ì´ì , í‰ê·  ê³„ì‚°
 			dto.calc();
 			
-			//µ¥ÀÌÅÍ º¸°ü(¸ğÀ¸±â) - °´Ã¼ ÀúÀå
+			//ë°ì´í„° ë³´ê´€(ëª¨ìœ¼ê¸°) - ê°ì²´ ì €ì¥
 			score.input(dto);
 			
 			
-			JOptionPane.showMessageDialog(this, "µî·Ï ¿Ï·á");
+			JOptionPane.showMessageDialog(this, "ë“±ë¡ ì™„ë£Œ");
 			
-			//ÃÊ±âÈ­
+			//ì´ˆê¸°í™”
 			hakT.setText("");
 			nameT.setText("");
 			korT.setText("");
@@ -174,11 +174,11 @@ public class ScoreForm extends JFrame implements ActionListener {
 			mathT.setText("");
 			
 		}else if(e.getSource() == printB) {
-			score.print(model); //listÀÇ Ç×¸ñÀ» ¸ğµÎ ²¨³»¼­ JTable¿¡ »Ñ¸®±â
+			score.print(model); //listì˜ í•­ëª©ì„ ëª¨ë‘ êº¼ë‚´ì„œ JTableì— ë¿Œë¦¬ê¸°
 		}else if(e.getSource() == searchB) {
 			score.search(model);
 		}else if(e.getSource() == rankB) {
-			score.tot_desc();//ÃÑÁ¡À¸·Î ³»¸²Â÷¼ø
+			score.tot_desc();//ì´ì ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ
 			score.print(model);
 		}else if(e.getSource() == saveB) { 
 			score.save();

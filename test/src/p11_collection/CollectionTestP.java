@@ -9,13 +9,13 @@ public class CollectionTestP {
 	public static void main(String[] args) {
 		Collection coll = new ArrayList();
 		
-		coll.add("È£¶ûÀÌ"); //ÀÔ·ÂÇÑ ¼ø¼­´ë·Î ÀúÀåµÊ, Á¦³×¸¯ÀÌ ¾ø¾î¼­ WarningÀÌ ¶ä
-		coll.add("»çÀÚ");
-		coll.add("È£¶ûÀÌ"); //Áßº¹Çã¿ë, ¼ø¼­
+		coll.add("í˜¸ë‘ì´"); //ì…ë ¥í•œ ìˆœì„œëŒ€ë¡œ ì €ì¥ë¨, ì œë„¤ë¦­ì´ ì—†ì–´ì„œ Warningì´ ëœ¸
+		coll.add("ì‚¬ì");
+		coll.add("í˜¸ë‘ì´"); //ì¤‘ë³µí—ˆìš©, ìˆœì„œ
 		coll.add(25);
 		coll.add(43.8);
-		coll.add("±â¸°");
-		coll.add("ÄÚ³¢¸®");
+		coll.add("ê¸°ë¦°");
+		coll.add("ì½”ë¼ë¦¬");
 		
 		Iterator it = coll.iterator();
 		while(it.hasNext()) {

@@ -3,7 +3,7 @@ package variable;
 public class NumberTest {
 
 	public static void main(String[] args) {
-		System.out.print("¾È³çÇÏ¼¼¿ä\n");
+		System.out.print("ì•ˆë…•í•˜ì„¸ìš”\n");
 		System.out.println(25+36);
 		System.out.println("25+36");
 		System.out.println("25+36 = " + 25+36);
@@ -19,66 +19,66 @@ public class NumberTest {
 		System.out.println('A' + 3);
 		System.out.println('A' + 32);
 		System.out.println((char)('A' + 32)); 
-		//Çüº¯È¯(¼ýÀÚ -> ¹®ÀÚ), Å¬·¡½º¿¡¼­µµ Çüº¯È¯ÀÌ ÀÏ¾î³²
+		//í˜•ë³€í™˜(ìˆ«ìž -> ë¬¸ìž), í´ëž˜ìŠ¤ì—ì„œë„ í˜•ë³€í™˜ì´ ì¼ì–´ë‚¨
 		System.out.println();
 		
 		
 		System.out.println(2+5);
 		
-		System.out.println('2'+'5'); //°á°ú°ª : 50 + 52 = 103
-		System.out.println('2'- 48 + '5' - 48 ); //¹®ÀÚ¸¦ ¼ýÀÚ·Î º¯È¯, 7
+		System.out.println('2'+'5'); //ê²°ê³¼ê°’ : 50 + 52 = 103
+		System.out.println('2'- 48 + '5' - 48 ); //ë¬¸ìžë¥¼ ìˆ«ìžë¡œ ë³€í™˜, 7
 		//System.out.println((char)'2'+'5');
 		
 		System.out.println("2"+"5"); 
 		System.out.println(Integer.parseInt("2")+Integer.parseInt("5"));
-		//¹®ÀÚ¿­À» ¼ýÀÚ 7·Î º¯È¯, Integer Å¬·¡½º
+		//ë¬¸ìžì—´ì„ ìˆ«ìž 7ë¡œ ë³€í™˜, Integer í´ëž˜ìŠ¤
 		
 		System.out.println("25.3" + "45.6");
 		System.out.println(Double.parseDouble("25.3") + Double.parseDouble("45.6")); 
-		//¹®ÀÚ¿­À» ½Ç¼ö(Á¤¼öX)·Î º¯È¯, Double Å¬·¡½º
+		//ë¬¸ìžì—´ì„ ì‹¤ìˆ˜(ì •ìˆ˜X)ë¡œ ë³€í™˜, Double í´ëž˜ìŠ¤
 		
 	}
 
 }
 
-//¼ýÀÚ
+//ìˆ«ìž
 //2, -5, 100
 
-//¹®ÀÚ¿­(JAVA)
+//ë¬¸ìžì—´(JAVA)
 //"car", "25" 
-//->""»ç¿ë, ¿¬»ê ¾ÈµÊ
-//->ÇÚµåÆù ¹øÈ£¿¡ ¸¹ÀÌ »ç¿ë
-//¡ØPython¿¡¼­´Â ''¶Ç´Â ""À» »ç¿ë
+//->""ì‚¬ìš©, ì—°ì‚° ì•ˆë¨
+//->í•¸ë“œí° ë²ˆí˜¸ì— ë§Žì´ ì‚¬ìš©
+//â€»Pythonì—ì„œëŠ” ''ë˜ëŠ” ""ì„ ì‚¬ìš©
 
-//¹®ÀÚ¿­ÀÇ +´Â °áÇÕ(¿¬»êx)
-//¹®ÀÚ¿­°ú ¼ýÀÚ¸¦ ´õÇÏ¸é ¿ì¼±¼øÀ§¿¡ µû¶ó °áÇÕÀÇ ÀÇ¹Ì·Î ¹Þ¾ÆµéÀÓ
-//¿¬»êÀ» ÇÏ°í ½ÍÀ¸¸é ¼ýÀÚ ÁÖÀ§¿¡ °ýÈ£ÀÔ·Â
-//°®°í ÀÖ´Â °ªÀÌ Á¤¼ö¸é Á¤¼ö·Î °á°ú°ªÀÌ »êÃâ
-//ÇÑÂÊÀÌ ½Ç¼öÀÏ¶§ ¿¬»êÇÏ´Â ´Ù¸¥ ¼ýÀÚ¸¦ ½Ç¼ö·Î º¯È¯ : ÀÚµ¿ Ä³½ºÆ®
+//ë¬¸ìžì—´ì˜ +ëŠ” ê²°í•©(ì—°ì‚°x)
+//ë¬¸ìžì—´ê³¼ ìˆ«ìžë¥¼ ë”í•˜ë©´ ìš°ì„ ìˆœìœ„ì— ë”°ë¼ ê²°í•©ì˜ ì˜ë¯¸ë¡œ ë°›ì•„ë“¤ìž„
+//ì—°ì‚°ì„ í•˜ê³  ì‹¶ìœ¼ë©´ ìˆ«ìž ì£¼ìœ„ì— ê´„í˜¸ìž…ë ¥
+//ê°–ê³  ìžˆëŠ” ê°’ì´ ì •ìˆ˜ë©´ ì •ìˆ˜ë¡œ ê²°ê³¼ê°’ì´ ì‚°ì¶œ
+//í•œìª½ì´ ì‹¤ìˆ˜ì¼ë•Œ ì—°ì‚°í•˜ëŠ” ë‹¤ë¥¸ ìˆ«ìžë¥¼ ì‹¤ìˆ˜ë¡œ ë³€í™˜ : ìžë™ ìºìŠ¤íŠ¸
 
 //printf()
-//Á¤¼öÇü °ªÀ» ¿øÇÑ´Ù : %d ¡Ødecimal
-//½Ç¼öÇü °ªÀ» ¿øÇÑ´Ù : %f
-//¹®ÀÚ ÇÑ ±ÛÀÚ          : %c
-//¹®ÀÚ ¿­                 : %s
-//%ÀüÃ¼ÀÚ¸®¼ö.¼Ò¼öÀÌÇÏÀÚ¸®¼öf
-//ex)25.3 -> %4.1f : 000.0 ¹éÀÇÀÚ¸®, ¼Ò¼ýÁ¡ 1ÀÚ¸®
-//ex)%.2f : ÀüÃ¼ÀÚ¸®´Â »ó°üx, ¼Ò¼ýÁ¡ ÀÚ¸® 1±îÁö¸¸ Ãâ·Â
-//¼Ò¼ö ÀÚ¸® ¼ö ÁöÁ¤½Ã ¹Ý¿Ã¸² µÊ
+//ì •ìˆ˜í˜• ê°’ì„ ì›í•œë‹¤ : %d â€»decimal
+//ì‹¤ìˆ˜í˜• ê°’ì„ ì›í•œë‹¤ : %f
+//ë¬¸ìž í•œ ê¸€ìž          : %c
+//ë¬¸ìž ì—´                 : %s
+//%ì „ì²´ìžë¦¬ìˆ˜.ì†Œìˆ˜ì´í•˜ìžë¦¬ìˆ˜f
+//ex)25.3 -> %4.1f : 000.0 ë°±ì˜ìžë¦¬, ì†Œìˆ«ì  1ìžë¦¬
+//ex)%.2f : ì „ì²´ìžë¦¬ëŠ” ìƒê´€x, ì†Œìˆ«ì  ìžë¦¬ 1ê¹Œì§€ë§Œ ì¶œë ¥
+//ì†Œìˆ˜ ìžë¦¬ ìˆ˜ ì§€ì •ì‹œ ë°˜ì˜¬ë¦¼ ë¨
 
-//¡ØASCII(¿Ü¿ì±â)
+//â€»ASCII(ì™¸ìš°ê¸°)
 //'A' = 65;
-//¡¯A¡¯ -> ¡®a¡¯ : ¡®A¡¯ + 32
-//¡®a¡¯ -> ¡®A¡¯ : ¡®a¡¯ - 32
-// 0  -> ¡®0¡¯ : 0 + 48
-//¡®0¡¯ ->  0  : ¡®0¡¯ - 48
+//â€™Aâ€™ -> â€˜aâ€™ : â€˜Aâ€™ + 32
+//â€˜aâ€™ -> â€˜Aâ€™ : â€˜aâ€™ - 32
+// 0  -> â€˜0â€™ : 0 + 48
+//â€˜0â€™ ->  0  : â€˜0â€™ - 48
 
-//¡Ø¹®ÀÚ¿­À» ¼ýÀÚ·Î ¹Ù²Ù±â
-//¡°2¡± -> Integer.parseInt() -> 2
+//â€»ë¬¸ìžì—´ì„ ìˆ«ìžë¡œ ë°”ê¾¸ê¸°
+//â€œ2â€ -> Integer.parseInt() -> 2
 
-//ÀÚ¹Ù°¡ Á¦°øÇÏ´Â Å¬·¡½º´Â jre¿¡¼­ È®ÀÎ°¡´É
-//±âº»ÇüÀº º¸ÀÌÁö ¾ÊÁö¸¸ String°°Àº °´Ã¼´Â ´«À¸·Î È®ÀÎ °¡´É
-//C:\Program Files\Java\jre1.8.0_261\lib rt.jar(JAVAÀÇ ¾ÐÃàÆÄÀÏ)
+//ìžë°”ê°€ ì œê³µí•˜ëŠ” í´ëž˜ìŠ¤ëŠ” jreì—ì„œ í™•ì¸ê°€ëŠ¥
+//ê¸°ë³¸í˜•ì€ ë³´ì´ì§€ ì•Šì§€ë§Œ Stringê°™ì€ ê°ì²´ëŠ” ëˆˆìœ¼ë¡œ í™•ì¸ ê°€ëŠ¥
+//C:\Program Files\Java\jre1.8.0_261\lib rt.jar(JAVAì˜ ì••ì¶•íŒŒì¼)
 
-//Overload : ÇÔ¼öÀÇ ÀÌ¸§ÀÌ µ¿ÀÏÇÑ °ÍÀÌ µÎ°¡Áö Á¸Àç 
-//			  ex)String.fomat : StringÅ¬·¡½ºÀÇ format ¸Þ¼Òµå 
+//Overload : í•¨ìˆ˜ì˜ ì´ë¦„ì´ ë™ì¼í•œ ê²ƒì´ ë‘ê°€ì§€ ì¡´ìž¬ 
+//			  ex)String.fomat : Stringí´ëž˜ìŠ¤ì˜ format ë©”ì†Œë“œ 

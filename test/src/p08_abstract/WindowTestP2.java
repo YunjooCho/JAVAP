@@ -10,7 +10,7 @@ public class WindowTestP2 extends Frame {
 	public WindowTestP2() {
 		setBounds(100, 100, 700, 700);
 		setVisible(true);
-		setTitle("ÀÌ¹ÌÁö");
+		setTitle("ì´ë¯¸ì§€");
 	}
 	
 	public void paint(Graphics g) {

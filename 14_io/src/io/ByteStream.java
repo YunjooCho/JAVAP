@@ -11,14 +11,14 @@ public class ByteStream {
 			//BufferedInputStream bis = new BufferedInputStream(new FileInputStream("data.txt"));
 			FileInputStream fis = new FileInputStream("data.txt");
 			BufferedInputStream bis = new BufferedInputStream(fis);
-			//read() - intÇü ¹İÈ¯ -> ASCIIÄÚµå°ªÀ¸·Î °¡Á®¿È A(65),B(66),C(67),D(68).....±ÛÀÚ¸¦ ÇÏ³ª¾¿ ÀĞ´Ù°¡ ´õÀÌ»ó ÀĞÀ»°Ô ¾øÀ¸¸é -1ÀÌ ¹İÈ¯µÊ
-			//read(byte[]) - ÇÑ²¨¹ø¿¡ ÀĞÀ½
-			//¼­¹ö¿¡¼­ ÆÄÀÏ ´Ù¿î·Îµå´Â ÀÌ°É·Î »ç¿ë
+			//read() - intí˜• ë°˜í™˜ -> ASCIIì½”ë“œê°’ìœ¼ë¡œ ê°€ì ¸ì˜´ A(65),B(66),C(67),D(68).....ê¸€ìë¥¼ í•˜ë‚˜ì”© ì½ë‹¤ê°€ ë”ì´ìƒ ì½ì„ê²Œ ì—†ìœ¼ë©´ -1ì´ ë°˜í™˜ë¨
+			//read(byte[]) - í•œêº¼ë²ˆì— ì½ìŒ
+			//ì„œë²„ì—ì„œ íŒŒì¼ ë‹¤ìš´ë¡œë“œëŠ” ì´ê±¸ë¡œ ì‚¬ìš©
 			int data;
 			
-			while((data = bis.read()) != -1) { //-1ÀÌ ³ª¿Ã¶§±îÁö ÇÑ±ÛÀÚ¾¿ ²¨³¿ (Áß°£¿¡ Ãâ·ÂµÇ´Â 1310Àº ¿£ÅÍ°ªÀÓ(¹ØÀ¸·Î\n, ¸Ç¾ÕÀ¸·Î\r)
-				//System.out.println(data); - ¼ıÀÚ·Î Ãâ·ÂµÊ
-				System.out.println((char)data); //¹®ÀÚ·Î Ãâ·ÂµÊ
+			while((data = bis.read()) != -1) { //-1ì´ ë‚˜ì˜¬ë•Œê¹Œì§€ í•œê¸€ìì”© êº¼ëƒ„ (ì¤‘ê°„ì— ì¶œë ¥ë˜ëŠ” 1310ì€ ì—”í„°ê°’ì„(ë°‘ìœ¼ë¡œ\n, ë§¨ì•ìœ¼ë¡œ\r)
+				//System.out.println(data); - ìˆ«ìë¡œ ì¶œë ¥ë¨
+				System.out.println((char)data); //ë¬¸ìë¡œ ì¶œë ¥ë¨
 			}
 			
 			bis.close();

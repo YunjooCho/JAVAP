@@ -4,28 +4,28 @@ public class CompTestP {
 
 	public static void main(String[] args) {
 		int score = 85;
-		String result = score >= 80 && score <= 100 ? "ÇÕ°İ" : "ºÒÇÕ°İ";
-		System.out.println("°á°ú = " + result);
+		String result = score >= 80 && score <= 100 ? "í•©ê²©" : "ë¶ˆí•©ê²©";
+		System.out.println("ê²°ê³¼ = " + result);
 		System.out.println();
 		
-		String result2 = score % 2 == 0 ? "Â¦¼ö" : "È¦¼ö";
-		System.out.println("°á°ú = " + result2);
+		String result2 = score % 2 == 0 ? "ì§ìˆ˜" : "í™€ìˆ˜";
+		System.out.println("ê²°ê³¼ = " + result2);
 		System.out.println();
 		
 		int a = 26, b = 125;
 		int big = a > b ? a : b;
-		System.out.println("°á°ú = " + big);
+		System.out.println("ê²°ê³¼ = " + big);
 		System.out.println();
-		System.out.println("Å« °ª = " + Math.max(a, b)); //MathÅ¬·¡½º max()¸Ş¼Òµå
-		System.out.println("ÀÛÀº °ª = " + Math.min(a, b));
+		System.out.println("í° ê°’ = " + Math.max(a, b)); //Mathí´ë˜ìŠ¤ max()ë©”ì†Œë“œ
+		System.out.println("ì‘ì€ ê°’ = " + Math.min(a, b));
 		
 		double p = Math.pow(2.0, 5.0);
-		System.out.println("Á¦°ö = " + p);
+		System.out.println("ì œê³± = " + p);
 		System.out.println();
 		
 		int c = 15;
-		String result3 = c % 2 == 0 && c % 3 ==0 ? "2¿Í 3ÀÇ °ø¹è¼öÀÌ´Ù" : "2¿Í 3ÀÇ °ø¹è¼ö°¡ ¾Æ´Ï´Ù";
-		System.out.println("°á°ú = " + result3);
+		String result3 = c % 2 == 0 && c % 3 ==0 ? "2ì™€ 3ì˜ ê³µë°°ìˆ˜ì´ë‹¤" : "2ì™€ 3ì˜ ê³µë°°ìˆ˜ê°€ ì•„ë‹ˆë‹¤";
+		System.out.println("ê²°ê³¼ = " + result3);
 			
 
 	}

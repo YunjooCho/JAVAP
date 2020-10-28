@@ -6,53 +6,53 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 
 
-//2. Å×ÀÌºí ÀÛ¼ºÀ» À§ÇÑ »õ·Î¿î Å¬·¡½º »ı¼º, »ó¼Ó
-class JTableModel extends AbstractTableModel{ //AbastracTableModel´Â Ãß»óÅ¬·¡½º(¿ëµµ : Å×ÀÌºí ÀÛ¼º)
-	Object[][] data = {{"Nari", "¸¶·çÄ¡", new Integer(1234), "¿·ÁıÄ£±¸"},
-					   {"One", "¿ÀÀ±¾Æ", new Integer(1111), "¿¹»ÛÀÌ"},
-					   {"two", "¿ÀÀ±¼­", new Integer(2222), "±Í¿°µÕÀÌ"},
-					   {"three","¾Æ¶óÄ¡", new Integer(3333), "µ¿¾Æ¸® Ä£±¸"}}; //Æ©ÇÃ
+//2. í…Œì´ë¸” ì‘ì„±ì„ ìœ„í•œ ìƒˆë¡œìš´ í´ë˜ìŠ¤ ìƒì„±, ìƒì†
+class JTableModel extends AbstractTableModel{ //AbastracTableModelëŠ” ì¶”ìƒí´ë˜ìŠ¤(ìš©ë„ : í…Œì´ë¸” ì‘ì„±)
+	Object[][] data = {{"Nari", "ë§ˆë£¨ì¹˜", new Integer(1234), "ì˜†ì§‘ì¹œêµ¬"},
+					   {"One", "ì˜¤ìœ¤ì•„", new Integer(1111), "ì˜ˆìœì´"},
+					   {"two", "ì˜¤ìœ¤ì„œ", new Integer(2222), "ê·€ì—¼ë‘¥ì´"},
+					   {"three","ì•„ë¼ì¹˜", new Integer(3333), "ë™ì•„ë¦¬ ì¹œêµ¬"}}; //íŠœí”Œ
 					   
-	String[] name = {"¾ÆÀÌµğ", "ÀÌ¸§","ºñ¹Ğ¹øÈ£","±¸ºĞ"}; //ÇÊµå¸í µé
+	String[] name = {"ì•„ì´ë””", "ì´ë¦„","ë¹„ë°€ë²ˆí˜¸","êµ¬ë¶„"}; //í•„ë“œëª… ë“¤
 			
 	
-	//3.¿À¹ö¶óÀÌµù(¹İµå½Ã ¿À¹ö¶óÀÌµùÇØ¾ß Å×ÀÌºíÀ» »ı¼ºÇÒ ¼ö ÀÖÀ½)
+	//3.ì˜¤ë²„ë¼ì´ë”©(ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë”©í•´ì•¼ í…Œì´ë¸”ì„ ìƒì„±í•  ìˆ˜ ìˆìŒ)
 	@Override
-	public int getRowCount() { //¿­, ÇÊ¼ö·Î {}¾ÈÀ» ÀÔ·ÂÇØ¾ß ÇÔ
-		return data.length; // ÀÏÀÎºĞÀÇ Æ©ÇÃÀÇ °¹¼ö
+	public int getRowCount() { //ì—´, í•„ìˆ˜ë¡œ {}ì•ˆì„ ì…ë ¥í•´ì•¼ í•¨
+		return data.length; // ì¼ì¸ë¶„ì˜ íŠœí”Œì˜ ê°¯ìˆ˜
 	}
 
 	@Override
-	public int getColumnCount() { //Çà, ÇÊ¼ö·Î {}¾ÈÀ» ÀÔ·ÂÇØ¾ß ÇÔ
-		return name.length; //¾ÆÀÌµğ, ÀÌ¸§, ºñ¹Ğ¹øÈ£ ´Ù µÊ
+	public int getColumnCount() { //í–‰, í•„ìˆ˜ë¡œ {}ì•ˆì„ ì…ë ¥í•´ì•¼ í•¨
+		return name.length; //ì•„ì´ë””, ì´ë¦„, ë¹„ë°€ë²ˆí˜¸ ë‹¤ ë¨
 	}
 
 	@Override
-	public Object getValueAt(int r, int c) {//ÇÊ¼ö·Î {}¾ÈÀ» ÀÔ·ÂÇØ¾ß ÇÔ  //row, column
+	public Object getValueAt(int r, int c) {//í•„ìˆ˜ë¡œ {}ì•ˆì„ ì…ë ¥í•´ì•¼ í•¨  //row, column
 		
 		return data[r][c];
 	}
 	
 	@Override
-	public String getColumnName(int c) {//columnÀÇ °¹¼ö¸¸Å­(¹è¿­), ¼Ó¼º¸í °¡Á®¿À±â
+	public String getColumnName(int c) {//columnì˜ ê°¯ìˆ˜ë§Œí¼(ë°°ì—´), ì†ì„±ëª… ê°€ì ¸ì˜¤ê¸°
 		return name[c];
 	}
 	
 	@Override
 	public boolean isCellEditable(int r, int c) { //row, column
-		return (c!=0)? true : false; //¼öÁ¤ÇÒ ¼ö ÀÖ´Ù ¾ø´Ù, 0¹øÂ°(id)°¡ µé¾î°¡´Â ¹æÀº ¼öÁ¤ÇÒ ¼ö ¾ø°Ô ¼³Á¤
+		return (c!=0)? true : false; //ìˆ˜ì •í•  ìˆ˜ ìˆë‹¤ ì—†ë‹¤, 0ë²ˆì§¸(id)ê°€ ë“¤ì–´ê°€ëŠ” ë°©ì€ ìˆ˜ì •í•  ìˆ˜ ì—†ê²Œ ì„¤ì •
 	}
 	
 	@Override
-	public void setValueAt(Object ob, int r, int c) { //¿øÇÏ´Â À§Ä¡ÀÇ µ¥ÀÌÅÍ¸¦ °¡Á®¿Ã¼ö ÀÖÀ½(2Â÷¿ø ¹è¿­Áß ÇÑÄ­ÀÇ °ªÀ» °¡Á®¿È)
-													  //¼ıÀÚ, ¹®ÀÚ µî ¿©·¯°¡Áö·Î ¼öÁ¤ÇÒ ¼ö ÀÖÀ½
+	public void setValueAt(Object ob, int r, int c) { //ì›í•˜ëŠ” ìœ„ì¹˜ì˜ ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¬ìˆ˜ ìˆìŒ(2ì°¨ì› ë°°ì—´ì¤‘ í•œì¹¸ì˜ ê°’ì„ ê°€ì ¸ì˜´)
+													  //ìˆ«ì, ë¬¸ì ë“± ì—¬ëŸ¬ê°€ì§€ë¡œ ìˆ˜ì •í•  ìˆ˜ ìˆìŒ
 		data[r][c] = ob;
 	}
 	
 }
 
 
-//1.Å¬·¡½º »ó¼Ó, ÇÁ·¹ÀÓ »ı¼º
+//1.í´ë˜ìŠ¤ ìƒì†, í”„ë ˆì„ ìƒì„±
 public class JTableEx extends JFrame {
 
 	JTable table;
@@ -60,10 +60,10 @@ public class JTableEx extends JFrame {
 	
 	
 	public JTableEx() {
-		model = new JTableModel(); //»ó´Ü¿¡ ¸¸µç Å×ÀÌºí ÀÛ¼º Å¬·¡½º¸¦ »ı¼º
-		table = new JTable(model); //À§¿¡¼­ ¸ğµ¨À» »ı¼ºÇÑ µÚ °ªÀ» ¹Ş¾Æ¿ÃÁö or Å×ÀÌºí»ı¼º°ú µ¿½Ã¿¡ ¸ğµ¨À» »ı¼ºÇÒÁö °áÁ¤ÇÒ ¼ö ÀÖÀ½ (¿©±â´Â ÀüÀÚ)
-		add(new JScrollPane(table)); //¾Æ±î´Â ½ºÅ©·ÑÀ» »ı¼º, ±× µÚ ½ºÅ©·ÑÀ» ºÙÀÓ
-									 //Áö±İÀº ½ºÅ©·ÑÀ» »ı¼ºÇÏ¸é¼­ Å×ÀÌºí¿¡ ºÙÀÓ-
+		model = new JTableModel(); //ìƒë‹¨ì— ë§Œë“  í…Œì´ë¸” ì‘ì„± í´ë˜ìŠ¤ë¥¼ ìƒì„±
+		table = new JTable(model); //ìœ„ì—ì„œ ëª¨ë¸ì„ ìƒì„±í•œ ë’¤ ê°’ì„ ë°›ì•„ì˜¬ì§€ or í…Œì´ë¸”ìƒì„±ê³¼ ë™ì‹œì— ëª¨ë¸ì„ ìƒì„±í• ì§€ ê²°ì •í•  ìˆ˜ ìˆìŒ (ì—¬ê¸°ëŠ” ì „ì)
+		add(new JScrollPane(table)); //ì•„ê¹ŒëŠ” ìŠ¤í¬ë¡¤ì„ ìƒì„±, ê·¸ ë’¤ ìŠ¤í¬ë¡¤ì„ ë¶™ì„
+									 //ì§€ê¸ˆì€ ìŠ¤í¬ë¡¤ì„ ìƒì„±í•˜ë©´ì„œ í…Œì´ë¸”ì— ë¶™ì„-
 		setBounds(200, 200, 300, 300);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

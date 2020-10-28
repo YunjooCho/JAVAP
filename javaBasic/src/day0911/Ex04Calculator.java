@@ -2,19 +2,19 @@ package day0911;
 
 
 
-//°è»ê±â ÇÁ·Î±×·¥
-//»ç¿ëÀÚ°¡ Ã¹¹øÀç Á¤¼ö¸¦ ÀÔ·ÂÇÏ°í
-//+ - * / % ¸¦ ¼±ÅÃÇÏ°í
-//µÎ¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ¸é
-//ÇØ´ç ±â´É¿¡ ¸ÂÃá ¸Ş¼Òµå°¡ ½ÇÇàµÇ¼­ 
-//°á°ú°ªÀ» È­¸é¿¡
-//Ãâ·ÂÇÏ°Ô ¸¸µé¾îº¸¼¼¿ä
+//ê³„ì‚°ê¸° í”„ë¡œê·¸ë¨
+//ì‚¬ìš©ìê°€ ì²«ë²ˆì¬ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ê³ 
+//+ - * / % ë¥¼ ì„ íƒí•˜ê³ 
+//ë‘ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ë©´
+//í•´ë‹¹ ê¸°ëŠ¥ì— ë§ì¶˜ ë©”ì†Œë“œê°€ ì‹¤í–‰ë˜ì„œ 
+//ê²°ê³¼ê°’ì„ í™”ë©´ì—
+//ì¶œë ¥í•˜ê²Œ ë§Œë“¤ì–´ë³´ì„¸ìš”
 
-//¿¹½Ã
-//Ã¹¹øÂ° °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä: (1ÀÔ·Â)
-//¿¬»êÀÚ¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä: +
-//µÎ¹øÂ° °ªÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä: (100ÀÔ·Â)
-//°á°ú°ª: 101
+//ì˜ˆì‹œ
+//ì²«ë²ˆì§¸ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: (1ì…ë ¥)
+//ì—°ì‚°ìë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”: +
+//ë‘ë²ˆì§¸ ê°’ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: (100ì…ë ¥)
+//ê²°ê³¼ê°’: 101
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 
 public class Ex04Calculator {
 
-	//°Ô»ê¸Ş¼Òµå
+	//ê²Œì‚°ë©”ì†Œë“œ
 	static int add(int a, int b) {
 		return a + b;
 	}
@@ -40,20 +40,20 @@ public class Ex04Calculator {
 		return a % b;
 	}
 	
-	//main¸Ş¼Òµå¿¡¼­ °¢°¢ÀÇ ¸Ş¼Òµå¸¦ È£ÃâÇÒ ¼ö ÀÖ°Ô ¸¸µé¾îÁÖÀÚ
+	//mainë©”ì†Œë“œì—ì„œ ê°ê°ì˜ ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•  ìˆ˜ ìˆê²Œ ë§Œë“¤ì–´ì£¼ì
 	public static void main(String[] args) throws IOException{
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
 		
 			
-		System.out.print("Ã¹¹øÂ° °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ");
+		System.out.print("ì²«ë²ˆì§¸ ê°’ì„ ì…ë ¥í•´ ì£¼ì„¸ìš” : ");
 		int number1 = Integer.parseInt(bufferedReader.readLine());
-		System.out.print("¿¬»êÀÚ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä(+,-,/,*) : ");
+		System.out.print("ì—°ì‚°ìë¥¼ ì„ íƒí•´ ì£¼ì„¸ìš”(+,-,/,*) : ");
 		String operator = bufferedReader.readLine();
-		System.out.print("µÎ¹øÂ° °ªÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä : ");
+		System.out.print("ë‘ë²ˆì§¸ ê°’ì„ ì…ë ¥í•´ ì£¼ì„¸ìš” : ");
 		int number2 = Integer.parseInt(bufferedReader.readLine());
 		
-		System.out.println("case¹®");
+		System.out.println("caseë¬¸");
 		switch(operator) {
 		case "+":
 			System.out.println(add(number1,number2));
@@ -71,21 +71,21 @@ public class Ex04Calculator {
 			System.out.println(remainder(number1,number2));
 			break;
 		default : 
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			break;
 		}
 		
 		System.out.println();
 		System.out.println();
-		System.out.println("if¹®");
+		System.out.println("ifë¬¸");
 			if(operator.equals("+")) {
-				System.out.println("°á°ú°ª : " + Ex04Calculator.add(number1, number2));
+				System.out.println("ê²°ê³¼ê°’ : " + Ex04Calculator.add(number1, number2));
 			}else if(operator.equals("-")) {
-				System.out.println("°á°ú°ª : " + Ex04Calculator.sub(number1, number2));
+				System.out.println("ê²°ê³¼ê°’ : " + Ex04Calculator.sub(number1, number2));
 			}else if(operator.equals("*")) {
-				System.out.println("°á°ú°ª : " + Ex04Calculator.mul(number1, number2));
+				System.out.println("ê²°ê³¼ê°’ : " + Ex04Calculator.mul(number1, number2));
 			}else if(operator.equals("/")) {
-				System.out.printf("°á°ú°ª : %.2f", Ex04Calculator.div(number1, number2));
+				System.out.printf("ê²°ê³¼ê°’ : %.2f", Ex04Calculator.div(number1, number2));
 			}
 		
 		

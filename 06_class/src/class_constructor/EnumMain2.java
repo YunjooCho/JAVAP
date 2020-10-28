@@ -1,16 +1,16 @@
 package class_constructor;
 
-enum EnumColor2{//class¿Í À¯»çÇÑ ±¸¼º
-	//enum °ıÈ£ ¾ÈÀÇ µ¥ÀÌÅÍ´Â »ı¼ºÀÚ·Î Àü´ŞµÈ´Ù
-	RED("»¡°­"), GREEN("ÃÊ·Ï"), BLUE("ÆÄ¶û"), MAGENTA("º¸¶ó");
+enum EnumColor2{//classì™€ ìœ ì‚¬í•œ êµ¬ì„±
+	//enum ê´„í˜¸ ì•ˆì˜ ë°ì´í„°ëŠ” ìƒì„±ìë¡œ ì „ë‹¬ëœë‹¤
+	RED("ë¹¨ê°•"), GREEN("ì´ˆë¡"), BLUE("íŒŒë‘"), MAGENTA("ë³´ë¼");
 	
 	private String colorName;
 	
-	EnumColor2(String colorName) { //enumÀÇ »ı¼ºÀÚ´Â private, default¸¸ ¸ÔÈû
+	EnumColor2(String colorName) { //enumì˜ ìƒì„±ìëŠ” private, defaultë§Œ ë¨¹í˜
 		this.colorName = colorName;
 	}
 	
-	public String getColorName() { //Ä¸½¶È­
+	public String getColorName() { //ìº¡ìŠí™”
 		return colorName;
 	}
 }

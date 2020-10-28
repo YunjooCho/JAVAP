@@ -1,12 +1,12 @@
 package _interface;
 
-//public class InterMain implements InterA, InterB {//´ÙÁß»ó¼Ó ¾Æ´Ô - extends»ç¿ë ¾ÈµÇ¾î ÀÖÀ½
+//public class InterMain implements InterA, InterB {//ë‹¤ì¤‘ìƒì† ì•„ë‹˜ - extendsì‚¬ìš© ì•ˆë˜ì–´ ìˆìŒ
 public class InterMain implements InterC {
 	//The type InterMain must implement the inherited abstract method InterA.bb()
-	//ÀÎÅÍÆäÀÌ½ºÀÇ ¸ğµç ¸Ş¼Òµå¸¦ ¹İµå½Ã ¿À¹ö¶óÀÌµå ÇØ¾ß ÇÔ
-	//±×·¯³ª º» Å¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµå ÇÏÁö ¾ÊÀ» °æ¿ì, class ¾Õ¿¡ abstractÇØÁÜ -> abstract class InterMain... 
+	//ì¸í„°í˜ì´ìŠ¤ì˜ ëª¨ë“  ë©”ì†Œë“œë¥¼ ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë“œ í•´ì•¼ í•¨
+	//ê·¸ëŸ¬ë‚˜ ë³¸ í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë“œ í•˜ì§€ ì•Šì„ ê²½ìš°, class ì•ì— abstractí•´ì¤Œ -> abstract class InterMain... 
 	
-	//InterAÀÇ ¸Ş¼Òµå ¿À¹ö¶óÀÌµå
+	//InterAì˜ ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë“œ
 	public void aa() {}
 	public void bb() {}
 	

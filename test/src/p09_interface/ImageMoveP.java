@@ -18,23 +18,23 @@ public class ImageMoveP extends Frame implements ActionListener, KeyListener, Wi
 		new ImageMoveP().init();
 	}
 
-	//2-1.¹öÆ°¸¸µé±â
+	//2-1.ë²„íŠ¼ë§Œë“¤ê¸°
 	private Button resetBtn, leftBtn, upBtn, downBtn, rightBtn;
 	private int x = 100; int y = 100;
 	
 	public void init() {
 		
-		//1.ÇÁ·¹ÀÓ ¸¸µé±â
+		//1.í”„ë ˆì„ ë§Œë“¤ê¸°
 		setBounds(300, 300, 500, 500);
 		setVisible(true);
 		setResizable(true);
 		
-		//2-2.¹öÆ° ¸¸µé±â
-		resetBtn = new Button("ÃÊ±âÈ­");
-		leftBtn = new Button("¿ŞÂÊ");
-		upBtn = new Button("À­ÂÊ");
-		downBtn = new Button("¾Æ·§ÂÊ");
-		rightBtn = new Button("¿À¸¥ÂÊ");
+		//2-2.ë²„íŠ¼ ë§Œë“¤ê¸°
+		resetBtn = new Button("ì´ˆê¸°í™”");
+		leftBtn = new Button("ì™¼ìª½");
+		upBtn = new Button("ìœ—ìª½");
+		downBtn = new Button("ì•„ë«ìª½");
+		rightBtn = new Button("ì˜¤ë¥¸ìª½");
 		
 		Panel p = new Panel();
 		p.add(resetBtn);
@@ -51,7 +51,7 @@ public class ImageMoveP extends Frame implements ActionListener, KeyListener, Wi
 		downBtn.setFocusable(false);
 		rightBtn.setFocusable(false);
 		
-		//3.ÀÌº¥Æ®
+		//3.ì´ë²¤íŠ¸
 		resetBtn.addActionListener(this);
 		leftBtn.addActionListener(this);
 		upBtn.addActionListener(this);
@@ -62,7 +62,7 @@ public class ImageMoveP extends Frame implements ActionListener, KeyListener, Wi
 		
 	}
 	
-	//4-1.ActionListener¿À¹ö¶óÀÌµå
+	//4-1.ActionListenerì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == resetBtn) {
@@ -81,7 +81,7 @@ public class ImageMoveP extends Frame implements ActionListener, KeyListener, Wi
 	}
 	
 
-	//4-2.WindowListener ¿À¹ö¶óÀÌµå
+	//4-2.WindowListener ì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public void windowOpened(WindowEvent e) {}
 
@@ -106,7 +106,7 @@ public class ImageMoveP extends Frame implements ActionListener, KeyListener, Wi
 	public void windowDeactivated(WindowEvent e) {}
 	
 	
-	//6.KeyListener ¿À¹ö¶óÀÌµù
+	//6.KeyListener ì˜¤ë²„ë¼ì´ë”©
 	@Override
 	public void keyTyped(KeyEvent e) {}
 
@@ -131,7 +131,7 @@ public class ImageMoveP extends Frame implements ActionListener, KeyListener, Wi
 	
 	
 	
-	//5.ÀÌ¹ÌÁö ¶ç¿ì±â
+	//5.ì´ë¯¸ì§€ ë„ìš°ê¸°
 	public void paint(Graphics g) {
 		Image img = Toolkit.getDefaultToolkit().getImage("puppy.jpg");
 		g.drawImage(img, x, y, this);

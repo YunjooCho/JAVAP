@@ -7,38 +7,38 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class WindowTest extends Frame {
-	//¸ŞÀÎ¸Ş¼Òµå
+	//ë©”ì¸ë©”ì†Œë“œ
 	public static void main(String[] args) {
 		new WindowTest();
 	}
 	
-	//»ı¼ºÀÚ
+	//ìƒì„±ì
 	public WindowTest() {
 		setBounds(100, 100, 300, 400);
 		setVisible(true);
 		
-		//ÀÌº¥Æ®
-		this.addWindowListener(new WindowAdapter() { //WindowAdapter´Â API¿¡¼­ Ã£¾ÒÀ½
-													 //WindowAdapter´Â Ãß»óÅ¬·¡½º, ¿ø·¡´Â new¾ÈµÊ
+		//ì´ë²¤íŠ¸
+		this.addWindowListener(new WindowAdapter() { //WindowAdapterëŠ” APIì—ì„œ ì°¾ì•˜ìŒ
+													 //WindowAdapterëŠ” ì¶”ìƒí´ë˜ìŠ¤, ì›ë˜ëŠ” newì•ˆë¨
 													 
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
 			}
 		});
-		//WindowListenerÀÎÅÍÆäÀÌ½º¸¦ »çŸGÇÏ´Â °æ¿ì,
-		//WindowListener°¡ °¡Áö°í ÀÖ´Â ¸ğµç ¸Ş¼Òµå¸¦ OverrideÇØ¾ß ÇÔ
-		//ÀÍ¸í Å¬·¡½º¸¦ »ç¿ëÇÏ´Â °æ¿ì ÇÊ¿äÇÑ ¸Ş¼Òµå¸¸ °¡Á®´Ù »ç¿ëÇÒ ¼ö ÀÖÀ½
+		//WindowListenerì¸í„°í˜ì´ìŠ¤ë¥¼ ì‚¬ìš¯í•˜ëŠ” ê²½ìš°,
+		//WindowListenerê°€ ê°€ì§€ê³  ìˆëŠ” ëª¨ë“  ë©”ì†Œë“œë¥¼ Overrideí•´ì•¼ í•¨
+		//ìµëª… í´ë˜ìŠ¤ë¥¼ ì‚¬ìš©í•˜ëŠ” ê²½ìš° í•„ìš”í•œ ë©”ì†Œë“œë§Œ ê°€ì ¸ë‹¤ ì‚¬ìš©í•  ìˆ˜ ìˆìŒ
 		
-		this.addMouseListener(new MouseAdapter() { //MouseAdapter´Â Ãß»óÅ¬·¡½º, ¿ø·¡´Â new¾ÈµÊ
-												   //MouseAdapterÀÇ 5°³ÀÇ Ãß»ó¸Ş¼Òµå Override - ºó body
-												   //³ª¸ÓÁö 2°³¸¸ ºó body°¡ ¾Æ´Ñ ¿À¹ö¶óÀÌµå ½ÇÇà
+		this.addMouseListener(new MouseAdapter() { //MouseAdapterëŠ” ì¶”ìƒí´ë˜ìŠ¤, ì›ë˜ëŠ” newì•ˆë¨
+												   //MouseAdapterì˜ 5ê°œì˜ ì¶”ìƒë©”ì†Œë“œ Override - ë¹ˆ body
+												   //ë‚˜ë¨¸ì§€ 2ê°œë§Œ ë¹ˆ bodyê°€ ì•„ë‹Œ ì˜¤ë²„ë¼ì´ë“œ ì‹¤í–‰
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				System.out.println("¸¶¿ì½ºIN");
+				System.out.println("ë§ˆìš°ìŠ¤IN");
 			}
 			@Override
 			public void mouseExited(MouseEvent e) {
-				System.out.println("¸¶¿ì½ºOUT");
+				System.out.println("ë§ˆìš°ìŠ¤OUT");
 			}
 		});
 	}

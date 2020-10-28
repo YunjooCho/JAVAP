@@ -4,99 +4,99 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//Ex01 ¾÷±×·¹ÀÌµå¹öÁ¯
-//ÃÑÁ¡ÀÌ ¾Æ´Ï¶ó 
-//±¹¿µ¼ö Á¡¼ö¸¦ °ü¸®ÇÏ´Â
-//¹«ÇÑ·çÇÁ ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À(20ºĞ±îÁö)
+//Ex01 ì—…ê·¸ë ˆì´ë“œë²„ì ¼
+//ì´ì ì´ ì•„ë‹ˆë¼ 
+//êµ­ì˜ìˆ˜ ì ìˆ˜ë¥¼ ê´€ë¦¬í•˜ëŠ”
+//ë¬´í•œë£¨í”„ í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤(20ë¶„ê¹Œì§€)
 
-//Á¶°Ç 1. Ã³À½ ÀÔ·Â½Ã¿¡´Â for ¹İº¹¹®À» »ç¿ëÇØ¼­ 5¸íÀÇ ÀÌ¸§°ú ±¹¿µ¼ö Á¡¼ö¸¦ ´Ù ÀÔ·ÂÇÑ´Ù.
-//Á¶°Ç 2. ÀÔ·ÂÈÄ¿¡´Â ¹«ÇÑ·çÇÁ¸¦ ÅëÇØ¼­
-//    ³»°¡ º¸°í ½ÍÀº ÇĞ»ıÀÇ ÀÌ¸§°ú Á¡¼ö, ÃÑÁ¡, Æò±Õ¸¸ º¼¼ö ÀÖ°Ô ÇÑ´Ù.
-//¿¹½Ã:
-//º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: (1ÀÔ·Â)
-//1¹ø ±è¶¯¶¯ ÇĞ»ı
-//±¹¾î: 80Á¡ ¿µ¾î: 80Á¡ ¼öÇĞ: 81Á¡
-//ÃÑÁ¡: 241Á¡ Æò±Õ: 80.33Á¡
-//º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: (20000 ÀÔ·Â)
-//Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.
-//º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä: (2ÀÔ·Â)
-//2¹ø ÃÖµ¿µ¿ ÇĞ»ı
-//±¹¾î: 70Á¡ ¿µ¾î: 69Á¡ ¼öÇĞ: 68Á¡
-//ÃÑÁ¡: 207Á¡ Æò±Õ: 69Á¡
-//º¸°í ½ÍÀº ÇĞ»ıÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: (-1ÀÔ·Â)
-//»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.
+//ì¡°ê±´ 1. ì²˜ìŒ ì…ë ¥ì‹œì—ëŠ” for ë°˜ë³µë¬¸ì„ ì‚¬ìš©í•´ì„œ 5ëª…ì˜ ì´ë¦„ê³¼ êµ­ì˜ìˆ˜ ì ìˆ˜ë¥¼ ë‹¤ ì…ë ¥í•œë‹¤.
+//ì¡°ê±´ 2. ì…ë ¥í›„ì—ëŠ” ë¬´í•œë£¨í”„ë¥¼ í†µí•´ì„œ
+//    ë‚´ê°€ ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ì´ë¦„ê³¼ ì ìˆ˜, ì´ì , í‰ê· ë§Œ ë³¼ìˆ˜ ìˆê²Œ í•œë‹¤.
+//ì˜ˆì‹œ:
+//ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: (1ì…ë ¥)
+//1ë²ˆ ê¹€ë•¡ë•¡ í•™ìƒ
+//êµ­ì–´: 80ì  ì˜ì–´: 80ì  ìˆ˜í•™: 81ì 
+//ì´ì : 241ì  í‰ê· : 80.33ì 
+//ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: (20000 ì…ë ¥)
+//ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.
+//ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”: (2ì…ë ¥)
+//2ë²ˆ ìµœë™ë™ í•™ìƒ
+//êµ­ì–´: 70ì  ì˜ì–´: 69ì  ìˆ˜í•™: 68ì 
+//ì´ì : 207ì  í‰ê· : 69ì 
+//ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: (-1ì…ë ¥)
+//ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.
 
-//Ex01¿¡ ¹İÇØ °¢ °ú¸ñÀÇ Á¡¼ö°¡ ¹è¿­¿¡ ÀúÀåµÊ
-//¹è¿­ a[i] = 5; -> ÁÖ¼Ò°ª¾Æ´Ô, °®°íÀÖ´Â °ªÀ» È£Ãâ 
+//Ex01ì— ë°˜í•´ ê° ê³¼ëª©ì˜ ì ìˆ˜ê°€ ë°°ì—´ì— ì €ì¥ë¨
+//ë°°ì—´ a[i] = 5; -> ì£¼ì†Œê°’ì•„ë‹˜, ê°–ê³ ìˆëŠ” ê°’ì„ í˜¸ì¶œ 
 
 
 public class Ex02Array02 {
 	
 	final static int SIZE = 5;
-	final static int NUMBER_OF_SUBJECT = 3; //°ú¸ñ¼ö
+	final static int NUMBER_OF_SUBJECT = 3; //ê³¼ëª©ìˆ˜
 	public static void main(String[] args) throws IOException {
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-		//ÀÌ¸§À» ´ã´çÇÒ ¹è¿­À» ÇÏ³ª ¸¸µéÀÚ
+		//ì´ë¦„ì„ ë‹´ë‹¹í•  ë°°ì—´ì„ í•˜ë‚˜ ë§Œë“¤ì
 	    String[] nameArray = new String[SIZE];
-	    //±¹¾îÀ» ´ã´çÇÒ ¹è¿­
+	    //êµ­ì–´ì„ ë‹´ë‹¹í•  ë°°ì—´
 	    int[] korArray = new int[SIZE];
-	    //¿µ¾îÀ» ´ã´çÇÒ ¹è¿­
+	    //ì˜ì–´ì„ ë‹´ë‹¹í•  ë°°ì—´
 	    int[] engArray = new int[SIZE];
-	    //¼öÇĞÀ» ´ã´çÇÒ ¹è¿­
+	    //ìˆ˜í•™ì„ ë‹´ë‹¹í•  ë°°ì—´
 	    int[] mathArray = new int[SIZE];
 	    
-		for(int i = 0; i < nameArray.length; i++) { //i´Â ¹è¿­ÀÇ ÁÖ¼Ò[0]~[4]
-			System.out.print((i+1) + "¹ø ÇĞ»ıÀÇ ÀÌ¸§ : ");
+		for(int i = 0; i < nameArray.length; i++) { //iëŠ” ë°°ì—´ì˜ ì£¼ì†Œ[0]~[4]
+			System.out.print((i+1) + "ë²ˆ í•™ìƒì˜ ì´ë¦„ : ");
 			nameArray[i] = bufferedReader.readLine();
-			System.out.print(nameArray[i] + "ÇĞ»ıÀÇ ±¹¾îÁ¡¼ö : ");
+			System.out.print(nameArray[i] + "í•™ìƒì˜ êµ­ì–´ì ìˆ˜ : ");
 			korArray[i] = Integer.parseInt(bufferedReader.readLine());
 			while(korArray[i] < 0 || korArray[i] > 100) {
-	            System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-	            System.out.print(nameArray[i]+" ÇĞ»ıÀÇ ±¹¾îÁ¡¼ö : ");
+	            System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+	            System.out.print(nameArray[i]+" í•™ìƒì˜ êµ­ì–´ì ìˆ˜ : ");
 	            korArray[i] = Integer.parseInt(bufferedReader.readLine());
 			}
-			System.out.print(nameArray[i] + "ÇĞ»ıÀÇ ¿µ¾îÁ¡¼ö : ");
+			System.out.print(nameArray[i] + "í•™ìƒì˜ ì˜ì–´ì ìˆ˜ : ");
 	        engArray[i] = Integer.parseInt(bufferedReader.readLine());
 			while(engArray[i] < 0 || engArray[i] > 100) {
-		        System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-		        System.out.print(nameArray[i]+" ÇĞ»ıÀÇ ¿µ¾îÁ¡¼ö : ");
+		        System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+		        System.out.print(nameArray[i]+" í•™ìƒì˜ ì˜ì–´ì ìˆ˜ : ");
 		        engArray[i] = Integer.parseInt(bufferedReader.readLine());	            
 	         }
-			System.out.print(nameArray[i] + "ÇĞ»ıÀÇ ¼öÇĞÁ¡¼ö : ");
+			System.out.print(nameArray[i] + "í•™ìƒì˜ ìˆ˜í•™ì ìˆ˜ : ");
 			mathArray[i] = Integer.parseInt(bufferedReader.readLine());
 			while(mathArray[i] < 0 || mathArray[i] > 100) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-				System.out.print(nameArray[i] + "ÇĞ»ıÀÇ ¼öÇĞÁ¡¼ö : ");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+				System.out.print(nameArray[i] + "í•™ìƒì˜ ìˆ˜í•™ì ìˆ˜ : ");
 			}
 		}//for
 			
 			
-			//³»°¡ º¸°í½ÍÀº ÇĞ»ıÀÇ Á¤º¸ Ãâ·Â
+			//ë‚´ê°€ ë³´ê³ ì‹¶ì€ í•™ìƒì˜ ì •ë³´ ì¶œë ¥
 			while(true) {
-		         System.out.println("º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(1~5, -1Àº Á¾·á): ");
+		         System.out.println("ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”(1~5, -1ì€ ì¢…ë£Œ): ");
 		         System.out.print("> ");
 		         
 		         int userChoice = Integer.parseInt(bufferedReader.readLine());
 		         if(userChoice == -1) {
-		            //»ç¿ëÀÚ°¡ Á¾·á¸¦ ¼±ÅÃÇßÀ» ¶§
-		            System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+		            //ì‚¬ìš©ìê°€ ì¢…ë£Œë¥¼ ì„ íƒí–ˆì„ ë•Œ
+		            System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 		            break;
 		         }else if(userChoice >= 1 && userChoice <= 5) {
-		            //ÇĞ»ı ¹øÈ£°¡ À¯È¿ÇÒ¶§
+		            //í•™ìƒ ë²ˆí˜¸ê°€ ìœ íš¨í• ë•Œ
 		            int index = userChoice - 1;
-		            System.out.println((index+1) + "¹ø " + nameArray[index] + "ÇĞ»ı");
-		            System.out.println("±¹¾î : " + korArray[index] +"Á¡ ¿µ¾î : " + engArray[index] +"Á¡  ¼öÇĞ : " + mathArray[index] + "Á¡");
+		            System.out.println((index+1) + "ë²ˆ " + nameArray[index] + "í•™ìƒ");
+		            System.out.println("êµ­ì–´ : " + korArray[index] +"ì  ì˜ì–´ : " + engArray[index] +"ì   ìˆ˜í•™ : " + mathArray[index] + "ì ");
 		            
 		            int tot = korArray[index] + engArray[index] + mathArray[index];
 					double avg = tot / (double)NUMBER_OF_SUBJECT;
-					System.out.println("ÃÑÁ¡: "+ tot + "Á¡ Æò±Õ : " + String.format("%.3f", avg));
-					//System.out.println(nameArray[userChoice - 1]+" ÇĞ»ıÀÇ ÃÑÁ¡: "+sumArray[userChoice - 1]);µµ °¡´É
+					System.out.println("ì´ì : "+ tot + "ì  í‰ê·  : " + String.format("%.3f", avg));
+					//System.out.println(nameArray[userChoice - 1]+" í•™ìƒì˜ ì´ì : "+sumArray[userChoice - 1]);ë„ ê°€ëŠ¥
 		         }else {
-		            //Àß¸øÀÔ·ÂÇßÀ» ¶§
-		            System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+		            //ì˜ëª»ì…ë ¥í–ˆì„ ë•Œ
+		            System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 		         }
-		      }//Ãâ·Â while¹®
+		      }//ì¶œë ¥ whileë¬¸
 		}
 	}
 

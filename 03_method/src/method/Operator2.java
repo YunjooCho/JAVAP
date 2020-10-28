@@ -8,24 +8,24 @@ public class Operator2 {
 		System.out.println("!a = " + !a); // !a = true
 		System.out.println();
 		
-		String b = "apple"; //¹Ù·Î literal»ı¼ºÀÌ °¡´É(String¸¸ °¡´É)
-							//b´Â appleÀÌ ÀÖ´Â 'ÁÖ¼Ò'¸¦ °®°í ÀÖ´Â °ÍÀÓ 
-							//(appleÀÌ¶ó´Â µ¥ÀÌÅÍ¸¦ °®°í ÀÖ´Â °ÍÀÌ ¾Æ´Ô)
-		String c = new String("apple"); // ¸Ş¸ğ¸® »ı¼º
+		String b = "apple"; //ë°”ë¡œ literalìƒì„±ì´ ê°€ëŠ¥(Stringë§Œ ê°€ëŠ¥)
+							//bëŠ” appleì´ ìˆëŠ” 'ì£¼ì†Œ'ë¥¼ ê°–ê³  ìˆëŠ” ê²ƒì„ 
+							//(appleì´ë¼ëŠ” ë°ì´í„°ë¥¼ ê°–ê³  ìˆëŠ” ê²ƒì´ ì•„ë‹˜)
+		String c = new String("apple"); // ë©”ëª¨ë¦¬ ìƒì„±
 		
-		String result = b == c ? "°°´Ù" : "´Ù¸£´Ù"; //ºñ±³ÇÏ´Â ³»¿ëÀº ÁÖ¼Ò°ª 
-												 //¿¹)bÀÇ ÁÖ¼Ò°ªÀº 100¹øÁö, cÀÇ ÁÖ¼Ò°ªÀº 300¹øÁö(»çÁø ÂüÁ¶)
+		String result = b == c ? "ê°™ë‹¤" : "ë‹¤ë¥´ë‹¤"; //ë¹„êµí•˜ëŠ” ë‚´ìš©ì€ ì£¼ì†Œê°’ 
+												 //ì˜ˆ)bì˜ ì£¼ì†Œê°’ì€ 100ë²ˆì§€, cì˜ ì£¼ì†Œê°’ì€ 300ë²ˆì§€(ì‚¬ì§„ ì°¸ì¡°)
 		System.out.println("b == c : " + result);
-		result = b != c ? "Âü" : "°ÅÁş"; 
+		result = b != c ? "ì°¸" : "ê±°ì§“"; 
 		System.out.println("b != c : " + result);
 		System.out.println();
 		
 		
-		//ÁÖ¼Ò°¡ ¾Æ´Ñ °ªÀ» ºñ±³(equalsÇÔ¼ö) - JAVA¿¡¼­¸¸ »ç¿ë
-		//¡ØJAVAScript¿¡¼­´Â ==¸¦ »ç¿ë
-		result = b.equals(c) ? "°°´Ù" : "´Ù¸£´Ù"; //¹®ÀÚ¿­(µ¥ÀÌÅÍ°ª)À» ºñ±³
+		//ì£¼ì†Œê°€ ì•„ë‹Œ ê°’ì„ ë¹„êµ(equalsí•¨ìˆ˜) - JAVAì—ì„œë§Œ ì‚¬ìš©
+		//â€»JAVAScriptì—ì„œëŠ” ==ë¥¼ ì‚¬ìš©
+		result = b.equals(c) ? "ê°™ë‹¤" : "ë‹¤ë¥´ë‹¤"; //ë¬¸ìì—´(ë°ì´í„°ê°’)ì„ ë¹„êµ
 		System.out.println("b.equlas(c) : " + result);
-		result = !b.equals(c) ? "Âü" : "°ÅÁş"; 
+		result = !b.equals(c) ? "ì°¸" : "ê±°ì§“"; 
 		System.out.println("!b.equlas(c) : " + result);
 		
 		

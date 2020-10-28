@@ -18,12 +18,12 @@ import javax.swing.table.DefaultTableModel;
 
 
 
-//½ÇÁ¦·Î °ªÀ» ÀÔÃâ·Â(µ¥ÀÌÅÍÃ³¸®) ÇÏ´Â °ÍÀº ScoreÀÎÅÍÆäÀÌ½º
-//ScoreImpl´Â ScoreÀÎÅÍÆäÀÌ½ºÀÇ ±¸ÇöÅ¬·¡½º 
-public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
+//ì‹¤ì œë¡œ ê°’ì„ ì…ì¶œë ¥(ë°ì´í„°ì²˜ë¦¬) í•˜ëŠ” ê²ƒì€ Scoreì¸í„°í˜ì´ìŠ¤
+//ScoreImplëŠ” Scoreì¸í„°í˜ì´ìŠ¤ì˜ êµ¬í˜„í´ë˜ìŠ¤ 
+public class ScoreImpl implements Score { //ìƒì„±í• ë•ŒëŠ” êµ¬í˜„ í´ë˜ìŠ¤ë¡œ ì‹¤í–‰
 	private List<ScoreDTO> list;
 	private File file;
-	//private int count; //¡ßÆÄÀÏ ÀĞ±âÃ³¸®¹æ¹ı(º»¹®°ú ´Ù¸¥ ¹æ¹ı) 1-1
+	//private int count; //â—†íŒŒì¼ ì½ê¸°ì²˜ë¦¬ë°©ë²•(ë³¸ë¬¸ê³¼ ë‹¤ë¥¸ ë°©ë²•) 1-1
 	
 	public ScoreImpl() {
 		list = new ArrayList<ScoreDTO>();
@@ -32,17 +32,17 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 
 	@Override
 	public void input(ScoreDTO dto) {
-		//if(dto.getName() == null) return;  //¡Ú¡Ú¡Ú¡Ú¡ÚÀÔ·Â³»¿ëÀÌ ¾øÀ»¶§ ¿¡·¯°¡ ¶ßÁö ¾Êµµ·ÏÇÔ
+		//if(dto.getName() == null) return;  //â˜…â˜…â˜…â˜…â˜…ì…ë ¥ë‚´ìš©ì´ ì—†ì„ë•Œ ì—ëŸ¬ê°€ ëœ¨ì§€ ì•Šë„ë¡í•¨
 		list.add(dto);
 		
 	}
 
 	@Override
 	public void print(DefaultTableModel model) {
-		//Å×ÀÌºí ÃÊ±âÈ­
+		//í…Œì´ë¸” ì´ˆê¸°í™”
 		model.setRowCount(0); 
-		for(ScoreDTO dto : list) { //list»çÀÌÁî¸¸Å­ dto°´Ã¼¿¡ ÀúÀåµÇ¾îÀÖ´Â °ªÀ» vector¿¡ Ãß°¡
- 			Vector<String> v = new Vector<String>(); //¸®½ºÆ®´Â Å×ÀÌºí¿¡ Ãß°¡ÇÒ ¼ö ¾øÀ¸¹Ç·Î  Vector»ç¿ë
+		for(ScoreDTO dto : list) { //listì‚¬ì´ì¦ˆë§Œí¼ dtoê°ì²´ì— ì €ì¥ë˜ì–´ìˆëŠ” ê°’ì„ vectorì— ì¶”ê°€
+ 			Vector<String> v = new Vector<String>(); //ë¦¬ìŠ¤íŠ¸ëŠ” í…Œì´ë¸”ì— ì¶”ê°€í•  ìˆ˜ ì—†ìœ¼ë¯€ë¡œ  Vectorì‚¬ìš©
 			v.add(dto.getHak());
 			v.add(dto.getName());
 			v.add(dto.getKor() + "");
@@ -59,22 +59,22 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 	@Override
 	public void save() {
 		JFileChooser chooser = new JFileChooser();
-		int result = chooser.showSaveDialog(null); //¡Únull
+		int result = chooser.showSaveDialog(null); //â˜…null
 		File file = null;
-		if(result  == JFileChooser.APPROVE_OPTION) {//¡ŞÀúÀå¹öÆ°À» ´­·¶´Ù¸é
-			file = chooser.getSelectedFile(); //ÆÄÀÏÀ» ÀúÀåÇÒ °æ·ÎÁ¤º¸¸¦ °¡Á®¿È
-			//fileWriter()ºÎºĞ
-			if(file == null) return; //¡ŞÃë¼Ò¹öÆ°À» ´­·¶´Ù¸é ³ª°¡±â
+		if(result  == JFileChooser.APPROVE_OPTION) {//â—‡ì €ì¥ë²„íŠ¼ì„ ëˆŒë €ë‹¤ë©´
+			file = chooser.getSelectedFile(); //íŒŒì¼ì„ ì €ì¥í•  ê²½ë¡œì •ë³´ë¥¼ ê°€ì ¸ì˜´
+			//fileWriter()ë¶€ë¶„
+			if(file == null) return; //â—‡ì·¨ì†Œë²„íŠ¼ì„ ëˆŒë €ë‹¤ë©´ ë‚˜ê°€ê¸°
 			try {
 				ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(file));
-																					//fileºÎºĞÀ» ¼öÁ¤ÇÏ¸é ¼­¹ö·Î ³ª°¡°Ô ÇÒ ¼ö ÀÖÀ½
-				//oos.writeObject(list); - SerializationÀÌ °É·ÁÀÖ¾î¾ßÇÔ(¹İº¹¹®(for) Ã³¸® ÇÊ¿ä¾øÀ½)
+																					//fileë¶€ë¶„ì„ ìˆ˜ì •í•˜ë©´ ì„œë²„ë¡œ ë‚˜ê°€ê²Œ í•  ìˆ˜ ìˆìŒ
+				//oos.writeObject(list); - Serializationì´ ê±¸ë ¤ìˆì–´ì•¼í•¨(ë°˜ë³µë¬¸(for) ì²˜ë¦¬ í•„ìš”ì—†ìŒ)
 				for(ScoreDTO dto : list) {
 					oos.writeObject(dto);
-					//¡ßÆÄÀÏ ÀĞ±âÃ³¸®¹æ¹ı 1-2. count++;
+					//â—†íŒŒì¼ ì½ê¸°ì²˜ë¦¬ë°©ë²• 1-2. count++;
 				}
 				oos.close();
-				//<³» Ç®ÀÌ>
+				//<ë‚´ í’€ì´>
 				//BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 				//String data = list.toString();
 				//bw.write(data);
@@ -83,34 +83,34 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 				e.printStackTrace();
 			}
 		}//if
-		JOptionPane.showMessageDialog(chooser, file); //¡Ùnull°ª ¿¡·¯ - Ãë¼Ò¸¦ ´©¸£´Â °æ¿ì fileÀÌ null°ªÀÎ Ã¤ÀÌ¹Ç·Î ¿¡·¯°¡ ¶ä
+		JOptionPane.showMessageDialog(chooser, file); //â˜†nullê°’ ì—ëŸ¬ - ì·¨ì†Œë¥¼ ëˆ„ë¥´ëŠ” ê²½ìš° fileì´ nullê°’ì¸ ì±„ì´ë¯€ë¡œ ì—ëŸ¬ê°€ ëœ¸
 		
 	}
 
 	
 	@Override
-	public void load()  { //Ã¤ÆÃÃ¢ ÀÎ¿øÇ¥±â¿¡ È°¿ë°¡´É
+	public void load()  { //ì±„íŒ…ì°½ ì¸ì›í‘œê¸°ì— í™œìš©ê°€ëŠ¥
 		JFileChooser chooser = new JFileChooser();
 		int result = chooser.showOpenDialog(null); 
-		if(result == JFileChooser.APPROVE_OPTION) { //¿­±â¸¦ ´­·¶´Ù¸é
-			file = chooser.getSelectedFile(); //¿©·¯°³ÀÇ ÆÄÀÏÀ» ºÒ·¯¿Ã¶© ÆÄÀÏ°´Ã¼¹è¿­À» °°´Â getSelectedFiles()¸Ş¼Òµå¸¦ »ç¿ë
+		if(result == JFileChooser.APPROVE_OPTION) { //ì—´ê¸°ë¥¼ ëˆŒë €ë‹¤ë©´
+			file = chooser.getSelectedFile(); //ì—¬ëŸ¬ê°œì˜ íŒŒì¼ì„ ë¶ˆëŸ¬ì˜¬ë• íŒŒì¼ê°ì²´ë°°ì—´ì„ ê°™ëŠ” getSelectedFiles()ë©”ì†Œë“œë¥¼ ì‚¬ìš©
 		}
 		if(file == null) return;
-		list.clear(); //±âÁ¸¿¡ Å×ÀÌºí¿¡ ÀúÀåµÇ¾îÀÖ´Â µ¥ÀÌÅÍ°ªÀ» ¹éÁöÈ­ÇÔ(ÇÏÁö ¾ÊÀ¸¸é ±âÁ¸ Å×ÀÌºí¿¡ ºí·¯¿Â °ªÀÌ ´õÇØÁö°ÔµÊ)
+		list.clear(); //ê¸°ì¡´ì— í…Œì´ë¸”ì— ì €ì¥ë˜ì–´ìˆëŠ” ë°ì´í„°ê°’ì„ ë°±ì§€í™”í•¨(í•˜ì§€ ì•Šìœ¼ë©´ ê¸°ì¡´ í…Œì´ë¸”ì— ë¸”ëŸ¬ì˜¨ ê°’ì´ ë”í•´ì§€ê²Œë¨)
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
-		while(true) { //¡ßÆÄÀÏ ÀĞ±âÃ³¸®¹æ¹ı 1-3-1.(try~catchºÒÇÊ¿ä) for(int i = 0; i < count; i++) ÆÄÀÏÀÌ ³¡³¯¶§±îÁö ÀúÀåµÇ¾î ÀÖ´Â °´Ã¼¸¦ ÀĞ¾î¿È
-					  //ÆÄÀÏÀÌ ¾øÀ¸¸é error°¡ ¹ß»ı
+		while(true) { //â—†íŒŒì¼ ì½ê¸°ì²˜ë¦¬ë°©ë²• 1-3-1.(try~catchë¶ˆí•„ìš”) for(int i = 0; i < count; i++) íŒŒì¼ì´ ëë‚ ë•Œê¹Œì§€ ì €ì¥ë˜ì–´ ìˆëŠ” ê°ì²´ë¥¼ ì½ì–´ì˜´
+					  //íŒŒì¼ì´ ì—†ìœ¼ë©´ errorê°€ ë°œìƒ
 			try {
-				ScoreDTO dto = (ScoreDTO)ois.readObject(); //ÀÚ½Ä = (ÀÚ½Ä)ºÎ¸ğ
+				ScoreDTO dto = (ScoreDTO)ois.readObject(); //ìì‹ = (ìì‹)ë¶€ëª¨
 				list.add(dto);
-				//¡ßÆÄÀÏ ÀĞ±âÃ³¸®¹æ¹ı 1-3-2.(try~catchºÒÇÊ¿ä) 
+				//â—†íŒŒì¼ ì½ê¸°ì²˜ë¦¬ë°©ë²• 1-3-2.(try~catchë¶ˆí•„ìš”) 
 				//int num = 0;
 				//++num;
 				//if(num == count) break;
-			} catch (ClassNotFoundException | IOException e) { //ClassNotFoundException - °´Ã¼°¡ ¾øÀ¸¸é error°¡ ¶ä
-															   //EOFException : End of file - ÆÄÀÏÀÇ ³¡À» ¸¸³µÀ»¶§ ¾î¶² µ¿ÀÛÀ» ÇØ¾ßÇÏ´ÂÁö
-															   //Á¦´ë·Î Ã³¸®°¡ ¾ÈµÈ´Ù´Â ¶æ
+			} catch (ClassNotFoundException | IOException e) { //ClassNotFoundException - ê°ì²´ê°€ ì—†ìœ¼ë©´ errorê°€ ëœ¸
+															   //EOFException : End of file - íŒŒì¼ì˜ ëì„ ë§Œë‚¬ì„ë•Œ ì–´ë–¤ ë™ì‘ì„ í•´ì•¼í•˜ëŠ”ì§€
+															   //ì œëŒ€ë¡œ ì²˜ë¦¬ê°€ ì•ˆëœë‹¤ëŠ” ëœ»
 				break;
 			}
 		}
@@ -123,13 +123,13 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 
 	@Override
 	public void search(DefaultTableModel model) {
-		//showInputDialogÀ» ÀÌ¿ëÇÏ¿© ÇĞ¹øÀ» ÀÔ·Â¹Ş´Â´Ù
-		//¸¸¾à Ãë¼Ò ¶Ç´Â ÇĞ¹øÀ» ÀÔ·ÂÇÏÁö ¾ÊÀ¸¸é
-		String keyword = JOptionPane.showInputDialog(null, "ÇĞ¹øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
+		//showInputDialogì„ ì´ìš©í•˜ì—¬ í•™ë²ˆì„ ì…ë ¥ë°›ëŠ”ë‹¤
+		//ë§Œì•½ ì·¨ì†Œ ë˜ëŠ” í•™ë²ˆì„ ì…ë ¥í•˜ì§€ ì•Šìœ¼ë©´
+		String keyword = JOptionPane.showInputDialog(null, "í•™ë²ˆì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
 		if(keyword == null||keyword.equals("")) return;
 		
 
-		//¡Ú¡Ú¡Ú¡ÚÅ×ÀÌºí¿¡ Ãß°¡ÇÏ´Â ¹ı È®ÀÎÇØº¸±â, ÇĞ¹øÀÌ ¾øÀ»¶§ ÇØ°á¹æ¹ı Ãß°¡ÇÏ±â
+		//â˜…â˜…â˜…â˜…í…Œì´ë¸”ì— ì¶”ê°€í•˜ëŠ” ë²• í™•ì¸í•´ë³´ê¸°, í•™ë²ˆì´ ì—†ì„ë•Œ í•´ê²°ë°©ë²• ì¶”ê°€í•˜ê¸°
 //		for(int i = 0; i < list.size(); i++) { 
 //			if(list.get(i).getHak().equals(keyword)) {
 //				int num = i;
@@ -137,11 +137,11 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 //			}
 //		}
 		
-		//<¼±»ı´Ô Ç®ÀÌ>
+		//<ì„ ìƒë‹˜ í’€ì´>
 		int sw = 0;
 		for(ScoreDTO dto : list){
 			if(dto.getHak().equals(keyword)){
-			 if(sw == 0)model.setRowCount(0); //È­¸éÀÇ Å×ÀÌºí ÃÊ±âÈ­
+			 if(sw == 0)model.setRowCount(0); //í™”ë©´ì˜ í…Œì´ë¸” ì´ˆê¸°í™”
 		     Vector<String> v = new Vector<String>();
 			   v.add(dto.getHak());
 		     v.add(dto.getName());
@@ -155,7 +155,7 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 		     
 			}
 		}
-		if(sw == 0) JOptionPane.showMessageDialog(null,"Ã£°íÀÚ ÇÏ´Â ÇĞ¹øÀÌ ¾ø½À´Ï´Ù"); 
+		if(sw == 0) JOptionPane.showMessageDialog(null,"ì°¾ê³ ì í•˜ëŠ” í•™ë²ˆì´ ì—†ìŠµë‹ˆë‹¤"); 
 	}
 
 	@Override
@@ -163,7 +163,7 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 		
 		Collections.sort(list);
 
-		//<´Ù¸¥ Ç®ÀÌ> comparable ÀÎÅÍÆäÀÌ½º implementsºÒÇÊ¿ä
+		//<ë‹¤ë¥¸ í’€ì´> comparable ì¸í„°í˜ì´ìŠ¤ implementsë¶ˆí•„ìš”
 //		Comparator<ScoreDTO> com = new Comparator<ScoreDTO>() {
 //			@Override
 //			public int compare(ScoreDTO s1, ScoreDTO s2) {
@@ -185,14 +185,14 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 
 /*
  private void fileRead() throws IOException {
-		output.setText(""); //¡Ùnull°ª ¿¡·¯ - ´ëÃ¥3-1,ÅØ½ºÆ®¸¦ ÃÊ±âÈ­ ÇÏ°í ÆÄÀÏÀ» ºÒ·¯³¿
-		BufferedReader br = new BufferedReader(new FileReader(file)); //file¿¡ ÀúÀåµÈ ³»¿ëÀ» ÀĞ¾îµéÀÓ
+		output.setText(""); //â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…3-1,í…ìŠ¤íŠ¸ë¥¼ ì´ˆê¸°í™” í•˜ê³  íŒŒì¼ì„ ë¶ˆëŸ¬ëƒ„
+		BufferedReader br = new BufferedReader(new FileReader(file)); //fileì— ì €ì¥ëœ ë‚´ìš©ì„ ì½ì–´ë“¤ì„
 		String line;
 		
-		while((line = br.readLine()) != null) { //ÆÄÀÏÀÌ ºñ¾îÀÖÁö ¾ÊÀ»¶§¸¸ ÀĞ¾îµéÀÓ(µ¤¾î¾²Áö ¸»°í Ãâ·ÂÁÙÀ» Ãß°¡ÇÏ¸ç ÀĞ¾îµéÀÓ)
-			//readLine() : ¿£ÅÍ°ª Àü±îÁö ÀĞÀ½(ÀĞ¾îµéÀÏ¶§ enter°¡ ¹İ¿µ¾ÈµÊ)
-			//µû¶ó¼­ °­Á¦·Î \nÀ» »ç¿ëÇÏ¿© ¿£ÅÍ¸¦ ³Ö¾îÁÜ
-			//output.setText(line); //µ¤¾î¾²±â È¿°ú ÀÔ·ÂµÈ ¹®Àå¿¡ ÁÙ¹Ù²ŞÀÌ ÀÖÀ¸¸é ±×°É ±âÁØÀ¸·Î µ¤¾î¾¸
+		while((line = br.readLine()) != null) { //íŒŒì¼ì´ ë¹„ì–´ìˆì§€ ì•Šì„ë•Œë§Œ ì½ì–´ë“¤ì„(ë®ì–´ì“°ì§€ ë§ê³  ì¶œë ¥ì¤„ì„ ì¶”ê°€í•˜ë©° ì½ì–´ë“¤ì„)
+			//readLine() : ì—”í„°ê°’ ì „ê¹Œì§€ ì½ìŒ(ì½ì–´ë“¤ì¼ë•Œ enterê°€ ë°˜ì˜ì•ˆë¨)
+			//ë”°ë¼ì„œ ê°•ì œë¡œ \nì„ ì‚¬ìš©í•˜ì—¬ ì—”í„°ë¥¼ ë„£ì–´ì¤Œ
+			//output.setText(line); //ë®ì–´ì“°ê¸° íš¨ê³¼ ì…ë ¥ëœ ë¬¸ì¥ì— ì¤„ë°”ê¿ˆì´ ìˆìœ¼ë©´ ê·¸ê±¸ ê¸°ì¤€ìœ¼ë¡œ ë®ì–´ì”€
 			output.append(line + "\n");
 		}//while
 		
@@ -200,35 +200,35 @@ public class ScoreImpl implements Score { //»ı¼ºÇÒ¶§´Â ±¸Çö Å¬·¡½º·Î ½ÇÇà
 	}
 	
 
-	private void openDialog() {//ÀúÀåÇÑ ÆÄÀÏÀ» ¿©´Â ¸Ş¼Òµå
-		//File file = null; //ÃÊ±âÈ­(Áö¿ªº¯¼ö´Â ¾²·¹±â°ªÀ» °¡Áö°í ÀÖÀ¸¹Ç·Î) - fileRead()¿¡¼­µµ »ç¿ëÇÏ±â À§ÇØ ÇÊµå·Î ¿Ã¸²
+	private void openDialog() {//ì €ì¥í•œ íŒŒì¼ì„ ì—¬ëŠ” ë©”ì†Œë“œ
+		//File file = null; //ì´ˆê¸°í™”(ì§€ì—­ë³€ìˆ˜ëŠ” ì“°ë ˆê¸°ê°’ì„ ê°€ì§€ê³  ìˆìœ¼ë¯€ë¡œ) - fileRead()ì—ì„œë„ ì‚¬ìš©í•˜ê¸° ìœ„í•´ í•„ë“œë¡œ ì˜¬ë¦¼
 		JFileChooser chooser = new JFileChooser();
-		int result = chooser.showOpenDialog(this); //³» ÇÁ·¹ÀÓÃ¢ À§¿¡¼­ ÆÄÀÏ ¿­±âÃ¢ ¶ß±â
-		if(result == JFileChooser.APPROVE_OPTION) { //¿©·¯°³ÀÇ ÆÄÀÏÀ» ºÒ·¯¿Ã¶© ÆÄÀÏ°´Ã¼¹è¿­À» °°´Â getSelectedFiles()¸Ş¼Òµå¸¦ »ç¿ë
+		int result = chooser.showOpenDialog(this); //ë‚´ í”„ë ˆì„ì°½ ìœ„ì—ì„œ íŒŒì¼ ì—´ê¸°ì°½ ëœ¨ê¸°
+		if(result == JFileChooser.APPROVE_OPTION) { //ì—¬ëŸ¬ê°œì˜ íŒŒì¼ì„ ë¶ˆëŸ¬ì˜¬ë• íŒŒì¼ê°ì²´ë°°ì—´ì„ ê°™ëŠ” getSelectedFiles()ë©”ì†Œë“œë¥¼ ì‚¬ìš©
 			file = chooser.getSelectedFile();
 			try {
-				fileRead(); //¡Ú¡Ú¡Ú¡Ú¡Ú¡ÚÀÌ ºÎºĞ ÇÑ¹ø ´õ Á¤¸®ÇØº¸±â  ¡Ùnull°ª ¿¡·¯ - ´ëÃ¥3-2, ÆÄÀÏÀ» ¼±ÅÃÇÑ °æ¿ì¿¡¸¸ ÇØ´ç ¸Ş¼Òµå¸¦ ºÒ·¯¿È
+				fileRead(); //â˜…â˜…â˜…â˜…â˜…â˜…ì´ ë¶€ë¶„ í•œë²ˆ ë” ì •ë¦¬í•´ë³´ê¸°  â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…3-2, íŒŒì¼ì„ ì„ íƒí•œ ê²½ìš°ì—ë§Œ í•´ë‹¹ ë©”ì†Œë“œë¥¼ ë¶ˆëŸ¬ì˜´
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		JOptionPane.showMessageDialog(this, file); //Á¤¸» ºÒ·¯¿Ô´ÂÁö È®ÀÎ, ÆÄÀÏ °´Ã¼, ¸Ş½ÃÁöÃ¢¿¡ °æ·Î°¡ ÂïÈû
+		JOptionPane.showMessageDialog(this, file); //ì •ë§ ë¶ˆëŸ¬ì™”ëŠ”ì§€ í™•ì¸, íŒŒì¼ ê°ì²´, ë©”ì‹œì§€ì°½ì— ê²½ë¡œê°€ ì°í˜
 	}
  * private void saveDialog() {
 		JFileChooser chooser = new JFileChooser();
 		int result = chooser.showSaveDialog(this);
 		if(result == JFileChooser.APPROVE_OPTION) {
 			file = chooser.getSelectedFile();
-			fileWrite(); //¡Ùnull°ª ¿¡·¯ - ´ëÃ¥2, ¿©±â¼­ ÆÄÀÏÀÌ ¼±ÅÃµÈ °æ¿ì¿¡¸¸ fileWriter·Î ÀÌµ¿(Ãë¼ÒÀÇ °æ¿ì fileWrite()ÀÚÃ¼¸¦ ºÎ¸£Áö ¾ÊÀ½)
+			fileWrite(); //â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…2, ì—¬ê¸°ì„œ íŒŒì¼ì´ ì„ íƒëœ ê²½ìš°ì—ë§Œ fileWriterë¡œ ì´ë™(ì·¨ì†Œì˜ ê²½ìš° fileWrite()ìì²´ë¥¼ ë¶€ë¥´ì§€ ì•ŠìŒ)
 		}
-		JOptionPane.showMessageDialog(this, file); //¡Ùnull°ª ¿¡·¯ - Ãë¼Ò¸¦ ´©¸£´Â °æ¿ì fileÀÌ null°ªÀÎ Ã¤ÀÌ¹Ç·Î ¿¡·¯°¡ ¶ä
+		JOptionPane.showMessageDialog(this, file); //â˜†nullê°’ ì—ëŸ¬ - ì·¨ì†Œë¥¼ ëˆ„ë¥´ëŠ” ê²½ìš° fileì´ nullê°’ì¸ ì±„ì´ë¯€ë¡œ ì—ëŸ¬ê°€ ëœ¸
 	}
 
-	private void fileWrite()  { //°ªÀ» ¹ÛÀ¸·Î »©³¿(ÆÄÀÏÀ» ÀúÀå)
-		if(file == null) return; //¡Ùnull°ª ¿¡·¯ - ´ëÃ¥1, ¹Ø¿¡ ¹®ÀåÀ¸·Î °¡Áö¸»°í ºüÁ®³ª°¨
+	private void fileWrite()  { //ê°’ì„ ë°–ìœ¼ë¡œ ë¹¼ëƒ„(íŒŒì¼ì„ ì €ì¥)
+		if(file == null) return; //â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…1, ë°‘ì— ë¬¸ì¥ìœ¼ë¡œ ê°€ì§€ë§ê³  ë¹ ì ¸ë‚˜ê°
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
-			String data = output.getText(); //µ¥ÀÌÅÍ´Â ÀÚµ¿À¸·Î ÇÑ²¨¹ø¿¡ ²¨³»Áü
+			String data = output.getText(); //ë°ì´í„°ëŠ” ìë™ìœ¼ë¡œ í•œêº¼ë²ˆì— êº¼ë‚´ì§
 			bw.write(data);
 			bw.close();
 		} catch (IOException e) {

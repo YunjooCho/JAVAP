@@ -1,18 +1,18 @@
 package p03_method;
 /*
-ÀÌ¸§(name), ±¹¾î(kor), ¿µ¾î(eng), ¼öÇĞ(math)Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­ ÃÑÁ¡(tot),Æò±Õ(avg)¸¦ ±¸ÇÏ½Ã¿À
+ì´ë¦„(name), êµ­ì–´(kor), ì˜ì–´(eng), ìˆ˜í•™(math)ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ ì´ì (tot),í‰ê· (avg)ë¥¼ êµ¬í•˜ì‹œì˜¤
 
-ÃÑÁ¡ = ±¹¾î + ¿µ¾î + ¼öÇĞ
-Æò±Õ = ÃÑÁ¡ / °ú¸ñ¼ö
+ì´ì  = êµ­ì–´ + ì˜ì–´ + ìˆ˜í•™
+í‰ê·  = ì´ì  / ê³¼ëª©ìˆ˜
 
-[½ÇÇà°á°ú]
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-±¹¾î ÀÔ·Â : 95
-¿µ¾î ÀÔ·Â : 90
-¼öÇĞ ÀÔ·Â : 91
+[ì‹¤í–‰ê²°ê³¼]
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+êµ­ì–´ ì…ë ¥ : 95
+ì˜ì–´ ì…ë ¥ : 90
+ìˆ˜í•™ ì…ë ¥ : 91
 
-  *** È«±æµ¿ ¼ºÀû ***
-±¹¾î      ¿µ¾î      ¼öÇĞ      ÃÑÁ¡      Æò±Õ
+  *** í™ê¸¸ë™ ì„±ì  ***
+êµ­ì–´      ì˜ì–´      ìˆ˜í•™      ì´ì       í‰ê· 
 95      90      91      xxx      xx.xxx
 */
 
@@ -24,21 +24,21 @@ public class SungJuk {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 		String name = br.readLine();
-		System.out.print("±¹¾î ÀÔ·Â : ");
+		System.out.print("êµ­ì–´ ì…ë ¥ : ");
 		int kor = Integer.parseInt(br.readLine());
-		System.out.print("¿µ¾î ÀÔ·Â : ");
+		System.out.print("ì˜ì–´ ì…ë ¥ : ");
 		int eng = Integer.parseInt(br.readLine());
-		System.out.print("¼öÇĞ ÀÔ·Â : ");
+		System.out.print("ìˆ˜í•™ ì…ë ¥ : ");
 		int math = Integer.parseInt(br.readLine());
 		
 		int tot = kor + eng + math;
 		double avg = tot / 3.0;
 		
-		System.out.println("\t*** " + name + " ¼ºÀû ***");
+		System.out.println("\t*** " + name + " ì„±ì  ***");
 		System.out.println("");
-		System.out.println("±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+		System.out.println("êµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
 		System.out.println(kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + String.format("%.3f", avg));
 
 	}

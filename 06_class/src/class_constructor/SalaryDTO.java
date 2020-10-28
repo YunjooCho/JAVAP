@@ -3,12 +3,12 @@ package class_constructor;
 import java.text.DecimalFormat;
 
 public class SalaryDTO {
-	//Å¬·¡½º¸í : SalaryDTO(Data Transfer Object)
+	//í´ë˜ìŠ¤ëª… : SalaryDTO(Data Transfer Object)
 	//VO(Value Object)
 	//DAO(Database Access Object)
-	//Bean : ¾¾¾Ñ
+	//Bean : ì”¨ì•—
 	
-	//ÇÊµå       : name, position, basePay, benefit, taxRate, tax, salary
+	//í•„ë“œ       : name, position, basePay, benefit, taxRate, tax, salary
 	private String name;
 	private String position;
 	private int basePay;
@@ -64,7 +64,7 @@ public class SalaryDTO {
 	public void calc() {
 		int total = this.basePay + this.benefit;
 		
-		//¼¼À²°è»ê
+		//ì„¸ìœ¨ê³„ì‚°
 		if(total <= 2000000) {
 			taxRate = 0.01;
 		}else if(total <= 4000000) {
@@ -73,23 +73,23 @@ public class SalaryDTO {
 			taxRate = 0.03;
 		}
 		
-		//¼¼±İ°è»ê
+		//ì„¸ê¸ˆê³„ì‚°
 		tax = (int)((basePay + benefit) * taxRate);
 		
-		//¿ù±Ş °è»ê
+		//ì›”ê¸‰ ê³„ì‚°
 		salary = basePay + benefit - tax;
 	}
 	
 	@Override
-	public String toString() {//Å¬·¡½º ¾È¿¡ ÀÖÀ¸¹Ç·Î ÇÊµå ¹Ù·Î È£Ãâ °¡´É
-		DecimalFormat df = new DecimalFormat(); //±âº» 3ÀÚ¸®¸¶´Ù ½°Ç¥
+	public String toString() {//í´ë˜ìŠ¤ ì•ˆì— ìˆìœ¼ë¯€ë¡œ í•„ë“œ ë°”ë¡œ í˜¸ì¶œ ê°€ëŠ¥
+		DecimalFormat df = new DecimalFormat(); //ê¸°ë³¸ 3ìë¦¬ë§ˆë‹¤ ì‰¼í‘œ
 		return name + "\t"
 			 + position + "\t"
-			 + df.format(basePay) + "¿ø\t"
-			 + df.format(benefit) + "¿ø\t"
+			 + df.format(basePay) + "ì›\t"
+			 + df.format(benefit) + "ì›\t"
 			 + (int)(taxRate*100) + "%\t"
-			 + df.format(tax) + "¿ø \t"
-			 + df.format(salary) + "¿ø";
+			 + df.format(tax) + "ì› \t"
+			 + df.format(salary) + "ì›";
 	}
 	
 }

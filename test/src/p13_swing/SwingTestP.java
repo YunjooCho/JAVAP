@@ -16,13 +16,13 @@ import javax.swing.JTextArea;
 
 public class SwingTestP extends JFrame implements ActionListener {
 	
-	//1.º¯¼ö¼±¾ğ
+	//1.ë³€ìˆ˜ì„ ì–¸
 	private JButton newBtn, exitBtn;
 	private JTextArea area;
 	
 	public SwingTestP() {
-		newBtn = new JButton("»õ ÆÄÀÏ", new ImageIcon("image/crab.gif"));
-		exitBtn = new JButton("Á¾·á");
+		newBtn = new JButton("ìƒˆ íŒŒì¼", new ImageIcon("image/crab.gif"));
+		exitBtn = new JButton("ì¢…ë£Œ");
 		area = new JTextArea();
 		JScrollPane scroll = new JScrollPane(area);
 		
@@ -34,7 +34,7 @@ public class SwingTestP extends JFrame implements ActionListener {
 		c.add("North",p);
 		c.add("Center",scroll);
 		
-		//ÀÌº¥Æ®
+		//ì´ë²¤íŠ¸
 		newBtn.addActionListener(this);
 		exitBtn.addActionListener(this);
 		
@@ -46,7 +46,7 @@ public class SwingTestP extends JFrame implements ActionListener {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				int result = JOptionPane.showConfirmDialog(SwingTestP.this, "Á¤¸»·Î Á¾·áÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				int result = JOptionPane.showConfirmDialog(SwingTestP.this, "ì •ë§ë¡œ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì¢…ë£Œ", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 				if(result == 0) System.exit(0);
 			}
 		});
@@ -59,7 +59,7 @@ public class SwingTestP extends JFrame implements ActionListener {
 		if(e.getSource() == newBtn) {
 			area.setText("");
 		}else if(e.getSource() == exitBtn) {
-			int result = JOptionPane.showConfirmDialog(this,"Á¤¸»·Î Á¾·áÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
+			int result = JOptionPane.showConfirmDialog(this,"ì •ë§ë¡œ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì¢…ë£Œ", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE);
 			if(result == 0) {
 				System.exit(0);
 			}

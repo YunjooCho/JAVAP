@@ -1,7 +1,7 @@
 package collection;
 
-class GenericTest<T>{ //<T> : ÀÌ Å¬·¡½º´Â ¾î¶² Å¸ÀÔÀ» »ç¿ëÇÒÁö ¼³Á¤ÇÏÁö ¾Ê¾ÒÀ½À» ÀÇ¹Ì / Object´ë½Å
-	private T a; //Å¸ÀÔ(int, boolean, String µîµî)À» ¼±¾ğÇÏ´Â ´ë½Å, T¸¦ ÀÔ·Â
+class GenericTest<T>{ //<T> : ì´ í´ë˜ìŠ¤ëŠ” ì–´ë–¤ íƒ€ì…ì„ ì‚¬ìš©í• ì§€ ì„¤ì •í•˜ì§€ ì•Šì•˜ìŒì„ ì˜ë¯¸ / ObjectëŒ€ì‹ 
+	private T a; //íƒ€ì…(int, boolean, String ë“±ë“±)ì„ ì„ ì–¸í•˜ëŠ” ëŒ€ì‹ , Të¥¼ ì…ë ¥
 	
 	public void setA(T a) {
 		this.a = a;
@@ -15,15 +15,15 @@ class GenericTest<T>{ //<T> : ÀÌ Å¬·¡½º´Â ¾î¶² Å¸ÀÔÀ» »ç¿ëÇÒÁö ¼³Á¤ÇÏÁö ¾Ê¾ÒÀ½À»
 public class GenericMain {
 
 	public static void main(String[] args) {
-		GenericTest<String> aa = new GenericTest<String>(); //À§¿¡ T°¡ StringÀ¸·Î ¼³Á¤µÊ
-		aa.setA("È«±æµ¿");
-		System.out.println("ÀÌ¸§ = " + aa.getA());
+		GenericTest<String> aa = new GenericTest<String>(); //ìœ„ì— Tê°€ Stringìœ¼ë¡œ ì„¤ì •ë¨
+		aa.setA("í™ê¸¸ë™");
+		System.out.println("ì´ë¦„ = " + aa.getA());
 		
-		//aa.setA(25); - error : T°¡ StringÅ¸ÀÔÀ¸·Î ¼³Á¤µÇ¾î ÀÖ¾î StringÅ¸ÀÔ ÀÌ¿ÜÀÇ µ¥ÀÌÅÍ´Â ¿¡·¯
-		//´Ù½Ã °´Ã¼¸¦ ¼±¾ğ, IntegerÅ¸ÀÔÀ¸·Î ¼±¾ğ
-		GenericTest<Integer> bb = new GenericTest<Integer>(); //<>¾È¿¡´Â Å¬·¡½º¸í¸¸ ¿Ã¼ö ÀÖÀ¸¹Ç·Î int´ë½Å Integer»ç¿ë
+		//aa.setA(25); - error : Tê°€ Stringíƒ€ì…ìœ¼ë¡œ ì„¤ì •ë˜ì–´ ìˆì–´ Stringíƒ€ì… ì´ì™¸ì˜ ë°ì´í„°ëŠ” ì—ëŸ¬
+		//ë‹¤ì‹œ ê°ì²´ë¥¼ ì„ ì–¸, Integeríƒ€ì…ìœ¼ë¡œ ì„ ì–¸
+		GenericTest<Integer> bb = new GenericTest<Integer>(); //<>ì•ˆì—ëŠ” í´ë˜ìŠ¤ëª…ë§Œ ì˜¬ìˆ˜ ìˆìœ¼ë¯€ë¡œ intëŒ€ì‹  Integerì‚¬ìš©
 		bb.setA(25);
-		System.out.println("³ªÀÌ = " + bb.getA());
+		System.out.println("ë‚˜ì´ = " + bb.getA());
 	}
 
 }

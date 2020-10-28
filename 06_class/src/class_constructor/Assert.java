@@ -2,36 +2,36 @@ package class_constructor;
 
 import java.util.Scanner;
 
-public class Assert { //ÇÁ·Î±×·¥ÀÌ Á¦´ë·Î ¼öÇàµÇ´ÂÁö È®ÀÎ - Áß°£Ã¼Å©
-	//1.ÇÊµå¸í ¼±¾ð
+public class Assert { //í”„ë¡œê·¸ëž¨ì´ ì œëŒ€ë¡œ ìˆ˜í–‰ë˜ëŠ”ì§€ í™•ì¸ - ì¤‘ê°„ì²´í¬
+	//1.í•„ë“œëª… ì„ ì–¸
 	private  int x, y , result = 1;
 	
-	//2.¸Þ¼Òµå ÀÛ¼º
+	//2.ë©”ì†Œë“œ ìž‘ì„±
 	public void inPut() {
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("x ÀÔ·Â : ");
+		System.out.print("x ìž…ë ¥ : ");
 		x = scanner.nextInt();
-		System.out.print("y ÀÔ·Â : ");
-		y = scanner.nextInt(); //È½¼ö
+		System.out.print("y ìž…ë ¥ : ");
+		y = scanner.nextInt(); //íšŸìˆ˜
 	}
 	
 	public void outPut() {
-		//y´Â ¹Ýµå½Ã ¾ç¼ö¸¸ ÀÔ·Â¹Þµµ·Ï ÇÏ°Ú´Ù
-		//y¿¡ À½¼ö°¡ µé¾î¿À¸é ÀÛ¾÷ÀÌ ¸ØÃã
-		//±×³É Run As°¡ ¾Æ´Ñ Run As - Run Configrations - arguments - VM arguments¿¡¼­ -eaÀÔ·Â
-		//-da°¡ µðÆúÆ®
-		//µð¹ö±× Ã³¸®
+		//yëŠ” ë°˜ë“œì‹œ ì–‘ìˆ˜ë§Œ ìž…ë ¥ë°›ë„ë¡ í•˜ê² ë‹¤
+		//yì— ìŒìˆ˜ê°€ ë“¤ì–´ì˜¤ë©´ ìž‘ì—…ì´ ë©ˆì¶¤
+		//ê·¸ëƒ¥ Run Asê°€ ì•„ë‹Œ Run As - Run Configrations - arguments - VM argumentsì—ì„œ -eaìž…ë ¥
+		//-daê°€ ë””í´íŠ¸
+		//ë””ë²„ê·¸ ì²˜ë¦¬
 		//assert y >= 0;
-		assert y >= 0 : "y´Â 0º¸´Ù Å©°Å³ª °°¾Æ¾ß ÇÑ´Ù"; 
-		//¿¡·¯¸Þ½ÃÁö 
-		//Exception in thread "main" java.lang.AssertionError: y´Â 0º¸´Ù Å©°Å³ª °°¾Æ¾ß ÇÑ´Ù
+		assert y >= 0 : "yëŠ” 0ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ì•„ì•¼ í•œë‹¤"; 
+		//ì—ëŸ¬ë©”ì‹œì§€ 
+		//Exception in thread "main" java.lang.AssertionError: yëŠ” 0ë³´ë‹¤ í¬ê±°ë‚˜ ê°™ì•„ì•¼ í•œë‹¤
 		
-		//ÇÁ·Î±×·¥¿¡¼­ ¼öÇàÇÒ ½Ä
+		//í”„ë¡œê·¸ëž¨ì—ì„œ ìˆ˜í–‰í•  ì‹
 		for(int i = 1; i <= y; i++) {
-			 result *= x; //°è¼Ó xÀÇ °ªÀ» °öÇÑ´Ù
+			 result *= x; //ê³„ì† xì˜ ê°’ì„ ê³±í•œë‹¤
 		}
 		
-		System.out.println(x + "ÀÇ " + y + "½ÂÀº " + result);
+		System.out.println(x + "ì˜ " + y + "ìŠ¹ì€ " + result);
 	}
 	
 	public static void main(String[] args) {
@@ -41,8 +41,8 @@ public class Assert { //ÇÁ·Î±×·¥ÀÌ Á¦´ë·Î ¼öÇàµÇ´ÂÁö È®ÀÎ - Áß°£Ã¼Å©
 	}
 }
 
-//Á¦°ö½ÂÀ» ±¸ÇÏ´Â ÇÁ·Î±×·¥
-// xÀÔ·Â : 2
-// yÀÔ·Â : 5               input() - ÀÔ·Â(Scanner)
+//ì œê³±ìŠ¹ì„ êµ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨
+// xìž…ë ¥ : 2
+// yìž…ë ¥ : 5               input() - ìž…ë ¥(Scanner)
 //--------------------------------
-// 2ÀÇ 5½ÂÀº xx             output() - °è»ê, Ãâ·Â
+// 2ì˜ 5ìŠ¹ì€ xx             output() - ê³„ì‚°, ì¶œë ¥

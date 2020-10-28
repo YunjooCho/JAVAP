@@ -5,30 +5,30 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class CollectionTest {
-	@SuppressWarnings("all") //¡ßÇù¹Ú - ¾î³ëÅ×ÀÌ¼Ç
+	@SuppressWarnings("all") //â—†í˜‘ë°• - ì–´ë…¸í…Œì´ì…˜
 	public static void main(String[] args) {
-		//Collection - ÀÎÅÍÆäÀÌ½º & Ãß»ó¸Þ¼Òµå
-		Collection coll = new ArrayList(); //implements CollectionÀÌ ÇÊ¿ä¾øÀ½
-										   //ÀÏ¹ÝÅ¬·¡½ºÀÌ±â ¶§¹®¿¡ WindowAdapter¿Í ´Þ¸® ÀÍ¸í³»ºÎÅ¬·¡½º ¾øÀÌµµ new·Î »ý¼º°¡´É
-		//ºÎ¸ð                               ÀÚ½Ä           -> ÀÌ·¸°Ô ÀÌÇØÇÒ ¼öµµ ÀÖÀ½
+		//Collection - ì¸í„°íŽ˜ì´ìŠ¤ & ì¶”ìƒë©”ì†Œë“œ
+		Collection coll = new ArrayList(); //implements Collectionì´ í•„ìš”ì—†ìŒ
+										   //ì¼ë°˜í´ëž˜ìŠ¤ì´ê¸° ë•Œë¬¸ì— WindowAdapterì™€ ë‹¬ë¦¬ ìµëª…ë‚´ë¶€í´ëž˜ìŠ¤ ì—†ì´ë„ newë¡œ ìƒì„±ê°€ëŠ¥
+		//ë¶€ëª¨                               ìžì‹           -> ì´ë ‡ê²Œ ì´í•´í•  ìˆ˜ë„ ìžˆìŒ
 		//ArrayList implements Collection
 		
-		coll.add("È£¶ûÀÌ"); //ÀÔ·ÂÇÑ ¼ø¼­´ë·Î ÀúÀåµÊ, Á¦³×¸¯ÀÌ ¾ø¾î¼­ WarningÀÌ ¶ä
-		coll.add("»çÀÚ");
-		coll.add("È£¶ûÀÌ"); //Áßº¹Çã¿ë, ¼ø¼­
+		coll.add("í˜¸ëž‘ì´"); //ìž…ë ¥í•œ ìˆœì„œëŒ€ë¡œ ì €ìž¥ë¨, ì œë„¤ë¦­ì´ ì—†ì–´ì„œ Warningì´ ëœ¸
+		coll.add("ì‚¬ìž");
+		coll.add("í˜¸ëž‘ì´"); //ì¤‘ë³µí—ˆìš©, ìˆœì„œ
 		coll.add(25);
 		coll.add(43.8);
-		coll.add("±â¸°");
-		coll.add("ÄÚ³¢¸®");
+		coll.add("ê¸°ë¦°");
+		coll.add("ì½”ë¼ë¦¬");
 		
-		//Iterator - Ç×¸ñ(¿ä¼Ò)ÇÏ³ªÇÏ³ª¸¦ °¡¸®Å³ ¼ö ÀÖÀ½
-		//hasNext() - ÇöÀç À§Ä¡¿¡ Ç×¸ñÀÌ ÀÖÀ¸¸é True, ¾øÀ¸¸é False
-		//next() - Ç×¸ñÀ» °¡Á®¿À°í ´ÙÀ½ Ç×¸ñÀ¸·Î ÀÌµ¿
-		//¾îµð¿¡ ¸¸µå³Ä¿¡ µû¶ó »ç¿ë¹üÀ§°¡ ´Þ¶óÁü(Áö±ÝÀº Collection¾È, setter³ª ´Ù¸¥ Å¬·¡½º¿¡¼­µµ »ç¿ë°¡´É)
-		//Iterator - ÁöÁ¤ÀÚ, Collection¿¡ ÁöÁ¤ÀÚ¸¦ ¸¸µê
-		Iterator it = coll.iterator(); //coll(Collection)¾È¿¡ iterator¸¦ »ý¼ºÇÏ¿© ¹è¿­¸®½ºÆ® Ç×¸ñÀ» °¡¸®Å°µµ·Ï ÇÔ
-		while(it.hasNext()) {//Ç×¸ñÀÌ ¾øÀ» ¶§±îÁö ¹Ýº¹, °ªÀÌ ¾øÀ¸¸é while¹® ºüÁ®³ª°¨
-			System.out.println(it.next()); //°¢ Ç×¸ñÀÇ °ª Ãâ·Â(À§¿¡ °ªÀ» ÀÔ·ÂÇÑ ¼ø¼­´ë·Î Ãô·ÂµÊ)
+		//Iterator - í•­ëª©(ìš”ì†Œ)í•˜ë‚˜í•˜ë‚˜ë¥¼ ê°€ë¦¬í‚¬ ìˆ˜ ìžˆìŒ
+		//hasNext() - í˜„ìž¬ ìœ„ì¹˜ì— í•­ëª©ì´ ìžˆìœ¼ë©´ True, ì—†ìœ¼ë©´ False
+		//next() - í•­ëª©ì„ ê°€ì ¸ì˜¤ê³  ë‹¤ìŒ í•­ëª©ìœ¼ë¡œ ì´ë™
+		//ì–´ë””ì— ë§Œë“œëƒì— ë”°ë¼ ì‚¬ìš©ë²”ìœ„ê°€ ë‹¬ë¼ì§(ì§€ê¸ˆì€ Collectionì•ˆ, setterë‚˜ ë‹¤ë¥¸ í´ëž˜ìŠ¤ì—ì„œë„ ì‚¬ìš©ê°€ëŠ¥)
+		//Iterator - ì§€ì •ìž, Collectionì— ì§€ì •ìžë¥¼ ë§Œë“¦
+		Iterator it = coll.iterator(); //coll(Collection)ì•ˆì— iteratorë¥¼ ìƒì„±í•˜ì—¬ ë°°ì—´ë¦¬ìŠ¤íŠ¸ í•­ëª©ì„ ê°€ë¦¬í‚¤ë„ë¡ í•¨
+		while(it.hasNext()) {//í•­ëª©ì´ ì—†ì„ ë•Œê¹Œì§€ ë°˜ë³µ, ê°’ì´ ì—†ìœ¼ë©´ whileë¬¸ ë¹ ì ¸ë‚˜ê°
+			System.out.println(it.next()); //ê° í•­ëª©ì˜ ê°’ ì¶œë ¥(ìœ„ì— ê°’ì„ ìž…ë ¥í•œ ìˆœì„œëŒ€ë¡œ ì¸Œë ¥ë¨)
 		}//while
 	}
 
@@ -36,9 +36,9 @@ public class CollectionTest {
 
 
 //Collection - Interface
-//1.implements : ¸ðµç Ãß»ó¸Þ¼Òµå¸¦ ¹Ýµå½Ã ¿À¹ö¶óÀÌµå ÇØÁà¾ß ÇÔ
-//  (CollectionÀÇ Ãß»ó¸Þ¼Òµå´Â 15°³)  
-//    ¡ØWindowListener´Â 7°³ -> WindowAdapter´Â WindowListener¸¦ ´ë½ÅÇØ¼­ ¸ðµÎ Override ÇØÁÜ
-//2.ÀÍ¸í innerÅ¬·¡½º¸¦ »ç¿ë : ¸ðµç Ãß»ó¸Þ¼Òµå¸¦ ¹Ýµå½Ã ¿À¹ö¶óÀÌµå ÇØÁà¾ß ÇÔ (Adapter°°Àº Å¬·¡½º°¡ ¾øÀ¸¹Ç·Î)
-//3.´©±º°¡°¡ ´ë½ÅÇØ¼­ ¸ðµç Ãß»ó¸Þ¼Òµå¸¦ OverrideÇØÁÜ : Implementing Classes
-//  ArrayList(ÀÏ¹ÝÅ¬·¡½º, new·Î »ý¼º), Stack, Vector. TreeSet(¾Ë°í¸®Áò) - WindowAdapter(Ãß»óÅ¬·¡½º,ÀÍ¸í³»ºÎÅ¬·¡½º·Î »ý¼º)¿Í °°Àº ¿ªÇÒ
+//1.implements : ëª¨ë“  ì¶”ìƒë©”ì†Œë“œë¥¼ ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë“œ í•´ì¤˜ì•¼ í•¨
+//  (Collectionì˜ ì¶”ìƒë©”ì†Œë“œëŠ” 15ê°œ)  
+//    â€»WindowListenerëŠ” 7ê°œ -> WindowAdapterëŠ” WindowListenerë¥¼ ëŒ€ì‹ í•´ì„œ ëª¨ë‘ Override í•´ì¤Œ
+//2.ìµëª… innerí´ëž˜ìŠ¤ë¥¼ ì‚¬ìš© : ëª¨ë“  ì¶”ìƒë©”ì†Œë“œë¥¼ ë°˜ë“œì‹œ ì˜¤ë²„ë¼ì´ë“œ í•´ì¤˜ì•¼ í•¨ (Adapterê°™ì€ í´ëž˜ìŠ¤ê°€ ì—†ìœ¼ë¯€ë¡œ)
+//3.ëˆ„êµ°ê°€ê°€ ëŒ€ì‹ í•´ì„œ ëª¨ë“  ì¶”ìƒë©”ì†Œë“œë¥¼ Overrideí•´ì¤Œ : Implementing Classes
+//  ArrayList(ì¼ë°˜í´ëž˜ìŠ¤, newë¡œ ìƒì„±), Stack, Vector. TreeSet(ì•Œê³ ë¦¬ì¦˜) - WindowAdapter(ì¶”ìƒí´ëž˜ìŠ¤,ìµëª…ë‚´ë¶€í´ëž˜ìŠ¤ë¡œ ìƒì„±)ì™€ ê°™ì€ ì—­í• 

@@ -14,16 +14,16 @@ public class Ex10Teacher {
 	
 	public static void main(String[] args) throws IOException {
 		
-		//¸ÕÀú ÃßÃ· ¹è¿­À» ¸¸µé¾î¼­
-	      //Áßº¹µÇÁö ¾Ê´Â ³­¼ö¸¦ ³Ö°í Á¤·ÄÇØÁÖÀÚ
+		//ë¨¼ì € ì¶”ì²¨ ë°°ì—´ì„ ë§Œë“¤ì–´ì„œ
+	      //ì¤‘ë³µë˜ì§€ ì•ŠëŠ” ë‚œìˆ˜ë¥¼ ë„£ê³  ì •ë ¬í•´ì£¼ì
 	      int[] lottoNumbers = new int[SIZE];
 	      Random random = new Random();
-	      //1-A. lottoNumbers¿¡ ³­¼ö ÀÔ·Â
+	      //1-A. lottoNumbersì— ë‚œìˆ˜ ì…ë ¥
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         lottoNumbers[i] = random.nextInt(MAX) + 1;
 	      }
 	      
-	      //1-B. lottoNumbers¿¡¼­ Áßº¹ Á¦°Å
+	      //1-B. lottoNumbersì—ì„œ ì¤‘ë³µ ì œê±°
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         for(int j = 0; j < lottoNumbers.length; j++) {
 	            if(i != j && lottoNumbers[i] == lottoNumbers[j]) {
@@ -33,7 +33,7 @@ public class Ex10Teacher {
 	         }
 	      }
 	      
-	      //1-C. lottoNumbersÀÇ ¼ıÀÚ Á¤·Ä
+	      //1-C. lottoNumbersì˜ ìˆ«ì ì •ë ¬
 	      for(int i = 0; i < lottoNumbers.length - 1; i++) {
 	         if(lottoNumbers[i] > lottoNumbers[i+1]) {
 	            int temp = lottoNumbers[i];
@@ -42,25 +42,25 @@ public class Ex10Teacher {
 	            i = -1;
 	         }
 	      }
-	      System.out.println("·Î¶Ç ¹øÈ£ ÃßÃ· ¿Ï·á");
+	      System.out.println("ë¡œë˜ ë²ˆí˜¸ ì¶”ì²¨ ì™„ë£Œ");
 	      
-	      //2. »ç¿ëÀÚ ¹øÈ£ ¹è¿­ ÀÔ·ÂÀ» ÁØºñÇÏÀÚ
+	      //2. ì‚¬ìš©ì ë²ˆí˜¸ ë°°ì—´ ì…ë ¥ì„ ì¤€ë¹„í•˜ì
 	      BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	      int[] userNumbers = new int[SIZE];
 	      
-	      //2-A. »ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ ÀÔ·Â ¹Ş±â
+	      //2-A. ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ì ì…ë ¥ ë°›ê¸°
 	      for(int i = 0; i < userNumbers.length; i++) {
-	         System.out.print((i+1)+"¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+	         System.out.print((i+1)+"ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 	         int number = Integer.parseInt(bufferedReader.readLine());
 	         while(number < 0 || number > MAX) {
-	            System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-	            System.out.print((i+1)+"¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+	            System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+	            System.out.print((i+1)+"ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 	            number = Integer.parseInt(bufferedReader.readLine());
 	         }
 	         userNumbers[i] = number;
 	         
 	      }
-	      //2-B. »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ıÀÚ·Î ÀÌ·ç¾îÁø ¹è¿­À» Á¤·ÄÇÏ±â
+	      //2-B. ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ«ìë¡œ ì´ë£¨ì–´ì§„ ë°°ì—´ì„ ì •ë ¬í•˜ê¸°
 	      for(int i = 0; i < userNumbers.length - 1; i++) {
 	         if(userNumbers[i] > userNumbers[i+1]) {
 	            int temp = userNumbers[i];
@@ -70,40 +70,40 @@ public class Ex10Teacher {
 	         }
 	      }
 	      
-	      //3. µÎ ¹è¿­À» ºñ±³ÇØ¼­
-	      //   °°Àº ¼ıÀÚ°¡ ÀÖÀ» ¶§¸¶´Ù Á¡¼ö¸¦ 1Á¡¾¿ ¿Ã·ÁÁÖÀÚ
+	      //3. ë‘ ë°°ì—´ì„ ë¹„êµí•´ì„œ
+	      //   ê°™ì€ ìˆ«ìê°€ ìˆì„ ë•Œë§ˆë‹¤ ì ìˆ˜ë¥¼ 1ì ì”© ì˜¬ë ¤ì£¼ì
 	      int score = 0;
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         for(int j = 0; j < userNumbers.length; j++) {
-	            //lottoNumbers[i]¹øÂ°¸¦
-	            //userNumber ÀüÃ¼¿Í ºñ±³ÇØ¼­
-	            //ÇÑ¹øÀÌ¶óµµ °°À¸¸é score++; ÇØÁÖ¸é µÈ´Ù.
+	            //lottoNumbers[i]ë²ˆì§¸ë¥¼
+	            //userNumber ì „ì²´ì™€ ë¹„êµí•´ì„œ
+	            //í•œë²ˆì´ë¼ë„ ê°™ìœ¼ë©´ score++; í•´ì£¼ë©´ ëœë‹¤.
 	            if(lottoNumbers[i] == userNumbers[j]) {
 	               score++;
 	            }
 	         }
 	      }
 	      
-	      //4. µÎ ¹è¿­À» 0~5¹øÂ°¸¦ ³ª¶õÈ÷ Ãâ·ÂÇÏ°í 
-	      //   Ãâ·ÂÀÌ ³¡³ª¸é switch¸¦ ÅëÇØ¼­ ¸îµîÀÎÁö¸¦ Ãâ·ÂÇØÁÖÀÚ
-	      System.out.println("ÃßÃ· ¹øÈ£\t»ç¿ëÀÚ ¹øÈ£");
+	      //4. ë‘ ë°°ì—´ì„ 0~5ë²ˆì§¸ë¥¼ ë‚˜ë€íˆ ì¶œë ¥í•˜ê³  
+	      //   ì¶œë ¥ì´ ëë‚˜ë©´ switchë¥¼ í†µí•´ì„œ ëª‡ë“±ì¸ì§€ë¥¼ ì¶œë ¥í•´ì£¼ì
+	      System.out.println("ì¶”ì²¨ ë²ˆí˜¸\tì‚¬ìš©ì ë²ˆí˜¸");
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         System.out.println(lottoNumbers[i]+"\t"+userNumbers[i]);
 	      }
 	      
 	      switch(score) {
 	      case 6:
-	         System.out.println("ÃÑ"+ score+ "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 1µîÀÔ´Ï´Ù.");
+	         System.out.println("ì´"+ score+ "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 1ë“±ì…ë‹ˆë‹¤.");
 	         break;
 	      case 5:
-	         System.out.println("ÃÑ"+ score+ "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 2µîÀÔ´Ï´Ù.");
+	         System.out.println("ì´"+ score+ "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 2ë“±ì…ë‹ˆë‹¤.");
 	         break;
 	      case 4:
-	         System.out.println("ÃÑ"+ score+ "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 3µîÀÔ´Ï´Ù.");
+	         System.out.println("ì´"+ score+ "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 3ë“±ì…ë‹ˆë‹¤.");
 	         break;
 	      case 3:
 	         default:
-	            System.out.println("Å»¶ôÀÔ´Ï´Ù ¤Ğ¤Ğ");
+	            System.out.println("íƒˆë½ì…ë‹ˆë‹¤ ã… ã… ");
 	            break;
 	      }
 

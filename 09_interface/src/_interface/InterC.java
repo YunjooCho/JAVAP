@@ -1,6 +1,6 @@
 package _interface;
 
-public interface InterC extends InterA, InterB { //ÀÎÅÍÆäÀÌ½º´Â ´ÙÁß »ó¼ÓÀÌ °¡´ÉÇÏ´Ù
-	//Ãß»ó ¸Ş¼Òµå 4°³
+public interface InterC extends InterA, InterB { //ì¸í„°í˜ì´ìŠ¤ëŠ” ë‹¤ì¤‘ ìƒì†ì´ ê°€ëŠ¥í•˜ë‹¤
+	//ì¶”ìƒ ë©”ì†Œë“œ 4ê°œ
 
 }

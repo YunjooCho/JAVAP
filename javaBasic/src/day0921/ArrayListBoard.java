@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import util.ArrayUtil;
 
 public class ArrayListBoard {
-    //ÇÊµå¼±¾ğ(¾î·¹ÀÌ ¸®½ºÆ®, ¹öÆÛ¸®´õ)
+    //í•„ë“œì„ ì–¸(ì–´ë ˆì´ ë¦¬ìŠ¤íŠ¸, ë²„í¼ë¦¬ë”)
 	private static ArrayList<Board> boardList;
 	private static BufferedReader bufferedReader;
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//»ı¼ºÀÚ
+		//ìƒì„±ì
 		boardList= new ArrayList<>();
 		bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
@@ -22,17 +22,17 @@ public class ArrayListBoard {
 	
 	private static void showMenu() throws NumberFormatException, IOException {
 		while(true) {
-			System.out.println("\t°Ô  ½Ã  ÆÇ");
-			System.out.println("1.»õ±ÛÀÛ¼º   2.¸ñ·Ïº¸±â   3. Á¾·á");
+			System.out.println("\tê²Œ  ì‹œ  íŒ");
+			System.out.println("1.ìƒˆê¸€ì‘ì„±   2.ëª©ë¡ë³´ê¸°   3. ì¢…ë£Œ");
 			int userChoice = validateNumber(1,3);
 			if(userChoice == 1) {
-				//»õ±ÛÀÛ¼º
+				//ìƒˆê¸€ì‘ì„±
 				add();
 			}else if(userChoice == 2) {
-				//¸ñ·Ïº¸±â
+				//ëª©ë¡ë³´ê¸°
 				printAll();
 			}else if(userChoice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù!");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤!");
 				break;
 			}
 		}//while
@@ -44,7 +44,7 @@ public class ArrayListBoard {
 		System.out.print("> ");
 		int number = Integer.parseInt(bufferedReader.readLine());
 		if(number < minimum || number > maximum) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			System.out.print("> ");
 			number = Integer.parseInt(bufferedReader.readLine());
 		}
@@ -55,13 +55,13 @@ public class ArrayListBoard {
 	
 	private static Board setBoardInfo() throws NumberFormatException, IOException {
 		Board b = new Board();
-		System.out.print("±Û¹øÈ£ : ");
+		System.out.print("ê¸€ë²ˆí˜¸ : ");
 		b.setId(Integer.parseInt(bufferedReader.readLine()));
-		System.out.print("Á¦¸ñ : ");
+		System.out.print("ì œëª© : ");
 		b.setTitle(bufferedReader.readLine());
-		System.out.print("³»¿ë : ");
+		System.out.print("ë‚´ìš© : ");
 		b.setContent(bufferedReader.readLine());
-		System.out.print("ÀÛ¼ºÀÚ : ");
+		System.out.print("ì‘ì„±ì : ");
 		b.setWriter(bufferedReader.readLine());
 		
 		return b;
@@ -77,15 +77,15 @@ public class ArrayListBoard {
 	
 	private static void printAll() throws NumberFormatException, IOException {
 		System.out.println("=========");
-		System.out.println("¹øÈ£  |  Á¦¸ñ");
+		System.out.println("ë²ˆí˜¸  |  ì œëª©");
 		for(int i = 0; i < boardList.size(); i++) {
 			System.out.printf("%d. %s\n", boardList.get(i).getId(), boardList.get(i).getTitle());
 		}
-		System.out.println("»ó¼¼º¸±â ÇÒ ¹øÈ£ (0Àº ¸Ş´º·Î)");
-		int choice = validateNumber(0,boardList.size())-1; //¹è¿­¸®½ºÆ® ÀÎµ¦½º°¡ µÊ
+		System.out.println("ìƒì„¸ë³´ê¸° í•  ë²ˆí˜¸ (0ì€ ë©”ë‰´ë¡œ)");
+		int choice = validateNumber(0,boardList.size())-1; //ë°°ì—´ë¦¬ìŠ¤íŠ¸ ì¸ë±ìŠ¤ê°€ ë¨
 		if(choice == -1) {
-			//¸Ş´º·Î µ¹¾Æ°¡±â
-			System.out.println("Ã³À½¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+			//ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°
+			System.out.println("ì²˜ìŒë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 		}else {
 			printOne(choice);
 		}
@@ -94,11 +94,11 @@ public class ArrayListBoard {
 	
 	
 	private static void printOne(int index) throws NumberFormatException, IOException {
-		System.out.println("±Û¹øÈ£ : " + boardList.get(index).getId());
-		System.out.println("Á¦¸ñ : " + boardList.get(index).getTitle());
-		System.out.println("ÀÛ¼ºÀÚ : " + boardList.get(index).getWriter());
-		System.out.println("³»¿ë : " + boardList.get(index).getContent());
-		System.out.println("1. ¼öÁ¤ 2. »èÁ¦ 3.¸Ş´º·Î");
+		System.out.println("ê¸€ë²ˆí˜¸ : " + boardList.get(index).getId());
+		System.out.println("ì œëª© : " + boardList.get(index).getTitle());
+		System.out.println("ì‘ì„±ì : " + boardList.get(index).getWriter());
+		System.out.println("ë‚´ìš© : " + boardList.get(index).getContent());
+		System.out.println("1. ìˆ˜ì • 2. ì‚­ì œ 3.ë©”ë‰´ë¡œ");
 		int updere = validateNumber(1,3);
 		if(updere == 1) {
 			update(index);	
@@ -113,11 +113,11 @@ public class ArrayListBoard {
 	
 	private static void update(int index) throws IOException {
 		
-		System.out.print("Á¦¸ñ : ");
+		System.out.print("ì œëª© : ");
 		boardList.get(index).setTitle(bufferedReader.readLine());
-		System.out.print("³»¿ë : ");
+		System.out.print("ë‚´ìš© : ");
 		boardList.get(index).setContent(bufferedReader.readLine());
-		System.out.print("ÀÛ¼ºÀÚ : ");
+		System.out.print("ì‘ì„±ì : ");
 		boardList.get(index).setWriter(bufferedReader.readLine());
 		
 		printOne(index);
@@ -126,7 +126,7 @@ public class ArrayListBoard {
 	
 	private static void delete(int index) throws NumberFormatException, IOException {
 		
-		System.out.println("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(y/n)");
+		System.out.println("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y/n)");
 		String answer = bufferedReader.readLine().toLowerCase();
 		if(answer.equals("y")) {
 			boardList.remove(index);
@@ -134,7 +134,7 @@ public class ArrayListBoard {
 		}else if(answer.equals("n")) {
 			printOne(index);
 		}else {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 		}
 		
 	}

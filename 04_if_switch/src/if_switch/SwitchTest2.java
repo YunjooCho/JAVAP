@@ -5,39 +5,39 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-2°³ÀÇ Á¤¼öÇü ¼ıÀÚ¿Í ¿¬»êÀÚ(+,-,*,/)¸¦ ÀÔ·ÂÇÏ¿© °è»êÇÏ½Ã¿À
+2ê°œì˜ ì •ìˆ˜í˜• ìˆ«ìì™€ ì—°ì‚°ì(+,-,*,/)ë¥¼ ì…ë ¥í•˜ì—¬ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-a ÀÔ·Â : 25
-b ÀÔ·Â : 36
-¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : +
+[ì‹¤í–‰ê²°ê³¼]
+a ì…ë ¥ : 25
+b ì…ë ¥ : 36
+ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : +
 25 + 36 = xx
 
-a ÀÔ·Â : 25
-b ÀÔ·Â : 36
-¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : /
+a ì…ë ¥ : 25
+b ì…ë ¥ : 36
+ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : /
 25 / 36 = 0.xxx
 
-a ÀÔ·Â : 25
-b ÀÔ·Â : 36
-¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : $
-¿¬»êÀÚ error
+a ì…ë ¥ : 25
+b ì…ë ¥ : 36
+ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : $
+ì—°ì‚°ì error
  */
 public class SwitchTest2 {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® ÀÔ·Â
+		//ë©”ëª¨ë¦¬ ì…ë ¥
 	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-	    System.out.println("a ÀÔ·Â : ");
+	    System.out.println("a ì…ë ¥ : ");
 		int a = Integer.parseInt(br.readLine());
-		System.out.println("b ÀÔ·Â : ");
+		System.out.println("b ì…ë ¥ : ");
 		int b = Integer.parseInt(br.readLine()); 
-		System.out.println("¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : ");
+		System.out.println("ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : ");
 		String op = br.readLine();
 		int result;
 		
-		//if¹®ÀÏ °æ¿ì
+		//ifë¬¸ì¼ ê²½ìš°
 		//if(op.equals("+"))
 		
 		switch (op) {
@@ -49,7 +49,7 @@ public class SwitchTest2 {
 					break;
 		case "/" : System.out.println(a + op + b + " = " + String.format("%.3f", ((double)a / b)));
 					break;
-		default : System.out.println("¿¬»êÀÚ error");			
+		default : System.out.println("ì—°ì‚°ì error");			
 		}
 		
 	}

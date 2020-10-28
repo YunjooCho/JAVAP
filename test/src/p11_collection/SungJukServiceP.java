@@ -7,30 +7,30 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 public class SungJukServiceP {
-	//3.ÇÊµå ¼±¾ğ
+	//3.í•„ë“œ ì„ ì–¸
 	private ArrayList<SungJukDTOP> list;
 	private Scanner scanner;
 	DecimalFormat df;
 	
-	//4.»ı¼ºÀÚ(¾î·¹ÀÌ¸®½ºÆ® »ı¼º)
+	//4.ìƒì„±ì(ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ìƒì„±)
 	public SungJukServiceP() {
 		list = new ArrayList<SungJukDTOP>();
 	}
 	
-	//5.¸Ş´º ¸Ş¼Òµå
+	//5.ë©”ë‰´ ë©”ì†Œë“œ
 	public void menu() {
 		while(true) {
 			System.out.println();
 			System.out.println();
 			System.out.println("*****************");
-			System.out.println("   1.ÀÔ·Â");
-			System.out.println("   2.Ãâ·Â");
-			System.out.println("   3.°Ë»ö");
-			System.out.println("   4.»èÁ¦");
-			System.out.println("   5.Á¤·Ä");
-			System.out.println("   6.³¡");
+			System.out.println("   1.ì…ë ¥");
+			System.out.println("   2.ì¶œë ¥");
+			System.out.println("   3.ê²€ìƒ‰");
+			System.out.println("   4.ì‚­ì œ");
+			System.out.println("   5.ì •ë ¬");
+			System.out.println("   6.ë");
 			System.out.println("*****************");
-			System.out.print("¹øÈ£ : ");
+			System.out.print("ë²ˆí˜¸ : ");
 			scanner = new Scanner(System.in);
 			int number = scanner.nextInt();
 			if(number == 1) {
@@ -46,61 +46,61 @@ public class SungJukServiceP {
 			}else if(number == 6) {
 				break;
 			}else {
-				System.out.println("1~6 Áß¿¡ ¼±ÅÃÇÏ¼¼¿ä");
+				System.out.println("1~6 ì¤‘ì— ì„ íƒí•˜ì„¸ìš”");
 			}
 			
 		}
 	}
 	
-	//6.ÀÔ·Â¸Ş¼Òµå
+	//6.ì…ë ¥ë©”ì†Œë“œ
 	public void insertArticle() {
 		scanner = new Scanner(System.in);
 		SungJukDTOP dto = new SungJukDTOP();
-		System.out.print("¹øÈ£ ÀÔ·Â : ");
+		System.out.print("ë²ˆí˜¸ ì…ë ¥ : ");
 		int no = scanner.nextInt();
-		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 		String name = scanner.next();
-		System.out.print("±¹¾î Á¡¼ö : ");
+		System.out.print("êµ­ì–´ ì ìˆ˜ : ");
 		int kor = scanner.nextInt();
-		System.out.print("¿µ¾î Á¡¼ö : ");
+		System.out.print("ì˜ì–´ ì ìˆ˜ : ");
 		int eng = scanner.nextInt();
-		System.out.print("¼öÇĞ Á¡¼ö : ");
+		System.out.print("ìˆ˜í•™ ì ìˆ˜ : ");
 		int math = scanner.nextInt();
 		dto.calc();
 		list.add(dto);
 	}
 	
-	//7.Ãâ·Â¸Ş¼Òµå
+	//7.ì¶œë ¥ë©”ì†Œë“œ
 	public void printArticle() {
-		System.out.println("¹øÈ£\tÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+		System.out.println("ë²ˆí˜¸\tì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
 		for(SungJukDTOP dto : list) {
 			System.out.println(dto);
 		}
 	}
 	
 	
-	//8.°Ë»ö ¸Ş¼Òµå
+	//8.ê²€ìƒ‰ ë©”ì†Œë“œ
 	public void searchArticle() {
 		scanner = new Scanner(System.in);
 		int sw = 0;
-		System.out.print("°Ë»öÇÒ ÀÌ¸§À» ÀÔ·Â : ");
+		System.out.print("ê²€ìƒ‰í•  ì´ë¦„ì„ ì…ë ¥ : ");
 		String name = scanner.next();
 		for(SungJukDTOP dto : list) {
-			System.out.println("¹øÈ£\tÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+			System.out.println("ë²ˆí˜¸\tì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
 			if(dto.getName().equals(name)) {
 				System.out.println(dto);
 				sw = 1;
 			}
 		}
 		if(sw == 0) {
-			System.out.println("Ã£°íÀÚÇÏ´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù");
+			System.out.println("ì°¾ê³ ìí•˜ëŠ” ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤");
 		}
 	}
 	
-	//9.»èÁ¦ ¸Ş¼Òµå
+	//9.ì‚­ì œ ë©”ì†Œë“œ
 	public void deleteArticle() {
 		scanner = new Scanner(System.in);
-		System.out.print("»èÁ¦ÇÒ ÀÌ¸§À» ÀÔ·Â : ");
+		System.out.print("ì‚­ì œí•  ì´ë¦„ì„ ì…ë ¥ : ");
 		String name = scanner.next();
 		int sw = 0;
 		for(SungJukDTOP dto : list) {
@@ -110,20 +110,20 @@ public class SungJukServiceP {
 			}
 		}
 		if(sw == 0) {
-			System.out.println("Ã£°íÀÚ ÇÏ´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù");
+			System.out.println("ì°¾ê³ ì í•˜ëŠ” ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤");
 		}else {
-			System.out.println("µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ¿´½À´Ï´Ù");
+			System.out.println("ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤");
 		}
 	}
 	
 	
-	//10.Á¤·Ä¸Ş¼Òµå
+	//10.ì •ë ¬ë©”ì†Œë“œ
 	public void sortArticle() {
 		while(true) {
-			System.out.println("1. ÀÌ¸§À¸·Î ¿À¸§Â÷¼ø");
-			System.out.println("2. ÃÑÁ¡À¸·Î ³»¸²Â÷¼ø");
-			System.out.println("3. ÀÌÀü¸Ş´º");
-			System.out.print("¹øÈ£ ÀÔ·Â : ");
+			System.out.println("1. ì´ë¦„ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ");
+			System.out.println("2. ì´ì ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ");
+			System.out.println("3. ì´ì „ë©”ë‰´");
+			System.out.print("ë²ˆí˜¸ ì…ë ¥ : ");
 			scanner = new Scanner(System.in);
 			int num = scanner.nextInt();
 			
@@ -145,7 +145,7 @@ public class SungJukServiceP {
 				Collections.sort(list,com);
 				printArticle();
 			}else if(num == 3) {
-				System.out.println("¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù");
+				System.out.println("ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 				break;
 			}
 		}

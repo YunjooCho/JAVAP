@@ -7,8 +7,8 @@ import static java.lang.System.out;
 
 public class ImportStaticP {
 	public static void main(String[] args) {
-		out.println("³­¼ö = " + Math.random()); //MathÅ¬·¡½ºÀÇ random()¸Ş¼Òµå
-		out.println("Á¦°ö½Â = " + Math.pow(2,5));
-		out.println("¼Ò¼ö ÀÌÇÏ 2Â°ÀÚ¸® = " + format("%.2f",123.456));
+		out.println("ë‚œìˆ˜ = " + Math.random()); //Mathí´ë˜ìŠ¤ì˜ random()ë©”ì†Œë“œ
+		out.println("ì œê³±ìŠ¹ = " + Math.pow(2,5));
+		out.println("ì†Œìˆ˜ ì´í•˜ 2ì§¸ìë¦¬ = " + format("%.2f",123.456));
 	}
 }

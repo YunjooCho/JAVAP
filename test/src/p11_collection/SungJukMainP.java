@@ -5,7 +5,7 @@ public class SungJukMainP {
 	public static void main(String[] args) {
 		SungJukServiceP service = new SungJukServiceP();
 		service.menu();
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 
 	}
 

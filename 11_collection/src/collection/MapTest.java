@@ -7,28 +7,28 @@ import java.util.Scanner;
 public class MapTest {
 	public static void main(String[] args) {
 		//Implementing Classes - HashMap
-		//add°¡ ¾Æ´Ñ putÀ¸·Î °ª ÀÔ·Â, getÀ¸·Î Ãâ·Â
-		//Å¶°ª, °ª µÑ´Ù Áßº¹ Çã¿ë, Å¶°ªÀÌ Áßº¹µÇ´Â °æ¿ì ³ªÁß¿¡ ÀÔ·ÂÇÑ °ªÀÌ ³ª¿È(µ¤¾î¾º¿öÁü)
-		//Å¶°ªÀº ÆÄÀÌ¼±ÀÇ µñ¼Å³Ê¸®¿Í À¯»ç?
+		//addê°€ ì•„ë‹Œ putìœ¼ë¡œ ê°’ ì…ë ¥, getìœ¼ë¡œ ì¶œë ¥
+		//í‚·ê°’, ê°’ ë‘˜ë‹¤ ì¤‘ë³µ í—ˆìš©, í‚·ê°’ì´ ì¤‘ë³µë˜ëŠ” ê²½ìš° ë‚˜ì¤‘ì— ì…ë ¥í•œ ê°’ì´ ë‚˜ì˜´(ë®ì–´ì”Œì›Œì§)
+		//í‚·ê°’ì€ íŒŒì´ì„ ì˜ ë”•ì…”ë„ˆë¦¬ì™€ ìœ ì‚¬?
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("book101", "¹é¼³°øÁÖ");
-		map.put("book201", "ÀÎ¾î°øÁÖ");
-		map.put("book102", "¹é¼³°øÁÖ");
-		map.put("book301", "ÇÇ¿À³ª°øÁÖ");
-		map.put("book101", "¾öÁö°øÁÖ"); 
-		//"book" + i  ·Î »ç¿ëÇÏ¸é ¹è¿­°°ÀÌ Ãâ·Â°¡´É ->¡Ú¡Ú¡ÚµÇ´ÂÁö È®ÀÎÇØº¸±â
+		map.put("book101", "ë°±ì„¤ê³µì£¼");
+		map.put("book201", "ì¸ì–´ê³µì£¼");
+		map.put("book102", "ë°±ì„¤ê³µì£¼");
+		map.put("book301", "í”¼ì˜¤ë‚˜ê³µì£¼");
+		map.put("book101", "ì—„ì§€ê³µì£¼"); 
+		//"book" + i  ë¡œ ì‚¬ìš©í•˜ë©´ ë°°ì—´ê°™ì´ ì¶œë ¥ê°€ëŠ¥ ->â˜…â˜…â˜…ë˜ëŠ”ì§€ í™•ì¸í•´ë³´ê¸°
 		
 		System.out.println(map.get("book101"));
 		System.out.println(map.get("book102"));
 		System.out.println();
 		
 		
-		//¡Ú¡Ú¡Ú¡Úvalue°ªÀ¸·Î bookxxx Ãâ·ÂÇÒ ¼ö ÀÖ´ÂÁö È®ÀÎ containValue
+		//â˜…â˜…â˜…â˜…valueê°’ìœ¼ë¡œ bookxxx ì¶œë ¥í•  ìˆ˜ ìˆëŠ”ì§€ í™•ì¸ containValue
 		Scanner scanner = new Scanner(System.in);
-		System.out.print("ÄÚµå ÀÔ·Â : ");
+		System.out.print("ì½”ë“œ ì…ë ¥ : ");
 		String input = scanner.next();
-//		if(map.get(input) == null) { //map.get(input)À» µî·ÏÇÏÁö ¾Ê¾ÒÀ¸¸é nullÀÌ ³ª¿È
-//			System.out.println("¾ø´Â key ÀÔ´Ï´Ù");
+//		if(map.get(input) == null) { //map.get(input)ì„ ë“±ë¡í•˜ì§€ ì•Šì•˜ìœ¼ë©´ nullì´ ë‚˜ì˜´
+//			System.out.println("ì—†ëŠ” key ì…ë‹ˆë‹¤");
 //		}else {
 //			System.out.println(map.get(input));
 //		}
@@ -36,7 +36,7 @@ public class MapTest {
 		if(map.containsKey(input)) {
 			System.out.println(map.get(input));
 		}else {
-			System.out.println("¾ø´Â key ÀÔ´Ï´Ù");
+			System.out.println("ì—†ëŠ” key ì…ë‹ˆë‹¤");
 		}
 	}
 }

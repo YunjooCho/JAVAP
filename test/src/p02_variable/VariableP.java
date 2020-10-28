@@ -9,7 +9,7 @@ public class VariableP {
 		//System.out.println("a = " + (int)a); - error
 		
 		char b;
-		b = 'A'; //ASCIIÄÚµå 65
+		b = 'A'; //ASCIIì½”ë“œ 65
 		System.out.println("b = " + b);
 		
 		char c;

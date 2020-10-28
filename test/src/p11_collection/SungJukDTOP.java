@@ -3,12 +3,12 @@ package p11_collection;
 import java.text.DecimalFormat;
 
 public class SungJukDTOP {
-	//1.ÇÊµå ¼±¾ğ
+	//1.í•„ë“œ ì„ ì–¸
 	private int no, kor, eng, math, tot;
 	private String name;
 	private double avg;
 	
-	//2.Ä¸½¶È­
+	//2.ìº¡ìŠí™”
 	public void setNo(int no) {
 		this.no = no;
 	}

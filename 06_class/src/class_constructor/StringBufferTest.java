@@ -7,27 +7,27 @@ import java.io.InputStreamReader;
 public class StringBufferTest {
 	private int dan;
 	
-	//±âº»»ı¼ºÀÚ
+	//ê¸°ë³¸ìƒì„±ì
 	public StringBufferTest() throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : ");
+		System.out.print("ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : ");
 		this.dan = Integer.parseInt(br.readLine());
 	}
 	
-	//¸Ş¼Òµå
+	//ë©”ì†Œë“œ
 	public void disp() {
-		StringBuffer buffer = new StringBuffer(); //¹öÆÛ»ı¼º
+		StringBuffer buffer = new StringBuffer(); //ë²„í¼ìƒì„±
 		
 		for(int i = dan; i <= dan; i++) {
 			for(int j = 1; j <= 9; j++) {
 				//System.out.println(dan + "*" + j + "=" + (dan*j));
 				buffer.append(dan);
-				buffer.append("*");//ÇÏ³ªÀÇ ¸Ş¸ğ¸®¿¡ Ãß°¡(¼öÁ¤)µÊ
+				buffer.append("*");//í•˜ë‚˜ì˜ ë©”ëª¨ë¦¬ì— ì¶”ê°€(ìˆ˜ì •)ë¨
 				buffer.append(j);
 				buffer.append("=");
 				buffer.append(dan*j);
-				System.out.println(buffer);//ÇÑ¹ø Ãâ·ÂµÇ°í
-				buffer.delete(0, buffer.length());//Ãâ·ÂµÈ µÚ ³»¿ëÀÌ Áö¿öÁü
+				System.out.println(buffer);//í•œë²ˆ ì¶œë ¥ë˜ê³ 
+				buffer.delete(0, buffer.length());//ì¶œë ¥ëœ ë’¤ ë‚´ìš©ì´ ì§€ì›Œì§
 			}
 		}
 		//for(int i = 1; i <= 9; i++{
@@ -36,9 +36,9 @@ public class StringBufferTest {
 	}
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//Å¬·¡½º »ı¼º
+		//í´ë˜ìŠ¤ ìƒì„±
 		StringBufferTest sb = new StringBufferTest();
-		//¸Ş¼Òµå È£Ãâ
+		//ë©”ì†Œë“œ í˜¸ì¶œ
 		sb.disp();
 	}
 }

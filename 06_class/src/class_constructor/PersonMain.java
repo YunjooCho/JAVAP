@@ -1,19 +1,19 @@
 package class_constructor;
 
-class PersonTest{//ÀÌ°Í¸¸ ÀÖÀ¸¸é °¡Â¥(²®µ¥±â¸¸ ÀÖÀ½)
-	//¼Ó¼º(ÇÊµå) - ÀÌ¸§, ³ªÀÌ, Å°, ¸ö¹«°Ô
-	//±â´É,ÇàÀ§,µ¿ÀÛ(¸Ş¼Òµå) - °È´Â´Ù, ¶Ú´Ù, ¸Ô´Â´Ù
+class PersonTest{//ì´ê²ƒë§Œ ìˆìœ¼ë©´ ê°€ì§œ(ê»ë°ê¸°ë§Œ ìˆìŒ)
+	//ì†ì„±(í•„ë“œ) - ì´ë¦„, ë‚˜ì´, í‚¤, ëª¸ë¬´ê²Œ
+	//ê¸°ëŠ¥,í–‰ìœ„,ë™ì‘(ë©”ì†Œë“œ) - ê±·ëŠ”ë‹¤, ë›´ë‹¤, ë¨¹ëŠ”ë‹¤
 	
-	//ÇÊµå
+	//í•„ë“œ
 	private String name;
 	private int age;
 	
 	public PersonTest() { 
-		//void¾²¸é ¾ÈµÊ!!!, void¾²¸é »ı¼ºÀÚ ±â´ÉÀ» ¹ÚÅ»ÇÏ°í ÀÏ¹İ ¸Ş¼Òµå°¡ µÊ
-		//()¾È¿¡ ÀÎ¼ö
-		System.out.println("default »ı¼ºÀÚ");
+		//voidì“°ë©´ ì•ˆë¨!!!, voidì“°ë©´ ìƒì„±ì ê¸°ëŠ¥ì„ ë°•íƒˆí•˜ê³  ì¼ë°˜ ë©”ì†Œë“œê°€ ë¨
+		//()ì•ˆì— ì¸ìˆ˜
+		System.out.println("default ìƒì„±ì");
 		
-	}//ÀÌ°Ô ¾ø¾îµµ ÀÚµ¿À¸·Î ±âº»»ı¼ºÀÚ°¡ ¸¸µé¾îÁü
+	}//ì´ê²Œ ì—†ì–´ë„ ìë™ìœ¼ë¡œ ê¸°ë³¸ìƒì„±ìê°€ ë§Œë“¤ì–´ì§
 	
 	public PersonTest(String n, int a) {
 		name = n;
@@ -21,19 +21,19 @@ class PersonTest{//ÀÌ°Í¸¸ ÀÖÀ¸¸é °¡Â¥(²®µ¥±â¸¸ ÀÖÀ½)
 	}
 	
 	
-	public void setName(String n) {//»ı¼ºÀÚ¿Í ÇüÅÂ°¡ À¯»ç, ¿ªÇÒµµ À¯»ç. 
-								   //»ı¼ºÀÚ´Â ÇÑ¹ø¹Û¿¡ »ç¿ë¸øÇÏÁö¸¸ setter´Â ¿©·¯¹ø »ç¿ë°¡´É
+	public void setName(String n) {//ìƒì„±ìì™€ í˜•íƒœê°€ ìœ ì‚¬, ì—­í• ë„ ìœ ì‚¬. 
+								   //ìƒì„±ìëŠ” í•œë²ˆë°–ì— ì‚¬ìš©ëª»í•˜ì§€ë§Œ setterëŠ” ì—¬ëŸ¬ë²ˆ ì‚¬ìš©ê°€ëŠ¥
 		name = n;
 		
 	}
 	
-	public void setDate(String n, int a) {//¼ÂÅÍ
+	public void setDate(String n, int a) {//ì…‹í„°
 		name = n;
 		age = a;
 		
 	}
 	
-	public void setDate() {//¼ÂÅÍ
+	public void setDate() {//ì…‹í„°
 		
 	}
 	
@@ -42,7 +42,7 @@ class PersonTest{//ÀÌ°Í¸¸ ÀÖÀ¸¸é °¡Â¥(²®µ¥±â¸¸ ÀÖÀ½)
 		name = n;
 	}
 	
-	public String getName(){ //Name´ë¹®ÀÚ·Î ¾²´Â°Ç ¾à¼Ó
+	public String getName(){ //NameëŒ€ë¬¸ìë¡œ ì“°ëŠ”ê±´ ì•½ì†
 		return name;
 	}
 	
@@ -52,32 +52,32 @@ class PersonTest{//ÀÌ°Í¸¸ ÀÖÀ¸¸é °¡Â¥(²®µ¥±â¸¸ ÀÖÀ½)
 }
 
 
-public class PersonMain {//ÀÌ°Í¸¸ ÀÖÀ¸¸é °¡Â¥(²®µ¥±â¸¸ ÀÖÀ½)
+public class PersonMain {//ì´ê²ƒë§Œ ìˆìœ¼ë©´ ê°€ì§œ(ê»ë°ê¸°ë§Œ ìˆìŒ)
 	public static void main(String[] args) {
-		//staticÀÌ ÀÖ¾î¼­ new°¡ ÇÊ¿ä¾øÀ½
-		//ÇÁ·Î±×·¥ÀÇ ½ÃÀÛÁ¡
+		//staticì´ ìˆì–´ì„œ newê°€ í•„ìš”ì—†ìŒ
+		//í”„ë¡œê·¸ë¨ì˜ ì‹œì‘ì 
 		
 		System.out.println("A\tB\tC\tD\tF\tG");
-		PersonTest aa;//Å¬·¡½º·Î ¸¸µç°Ç °´Ã¼(º¯¼ö¶ó°í ¾È ºÎ¸§)
-//		aa = new PersonTest("È«±æµ¿"); //À§¿¡ ÀÖ´Â µğÆúÆ® »ı¼ºÀÚ°¡ È£ÃâµÊ
-		aa = new PersonTest("È«±æµ¿", 25);
-		//¾²·¹±â°ª -> Å¬·¡½º¸¦ ¸Ş¸ğ¸®¿¡ ¼³Á¤
-		//new PersonTest + (); - »ı¼º + »ı¼ºÀÚ, ÀÌ¸§¾øÀ¸¹Ç·Î ÁÖ¼Ò°ªÀ» ÁÜ
-		System.out.println("°´Ã¼ aa = " + aa);
+		PersonTest aa;//í´ë˜ìŠ¤ë¡œ ë§Œë“ ê±´ ê°ì²´(ë³€ìˆ˜ë¼ê³  ì•ˆ ë¶€ë¦„)
+//		aa = new PersonTest("í™ê¸¸ë™"); //ìœ„ì— ìˆëŠ” ë””í´íŠ¸ ìƒì„±ìê°€ í˜¸ì¶œë¨
+		aa = new PersonTest("í™ê¸¸ë™", 25);
+		//ì“°ë ˆê¸°ê°’ -> í´ë˜ìŠ¤ë¥¼ ë©”ëª¨ë¦¬ì— ì„¤ì •
+		//new PersonTest + (); - ìƒì„± + ìƒì„±ì, ì´ë¦„ì—†ìœ¼ë¯€ë¡œ ì£¼ì†Œê°’ì„ ì¤Œ
+		System.out.println("ê°ì²´ aa = " + aa);
 //		aa.age = 25;
-		System.out.println("ÀÌ¸§ =" + aa.getName() + "\t³ªÀÌ =" + aa.getAge());
+		System.out.println("ì´ë¦„ =" + aa.getName() + "\të‚˜ì´ =" + aa.getAge());
 		System.out.println();
 		
-		PersonTest bb = new PersonTest(); //À§¿¡ ÀÖ´Â µğÆúÆ® »ı¼ºÀÚ°¡ È£ÃâµÊ
-		//aa¿Í ´Ù¸¥ °÷¿¡ »õ·Î¿î °´Ã¼ »ı¼º
-		System.out.println("°´Ã¼ bb = " + bb);
-		bb.setDate("ÄÚ³­", 13);
-		System.out.println("ÀÌ¸§ =" + bb.getName() + "\t³ªÀÌ =" + bb.getAge());
+		PersonTest bb = new PersonTest(); //ìœ„ì— ìˆëŠ” ë””í´íŠ¸ ìƒì„±ìê°€ í˜¸ì¶œë¨
+		//aaì™€ ë‹¤ë¥¸ ê³³ì— ìƒˆë¡œìš´ ê°ì²´ ìƒì„±
+		System.out.println("ê°ì²´ bb = " + bb);
+		bb.setDate("ì½”ë‚œ", 13);
+		System.out.println("ì´ë¦„ =" + bb.getName() + "\të‚˜ì´ =" + bb.getAge());
 		System.out.println();
 		
 		PersonTest cc = new PersonTest();
 		cc.setDate();
-		System.out.println("ÀÌ¸§ =" + cc.getName() + "\t³ªÀÌ =" + cc.getAge());
+		System.out.println("ì´ë¦„ =" + cc.getName() + "\të‚˜ì´ =" + cc.getAge());
 		System.out.println();
 		
 	}
@@ -85,9 +85,9 @@ public class PersonMain {//ÀÌ°Í¸¸ ÀÖÀ¸¸é °¡Â¥(²®µ¥±â¸¸ ÀÖÀ½)
 }
 
 
-//PersonMain.java ÆÄÀÏ¿¡ ´ëÇØ
-//¾Æ·¡ µÎ Å¬·¡½ºÆÄÀÏÀÌ »ı¼º
+//PersonMain.java íŒŒì¼ì— ëŒ€í•´
+//ì•„ë˜ ë‘ í´ë˜ìŠ¤íŒŒì¼ì´ ìƒì„±
 //PersonMain.class
 //PersonTest.class
-//µÎ°¡Áö Å¬·¡½ºÁß publicÀÌ ºÙ¾îÀÖ´Â °ÍÀÌ ¸ŞÀÎ(´ëÇ¥,ÆÀÀå)
-//public(class)´Â ÇÏ³ªÀÇ .java¾È¿¡¼­ ÇÏ³ª¸¸ Á¸Àç °¡´É(Å¬·¡½º ÀÚÃ¼´Â µÎ°³ ÀÌ»ó Á¸Àç °¡´É)
+//ë‘ê°€ì§€ í´ë˜ìŠ¤ì¤‘ publicì´ ë¶™ì–´ìˆëŠ” ê²ƒì´ ë©”ì¸(ëŒ€í‘œ,íŒ€ì¥)
+//public(class)ëŠ” í•˜ë‚˜ì˜ .javaì•ˆì—ì„œ í•˜ë‚˜ë§Œ ì¡´ì¬ ê°€ëŠ¥(í´ë˜ìŠ¤ ìì²´ëŠ” ë‘ê°œ ì´ìƒ ì¡´ì¬ ê°€ëŠ¥)

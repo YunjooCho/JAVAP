@@ -4,14 +4,14 @@ public class Ex03NestedFor {
 
 	public static void main(String[] args) {
 		for(int i = 0; i <= 5; i++) {
-			//iÀÇ ÇöÀç°ª: 0
+			//iì˜ í˜„ìž¬ê°’: 0
 			//i <= 5 : true
 			for(int j = 10; j <= 12; j++) {
-				//jÀÇ ÇöÀç°ª : 10 , 11 , 12 , 13
+				//jì˜ í˜„ìž¬ê°’ : 10 , 11 , 12 , 13
 				//j <= 12 : true , true , true , false
 				System.out.println("i : " + i + ", j : " + j);
 			}
-			System.out.println("i for ¹® Á¾·á");
+			System.out.println("i for ë¬¸ ì¢…ë£Œ");
 		}
 
 	}

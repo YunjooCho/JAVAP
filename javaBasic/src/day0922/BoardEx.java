@@ -4,11 +4,11 @@ import java.io.IOException;
 
 import viewer.UserViewer;
 
-public class BoardEx {//¸ÞÀÎ¸Þ¼Òµå ½ÇÇàÀ» À§ÇØ¼­¸¸ »ç¿ë
+public class BoardEx {//ë©”ì¸ë©”ì†Œë“œ ì‹¤í–‰ì„ ìœ„í•´ì„œë§Œ ì‚¬ìš©
 	public static void main(String[] args) throws IOException {
 		
 		UserViewer userViewer = new UserViewer();
-		userViewer.index(); //¢º¿¹Àü showMene¿Í À¯»ç, È¨ÆäÀÌÁö ÀüÁ¦ Ãâ·Â(¿¹) ·Î±×ÀÎ -> ¸ÞÀÎ¸Þ´º Ãâ·Â
+		userViewer.index(); //â–¶ì˜ˆì „ showMeneì™€ ìœ ì‚¬, í™ˆíŽ˜ì´ì§€ ì „ì œ ì¶œë ¥(ì˜ˆ) ë¡œê·¸ì¸ -> ë©”ì¸ë©”ë‰´ ì¶œë ¥
 		
 	}
 }

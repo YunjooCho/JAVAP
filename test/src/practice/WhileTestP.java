@@ -13,11 +13,11 @@ public class WhileTestP {
 		System.out.println();
 		
 		
-		//A B C D E F G....X Y Z Ãâ·ÂÇÏµÇ 1ÁÙ¿¡ 7°³¾¿ Ãâ·ÂÇÏ±â
+		//A B C D E F G....X Y Z ì¶œë ¥í•˜ë˜ 1ì¤„ì— 7ê°œì”© ì¶œë ¥í•˜ê¸°
 		/*
-		A ~ Z Ãâ·ÂÇÏµÇ 1ÁÙ¿¡ 7°³¾¿ Ãâ·ÂÇÏ±â
+		A ~ Z ì¶œë ¥í•˜ë˜ 1ì¤„ì— 7ê°œì”© ì¶œë ¥í•˜ê¸°
 
-		[½ÇÇà°á°ú]
+		[ì‹¤í–‰ê²°ê³¼]
 		A B C D E F G
 		H I J K L M N
 		O P Q R S T U

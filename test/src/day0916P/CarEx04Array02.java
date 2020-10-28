@@ -11,20 +11,20 @@
 //public class CarEx04Array02 {
 //	private static int SIZE = 3;
 //	public static void main(String[] args) throws NumberFormatException, IOException {
-//		//»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀ¸·Î Car °´Ã¼¸¦ ¸¸µé¾î¼­
-//		//Car¹è¿­¿¡ ºñ¾îÀÖ´Â Ä­¿¡ ³Ö°í
-//		//ºñ¾îÀÖ´Â Ä­ÀÌ ¾øÀ¸¸é "ºó Ä­ÀÌ ¾ø½À´Ï´Ù"¶ó°í ³ª¿À´Â ÇÁ·Î±×·¥À» ¸¸µé¾îº¸ÀÚ
+//		//ì‚¬ìš©ìžê°€ ìž…ë ¥í•œ ê°’ìœ¼ë¡œ Car ê°ì²´ë¥¼ ë§Œë“¤ì–´ì„œ
+//		//Carë°°ì—´ì— ë¹„ì–´ìžˆëŠ” ì¹¸ì— ë„£ê³ 
+//		//ë¹„ì–´ìžˆëŠ” ì¹¸ì´ ì—†ìœ¼ë©´ "ë¹ˆ ì¹¸ì´ ì—†ìŠµë‹ˆë‹¤"ë¼ê³  ë‚˜ì˜¤ëŠ” í”„ë¡œê·¸ëž¨ì„ ë§Œë“¤ì–´ë³´ìž
 //		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 //		CarT[] carArray = new CarT[SIZE];
 //		
 //		while(true) {
-//			System.out.print("1. ÀÔ·Â  2. Ãâ·Â  3. Á¾·á : ");
+//			System.out.print("1. ìž…ë ¥  2. ì¶œë ¥  3. ì¢…ë£Œ : ");
 //			int userChoice = Integer.parseInt(bufferedReader.readLine());
-//			//¸¸¾à ÀÔ·ÂÀ» ´­·¶À» ¶§
-//			//ºóÄ­ÀÎÁö ¾Æ´ÑÁö´Â ¾î¶»°Ô ¾Ë ¼ö ÀÖÀ»±î?
+//			//ë§Œì•½ ìž…ë ¥ì„ ëˆŒë €ì„ ë•Œ
+//			//ë¹ˆì¹¸ì¸ì§€ ì•„ë‹Œì§€ëŠ” ì–´ë–»ê²Œ ì•Œ ìˆ˜ ìžˆì„ê¹Œ?
 //			if(userChoice == 1) {
 //				int index;// = -1; //->?????????????????
-//				for(int i = 0; i < carArray.length; i++) { //[0][1][2]µ¹·Á¼­ °ªÀÌ nullÀÌ¸é 
+//				for(int i = 0; i < carArray.length; i++) { //[0][1][2]ëŒë ¤ì„œ ê°’ì´ nullì´ë©´ 
 //					if(carArray[i] == null) {
 //						index = i;
 //						 System.out.println("i: " + i + "index: " + index);
@@ -33,52 +33,52 @@
 //					}
 //				}
 //				if(index == -1) {
-//					System.out.println("ºóÄ­ÀÌ ¾ø½À´Ï´Ù.");
+//					System.out.println("ë¹ˆì¹¸ì´ ì—†ìŠµë‹ˆë‹¤.");
 //				}else {
 //					CarT c = new CarT();
-//					System.out.print("¹øÈ£ : ");
+//					System.out.print("ë²ˆí˜¸ : ");
 //					c.setNumber(bufferedReader.readLine());
-//					System.out.print("Â÷Á¾ : ");
+//					System.out.print("ì°¨ì¢… : ");
 //					c.setType(bufferedReader.readLine());
-//					System.out.print("¿¬½Ä : ");
+//					System.out.print("ì—°ì‹ : ");
 //					c.setYear(Integer.parseInt(bufferedReader.readLine()));
-//					System.out.print("°¡°Ý : ");
+//					System.out.print("ê°€ê²© : ");
 //					c.setPrice(Integer.parseInt(bufferedReader.readLine()));
-//					System.out.print("»ö»ó : ");
+//					System.out.print("ìƒ‰ìƒ : ");
 //					c.setColor(bufferedReader.readLine());
 //					carArray[index] = c;
 //					
 //				}
 ////				if(index == -1) {
-////					System.out.println("ºóÄ­ÀÌ ¾ø½À´Ï´Ù.");
+////					System.out.println("ë¹ˆì¹¸ì´ ì—†ìŠµë‹ˆë‹¤.");
 ////				}else {
 ////					CarT c = new CarT();
-////					System.out.print("¹øÈ£ : ");
+////					System.out.print("ë²ˆí˜¸ : ");
 ////					c.setNumber(bufferedReader.readLine());
-////					System.out.print("Â÷Á¾ : ");
+////					System.out.print("ì°¨ì¢… : ");
 ////					c.setType(bufferedReader.readLine());
-////					System.out.print("¿¬½Ä : ");
+////					System.out.print("ì—°ì‹ : ");
 ////					c.setYear(Integer.parseInt(bufferedReader.readLine()));
-////					System.out.print("°¡°Ý : ");
+////					System.out.print("ê°€ê²© : ");
 ////					c.setPrice(Integer.parseInt(bufferedReader.readLine()));
-////					System.out.print("»ö»ó : ");
+////					System.out.print("ìƒ‰ìƒ : ");
 ////					c.setColor(bufferedReader.readLine());
 ////					carArray[index] = c;
 ////					
 ////				}
 //			}else if(userChoice == 2) {
-//				//Ãâ·Â
-//				//ÀÔ·Â°ªÀÌ ÀÖ´ÂÁö ¾ø´ÂÁö È®ÀÎ
+//				//ì¶œë ¥
+//				//ìž…ë ¥ê°’ì´ ìžˆëŠ”ì§€ ì—†ëŠ”ì§€ í™•ì¸
 ////				if(c.setNumber == 0) {
 ////					
 ////				}
 //			}else if(userChoice == 3){
-//				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+//				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 //				break;
 //			}else {
-//				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Þ´º¸¦ ´Ù½Ã ¼±ÅÃÇØ ÁÖ¼¼¿ä");
+//				System.out.println("ìž˜ëª» ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ë¥¼ ë‹¤ì‹œ ì„ íƒí•´ ì£¼ì„¸ìš”");
 //			}
 //			
-//		}//¸Þ´ºÀÇ while
+//		}//ë©”ë‰´ì˜ while
 //	}
 //}

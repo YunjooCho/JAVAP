@@ -2,7 +2,7 @@ package method;
 
 public class Alist {
 /*
-º¹½ÀÇÒ ¶§ ¼ø¼­
+ë³µìŠµí•  ë•Œ ìˆœì„œ
 
 1.Operator
 2.Operator2

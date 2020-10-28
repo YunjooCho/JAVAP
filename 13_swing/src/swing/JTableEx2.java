@@ -17,59 +17,59 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 
-//1.»ó¼Ó ¹× ±¸Çö
+//1.ìƒì† ë° êµ¬í˜„
 public class JTableEx2 extends JFrame implements ActionListener {
-	//4.¾î·¹ÀÌ¸®½ºÆ® »ı¼º
-	//6.º¤ÅÍ»ı¼º
-	private ArrayList<PersonDTO> list;	//µ¥ÀÌÅÍ ÀúÀå
-	private Vector<String> vector;      //ÇÊµå¸í ÀúÀå
-	private DefaultTableModel model; //AbstractTableModel ´ëÇà, AbstractTableModel´Â Ãß»ó¸Ş¼ÒµåÀÇ ¿À¹ö¶óÀÌµùÀÌ ÇÊ¿ä
-	private JTable table; 			 //AbstractTableModel ´ëÇà
+	//4.ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ìƒì„±
+	//6.ë²¡í„°ìƒì„±
+	private ArrayList<PersonDTO> list;	//ë°ì´í„° ì €ì¥
+	private Vector<String> vector;      //í•„ë“œëª… ì €ì¥
+	private DefaultTableModel model; //AbstractTableModel ëŒ€í–‰, AbstractTableModelëŠ” ì¶”ìƒë©”ì†Œë“œì˜ ì˜¤ë²„ë¼ì´ë”©ì´ í•„ìš”
+	private JTable table; 			 //AbstractTableModel ëŒ€í–‰
 	private JButton insertBtn, deleteBtn;
 	private int count = 0;
 	
 	public JTableEx2() {
 		
-		//5.µ¥ÀÌÅÍÀÔ·Â
+		//5.ë°ì´í„°ì…ë ¥
 		list = new ArrayList<PersonDTO>();
-		list.add(new PersonDTO("hong","È«±æµ¿","111","010-123-1234"));
-		list.add(new PersonDTO("conan","ÄÚ³­","333","010-777-7777"));
+		list.add(new PersonDTO("hong","í™ê¸¸ë™","111","010-123-1234"));
+		list.add(new PersonDTO("conan","ì½”ë‚œ","333","010-777-7777"));
 		
-		//7.Å¸ÀÌÆ²
+		//7.íƒ€ì´í‹€
 		vector = new Vector<String>();
-		vector.addElement("¾ÆÀÌµğ");
-		vector.addElement("ÀÌ¸§");
-		vector.add("ºñ¹Ğ¹øÈ£");
-		vector.add("ÇÚµåÆù");
+		vector.addElement("ì•„ì´ë””");
+		vector.addElement("ì´ë¦„");
+		vector.add("ë¹„ë°€ë²ˆí˜¸");
+		vector.add("í•¸ë“œí°");
 		
 		
 		//8.
-		model = new DefaultTableModel(vector, 0) {//0´ë½Å 1À» ³ÖÀ¸¸é Ä­ÀÌ ÇÏ³ª »ı±è, ¼öÁ¤°¡´ÉÇÔ, celleditableÀ» »ç¿ëÇÏ±â À§ÇØ ÀÍ¸í³»ºÎÅ¬·¡½º »ı¼º
+		model = new DefaultTableModel(vector, 0) {//0ëŒ€ì‹  1ì„ ë„£ìœ¼ë©´ ì¹¸ì´ í•˜ë‚˜ ìƒê¹€, ìˆ˜ì •ê°€ëŠ¥í•¨, celleditableì„ ì‚¬ìš©í•˜ê¸° ìœ„í•´ ìµëª…ë‚´ë¶€í´ë˜ìŠ¤ ìƒì„±
 			@Override
 			public boolean isCellEditable(int r, int c) { //row, column
-				return (c!=0)? true : false; //¼öÁ¤ÇÒ ¼ö ÀÖ´Ù ¾ø´Ù, 0¹øÂ° id°¡ µé¾î°¡´Â ¹æÀº ¼öÁ¤ÇÒ ¼ö ¾ø°Ô ¼³Á¤
+				return (c!=0)? true : false; //ìˆ˜ì •í•  ìˆ˜ ìˆë‹¤ ì—†ë‹¤, 0ë²ˆì§¸ idê°€ ë“¤ì–´ê°€ëŠ” ë°©ì€ ìˆ˜ì •í•  ìˆ˜ ì—†ê²Œ ì„¤ì •
 			}
 		}; 
 		table = new JTable(model);
 		JScrollPane scroll = new JScrollPane(table);
 		
-		//9.µ¥ÀÌÅÍ ºÙÀÌ±â
-		//°´Ã¼°¡ µé¾îÀÖ´Â ¾î·¹ÀÌ¸®½ºÆ®´Â ÇÁ·¹ÀÓ¿¡ ºÙÀÏ ¼ö ¾øÀ¸¹Ç·Î ¾î·¹ÀÌ¸®½ºÆ®ÀÇ °´Ã¼¸¦ º¤ÅÍ¿¡ ¿Å±ä µÚ ÇÁ·¹ÀÓ¿¡ ºÙÀÓ
+		//9.ë°ì´í„° ë¶™ì´ê¸°
+		//ê°ì²´ê°€ ë“¤ì–´ìˆëŠ” ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ëŠ” í”„ë ˆì„ì— ë¶™ì¼ ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì˜ ê°ì²´ë¥¼ ë²¡í„°ì— ì˜®ê¸´ ë’¤ í”„ë ˆì„ì— ë¶™ì„
 		for(PersonDTO dto : list) {
-			Vector<String> v = new Vector<String>(); //¡Úº¤ÅÍÀÇ ÀÚ·á ÀúÀå ÇüÅÂ... °´Ã¼?, ÀÏ·Ä·Î ÀÚ·á µé¾î°¨?
+			Vector<String> v = new Vector<String>(); //â˜…ë²¡í„°ì˜ ìë£Œ ì €ì¥ í˜•íƒœ... ê°ì²´?, ì¼ë ¬ë¡œ ìë£Œ ë“¤ì–´ê°?
 			v.add(dto.getId());
 			v.add(dto.getName());
 			v.add(dto.getPwd());
 			v.add(dto.getTel());
 			
-			model.addRow(v); //Çà´ÜÀ§·Î µ¥ÀÌÅÍ¸¦ ºÙÀÓ
+			model.addRow(v); //í–‰ë‹¨ìœ„ë¡œ ë°ì´í„°ë¥¼ ë¶™ì„
 		}
 		
-		//10.¹öÆ° »ı¼º
-		insertBtn = new JButton("Ãß°¡");
-		deleteBtn = new JButton("»èÁ¦");
+		//10.ë²„íŠ¼ ìƒì„±
+		insertBtn = new JButton("ì¶”ê°€");
+		deleteBtn = new JButton("ì‚­ì œ");
 		
-		JPanel p = new JPanel(new FlowLayout(FlowLayout.RIGHT)); //¾ÈÁ¤¼º(Ç¥¸é»ó Â÷ÀÌ ¾øÀ½)
+		JPanel p = new JPanel(new FlowLayout(FlowLayout.RIGHT)); //ì•ˆì •ì„±(í‘œë©´ìƒ ì°¨ì´ ì—†ìŒ)
 		p.add(insertBtn);
 		p.add(deleteBtn);
 		
@@ -84,14 +84,14 @@ public class JTableEx2 extends JFrame implements ActionListener {
 		 
 		setBounds(200, 200, 500, 400);
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame »ı·«°¡´É
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame ìƒëµê°€ëŠ¥
 	}
 	
 	
-	//2. ¿À¹ö¶óÀÌµå
+	//2. ì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == insertBtn) { //±æ¾îÁö¹Ç·Î ÇÔ¼ö·Î ´ëÀÀ
+		if(e.getSource() == insertBtn) { //ê¸¸ì–´ì§€ë¯€ë¡œ í•¨ìˆ˜ë¡œ ëŒ€ì‘
 			insert();
 		}else if(e.getSource() == deleteBtn) {
 			delete();
@@ -99,28 +99,28 @@ public class JTableEx2 extends JFrame implements ActionListener {
 		
 	}
 	
-	//11. ÀÔ·ÂÇÔ¼ö
+	//11. ì…ë ¥í•¨ìˆ˜
 	private void insert() {
 		
-		String id = JOptionPane.showInputDialog(this, "¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		String id = JOptionPane.showInputDialog(this, "ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		if(id == null || id.length() == 0) {
-			JOptionPane.showMessageDialog(this, "¾ÆÀÌµğ´Â ÇÊ¼ö Ç×¸ñÀÔ´Ï´Ù");
-			return; //ÇöÀç ¸Ş¼Òµå¸¦ ºüÁ®³ª¶ó´Â Áö½Ã
+			JOptionPane.showMessageDialog(this, "ì•„ì´ë””ëŠ” í•„ìˆ˜ í•­ëª©ì…ë‹ˆë‹¤");
+			return; //í˜„ì¬ ë©”ì†Œë“œë¥¼ ë¹ ì ¸ë‚˜ë¼ëŠ” ì§€ì‹œ
 		}
 		
-		//¡ÚÁßº¹Ã¼Å© - »ç¿ëÁßÀÎ ¾ÆÀÌµğÀÔ´Ï´Ù
+		//â˜…ì¤‘ë³µì²´í¬ - ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë””ì…ë‹ˆë‹¤
 		for(int i = 0; i < list.size(); i++) {
 			if(id.equals(list.get(i).getId())) {
-				JOptionPane.showMessageDialog(this, "»ç¿ëÁßÀÎ ¾ÆÀÌµğÀÔ´Ï´Ù");
+				JOptionPane.showMessageDialog(this, "ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë””ì…ë‹ˆë‹¤");
 				return;
-				//id = JOptionPane.showInputDialog(this, "¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-				//¿©±â¿¡ ÀÌ°É ³ÖÀ¸¸é Ã³À½¿¡¸¸ ¸Ş½ÃÁö°¡ ¶ß°í ÀÔ·ÂÀÌ ¾ÈµÉ»Ó, ±× ´ÙÀ½¿¡´Â ÀÔ·ÂÀÌ °¡´ÉÇØÁü
+				//id = JOptionPane.showInputDialog(this, "ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+				//ì—¬ê¸°ì— ì´ê±¸ ë„£ìœ¼ë©´ ì²˜ìŒì—ë§Œ ë©”ì‹œì§€ê°€ ëœ¨ê³  ì…ë ¥ì´ ì•ˆë ë¿, ê·¸ ë‹¤ìŒì—ëŠ” ì…ë ¥ì´ ê°€ëŠ¥í•´ì§
 			}
 		}
 		
-		String name = JOptionPane.showInputDialog(this, "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
-		String pwd = JOptionPane.showInputDialog(this, "ÆĞ½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-		String tel = JOptionPane.showInputDialog(this, "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(XXX-XXX-XXXX)");
+		String name = JOptionPane.showInputDialog(this, "ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+		String pwd = JOptionPane.showInputDialog(this, "íŒ¨ìŠ¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		String tel = JOptionPane.showInputDialog(this, "ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”(XXX-XXX-XXXX)");
 		
 		Vector<String> v = new Vector<String>();
 		v.add(id);
@@ -129,15 +129,15 @@ public class JTableEx2 extends JFrame implements ActionListener {
 		v.add(tel);
 		
 		model.addRow(v);
-		JOptionPane.showMessageDialog(this, "Ãß°¡ ¿Ï·á");
+		JOptionPane.showMessageDialog(this, "ì¶”ê°€ ì™„ë£Œ");
 		
 		
 		
 	}
 
-	//¡Ú12. »èÁ¦ÇÔ¼ö
+	//â˜…12. ì‚­ì œí•¨ìˆ˜
 	private void delete() {
-		String name = JOptionPane.showInputDialog(this, "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+		String name = JOptionPane.showInputDialog(this, "ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
 //		Iterator<PersonDTO> it = list.iterator();
 //		while(it.hasNext()) {
 //			PersonDTO dto = it.next();
@@ -148,18 +148,18 @@ public class JTableEx2 extends JFrame implements ActionListener {
 //				
 //				
 //			}
-//		   	//¡Ú2°³ÀÌ»óÀÏ¶§ »èÁ¦°¡ ¾ÈµÊ
+//		   	//â˜…2ê°œì´ìƒì¼ë•Œ ì‚­ì œê°€ ì•ˆë¨
 			for(int i = 0; i < list.size(); i++) {
 				if(name.equals(list.get(i).getName())) {
-					//System.out.println("ÀÖµû");
+					//System.out.println("ìˆë”°");
 					model.removeRow(i);
 					count++;
 				}
 			}
 			if(count == 0) {
-				JOptionPane.showMessageDialog(this, "¾ø´Â ÀÌ¸§ÀÔ´Ï´Ù");
+				JOptionPane.showMessageDialog(this, "ì—†ëŠ” ì´ë¦„ì…ë‹ˆë‹¤");
 			}else {
-				JOptionPane.showMessageDialog(this, "»èÁ¦ ¿Ï·á");
+				JOptionPane.showMessageDialog(this, "ì‚­ì œ ì™„ë£Œ");
 			}
 			
 			
@@ -168,18 +168,18 @@ public class JTableEx2 extends JFrame implements ActionListener {
 		
 		
 		
-		//»èÁ¦¿Ï·á
-		//¾ø´Â ÀÌ¸§ÀÔ´Ï´Ù
-		//µÑ Áß ÇÏ³ª°¡ ¶ä
-		//°°ÀºÀÌ¸§ÀÌ ÀÖÀ¸¸é µÑ´Ù Áö¿ì±â
-		//Å×ÀÌºíµµ »èÁ¦ÇÏ¸é ÀÎµ¦½º°¡ ¹Ù²ñ(¾ÕÀ¸·Î ´ç°ÜÁü)
+		//ì‚­ì œì™„ë£Œ
+		//ì—†ëŠ” ì´ë¦„ì…ë‹ˆë‹¤
+		//ë‘˜ ì¤‘ í•˜ë‚˜ê°€ ëœ¸
+		//ê°™ì€ì´ë¦„ì´ ìˆìœ¼ë©´ ë‘˜ë‹¤ ì§€ìš°ê¸°
+		//í…Œì´ë¸”ë„ ì‚­ì œí•˜ë©´ ì¸ë±ìŠ¤ê°€ ë°”ë€œ(ì•ìœ¼ë¡œ ë‹¹ê²¨ì§)
 	}
 
 
 	
 	
 	
-	//3. PersonDTO»ı¼º
+	//3. PersonDTOìƒì„±
 	
 	
 	public static void main(String[] args) {

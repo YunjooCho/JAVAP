@@ -4,8 +4,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//ÇĞ»ıÀÇ Á¤º¸¸¦ °ü¸®ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä
-//ÀÛµ¿¹æ½ÄÀº  CarEx02.java¸¦ ÂüÁ¶
+//í•™ìƒì˜ ì •ë³´ë¥¼ ê´€ë¦¬í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”
+//ì‘ë™ë°©ì‹ì€  CarEx02.javaë¥¼ ì°¸ì¡°
 
 import day0915.Student;
 
@@ -16,39 +16,39 @@ public class Ex01Student02 {
 	
 	while(true) {
 		System.out.println("=======================");
-		System.out.println("ÇĞ»ı °ü¸® ÇÁ·Î±×·¥");
-		System.out.println("1. ÀÔ·Â     2. Ãâ·Â    3. Á¾·á");
+		System.out.println("í•™ìƒ ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		System.out.println("1. ì…ë ¥     2. ì¶œë ¥    3. ì¢…ë£Œ");
 		int choice = Integer.parseInt(bufferedReader.readLine());
 		if(choice == 1) {
 			
-			//ÇĞ»ı Á¤º¸ ÀÔ·Â
-			 System.out.print("ÀÌ¸§: ");
+			//í•™ìƒ ì •ë³´ ì…ë ¥
+			 System.out.print("ì´ë¦„: ");
 			 student.setName(bufferedReader.readLine());
-			 System.out.print("ÇĞ¹ø: ");
+			 System.out.print("í•™ë²ˆ: ");
 			 student.setId(Integer.parseInt(bufferedReader.readLine()));
-			 System.out.print("±¹¾îÁ¡¼ö: ");
+			 System.out.print("êµ­ì–´ì ìˆ˜: ");
 			 student.setKorean(Integer.parseInt(bufferedReader.readLine()));
-			 System.out.print("¿µ¾îÁ¡¼ö: ");
+			 System.out.print("ì˜ì–´ì ìˆ˜: ");
 			 student.setEnglish(Integer.parseInt(bufferedReader.readLine()));
-			 System.out.print("¼öÇĞÁ¡¼ö: ");
+			 System.out.print("ìˆ˜í•™ì ìˆ˜: ");
 			 student.setMath(Integer.parseInt(bufferedReader.readLine()));
 			 
 		}else if(choice == 2) {
-			//ÇĞ»ı Á¤º¸ Ãâ·Â
+			//í•™ìƒ ì •ë³´ ì¶œë ¥
 			if(student.getName().equals("")) { //student.getName().isEmpty(); ->true/false
-				System.out.println("¾ÆÁ÷ ÀÔ·ÂµÈ Á¤º¸°¡ ¾ø½À´Ï´Ù");
+				System.out.println("ì•„ì§ ì…ë ¥ëœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤");
 			}else {
-				System.out.printf("ÀÌ¸§: %s, ÇĞ¹ø: %d\n", student.getName(), student.getId());
-				System.out.printf("±¹¾î: %d, ¿µ¾î: %d, ¼öÇĞ: %d",student.getKorean(),student.getEnglish(),student.getMath());
-				System.out.printf("ÃÑÁ¡: %d, Æò±Õ: %.2f\n", student.calculateSum(), student.calculateAverage());
+				System.out.printf("ì´ë¦„: %s, í•™ë²ˆ: %d\n", student.getName(), student.getId());
+				System.out.printf("êµ­ì–´: %d, ì˜ì–´: %d, ìˆ˜í•™: %d",student.getKorean(),student.getEnglish(),student.getMath());
+				System.out.printf("ì´ì : %d, í‰ê· : %.2f\n", student.calculateSum(), student.calculateAverage());
 			}
 		}else if(choice == 3) {
-			System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+			System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 			break;
 		}else {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Ş´º¸¦ ´Ù½Ã ¼±ÅÃÇØ ÁÖ¼¼¿ä");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ë¥¼ ë‹¤ì‹œ ì„ íƒí•´ ì£¼ì„¸ìš”");
 		}
-	}//¸Ş´º while
+	}//ë©”ë‰´ while
 	
 	}
 }

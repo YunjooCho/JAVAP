@@ -9,24 +9,24 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 
-//Áö¿ì°³ ±â´É ¸¸µé¾îº¸±â
+//ì§€ìš°ê°œ ê¸°ëŠ¥ ë§Œë“¤ì–´ë³´ê¸°
 
-public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾î¾ßÇÔ(Äµ¹ö½º°¡ ÇÁ·¹ÀÓ À§¸¦ ´Ù µ¤°íÀÖÀ½)
-										//¸ŞÀÎÀ» °¡Áú ¼ö ¾øÀ½(µ¶´ÜÀ¸·Î »ç¿ë ºÒ°¡) - JPanelµµ ¸¶Âù°¡Áö ->ÇÁ·¹ÀÓÀÌ ÇÊ¿ä
+public class DrCanvasT extends Canvas { //ê·¸ë¦¼ì„ ê·¸ë¦´ í™”ë©´ì€ ìº”ë²„ìŠ¤ê°€ ê°€ì§€ê³  ìˆì–´ì•¼í•¨(ìº”ë²„ìŠ¤ê°€ í”„ë ˆì„ ìœ„ë¥¼ ë‹¤ ë®ê³ ìˆìŒ)
+										//ë©”ì¸ì„ ê°€ì§ˆ ìˆ˜ ì—†ìŒ(ë…ë‹¨ìœ¼ë¡œ ì‚¬ìš© ë¶ˆê°€) - JPanelë„ ë§ˆì°¬ê°€ì§€ ->í”„ë ˆì„ì´ í•„ìš”
 
 	private MsPaintT mp;
 	private ShapeDTO dto;
 	private Image bufferImage;
-	private Graphics bufferG; //paint()¿¡ ±×¸®¸é ¸Å°³º¯¼ö g¸¦ »ç¿ëÇÏ¸é µÇÁö¸¸ update()¿¡ ±×¸®¹Ç·Î »õ·Î¿î ÇÊµå¸¦ ¼³Á¤,
-	                          //ÇØ´ç ÇÊµå·Î ±×¸²À» ±×¸²
+	private Graphics bufferG; //paint()ì— ê·¸ë¦¬ë©´ ë§¤ê°œë³€ìˆ˜ gë¥¼ ì‚¬ìš©í•˜ë©´ ë˜ì§€ë§Œ update()ì— ê·¸ë¦¬ë¯€ë¡œ ìƒˆë¡œìš´ í•„ë“œë¥¼ ì„¤ì •,
+	                          //í•´ë‹¹ í•„ë“œë¡œ ê·¸ë¦¼ì„ ê·¸ë¦¼
 	
 	
 	
 	public DrCanvasT(MsPaintT mp) {
-		this.mp = mp; //MsPaintT·Î ºÎÅÍ ³Ñ°Ü¹ŞÀº °´Ã¼ÀÇ ÂüÁ¶º¯¼ö(ÁÖ¼Ò°ª)À» º» ÇÊµå¿¡ ÀúÀåÇÏ±â
+		this.mp = mp; //MsPaintTë¡œ ë¶€í„° ë„˜ê²¨ë°›ì€ ê°ì²´ì˜ ì°¸ì¡°ë³€ìˆ˜(ì£¼ì†Œê°’)ì„ ë³¸ í•„ë“œì— ì €ì¥í•˜ê¸°
 		this.setBackground(new Color(200,200,255));
 		
-		//ÀÌº¥Æ®(keyListener) - escÅ°¸¦ ´©¸£¸é Á¾·áµÊ(Mspaint¿¡´Â ¾È¸ÔÀ½)
+		//ì´ë²¤íŠ¸(keyListener) - escí‚¤ë¥¼ ëˆ„ë¥´ë©´ ì¢…ë£Œë¨(Mspaintì—ëŠ” ì•ˆë¨¹ìŒ)
 		addKeyListener(new KeyAdapter() {
 	         @Override
 	         public void keyPressed(KeyEvent e) {
@@ -39,23 +39,23 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 	}
 	
 	@Override
-		public void update(Graphics g) {//paint()È£Ãâ  : paint()¿¡ ÀÖ´ø ³»¿ëÀ» update·Î ¿Å°Ü¿È
+		public void update(Graphics g) {//paint()í˜¸ì¶œ  : paint()ì— ìˆë˜ ë‚´ìš©ì„ updateë¡œ ì˜®ê²¨ì˜´
 		
-		//Image bufferImage //ÀÌ¹ÌÁö°´Ã¼ À§¿¡¼­ ±×¸²À» ±×¸± ¿¹Á¤
-		//Graphics bufferG  //¸Ş¼Òµå ¸Å°³°ª(Graphics g)Àº update()¸Ş¼Òµå Àü¿ëÀÌ¹Ç·Î °¡Á®´Ù ¾µ ¼ö ¾øÀ½
-		//¹öÆÛÈ­¸éÀÇ Å©±â¿Í Äµ¹ö½ºÀÇ Å©±â´Â °°¾Æ¾ß ÇÔ(°®´Ù ºÙ¿©¾ß ÇÏ±â ¶§¹®)
-		Dimension d = this.getSize(); //Dimension(Å¬·¡½º?) : »ç°¢ÇüÀÇ Á¤º¸¸¦ Áã°í ÀÖÀ½ - Äµ¹ö½ºÀÇ Å©±â¸¸Å­ ¹öÆÛ¸¦ ¸¸µê
-		if(bufferG == null) {//¸¸¾à ÀÌ ¹®ÀåÀÌ ¾øÀ¸¸é °è¼ÓÇØ¼­ Image°´Ã¼¸¦ »ı¼ºÇÏ¿© ±âÁ¸ÀÇ °ªÀº »ç¶óÁü
-							 //ÀÜ»óÀº ³²À½
+		//Image bufferImage //ì´ë¯¸ì§€ê°ì²´ ìœ„ì—ì„œ ê·¸ë¦¼ì„ ê·¸ë¦´ ì˜ˆì •
+		//Graphics bufferG  //ë©”ì†Œë“œ ë§¤ê°œê°’(Graphics g)ì€ update()ë©”ì†Œë“œ ì „ìš©ì´ë¯€ë¡œ ê°€ì ¸ë‹¤ ì“¸ ìˆ˜ ì—†ìŒ
+		//ë²„í¼í™”ë©´ì˜ í¬ê¸°ì™€ ìº”ë²„ìŠ¤ì˜ í¬ê¸°ëŠ” ê°™ì•„ì•¼ í•¨(ê°–ë‹¤ ë¶™ì—¬ì•¼ í•˜ê¸° ë•Œë¬¸)
+		Dimension d = this.getSize(); //Dimension(í´ë˜ìŠ¤?) : ì‚¬ê°í˜•ì˜ ì •ë³´ë¥¼ ì¥ê³  ìˆìŒ - ìº”ë²„ìŠ¤ì˜ í¬ê¸°ë§Œí¼ ë²„í¼ë¥¼ ë§Œë“¦
+		if(bufferG == null) {//ë§Œì•½ ì´ ë¬¸ì¥ì´ ì—†ìœ¼ë©´ ê³„ì†í•´ì„œ Imageê°ì²´ë¥¼ ìƒì„±í•˜ì—¬ ê¸°ì¡´ì˜ ê°’ì€ ì‚¬ë¼ì§
+							 //ì”ìƒì€ ë‚¨ìŒ
 			bufferImage = createImage(d.width,d.height);
-			bufferG = bufferImage.getGraphics(); //¿©±â¿¡ ±×¸²À» ±×¸²
+			bufferG = bufferImage.getGraphics(); //ì—¬ê¸°ì— ê·¸ë¦¼ì„ ê·¸ë¦¼
 		}
 		
 		
-		//Áö¿ì±â - ÀÜ»ó ¾ø¾Ö±â
-		//ÇöÀç Äµ¹ö½ºÀÇ ¹ÙÅÁ»öÀ» ¾ò¾î¿À±â
-		Color c = this.getBackground(); //¸¶Áö¸· ¸¶¿ì½º ³õÀ¸¸é  À§¿¡ µ¤¾î¹ö¸²
-										//Áö¿ï¶§´Â ±× À§¿¡ ¹è°æ»ö°ú °°Àº »öÀ¸·Î µ¤¾î¹ö¸²
+		//ì§€ìš°ê¸° - ì”ìƒ ì—†ì• ê¸°
+		//í˜„ì¬ ìº”ë²„ìŠ¤ì˜ ë°”íƒ•ìƒ‰ì„ ì–»ì–´ì˜¤ê¸°
+		Color c = this.getBackground(); //ë§ˆì§€ë§‰ ë§ˆìš°ìŠ¤ ë†“ìœ¼ë©´  ìœ„ì— ë®ì–´ë²„ë¦¼
+										//ì§€ìš¸ë•ŒëŠ” ê·¸ ìœ„ì— ë°°ê²½ìƒ‰ê³¼ ê°™ì€ ìƒ‰ìœ¼ë¡œ ë®ì–´ë²„ë¦¼
 		bufferG.setColor(c);
 		bufferG.fillRect(0, 0, d.width, d.height);
 		
@@ -63,13 +63,13 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 		
 		
 		int x1, y1, x2, y2, z1, z2;
-		//ÀÛ¾÷ µÇµ¹¸®±â
-		//ÁÂÇ¥(6°³)¹× ¼±ÅÃ¿É¼Ç(Ã¤¿ì±â, µµÇü, »ö±ò)¿¡ ´ëÇÑ Á¤º¸¸¦ °¡Áö°í ÀÖ¾î¾ß ÇÔ - Å¬·¡½º·Î Àâ¾ÆÁÜ(ShapeDTO)->¾î·¹ÀÌ¸®½ºÆ®¿¡ º¸°ü
-		//¾î·¹ÀÌ¸®½ºÆ® ¾ÈÀÇ µµÇüÀ» ÇÏ³ª¾¿ ²¨³»¼­ ´Ù½Ã ±×·ÁÁØ´Ù(º¹¿ø)
+		//ì‘ì—… ë˜ëŒë¦¬ê¸°
+		//ì¢Œí‘œ(6ê°œ)ë° ì„ íƒì˜µì…˜(ì±„ìš°ê¸°, ë„í˜•, ìƒ‰ê¹”)ì— ëŒ€í•œ ì •ë³´ë¥¼ ê°€ì§€ê³  ìˆì–´ì•¼ í•¨ - í´ë˜ìŠ¤ë¡œ ì¡ì•„ì¤Œ(ShapeDTO)->ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ë³´ê´€
+		//ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ì•ˆì˜ ë„í˜•ì„ í•˜ë‚˜ì”© êº¼ë‚´ì„œ ë‹¤ì‹œ ê·¸ë ¤ì¤€ë‹¤(ë³µì›)
 		
-		//<¼±»ı´Ô Ç®ÀÌ>
+		//<ì„ ìƒë‹˜ í’€ì´>
 		for(ShapeDTO dto : mp.getList()) {
-			//DTOÀÇ ÁÂÇ¥¸¦ ²¨³»¿È
+			//DTOì˜ ì¢Œí‘œë¥¼ êº¼ë‚´ì˜´
 			x1 = dto.getX1();
 			y1 = dto.getY1();
 			x2 = dto.getX2();
@@ -77,9 +77,9 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 			z1 = dto.getZ1();
 			z2 = dto.getZ2();
 			
-			//DTOÀÇ »ö
-			switch(dto.getColor()) {//index°ª °¡Á®¿À±â, getSelectedItem -> ÀúÀåµÈ ¹®ÀÚ¿­À» °¡Á®¿È
-			case 0 : bufferG.setColor(new Color(255,0,0)); //this - Äµ¹ö½º
+			//DTOì˜ ìƒ‰
+			switch(dto.getColor()) {//indexê°’ ê°€ì ¸ì˜¤ê¸°, getSelectedItem -> ì €ì¥ëœ ë¬¸ìì—´ì„ ê°€ì ¸ì˜´
+			case 0 : bufferG.setColor(new Color(255,0,0)); //this - ìº”ë²„ìŠ¤
 					 break;
 			case 1 : bufferG.setColor(new Color(0,255,0));
 					 break;
@@ -95,13 +95,13 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 			if(dto.isFill()) {
 				if(dto.getShape() == Figure.LINE) {
 					bufferG.drawLine(x1, y1, x2, y2);
-					//Math.min(x1,x2), Math.min(y1, y2)·Î ÀÔ·Â
+					//Math.min(x1,x2), Math.min(y1, y2)ë¡œ ì…ë ¥
 				}else if(dto.getShape() == Figure.CIRCLE) {
 					bufferG.fillOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 				}else if(dto.getShape() == Figure.RECT) {
 					bufferG.fillRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 				}else if(dto.getShape() == Figure.ROUND_RECT) {
-					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //²ÀÁöÁ¡ÀÇ µÕ±Ù ºÎºĞÀÌ ¾ó¸¶³ª µé¾î°¥Áö - 50À¸·Î °íÁ¤µÈ °ªÀ» ³Ö¾îÁÜ(ÀÓÀÇ)
+					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //ê¼­ì§€ì ì˜ ë‘¥ê·¼ ë¶€ë¶„ì´ ì–¼ë§ˆë‚˜ ë“¤ì–´ê°ˆì§€ - 50ìœ¼ë¡œ ê³ ì •ëœ ê°’ì„ ë„£ì–´ì¤Œ(ì„ì˜)
 				}else if(dto.getShape() == Figure.PEN) {
 					bufferG.drawLine(x1, y1, x2, y2);
 				}
@@ -109,7 +109,7 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 				if(dto.getShape() == Figure.LINE) {
 					bufferG.drawLine(x1, y1, x2, y2);
 				}else if(dto.getShape() == Figure.CIRCLE) {
-					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //¿©±â¼­ x2-x1, y2-y1À¸·Î Ç¥±âÇÏ°í ÀÖ±â ¶§¹®¿¡ ´Ù¸¥ ¹æÇâ¿¡¼­ ±×¸®¸é Ç¥±â°¡ ¾ÈµÊ
+					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //ì—¬ê¸°ì„œ x2-x1, y2-y1ìœ¼ë¡œ í‘œê¸°í•˜ê³  ìˆê¸° ë•Œë¬¸ì— ë‹¤ë¥¸ ë°©í–¥ì—ì„œ ê·¸ë¦¬ë©´ í‘œê¸°ê°€ ì•ˆë¨
 				}else if(dto.getShape() == Figure.RECT) {
 					bufferG.drawRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 				}else if(dto.getShape() == Figure.ROUND_RECT) {
@@ -124,10 +124,10 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 		
 		
 		
-		//»õ·Î¿î ±×¸²
-		//MsPaintT mp = new MsPaintT(); - »õ·Î ¶Ç ´Ù¸¥ °´Ã¼°¡ »ı¼ºµÇ¹Ç·Î ÇÏ¸é ¾ÈµÊ
-		//ÁÂÇ¥ ¾ò¾î¿È(TextField¿¡ ÀúÀåµÈ °ªÀ» ¾ò¾î¿È)
-			x1 = Integer.parseInt(mp.getX1T().getText().trim()); //trim() - ¾ÕµÚ °ø¹éÀ» ¾ø¾Ú
+		//ìƒˆë¡œìš´ ê·¸ë¦¼
+		//MsPaintT mp = new MsPaintT(); - ìƒˆë¡œ ë˜ ë‹¤ë¥¸ ê°ì²´ê°€ ìƒì„±ë˜ë¯€ë¡œ í•˜ë©´ ì•ˆë¨
+		//ì¢Œí‘œ ì–»ì–´ì˜´(TextFieldì— ì €ì¥ëœ ê°’ì„ ì–»ì–´ì˜´)
+			x1 = Integer.parseInt(mp.getX1T().getText().trim()); //trim() - ì•ë’¤ ê³µë°±ì„ ì—†ì•°
 			y1 = Integer.parseInt(mp.getY1T().getText().trim());
 			x2 = Integer.parseInt(mp.getX2T().getText().trim());
 			y2 = Integer.parseInt(mp.getY2T().getText().trim());
@@ -135,8 +135,8 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 			z2 = Integer.parseInt(mp.getZ2T().getText().trim());
 			
 			
-			//»ö
-			switch(mp.getCombo().getSelectedIndex()) {//index°ª °¡Á®¿À±â, getSelectedItem -> ÀúÀåµÈ ¹®ÀÚ¿­À» °¡Á®¿È
+			//ìƒ‰
+			switch(mp.getCombo().getSelectedIndex()) {//indexê°’ ê°€ì ¸ì˜¤ê¸°, getSelectedItem -> ì €ì¥ëœ ë¬¸ìì—´ì„ ê°€ì ¸ì˜´
 				case 0 : bufferG.setColor(new Color(255,0,0));
 						 break;
 				case 1 : bufferG.setColor(new Color(0,255,0));
@@ -150,26 +150,26 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 				
 			}
 			
-			//µµÇü 
-			if(mp.getFill().isSelected()) { //»öÀÌ Ã¤¿öÁø µµÇü 
-													//isSelected : »ç¿ëÀÚ°¡ ¼±ÅÃÇß´ÂÁö ¾ÈÇß´ÂÁö¸¦ ¾Ë·ÁÁÜ, ¼±ÅÃÇÑ °æ¿ì true¸¦ ¹İÈ¯
-				 									//==true»ı·«ÇØµµ µÊ
+			//ë„í˜• 
+			if(mp.getFill().isSelected()) { //ìƒ‰ì´ ì±„ì›Œì§„ ë„í˜• 
+													//isSelected : ì‚¬ìš©ìê°€ ì„ íƒí–ˆëŠ”ì§€ ì•ˆí–ˆëŠ”ì§€ë¥¼ ì•Œë ¤ì¤Œ, ì„ íƒí•œ ê²½ìš° trueë¥¼ ë°˜í™˜
+				 									//==trueìƒëµí•´ë„ ë¨
 				if(mp.getLine().isSelected()) {
 					bufferG.drawLine(x1, y1, x2, y2);
-					//Math.min(x1,x2), Math.min(y1, y2)·Î ÀÔ·Â  x1 < x2 ? x1 : x2   y1 < y2 ? y1 : y2
+					//Math.min(x1,x2), Math.min(y1, y2)ë¡œ ì…ë ¥  x1 < x2 ? x1 : x2   y1 < y2 ? y1 : y2
 				}else if(mp.getCircle().isSelected()) {
 					bufferG.fillOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 				}else if(mp.getRect().isSelected()) {
 					bufferG.fillRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 				}else if(mp.getRoundRect().isSelected()) {
-					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //²ÀÁöÁ¡ÀÇ µÕ±Ù ºÎºĞÀÌ ¾ó¸¶³ª µé¾î°¥Áö - 50À¸·Î °íÁ¤µÈ °ªÀ» ³Ö¾îÁÜ(ÀÓÀÇ)
+					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //ê¼­ì§€ì ì˜ ë‘¥ê·¼ ë¶€ë¶„ì´ ì–¼ë§ˆë‚˜ ë“¤ì–´ê°ˆì§€ - 50ìœ¼ë¡œ ê³ ì •ëœ ê°’ì„ ë„£ì–´ì¤Œ(ì„ì˜)
 				}
 				
 			}else {
 				if(mp.getLine().isSelected()) {
 					bufferG.drawLine(x1, y1, x2, y2);
 				}else if(mp.getCircle().isSelected()) {
-					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //¿©±â¼­ x2-x1, y2-y1À¸·Î Ç¥±âÇÏ°í ÀÖ±â ¶§¹®¿¡ ´Ù¸¥ ¹æÇâ¿¡¼­ ±×¸®¸é Ç¥±â°¡ ¾ÈµÊ
+					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //ì—¬ê¸°ì„œ x2-x1, y2-y1ìœ¼ë¡œ í‘œê¸°í•˜ê³  ìˆê¸° ë•Œë¬¸ì— ë‹¤ë¥¸ ë°©í–¥ì—ì„œ ê·¸ë¦¬ë©´ í‘œê¸°ê°€ ì•ˆë¨
 				}else if(mp.getRect().isSelected()) {
 					bufferG.drawRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 				}else if(mp.getRoundRect().isSelected()) {
@@ -178,15 +178,15 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 				
 			}
 			
-			paint(g); //paint()¸Ş¼Òµå È£Ãâ
+			paint(g); //paint()ë©”ì†Œë“œ í˜¸ì¶œ
 		}//update()
 	
 	
 	@Override
-	public void paint(Graphics g) { //½ÇÇàÇÏ¸é setVisibleÀÌ ÀÚµ¿À¸·Î paint¸Ş¼Òµå¸¦ ºÎ¸§, ¾ÆÁ÷ ÃÊ±âÈ­ µÇÁö ¾ÊÀº »óÅÂÀÌ±â ¶§¹®¿¡ ¾Æ·¡¿Í °°Àº ¿¡·¯°¡ ¶ä
+	public void paint(Graphics g) { //ì‹¤í–‰í•˜ë©´ setVisibleì´ ìë™ìœ¼ë¡œ paintë©”ì†Œë“œë¥¼ ë¶€ë¦„, ì•„ì§ ì´ˆê¸°í™” ë˜ì§€ ì•Šì€ ìƒíƒœì´ê¸° ë•Œë¬¸ì— ì•„ë˜ì™€ ê°™ì€ ì—ëŸ¬ê°€ ëœ¸
 								    //Exception in thread "AWT-EventQueue-0" java.lang.NumberFormatException: For input string: ""
-									//´ë¾È : Mspaint¿¡¼­ »ı¼º½Ã¿¡ ÃÊ±ê°ªÀ» ÁÜ
-		g.drawImage(bufferImage, 0, 0, this); //bufferImage¸¦ ¶â¾î¼­ this¿¡ ºÙÀÌ±â(½ºÆ¼Ä¿ °°Àº ´À³¦), ÁÂÇ¥ 0,0À» ±âÁØÀ¸·Î ÃÊÁ¡À» ¸ÂÃç¼­ ºÙÀÌ±â
+									//ëŒ€ì•ˆ : Mspaintì—ì„œ ìƒì„±ì‹œì— ì´ˆê¹ƒê°’ì„ ì¤Œ
+		g.drawImage(bufferImage, 0, 0, this); //bufferImageë¥¼ ëœ¯ì–´ì„œ thisì— ë¶™ì´ê¸°(ìŠ¤í‹°ì»¤ ê°™ì€ ëŠë‚Œ), ì¢Œí‘œ 0,0ì„ ê¸°ì¤€ìœ¼ë¡œ ì´ˆì ì„ ë§ì¶°ì„œ ë¶™ì´ê¸°
 		
 	}
 
@@ -196,21 +196,21 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 	
 }
 
-//x1 = ???; //login°ú loginresult¸¦ ÂüÁ¶
+//x1 = ???; //loginê³¼ loginresultë¥¼ ì°¸ì¡°
 
-//1.x1T¿¡ µé¾î¿Â °ªÀ» ²¨³½´Ù
-//2.¹®ÀÚ¿­·Î °¡Á®¿Â "100"À» Á¤¼öÇüÀ¸·Î º¯È¯
+//1.x1Tì— ë“¤ì–´ì˜¨ ê°’ì„ êº¼ë‚¸ë‹¤
+//2.ë¬¸ìì—´ë¡œ ê°€ì ¸ì˜¨ "100"ì„ ì •ìˆ˜í˜•ìœ¼ë¡œ ë³€í™˜
 
 
 //PEN
-//¼±Àº x1,y1ÀÌ °íÁ¤(x2,y2°¡ ¿òÁ÷ÀÓ)
-//¿¬ÇÊÀº x2,y2°¡ ´Ù½Ã x1,y1ÀÌ µÊ(x1,y1µµ ¹Ù²ñ) temp?
+//ì„ ì€ x1,y1ì´ ê³ ì •(x2,y2ê°€ ì›€ì§ì„)
+//ì—°í•„ì€ x2,y2ê°€ ë‹¤ì‹œ x1,y1ì´ ë¨(x1,y1ë„ ë°”ë€œ) temp?
 
 
-//Äµ¹ö½º¿Í °°Àº Å©±âÀÇ ¹öÆÛ¸¦ ÀâÀ½(±×¸²À» ¹öÆÛ¿¡ ±×¸²), ±×°É È­¸é¿¡ ´Ù½Ã ¿Å±è - ¿¬ÇÊ·Î ±×¸±¶§ ±ôºı°Å¸²ÀÌ ¾ø¾îÁü(È­¸é¿¡ µü ÇÑ¹ø º¸ÀÓ)
-//ÁÂÇ¥ÁöÁ¤ µî ÀüºÎ ¹öÆÛ¿¡¼­ ÁöÁ¤ÇÔ(´õºí¹öÆÛ)
-//Äİ¹é¸Ş¼ÒµåÀÓ - repaint()ÇÒ¶§ ºÒ¸²
-//update() - paint()¼øÀ¸·Î È£Ãâ
+//ìº”ë²„ìŠ¤ì™€ ê°™ì€ í¬ê¸°ì˜ ë²„í¼ë¥¼ ì¡ìŒ(ê·¸ë¦¼ì„ ë²„í¼ì— ê·¸ë¦¼), ê·¸ê±¸ í™”ë©´ì— ë‹¤ì‹œ ì˜®ê¹€ - ì—°í•„ë¡œ ê·¸ë¦´ë•Œ ê¹œë¹¡ê±°ë¦¼ì´ ì—†ì–´ì§(í™”ë©´ì— ë”± í•œë²ˆ ë³´ì„)
+//ì¢Œí‘œì§€ì • ë“± ì „ë¶€ ë²„í¼ì—ì„œ ì§€ì •í•¨(ë”ë¸”ë²„í¼)
+//ì½œë°±ë©”ì†Œë“œì„ - repaint()í• ë•Œ ë¶ˆë¦¼
+//update() - paint()ìˆœìœ¼ë¡œ í˜¸ì¶œ
 
 
 //		for(int i = 0; i < mp.getList().size(); i++){
@@ -224,7 +224,7 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 //			z1 = mp.getList().get(i).getZ1();
 //			z2 = mp.getList().get(i).getZ2();
 //			
-//			switch(mp.getList().get(i).getColor()) {//index°ª °¡Á®¿À±â, getSelectedItem -> ÀúÀåµÈ ¹®ÀÚ¿­À» °¡Á®¿È
+//			switch(mp.getList().get(i).getColor()) {//indexê°’ ê°€ì ¸ì˜¤ê¸°, getSelectedItem -> ì €ì¥ëœ ë¬¸ìì—´ì„ ê°€ì ¸ì˜´
 //			case 0 : bufferG.setColor(new Color(255,0,0));
 //					 break;
 //			case 1 : bufferG.setColor(new Color(0,255,0));
@@ -240,13 +240,13 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 //			if(mp.getList().get(i).isFill()) {
 //				if(mp.getList().get(i).getShape() == Figure.LINE) {
 //					bufferG.drawLine(x1, y1, x2, y2);
-//					//Math.min(x1,x2), Math.min(y1, y2)·Î ÀÔ·Â
+//					//Math.min(x1,x2), Math.min(y1, y2)ë¡œ ì…ë ¥
 //				}else if(mp.getList().get(i).getShape() == Figure.CIRCLE) {
 //					bufferG.fillOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 //				}else if(mp.getList().get(i).getShape() == Figure.RECT) {
 //					bufferG.fillRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 //				}else if(mp.getList().get(i).getShape() == Figure.ROUND_RECT) {
-//					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //²ÀÁöÁ¡ÀÇ µÕ±Ù ºÎºĞÀÌ ¾ó¸¶³ª µé¾î°¥Áö - 50À¸·Î °íÁ¤µÈ °ªÀ» ³Ö¾îÁÜ(ÀÓÀÇ)
+//					bufferG.fillRoundRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1), z1, z2); //ê¼­ì§€ì ì˜ ë‘¥ê·¼ ë¶€ë¶„ì´ ì–¼ë§ˆë‚˜ ë“¤ì–´ê°ˆì§€ - 50ìœ¼ë¡œ ê³ ì •ëœ ê°’ì„ ë„£ì–´ì¤Œ(ì„ì˜)
 //				}else if(mp.getList().get(i).getShape() == Figure.PEN) {
 //					bufferG.drawLine(x1, y1, x2, y2);
 //				}
@@ -254,7 +254,7 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 //				if(mp.getList().get(i).getShape() == Figure.LINE) {
 //					bufferG.drawLine(x1, y1, x2, y2);
 //				}else if(mp.getList().get(i).getShape() == Figure.CIRCLE) {
-//					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //¿©±â¼­ x2-x1, y2-y1À¸·Î Ç¥±âÇÏ°í ÀÖ±â ¶§¹®¿¡ ´Ù¸¥ ¹æÇâ¿¡¼­ ±×¸®¸é Ç¥±â°¡ ¾ÈµÊ
+//					bufferG.drawOval(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1)); //ì—¬ê¸°ì„œ x2-x1, y2-y1ìœ¼ë¡œ í‘œê¸°í•˜ê³  ìˆê¸° ë•Œë¬¸ì— ë‹¤ë¥¸ ë°©í–¥ì—ì„œ ê·¸ë¦¬ë©´ í‘œê¸°ê°€ ì•ˆë¨
 //				}else if(mp.getList().get(i).getShape() == Figure.RECT) {
 //					bufferG.drawRect(x1 < x2 ? x1 : x2, y1 < y2 ? y1 : y2, Math.abs(x2 - x1), Math.abs(y2 - y1));
 //				}else if(mp.getList().get(i).getShape() == Figure.ROUND_RECT) {
@@ -264,4 +264,4 @@ public class DrCanvasT extends Canvas { //±×¸²À» ±×¸± È­¸éÀº Äµ¹ö½º°¡ °¡Áö°í ÀÖ¾
 //				}
 //			}
 //			
-//		}//for¹®
+//		}//forë¬¸

@@ -8,39 +8,39 @@ public class Ex01DoWhile {
 	public static void main(String[] args) throws IOException {
 		int number = 5;
 		while(number > 5) {
-			System.out.println("¹İº¹ÀÌ µÉ±î¿ä?");
+			System.out.println("ë°˜ë³µì´ ë ê¹Œìš”?");
 		}
-		//±×¿¡ ¹İÇØ¼­ do whileÀº ¹«Á¶°Ç ÇÑ¹øÀº ½ÇÇàÀÌ µÈ´Ù.
+		//ê·¸ì— ë°˜í•´ì„œ do whileì€ ë¬´ì¡°ê±´ í•œë²ˆì€ ì‹¤í–‰ì´ ëœë‹¤.
 		do {
-			System.out.println("dowhile:¹İº¹ÀÌ µÉ±î¿ä?");
+			System.out.println("dowhile:ë°˜ë³µì´ ë ê¹Œìš”?");
 		}while(number > 5);
 		
-		//»ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ¸¦ ÀÔ·Â ¹ŞµÇ
-		//10º¸´Ù Å« ¼ö°¡ ³ª¿À¸é ´Ù½Ã ÀÔ·Â¹Şµµ·Ï ¸¸µé¾î º¸ÀÚ
+		//ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ìë¥¼ ì…ë ¥ ë°›ë˜
+		//10ë³´ë‹¤ í° ìˆ˜ê°€ ë‚˜ì˜¤ë©´ ë‹¤ì‹œ ì…ë ¥ë°›ë„ë¡ ë§Œë“¤ì–´ ë³´ì
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		//whileÀ» »ç¿ëÇÏ¸é ´ÙÀ½°ú °°ÀÌ ÄÚµå¸¦ ¸¸µé¾î¾ß ÇÑ´Ù.
-		System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		//whileì„ ì‚¬ìš©í•˜ë©´ ë‹¤ìŒê³¼ ê°™ì´ ì½”ë“œë¥¼ ë§Œë“¤ì–´ì•¼ í•œë‹¤.
+		System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String number2 = bufferedReader.readLine();
 		int stringToInt = Integer.parseInt(number2);
 		
 		while(stringToInt > 10) {
-			//¸¸¾à »ç¿ëÀÚ°¡ 10º¸´Ù ÀÛ°Å³ª °°Àº ¼ö¸¦ ÀÔ·ÂÇÑ´Ù¸é
-			//stringToInt > 10´Â false°¡ ³ª¿À±â ¶§¹®¿¡
-			//ÀÌ while¹®Àº ½ÇÇàÀÌ µÇÁö ¾Ê´Â´Ù.
-			System.out.println("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä : ");
+			//ë§Œì•½ ì‚¬ìš©ìê°€ 10ë³´ë‹¤ ì‘ê±°ë‚˜ ê°™ì€ ìˆ˜ë¥¼ ì…ë ¥í•œë‹¤ë©´
+			//stringToInt > 10ëŠ” falseê°€ ë‚˜ì˜¤ê¸° ë•Œë¬¸ì—
+			//ì´ whileë¬¸ì€ ì‹¤í–‰ì´ ë˜ì§€ ì•ŠëŠ”ë‹¤.
+			System.out.println("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš” : ");
 			number2 = bufferedReader.readLine();
 			stringToInt = Integer.parseInt(number2);
 		}
-		System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ö :" + number2);
+		System.out.println("ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ˜ :" + number2);
 		
 		
-		//do whileÀ» ¾²¸é ¾Æ·¡¿Í °°ÀÌ ¾µ ¼ö ÀÖ´Ù.
+		//do whileì„ ì“°ë©´ ì•„ë˜ì™€ ê°™ì´ ì“¸ ìˆ˜ ìˆë‹¤.
 		int userNumber = 0;
 		do {
 			if(userNumber > 0) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä :");
+			System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš” :");
 			userNumber = Integer.parseInt(bufferedReader.readLine());
 		}while(userNumber > 10);
 		System.out.println("userNumber : " + userNumber);

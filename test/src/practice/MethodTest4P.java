@@ -8,37 +8,37 @@ public class MethodTest4P {
 
 	public static void main(String[] args) throws IOException {
 		
-		//¡ÚÄ¿ÇÇ ÀÚÆÇ±â(300) Çü½Ä - Àı´ë°ª(ABS) : Input¿¡ µû¶ó Output »êÃâ
+		//â˜…ì»¤í”¼ ìíŒê¸°(300) í˜•ì‹ - ì ˆëŒ€ê°’(ABS) : Inputì— ë”°ë¼ Output ì‚°ì¶œ
 		System.out.println(Math.abs(-25));
 		System.out.println();
 		
 		
-		//¡ÚÄ¿ÇÇ ÀÚÆÇ°¡()Çü½Ä : InputÀÌ ¾ø´Âµ¥µµ Output »êÃâ
-		//³­¼ö -ÄÄÇ»ÅÍ°¡ ¹«ÀÛÀ§·Î ¹ß»ıÇÏ´Â ¼ö, 0 <= ³­¼ö < 1 (½Ç¼öÇü)
-		System.out.println("³­¼ö = " + Math.random());
+		//â˜…ì»¤í”¼ ìíŒê°€()í˜•ì‹ : Inputì´ ì—†ëŠ”ë°ë„ Output ì‚°ì¶œ
+		//ë‚œìˆ˜ -ì»´í“¨í„°ê°€ ë¬´ì‘ìœ„ë¡œ ë°œìƒí•˜ëŠ” ìˆ˜, 0 <= ë‚œìˆ˜ < 1 (ì‹¤ìˆ˜í˜•)
+		System.out.println("ë‚œìˆ˜ = " + Math.random());
 		
-		//³­¼ö¸¸ Ã³¸®ÇÏ´Â Å¬·¡½º
-		//¸Ş¸ğ¸® »ı¼º(Static¾Æ´Ô)
+		//ë‚œìˆ˜ë§Œ ì²˜ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
+		//ë©”ëª¨ë¦¬ ìƒì„±(Staticì•„ë‹˜)
 		Random rd = new Random(); 
-		System.out.println("³­¼ö : " + rd.nextDouble()); //nextDouble °´Ã¼
-		System.out.println("¼Ò¼ö¼ÂÂ°ÀÚ¸® :" + String.format("%.3f", rd.nextDouble()));
+		System.out.println("ë‚œìˆ˜ : " + rd.nextDouble()); //nextDouble ê°ì²´
+		System.out.println("ì†Œìˆ˜ì…‹ì§¸ìë¦¬ :" + String.format("%.3f", rd.nextDouble()));
 		System.out.println();
 		
-		//¼ıÀÚ¸¦ 3ÀÚ¸®¸¶´Ù , Âï±â
+		//ìˆ«ìë¥¼ 3ìë¦¬ë§ˆë‹¤ , ì°ê¸°
 		int a = 4500000;
 		DecimalFormat df = new DecimalFormat("#,###");
 		System.out.println(df.format(a));
 		
-		//Å°º¸µå ÀÔ·Â - 1°³ÀÇ ¹®ÀÚ
-		System.out.println("ÀÔ·Â : ");
+		//í‚¤ë³´ë“œ ì…ë ¥ - 1ê°œì˜ ë¬¸ì
+		System.out.println("ì…ë ¥ : ");
 		char key = (char)System.in.read();
 		System.out.println((int)key);
 		
-		//flush -  ¹öÆÛ ºñ¿ì±â
+		//flush -  ë²„í¼ ë¹„ìš°ê¸°
 		
 		
-		//»ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö Ãâ·Â - a¿Í bÁß¿¡¼­ Å« °ªÀ» Ãâ·ÂÇÏ´Â ¸Ş¼Òµå ÀÛ¼º 
-		//mainÇÔ¼ö ¹Û
+		//ì‚¬ìš©ì ì •ì˜ í•¨ìˆ˜ ì¶œë ¥ - aì™€ bì¤‘ì—ì„œ í° ê°’ì„ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ ì‘ì„± 
+		//mainí•¨ìˆ˜ ë°–
 			
 	}
 

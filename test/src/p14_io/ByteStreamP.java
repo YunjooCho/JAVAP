@@ -14,7 +14,7 @@ public class ByteStreamP {
 			
 			int data;
 			while((data = bis.read())!= -1){
-				System.out.println((char)data); //¹®ÀÚ·Î Ãâ·Â
+				System.out.println((char)data); //ë¬¸ìë¡œ ì¶œë ¥
 			}
 			
 			bis.close();

@@ -3,9 +3,9 @@ package collection;
 public class SungJukMain {
 
 	public static void main(String[] args) {
-		SungJukService service = new SungJukService(); //SungJukService¿¡ Á¤ÀÇµÇ¾îÀÖ´Â ¸Ş¼Òµå¸¦ È£ÃâÇÏ±â À§ÇØ °´Ã¼»ı¼º
-		service.menu(); //SungJukServiceÅ¬·¡½º¿¡ ÀÖ´Â ¸Ş¼Òµå¸¦ È£Ãâ
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+		SungJukService service = new SungJukService(); //SungJukServiceì— ì •ì˜ë˜ì–´ìˆëŠ” ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ê¸° ìœ„í•´ ê°ì²´ìƒì„±
+		service.menu(); //SungJukServiceí´ë˜ìŠ¤ì— ìˆëŠ” ë©”ì†Œë“œë¥¼ í˜¸ì¶œ
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 
 	}
 

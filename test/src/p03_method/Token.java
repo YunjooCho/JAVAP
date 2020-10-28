@@ -5,10 +5,10 @@ import java.util.StringTokenizer;
 public class Token {
 
 	public static void main(String[] args) {
-		String str = "ÇĞ¿ø,Áı,,°ÔÀÓ¹æ";
+		String str = "í•™ì›,ì§‘,,ê²Œì„ë°©";
 		
 		StringTokenizer st = new StringTokenizer(str, ",");
-		System.out.println("ÅäÅ« °³¼ö = " + st.countTokens());
+		System.out.println("í† í° ê°œìˆ˜ = " + st.countTokens());
 	
 		while(st.hasMoreTokens()) {
 			System.out.println(st.nextToken());
@@ -20,7 +20,7 @@ public class Token {
 		for(String data : ar) {
 			System.out.println(data);
 		}
-		System.out.println("ar¹è¿­ Å©±â = " + ar.length);
+		System.out.println("arë°°ì—´ í¬ê¸° = " + ar.length);
 	}
 
 }

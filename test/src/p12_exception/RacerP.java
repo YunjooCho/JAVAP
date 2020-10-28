@@ -5,16 +5,16 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-//¸» ÇÑ¸¶¸®, Äµ¹ö½º ¿ªÇÒ
+//ë§ í•œë§ˆë¦¬, ìº”ë²„ìŠ¤ ì—­í• 
 public class RacerP extends Canvas implements Runnable {
 
-	//5.ÇÊµå ¼±¾ğ
+	//5.í•„ë“œ ì„ ì–¸
 	private Image img;
 	private String name;
 	private int pos;
 	private static int rank = 0;
 	
-	//6.±âº»ÀÚ »ı¼º
+	//6.ê¸°ë³¸ì ìƒì„±
 	public RacerP(String name) {
 		this.name = name;
 		img = Toolkit.getDefaultToolkit().getImage("horse.gif");
@@ -22,12 +22,12 @@ public class RacerP extends Canvas implements Runnable {
 		
 	}
 	
-	//7.±×¸² »ı¼ºÇÏ±â
+	//7.ê·¸ë¦¼ ìƒì„±í•˜ê¸°
 	public void paint(Graphics g) {
 		g.drawImage(img, pos, 0, 25, this.getSize().height, this);
 	}
 
-	//11. ¸» ´Ş¸®°Ô ÇÏ±â, ·©Å© ±¸ÇÏ±â
+	//11. ë§ ë‹¬ë¦¬ê²Œ í•˜ê¸°, ë­í¬ êµ¬í•˜ê¸°
 	@Override
 	public void run() {
 		for(int i = 0; i < this.getSize().width; i += ((int)(Math.random()*10 + 1))) {
@@ -47,7 +47,7 @@ public class RacerP extends Canvas implements Runnable {
 				RunRaceP rr = new RunRaceP();
 			}
 			rank++;
-			System.out.println(rank + "µî" + name);
+			System.out.println(rank + "ë“±" + name);
 		}
 		}
 		

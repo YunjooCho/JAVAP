@@ -1,45 +1,45 @@
 package class_constructor;
 
 public class ThisTest {
-	private String name; //±âº»°ª : 0
-	private int age;//±âº»°ª : null
+	private String name; //ê¸°ë³¸ê°’ : 0
+	private int age;//ê¸°ë³¸ê°’ : null
 
 	 public ThisTest() {
-		 System.out.println("default »ı¼ºÀÚ");
-		 System.out.println("this = " + this); //Å¬·¡½ºÀÇ ÁÖ¼Ò
+		 System.out.println("default ìƒì„±ì");
+		 System.out.println("this = " + this); //í´ë˜ìŠ¤ì˜ ì£¼ì†Œ
 		 System.out.println();
 	 }
 	
 	 public ThisTest(String name) {
 		 System.out.println("ThisTest(String name)");
-		 System.out.println("this = " + this); //Å¬·¡½ºÀÇ ÁÖ¼Ò
-		 this.name = name; // Å¬·¡½ºÀÇ name = ¸Ş¼Òµå ÆÄ¶ó¹ÌÅÍÀÇ name;
+		 System.out.println("this = " + this); //í´ë˜ìŠ¤ì˜ ì£¼ì†Œ
+		 this.name = name; // í´ë˜ìŠ¤ì˜ name = ë©”ì†Œë“œ íŒŒë¼ë¯¸í„°ì˜ name;
 		 System.out.println();
 	 }
 	 
 	 public ThisTest(int age) {
-		 this("ÄÚ³­"); //ThisTest(String name) »ı¼ºÀÚ¸¦ È£Ãâ, ¸Ç À­ÁÙ¸¸ °¡´É
+		 this("ì½”ë‚œ"); //ThisTest(String name) ìƒì„±ìë¥¼ í˜¸ì¶œ, ë§¨ ìœ—ì¤„ë§Œ ê°€ëŠ¥
 		 System.out.println("ThisTest(int age)");
-		 System.out.println("this = " + this); //Å¬·¡½ºÀÇ ÁÖ¼Ò
-		 this.age = age; // Å¬·¡½ºÀÇ name = ¸Ş¼Òµå ÆÄ¶ó¹ÌÅÍÀÇ name;
+		 System.out.println("this = " + this); //í´ë˜ìŠ¤ì˜ ì£¼ì†Œ
+		 this.age = age; // í´ë˜ìŠ¤ì˜ name = ë©”ì†Œë“œ íŒŒë¼ë¯¸í„°ì˜ name;
 		 System.out.println();
 		 
 	 }
 	 
 	public static void main(String[] args) {
-		ThisTest aa = new ThisTest();//ÇÊµå¸¦ »ç¿ëÇÏ±â À§ÇØ¼­ »ı¼ºÀÚ°¡ ÇÊ¿ä, ±âº» »ı¼ºÀÚ(»ı¼ºÀÚ ÀÛ¼º¾ÈÇØµµ »ı±è)
-		System.out.println("°´Ã¼aa = " + aa);
-		System.out.println("ÀÌ¸§ = " + aa.name + "    ³ªÀÌ = " + aa.age);
+		ThisTest aa = new ThisTest();//í•„ë“œë¥¼ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„œ ìƒì„±ìê°€ í•„ìš”, ê¸°ë³¸ ìƒì„±ì(ìƒì„±ì ì‘ì„±ì•ˆí•´ë„ ìƒê¹€)
+		System.out.println("ê°ì²´aa = " + aa);
+		System.out.println("ì´ë¦„ = " + aa.name + "    ë‚˜ì´ = " + aa.age);
 		System.out.println();
 		
-		ThisTest bb = new ThisTest("È«±æµ¿");
-		System.out.println("°´Ã¼bb = " + bb);
-		System.out.println("ÀÌ¸§ = " + bb.name + "    ³ªÀÌ = " + bb.age);
+		ThisTest bb = new ThisTest("í™ê¸¸ë™");
+		System.out.println("ê°ì²´bb = " + bb);
+		System.out.println("ì´ë¦„ = " + bb.name + "    ë‚˜ì´ = " + bb.age);
 		System.out.println();
 		
 		ThisTest cc = new ThisTest(25);
-		System.out.println("°´Ã¼cc = " + cc);
-		System.out.println("ÀÌ¸§ = " + cc.name + "    ³ªÀÌ = " + cc.age);
+		System.out.println("ê°ì²´cc = " + cc);
+		System.out.println("ì´ë¦„ = " + cc.name + "    ë‚˜ì´ = " + cc.age);
 		System.out.println();
 		
 	}

@@ -6,13 +6,13 @@ public class CollectionTest2P {
 
 	public static void main(String[] args) {
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("È£¶ûÀÌ"); //ÀÔ·ÂÇÑ ¼ø¼­´ë·Î ÀúÀåµÊ
-		list.add("»çÀÚ");
-		list.add("È£¶ûÀÌ"); //Áßº¹Çã¿ë, ¼ø¼­
-		//list.add(25);   //Á¦³Ê¸¯ÀÌ StringÀÌ¶ó µé¾î°¥ ¼ö ¾øÀ½, ¸¸¾à »ç¿ëÇÏ°í ½ÍÀ¸¸é <String>À» »èÁ¦
+		list.add("í˜¸ë‘ì´"); //ì…ë ¥í•œ ìˆœì„œëŒ€ë¡œ ì €ì¥ë¨
+		list.add("ì‚¬ì");
+		list.add("í˜¸ë‘ì´"); //ì¤‘ë³µí—ˆìš©, ìˆœì„œ
+		//list.add(25);   //ì œë„ˆë¦­ì´ Stringì´ë¼ ë“¤ì–´ê°ˆ ìˆ˜ ì—†ìŒ, ë§Œì•½ ì‚¬ìš©í•˜ê³  ì‹¶ìœ¼ë©´ <String>ì„ ì‚­ì œ
 		//list.add(43.8);
-		list.add("±â¸°");
-		list.add("ÄÚ³¢¸®");
+		list.add("ê¸°ë¦°");
+		list.add("ì½”ë¼ë¦¬");
 		
 		list.get(0);
 		for(int i = 0; i < list.size(); i++) {

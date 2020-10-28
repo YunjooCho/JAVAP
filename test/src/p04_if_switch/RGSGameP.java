@@ -5,24 +5,24 @@ import java.io.IOException;
 
 
 /*
-°¡À§(1), ¹ÙÀ§(2), º¸(3) °ÔÀÓ
+ê°€ìœ„(1), ë°”ìœ„(2), ë³´(3) ê²Œì„
 
-[½ÇÇà°á°ú]
-°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ¹øÈ£ ÀÔ·Â : 3 (user)
-ÄÄÇ»ÅÍ : ¹ÙÀ§   ³ª : º¸ÀÚ±â
+[ì‹¤í–‰ê²°ê³¼]
+ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥ : 3 (user)
+ì»´í“¨í„° : ë°”ìœ„   ë‚˜ : ë³´ìê¸°
 You Win!!
 
-°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ¹øÈ£ ÀÔ·Â : 3 (user)
-ÄÄÇ»ÅÍ : °¡À§   ³ª : º¸ÀÚ±â
+ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥ : 3 (user)
+ì»´í“¨í„° : ê°€ìœ„   ë‚˜ : ë³´ìê¸°
 You Lose!!
 
-°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ¹øÈ£ ÀÔ·Â : 2 (user)
-ÄÄÇ»ÅÍ : °¡À§   ³ª : °¡À§
+ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥ : 2 (user)
+ì»´í“¨í„° : ê°€ìœ„   ë‚˜ : ê°€ìœ„
 You Draw!!
  */
-//com 1 ~ 3ÀÇ ³­¼ö, user Å°º¸µå ÀÔ·Â
-//¼ıÀÚ°¡ ¾Æ´Ñ ÇÑ±Û·Î Ç¥±â(°¡À§, ¹ÙÀ§, º¸)
-//µÎ ¼ıÀÚ¸¦ ºñ±³ÇÏ¿© ½ÂÆĞ¸¦ Ç¥±â - if¹®(9°³), system.out
+//com 1 ~ 3ì˜ ë‚œìˆ˜, user í‚¤ë³´ë“œ ì…ë ¥
+//ìˆ«ìê°€ ì•„ë‹Œ í•œê¸€ë¡œ í‘œê¸°(ê°€ìœ„, ë°”ìœ„, ë³´)
+//ë‘ ìˆ«ìë¥¼ ë¹„êµí•˜ì—¬ ìŠ¹íŒ¨ë¥¼ í‘œê¸° - ifë¬¸(9ê°œ), system.out
 
 
 public class RGSGameP {
@@ -32,43 +32,43 @@ public class RGSGameP {
 		int com, user;
 		
 		com = (int)(Math.random()*3) + 1;
-		//a~b »çÀÌÀÇ ³­¼ö ¹ß»ı => (int)(math.random()*(b-a+1) + a);
-		//a~b »çÀÌÀÇ ³­¼ö ¹ß»ı => (int)(math.random()*(3-1+1) + 1);
+		//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(b-a+1) + a);
+		//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(3-1+1) + 1);
 		
-		System.out.println("°¡À§(1) ¹ÙÀ§(2) º¸(3) Áß ¹øÈ£ ÀÔ·Â: ");
-		user = System.in.read() - '0'; //ÀÔ·ÂµÈ ¼ıÀÚ¹®ÀÚ¸¦ ¼ıÀÚ·Î Ä¡È¯
+		System.out.println("ê°€ìœ„(1) ë°”ìœ„(2) ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥: ");
+		user = System.in.read() - '0'; //ì…ë ¥ëœ ìˆ«ìë¬¸ìë¥¼ ìˆ«ìë¡œ ì¹˜í™˜
 		
-		if(com == 1) {//ÄÄÀÌ °¡À§ÀÎ °æ¿ì
+		if(com == 1) {//ì»´ì´ ê°€ìœ„ì¸ ê²½ìš°
 			if(user == 1) {
-				System.out.println("ÄÄÇ»ÅÍ : °¡À§\t »ç¿ëÀÚ : °¡À§");
+				System.out.println("ì»´í“¨í„° : ê°€ìœ„\t ì‚¬ìš©ì : ê°€ìœ„");
 				System.out.println("You Draw!");
 			}else if(user == 2) {
-				System.out.println("ÄÄÇ»ÅÍ : °¡À§\t »ç¿ëÀÚ : ¹ÙÀ§");
+				System.out.println("ì»´í“¨í„° : ê°€ìœ„\t ì‚¬ìš©ì : ë°”ìœ„");
 				System.out.println("You Win!");
 			}else if(user == 3) {
-				System.out.println("ÄÄÇ»ÅÍ : °¡À§\t »ç¿ëÀÚ : º¸");
+				System.out.println("ì»´í“¨í„° : ê°€ìœ„\t ì‚¬ìš©ì : ë³´");
 				System.out.println("You Lose!");
 			}
-		}else if(com == 2) {//ÄÄÀÌ ¹ÙÀ§ÀÎ °æ¿ì
+		}else if(com == 2) {//ì»´ì´ ë°”ìœ„ì¸ ê²½ìš°
 			if(user == 1) {
-				System.out.println("ÄÄÇ»ÅÍ : ¹ÙÀ§\t »ç¿ëÀÚ : °¡À§");
+				System.out.println("ì»´í“¨í„° : ë°”ìœ„\t ì‚¬ìš©ì : ê°€ìœ„");
 				System.out.println("You Lose!");
 			}else if(user == 2) {
-				System.out.println("ÄÄÇ»ÅÍ : ¹ÙÀ§\t »ç¿ëÀÚ : ¹ÙÀ§");
+				System.out.println("ì»´í“¨í„° : ë°”ìœ„\t ì‚¬ìš©ì : ë°”ìœ„");
 				System.out.println("You Draw!");
 			}else if(user == 3) {
-				System.out.println("ÄÄÇ»ÅÍ : ¹ÙÀ§\t »ç¿ëÀÚ : º¸");
+				System.out.println("ì»´í“¨í„° : ë°”ìœ„\t ì‚¬ìš©ì : ë³´");
 				System.out.println("You Win!");
 			}
-		}else if(com == 3) {//ÄÄÀÌ º¸ÀÚ±âÀÎ °æ¿ì
+		}else if(com == 3) {//ì»´ì´ ë³´ìê¸°ì¸ ê²½ìš°
 			if(user == 1) {
-				System.out.println("ÄÄÇ»ÅÍ : º¸\t »ç¿ëÀÚ : °¡À§");
+				System.out.println("ì»´í“¨í„° : ë³´\t ì‚¬ìš©ì : ê°€ìœ„");
 				System.out.println("You Win!");
 			}else if(user == 2) {
-				System.out.println("ÄÄÇ»ÅÍ : º¸\t »ç¿ëÀÚ : ¹ÙÀ§");
+				System.out.println("ì»´í“¨í„° : ë³´\t ì‚¬ìš©ì : ë°”ìœ„");
 				System.out.println("You Draw!");
 			}else if(user == 3) {
-				System.out.println("ÄÄÇ»ÅÍ : º¸\t »ç¿ëÀÚ : º¸");
+				System.out.println("ì»´í“¨í„° : ë³´\t ì‚¬ìš©ì : ë³´");
 				System.out.println("You Lose!");
 			}
 		}

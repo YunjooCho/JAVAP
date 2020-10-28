@@ -1,9 +1,9 @@
 package p06_class;
 /*
-Å¬·¡½º¸í : SungJuk
-ÇÊµå      : name, kor, eng, math, tot, avg, grade
-¸Ş¼Òµå   : »ı¼ºÀÚ 
-        calc() - ÃÑÁ¡, Æò±Õ, ÇĞÁ¡ °è»ê
+í´ë˜ìŠ¤ëª… : SungJuk
+í•„ë“œ      : name, kor, eng, math, tot, avg, grade
+ë©”ì†Œë“œ   : ìƒì„±ì 
+        calc() - ì´ì , í‰ê· , í•™ì  ê³„ì‚°
         getName()
         getKor()
         getEng()
@@ -14,14 +14,14 @@ package p06_class;
 */
 public class SungJuk {
 
-	//1.ÇÊµå¸í ¼±¾ğ
+	//1.í•„ë“œëª… ì„ ì–¸
 	private String name;
 	private int kor, eng, math, tot;
 	private double avg;
 	private char grade;
 	final static int SUBJECT_NUMBER = 3;
 	
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public SungJuk(String name, int kor, int eng, int math) {
 		
 		this.name = name;
@@ -31,7 +31,7 @@ public class SungJuk {
 		
 	}
 	
-	//3.°è»ê ¸Ş¼Òµå
+	//3.ê³„ì‚° ë©”ì†Œë“œ
 	public void calc() {
 		
 		tot = kor + eng + math;
@@ -54,7 +54,7 @@ public class SungJuk {
 	}
 	
 	
-	//4.µ¥ÀÌÅÍ¸¦ °¡Á®¿À´Â ¸Ş¼Òµå
+	//4.ë°ì´í„°ë¥¼ ê°€ì ¸ì˜¤ëŠ” ë©”ì†Œë“œ
 	
 	public String getName() {
 		return name;

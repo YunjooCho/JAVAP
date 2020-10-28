@@ -13,24 +13,24 @@ public class ProtocolClient {
 	private BufferedReader br;
 	private BufferedWriter bw;
 	
-	private BufferedReader keyboard;//Å°º¸µå
+	private BufferedReader keyboard;//í‚¤ë³´ë“œ
 	
 	public ProtocolClient() throws IOException {
 		try {
-			socket = new Socket("192.168.0.17", 9500); //IP : ÁýÁÖ¼Ò Æ÷Æ®(9500) : ÀÌ¸§ - Æ÷Æ®
-													   //IP¸¦ Æ²¸®°Ô ¾²¸é "Å¬¶óÀÌ¾ðÆ®¸¦ ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù"¿¡·¯°¡ ¶ä
+			socket = new Socket("192.168.0.17", 9500); //IP : ì§‘ì£¼ì†Œ í¬íŠ¸(9500) : ì´ë¦„ - í¬íŠ¸
+													   //IPë¥¼ í‹€ë¦¬ê²Œ ì“°ë©´ "í´ë¼ì´ì–¸íŠ¸ë¥¼ ì—°ê²°í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤"ì—ëŸ¬ê°€ ëœ¸
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			
 			keyboard = new BufferedReader(new InputStreamReader(System.in));
 			
 		} catch (UnknownHostException e) {
-			System.out.println("¼­¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù");
+			System.out.println("ì„œë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			e.printStackTrace();
 			System.exit(0);
 			
 		} catch (IOException e) {
-			System.out.println("¼­¹ö¿Í ¿¬°áÀÌ ¾ÈµÇ¾ú½À´Ï´Ù"); 
+			System.out.println("ì„œë²„ì™€ ì—°ê²°ì´ ì•ˆë˜ì—ˆìŠµë‹ˆë‹¤"); 
 			e.printStackTrace();
 			System.exit(0);
 		}
@@ -38,24 +38,24 @@ public class ProtocolClient {
 //-----------------------------------------------------------------------------------------------
 		String msg, line;
 		while(true) {
-			//¼­¹ö·Î º¸³»´Â ÂÊ(Output) - bw
+			//ì„œë²„ë¡œ ë³´ë‚´ëŠ” ìª½(Output) - bw
 			msg = keyboard.readLine();
-			bw.write(msg + "\n"); //"100 : angel"    "200 : angel"   "300 : angel : ¾È³ç"
-								  // bw : À§¿¡¼­ º¸³»´Â »ý¼ºÀ» ½Ç½Ã
-								  // readLine()Àº ¿£ÅÍ¸¦ ÀÎ½ÄÇÏÁö ¾ÊÀ½
-								  // ¼­¹öÃø¿¡¼­ readLine()À¸·Î ÀÐ¾îµéÀÏ¶§ ¿£ÅÍ(¹®ÀåÀÇ ³¡)¸¦ Ã£¾Æ ºùºù µ¼(Lock°É¸²)
-								  // ->½ÇÇà¾ÈµÊ (´ëÀÀÃ¥À¸·Î ¿£ÅÍ¸¦ ÀÏºÎ·¯ ³Ö¾îÁÜ("\n")
-			bw.flush(); //¹öÆÛ¸¦ ÅëÇØ ¼ö½Ã·Î ´Ù½Ã ¸Þ½ÃÁö¸¦ º¸³»¾ß ÇÏ¹Ç·Î ¹öÆÛ¸¦ ºñ¿öÁà¾ßÇÔ
+			bw.write(msg + "\n"); //"100 : angel"    "200 : angel"   "300 : angel : ì•ˆë…•"
+								  // bw : ìœ„ì—ì„œ ë³´ë‚´ëŠ” ìƒì„±ì„ ì‹¤ì‹œ
+								  // readLine()ì€ ì—”í„°ë¥¼ ì¸ì‹í•˜ì§€ ì•ŠìŒ
+								  // ì„œë²„ì¸¡ì—ì„œ readLine()ìœ¼ë¡œ ì½ì–´ë“¤ì¼ë•Œ ì—”í„°(ë¬¸ìž¥ì˜ ë)ë¥¼ ì°¾ì•„ ë¹™ë¹™ ë”(Lockê±¸ë¦¼)
+								  // ->ì‹¤í–‰ì•ˆë¨ (ëŒ€ì‘ì±…ìœ¼ë¡œ ì—”í„°ë¥¼ ì¼ë¶€ëŸ¬ ë„£ì–´ì¤Œ("\n")
+			bw.flush(); //ë²„í¼ë¥¼ í†µí•´ ìˆ˜ì‹œë¡œ ë‹¤ì‹œ ë©”ì‹œì§€ë¥¼ ë³´ë‚´ì•¼ í•˜ë¯€ë¡œ ë²„í¼ë¥¼ ë¹„ì›Œì¤˜ì•¼í•¨
 			
 			
 			
-			//¼­¹ö·ÎºÎÅÍ ¹Þ´Â ÂÊ(Input) - br
-			line = br.readLine();   //"angle´Ô ÀÔÀå"    "angel´Ô ÅðÀå"    "[angel] ¾È³ç" - Protocol.javaÀÇ »ó¼ö¿¡ µû¶ó ¿òÁ÷ÀÓ
+			//ì„œë²„ë¡œë¶€í„° ë°›ëŠ” ìª½(Input) - br
+			line = br.readLine();   //"angleë‹˜ ìž…ìž¥"    "angelë‹˜ í‡´ìž¥"    "[angel] ì•ˆë…•" - Protocol.javaì˜ ìƒìˆ˜ì— ë”°ë¼ ì›€ì§ìž„
 			System.out.println(line);
 			
-			String[] ar = msg.split(":"); //":"À» ±âÁØÀ¸·Î ³ª´©±â -> ¹è¿­ÀÌ ³ª¿È (StringTokenizer)
+			String[] ar = msg.split(":"); //":"ì„ ê¸°ì¤€ìœ¼ë¡œ ë‚˜ëˆ„ê¸° -> ë°°ì—´ì´ ë‚˜ì˜´ (StringTokenizer)
 			if(ar[0].equals(Protocol.EXIT)) {
-				br.close(); //Å¬¶óÀÌ¾ðÆ®¿Í ¼­¹ö ¾çÂÊ¿¡ ¼ÒÄÏÀÌ ÀÖÀ¸¹Ç·Î ¾çÂÊ´Ù close()ÇØÁà¾ß ²÷¾îÁü(¿©±â¼­´Â Å¬¶óÀÌ¾ðÆ®ÂÊ¸¸ ²÷¾îÁØ °Í)
+				br.close(); //í´ë¼ì´ì–¸íŠ¸ì™€ ì„œë²„ ì–‘ìª½ì— ì†Œì¼“ì´ ìžˆìœ¼ë¯€ë¡œ ì–‘ìª½ë‹¤ close()í•´ì¤˜ì•¼ ëŠì–´ì§(ì—¬ê¸°ì„œëŠ” í´ë¼ì´ì–¸íŠ¸ìª½ë§Œ ëŠì–´ì¤€ ê²ƒ)
 				bw.close();
 				socket.close();
 				

@@ -14,17 +14,17 @@ public class WhileTest {
 //		}//while
 
 		
-//		while(true) { //¹«ÇÑ·çÇÁ
+//		while(true) { //ë¬´í•œë£¨í”„
 //			a++; //1 2 .... 9 10
 //			System.out.print(a + " "); //1 2 .... 9 10
 //		
 //			
-//			if(a == 10) break;//whileÀ» ¹ş¾î³ª¶ó
+//			if(a == 10) break;//whileì„ ë²—ì–´ë‚˜ë¼
 // 	  }//while
 		
 		
 		while(a<10) {
-			//a++; //1 2 .... 9 10 aÀÇ °ªÀ» 1 Áõ°¡
+			//a++; //1 2 .... 9 10 aì˜ ê°’ì„ 1 ì¦ê°€
 			//System.out.print(a + " "); //1 2 .... 9 10
 			System.out.print(++a + " ");
 			

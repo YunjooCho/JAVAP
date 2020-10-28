@@ -5,31 +5,31 @@ import java.util.Random;
 
 public class Ex09LottoNumbersT {
 
-	//·Î¶Ç ¹øÈ£´Â 1~45±îÁö 6°³ÀÇ ¼ıÀÚ°¡ ÇÊ¿äÇÏ´Ï±ñ
-	//¿ì¸®°¡ ¹Ì¸® »ó¼ö¸¦ ¸¸µé¾î³õÀÚ
+	//ë¡œë˜ ë²ˆí˜¸ëŠ” 1~45ê¹Œì§€ 6ê°œì˜ ìˆ«ìê°€ í•„ìš”í•˜ë‹ˆê¹
+	//ìš°ë¦¬ê°€ ë¯¸ë¦¬ ìƒìˆ˜ë¥¼ ë§Œë“¤ì–´ë†“ì
 	   
 	   
 	   final static int SIZE = 6;
 	   final static int MAX = 45;
 	   public static void main(String[] args) {
-	      //·Î¶Ç ¹øÈ£¸¦ ÀúÀåÇÒ ÀÎÆ®¹è¿­À» ¸¸µé¾îÁÖÀÚ
+	      //ë¡œë˜ ë²ˆí˜¸ë¥¼ ì €ì¥í•  ì¸íŠ¸ë°°ì—´ì„ ë§Œë“¤ì–´ì£¼ì
 	      int[] lottoNumbers = new int[SIZE];
 	      Random random = new Random();
 	      
-	      //for¹®À» ÅëÇØ¼­ ·£´ı ¼ıÀÚ¸¦ ¹è¿­¿¡ Â÷·Ê´ë·Î ³Ö¾îº¸ÀÚ
+	      //forë¬¸ì„ í†µí•´ì„œ ëœë¤ ìˆ«ìë¥¼ ë°°ì—´ì— ì°¨ë¡€ëŒ€ë¡œ ë„£ì–´ë³´ì
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         
 	         lottoNumbers[i] = random.nextInt(MAX) + 1;
 	      }
 	      
-	      //¹è¿­¿¡ µé¾î°£°ªµéÀ» È®ÀÎÇØº¸ÀÚ
-	      System.out.println("³­¼ö »ı¼º Á÷ÈÄ");
+	      //ë°°ì—´ì— ë“¤ì–´ê°„ê°’ë“¤ì„ í™•ì¸í•´ë³´ì
+	      System.out.println("ë‚œìˆ˜ ìƒì„± ì§í›„");
 	      for(int i = 0 ; i < lottoNumbers.length; i++) {
 	         System.out.println(lottoNumbers[i]);
 	      }
 	      
 	      
-	      //Áßº¹Á¦°Å
+	      //ì¤‘ë³µì œê±°
 	      for(int i = 0; i < SIZE; i++) {
 	         for(int j = 0; j < SIZE; j++) {
 	  
@@ -40,12 +40,12 @@ public class Ex09LottoNumbersT {
 	         }
 	      }
 	      
-	      System.out.println("Áßº¹Á¦°Å ÈÄ");
+	      System.out.println("ì¤‘ë³µì œê±° í›„");
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         System.out.println(lottoNumbers[i]);
 	      }
 	      
-	      //Á¤·Ä
+	      //ì •ë ¬
 	     
 	      for(int i = 0; i < lottoNumbers.length - 1; i++) {
 	         if(lottoNumbers[i] > lottoNumbers[i+1]) {
@@ -56,7 +56,7 @@ public class Ex09LottoNumbersT {
 	         }
 	      }
 	      
-	      System.out.println("Á¤·Ä ÈÄ");
+	      System.out.println("ì •ë ¬ í›„");
 	      
 	      for(int i = 0; i < lottoNumbers.length; i++) {
 	         System.out.println(lottoNumbers[i]);

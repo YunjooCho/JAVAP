@@ -14,18 +14,18 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class ImageMove extends Frame implements ActionListener, KeyListener, WindowListener{
-	//2-1.¹öÆ°¸¸µé±â
+	//2-1.ë²„íŠ¼ë§Œë“¤ê¸°
 	private Button returnBtn, leftBtn, upBtn, downBtn, rightBtn;
 	private int x = 100, y = 100;
 	
 	public void init() {
 		
-		//2-2.¹öÆ° ¸¸µé±â
-		returnBtn = new Button("ÃÊ±âÈ­");
-		leftBtn = new Button("¿ŞÂÊ");
-		upBtn = new Button("À­ÂÊ");
-		downBtn = new Button("¾Æ·§ÂÊ");
-		rightBtn = new Button("¿À¸¥ÂÊ");
+		//2-2.ë²„íŠ¼ ë§Œë“¤ê¸°
+		returnBtn = new Button("ì´ˆê¸°í™”");
+		leftBtn = new Button("ì™¼ìª½");
+		upBtn = new Button("ìœ—ìª½");
+		downBtn = new Button("ì•„ë«ìª½");
+		rightBtn = new Button("ì˜¤ë¥¸ìª½");
 		
 		Panel p = new Panel();
 		p.add(returnBtn);
@@ -34,23 +34,23 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 		p.add(downBtn);
 		p.add(rightBtn);
 		
-		this.add("North", p); //this»ı·« °¡´É, ÆÇ³ÚÀ» ÇÁ·¹ÀÓ¿¡ Ãß°¡(Ãß°¡ÇÒ À§Ä¡, ÆÇ³Ú°´Ã¼)
+		this.add("North", p); //thisìƒëµ ê°€ëŠ¥, íŒë„¬ì„ í”„ë ˆì„ì— ì¶”ê°€(ì¶”ê°€í•  ìœ„ì¹˜, íŒë„¬ê°ì²´)
 		
-		returnBtn.setFocusable(false); //Æ÷Ä¿½º ¾ø¾Ö´Â ¸Ş¼Òµå
-		                               //Å°º¸µå·Î ÀÔ·ÂÇÏ´Âµ¥ ÀÖ¾î¼­ ¹öÆ°¿¡ Æ÷Ä¿½º°¡ ¸ÂÃçÁ®ÀÖÀ¸¸é Å°º¸µå·Î ¿òÁ÷ÀÌÁö ¸øÇÏ±â ¶§¹®¿¡
+		returnBtn.setFocusable(false); //í¬ì»¤ìŠ¤ ì—†ì• ëŠ” ë©”ì†Œë“œ
+		                               //í‚¤ë³´ë“œë¡œ ì…ë ¥í•˜ëŠ”ë° ìˆì–´ì„œ ë²„íŠ¼ì— í¬ì»¤ìŠ¤ê°€ ë§ì¶°ì ¸ìˆìœ¼ë©´ í‚¤ë³´ë“œë¡œ ì›€ì§ì´ì§€ ëª»í•˜ê¸° ë•Œë¬¸ì—
 		leftBtn.setFocusable(false);
 		upBtn.setFocusable(false);
 		downBtn.setFocusable(false);
 		rightBtn.setFocusable(false);
 		
-		//1.ÇÁ·¹ÀÓ ¼³Á¤
+		//1.í”„ë ˆì„ ì„¤ì •
 		setBounds(300, 100, 500, 500);
 		setVisible(true);
-		setResizable(false); //Ã¢Å©±â º¯°æ ºÒ°¡
+		setResizable(false); //ì°½í¬ê¸° ë³€ê²½ ë¶ˆê°€
 				
 		
-		//ÀÌº¥Æ® (2-3.¹öÆ°¿ë)
-		returnBtn.addActionListener(this);//ÇØ´ç ¸ğ¼Ç ½ÇÇàÇÒ À§Ä¡.ÀÌº¥Æ®¸í(±¸ÇöºÎ°¡ ÀÛ¼ºµÈ À§Ä¡)
+		//ì´ë²¤íŠ¸ (2-3.ë²„íŠ¼ìš©)
+		returnBtn.addActionListener(this);//í•´ë‹¹ ëª¨ì…˜ ì‹¤í–‰í•  ìœ„ì¹˜.ì´ë²¤íŠ¸ëª…(êµ¬í˜„ë¶€ê°€ ì‘ì„±ëœ ìœ„ì¹˜)
 		leftBtn.addActionListener(this);
 		upBtn.addActionListener(this);
 		downBtn.addActionListener(this);
@@ -61,15 +61,15 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 
 	}
 	
-	public void paint(Graphics g) {//paint¸Ş¼Òµå´Â °úºÎÈ­°¡ ¿È(Áö¿ü´Ù°¡ ´Ù½Ã ±×¸²)
-		//ÀÌ¹ÌÁö ºÒ·¯¿À±â - ToolkitÅ¬·¡½º(Ãß»óÅ¬·¡½º) - ÀÚ½ÄÅ¬·¡½º°¡ ¾øÀ¸¹Ç·Î ¸Ş¼Òµå·Î »ı¼º
+	public void paint(Graphics g) {//paintë©”ì†Œë“œëŠ” ê³¼ë¶€í™”ê°€ ì˜´(ì§€ì› ë‹¤ê°€ ë‹¤ì‹œ ê·¸ë¦¼)
+		//ì´ë¯¸ì§€ ë¶ˆëŸ¬ì˜¤ê¸° - Toolkití´ë˜ìŠ¤(ì¶”ìƒí´ë˜ìŠ¤) - ìì‹í´ë˜ìŠ¤ê°€ ì—†ìœ¼ë¯€ë¡œ ë©”ì†Œë“œë¡œ ìƒì„±
 		Image img = Toolkit.getDefaultToolkit().getImage("puppy.jpg");
 		//Toolkit t = Toolkit.getDefaultToolkit();
 		//Image img = t.getImage("puppy.jpg");
 		
 		
-		//ÀÌ¹ÌÁö ±×¸®±â
-		g.drawImage(img, x, y, this);//thisºÎºĞ : ¾îµğ¿¡ ±×¸²À» ±×¸±Áö Ç¥±â
+		//ì´ë¯¸ì§€ ê·¸ë¦¬ê¸°
+		g.drawImage(img, x, y, this);//thisë¶€ë¶„ : ì–´ë””ì— ê·¸ë¦¼ì„ ê·¸ë¦´ì§€ í‘œê¸°
 	}
 	
 
@@ -77,7 +77,7 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("x : " + x + " y : " + y);
-		if(e.getSource() == returnBtn) { //returnBtnÀÌ ´­·È´Â°¡
+		if(e.getSource() == returnBtn) { //returnBtnì´ ëˆŒë ¸ëŠ”ê°€
 			this.x = 100;
 			this.y = 100;
 		}else if(e.getSource() == leftBtn) {
@@ -92,16 +92,16 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 			}
 		}else if(e.getSource() == downBtn) {
 			this.y = y += 10;
-			if(y == 500) { //¡Ú¼öÄ¡ ¼öÁ¤ÇÏ±â
+			if(y == 500) { //â˜…ìˆ˜ì¹˜ ìˆ˜ì •í•˜ê¸°
 				this.y = 0;
 			}
 		}else if(e.getSource() == rightBtn) {
 			this.x = x += 10;
-			if(x == 500) { //¡Ú¼öÄ¡ ¼öÁ¤ÇÏ±â
+			if(x == 500) { //â˜…ìˆ˜ì¹˜ ìˆ˜ì •í•˜ê¸°
 				this.x = 0;
 			}
 		}
-		repaint(); //À§ÀÇ ³»¿ë(º¯°æ»çÇ×)¿¡ ¸ÂÃß¾î ¸Å¹ø »õ·Î ±×¸²
+		repaint(); //ìœ„ì˜ ë‚´ìš©(ë³€ê²½ì‚¬í•­)ì— ë§ì¶”ì–´ ë§¤ë²ˆ ìƒˆë¡œ ê·¸ë¦¼
 	}
 	
 	
@@ -114,7 +114,7 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		System.exit(0); //ÇÁ·Î±×·¥ °­Á¦ Á¾·á
+		System.exit(0); //í”„ë¡œê·¸ë¨ ê°•ì œ ì¢…ë£Œ
 		
 	}
 
@@ -132,7 +132,7 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 
 	
 	//KeyListener
-	//Å°º¸µå ¾×¼Ç(¿¹:if(Å°º¸µå == KeyEvent.VK_ESCAPE / int esc -> 27 : ¼ıÀÚ¸¦ ¿Ü¿ï¼ö ¾ø±â¿¡ º¯¼ö¸¦ »ó¼öÈ­)
+	//í‚¤ë³´ë“œ ì•¡ì…˜(ì˜ˆ:if(í‚¤ë³´ë“œ == KeyEvent.VK_ESCAPE / int esc -> 27 : ìˆ«ìë¥¼ ì™¸ìš¸ìˆ˜ ì—†ê¸°ì— ë³€ìˆ˜ë¥¼ ìƒìˆ˜í™”)
 	@Override
 	public void keyPressed(KeyEvent k) {
 		//if(k.getKeyCode() == 27)
@@ -152,13 +152,13 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 			repaint();
 		}else if(k.getKeyCode() == KeyEvent.VK_DOWN) { 
 			this.y += 10;
-			if(y > 500) { //¡Ú¼öÄ¡ ¼öÁ¤ÇÏ±â
+			if(y > 500) { //â˜…ìˆ˜ì¹˜ ìˆ˜ì •í•˜ê¸°
 				this.y = 0;
 			}
 			repaint();
 		}else if(k.getKeyCode() == KeyEvent.VK_RIGHT) {
 			this.x += 10;
-			if(x > 500) { //¡Ú¼öÄ¡ ¼öÁ¤ÇÏ±â
+			if(x > 500) { //â˜…ìˆ˜ì¹˜ ìˆ˜ì •í•˜ê¸°
 				this.x = 0;
 			}
 			repaint();
@@ -172,7 +172,7 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 	public void keyTyped(KeyEvent k) {}
 
 	
-	//main¸Ş¼Òµå
+	//mainë©”ì†Œë“œ
 		public static void main(String[] args) {
 			new ImageMove().init();
 		}
@@ -180,14 +180,14 @@ public class ImageMove extends Frame implements ActionListener, KeyListener, Win
 }
 
 
-//1. Frame Ã¢ ¶ç¿ì±â (o)
-//2. North ¹æÇâ¿¡ ¹öÆ° 5°³ ¸¸µé±â(o)
-//3. Frame(Ã¢)¿¡ 100, 100ÀÇ À§Ä¡¿¡ ÀÌ¹ÌÁö ±×¸®±â(o)
-//4. ÀÌº¥Æ® - ¹İ´ëÂÊ¿¡¼­ ´Ù½Ã ´ÙÅ¸³ª´Â°Ô Àß »øÇà ¾ÈµÊ -> ÇØ°áÇÔ
+//1. Frame ì°½ ë„ìš°ê¸° (o)
+//2. North ë°©í–¥ì— ë²„íŠ¼ 5ê°œ ë§Œë“¤ê¸°(o)
+//3. Frame(ì°½)ì— 100, 100ì˜ ìœ„ì¹˜ì— ì´ë¯¸ì§€ ê·¸ë¦¬ê¸°(o)
+//4. ì´ë²¤íŠ¸ - ë°˜ëŒ€ìª½ì—ì„œ ë‹¤ì‹œ ë‹¤íƒ€ë‚˜ëŠ”ê²Œ ì˜ ìƒí–‰ ì•ˆë¨ -> í•´ê²°í•¨
 
 //interface
-//1.implements(¸ğµç Ãß»ó¸Ş¼Òµå Override) - ArrayList(CollectionÀÎÅÍÆäÀÌ½º ¿À¹ö¶óÀÌµå)
+//1.implements(ëª¨ë“  ì¶”ìƒë©”ì†Œë“œ Override) - ArrayList(Collectionì¸í„°í˜ì´ìŠ¤ ì˜¤ë²„ë¼ì´ë“œ)
 
-//Å¬·¡½º »ı¼º
+//í´ë˜ìŠ¤ ìƒì„±
 //1.new
-//2.¸Ş¼Òµå
+//2.ë©”ì†Œë“œ

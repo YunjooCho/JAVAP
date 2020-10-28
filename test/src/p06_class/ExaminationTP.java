@@ -11,9 +11,9 @@ public class ExaminationTP {
 	
 	public ExaminationTP() {
 		Scanner scanner  = new Scanner(System.in);
-		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 		this.name = scanner.next();
-		System.out.print("´ä ÀÔ·Â : ");
+		System.out.print("ë‹µ ì…ë ¥ : ");
 		this.dap = scanner.next();
 		
 		ox = new char[dap.length()];

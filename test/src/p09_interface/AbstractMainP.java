@@ -4,26 +4,26 @@ public class AbstractMainP {
 
 	public static void main(String[] args) {
 		
-		//AbstractTestP at = new AbstractTestP(); - Å¬·¡½ºÀÇ Ãß»óÈ­·Î ÀÎÇØ new»ı¼ºÀÚ »ç¿ë ¸øÇÔ
-		//at.setName("È«±æµ¿");
-		//System.out.println("ÀÌ¸§ = " + at.getName());
+		//AbstractTestP at = new AbstractTestP(); - í´ë˜ìŠ¤ì˜ ì¶”ìƒí™”ë¡œ ì¸í•´ newìƒì„±ì ì‚¬ìš© ëª»í•¨
+		//at.setName("í™ê¸¸ë™");
+		//System.out.println("ì´ë¦„ = " + at.getName());
 		
-		//Ãß»óÅ¬·¡½º&Ãß»ó¸Ş¼Òµå
-		AbstractTestP at = new AbstractTestP() {//ÀÍ¸í InnerÅ¬·¡½º 1 - »ó¼Ó¾øÀÌ Ãß»óÅ¬·¡½ºÀÇ °´Ã¼ »ı¼ºÀÌ µÇµµ·Ï µµ¿ò(¿À¹ö¶óÀÌµù ±¸Çö)
+		//ì¶”ìƒí´ë˜ìŠ¤&ì¶”ìƒë©”ì†Œë“œ
+		AbstractTestP at = new AbstractTestP() {//ìµëª… Innerí´ë˜ìŠ¤ 1 - ìƒì†ì—†ì´ ì¶”ìƒí´ë˜ìŠ¤ì˜ ê°ì²´ ìƒì„±ì´ ë˜ë„ë¡ ë„ì›€(ì˜¤ë²„ë¼ì´ë”© êµ¬í˜„)
 			@Override
 			public void setName(String name) {
 				this.name = name;
 			}
-		}; //°´Ã¼»ı¼ºÀÌ °¡´ÉÇØÁü
+		}; //ê°ì²´ìƒì„±ì´ ê°€ëŠ¥í•´ì§
 		
-		//ÀÎÅÍÆäÀÌ½º&Ãß»ó¸Ş¼Òµå
+		//ì¸í„°í˜ì´ìŠ¤&ì¶”ìƒë©”ì†Œë“œ
 		InterA in = new InterA() {
 			public void aa() {};
 			public void bb() {};
 		};
 
 		
-		//Ãß»óÅ¬·¡½º&ÀÏ¹İ¸Ş¼Òµå(ºóbody)
+		//ì¶”ìƒí´ë˜ìŠ¤&ì¼ë°˜ë©”ì†Œë“œ(ë¹ˆbody)
 		AbstractExamP exam = new AbstractExamP() {
 			public void cc() {}
 		};

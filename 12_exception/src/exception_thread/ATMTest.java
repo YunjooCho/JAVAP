@@ -4,66 +4,66 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//2.½º·¹µåÈ­
+//2.ìŠ¤ë ˆë“œí™”
 public class ATMTest implements Runnable {
 
-	//1.ÇÊµå¸í ¼±¾ğ
-	private long deositeMoney = 100000; //ÀÜ¾×
-	private long balance; //Ã£°íÀÚ ÇÏ´Â ±İ¾×(µ· ¸¹ÀÌ Ã£À¸·Á°í Å¸ÀÔÀ» int°¡ ¾Æ´Ñ longÀ¸·Î ¼³Á¤)
+	//1.í•„ë“œëª… ì„ ì–¸
+	private long deositeMoney = 100000; //ì”ì•¡
+	private long balance; //ì°¾ê³ ì í•˜ëŠ” ê¸ˆì•¡(ëˆ ë§ì´ ì°¾ìœ¼ë ¤ê³  íƒ€ì…ì„ intê°€ ì•„ë‹Œ longìœ¼ë¡œ ì„¤ì •)
 
-	//3.¿À¹ö¶óÀÌµù - ²®µ¥±â¸¸ ¸¸µê
-	//7.½ÇÇà ³»¿ë ÀÔ·Â
+	//3.ì˜¤ë²„ë¼ì´ë”© - ê»ë°ê¸°ë§Œ ë§Œë“¦
+	//7.ì‹¤í–‰ ë‚´ìš© ì…ë ¥
 	@Override
-	public synchronized void run() { //LockÀ» °É¾î¹ö¸®´Â °ÍÀ» µ¿±âÈ­(¹İµå½Ã ÇÑ °´Ã¼¸¸ Á¢±Ù °¡´É), ´Ù¸¥ µ¿±âÈ­ ¹æ¹ıµµ ´Ù ¸ÔÈû(ÇÏ³ªÀÇ °´Ã¼ atmÀ» °øÀ¯ÇÏ°í ÀÖ±â ¶§¹®¿¡)
+	public synchronized void run() { //Lockì„ ê±¸ì–´ë²„ë¦¬ëŠ” ê²ƒì„ ë™ê¸°í™”(ë°˜ë“œì‹œ í•œ ê°ì²´ë§Œ ì ‘ê·¼ ê°€ëŠ¥), ë‹¤ë¥¸ ë™ê¸°í™” ë°©ë²•ë„ ë‹¤ ë¨¹í˜(í•˜ë‚˜ì˜ ê°ì²´ atmì„ ê³µìœ í•˜ê³  ìˆê¸° ë•Œë¬¸ì—)
 		
-		//8.ÀÜ¾× °è»ê ¸Ş¼Òµå	
+		//8.ì”ì•¡ ê³„ì‚° ë©”ì†Œë“œ	
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println(Thread.currentThread().getName() + "´Ô ¾È³çÇÏ¼¼¿ä"); //ÇöÀç ¼±ÅÃ¹ŞÀº(½ÇÇà ÁßÀÎ) ½º·¹µå°¡ ¹«¾ùÀÎÁö ÀÌ¸§À» Ãâ·ÂÇØÁÜ
+		System.out.println(Thread.currentThread().getName() + "ë‹˜ ì•ˆë…•í•˜ì„¸ìš”"); //í˜„ì¬ ì„ íƒë°›ì€(ì‹¤í–‰ ì¤‘ì¸) ìŠ¤ë ˆë“œê°€ ë¬´ì—‡ì¸ì§€ ì´ë¦„ì„ ì¶œë ¥í•´ì¤Œ
 		
-		System.out.println("Ã£°íÀÚ ÇÏ´Â ±İ¾× ÀÔ·Â : ");
+		System.out.println("ì°¾ê³ ì í•˜ëŠ” ê¸ˆì•¡ ì…ë ¥ : ");
 		try {
 			balance = Long.parseLong(br.readLine());
 		} catch (NumberFormatException | IOException e) {
 			e.printStackTrace();
 		} 
-		//¿¹¿ÜÃ³¸®¿¡ IOExceptionÀÌ ¾È°É¸² - ºÎ¸ğ¸Ş¼Òµå¿¡ ¿¹¿ÜÃ³¸®°¡ ¾ø±â ¶§¹®¿¡ »ó¼ÓÀÇ Æ¯¼º»ó                   						 
-		//    						    ºÎ¸ğ¸Ş¼Òµå¿¡ ¾ø´Â ¿¹¿ÜÃ³¸®¸¦ ÀÚ½Ä¸Ş¼Òµå¿¡ Àû¿ëÇÒ¼ö ¾øÀ¸¹Ç·Î try~catchÀÌ¿ë
+		//ì˜ˆì™¸ì²˜ë¦¬ì— IOExceptionì´ ì•ˆê±¸ë¦¼ - ë¶€ëª¨ë©”ì†Œë“œì— ì˜ˆì™¸ì²˜ë¦¬ê°€ ì—†ê¸° ë•Œë¬¸ì— ìƒì†ì˜ íŠ¹ì„±ìƒ                   						 
+		//    						    ë¶€ëª¨ë©”ì†Œë“œì— ì—†ëŠ” ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ìì‹ë©”ì†Œë“œì— ì ìš©í• ìˆ˜ ì—†ìœ¼ë¯€ë¡œ try~catchì´ìš©
 		
 		if(deositeMoney >= balance) {
 			if(balance % 10000 == 0) {
 				deositeMoney -= balance;
-				System.out.println("ÀÜ¾× : " + deositeMoney + "ÀÔ´Ï´Ù");
+				System.out.println("ì”ì•¡ : " + deositeMoney + "ì…ë‹ˆë‹¤");
 			}else {
-				System.out.println("¸¸¿ø ´ÜÀ§·Î ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ë§Œì› ë‹¨ìœ„ë¡œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 		}else {
-			System.out.println("ÀÜ¾×ÀÌ ºÎÁ·ÇÕ´Ï´Ù");
+			System.out.println("ì”ì•¡ì´ ë¶€ì¡±í•©ë‹ˆë‹¤");
 		}
 			
 	}		
 
-//	Ã£°íÀÚ ÇÏ´Â ±İ¾× ÀÔ·Â : 
-//	¸¸¿ø´ÜÀ§·Î ÀÔ·ÂÇÏ¼¼¿ä
-//	Ã£°íÀÚ ÇÏ´Â ±İ¾× ÀÔ·Â :
-//	Ã£°íÀÚ ÇÏ´Â ±İ¾×ÀÌ ÀÜ¾×º¸´Ù Å« °æ¿ì ÀÜ¾×ºÎÁ·
+//	ì°¾ê³ ì í•˜ëŠ” ê¸ˆì•¡ ì…ë ¥ : 
+//	ë§Œì›ë‹¨ìœ„ë¡œ ì…ë ¥í•˜ì„¸ìš”
+//	ì°¾ê³ ì í•˜ëŠ” ê¸ˆì•¡ ì…ë ¥ :
+//	ì°¾ê³ ì í•˜ëŠ” ê¸ˆì•¡ì´ ì”ì•¡ë³´ë‹¤ í° ê²½ìš° ì”ì•¡ë¶€ì¡±
 	
 	
 	public static void main(String[] args) {
 	
-		//4.»ı¼º
+		//4.ìƒì„±
 		ATMTest atm = new ATMTest();
 		Thread mom = new Thread(atm); //Thread - 0
-		 //Thread mom = new Thread(this); ¿¡·¯°¡ ³²(staticÀº Å¬·¡½º ¼Ò¼ÓÀÌ ¾Æ´Ï±â ¶§¹®¿¡)
-		 //Thread mom = new Thread(new ATMTest()); - ¾ö¸¶°´Ã¼¿Í ¾Æµé°´Ã¼°¡ °¢°¢ ´Ù¸¥ ¸Ş¸ğ¸®¸¦ Àâ°í ÀÖ±â ¶§¹®¿¡ ¿µ¿øÈ÷ Ãæµ¹ÀÌ ÀÏ¾î³ªÁö ¾ÊÀ½
-		 //                           				  ÀÌ¹ø ¸ñÀûÀº ¸Ş¸ğ¸®¸¦ °øÀ¯ÇÏ´Â °ÍÀÓ
+		 //Thread mom = new Thread(this); ì—ëŸ¬ê°€ ë‚¨(staticì€ í´ë˜ìŠ¤ ì†Œì†ì´ ì•„ë‹ˆê¸° ë•Œë¬¸ì—)
+		 //Thread mom = new Thread(new ATMTest()); - ì—„ë§ˆê°ì²´ì™€ ì•„ë“¤ê°ì²´ê°€ ê°ê° ë‹¤ë¥¸ ë©”ëª¨ë¦¬ë¥¼ ì¡ê³  ìˆê¸° ë•Œë¬¸ì— ì˜ì›íˆ ì¶©ëŒì´ ì¼ì–´ë‚˜ì§€ ì•ŠìŒ
+		 //                           				  ì´ë²ˆ ëª©ì ì€ ë©”ëª¨ë¦¬ë¥¼ ê³µìœ í•˜ëŠ” ê²ƒì„
 		Thread son = new Thread(atm); //Thread - 1
 		
 		
-		//6.½º·¹µå ÀÌ¸§ ¼³Á¤ÇÏ±â
-		mom.setName("¾ö¸¶"); //¶Ç´Â »ı¼º½Ã¿¡ Thread mom = new Thread(atm, "¾ö¸¶");
-		son.setName("¾Æµé"); //¶Ç´Â »ı¼º½Ã¿¡ Thread son = new Thread(atm, "¾Æµé");
+		//6.ìŠ¤ë ˆë“œ ì´ë¦„ ì„¤ì •í•˜ê¸°
+		mom.setName("ì—„ë§ˆ"); //ë˜ëŠ” ìƒì„±ì‹œì— Thread mom = new Thread(atm, "ì—„ë§ˆ");
+		son.setName("ì•„ë“¤"); //ë˜ëŠ” ìƒì„±ì‹œì— Thread son = new Thread(atm, "ì•„ë“¤");
 		
-		//5.½º·¹µå ½ÃÀÛ - ½ÇÇà(run()¸Ş¼Òµå·Î °¨)
+		//5.ìŠ¤ë ˆë“œ ì‹œì‘ - ì‹¤í–‰(run()ë©”ì†Œë“œë¡œ ê°)
 		mom.start();
 		son.start();
 		

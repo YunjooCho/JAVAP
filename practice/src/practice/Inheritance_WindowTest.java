@@ -5,7 +5,7 @@ import java.awt.Frame;
 public class Inheritance_WindowTest extends Frame {
 
 	public Inheritance_WindowTest() {
-		setTitle("ÀÌ¹ÌÁö");
+		setTitle("ì´ë¯¸ì§€");
 		setBounds(500, 100, 500, 500);
 	}
 	

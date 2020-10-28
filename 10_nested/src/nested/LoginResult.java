@@ -11,14 +11,14 @@ import java.awt.event.WindowEvent;
 public class LoginResult extends Frame { 
 	private String id;
 	private String pwd;
-	//<´Ù¸¥Ç®ÀÌ>private Login login;
+	//<ë‹¤ë¥¸í’€ì´>private Login login;
 	
 	public LoginResult(String id, String pwd) {
-	//<´Ù¸¥Ç®ÀÌ> public LoginResult(Login login){ - °´Ã¼ÀÇ ÁÖ¼Ò°ª ³Ñ±â±â
+	//<ë‹¤ë¥¸í’€ì´> public LoginResult(Login login){ - ê°ì²´ì˜ ì£¼ì†Œê°’ ë„˜ê¸°ê¸°
 	// this.login = login
 		this.id = id;
 		this.pwd = pwd;
-		setLayout(null); //µ¿¼­³²ºÏ À§Ä¡Á¦ÇÑ ¾ø¾Ö¹ö¸² - ¿øÇÏ´Â À§Ä¡¿¡ ¹èÄ¡ °¡´É
+		setLayout(null); //ë™ì„œë‚¨ë¶ ìœ„ì¹˜ì œí•œ ì—†ì• ë²„ë¦¼ - ì›í•˜ëŠ” ìœ„ì¹˜ì— ë°°ì¹˜ ê°€ëŠ¥
 		setBounds(600, 100, 300, 400);
 		setVisible(true);
 		
@@ -32,22 +32,22 @@ public class LoginResult extends Frame {
 	}
 	
 	@Override
-	public void paint(Graphics g) { //FrameÀ» »ó¼Ó¹Ş¾Æ¾ß ÇØ´ç ¸Ş¼Òµå¸¦ »ç¿ëÇÒ ¼ö ÀÖÀ½
-									//¶Ç´Â FrameÀ» ÇÊµå¼±¾ğ ÇÏ´Â °æ¿ì, »ı¼ººÎºĞ¿¡¼­ "ÀÍ¸íÅ¬·¡½º" »ç¿ë
-								    //FrameÀÌ Ãß»óÅ¬·¡½º°¡ ¾Æ´Ï´õ¶óµµ »ç¿ë °¡´É
-		//<´Ù¸¥Ç®ÀÌ> - °´Ã¼ÀÇ ÁÖ¼Ò°ª ³Ñ±â±â
+	public void paint(Graphics g) { //Frameì„ ìƒì†ë°›ì•„ì•¼ í•´ë‹¹ ë©”ì†Œë“œë¥¼ ì‚¬ìš©í•  ìˆ˜ ìˆìŒ
+									//ë˜ëŠ” Frameì„ í•„ë“œì„ ì–¸ í•˜ëŠ” ê²½ìš°, ìƒì„±ë¶€ë¶„ì—ì„œ "ìµëª…í´ë˜ìŠ¤" ì‚¬ìš©
+								    //Frameì´ ì¶”ìƒí´ë˜ìŠ¤ê°€ ì•„ë‹ˆë”ë¼ë„ ì‚¬ìš© ê°€ëŠ¥
+		//<ë‹¤ë¥¸í’€ì´> - ê°ì²´ì˜ ì£¼ì†Œê°’ ë„˜ê¸°ê¸°
 		//String id = login.getId();
 		//String pwd = login.getPwd();
 		if(id.equals("angel") && pwd.equals("1004")) {
-			g.drawString("·Î±×ÀÎ ¼º°ø", 100, 100);
+			g.drawString("ë¡œê·¸ì¸ ì„±ê³µ", 100, 100);
 		}else {
-			g.drawString("·Î±×ÀÎ ½ÇÆĞ", 100, 100);
+			g.drawString("ë¡œê·¸ì¸ ì‹¤íŒ¨", 100, 100);
 		}
 	}
 	
 }	
-//Ã¢ Å©±â 200, 200
-//Á¾·á¹öÆ° ´©¸£¸é ´Ù½Ã loginÀÌ È£ÃâµÊ - »ı¼º
-//·Î±×ÀÎ ºñ±³´Â LoginResult¿¡¼­
-//if (id == id && pw == pw) - "·Î±×ÀÎ ¼º°ø" - drawString
-//else - "·Î±×ÀÎ ½ÇÆĞ"
+//ì°½ í¬ê¸° 200, 200
+//ì¢…ë£Œë²„íŠ¼ ëˆ„ë¥´ë©´ ë‹¤ì‹œ loginì´ í˜¸ì¶œë¨ - ìƒì„±
+//ë¡œê·¸ì¸ ë¹„êµëŠ” LoginResultì—ì„œ
+//if (id == id && pw == pw) - "ë¡œê·¸ì¸ ì„±ê³µ" - drawString
+//else - "ë¡œê·¸ì¸ ì‹¤íŒ¨"

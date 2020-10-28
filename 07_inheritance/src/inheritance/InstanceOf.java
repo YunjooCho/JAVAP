@@ -1,8 +1,8 @@
 package inheritance;
 
-class AA{} //ºÎ¸ðÅ¬·¡½º
+class AA{} //ë¶€ëª¨í´ëž˜ìŠ¤
 
-class BB extends AA{} //ÀÚ½ÄÅ¬·¡½º
+class BB extends AA{} //ìžì‹í´ëž˜ìŠ¤
 
 public class InstanceOf {
 	public static void main(String[] args) {
@@ -11,31 +11,31 @@ public class InstanceOf {
 		AA aa2 = new BB();
 		
 		//AA aa3 = new AA();
-		AA aa3 = aa; //AA aa3 = new AA()¿Í AA aa3 = aa´Â ´Ù¸¥ ¹®Àå, °°Àº AAÅ¬·¡½º
+		AA aa3 = aa; //AA aa3 = new AA()ì™€ AA aa3 = aaëŠ” ë‹¤ë¥¸ ë¬¸ìž¥, ê°™ì€ AAí´ëž˜ìŠ¤
 		if(aa instanceof AA) System.out.println("1.TRUE");
 		else System.out.println("1. FALSE");
 		//aa - AA, aa3 - AA
 		
-		AA aa4 = bb; //ºÎ¸ð´Â ÀÚ½ÄÅ¬·¡½º¸¦ ÂüÁ¶ÇÒ ¼ö ÀÖÀ½(ÀÚ½Ä Å¬·¡½º¾È¿¡ ºÎ¸ð Å¬·¡½º°¡ Á¸Àç)
+		AA aa4 = bb; //ë¶€ëª¨ëŠ” ìžì‹í´ëž˜ìŠ¤ë¥¼ ì°¸ì¡°í•  ìˆ˜ ìžˆìŒ(ìžì‹ í´ëž˜ìŠ¤ì•ˆì— ë¶€ëª¨ í´ëž˜ìŠ¤ê°€ ì¡´ìž¬)
 		if(bb instanceof AA) System.out.println("2.TRUE"); 
-		//bb¸¦ µû¶ó°¡¸é AAÅ¬·¡½º°¡ ÀÖ´Â°¡?(AA´Â bb·Î Çüº¯È¯ÀÌ °¡´ÉÇÑ°¡?)
+		//bbë¥¼ ë”°ë¼ê°€ë©´ AAí´ëž˜ìŠ¤ê°€ ìžˆëŠ”ê°€?(AAëŠ” bbë¡œ í˜•ë³€í™˜ì´ ê°€ëŠ¥í•œê°€?)
 		else System.out.println("2.FALSE");
 		//aa4 - AA, bb - BB
 		
-		BB bb2 = (BB)aa2; //'ÀÚ½Ä = ºÎ¸ð' Á÷Á¢ ¹ÞÀ»¼ö ¾øÀ¸¹Ç·Î 'ÀÚ½Ä = (ÀÚ½Ä)ºÎ¸ð' ·Î ´Ù¿îÄ³½ºÆÃ
+		BB bb2 = (BB)aa2; //'ìžì‹ = ë¶€ëª¨' ì§ì ‘ ë°›ì„ìˆ˜ ì—†ìœ¼ë¯€ë¡œ 'ìžì‹ = (ìžì‹)ë¶€ëª¨' ë¡œ ë‹¤ìš´ìºìŠ¤íŒ…
 		if(aa2 instanceof BB)System.out.println("3.TRUE");
 		else System.out.println("3.FALSE");
 		//bb2 - BB, aa2 - AA -> (BB)
 		
-		//BB bb3 = (BB)aa3;//error!aa3ÀÇ ¸Þ¸ð¸®¿¡ AAÅ¬·¡½º¸¸ ÀÖ°í BBÅ¬·¡½º(bb3)´Â ¾øÀ½
+		//BB bb3 = (BB)aa3;//error!aa3ì˜ ë©”ëª¨ë¦¬ì— AAí´ëž˜ìŠ¤ë§Œ ìžˆê³  BBí´ëž˜ìŠ¤(bb3)ëŠ” ì—†ìŒ
 		if(aa3 instanceof BB) System.out.println("4.TRUE");
 		else System.out.println("4.FALSE");
 		//aa3 - AA -> (BB), bb3 - BB
 	}
 }
 
-//<instanceof ·Î È®ÀÎÇÏ´Â °Í>
-//aa°¡ °¡¸®Å°´Â °÷¿¡ Å¬·¡½º AA°¡ ÀÖ´À³Ä??
-//aa°¡ AA Çüº¯È¯(Casting) µÇ´À³Ä??
-//aaÀÇ ÁÖ¼Ò°ªÀ» aa3ÀÌ ¹ÞÀ» ¼ö ÀÖ´À³Ä??
+//<instanceof ë¡œ í™•ì¸í•˜ëŠ” ê²ƒ>
+//aaê°€ ê°€ë¦¬í‚¤ëŠ” ê³³ì— í´ëž˜ìŠ¤ AAê°€ ìžˆëŠëƒ??
+//aaê°€ AA í˜•ë³€í™˜(Casting) ë˜ëŠëƒ??
+//aaì˜ ì£¼ì†Œê°’ì„ aa3ì´ ë°›ì„ ìˆ˜ ìžˆëŠëƒ??
 

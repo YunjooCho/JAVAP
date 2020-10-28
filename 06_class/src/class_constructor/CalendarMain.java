@@ -1,21 +1,21 @@
 package class_constructor;
 
 /*
- ³âµµ ÀÔ·Â : 2002
-¿ù ÀÔ·Â : 10   
+ ë…„ë„ ì…ë ¥ : 2002
+ì›” ì…ë ¥ : 10   
 
-ÀÏ  	 ¿ù  	  È­  	     ¼ö      ¸ñ      ±İ      Åä
+ì¼  	 ì›”  	  í™”  	     ìˆ˜      ëª©      ê¸ˆ      í† 
           1    2    3    4    5
 6    7    8    9    10   11   12
 13   14   15   16   17   18   19
 20   21   22   23   24   25   26
 27   28   29   30   31
 
-±âº»»ı¼ºÀÚ - ³âµµ, ¿ù ÀÔ·Â
-calculator() - ¸Å´Ş 1ÀÏÀÌ ¹«½¼ ¿äÀÏ·Î ½ÃÀÛ?, ¸Å´Ş ³¡³ª´Â ÀÏ? //¸Ş¼Òµå 2°³ Ã£¾Æº¸±â(+1°³ getÀÇ ¹İ´ë ¸Ş¼Òµå)
-display() - Ãâ·Â
+ê¸°ë³¸ìƒì„±ì - ë…„ë„, ì›” ì…ë ¥
+calculator() - ë§¤ë‹¬ 1ì¼ì´ ë¬´ìŠ¨ ìš”ì¼ë¡œ ì‹œì‘?, ë§¤ë‹¬ ëë‚˜ëŠ” ì¼? //ë©”ì†Œë“œ 2ê°œ ì°¾ì•„ë³´ê¸°(+1ê°œ getì˜ ë°˜ëŒ€ ë©”ì†Œë“œ)
+display() - ì¶œë ¥
  */
-//ÇöÀç ½Ã°£À» ¹Ş¾Æ¿È
+//í˜„ì¬ ì‹œê°„ì„ ë°›ì•„ì˜´
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,26 +24,26 @@ import java.util.Calendar;
 
 
 public class CalendarMain {
-	//1.ÇÊµå¸í ¼±¾ğ
+	//1.í•„ë“œëª… ì„ ì–¸
 	private int year;
 	private int month;
 	private int week;
 	private int lastDay;
 	
 	
-	//2.±âº» »ı¼ºÀÚ ±¸Çö
+	//2.ê¸°ë³¸ ìƒì„±ì êµ¬í˜„
 	public CalendarMain() throws NumberFormatException, IOException {
 		
-		//¡ØNumberFormatException - Å°º¸µå·Î ÀÔ·ÂµÈ °ªÀÌ ¼ıÀÚ°¡ ¾Æ´Ò ¶§ ¿¹¿ÜÃ³¸® ("A" - ¾Æ½ºÅ°ÄÚµå ¾Æ´Ô)
+		//â€»NumberFormatException - í‚¤ë³´ë“œë¡œ ì…ë ¥ëœ ê°’ì´ ìˆ«ìê°€ ì•„ë‹ ë•Œ ì˜ˆì™¸ì²˜ë¦¬ ("A" - ì•„ìŠ¤í‚¤ì½”ë“œ ì•„ë‹˜)
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("³âµµ ÀÔ·Â : ");
+		System.out.print("ë…„ë„ ì…ë ¥ : ");
 		year = Integer.parseInt(bufferedReader.readLine());
 		
-		System.out.print("¿ù ÀÔ·Â : ");
+		System.out.print("ì›” ì…ë ¥ : ");
 		month = Integer.parseInt(bufferedReader.readLine());
 		while(month < 1 || month > 12) {
-			System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
-			System.out.print("¿ù ÀÔ·Â : ");
+			System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
+			System.out.print("ì›” ì…ë ¥ : ");
 			month = Integer.parseInt(bufferedReader.readLine());
 		}
 		
@@ -53,47 +53,47 @@ public class CalendarMain {
 	
 	public void calculator() {
 		
-		//3.Calendar Å¬·¡½º »ı¼º (new Calendar ->Ãß»óÅ¬·¡½º¶ó ÀÌ ¹®ÀåÀº error)
+		//3.Calendar í´ë˜ìŠ¤ ìƒì„± (new Calendar ->ì¶”ìƒí´ë˜ìŠ¤ë¼ ì´ ë¬¸ì¥ì€ error)
 		Calendar calendar = Calendar.getInstance();
-		//getInstance()´Â Ãß»ó¸Ş¼Òµå¸¦ ¿À¹ö¶óÀÌµå ÇÑ ´ÙÀ½¿¡ ±× ÁÖ¼Ò¸¦ calendar·Î ³Ñ°ÜÁÜ - Å¬·¡½º »ı¼ºÀÇ ¿ªÇÒ
+		//getInstance()ëŠ” ì¶”ìƒë©”ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë“œ í•œ ë‹¤ìŒì— ê·¸ ì£¼ì†Œë¥¼ calendarë¡œ ë„˜ê²¨ì¤Œ - í´ë˜ìŠ¤ ìƒì„±ì˜ ì—­í• 
 		
 		
-		//4.±âÁØ
+		//4.ê¸°ì¤€
 		//4-1.calendar.set(Calendar.YEAR,year); 
-			//¹ŞÀº ¿¬µµ¸¦ ÇöÀç ³¯Â¥(CalendarÅ¬·¡½ºÀÇ Æ¯Â¡)°¡ ¾Æ´Ñ ÀÔ·Â¹ŞÀº °ªÀ¸·Î ´ëÃ¼
+			//ë°›ì€ ì—°ë„ë¥¼ í˜„ì¬ ë‚ ì§œ(Calendarí´ë˜ìŠ¤ì˜ íŠ¹ì§•)ê°€ ì•„ë‹Œ ì…ë ¥ë°›ì€ ê°’ìœ¼ë¡œ ëŒ€ì²´
 		//4-2.calendar.set(Calendar.MONTH,month-1);
-			//ÀÔ·Â¹ŞÀº °ªÀº -1·Î Ã³¸®ÇÏ±â 2 -> 1¿ù  
+			//ì…ë ¥ë°›ì€ ê°’ì€ -1ë¡œ ì²˜ë¦¬í•˜ê¸° 2 -> 1ì›”  
 		//4-3.calendar.set(Calendar.DAY_OF_MONTH,1);
-			//calendar.set(Calendar.DAY_OF_MONTH,1)ÀÇ ÀÇ¹Ì : ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ÀÌ ÀÛ¾÷À» ½ÇÇàÇÑ ÇöÀç ³¯Â¥(¿À´Ã)°¡ ³ª¿È
-			//ÀÌ ¼ö¾÷ÀÌ ÁøÇàÇÑ 2020.9.29¿¡¼­ 29ÀÌ Ãâ·ÂµÊ, ±×·¯³ª ´Ş·ÂÀº 1¿ùºÎÅÍ Âï¾î for¹®À» µ¹¸± ¿¹Á¤ÀÌ¹Ç·Î 1·Î ÃÊ±âÈ­
+			//calendar.set(Calendar.DAY_OF_MONTH,1)ì˜ ì˜ë¯¸ : ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ ì´ ì‘ì—…ì„ ì‹¤í–‰í•œ í˜„ì¬ ë‚ ì§œ(ì˜¤ëŠ˜)ê°€ ë‚˜ì˜´
+			//ì´ ìˆ˜ì—…ì´ ì§„í–‰í•œ 2020.9.29ì—ì„œ 29ì´ ì¶œë ¥ë¨, ê·¸ëŸ¬ë‚˜ ë‹¬ë ¥ì€ 1ì›”ë¶€í„° ì°ì–´ forë¬¸ì„ ëŒë¦´ ì˜ˆì •ì´ë¯€ë¡œ 1ë¡œ ì´ˆê¸°í™”
 			//API :set(int field, int value) - Sets the given calendar field to the given value.
-			//³»°¡ ¿øÇÏ´Â ÀÏ, ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é ÀÛ¾÷ÇÏ°í ÀÖ´Â ÇöÀç ³¯Â¥·Î ±âÁØÀÌ ¸ÂÃß¾îÁü
+			//ë‚´ê°€ ì›í•˜ëŠ” ì¼, ì„¤ì •í•˜ì§€ ì•Šìœ¼ë©´ ì‘ì—…í•˜ê³  ìˆëŠ” í˜„ì¬ ë‚ ì§œë¡œ ê¸°ì¤€ì´ ë§ì¶”ì–´ì§
 		calendar.set(year, month-1, 1);
-			//4-1~4-3°ú °°Àº ÀÇ¹Ì
+			//4-1~4-3ê³¼ ê°™ì€ ì˜ë¯¸
 			//API :	set(int year, int month, int date) - Sets the values for the calendar fields YEAR, MONTH, and DAY_OF_MONTH.
-			//month´Â ÀÔ·Â¹ŞÀ» ¶§ ¹Ì¸® -1ÇØµµ µÊ(1¿ùÀÌ 0ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î ¿ù¿¡¼­ -1)
-			//ÀÔ·Â¹ŞÀº °ªÀ» year, month¿¡ calendar°´Ã¼¿¡ ÀÔ·Â
+			//monthëŠ” ì…ë ¥ë°›ì„ ë•Œ ë¯¸ë¦¬ -1í•´ë„ ë¨(1ì›”ì´ 0ë¶€í„° ì‹œì‘í•˜ë¯€ë¡œ ì›”ì—ì„œ -1)
+			//ì…ë ¥ë°›ì€ ê°’ì„ year, monthì— calendarê°ì²´ì— ì…ë ¥
 		
 		week = calendar.get(calendar.DAY_OF_WEEK);
-		//°´Ã¼ calendar¿¡ µé¾îÀÖ´Â °ªÀÎ ¸Å´Ş 1ÀÏ(calendar.set(year, month-1, 1))ÀÌ ¹«½¼ ¿äÀÏ·Î ½ÃÀÛÇÏ´ÂÁö È®ÀÎ
-		//°á°ú°ªÀº ¼ıÀÚ·Î ¹İÈ¯(ÀÏ¿äÀÏ-1, ¿ù¿äÀÏ-2, È­¿äÀÏ-3,....)
+		//ê°ì²´ calendarì— ë“¤ì–´ìˆëŠ” ê°’ì¸ ë§¤ë‹¬ 1ì¼(calendar.set(year, month-1, 1))ì´ ë¬´ìŠ¨ ìš”ì¼ë¡œ ì‹œì‘í•˜ëŠ”ì§€ í™•ì¸
+		//ê²°ê³¼ê°’ì€ ìˆ«ìë¡œ ë°˜í™˜(ì¼ìš”ì¼-1, ì›”ìš”ì¼-2, í™”ìš”ì¼-3,....)
 		lastDay = calendar.getActualMaximum(calendar.DAY_OF_MONTH);
-		//¸Å´Ş ¸¶Áö¸· ³¯ÀÌ ¾ğÁ¦ÀÎÁö È®ÀÎ - ¿ù Áß¿¡¼­ °¡Àå Å« °ª(¸¶Áö¸· ³¯) ²¨³»¿À±â(À±´Ş ÀÚµ¿À¸·Î °è»êµÊ)
+		//ë§¤ë‹¬ ë§ˆì§€ë§‰ ë‚ ì´ ì–¸ì œì¸ì§€ í™•ì¸ - ì›” ì¤‘ì—ì„œ ê°€ì¥ í° ê°’(ë§ˆì§€ë§‰ ë‚ ) êº¼ë‚´ì˜¤ê¸°(ìœ¤ë‹¬ ìë™ìœ¼ë¡œ ê³„ì‚°ë¨)
 	}
 	
 	
 	
 	public void display() {
-		System.out.println("ÀÏ\t¿ù\tÈ­\t¼ö\t¸ñ\t±İ\tÅä");
-		//Ãâ·ÂµÇ´Â 1ÀÏÀ» ÇØ´ç ¿äÀÏ¿¡ ¸Â°Ô Ç¥½Ã
+		System.out.println("ì¼\tì›”\tí™”\tìˆ˜\tëª©\tê¸ˆ\tí† ");
+		//ì¶œë ¥ë˜ëŠ” 1ì¼ì„ í•´ë‹¹ ìš”ì¼ì— ë§ê²Œ í‘œì‹œ
 		for(int i = 1; i < week; i++) {
 			System.out.print("\t");
 		}
-		//³¯Â¥Ç¥½Ã
+		//ë‚ ì§œí‘œì‹œ
 		for(int i = 1; i <= lastDay; i++) {
 			System.out.print(i + "\t");
 			
-			//7ÀÏ¸¶´Ù(ÀÏ~Åä) Àß¶ó¼­ Ãâ·ÂµÇ°Ô ÇÔ
+			//7ì¼ë§ˆë‹¤(ì¼~í† ) ì˜ë¼ì„œ ì¶œë ¥ë˜ê²Œ í•¨
 			if(week % 7 == 0) System.out.println();
 			week++;
 		}
@@ -102,10 +102,10 @@ public class CalendarMain {
 	}
 
 	public static void main(String[] args) throws IOException { 
-		//¿¹¿ÜÃ³¸® NumberFormatException°¡ ¾ø´Â ÀÌÀ¯
-		//NumberFormatException(ÀÚ½Ä)¿Í IOException(ºÎ¸ğ)Àº »ó¼Ó
-		//IOExceptionÀÌ ´Ù Ã³¸®°¡´É
-		//ÃÊ±âÈ­
+		//ì˜ˆì™¸ì²˜ë¦¬ NumberFormatExceptionê°€ ì—†ëŠ” ì´ìœ 
+		//NumberFormatException(ìì‹)ì™€ IOException(ë¶€ëª¨)ì€ ìƒì†
+		//IOExceptionì´ ë‹¤ ì²˜ë¦¬ê°€ëŠ¥
+		//ì´ˆê¸°í™”
 		CalendarMain cm = new CalendarMain();
 		cm.calculator();
 		cm.display();

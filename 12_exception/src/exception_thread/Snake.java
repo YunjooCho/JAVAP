@@ -19,37 +19,37 @@ public class Snake extends JFrame implements ActionListener
 	
 	public Snake(){
 	    //this.rf= rf;
-		setName("¹ì °ÔÀÓÀÌ¶ó³×");
+		setName("ë±€ ê²Œì„ì´ë¼ë„¤");
 		setBounds(200,200,500,540);
 		
 		JPanel all = new JPanel(new BorderLayout());
-		JPanel top = new JPanel(new GridLayout(1,3));//Á¡¼ö, ÇöÀç½Ã°£, ÇÃ·¹ÀÌ½Ã°£
+		JPanel top = new JPanel(new GridLayout(1,3));//ì ìˆ˜, í˜„ì¬ì‹œê°„, í”Œë ˆì´ì‹œê°„
 		center = new CenterPanel(this);
 		JPanel bottom = new JPanel();
 
 		JPanel[] topPart = new JPanel[3];
 
 		topPart[0] = new JPanel();
-		JLabel scoL = new JLabel("Á¡¼ö : ");
+		JLabel scoL = new JLabel("ì ìˆ˜ : ");
 		scoT = new JTextField(7);
 		scoT.setFocusable(false);
 		topPart[0].add(scoL);
 		topPart[0].add(scoT);
 
 		topPart[1] = new JPanel();
-		//JLabel nowTimeL = new JLabel("ÇöÀç½Ã°£ : ");
+		//JLabel nowTimeL = new JLabel("í˜„ì¬ì‹œê°„ : ");
 		//topPart[1].add(nowTimeL);
 
 		topPart[2] = new JPanel();
-		//JLabel playTimeL = new JLabel("ÇÃ·¹ÀÌ½Ã°£ : ");
+		//JLabel playTimeL = new JLabel("í”Œë ˆì´ì‹œê°„ : ");
 		//topPart[2].add(playTimeL);
 
 		for(int i=0;i<topPart.length;i++){
 			top.add(topPart[i]);
 		}
-		startGame = new JButton("½Ã ÀÛ");
+		startGame = new JButton("ì‹œ ì‘");
 		startGame.addActionListener(this);
-//		JButton newGame = new JButton("»õ °ÔÀÓ");
+//		JButton newGame = new JButton("ìƒˆ ê²Œì„");
 //		newGame.addActionListener(this);
 
 		bottom.add(startGame);
@@ -100,11 +100,11 @@ class CenterPanel extends Canvas implements ActionListener, KeyListener
 {
 	int x=11, y=9;
 	int xPlus=-1, yPlus=0;
-	boolean goStop = true, move = true;//ÃÊ±â ½ÃÀÛ½Ã ¸ØÃã
+	boolean goStop = true, move = true;//ì´ˆê¸° ì‹œì‘ì‹œ ë©ˆì¶¤
 	//int[][] xy = new int[100][2];
-	int xyNum = 5;//¹ì ±æÀÌ
+	int xyNum = 5;//ë±€ ê¸¸ì´
 	int frogNum = 10;
-	int delay = 300;//¹ì ¼Óµµ Á¶Àı
+	int delay = 300;//ë±€ ì†ë„ ì¡°ì ˆ
 	int sel;
 	boolean frogSet = false;
 	Snake sk;
@@ -170,9 +170,9 @@ class CenterPanel extends Canvas implements ActionListener, KeyListener
 	}	
 	public void endOfLine(){
 		if (x<1|x>22|y<1|y>19){
-//			System.out.println("³¡");
+//			System.out.println("ë");
 			move=false;
-			JOptionPane.showMessageDialog(this, sk.score+"ÀÇ ±İ¾×ÀÌ ÃæÀüµÇ¾ú½À´Ï´Ù.", "game over",
+			JOptionPane.showMessageDialog(this, sk.score+"ì˜ ê¸ˆì•¡ì´ ì¶©ì „ë˜ì—ˆìŠµë‹ˆë‹¤.", "game over",
 				JOptionPane.WARNING_MESSAGE);
 			//sk.rf.setMoney(sk.score);
 			//sk.rf.setMoneyDB();
@@ -180,12 +180,12 @@ class CenterPanel extends Canvas implements ActionListener, KeyListener
 		}
 	}
 	public void snakeBody(){
-		//System.out.println("¹ì²¿¸® Ã£À¸·¯!");
+		//System.out.println("ë±€ê¼¬ë¦¬ ì°¾ìœ¼ëŸ¬!");
 		for(int i=0;i<xyNum;i++){
 			if (x==xyList.get(i).x&&y==xyList.get(i).y){
-//				System.out.println("¹ì²¿¸® ¹°´Ù!");
+//				System.out.println("ë±€ê¼¬ë¦¬ ë¬¼ë‹¤!");
 				move=false;
-				JOptionPane.showMessageDialog(this, sk.score+"ÀÇ ±İ¾×ÀÌ ÃæÀüµÇ¾ú½À´Ï´Ù.", "game over",
+				JOptionPane.showMessageDialog(this, sk.score+"ì˜ ê¸ˆì•¡ì´ ì¶©ì „ë˜ì—ˆìŠµë‹ˆë‹¤.", "game over",
 					JOptionPane.WARNING_MESSAGE);
 				//sk.rf.setMoney(sk.score);
 				//sk.rf.setMoneyDB();
@@ -194,10 +194,10 @@ class CenterPanel extends Canvas implements ActionListener, KeyListener
 		}
 	}
 	public void frogEat(){
-//		System.out.println("°³±¸¸® ¸¸µé·¯");
+//		System.out.println("ê°œêµ¬ë¦¬ ë§Œë“¤ëŸ¬");
 		for(int i=0;i<frogNum;i++){
 			if (x==frogList.get(i).x&&y==frogList.get(i).y){
-//				System.out.println("°³±¸¸® ¸Ô´Ù!");
+//				System.out.println("ê°œêµ¬ë¦¬ ë¨¹ë‹¤!");
 				frogList.remove(i);
 				
 				frogNum--;
@@ -214,7 +214,7 @@ class CenterPanel extends Canvas implements ActionListener, KeyListener
 				if (frogNum<=0) frogListSet();
 			}
 		}
-		//System.out.println("°³±¸¸® ´Ù ¸¸µë");
+		//System.out.println("ê°œêµ¬ë¦¬ ë‹¤ ë§Œë“¬");
 	}
 
 	public void paint(Graphics  g){
@@ -243,16 +243,16 @@ class CenterPanel extends Canvas implements ActionListener, KeyListener
 		
 		//bufferGraphics.drawImage(image,x*20,y*20,x*20+20,y*20+20,sel*50,0,sel*50+50,50,this);
 
-		for (int i=0;i<xyNum;i++){ // ¹ìÀ» ±×¸®ÀÚ
+		for (int i=0;i<xyNum;i++){ // ë±€ì„ ê·¸ë¦¬ì
 			bufferGraphics.drawRect(xyList.get(i).x*20+4,xyList.get(i).y*20+4,10,10);
 			bufferGraphics.fillRect(xyList.get(i).x*20+6,xyList.get(i).y*20+6,6,6);
-			//System.out.print("¹ì ["+xyList.get(i).x+" "+xyList.get(i).y+"]");
+			//System.out.print("ë±€ ["+xyList.get(i).x+" "+xyList.get(i).y+"]");
 		}
 		if (frogSet == true){
-			for (int i=0;i<frogNum;i++){ // °³±¸¸®¸¦ ±×¸®ÀÚ
+			for (int i=0;i<frogNum;i++){ // ê°œêµ¬ë¦¬ë¥¼ ê·¸ë¦¬ì
 				bufferGraphics.drawOval(frogList.get(i).x*20+4,frogList.get(i).y*20+4,10,10);
 				bufferGraphics.fillRect(frogList.get(i).x*20+6,frogList.get(i).y*20+6,6,6);
-				//System.out.print("°³±¸¸® ["+frogList.get(i).x+" "+frogList.get(i).y+"]");
+				//System.out.print("ê°œêµ¬ë¦¬ ["+frogList.get(i).x+" "+frogList.get(i).y+"]");
 			}
 		}
 

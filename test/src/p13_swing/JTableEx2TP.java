@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 
-//1.»ó¼Ó ¹× ±¸Çö, ÇÊµå¼±¾ğ
+//1.ìƒì† ë° êµ¬í˜„, í•„ë“œì„ ì–¸
 public class JTableEx2TP extends JFrame implements ActionListener{
 	
 	private ArrayList<PersonDTOP> list;
@@ -26,21 +26,21 @@ public class JTableEx2TP extends JFrame implements ActionListener{
 	private JButton insertBtn, deleteBtn;
 	private int count;
 	
-	//2.»ı¼º
+	//2.ìƒì„±
 	public JTableEx2TP() {
 		list = new ArrayList<PersonDTOP>();
-		list.add(new PersonDTOP("hong","È«±æµ¿","111","010-123-1234"));
-		list.add(new PersonDTOP("hong2","È«±æµ¿","111","010-123-1234"));
-		list.add(new PersonDTOP("hong3","È«±æµ¿","111","010-123-1234"));
-		list.add(new PersonDTOP("conan","ÄÚ³­","333","010-777-7777"));
+		list.add(new PersonDTOP("hong","í™ê¸¸ë™","111","010-123-1234"));
+		list.add(new PersonDTOP("hong2","í™ê¸¸ë™","111","010-123-1234"));
+		list.add(new PersonDTOP("hong3","í™ê¸¸ë™","111","010-123-1234"));
+		list.add(new PersonDTOP("conan","ì½”ë‚œ","333","010-777-7777"));
 		
 		
-		//Å¸ÀÌÆ²(ÇÊµå¸í)
+		//íƒ€ì´í‹€(í•„ë“œëª…)
 		vector = new Vector<String>();
-		vector.addElement("¾ÆÀÌµğ");
-		vector.addElement("ÀÌ¸§");
-		vector.add("ºñ¹Ğ¹øÈ£");
-		vector.add("ÀüÈ­¹øÈ£");
+		vector.addElement("ì•„ì´ë””");
+		vector.addElement("ì´ë¦„");
+		vector.add("ë¹„ë°€ë²ˆí˜¸");
+		vector.add("ì „í™”ë²ˆí˜¸");
 		
 		model = new DefaultTableModel(vector,0) {
 			public boolean isCellEditable(int row, int column) {
@@ -60,8 +60,8 @@ public class JTableEx2TP extends JFrame implements ActionListener{
 		}
 	
 		
-		insertBtn = new JButton("Ãß°¡");
-		deleteBtn = new JButton("»èÁ¦");
+		insertBtn = new JButton("ì¶”ê°€");
+		deleteBtn = new JButton("ì‚­ì œ");
 		
 		JPanel p = new JPanel();
 		p.add(insertBtn);
@@ -77,13 +77,13 @@ public class JTableEx2TP extends JFrame implements ActionListener{
 		 
 		setBounds(200, 200, 500, 400);
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame »ı·«°¡´É
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //JFrame ìƒëµê°€ëŠ¥
 	}
 	
 	
 	
 	
-	//3.¿À¹ö¶óÀÌµå
+	//3.ì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == insertBtn) {
@@ -96,7 +96,7 @@ public class JTableEx2TP extends JFrame implements ActionListener{
 
 	
 	private void delete() {
-		String name = JOptionPane.showInputDialog(this,"»èÁ¦ÇÒ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+		String name = JOptionPane.showInputDialog(this,"ì‚­ì œí•  ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
 		for(int i = 0; i < model.getRowCount(); i++) {
 			if(name.equals(model.getValueAt(i, 1))) {
 				model.removeRow(i);
@@ -105,36 +105,36 @@ public class JTableEx2TP extends JFrame implements ActionListener{
 			}
 		}
 		if(count == 0) {
-			JOptionPane.showMessageDialog(this, "Ã£´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù");
+			JOptionPane.showMessageDialog(this, "ì°¾ëŠ” ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤");
 		}else {
-			JOptionPane.showMessageDialog(this,"»èÁ¦ ¿Ï·á!");
+			JOptionPane.showMessageDialog(this,"ì‚­ì œ ì™„ë£Œ!");
 		}
 		
 	}
 
 
 	private void insert() {
-		String id = JOptionPane.showInputDialog(this, "¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		String id = JOptionPane.showInputDialog(this, "ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		
-		//Ãë¼Ò¹öÆ° ¶Ç´Â Ã¢ÀÌ ´İÈ÷¸é null
+		//ì·¨ì†Œë²„íŠ¼ ë˜ëŠ” ì°½ì´ ë‹«íˆë©´ null
 		if(id == null) {
 			return;
 		}
 		if(id.length() == 0) {
-			JOptionPane.showMessageDialog(this, "¾ÆÀÌµğ´Â ÇÊ¼ö Ç×¸ñÀÔ´Ï´Ù");
+			JOptionPane.showMessageDialog(this, "ì•„ì´ë””ëŠ” í•„ìˆ˜ í•­ëª©ì…ë‹ˆë‹¤");
 			return;
 		}
 		
 		for(int i = 0; i < model.getRowCount(); i++) {
 			if(id.equals(model.getValueAt(i, 0))) {
-				JOptionPane.showMessageDialog(this, "»ç¿ëÁßÀÎ ¾ÆÀÌµğÀÔ´Ï´Ù");
+				JOptionPane.showMessageDialog(this, "ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë””ì…ë‹ˆë‹¤");
 				return;
 			}
 		}
 		
-		String name = JOptionPane.showInputDialog(this,"ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
-		String pwd = JOptionPane.showInputDialog(this,"ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-		String tel = JOptionPane.showInputDialog(this,"ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		String name = JOptionPane.showInputDialog(this,"ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
+		String pwd = JOptionPane.showInputDialog(this,"ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		String tel = JOptionPane.showInputDialog(this,"ì „í™”ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		
 		Vector<String> v = new Vector<String>();
 		v.add(id);
@@ -143,7 +143,7 @@ public class JTableEx2TP extends JFrame implements ActionListener{
 		v.add(tel);
 		
 		model.addRow(v);
-		JOptionPane.showMessageDialog(this,"Ãß°¡¿Ï·á");
+		JOptionPane.showMessageDialog(this,"ì¶”ê°€ì™„ë£Œ");
 	}
 
 

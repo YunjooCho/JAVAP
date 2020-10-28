@@ -1,10 +1,10 @@
 package p09_interface;
 
 public interface InterA {
-	public static final String NAME = "È«±æµ¿";
+	public static final String NAME = "í™ê¸¸ë™";
 	public int AGE = 25;
 	
-	public abstract void aa(); //Ãß»ó¸Ş¼Òµå
-	public void bb(); //Ãß»ó¸Ş¼Òµå
-	//public void cc() {}; - error : {}°¡ ÀÖÀ¸¸é ÀÏ¹İ ¸Ş¼ÒµåÀÌ¹Ç·Î ¿¡·¯¹ß»ı
+	public abstract void aa(); //ì¶”ìƒë©”ì†Œë“œ
+	public void bb(); //ì¶”ìƒë©”ì†Œë“œ
+	//public void cc() {}; - error : {}ê°€ ìˆìœ¼ë©´ ì¼ë°˜ ë©”ì†Œë“œì´ë¯€ë¡œ ì—ëŸ¬ë°œìƒ
 }

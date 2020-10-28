@@ -1,13 +1,13 @@
 package exception_thread;
 
-public class MakeException extends Exception { //°³¹ßÀÚ°¡ ¸¸µç ExceptionÅ¬·¡½º(»ó¼Ó), ExceptionÀº »ó¼ÓÀ» ¹Ş¾Æ »ç¿ëÀÚÀÇ ÀÓÀÇ·Î Ã³¸®ÇÏ´Â °Íµµ °¡´É
+public class MakeException extends Exception { //ê°œë°œìê°€ ë§Œë“  Exceptioní´ë˜ìŠ¤(ìƒì†), Exceptionì€ ìƒì†ì„ ë°›ì•„ ì‚¬ìš©ìì˜ ì„ì˜ë¡œ ì²˜ë¦¬í•˜ëŠ” ê²ƒë„ ê°€ëŠ¥
 	
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private String errorMsg;
 	
 	
-	//2.»ı¼ºÀÚ(±âº»&¸Å°³º¯¼ö ÀÖ´Â »ı¼ºÀÚ) - ¸Ş½ÃÁö¸¦ ¹Ş´Â °æ¿ì¿Í ¾È ¹Ş´Â °æ¿ì¸¦ »óÁ¤
-	//ExceptionTest2Å¬·¡½ºÀÇ throw new Exception("¹üÀ§ ÃÊ°ú"); //°­Á¦·Î Exception¹ß»ı ºÎºĞ
+	//2.ìƒì„±ì(ê¸°ë³¸&ë§¤ê°œë³€ìˆ˜ ìˆëŠ” ìƒì„±ì) - ë©”ì‹œì§€ë¥¼ ë°›ëŠ” ê²½ìš°ì™€ ì•ˆ ë°›ëŠ” ê²½ìš°ë¥¼ ìƒì •
+	//ExceptionTest2í´ë˜ìŠ¤ì˜ throw new Exception("ë²”ìœ„ ì´ˆê³¼"); //ê°•ì œë¡œ Exceptionë°œìƒ ë¶€ë¶„
 	public MakeException() {}
 	
 	public MakeException(String errorMsg) {
@@ -15,7 +15,7 @@ public class MakeException extends Exception { //°³¹ßÀÚ°¡ ¸¸µç ExceptionÅ¬·¡½º(»
 	}
 	
 	
-	//3.¿À¹ö¶óÀÌµå
+	//3.ì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public String toString() {
 		//return getClass() + ":" + errorMsg;

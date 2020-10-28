@@ -7,75 +7,75 @@ import java.io.InputStreamReader;
 import day0915.Student;
 import util.ArrayUtil;
 
-//Student Å¬·¡½º ¹è¿­À» ArratUtilÀ» »ç¿ëÇØ¼­ °ü¸®ÇÏ´Â ÇÁ·Î±×·¥
+//Student í´ë˜ìŠ¤ ë°°ì—´ì„ ArratUtilì„ ì‚¬ìš©í•´ì„œ ê´€ë¦¬í•˜ëŠ” í”„ë¡œê·¸ë¨
 public class StudentEx01 {
-	private static BufferedReader bufferedReader; //¡Ú¸Ş¼Òµå¿¡¼­ »ç¿ëÇÏ°íÀÚ ÇÏ´Â ¸Å°³º¯¼ö(ÆÄ¶ó¹ÌÅÍ)°¡ ÇÊµå·Î ÀúÀåµÇ¾î ÀÖÀ¸¸é ÆÄ¶ó¹ÌÅÍ »ç¿ëÇÒ ÇÊ¿ä¾øÀÌ ¹Ù·Î °¡Á®´Ù ¾µ ¼ö ÀÖ´Ù
-												  //ÇÊµå, ÀÌÀü¿¡´Â ¸Ş¼Òµå ½ÇÇà½Ã °´Ã¼·Î ¹Ş¾Ò¾úÀ½(ÆÄ¶ó¹ÌÅÍ)
-											      //calculateSum()¿¡¼­ ÆÄ¶ó¹ÌÅÍ¸¦ »ç¿ëÇÏÁö ¾ÊÀº ÀÌÀ¯ : °ú¸ñÀÌ ÇÊµå·Î ÀúÀåµÇ¾î ÀÖ¾ú±â ¶§¹®
-												  //Null·Î ÃÊ±âÈ­
-	private static Student[] studentArray;//ÇÊµå À§¿Í °°Àº ÀÌÀ¯·á ÇÊµåÈ­ÇÔ
+	private static BufferedReader bufferedReader; //â˜…ë©”ì†Œë“œì—ì„œ ì‚¬ìš©í•˜ê³ ì í•˜ëŠ” ë§¤ê°œë³€ìˆ˜(íŒŒë¼ë¯¸í„°)ê°€ í•„ë“œë¡œ ì €ì¥ë˜ì–´ ìˆìœ¼ë©´ íŒŒë¼ë¯¸í„° ì‚¬ìš©í•  í•„ìš”ì—†ì´ ë°”ë¡œ ê°€ì ¸ë‹¤ ì“¸ ìˆ˜ ìˆë‹¤
+												  //í•„ë“œ, ì´ì „ì—ëŠ” ë©”ì†Œë“œ ì‹¤í–‰ì‹œ ê°ì²´ë¡œ ë°›ì•˜ì—ˆìŒ(íŒŒë¼ë¯¸í„°)
+											      //calculateSum()ì—ì„œ íŒŒë¼ë¯¸í„°ë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šì€ ì´ìœ  : ê³¼ëª©ì´ í•„ë“œë¡œ ì €ì¥ë˜ì–´ ìˆì—ˆê¸° ë•Œë¬¸
+												  //Nullë¡œ ì´ˆê¸°í™”
+	private static Student[] studentArray;//í•„ë“œ ìœ„ì™€ ê°™ì€ ì´ìœ ë£Œ í•„ë“œí™”í•¨
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		studentArray = new Student[0]; //¹è¿­ ÃÊ±âÈ­
-		bufferedReader = new BufferedReader(new InputStreamReader(System.in)); //ÃÊ±âÈ­
+		studentArray = new Student[0]; //ë°°ì—´ ì´ˆê¸°í™”
+		bufferedReader = new BufferedReader(new InputStreamReader(System.in)); //ì´ˆê¸°í™”
 		
-		//¸ŞÀÎ¸Ş¼Òµå¿¡¼­ ÃÊ±âÈ­, Áï »ı¼ºÀÚ¸¦ È£ÃâÇÏ°í ³ª¼­ºÎÅÍ´Â
-		//¸¸¾à ¸ŞÀÎ¸Ş¼Òµå°¡ ´Ù¸¥ ¸Ş¼Òµå¸¦ ±× ÀÌÈÄ¿¡ È£ÃâÇÏ°Ô µÈ´Ù¸é
-		//ÀÌ¹Ì ÃÊ±âÈ­°¡ µÈ »óÅÂÀÌ±â ¶§¹®¿¡ NullPointerExceptionÀÌ ¹ß»ıÇÏÁö ¾Ê°í
-		//Á¤»óÀûÀ¸·Î »ç¿ëÇÒ ¼ö ÀÖ´Ù.
+		//ë©”ì¸ë©”ì†Œë“œì—ì„œ ì´ˆê¸°í™”, ì¦‰ ìƒì„±ìë¥¼ í˜¸ì¶œí•˜ê³  ë‚˜ì„œë¶€í„°ëŠ”
+		//ë§Œì•½ ë©”ì¸ë©”ì†Œë“œê°€ ë‹¤ë¥¸ ë©”ì†Œë“œë¥¼ ê·¸ ì´í›„ì— í˜¸ì¶œí•˜ê²Œ ëœë‹¤ë©´
+		//ì´ë¯¸ ì´ˆê¸°í™”ê°€ ëœ ìƒíƒœì´ê¸° ë•Œë¬¸ì— NullPointerExceptionì´ ë°œìƒí•˜ì§€ ì•Šê³ 
+		//ì •ìƒì ìœ¼ë¡œ ì‚¬ìš©í•  ìˆ˜ ìˆë‹¤.
 		
-			showMenu();//while¹®µµ, ifÁ¶°Ç¹®µµ ¸Ş¼Òµå·Î º¸³¿
+			showMenu();//whileë¬¸ë„, ifì¡°ê±´ë¬¸ë„ ë©”ì†Œë“œë¡œ ë³´ëƒ„
 		
-	}//main¸Ş¼Òµå
+	}//mainë©”ì†Œë“œ
 	
-	private static void showMenu() throws NumberFormatException, IOException{ //¿©±â¼­ ´Ù¸¥ ¸Ş¼Òµå¸¦ È£ÃâÇÒ ¿¹Á¤, ¶Ç È£ÃâµÈ ¸Ş¼Òµå°¡ ¶Ç ´Ù¸¥ ¸Ş¼Òµå¸¦ È£Ãâ
+	private static void showMenu() throws NumberFormatException, IOException{ //ì—¬ê¸°ì„œ ë‹¤ë¥¸ ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•  ì˜ˆì •, ë˜ í˜¸ì¶œëœ ë©”ì†Œë“œê°€ ë˜ ë‹¤ë¥¸ ë©”ì†Œë“œë¥¼ í˜¸ì¶œ
 		while(true) {
-			System.out.println("ºñÆ® ¼ºÀû °ü¸® ÇÁ·Î±×·¥");
-			System.out.println("1.ÀÔ·Â  2.Ãâ·Â  3.Á¾·á");
+			System.out.println("ë¹„íŠ¸ ì„±ì  ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+			System.out.println("1.ì…ë ¥  2.ì¶œë ¥  3.ì¢…ë£Œ");
 			System.out.print("> ");
 			int userChoice = Integer.parseInt(bufferedReader.readLine());
 			if(userChoice == 1) {
-				//ÀÔ·Â¸Ş¼Òµå ½ÇÇà
+				//ì…ë ¥ë©”ì†Œë“œ ì‹¤í–‰
 				add();
 			}else if(userChoice == 2) {
-				//Ãâ·Â¸Ş¼Òµå ½ÇÇà
+				//ì¶œë ¥ë©”ì†Œë“œ ì‹¤í–‰
 				printArray();
 			}else if(userChoice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
 		}
 	}
 	
 	private static void printArray() {
 		for(int i = 0; i < studentArray.length; i++) {
-			System.out.println(studentArray[i]);//toStrongÀ¸·Î ÀÎÇØ ÁÖ¼Ò°ªÀÌ ¾Æ´Ñ °´Ã¼ ³»¿ëµéÀÌ ³ª¿À°Ô µÊ
+			System.out.println(studentArray[i]);//toStrongìœ¼ë¡œ ì¸í•´ ì£¼ì†Œê°’ì´ ì•„ë‹Œ ê°ì²´ ë‚´ìš©ë“¤ì´ ë‚˜ì˜¤ê²Œ ë¨
 		}
 	}
 	
 	
-	private static void add() throws NumberFormatException, IOException {//¹öÆÛ¸®´õ, ¹è¿­À» ÇÊµå¿¡ ³Ö¾îÁÖ¾ú±â ¶§¹®¿¡ ÆÄ¶ó¹ÌÅÍ ÀÔ·ÂÇÏÁö ¾Ê¾Æµµ »ç¿ëÇÒ ¼ö ÀÖÀ½
+	private static void add() throws NumberFormatException, IOException {//ë²„í¼ë¦¬ë”, ë°°ì—´ì„ í•„ë“œì— ë„£ì–´ì£¼ì—ˆê¸° ë•Œë¬¸ì— íŒŒë¼ë¯¸í„° ì…ë ¥í•˜ì§€ ì•Šì•„ë„ ì‚¬ìš©í•  ìˆ˜ ìˆìŒ
 		studentArray = ArrayUtil.add(studentArray, setStudentInfo());
 	}
 	
-	private static Student setStudentInfo() throws NumberFormatException, IOException {//¹öÆÛ¸®´õ¸¦ ÇÊµå¿¡ ³Ö¾îÁÖ¾ú±â ¶§¹®¿¡ ÆÄ¶ó¹ÌÅÍ ÀÔ·ÂÇÏÁö ¾Ê¾Æµµ »ç¿ëÇÒ ¼ö ÀÖÀ½
-		Student s = new Student();   //s¶ó´Â °´Ã¼¸¦ »ı¼º, ÃÊ±âÈ­(±âº»ÇüÀº 0, ÂüÁ¶ÇüÀº null)
-		System.out.print("ÇĞ»ı ÀÌ¸§: ");
-		s.setName(bufferedReader.readLine()); //nameÇÊµå°¡ private·Î Á¢±ÙÁ¦ÇÑµÇ¾îÀÖ±â ¶§¹®¿¡ setName()¸Ş¼Òµå·Î ¼³Á¤°ªÀ» ÀÔ·ÂÇØÁÜ 
+	private static Student setStudentInfo() throws NumberFormatException, IOException {//ë²„í¼ë¦¬ë”ë¥¼ í•„ë“œì— ë„£ì–´ì£¼ì—ˆê¸° ë•Œë¬¸ì— íŒŒë¼ë¯¸í„° ì…ë ¥í•˜ì§€ ì•Šì•„ë„ ì‚¬ìš©í•  ìˆ˜ ìˆìŒ
+		Student s = new Student();   //së¼ëŠ” ê°ì²´ë¥¼ ìƒì„±, ì´ˆê¸°í™”(ê¸°ë³¸í˜•ì€ 0, ì°¸ì¡°í˜•ì€ null)
+		System.out.print("í•™ìƒ ì´ë¦„: ");
+		s.setName(bufferedReader.readLine()); //nameí•„ë“œê°€ privateë¡œ ì ‘ê·¼ì œí•œë˜ì–´ìˆê¸° ë•Œë¬¸ì— setName()ë©”ì†Œë“œë¡œ ì„¤ì •ê°’ì„ ì…ë ¥í•´ì¤Œ 
 		
-		System.out.print("ÇĞ»ı ¹øÈ£: ");
+		System.out.print("í•™ìƒ ë²ˆí˜¸: ");
 		s.setId(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("±¹¾î Á¡¼ö: ");
+		System.out.print("êµ­ì–´ ì ìˆ˜: ");
 		s.setKorean(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("¿µ¾î Á¡¼ö: ");
+		System.out.print("ì˜ì–´ ì ìˆ˜: ");
 		s.setEnglish(Integer.parseInt(bufferedReader.readLine()));
 		
-		System.out.print("¼öÇĞ Á¡¼ö: ");
+		System.out.print("ìˆ˜í•™ ì ìˆ˜: ");
 		s.setMath(Integer.parseInt(bufferedReader.readLine()));
 		
-		return s;//Á¤º¸°¡ ÀÔ·ÂµÈ °´Ã¼¸¦ ¹İÈ¯
+		return s;//ì •ë³´ê°€ ì…ë ¥ëœ ê°ì²´ë¥¼ ë°˜í™˜
 	}
 }

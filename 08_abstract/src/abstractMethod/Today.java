@@ -11,77 +11,77 @@ public class Today {
 	public static void main(String[] args) throws ParseException {
 //		while(true) {
 //			Date date = new Date();
-//			System.out.println("¿À´Ã ³¯Â¥ : " + date);
-//			Thread.sleep(1000); //CPU¸¦ 1ÃÊ¾¿ ½¬µµ·Ï ÇÔ - ½º·¹µå
+//			System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + date);
+//			Thread.sleep(1000); //CPUë¥¼ 1ì´ˆì”© ì‰¬ë„ë¡ í•¨ - ìŠ¤ë ˆë“œ
 //		}
 		
 		Date date = new Date();
-		System.out.println("¿À´Ã ³¯Â¥ : " + date);
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + date);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("y³â MM¿ù ddÀÏ E¿äÀÏ hh:mm:ss");
-		//¾Ë±â ½¬¿î ³¯Â¥/½Ã°£ Çü½ÄÀ» ³ªÅ¸³»´Â ¸Ş¼Òµå(DecimalForma("#,###")¿Í À¯»ç)
-		System.out.println("¿À´Ã ³¯Â¥ : " + sdf.format(date));
-		//ÀÚ¹Ù
-		//¿ù - M, ºĞ - m
-		//¿À¶óÅ¬
-		//¿ù - m, ºĞ - mi
+		SimpleDateFormat sdf = new SimpleDateFormat("yë…„ MMì›” ddì¼ Eìš”ì¼ hh:mm:ss");
+		//ì•Œê¸° ì‰¬ìš´ ë‚ ì§œ/ì‹œê°„ í˜•ì‹ì„ ë‚˜íƒ€ë‚´ëŠ” ë©”ì†Œë“œ(DecimalForma("#,###")ì™€ ìœ ì‚¬)
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + sdf.format(date));
+		//ìë°”
+		//ì›” - M, ë¶„ - m
+		//ì˜¤ë¼í´
+		//ì›” - m, ë¶„ - mi
 		
-		//HH -24½Ã°£Á¦, hh - 12½Ã°£Á¦
+		//HH -24ì‹œê°„ì œ, hh - 12ì‹œê°„ì œ
 		System.out.println();
 		
 		
-		//ÀÔ·Â - ³» »ıÀÏ yyyyMMddHHmmss : ÀÔ·ÂÇü½Ä ÁöÁ¤(ÇÚµåÆù?)
-		//¿¹) 19910716131503
+		//ì…ë ¥ - ë‚´ ìƒì¼ yyyyMMddHHmmss : ì…ë ¥í˜•ì‹ ì§€ì •(í•¸ë“œí°?)
+		//ì˜ˆ) 19910716131503
 		SimpleDateFormat input = new SimpleDateFormat("yyyyMMddHHmmss");
-		//String birth = "19910716131503"; //String  -> DateÇüÀ¸·Î º¯È¯
+		//String birth = "19910716131503"; //String  -> Dateí˜•ìœ¼ë¡œ ë³€í™˜
 		//Date birth = (Date)"19910716131503"; 
-		//StringÅ¬·¡½ºÀÇ °ªÀ» DateÅ¬·¡½º·Î ¹ŞÀ¸·Á°í ÇÒ¶§ ¿¡·¯³²
-		//(Date)¿Í °°Àº Çüº¯È¯µµ ¾ÈµÊ
+		//Stringí´ë˜ìŠ¤ì˜ ê°’ì„ Dateí´ë˜ìŠ¤ë¡œ ë°›ìœ¼ë ¤ê³  í• ë•Œ ì—ëŸ¬ë‚¨
+		//(Date)ì™€ ê°™ì€ í˜•ë³€í™˜ë„ ì•ˆë¨
 		Date birth = input.parse("19890317190803");
-		System.out.println("³» »ıÀÏ = " + birth);
-		System.out.println("³» »ıÀÏ = " + sdf.format(birth));
+		System.out.println("ë‚´ ìƒì¼ = " + birth);
+		System.out.println("ë‚´ ìƒì¼ = " + sdf.format(birth));
 		System.out.println();
 		
-		//<<Calendar Å¬·¡½º »ı¼º¿¡ ´ëÇÏ¿© 1~3>>
-		//Calendar¸¦ »ı¼ºÇÏ¸é ½Ã½ºÅÆÀÇ ÇöÀç½Ã°£°ú ³¯Â¥¸¦ ¾ò¾î¿È
+		//<<Calendar í´ë˜ìŠ¤ ìƒì„±ì— ëŒ€í•˜ì—¬ 1~3>>
+		//Calendarë¥¼ ìƒì„±í•˜ë©´ ì‹œìŠ¤íƒ¬ì˜ í˜„ì¬ì‹œê°„ê³¼ ë‚ ì§œë¥¼ ì–»ì–´ì˜´
 		//1.Calendar cal = new Calendar(); - error
-		//CalendarÅ¬·¡½º´Â Ãß»óÅ¬·¡½º¶ó¼­ new·Î »ı¼º ºÒ°¡(javaÃ¥ Ãß»óÅ¬·¡½º, API Calendar Å¬·¡½º ÂüÁ¶) 
-		//³ª¶óº°·Î ½Ã°£,³¯Â¥ÀÇ Ç¥±â°¡ ´Ù¸£¹Ç·Î Ãß»óÅ¬·¡½ºÀÓ
+		//Calendarí´ë˜ìŠ¤ëŠ” ì¶”ìƒí´ë˜ìŠ¤ë¼ì„œ newë¡œ ìƒì„± ë¶ˆê°€(javaì±… ì¶”ìƒí´ë˜ìŠ¤, API Calendar í´ë˜ìŠ¤ ì°¸ì¡°) 
+		//ë‚˜ë¼ë³„ë¡œ ì‹œê°„,ë‚ ì§œì˜ í‘œê¸°ê°€ ë‹¤ë¥´ë¯€ë¡œ ì¶”ìƒí´ë˜ìŠ¤ì„
 		
-		//2.Ãß»ó¸Ş¼ÒµåÀÇ »ı¼º - ÀÚ½ÄÅ¬·¡½º¸¦ ÀÌ¿ëÇÏ¿© »ı¼º
-		//Calendar¸¦ »ı¼ºÇÏ¸é ÇöÀç ½Ã°£¸¸ ¾ò¾î¿Â´Ù
+		//2.ì¶”ìƒë©”ì†Œë“œì˜ ìƒì„± - ìì‹í´ë˜ìŠ¤ë¥¼ ì´ìš©í•˜ì—¬ ìƒì„±
+		//Calendarë¥¼ ìƒì„±í•˜ë©´ í˜„ì¬ ì‹œê°„ë§Œ ì–»ì–´ì˜¨ë‹¤
 		//Calendar cal = new GregorianCalendar();
 		
-		//3.¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© »ı¼º(new»ç¿ë ¾ÈÇÔ)
-		Calendar cal = Calendar.getInstance();//ÀÌ ¸Ş¼Òµå ¾È¿¡¼­ new Calendar();°¡ ÀÌ·ç¾îÁü
+		//3.ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ ìƒì„±(newì‚¬ìš© ì•ˆí•¨)
+		Calendar cal = Calendar.getInstance();//ì´ ë©”ì†Œë“œ ì•ˆì—ì„œ new Calendar();ê°€ ì´ë£¨ì–´ì§
 		
-		//¿À´Ã, Áö±İÀÇ ³¯Â¥/½Ã°£À» °¡Á®¿È
-		int year = cal.get(Calendar.YEAR); //get¸Ş¼Òµå´Â Calendar°¡ °®°íÀÖÀ½
-		int month = cal.get(Calendar.MONTH) + 1; // 0 -> 1¿ù  1 -> 2¿ù
+		//ì˜¤ëŠ˜, ì§€ê¸ˆì˜ ë‚ ì§œ/ì‹œê°„ì„ ê°€ì ¸ì˜´
+		int year = cal.get(Calendar.YEAR); //getë©”ì†Œë“œëŠ” Calendarê°€ ê°–ê³ ìˆìŒ
+		int month = cal.get(Calendar.MONTH) + 1; // 0 -> 1ì›”  1 -> 2ì›”
 		int day = cal.get(Calendar.DAY_OF_MONTH);
-		int week = cal.get(Calendar.DAY_OF_WEEK);//ÀÏ¿äÀÏ -> 1 , ¿ù¿äÀÏ -> 2
+		int week = cal.get(Calendar.DAY_OF_WEEK);//ì¼ìš”ì¼ -> 1 , ì›”ìš”ì¼ -> 2
 		
 		String dayOfWeek = null;
 		switch(week) {
-		case 1 : dayOfWeek = "ÀÏ"; break;
-		case 2 : dayOfWeek = "¿ù"; break;
-		case 3 : dayOfWeek = "È­"; break;
-		case 4 : dayOfWeek = "¼ö"; break;
-		case 5 : dayOfWeek = "¸ñ"; break;
-		case 6 : dayOfWeek = "±İ"; break;
-		case 7 : dayOfWeek = "Åä"; break;
+		case 1 : dayOfWeek = "ì¼"; break;
+		case 2 : dayOfWeek = "ì›”"; break;
+		case 3 : dayOfWeek = "í™”"; break;
+		case 4 : dayOfWeek = "ìˆ˜"; break;
+		case 5 : dayOfWeek = "ëª©"; break;
+		case 6 : dayOfWeek = "ê¸ˆ"; break;
+		case 7 : dayOfWeek = "í† "; break;
 		}
-		System.out.println("¿À´Ã ³¯Â¥ : " + year + "³â " + month + "¿ù " + day + "ÀÏ" + dayOfWeek);
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + year + "ë…„ " + month + "ì›” " + day + "ì¼" + dayOfWeek);
 		
 		
-		//¡Ú¡Ú¡Ú¡Ú¡ÚÈ®ÀÎ¿ë - ¿Ö µÇ´ÂÁö »ó¼Ó Á¤¸®ÇÏ±â
+		//â˜…â˜…â˜…â˜…â˜…í™•ì¸ìš© - ì™œ ë˜ëŠ”ì§€ ìƒì† ì •ë¦¬í•˜ê¸°
 		GregorianCalendar calendar = new GregorianCalendar();
 		int year2 = cal.get(GregorianCalendar.YEAR); 
 		int month2 = cal.get(GregorianCalendar.MONTH) + 1;
 		int day2 = cal.get(GregorianCalendar.DAY_OF_MONTH);
-		int week2 = cal.get(Calendar.DAY_OF_WEEK);//ÀÏ¿äÀÏ -> 1
-		System.out.println("¿À´Ã ³¯Â¥(GregorianCalendar) : " + year + "³â " + month + "¿ù " + day + "ÀÏ " + dayOfWeek);
-		//'¿ù'¸¸ 0ºÎÅÍ ½ÃÀÛÇÏ¹Ç·Î  '+ 1'ÇØÁà¾ß ÇÔ
+		int week2 = cal.get(Calendar.DAY_OF_WEEK);//ì¼ìš”ì¼ -> 1
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ(GregorianCalendar) : " + year + "ë…„ " + month + "ì›” " + day + "ì¼ " + dayOfWeek);
+		//'ì›”'ë§Œ 0ë¶€í„° ì‹œì‘í•˜ë¯€ë¡œ  '+ 1'í•´ì¤˜ì•¼ í•¨
 		
 	}
 

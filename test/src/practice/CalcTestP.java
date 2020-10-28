@@ -3,32 +3,32 @@ package practice;
 
 public class CalcTestP {
 	
-	public int sum(int a, int b) {//µ¡¼À ¸Ş¼Òµå - ±¸Çö
-		return a + b;             //¸Ş¼Òµå °ıÈ£ ¾È¿¡ ÀÖ´Â °ª - parameter, argument
+	public int sum(int a, int b) {//ë§ì…ˆ ë©”ì†Œë“œ - êµ¬í˜„
+		return a + b;             //ë©”ì†Œë“œ ê´„í˜¸ ì•ˆì— ìˆëŠ” ê°’ - parameter, argument
   	}
 	
-	public int sub(int a, int b) {//»¬¼À ¸Ş¼Òµå - ±¸Çö
+	public int sub(int a, int b) {//ëº„ì…ˆ ë©”ì†Œë“œ - êµ¬í˜„
 		return a - b;             
   	}
 	
-	public int mul(int a, int b) {//°ö¼À ¸Ş¼Òµå - ±¸Çö
+	public int mul(int a, int b) {//ê³±ì…ˆ ë©”ì†Œë“œ - êµ¬í˜„
 		return a * b;             
   	}
 	
-	public double div(int a, int b) {//³ª´°¼À ¸Ş¼Òµå - ±¸Çö
+	public double div(int a, int b) {//ë‚˜ëˆ—ì…ˆ ë©”ì†Œë“œ - êµ¬í˜„
 		return (double) a / b;  
   	}
 	
 	public static void main(String[] args) {
 	
 		/*
-		 *  º¯¼ö¿¡ ÀúÀåÇÏ¿© 320, 258ÀÇ ÇÕÀ» ±¸ÇÏ½Ã¿À
+		 *  ë³€ìˆ˜ì— ì €ì¥í•˜ì—¬ 320, 258ì˜ í•©ì„ êµ¬í•˜ì‹œì˜¤
 		 *  
-		 *  [½ÇÇà°á°ú]
+		 *  [ì‹¤í–‰ê²°ê³¼]
 		 *  320 + 258 = XXX
 		 *  320 - 258 = XXX(sub)
 		 *  320 * 258 = XXX(mul)
-		 *  320 / 258 = XXX(div) ¼Ò¼ıÁ¡ ÀÌÇÏ 2ÀÚ¸®
+		 *  320 / 258 = XXX(div) ì†Œìˆ«ì  ì´í•˜ 2ìë¦¬
 		 */
 		
 		int a = 320, b = 258;
@@ -46,9 +46,9 @@ public class CalcTestP {
 		System.out.println();
 
 		/* 
-		 *  µ¡¼À, »¬¼À, °ö¼À, ³ª´°¼À ¸Ş¼Òµå ¸¸µé±â
-		 *  ¼ıÀÚ´Â 25, 36
-		 *  ÇÊµå¿¡ ÀÛ¼º
+		 *  ë§ì…ˆ, ëº„ì…ˆ, ê³±ì…ˆ, ë‚˜ëˆ—ì…ˆ ë©”ì†Œë“œ ë§Œë“¤ê¸°
+		 *  ìˆ«ìëŠ” 25, 36
+		 *  í•„ë“œì— ì‘ì„±
 		 *  
 		 */
 		

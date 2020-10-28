@@ -10,16 +10,16 @@ public class TodayP {
 	public static void main(String[] args) throws ParseException {
 		
 		Date date = new Date();
-		System.out.println("¿À´Ã ³¯Â¥ : " + date);
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + date);
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("y³â MM¿ù ddÀÏ HH½Ã mmºĞ ssÃÊ");
-		System.out.println("¿À´Ã ³¯Â¥ : " + sdf.format(date));
+		SimpleDateFormat sdf = new SimpleDateFormat("yë…„ MMì›” ddì¼ HHì‹œ mmë¶„ ssì´ˆ");
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + sdf.format(date));
 		System.out.println();
 		
 		SimpleDateFormat input = new SimpleDateFormat("yyyyMMddHHmmss");
 		Date birth = input.parse("19890317190803");
-		System.out.println("³» »ıÀÏ = " + birth);
-		System.out.println("³» »ıÀÏ = " + sdf.format(birth));
+		System.out.println("ë‚´ ìƒì¼ = " + birth);
+		System.out.println("ë‚´ ìƒì¼ = " + sdf.format(birth));
 		System.out.println();
 		
 		Calendar cal = Calendar.getInstance();
@@ -31,16 +31,16 @@ public class TodayP {
 		
 		String dayOfWeek = null;
 		switch(week) {
-		case 1 : dayOfWeek = "ÀÏ"; break;
-		case 2 : dayOfWeek = "¿ù"; break;
-		case 3 : dayOfWeek = "È­"; break;
-		case 4 : dayOfWeek = "¼ö"; break;
-		case 5 : dayOfWeek = "¸ñ"; break;
-		case 6 : dayOfWeek = "±İ"; break;
-		case 7 : dayOfWeek = "Åä"; break;
+		case 1 : dayOfWeek = "ì¼"; break;
+		case 2 : dayOfWeek = "ì›”"; break;
+		case 3 : dayOfWeek = "í™”"; break;
+		case 4 : dayOfWeek = "ìˆ˜"; break;
+		case 5 : dayOfWeek = "ëª©"; break;
+		case 6 : dayOfWeek = "ê¸ˆ"; break;
+		case 7 : dayOfWeek = "í† "; break;
 		}
 		
-		System.out.println("¿À´Ã ³¯Â¥ : " + year + "³â " + month + "¿ù " + day + "ÀÏ " + dayOfWeek);
+		System.out.println("ì˜¤ëŠ˜ ë‚ ì§œ : " + year + "ë…„ " + month + "ì›” " + day + "ì¼ " + dayOfWeek);
 	}
 
 }

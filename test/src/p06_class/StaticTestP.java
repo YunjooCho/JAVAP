@@ -7,14 +7,14 @@ public class StaticTestP {
 	private static int b;
 	
 	public StaticTestP() {
-		System.out.println("±âº» »ı¼ºÀÚ");
+		System.out.println("ê¸°ë³¸ ìƒì„±ì");
 		a = 3; //this.a
 		b = 5;
 	}
 	
 	static {
-		System.out.println("static ÃÊ±âÈ­ ¿µ¿ª");
-		//a = 10; - error : ÀÎ½ºÅÏ½º º¯¼ö´Â »ı¼ºÀÚ·Î ÃÊ±âÈ­
+		System.out.println("static ì´ˆê¸°í™” ì˜ì—­");
+		//a = 10; - error : ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ëŠ” ìƒì„±ìë¡œ ì´ˆê¸°í™”
 		b = 7;
 	}
 	
@@ -25,24 +25,24 @@ public class StaticTestP {
 	
 	public void disp() {
 		System.out.println("a=" + this.a + "\t b=" + StaticTestP.b); 
-		//this.aÀÇ this´Â »ı·«°¡´É
-		//StaticTest.bÀÇ StaticTest´Â »ı·«°¡´É
+		//this.aì˜ thisëŠ” ìƒëµê°€ëŠ¥
+		//StaticTest.bì˜ StaticTestëŠ” ìƒëµê°€ëŠ¥
 	}
 	
-	public static void output() { //ÀÎ½ºÅÏ½º º¯¼öµµ, super()µµ »ç¿ëÇÒ ¼ö ¾øÀ½
+	public static void output() { //ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ë„, super()ë„ ì‚¬ìš©í•  ìˆ˜ ì—†ìŒ
 		//System.out.println("a=" + a + "\t b=" + StaticTest.b); 
-		//- error : static¸Ş¼Òµå¿¡´Â staticº¯¼ö¸¸ Á¢±Ù °¡´É
+		//- error : staticë©”ì†Œë“œì—ëŠ” staticë³€ìˆ˜ë§Œ ì ‘ê·¼ ê°€ëŠ¥
 		System.out.println("static method...");
 	}
 	
 	public static void main(String[] args) {
 		StaticTestP st = new StaticTestP();
 		//System.out.println("a=" + st.a + "\t b=" + b); 
-		//disp()¸Ş¼Òµå¿¡¼­´Â a¾ÕÀÌ »ı·« °¡´ÉÇÏ³ª ¸ŞÀÎ¸Ş¼Òµå ¾È¿¡¼­´Â ±×³É a¸¸ ÀÖÀ¸¸é Ãâ·Â ¾ÈµÊ
+		//disp()ë©”ì†Œë“œì—ì„œëŠ” aì•ì´ ìƒëµ ê°€ëŠ¥í•˜ë‚˜ ë©”ì¸ë©”ì†Œë“œ ì•ˆì—ì„œëŠ” ê·¸ëƒ¥ aë§Œ ìˆìœ¼ë©´ ì¶œë ¥ ì•ˆë¨
 		st.calc();
 		st.disp();
 		System.out.println();
-		//°á°ú°ª : a=4	 b=6(b = 8ÀÌ ¾Æ´Ô)
+		//ê²°ê³¼ê°’ : a=4	 b=6(b = 8ì´ ì•„ë‹˜)
 	}
 
 }

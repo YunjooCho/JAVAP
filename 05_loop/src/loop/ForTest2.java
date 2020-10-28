@@ -3,7 +3,7 @@ package loop;
 import java.io.IOException;
 
 /*
-¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : 2  ¡ç System.in.read()
+ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : 2  â† System.in.read()
 2*1=2
 2*2=4
 2*3=6
@@ -18,7 +18,7 @@ public class ForTest2 {
 
 	public static void main(String[] args) throws IOException {
 		
-		System.out.println("¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : ");
+		System.out.println("ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : ");
 		
 		int num = System.in.read()-48;
 		for(int i = num; i <= num; i++) {

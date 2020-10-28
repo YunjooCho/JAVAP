@@ -4,18 +4,18 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 
-//6.x¸¦ ´©¸£¸é Á¾·áÇÏ´Â Å¬·¡½º ¼³°è
-public class WindowExit implements WindowListener {//Ã¢ÀÇ È°¼ºÈ­, ºñÈ°¼ºÈ­
+//6.xë¥¼ ëˆ„ë¥´ë©´ ì¢…ë£Œí•˜ëŠ” í´ë˜ìŠ¤ ì„¤ê³„
+public class WindowExit implements WindowListener {//ì°½ì˜ í™œì„±í™”, ë¹„í™œì„±í™”
 
 	@Override
 	public void windowActivated(WindowEvent arg0) {}
 
 	@Override
-	public void windowClosed(WindowEvent arg0) {} //»çÈÄÃ³¸®
+	public void windowClosed(WindowEvent arg0) {} //ì‚¬í›„ì²˜ë¦¬
 
 	@Override
 	public void windowClosing(WindowEvent arg0) {
-		System.out.println("ÇÁ·Î±×·¥ °­Á¦ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ë¨ ê°•ì œ ì¢…ë£Œ");
 		System.exit(0);
 	}
 

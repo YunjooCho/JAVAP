@@ -2,34 +2,34 @@ package loop;
 
 
 /*
-¼ýÀÚ¸ÂÃß±â °ÔÀÓ
-1~100»çÀÌÀÇ ³­¼ö¸¦ ¹ß»ýÇÏ¿© ¸ÂÃß´Â °ÔÀÓ
+ìˆ«ìžë§žì¶”ê¸° ê²Œìž„
+1~100ì‚¬ì´ì˜ ë‚œìˆ˜ë¥¼ ë°œìƒí•˜ì—¬ ë§žì¶”ëŠ” ê²Œìž„
 
-[½ÇÇà°á°ú]
-¼ýÀÚ ÀÔ·Â : 50
-50º¸´Ù Å®´Ï´Ù
+[ì‹¤í–‰ê²°ê³¼]
+ìˆ«ìž ìž…ë ¥ : 50
+50ë³´ë‹¤ í½ë‹ˆë‹¤
 
-¼ýÀÚ ÀÔ·Â : 90
-90º¸´Ù ÀÛ½À´Ï´Ù
+ìˆ«ìž ìž…ë ¥ : 90
+90ë³´ë‹¤ ìž‘ìŠµë‹ˆë‹¤
 
 ...
 
-¼ýÀÚ ÀÔ·Â : 87
-µùµ¿µ­ xx¹ø¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù        
+ìˆ«ìž ìž…ë ¥ : 87
+ë”©ë™ëŽ… xxë²ˆë§Œì— ë§žì¶”ì…¨ìŠµë‹ˆë‹¤        
 
 continue(Y/N) : n
-ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù
+í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤
  */
 
-//XX¹ø a++ 
-//while(true){ //À§´Â while¹® ÇÏ³ª & continued¿¡¼­ while¹® 2°³
+//XXë²ˆ a++ 
+//while(true){ //ìœ„ëŠ” whileë¬¸ í•˜ë‚˜ & continuedì—ì„œ whileë¬¸ 2ê°œ
 //break;
 //}
-//for(;;){ <-¹«ÇÑ·çÇÁ
+//for(;;){ <-ë¬´í•œë£¨í”„
 //}
 //for(;true;){
 //}
-//continue(Y/N)  if¹®? - È¥ÀÚ ¸øÇÏ°ÚÀ¸¸é ³»ÀÏ ¼±»ý´ÔÀÌ¶û °°ÀÌ while ¾ÈÀÇ while
+//continue(Y/N)  ifë¬¸? - í˜¼ìž ëª»í•˜ê² ìœ¼ë©´ ë‚´ì¼ ì„ ìƒë‹˜ì´ëž‘ ê°™ì´ while ì•ˆì˜ while
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,34 +42,34 @@ public class NumberGame {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		
-		//a~b »çÀÌÀÇ ³­¼ö ¹ß»ý => (int)(math.random()*(b-a+1) + a);
-		int num = (int)(Math.random()*100)+1; //1~100»çÀÌ
+		//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(b-a+1) + a);
+		int num = (int)(Math.random()*100)+1; //1~100ì‚¬ì´
 		int inp;
 		int count = 0;
 		String yn;
 		
-		//¹Ýº¹
+		//ë°˜ë³µ
 		for(;;) {
-			//ÀÔ·Â¹Þ±â		
+			//ìž…ë ¥ë°›ê¸°		
 			while (true) {
 				
-				//¸î¹øÂ° ¼ýÀÚ¼¼±â
+				//ëª‡ë²ˆì§¸ ìˆ«ìžì„¸ê¸°
 				++count;	
-				System.out.println("¼ýÀÚ ÀÔ·Â : ");
+				System.out.println("ìˆ«ìž ìž…ë ¥ : ");
 				inp = Integer.parseInt(br.readLine());
 			
-				//ºñ±³, Ãâ·Â
+				//ë¹„êµ, ì¶œë ¥
 				if(num > inp) { 
-					System.out.println(inp + "º¸´Ù Å®´Ï´Ù");
+					System.out.println(inp + "ë³´ë‹¤ í½ë‹ˆë‹¤");
 				}else if(num < inp) {
-					System.out.println(inp + "º¸´Ù ÀÛ½À´Ï´Ù");
+					System.out.println(inp + "ë³´ë‹¤ ìž‘ìŠµë‹ˆë‹¤");
 				}else {
 					 break;
 				}	
 						
 				
 			}//while
-			System.out.println("µùµ¿µ­~" + count + "¹ø¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù");
+			System.out.println("ë”©ë™ëŽ…~" + count + "ë²ˆë§Œì— ë§žì¶”ì…¨ìŠµë‹ˆë‹¤");
 			System.out.println("--------------------------------");
 			
 			while(true) {
@@ -80,14 +80,14 @@ public class NumberGame {
 				if(yn.equals("n") || yn.equals("N") || yn.equals("y") || yn.equals("Y")) {
 					break; 
 				}else {
-					System.out.println("¿Ã¹Ù¸¥ ¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+					System.out.println("ì˜¬ë°”ë¥¸ ë¬¸ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”");
 				}
 				
-			}//continueÀÇ while
+			}//continueì˜ while
 			if(yn.equals("n") || yn.equals("N")) break;
 			
 		}//for		
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇß½À´Ï´Ù");	
+		System.out.println("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí–ˆìŠµë‹ˆë‹¤");	
 		
 	}
 

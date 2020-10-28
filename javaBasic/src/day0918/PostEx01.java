@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import util.ArrayUtil;
 
 public class PostEx01 {
-	//1. ÇÊµå¼±¾ğ
+	//1. í•„ë“œì„ ì–¸
 	private static BufferedReader bufferedReader;
 	private static Post[] postArray;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//2.¹è¿­¼±¾ğ
+		//2.ë°°ì—´ì„ ì–¸
 		bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		postArray = new Post[0];
 		
@@ -20,84 +20,84 @@ public class PostEx01 {
 		
 	}
 
-	//2.¸Ş´º ¸Ş¼Òµå
+	//2.ë©”ë‰´ ë©”ì†Œë“œ
 	private static void showMenu() throws NumberFormatException, IOException {
 	
 		while(true) {	
 			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-			System.out.println("\t°Ô   ½Ã   ÆÇ\t");
-			System.out.println("1.»õ±ÛÀÛ¼º   2.±Û¸ñ·Ï   3.Á¾·á");
+			System.out.println("\tê²Œ   ì‹œ   íŒ\t");
+			System.out.println("1.ìƒˆê¸€ì‘ì„±   2.ê¸€ëª©ë¡   3.ì¢…ë£Œ");
 			System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-			System.out.print("¸Ş´º ¼±ÅÃ> ");
+			System.out.print("ë©”ë‰´ ì„ íƒ> ");
 			
-			//¸Ş´º¼±ÅÃ
+			//ë©”ë‰´ì„ íƒ
 			int userChoice = Integer.parseInt(bufferedReader.readLine());
 			if(userChoice == 1) {
-				//ÀÛ¼ºÇÏ±â
+				//ì‘ì„±í•˜ê¸°
 				add();
 			}else if(userChoice == 2) {
-				//¸ñ·Ïº¸±â
+				//ëª©ë¡ë³´ê¸°
 				printArray();
 			}else if(userChoice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Ş´º¸¦ ´Ù½Ã ¼±ÅÃÇØÁÖ¼¼¿ä!");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ë¥¼ ë‹¤ì‹œ ì„ íƒí•´ì£¼ì„¸ìš”!");
 			}
 			
-		}//¸Ş´º while¹®	
-	}//¸Ş´º ¸Ş¼Òµå
+		}//ë©”ë‰´ whileë¬¸	
+	}//ë©”ë‰´ ë©”ì†Œë“œ
 
 	
-	//3.±ÛÀ» ÀÛ¼ºÇÏ´Â ¸Ş¼Òµå(ÀÔ·ÂÇÏ´Â ¸Ş¼Òµå) - °´Ã¼Á¤º¸¸¦ ÀÔ·ÂÇÏ´Â ¸Ş¼Òµå
+	//3.ê¸€ì„ ì‘ì„±í•˜ëŠ” ë©”ì†Œë“œ(ì…ë ¥í•˜ëŠ” ë©”ì†Œë“œ) - ê°ì²´ì •ë³´ë¥¼ ì…ë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	private static Post setPostInfo() throws IOException {
 		Post p = new Post();
-		System.out.print("Á¦¸ñ: ");
+		System.out.print("ì œëª©: ");
 		p.setTitle(bufferedReader.readLine());
-		System.out.print("³»¿ë: ");
+		System.out.print("ë‚´ìš©: ");
 		p.setContents(bufferedReader.readLine());
-		System.out.print("ÀÛ¼ºÀÚ: ");
+		System.out.print("ì‘ì„±ì: ");
 		p.setWriter(bufferedReader.readLine());
 		
 		return p;
 		
-	}//setPostInfor¸Ş¼Òµå
+	}//setPostInforë©”ì†Œë“œ
 	
 	
-	//4.È®ÀåµÈ ¹è¿­¿¡ °´Ã¼Á¤º¸¸¦ Ãß°¡·Î ÀÔ·ÂÇÏ´Â ¸Ş¼Òµå
+	//4.í™•ì¥ëœ ë°°ì—´ì— ê°ì²´ì •ë³´ë¥¼ ì¶”ê°€ë¡œ ì…ë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	private static void add() throws IOException {
 		postArray = ArrayUtil.add(postArray, setPostInfo());
 	}
 	
 	
-	//5.ÀÛ¼ºµÈ ±Û ¸ñ·ÏÀ» °£·«ÇÏ°Ô º¸¿©ÁÖ´Â ¸Ş¼Òµå
+	//5.ì‘ì„±ëœ ê¸€ ëª©ë¡ì„ ê°„ëµí•˜ê²Œ ë³´ì—¬ì£¼ëŠ” ë©”ì†Œë“œ
 	private static void printArray() throws NumberFormatException, IOException {
 		
-		System.out.printf(" ¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n");
-		System.out.printf(" ¦¢   ¹øÈ£          ±ÛÁ¦¸ñ       ¦¢\n");
-		System.out.printf(" ¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n");
+		System.out.printf(" â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
+		System.out.printf(" â”‚   ë²ˆí˜¸          ê¸€ì œëª©       â”‚\n");
+		System.out.printf(" â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
 		for(int i = 0; i < postArray.length; i++) {
 		System.out.printf("   %d      %s     \n", (i+1), postArray[i].getTitle());
 		}
-		System.out.println("°³º° ¿­¶÷À» ¿øÇÏ´Â ¹øÈ£¸¦ ¼±ÅÃ(0Àº ÀüÃ¼¸Ş´º·Î µ¹¾Æ°¡±â)");
+		System.out.println("ê°œë³„ ì—´ëŒì„ ì›í•˜ëŠ” ë²ˆí˜¸ë¥¼ ì„ íƒ(0ì€ ì „ì²´ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°)");
 		System.out.print("> ");
 		int selectNumber = validateNumber(0, postArray.length) - 1;
 		if (selectNumber == -1) {
-			System.out.println("ÀüÃ¼¸Ş´º·Î µ¹¾Æ°©´Ï´Ù");
+			System.out.println("ì „ì²´ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 		}else {
-			//»ó¼¼º¸±â ¸Ş¼Òµå È£Ãâ
+			//ìƒì„¸ë³´ê¸° ë©”ì†Œë“œ í˜¸ì¶œ
 			printOne(selectNumber);
 		}
 		
 		
-	}//printArray¸Ş¼Òµå
+	}//printArrayë©”ì†Œë“œ
 	
 	
-	//6.ÀÔ·Â °ªÀÌ À¯È¿ÇÑ °ªÀÎÁö È®ÀÎÇÏ´Â ¸Ş¼Òµå
+	//6.ì…ë ¥ ê°’ì´ ìœ íš¨í•œ ê°’ì¸ì§€ í™•ì¸í•˜ëŠ” ë©”ì†Œë“œ
 	private static int validateNumber(int minimum, int maximum) throws NumberFormatException, IOException {
 		int number = Integer.parseInt(bufferedReader.readLine()); 
 		if( number < minimum || number > maximum) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			number = Integer.parseInt(bufferedReader.readLine()); 
 		}
 		
@@ -106,16 +106,16 @@ public class PostEx01 {
 	}
 	
 	
-	//7.»ó¼¼º¸±â ¸Ş¼Òµå
+	//7.ìƒì„¸ë³´ê¸° ë©”ì†Œë“œ
 	private static void printOne(int index) throws NumberFormatException, IOException {
 		
-		System.out.printf("<%d¹ø °Ô ½Ã ±Û >\n", (index+1));
-		System.out.printf("Á¦¸ñ : %s\n", postArray[index].getTitle());
-		System.out.printf("³»¿ë : %s\n", postArray[index].getContents());
-		System.out.printf("ÀÛ¼ºÀÚ : %s\n", postArray[index].getWriter());
+		System.out.printf("<%dë²ˆ ê²Œ ì‹œ ê¸€ >\n", (index+1));
+		System.out.printf("ì œëª© : %s\n", postArray[index].getTitle());
+		System.out.printf("ë‚´ìš© : %s\n", postArray[index].getContents());
+		System.out.printf("ì‘ì„±ì : %s\n", postArray[index].getWriter());
 		System.out.println();
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("1.¼öÁ¤    2.  »èÁ¦    3. ±Û¸ñ·Ï");
+		System.out.println("1.ìˆ˜ì •    2.  ì‚­ì œ    3. ê¸€ëª©ë¡");
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=");
 		System.out.print("> ");
 		int modideleretu = validateNumber(1,3);
@@ -129,23 +129,23 @@ public class PostEx01 {
 	}
 	
 	
-	//8.¼öÁ¤ÇÏ´Â ¸Ş¼Òµå
+	//8.ìˆ˜ì •í•˜ëŠ” ë©”ì†Œë“œ
 	private static void update(int index) throws IOException {
 		
-		System.out.print("Á¦¸ñ: ");
+		System.out.print("ì œëª©: ");
 		postArray[index].setTitle(bufferedReader.readLine());
-		System.out.print("³»¿ë: ");
+		System.out.print("ë‚´ìš©: ");
 		postArray[index].setContents(bufferedReader.readLine());
-		System.out.print("ÀÛ¼ºÀÚ: ");
+		System.out.print("ì‘ì„±ì: ");
 		postArray[index].setWriter(bufferedReader.readLine());	
 
 		printOne(index);
 	}
 	
 	
-	//9.»èÁ¦ÇÏ´Â ¸Ş¼Òµå
+	//9.ì‚­ì œí•˜ëŠ” ë©”ì†Œë“œ
 	private static void delete(int index) throws IOException {
-		System.out.println("ÇØ´ç °Ô½Ã±ÛÀ» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(Y/N)");
+		System.out.println("í•´ë‹¹ ê²Œì‹œê¸€ì„ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N)");
 		System.out.print("> ");
 		String yn = bufferedReader.readLine().toUpperCase();
 		if(yn.equals("Y")) {
@@ -154,11 +154,11 @@ public class PostEx01 {
 		}else if(yn.equals("N")) {
 			printOne(index);
 		}else {
-			System.out.println("Àß¸ø ¼±ÅÃÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ¼±ÅÃÇÏ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì„ íƒí•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì„ íƒí•˜ì„¸ìš”.");
 		}
 	}
 
-}//PostEx01Å¬·¡½º
+}//PostEx01í´ë˜ìŠ¤
 
 
 

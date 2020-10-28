@@ -1,13 +1,13 @@
 package collection;
 
-class GenericTest2<T>{ //<T> : ÀÌ Å¬·¡½º´Â ¾î¶² Å¸ÀÔÀ» »ç¿ëÇÒÁö ¼³Á¤ÇÏÁö ¾Ê¾ÒÀ½À» ÀÇ¹Ì
-	//ÇÊµå
-	private T a; //Å¸ÀÔ(int, boolean, String µîµî)À» ¼±¾ğÇÏ´Â ´ë½Å, T¸¦ ÀÔ·Â
+class GenericTest2<T>{ //<T> : ì´ í´ë˜ìŠ¤ëŠ” ì–´ë–¤ íƒ€ì…ì„ ì‚¬ìš©í• ì§€ ì„¤ì •í•˜ì§€ ì•Šì•˜ìŒì„ ì˜ë¯¸
+	//í•„ë“œ
+	private T a; //íƒ€ì…(int, boolean, String ë“±ë“±)ì„ ì„ ì–¸í•˜ëŠ” ëŒ€ì‹ , Të¥¼ ì…ë ¥
 	
-	//»ı¼ºÀÚ
-	public GenericTest2(T a) {//String a´Â ¿¡·¯
-							  //»ı¼ºÀÚ¿Í setter°¡ ÇÏ´Â ¿ªÇÒÀÌ °°À½
-							  //´Ù¸¥Á¡Àº »ı¼ºÀÚ´Â »ı¼º½Ã ÇÑ¹ø¸¸ ÃÊ±âÈ­, setter´Â ¾ğÁ¦µçÁö ¿©·¯¹ø ÃÊ±âÈ­ °¡´É
+	//ìƒì„±ì
+	public GenericTest2(T a) {//String aëŠ” ì—ëŸ¬
+							  //ìƒì„±ìì™€ setterê°€ í•˜ëŠ” ì—­í• ì´ ê°™ìŒ
+							  //ë‹¤ë¥¸ì ì€ ìƒì„±ìëŠ” ìƒì„±ì‹œ í•œë²ˆë§Œ ì´ˆê¸°í™”, setterëŠ” ì–¸ì œë“ ì§€ ì—¬ëŸ¬ë²ˆ ì´ˆê¸°í™” ê°€ëŠ¥
 		this.a = a;
 	}
 	
@@ -22,22 +22,22 @@ class GenericTest2<T>{ //<T> : ÀÌ Å¬·¡½º´Â ¾î¶² Å¸ÀÔÀ» »ç¿ëÇÒÁö ¼³Á¤ÇÏÁö ¾Ê¾ÒÀ½À
 public class GenericMain2 {
 
 	public static void main(String[] args) {
-		GenericTest2<?> aa = new GenericTest2<String>("È«±æµ¿"); 
-		//new GenericTest2<String>();±âº» »ı¼ºÀÚ - Å¬·¡½º ¾È¿¡ »ı¼ºÀÚ°¡ ÇÏ³ªµµ ¾øÀ¸¸é ÀÚµ¿À¸·Î »ı¼ºµÊ 
-		// <?> ¾È¿¡ ÀÖ´Â ¾ÖµéÀ» Object·Î ÀâÈ÷°Ô µÊ(Object·Î Çüº¯È¯ ÇÑ »óÅÂ)
-		// ¾î¶² Å¸ÀÔÀÌµç ¹ŞÀ» ¼ö ÀÖ°Ô µÊ
-		//aa.setA("È«±æµ¿"); - error : ¹İµå½Ã »ı¼ºÀÚ¸¦ ÅëÇØ¼­¸¸ µ¥ÀÌÅÍ°¡ Àü´ŞµÊ(setA()¸Ş¼Òµå´Â ºÒ°¡´É)
-		//»ı¼ºÀÚ¸¦ ÅëÇØ¼­¸¸ µ¥ÀÌÅÍ¸¦ Àü´ŞÇÏ´Â ÀÌÀ¯ : <?>ÀÇ Æ¯Â¡
+		GenericTest2<?> aa = new GenericTest2<String>("í™ê¸¸ë™"); 
+		//new GenericTest2<String>();ê¸°ë³¸ ìƒì„±ì - í´ë˜ìŠ¤ ì•ˆì— ìƒì„±ìê°€ í•˜ë‚˜ë„ ì—†ìœ¼ë©´ ìë™ìœ¼ë¡œ ìƒì„±ë¨ 
+		// <?> ì•ˆì— ìˆëŠ” ì• ë“¤ì„ Objectë¡œ ì¡íˆê²Œ ë¨(Objectë¡œ í˜•ë³€í™˜ í•œ ìƒíƒœ)
+		// ì–´ë–¤ íƒ€ì…ì´ë“  ë°›ì„ ìˆ˜ ìˆê²Œ ë¨
+		//aa.setA("í™ê¸¸ë™"); - error : ë°˜ë“œì‹œ ìƒì„±ìë¥¼ í†µí•´ì„œë§Œ ë°ì´í„°ê°€ ì „ë‹¬ë¨(setA()ë©”ì†Œë“œëŠ” ë¶ˆê°€ëŠ¥)
+		//ìƒì„±ìë¥¼ í†µí•´ì„œë§Œ ë°ì´í„°ë¥¼ ì „ë‹¬í•˜ëŠ” ì´ìœ  : <?>ì˜ íŠ¹ì§•
 
 		
-		//String name = aa.getA(); - error : aa °´Ã¼´Â Áö±İ StringÀÌ ¾Æ´Ñ ObjectÅ¸ÀÔÀÓ
-		String name = (String)aa.getA(); //ÀÚ½Ä -> ºÎ¸ğ »ç¿ëÇÏ±â À§ÇØ¼± Çüº¯È¯ -> ÀÚ½Ä = (ÀÚ½Ä)ºÎ¸ğ
-		System.out.println("ÀÌ¸§ = " + name); 
-		//new GenericTest2<String>("È«±æµ¿")»ı¼ºÀÚ¿¡¼­ ÃÊ±âÈ­ÇÑ ³»¿ëÀÌ Ãâ·ÂµÊ
+		//String name = aa.getA(); - error : aa ê°ì²´ëŠ” ì§€ê¸ˆ Stringì´ ì•„ë‹Œ Objectíƒ€ì…ì„
+		String name = (String)aa.getA(); //ìì‹ -> ë¶€ëª¨ ì‚¬ìš©í•˜ê¸° ìœ„í•´ì„  í˜•ë³€í™˜ -> ìì‹ = (ìì‹)ë¶€ëª¨
+		System.out.println("ì´ë¦„ = " + name); 
+		//new GenericTest2<String>("í™ê¸¸ë™")ìƒì„±ìì—ì„œ ì´ˆê¸°í™”í•œ ë‚´ìš©ì´ ì¶œë ¥ë¨
 		
 		GenericTest2<?> bb = new GenericTest2<Integer>(25);
-		int age = (int)bb.getA(); //autoUnboxing - ¿ø·¡´Â int°¡ ¾Æ´Ñ Integer¸¦ ÀÔ·ÂÇØ¾ßÇÔ
-		System.out.println("³ªÀÌ = " + age);
+		int age = (int)bb.getA(); //autoUnboxing - ì›ë˜ëŠ” intê°€ ì•„ë‹Œ Integerë¥¼ ì…ë ¥í•´ì•¼í•¨
+		System.out.println("ë‚˜ì´ = " + age);
 		
 	}
 

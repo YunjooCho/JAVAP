@@ -2,9 +2,9 @@ package day0910P;
 
 import java.util.Random;
 
-//·Î¶Ç¹øÈ£ Á¦ÀÛ±â
-//·Î¶Ç ¹øÈ£´Â 1~45±îÁö 6°³ÀÇ ¼ıÀÚ°¡ ÇÊ¿äÇÏ´Ï±î
-//¿ì¸®°¡ ¹Ì¸® »ó¼ö¸¦ ¸¸µé¾î³õÀÚ
+//ë¡œë˜ë²ˆí˜¸ ì œì‘ê¸°
+//ë¡œë˜ ë²ˆí˜¸ëŠ” 1~45ê¹Œì§€ 6ê°œì˜ ìˆ«ìê°€ í•„ìš”í•˜ë‹ˆê¹Œ
+//ìš°ë¦¬ê°€ ë¯¸ë¦¬ ìƒìˆ˜ë¥¼ ë§Œë“¤ì–´ë†“ì
 
 public class Ex09LottoNumbersP {
 	final static int SIZE = 6;
@@ -12,31 +12,31 @@ public class Ex09LottoNumbersP {
 	public static void main(String[] args) {
 		int[] lottoNumbers = new int[SIZE];
 		
-		//³­¼ö
+		//ë‚œìˆ˜
 		Random random = new Random();
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			lottoNumbers[i] = random.nextInt(MAX) + 1;
 		}
-		System.out.println("³­¼ö »ı¼º Á÷ÈÄ");
+		System.out.println("ë‚œìˆ˜ ìƒì„± ì§í›„");
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			System.out.println(lottoNumbers[i]);
 		}
 		
-		//Áßº¹Á¦°Å
+		//ì¤‘ë³µì œê±°
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			for(int j = 0; j < lottoNumbers.length; j++) {
 				if(i != j && lottoNumbers[i] == lottoNumbers[j]) {
-					lottoNumbers[i] = random.nextInt(MAX) + 1; //i¿¡ »õ·Î¿î °ªÀ» ³ÖÀ½
+					lottoNumbers[i] = random.nextInt(MAX) + 1; //iì— ìƒˆë¡œìš´ ê°’ì„ ë„£ìŒ
 					j = -1;
 				}
 			}
 		}
-		System.out.println("Áßº¹ Á¦°Å ÈÄ");
+		System.out.println("ì¤‘ë³µ ì œê±° í›„");
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			System.out.println(lottoNumbers[i]);
 		}
 		
-		//Á¤·Ä
+		//ì •ë ¬
 		for(int i = 0; i < lottoNumbers.length - 1; i++) {
 			if(lottoNumbers[i] > lottoNumbers[i+1]) {
 				int temp = lottoNumbers[i];
@@ -45,7 +45,7 @@ public class Ex09LottoNumbersP {
 				i = -1;
 			}
 		}
-		System.out.println("Á¤·Ä ÈÄ");
+		System.out.println("ì •ë ¬ í›„");
 		for(int i = 0; i < lottoNumbers.length; i++) {
 			System.out.println(lottoNumbers[i]);
 		}

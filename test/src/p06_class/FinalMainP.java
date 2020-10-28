@@ -1,30 +1,30 @@
 package p06_class;
 
 public class FinalMainP {
-	public final String FRUIT = "»ç°ú";
+	public final String FRUIT = "ì‚¬ê³¼";
 	public final String FRUIT2;
 	
-	public static final String ANIMAL = "»çÀÚ";
+	public static final String ANIMAL = "ì‚¬ì";
 	public static final String ANIMAL2;
-	public final String ANIMAL3 = "°í¾çÀÌ";
+	public final String ANIMAL3 = "ê³ ì–‘ì´";
 	
-	public FinalMainP() { //staticÀÌ ¼±¾ğµÇÁö ¾ÊÀº ÇÊµå¿¡ ´ëÇØ¼­´Â »ı¼ºÀÚ·Î ÃÊ±âÈ­
-		FRUIT2 = "µş±â";
-		//ANIMAL2 = "±â¸°"; - error : ÆÄÀÌ³Î ÇÊµåÀÎ  ANIMALS2´Â ÇÒ´çÇÒ ¼ö ¾ø½À´Ï´Ù,
+	public FinalMainP() { //staticì´ ì„ ì–¸ë˜ì§€ ì•Šì€ í•„ë“œì— ëŒ€í•´ì„œëŠ” ìƒì„±ìë¡œ ì´ˆê¸°í™”
+		FRUIT2 = "ë”¸ê¸°";
+		//ANIMAL2 = "ê¸°ë¦°"; - error : íŒŒì´ë„ í•„ë“œì¸  ANIMALS2ëŠ” í• ë‹¹í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤,
 	}
 	
 	static {
-		ANIMAL2 = "±â¸°";//staticÀÌ ¼±¾ğµÈ º¯¼öÀÇ ÃÊ±âÈ­
+		ANIMAL2 = "ê¸°ë¦°";//staticì´ ì„ ì–¸ëœ ë³€ìˆ˜ì˜ ì´ˆê¸°í™”
 	}
 	
 	public static void main(String[] args) {
 		final int AGE = 10;
-		//AGE++; - error! finalÀÌ ¼±¾ğµÈ »ó¼ö °ªÀº º¯ÇÒ ¼ö ¾øÀ½
-		System.out.println("»ó¼ö = " + AGE);
+		//AGE++; - error! finalì´ ì„ ì–¸ëœ ìƒìˆ˜ ê°’ì€ ë³€í•  ìˆ˜ ì—†ìŒ
+		System.out.println("ìƒìˆ˜ = " + AGE);
 		
 		final int AGE2;
-		AGE2 = 20; //Ã³À½ ÃÊ±âÈ­
-		//AGE2 = 30; - ÀÌ¹Ì °ªÀÌ ÇÒ´çµÇ¾î ÀÖ´Â »ó¼ö´Â °ª º¯°æÀÌ ºÒ°¡´É
+		AGE2 = 20; //ì²˜ìŒ ì´ˆê¸°í™”
+		//AGE2 = 30; - ì´ë¯¸ ê°’ì´ í• ë‹¹ë˜ì–´ ìˆëŠ” ìƒìˆ˜ëŠ” ê°’ ë³€ê²½ì´ ë¶ˆê°€ëŠ¥
 
 		FinalMainP fm = new FinalMainP();
 		System.out.println("FRUIT = " + fm.FRUIT);

@@ -1,18 +1,18 @@
 package p12_exception;
 
-public class MakeExceptionP extends Exception { //°³¹ßÀÚ°¡ ¸¸µç ExceptionÅ¬·¡½º(»ó¼Ó) - ¿¹¿ÜÃ³¸®¸¦ »ó¼ÓÀ» ¹Ş¾Æ
+public class MakeExceptionP extends Exception { //ê°œë°œìê°€ ë§Œë“  Exceptioní´ë˜ìŠ¤(ìƒì†) - ì˜ˆì™¸ì²˜ë¦¬ë¥¼ ìƒì†ì„ ë°›ì•„
 	
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private String errorMsg;
 
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public MakeExceptionP() {}
 	
 	public MakeExceptionP(String errorMsg) {
 		this.errorMsg = errorMsg;
 	}
 	
-	//3.¿À¹ö¶óÀÌµå
+	//3.ì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public String toString() {
 		return errorMsg;

@@ -4,18 +4,18 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//¸®ÅÏ Å¸ÀÔÀÌ ¾ø´Â ¸Ş¼Òµå
-//±×¸®°í ¸Ş¼Òµå Áß°£¿¡ ¸®ÅÏÇÏ´Â ¸Ş¼Òµå
+//ë¦¬í„´ íƒ€ì…ì´ ì—†ëŠ” ë©”ì†Œë“œ
+//ê·¸ë¦¬ê³  ë©”ì†Œë“œ ì¤‘ê°„ì— ë¦¬í„´í•˜ëŠ” ë©”ì†Œë“œ
 public class Ex05Method02 {
-	//1. ¸®ÅÏ Å¸ÀÔÀÌ ¾ø´Â ¸Ş¼Òµå
-	//	  ¾Æ¹«°Íµµ ¸®ÅÏÇÏÁö ¾ÊÀ» ¶§¿¡´Â void¶ó°í Àû¾îÁÖ°í
-	//	  ±×·¯ÇÑ °æ¿ì¿£ return¸í·É¾î¸¦ ¾²Áö ¾Ê´Â´Ù.
+	//1. ë¦¬í„´ íƒ€ì…ì´ ì—†ëŠ” ë©”ì†Œë“œ
+	//	  ì•„ë¬´ê²ƒë„ ë¦¬í„´í•˜ì§€ ì•Šì„ ë•Œì—ëŠ” voidë¼ê³  ì ì–´ì£¼ê³ 
+	//	  ê·¸ëŸ¬í•œ ê²½ìš°ì—” returnëª…ë ¹ì–´ë¥¼ ì“°ì§€ ì•ŠëŠ”ë‹¤.
 	static void showMenu() {
 		System.out.println("----------------------");
-		System.out.println("ºñÆ®°íµîÇĞ±³ ¼ºÀû°ü¸® ÇÁ·Î±×·¥");
-		System.out.println("\t1.ÀÔ·Â");
-		System.out.println("\t2.Ãâ·Â");
-		System.out.println("\t3.Á¾·á");
+		System.out.println("ë¹„íŠ¸ê³ ë“±í•™êµ ì„±ì ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		System.out.println("\t1.ì…ë ¥");
+		System.out.println("\t2.ì¶œë ¥");
+		System.out.println("\t3.ì¢…ë£Œ");
 	}
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
@@ -26,65 +26,65 @@ public class Ex05Method02 {
 		String name = new String();
 		
 		while(true) {
-			showMenu(); //showMenu¸Ş¼Òµå
+			showMenu(); //showMenuë©”ì†Œë“œ
 			int userChoice = Integer.parseInt(bufferedReader.readLine());
 			if(userChoice == 1) {
-				//ÀÔ·Â ¸Ş¼Òµå ½ÇÇà
+				//ì…ë ¥ ë©”ì†Œë“œ ì‹¤í–‰
 				
-				//Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­ À¯È¿ÇÑ Á¡¼ö¸¦ ¸®ÅÏÇØÁÖ´Â ¸Ş¼Òµå¸¦ ¸¸µé¾î¼­
-				//±¹¿µ¼ö Á¡¼ö¿¡ ÀÔ·Â ½ÃÅ°½Ã¿À
-				System.out.print("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+				//ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ ìœ íš¨í•œ ì ìˆ˜ë¥¼ ë¦¬í„´í•´ì£¼ëŠ” ë©”ì†Œë“œë¥¼ ë§Œë“¤ì–´ì„œ
+				//êµ­ì˜ìˆ˜ ì ìˆ˜ì— ì…ë ¥ ì‹œí‚¤ì‹œì˜¤
+				System.out.print("ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 				name = bufferedReader.readLine();
 				
-				System.out.print("±¹¾î ");
-				korean = validateScore(bufferedReader); //ÀÔ·Â¿ëÀÌ ¾Æ´Ñ ¸Ş¼Òµå·Î °ªÀ» ³Ñ°ÜÁÖ±â À§ÇÑ ³»¿ë
-				//korean¿¡ validateScoreÀÇ ¸Ş¼Òµå °á°ú°ª(score)ÀÌ ÀúÀå
+				System.out.print("êµ­ì–´ ");
+				korean = validateScore(bufferedReader); //ì…ë ¥ìš©ì´ ì•„ë‹Œ ë©”ì†Œë“œë¡œ ê°’ì„ ë„˜ê²¨ì£¼ê¸° ìœ„í•œ ë‚´ìš©
+				//koreanì— validateScoreì˜ ë©”ì†Œë“œ ê²°ê³¼ê°’(score)ì´ ì €ì¥
 				
-				System.out.print("¿µ¾î ");
-				english = validateScore(bufferedReader);//ÀÔ·Â¿ëÀÌ ¾Æ´Ñ ¸Ş¼Òµå·Î °ªÀ» ³Ñ°ÜÁÖ±â À§ÇÑ ³»¿ë
+				System.out.print("ì˜ì–´ ");
+				english = validateScore(bufferedReader);//ì…ë ¥ìš©ì´ ì•„ë‹Œ ë©”ì†Œë“œë¡œ ê°’ì„ ë„˜ê²¨ì£¼ê¸° ìœ„í•œ ë‚´ìš©
 				
-				System.out.print("¼öÇĞ ");
-				math = validateScore(bufferedReader);//ÀÔ·Â¿ëÀÌ ¾Æ´Ñ ¸Ş¼Òµå·Î °ªÀ» ³Ñ°ÜÁÖ±â À§ÇÑ ³»¿ë
+				System.out.print("ìˆ˜í•™ ");
+				math = validateScore(bufferedReader);//ì…ë ¥ìš©ì´ ì•„ë‹Œ ë©”ì†Œë“œë¡œ ê°’ì„ ë„˜ê²¨ì£¼ê¸° ìœ„í•œ ë‚´ìš©
 				
 				
 				
 			}else if(userChoice == 2) {
-				//Ãâ·Â ¸Ş¼Òµå ½ÇÇà
+				//ì¶œë ¥ ë©”ì†Œë“œ ì‹¤í–‰
 				
-				//ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â ÀÌ¸§, ±¹¿µ¼ö Á¡¼ö¸¦
-				//¿¹»Ú°Ô Ãâ·ÂÇÏ´Â ¸Ş¼Òµå¸¦ ÀÛ¼ºÇÏ½Ã¿À
+				//íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ ì´ë¦„, êµ­ì˜ìˆ˜ ì ìˆ˜ë¥¼
+				//ì˜ˆì˜ê²Œ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œë¥¼ ì‘ì„±í•˜ì‹œì˜¤
 				printScore(name, korean, english, math);
 				
 			}else if(userChoice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}
 		}
 	}
 	static int validateScore(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-	//¿ÜºÎ·ÎºÎÅÍ BufferedReaderº¯¼ö¸¦ ÇÏ³ª ¹Ş¾Æ¿Í¼­ »ç¿ë
-	//main¸Ş¼Òµå¿¡ ÀÖ´Â korean, english, math¸¦ ¹Ş¾Æ¿Í score¿¡ ´ëÀÔ
-	//Å°º¸µå·Î ÀÔ·ÂÇÑ Á¡¼ö´Â ¿©±â¼­ ÇÊÅÍ¸µµÊ, 
-	//ÇÊÅÍ¸µµÈ °ªÀÌ ´Ù½Ã mainÀ¸·Î µ¹¾Æ°¡ º¯¼ö(korean, english, math)¿¡ ÀúÀåµÊ
+	//ì™¸ë¶€ë¡œë¶€í„° BufferedReaderë³€ìˆ˜ë¥¼ í•˜ë‚˜ ë°›ì•„ì™€ì„œ ì‚¬ìš©
+	//mainë©”ì†Œë“œì— ìˆëŠ” korean, english, mathë¥¼ ë°›ì•„ì™€ scoreì— ëŒ€ì…
+	//í‚¤ë³´ë“œë¡œ ì…ë ¥í•œ ì ìˆ˜ëŠ” ì—¬ê¸°ì„œ í•„í„°ë§ë¨, 
+	//í•„í„°ë§ëœ ê°’ì´ ë‹¤ì‹œ mainìœ¼ë¡œ ëŒì•„ê°€ ë³€ìˆ˜(korean, english, math)ì— ì €ì¥ë¨
 		
-		System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int score = Integer.parseInt(bufferedReader.readLine());
 		
 		while(score < 0 || score > 100) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-			System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+			System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			score = Integer.parseInt(bufferedReader.readLine());
 		}
-		return score; //while¹®¿¡ ÇØ´çÇÏÁö ¾Ê´Â °ª(À¯È¿ÇÑ Á¡¼ö)À» scoreº¯¼ö¿¡ ÀúÀå
+		return score; //whileë¬¸ì— í•´ë‹¹í•˜ì§€ ì•ŠëŠ” ê°’(ìœ íš¨í•œ ì ìˆ˜)ì„ scoreë³€ìˆ˜ì— ì €ì¥
 	}
 		
 	static void printScore(String name, int korean, int english, int math) {
 		System.out.println("==================================");
-		System.out.println("\tÀÌ¸§ : " + name);
-		System.out.printf("±¹¾î : %d ¿µ¾î : %d ¼öÇĞ : %d\n",korean, english, math);
+		System.out.println("\tì´ë¦„ : " + name);
+		System.out.printf("êµ­ì–´ : %d ì˜ì–´ : %d ìˆ˜í•™ : %d\n",korean, english, math);
 		int sum = korean + english + math;
 		double average = sum / (double)3;
-		System.out.printf("ÃÑÁ¡ : %d Æò±Õ : %.2f\n",sum,average);
+		System.out.printf("ì´ì  : %d í‰ê·  : %.2f\n",sum,average);
 		
 	}
 	

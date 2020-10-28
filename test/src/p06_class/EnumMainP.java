@@ -2,10 +2,10 @@ package p06_class;
 
 /*
 class EnumColor{
-	public static final String RED = "ª°∞≠";
-	public static final String GREEN = "√ ∑œ";
-	public static final String BLUE = "∆ƒ∂˚";
-	public static final String MAGENTA = "∫∏∂Û";
+	public static final String RED = "Îπ®Í∞ï";
+	public static final String GREEN = "Ï¥àÎ°ù";
+	public static final String BLUE = "ÌååÎûë";
+	public static final String MAGENTA = "Î≥¥Îùº";
 }	
  */
 
@@ -22,11 +22,11 @@ public class EnumMainP {
 		System.out.println();
 		
 		EnumMainP em = new EnumMainP();
-		em.colorName = "ª°∞≠";
+		em.colorName = "Îπ®Í∞ï";
 		em.color = EnumColor.RED;
 		System.out.println(em.colorName + "\t" + em.color);
 		
-		em.colorName = "∫∏∂Û";
+		em.colorName = "Î≥¥Îùº";
 		EnumColor VIOLET = EnumColor.MAGENTA;
 		System.out.println(em.colorName + "\t" + VIOLET);
 		System.out.println();

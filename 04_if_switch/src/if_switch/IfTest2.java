@@ -1,24 +1,24 @@
 package if_switch;
 
 /*
-3°ú¸ñ(a,b,c)ÀÇ Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­ ÇÕ°İÀÎÁö ºÒÇÕ°İÀÎÁö Ãâ·ÂÇÏ½Ã¿À
-ÇÕ°İÀº Æò±ÕÀÌ 60Á¡ ÀÌ»óÀÌ¾î¾ß ÇÏ°í °¢ °ú¸ñÀÌ 40Á¡ ÀÌ»óÀÌ¾î¾ß ÇÑ´Ù
+3ê³¼ëª©(a,b,c)ì˜ ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ í•©ê²©ì¸ì§€ ë¶ˆí•©ê²©ì¸ì§€ ì¶œë ¥í•˜ì‹œì˜¤
+í•©ê²©ì€ í‰ê· ì´ 60ì  ì´ìƒì´ì–´ì•¼ í•˜ê³  ê° ê³¼ëª©ì´ 40ì  ì´ìƒì´ì–´ì•¼ í•œë‹¤
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 a : 98
 b : 90
 c : 85
-ÇÕ°İ
+í•©ê²©
 
 a : 98
 b : 90
 c : 35
-°ú¶ôÀ¸·Î ºÒÇÕ°İ 
+ê³¼ë½ìœ¼ë¡œ ë¶ˆí•©ê²© 
 
 a : 68
 b : 50
 c : 45
-ºÒÇÕ°İ 
+ë¶ˆí•©ê²© 
  */
 
 import java.io.IOException;
@@ -28,29 +28,29 @@ import java.io.InputStreamReader;
 public class IfTest2 {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//ÀÔ·Â
-		System.out.println("a Á¡¼ö :");
+		//ì…ë ¥
+		System.out.println("a ì ìˆ˜ :");
 		int a = Integer.parseInt(br.readLine());
-		System.out.println("b Á¡¼ö :");
+		System.out.println("b ì ìˆ˜ :");
 		int b = Integer.parseInt(br.readLine());
-		System.out.println("c Á¡¼ö :");
+		System.out.println("c ì ìˆ˜ :");
 		int c = Integer.parseInt(br.readLine());
 		
-		//Æò±Õ
+		//í‰ê· 
 		double avg = (double)(a + b + c) / 3;
 		
-		//Á¶°Ç¹®, Ãâ·Â
+		//ì¡°ê±´ë¬¸, ì¶œë ¥
 		if (avg >= 60.0) {
 			if( a >= 40 & b >= 40 & c >= 40) {
-			System.out.println("ÇÕ°İ");
+			System.out.println("í•©ê²©");
 			}else {
-				System.out.println("°ú¶ôÀ¸·Î ºÒÇÕ°İ");
+				System.out.println("ê³¼ë½ìœ¼ë¡œ ë¶ˆí•©ê²©");
 			}
 		}else {
-			System.out.println("ºÒÇÕ°İ");
+			System.out.println("ë¶ˆí•©ê²©");
 		}
 	}
 

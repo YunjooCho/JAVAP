@@ -3,53 +3,53 @@ package class_constructor;
 import java.text.DecimalFormat;
 
 /*
-Á÷¿øµéÀÇ ¿ù±ÞÀ» °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À
-°´Ã¼ ¹è¿­·Î ÀÛ¼ºÇÏ½Ã¿À
+ì§ì›ë“¤ì˜ ì›”ê¸‰ì„ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ëž¨ì„ ìž‘ì„±í•˜ì‹œì˜¤
+ê°ì²´ ë°°ì—´ë¡œ ìž‘ì„±í•˜ì‹œì˜¤
 
-Å¬·¡½º¸í : SalaryDTO
-ÇÊµå       : name, position, basePay, benefit, taxRate, tax, salary
-»ý¼ºÀÚ    : µ¥ÀÌÅÍ¸¦ ÀÔ·Â
-calc() - °è»ê
+í´ëž˜ìŠ¤ëª… : SalaryDTO
+í•„ë“œ       : name, position, basePay, benefit, taxRate, tax, salary
+ìƒì„±ìž    : ë°ì´í„°ë¥¼ ìž…ë ¥
+calc() - ê³„ì‚°
 getName()
 getPosition()
 
-¼¼±Ý = (±âº»±Þ + ¼ö´ç) * ¼¼À²;
-¿ù±Þ = ±âº»±Þ + ¼ö´ç - ¼¼±Ý;
+ì„¸ê¸ˆ = (ê¸°ë³¸ê¸‰ + ìˆ˜ë‹¹) * ì„¸ìœ¨;
+ì›”ê¸‰ = ê¸°ë³¸ê¸‰ + ìˆ˜ë‹¹ - ì„¸ê¸ˆ;
 
-¼¼À²Àº 200¸¸¿ø ÀÌÇÏ : 1%(0.01), 
-     400¸¸¿ø ÀÌÇÏ : 2%(0.02), 
-     400¸¸¿ø ÃÊ°ú : 3%(0.03)À¸·Î ¼³Á¤ÇÑ´Ù.
+ì„¸ìœ¨ì€ 200ë§Œì› ì´í•˜ : 1%(0.01), 
+     400ë§Œì› ì´í•˜ : 2%(0.02), 
+     400ë§Œì› ì´ˆê³¼ : 3%(0.03)ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
 
-[½ÇÇà°á°ú]
-ÀÌ¸§      Á÷±Þ      ±âº»±Þ               ¼ö´ç      ¼¼À²      ¼¼±Ý      ¿ù±Þ
-È«±æµ¿   ºÎÀå      5000000      200000
-À¯Àç¼®   °úÀå      3500000      150000
-¹Ú¸í¼ö   »ç¿ø      1800000      100000
+[ì‹¤í–‰ê²°ê³¼]
+ì´ë¦„      ì§ê¸‰      ê¸°ë³¸ê¸‰               ìˆ˜ë‹¹      ì„¸ìœ¨      ì„¸ê¸ˆ      ì›”ê¸‰
+í™ê¸¸ë™   ë¶€ìž¥      5000000      200000
+ìœ ìž¬ì„   ê³¼ìž¥      3500000      150000
+ë°•ëª…ìˆ˜   ì‚¬ì›      1800000      100000
  */
 public class SalaryMain {
 	public static void main(String[] args) {
-		//°´Ã¼¹è¿­ »ý¼º
-		SalaryDTO[] ar = new SalaryDTO[]{new SalaryDTO("È«±æµ¿", "ºÎÀå", 5000000, 200000),
-									 	 new SalaryDTO("À¯Àç¼®", "°úÀå", 3500000, 150000),
-									 	 new SalaryDTO("¹Ú¸í¼ö", "»ç¿ø", 1800000, 100000)}; 
+		//ê°ì²´ë°°ì—´ ìƒì„±
+		SalaryDTO[] ar = new SalaryDTO[]{new SalaryDTO("í™ê¸¸ë™", "ë¶€ìž¥", 5000000, 200000),
+									 	 new SalaryDTO("ìœ ìž¬ì„", "ê³¼ìž¥", 3500000, 150000),
+									 	 new SalaryDTO("ë°•ëª…ìˆ˜", "ì‚¬ì›", 1800000, 100000)}; 
 		
-		//¸Þ¼Òµå È£Ãâ - °è»ê ¸Þ¼Òµå
-		//main()¸Þ¼Òµå¿¡¼­ Ãâ·ÂÇÏ½Ã¿À
+		//ë©”ì†Œë“œ í˜¸ì¶œ - ê³„ì‚° ë©”ì†Œë“œ
+		//main()ë©”ì†Œë“œì—ì„œ ì¶œë ¥í•˜ì‹œì˜¤
 		DecimalFormat df = new DecimalFormat("#,###");
 		System.out.println("-----------------------------------------------------------------------------------");
-		System.out.println("ÀÌ¸§\tÁ÷±Þ\t±âº»±Þ\t\t¼ö´ç\t\t¼¼À²\t¼¼±Ý\t\t¿ù±Þ");
+		System.out.println("ì´ë¦„\tì§ê¸‰\tê¸°ë³¸ê¸‰\t\tìˆ˜ë‹¹\t\tì„¸ìœ¨\tì„¸ê¸ˆ\t\tì›”ê¸‰");
 		System.out.println("-----------------------------------------------------------------------------------");
 		for(SalaryDTO dto : ar) { //for(int i = 0; i < ar.length; i++)
 			dto.calc(); //ar[i].calc()
 //			System.out.println(ar[i].getName() + "\t" 
 //						      +ar[i].getPosition() + "\t"
-//						      +df.format(ar[i].getBasePay()) + "¿ø\t" 
-//						      +df.format(ar[i].getBenefit()) + "¿ø\t"
+//						      +df.format(ar[i].getBasePay()) + "ì›\t" 
+//						      +df.format(ar[i].getBenefit()) + "ì›\t"
 //						      +(int)(ar[i].getTaxRate()*100) + "%\t "
-//						      +df.format(ar[i].getTax()) + "¿ø\t" 
-//						      +df.format(ar[i].getSalary()) + "¿ø");
-			System.out.println(dto); //SalaryDTO.java¿¡¼­ toString¿À¹ö¶óÀÌµùÀ» Çß±â ¶§¹®¿¡
-							 		 //°´Ã¼¸¦ Ãâ·ÂÇÏ´Â °Í ¸¸À¸·Îµµ À§¿Í °°Àº ³»¿ëÀÌ Ãâ·Â°¡´É
+//						      +df.format(ar[i].getTax()) + "ì›\t" 
+//						      +df.format(ar[i].getSalary()) + "ì›");
+			System.out.println(dto); //SalaryDTO.javaì—ì„œ toStringì˜¤ë²„ë¼ì´ë”©ì„ í–ˆê¸° ë•Œë¬¸ì—
+							 		 //ê°ì²´ë¥¼ ì¶œë ¥í•˜ëŠ” ê²ƒ ë§Œìœ¼ë¡œë„ ìœ„ì™€ ê°™ì€ ë‚´ìš©ì´ ì¶œë ¥ê°€ëŠ¥
 		}
 
 	}

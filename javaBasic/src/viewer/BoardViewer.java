@@ -13,46 +13,46 @@ import model.UserDTO;
 import util.InputUtil;
 
 public class BoardViewer {
-	//19.ÇÊµå¼±¾ğ
-	private UserDTO logInUser; //º»ÀÎÀÌ ¾´ ±Û¸¸ ¼öÁ¤, »èÁ¦°¡ °¡´ÉÇÏµµ·Ï ÇÔ
+	//19.í•„ë“œì„ ì–¸
+	private UserDTO logInUser; //ë³¸ì¸ì´ ì“´ ê¸€ë§Œ ìˆ˜ì •, ì‚­ì œê°€ ê°€ëŠ¥í•˜ë„ë¡ í•¨
 	private BufferedReader bufferedReader;
 	private BoardController boardController;
 	private int boardId;
 	
-	//20.»ı¼ºÀÚ
+	//20.ìƒì„±ì
 	public BoardViewer() {
-			this.logInUser = logInUser;//°´Ã¼ÀÚ±âÀÚ½Å(this)??????????°ÙÅÍ/¼ÂÅÍ¿Í ºñ±³ÇÏ¸ç ÃµÃµÈ÷ È®ÀÎÇÏ±â 
+			this.logInUser = logInUser;//ê°ì²´ìê¸°ìì‹ (this)??????????ê²Ÿí„°/ì…‹í„°ì™€ ë¹„êµí•˜ë©° ì²œì²œíˆ í™•ì¸í•˜ê¸° 
 			bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 			boardController = new BoardController();
 			boardId = 1;
 	}
 	
-	//21.·Î±×ÀÎ ÇÏ°í ÀÖ´Â »ç¶÷ÀÇ Á¤º¸ °¡Á®¿À±â?? (º»ÀÎÀÌ ¾´ ±Û¸¸ ¼öÁ¤, »èÁ¦°¡ °¡´ÉÇÏµµ·Ï ÇÔ)
+	//21.ë¡œê·¸ì¸ í•˜ê³  ìˆëŠ” ì‚¬ëŒì˜ ì •ë³´ ê°€ì ¸ì˜¤ê¸°?? (ë³¸ì¸ì´ ì“´ ê¸€ë§Œ ìˆ˜ì •, ì‚­ì œê°€ ê°€ëŠ¥í•˜ë„ë¡ í•¨)
 	public void setLogInUser(UserDTO logInUser) {
 		this.logInUser = logInUser;
 	}
 	
-	//22. ±Û ÀÛ¼º ¸Ş¼Òµå
+	//22. ê¸€ ì‘ì„± ë©”ì†Œë“œ
 	public void writeBoard() throws IOException {
 		BoardDTO b = new BoardDTO();
 		b.setId(boardId);
-		boardId++; //±ÛÀ» ÀÛ¼ºÇÒ ¶§¸¶´Ù ÇÏ³ª¾¿ ÀÚµ¿À¸·Î Áõ°¡(ÇØ´ç ¸Ş¼Òµå°¡ È£ÃâµÉ¶§¸¶´Ù ÀÚµ¿À¸·Î Áõ°¡)
+		boardId++; //ê¸€ì„ ì‘ì„±í•  ë•Œë§ˆë‹¤ í•˜ë‚˜ì”© ìë™ìœ¼ë¡œ ì¦ê°€(í•´ë‹¹ ë©”ì†Œë“œê°€ í˜¸ì¶œë ë•Œë§ˆë‹¤ ìë™ìœ¼ë¡œ ì¦ê°€)
 		b.setWriterId(logInUser.getId());
 		b.setWriterName(logInUser.getNickname());
 		Calendar cal = Calendar.getInstance();
 		b.setWrittenDate(cal);
-		b.setUpdatedDate(cal); //ÀÔ·Â&¼öÁ¤Àº ¶È°°Àº ³¯Â¥ÀÓ(¼öÁ¤°ú µ¿½Ã¿¡ ÀÔ·ÂµÊ)
+		b.setUpdatedDate(cal); //ì…ë ¥&ìˆ˜ì •ì€ ë˜‘ê°™ì€ ë‚ ì§œì„(ìˆ˜ì •ê³¼ ë™ì‹œì— ì…ë ¥ë¨)
 		
-		System.out.print("Á¦¸ñ : ");
+		System.out.print("ì œëª© : ");
 		b.setTitle(bufferedReader.readLine());
-		System.out.print("³»¿ë : ");
-		b.setContent(bufferedReader.readLine()); //À§¿¡¼­ ´Ù ¼³Á¤µÇ°í ¾ÆÁ÷ ¼³Á¤ÀÌ µÇÁö ¾ÊÀº ÇÊµå°¡ ÀÌ µÎ°³.
+		System.out.print("ë‚´ìš© : ");
+		b.setContent(bufferedReader.readLine()); //ìœ„ì—ì„œ ë‹¤ ì„¤ì •ë˜ê³  ì•„ì§ ì„¤ì •ì´ ë˜ì§€ ì•Šì€ í•„ë“œê°€ ì´ ë‘ê°œ.
 		
-		boardController.add(b);//ÀÛ¼ºµÈ ³»¿ëÀÌ µé¾î°£ °´Ã¼¸¦ ¹İÈ¯
+		boardController.add(b);//ì‘ì„±ëœ ë‚´ìš©ì´ ë“¤ì–´ê°„ ê°ì²´ë¥¼ ë°˜í™˜
 		
 	}
 	
-	//23.Àº utilÆĞÅ°Áö InputUtil·Î ³Ñ¾î°¨
+	//23.ì€ utilíŒ¨í‚¤ì§€ InputUtilë¡œ ë„˜ì–´ê°
 	
 	//24.
 	public void selectAll() throws IOException {
@@ -60,31 +60,31 @@ public class BoardViewer {
 		for(int i = 0; i < list.size();i++) {
 			System.out.printf("%d. %s\n", i+1, list.get(i).getTitle(), list.get(i).getWriterName());
 		}
-		System.out.println("»ó¼¼º¸±âÇÒ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(0Àº µÚ·Î)");
+		System.out.println("ìƒì„¸ë³´ê¸°í•  ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(0ì€ ë’¤ë¡œ)");
 		int userChoice = InputUtil.validateInt(0, list.size()) - 1;
 		if(userChoice == -1) {
-			System.out.println("¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+			System.out.println("ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 		}else {
 			selectOne(userChoice);
 		}
 	}
 	
 	
-	//25.»ó¼¼Á¤º¸ º¸±â ¸Ş¼Òµå
+	//25.ìƒì„¸ì •ë³´ ë³´ê¸° ë©”ì†Œë“œ
 	public void selectOne(int index) throws IOException {
 		BoardDTO b = boardController.selectOne(index);
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy³â M¿ù dÀÏ H½Ã mºĞ sÃÊ");
-		System.out.println("Á¦¸ñ : " + b.getTitle());
-		System.out.println("ÀÛ¼ºÀÚ : " + b.getWriterName());
-		System.out.println("ÀÛ¼ºÀÏ : " + sdf.format(b.getWrittenDate().getTime()));
-		System.out.println("¼öÁ¤ÀÏ : " + sdf.format(b.getUpdatedDate().getTime()));
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyyë…„ Mì›” dì¼ Hì‹œ më¶„ sì´ˆ");
+		System.out.println("ì œëª© : " + b.getTitle());
+		System.out.println("ì‘ì„±ì : " + b.getWriterName());
+		System.out.println("ì‘ì„±ì¼ : " + sdf.format(b.getWrittenDate().getTime()));
+		System.out.println("ìˆ˜ì •ì¼ : " + sdf.format(b.getUpdatedDate().getTime()));
 		System.out.println("--------------------------------------------------------");
-		System.out.println("³»¿ë : ");
+		System.out.println("ë‚´ìš© : ");
 		System.out.println(b.getContent());
 		System.out.println("--------------------------------------------------------");
 		if(logInUser.getId() == b.getWriterId()) {
-			System.out.println("1.¼öÁ¤   2.»èÁ¦   3.¸ñ·ÏÀ¸·Î"); 
-			//·Î±×ÀÎ ÇÑ »ç¶÷°ú ±ÛÀ» ÀÛ¼ºÇÑ »ç¶÷ÀÇ È¸¿ø¹øÈ£°¡ °°¾Æ¾ß¸¸ ±Û¼öÁ¤, »èÁ¦°¡ °¡´ÉÇÏ°Ô ÇÔ
+			System.out.println("1.ìˆ˜ì •   2.ì‚­ì œ   3.ëª©ë¡ìœ¼ë¡œ"); 
+			//ë¡œê·¸ì¸ í•œ ì‚¬ëŒê³¼ ê¸€ì„ ì‘ì„±í•œ ì‚¬ëŒì˜ íšŒì›ë²ˆí˜¸ê°€ ê°™ì•„ì•¼ë§Œ ê¸€ìˆ˜ì •, ì‚­ì œê°€ ê°€ëŠ¥í•˜ê²Œ í•¨
 			int userChoice = InputUtil.validateInt(1, 3);
 			if(userChoice == 1) {
 				update(index);
@@ -94,7 +94,7 @@ public class BoardViewer {
 				selectAll();
 			}
 		}else {
-			System.out.println("1.¸ñ·ÏÀ¸·Î");
+			System.out.println("1.ëª©ë¡ìœ¼ë¡œ");
 			int userChoice = InputUtil.validateInt(1, 1);
 			if(userChoice == 1) {
 				selectAll();
@@ -103,23 +103,23 @@ public class BoardViewer {
 
 	}
 	
-	//26.¼öÁ¤¸Ş¼Òµå
+	//26.ìˆ˜ì •ë©”ì†Œë“œ
 	public void update(int index) throws IOException {
 		BoardDTO b = boardController.selectOne(index);
 		Calendar cal = Calendar.getInstance();
-		System.out.println("Á¦¸ñ : ");
+		System.out.println("ì œëª© : ");
 		b.setTitle(bufferedReader.readLine());
-		System.out.println("³»¿ë : ");
+		System.out.println("ë‚´ìš© : ");
 		b.setContent(bufferedReader.readLine());
 		b.setUpdatedDate(cal);
-		boardController.update(index, b);//¾îµğ ¾÷µ¥ÀÌÆ® ÇÒÁö, ¹»·Î ¾÷µ¥ÀÌÆ® ÇÒÁö¸¦ º¸³»Áà¾ßÇÏ±â ¶§¹®
+		boardController.update(index, b);//ì–´ë”” ì—…ë°ì´íŠ¸ í• ì§€, ë­˜ë¡œ ì—…ë°ì´íŠ¸ í• ì§€ë¥¼ ë³´ë‚´ì¤˜ì•¼í•˜ê¸° ë•Œë¬¸
 		selectOne(index);
 		
 	}
 	
 	//27.
 	public void delete(int index) throws IOException {
-		System.out.println("ÇØ´ç ±ÛÀ» Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(Y/N)");
+		System.out.println("í•´ë‹¹ ê¸€ì„ ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N)");
 		System.out.print("> ");
 		String yn = bufferedReader.readLine().toUpperCase();
 		if(yn.equals("Y")) {

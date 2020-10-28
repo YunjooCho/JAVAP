@@ -9,7 +9,7 @@ public class Ex01GradeBook {
 	final static int YEAR = 3;
 	final static int TEST_NUMBER = 4;
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//±¹¾î, ¿µ¾î, ¼öÇĞ¿¡ ´ëÇÑ 2Â÷¿ø ¹è¿­À» ¸¸µé¾îÁØ´Ù
+		//êµ­ì–´, ì˜ì–´, ìˆ˜í•™ì— ëŒ€í•œ 2ì°¨ì› ë°°ì—´ì„ ë§Œë“¤ì–´ì¤€ë‹¤
 		int[][] koreanArray = new int[YEAR][TEST_NUMBER];
 		int[][] englishArray = new int[YEAR][TEST_NUMBER];
 		int[][] mathArray = new int[YEAR][TEST_NUMBER];
@@ -32,56 +32,56 @@ public class Ex01GradeBook {
 				String message = new String();
 				switch(testNumber) {
 				case 1:
-					message = "1ÇĞ±â Áß°£°í»ç";
+					message = "1í•™ê¸° ì¤‘ê°„ê³ ì‚¬";
 					break;
 				case 2:
-					message = "1ÇĞ±â ±â¸»°í»ç";
+					message = "1í•™ê¸° ê¸°ë§ê³ ì‚¬";
 					break;
 				case 3:
-					message = "2ÇĞ±â Áß°£°í»ç";
+					message = "2í•™ê¸° ì¤‘ê°„ê³ ì‚¬";
 					break;
 				case 4:
-					message = "2ÇĞ±â ±â¸»°í»ç";
+					message = "2í•™ê¸° ê¸°ë§ê³ ì‚¬";
 					break;
 					
 				}
-				System.out.println(year + "ÇĞ³â" + message);
+				System.out.println(year + "í•™ë…„" + message);
 				printScore(koreanArray[year-1][testNumber-1], englishArray[year-1][testNumber-1], mathArray[year-1][testNumber-1]);
 			}else if(choice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			}
 		}
 	
 	}
 	
 	static void printScore(int korean, int english, int math) {
-	      System.out.printf("±¹¾î: %03dÁ¡ ¿µ¾î: %03dÁ¡ ¼öÇĞ: %03dÁ¡\n", korean, english, math);
+	      System.out.printf("êµ­ì–´: %03dì  ì˜ì–´: %03dì  ìˆ˜í•™: %03dì \n", korean, english, math);
 	   }
 	
 	
 	static int selectYear(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		System.out.println("ÀÔ·ÂÇÒ ÇĞ³âÀ» ¼±ÅÃÇØÁÖ¼¼¿ä : ");
+		System.out.println("ì…ë ¥í•  í•™ë…„ì„ ì„ íƒí•´ì£¼ì„¸ìš” : ");
 		System.out.print("> ");
 		int year = Integer.parseInt(bufferedReader.readLine());
 		while(year < 1 || year > 3) {
-			System.out.println("Àß¸øµÈ ÇĞ³âÀÔ´Ï´Ù.");
-			System.out.print("ÀÔ·ÂÇÒ ÇĞ³âÀ» ¼±ÅÃÇØÁÖ¼¼¿ä : ");
+			System.out.println("ì˜ëª»ëœ í•™ë…„ì…ë‹ˆë‹¤.");
+			System.out.print("ì…ë ¥í•  í•™ë…„ì„ ì„ íƒí•´ì£¼ì„¸ìš” : ");
 			year = Integer.parseInt(bufferedReader.readLine());
 		}
 		return year;
 	}
 	
 	static int selectTest(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		System.out.println("½ÃÇèÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä: ");
-		System.out.println("1.1ÇĞ±â Áß°£ 2.1ÇĞ±â ±â¸» 3.2ÇĞ±â Áß°£ 4.2ÇĞ±â ±â¸»");
+		System.out.println("ì‹œí—˜ì„ ì„ íƒí•´ ì£¼ì„¸ìš”: ");
+		System.out.println("1.1í•™ê¸° ì¤‘ê°„ 2.1í•™ê¸° ê¸°ë§ 3.2í•™ê¸° ì¤‘ê°„ 4.2í•™ê¸° ê¸°ë§");
 		System.out.println("> ");
 		int testNumber = Integer.parseInt(bufferedReader.readLine());
 		while(testNumber < 1 || testNumber > 4) {
-			System.out.println("ÀÔ·ÂÇÒ ½ÃÇèÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä: ");
-			System.out.println("1.1ÇĞ±â Áß°£ 2.1ÇĞ±â ±â¸» 3.2ÇĞ±â Áß°£ 4.2ÇĞ±â ±â¸»");
+			System.out.println("ì…ë ¥í•  ì‹œí—˜ì„ ì„ íƒí•´ ì£¼ì„¸ìš”: ");
+			System.out.println("1.1í•™ê¸° ì¤‘ê°„ 2.1í•™ê¸° ê¸°ë§ 3.2í•™ê¸° ì¤‘ê°„ 4.2í•™ê¸° ê¸°ë§");
 			System.out.println("> ");
 			testNumber = Integer.parseInt(bufferedReader.readLine());
 		}
@@ -91,34 +91,34 @@ public class Ex01GradeBook {
 	
 	static void showMenu() {
 		System.out.println("=======================");
-		System.out.println("ºñÆ®°íµîÇĞ±³ ¼ºÀû°ü¸®ÇÁ·Î±×·¥");
-		System.out.println("\t1.ÀÔ·Â");
-		System.out.println("\t2.Ãâ·Â");
-		System.out.println("\t3.Á¾·á");
+		System.out.println("ë¹„íŠ¸ê³ ë“±í•™êµ ì„±ì ê´€ë¦¬í”„ë¡œê·¸ë¨");
+		System.out.println("\t1.ì…ë ¥");
+		System.out.println("\t2.ì¶œë ¥");
+		System.out.println("\t3.ì¢…ë£Œ");
 		System.out.print("> ");
 	}
 	
 	
 	
-	//Á¡¼ö°¡ ¿Ã¹Ù¸¥Áö Ã¼Å©ÇÏ°í ¿Ã¹Ù¸£Áö ¾ÊÀ¸¸é ¿Ã¹Ù¸¥ Á¡¼ö°¡ µé¾î¿Ã¶§±îÁö °è¼Ó ÀÔ·ÂÀ» ¹Ş´Â ¸Ş¼Òµå
+	//ì ìˆ˜ê°€ ì˜¬ë°”ë¥¸ì§€ ì²´í¬í•˜ê³  ì˜¬ë°”ë¥´ì§€ ì•Šìœ¼ë©´ ì˜¬ë°”ë¥¸ ì ìˆ˜ê°€ ë“¤ì–´ì˜¬ë•Œê¹Œì§€ ê³„ì† ì…ë ¥ì„ ë°›ëŠ” ë©”ì†Œë“œ
 	static int validateScore(BufferedReader bufferedReader, int code) throws NumberFormatException, IOException {
 	      String message = new String();
 	      switch(code) {
 	      case 1:
-	         message = "±¹¾î Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+	         message = "êµ­ì–´ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 	         break;
 	      case 2:
-	         message = "¿µ¾î Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+	         message = "ì˜ì–´ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 	         break;
 	      case 3:
-	         message = "¼öÇĞ Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä: ";
+	         message = "ìˆ˜í•™ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”: ";
 	         break;
 	      }
 	      System.out.print(message);
 	      int score = Integer.parseInt(bufferedReader.readLine());
 	      
 	      while(score < 0 || score > 100) {
-	         System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+	         System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	         System.out.print(message);
 	         score = Integer.parseInt(bufferedReader.readLine());
 	      }

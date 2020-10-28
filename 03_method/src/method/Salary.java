@@ -1,33 +1,33 @@
 package method;
 
 /*
-¿ù±Ş °è»ê ÇÁ·Î±×·¥
-ÀÌ¸§, Á÷±Ş, ±âº»±Ş, ¼ö´çÀ» ÀÔ·ÂÇÏ¿© ¼¼±İ°ú ¿ù±ŞÀ» °è»êÇÏ½Ã¿À
-¼¼À²Àº ±Ş¿©°¡ 4,000,000 ¸¸¿ø ÀÌ»óÀÌ¸é 3% ¾Æ´Ï¸é 2%·Î ÇÑ´Ù
+ì›”ê¸‰ ê³„ì‚° í”„ë¡œê·¸ë¨
+ì´ë¦„, ì§ê¸‰, ê¸°ë³¸ê¸‰, ìˆ˜ë‹¹ì„ ì…ë ¥í•˜ì—¬ ì„¸ê¸ˆê³¼ ì›”ê¸‰ì„ ê³„ì‚°í•˜ì‹œì˜¤
+ì„¸ìœ¨ì€ ê¸‰ì—¬ê°€ 4,000,000 ë§Œì› ì´ìƒì´ë©´ 3% ì•„ë‹ˆë©´ 2%ë¡œ í•œë‹¤
 
-¸¸¾à ÀÌ ¹®Á¦¸¦ ´Ù Ç®¾ú´Ù¸é
-¼¼±İÀº calcTax()
-¿ù±ŞÀº calcSalary()¸¦ ÀÌ¿ëÇØ¼­ °è»êÇÏ½Ã¿À
+ë§Œì•½ ì´ ë¬¸ì œë¥¼ ë‹¤ í’€ì—ˆë‹¤ë©´
+ì„¸ê¸ˆì€ calcTax()
+ì›”ê¸‰ì€ calcSalary()ë¥¼ ì´ìš©í•´ì„œ ê³„ì‚°í•˜ì‹œì˜¤
 
-±Ş¿© = ±âº»±Ş + ¼ö´ç
-¼¼±İ = ±Ş¿© * ¼¼À²
-¿ù±Ş = ±Ş¿© - ¼¼±İ
+ê¸‰ì—¬ = ê¸°ë³¸ê¸‰ + ìˆ˜ë‹¹
+ì„¸ê¸ˆ = ê¸‰ì—¬ * ì„¸ìœ¨
+ì›”ê¸‰ = ê¸‰ì—¬ - ì„¸ê¸ˆ
 
-[½ÇÇà°á°ú]
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-Á÷±Ş ÀÔ·Â : ºÎÀå
-±âº»±Ş ÀÔ·Â : 4500000
-¼ö´ç ÀÔ·Â : 200000
+[ì‹¤í–‰ê²°ê³¼]
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+ì§ê¸‰ ì…ë ¥ : ë¶€ì¥
+ê¸°ë³¸ê¸‰ ì…ë ¥ : 4500000
+ìˆ˜ë‹¹ ì…ë ¥ : 200000
 
-   *** È«±æµ¿ ¿ù±Ş ¸í¼¼¼­ ***
-Á÷±Ş : ºÎÀå
-±âº»±Ş                    ¼ö´ç    		  ±Ş¿© 	   ¼¼À²      ¼¼±İ            ¿ù±Ş
+   *** í™ê¸¸ë™ ì›”ê¸‰ ëª…ì„¸ì„œ ***
+ì§ê¸‰ : ë¶€ì¥
+ê¸°ë³¸ê¸‰                    ìˆ˜ë‹¹    		  ê¸‰ì—¬ 	   ì„¸ìœ¨      ì„¸ê¸ˆ            ì›”ê¸‰
 4500000      200000     4700000   3%   xxxxx   xxxxxxx
 
-º¯¼ö 8°³
-ÀüºÎ Á¤¼öÇü
-´Ù Ç®°í ³ª¼­ ¸Ş¼Òµå »ç¿ë
-yeoni5@naver.com ¸ŞÀÏ java ÆÄÀÏ º¸³»µå¸®±â (ÀÏ¿äÀÏ 17:00±îÁö)
+ë³€ìˆ˜ 8ê°œ
+ì „ë¶€ ì •ìˆ˜í˜•
+ë‹¤ í’€ê³  ë‚˜ì„œ ë©”ì†Œë“œ ì‚¬ìš©
+yeoni5@naver.com ë©”ì¼ java íŒŒì¼ ë³´ë‚´ë“œë¦¬ê¸° (ì¼ìš”ì¼ 17:00ê¹Œì§€)
  */
 
 import java.io.BufferedReader;
@@ -41,38 +41,38 @@ public class Salary {
 
 	public static void main(String[] args) throws IOException {
 		
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-		//ÀÔ·Â
-		System.out.println("[½ÇÇà°á°ú]");
-		System.out.println("ÀÌ¸§ÀÔ·Â : ");
+		//ì…ë ¥
+		System.out.println("[ì‹¤í–‰ê²°ê³¼]");
+		System.out.println("ì´ë¦„ì…ë ¥ : ");
 		String name = bf.readLine();
-		System.out.println("Á÷±Ş ÀÔ·Â : ");
+		System.out.println("ì§ê¸‰ ì…ë ¥ : ");
 		String rank = bf.readLine();
-		System.out.println("±âº»±Ş ÀÔ·Â : ");
+		System.out.println("ê¸°ë³¸ê¸‰ ì…ë ¥ : ");
 		int basePay = Integer.parseInt(bf.readLine());
-		System.out.println("¼ö´ç ÀÔ·Â : ");
+		System.out.println("ìˆ˜ë‹¹ ì…ë ¥ : ");
 		int extraPay = Integer.parseInt(bf.readLine());
 		
-		//°è»ê
-		int wage = basePay + extraPay;	//wageº¸´Ù totalPay¶ó´Â Ç¥ÇöÀÌ ÁÁÀ½			
+		//ê³„ì‚°
+		int wage = basePay + extraPay;	//wageë³´ë‹¤ totalPayë¼ëŠ” í‘œí˜„ì´ ì¢‹ìŒ			
 		double taxRate = wage >= 4000000 ? 0.03 : 0.02;
 		//double tax = wage * taxRate; //int tax = (int)(totalPay * taxRate);
 		//double Salary  = wage - tax;
 		
-		//¼¼±İ&¿ù±Ş ¸Ş¼Òµå
+		//ì„¸ê¸ˆ&ì›”ê¸‰ ë©”ì†Œë“œ
 		Salary salarymethod = new Salary();
 		double tax = salarymethod.calcTax(wage, taxRate);
 		double salary = salarymethod.calcSalary(wage, tax);
 		
-		//¼ıÀÚ¸¦ 3ÀÚ¸®¸¶´Ù , Âï±â
+		//ìˆ«ìë¥¼ 3ìë¦¬ë§ˆë‹¤ , ì°ê¸°
 		DecimalFormat df = new DecimalFormat("#,###");
 	    		
-		//Ãâ·Â
-		System.out.println("\t*** " + name + " ¿ù±Ş ¸í¼¼¼­ ***");
-		System.out.println("Á÷±Ş : " + rank);
-		System.out.println("±âº»±Ş\t     ¼ö´ç\t     ±Ş¿©\t      ¼¼À²\t¼¼±İ\t¿ù±Ş");
+		//ì¶œë ¥
+		System.out.println("\t*** " + name + " ì›”ê¸‰ ëª…ì„¸ì„œ ***");
+		System.out.println("ì§ê¸‰ : " + rank);
+		System.out.println("ê¸°ë³¸ê¸‰\t     ìˆ˜ë‹¹\t     ê¸‰ì—¬\t      ì„¸ìœ¨\tì„¸ê¸ˆ\tì›”ê¸‰");
 		System.out.println(df.format(basePay) + " " + df.format(extraPay) + " " + df.format(wage) + " " + String.format("%.0f", (taxRate*100)) + "% " + df.format((int)tax) + "  " + df.format((int)salary));
 	
 	}

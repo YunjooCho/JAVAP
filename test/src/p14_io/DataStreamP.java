@@ -12,7 +12,7 @@ public class DataStreamP {
 	public static void main(String[] args) {
 		try {
 			DataOutputStream dos = new DataOutputStream(new FileOutputStream("result.txt"));
-			dos.writeUTF("È«±æµ¿");
+			dos.writeUTF("í™ê¸¸ë™");
 			dos.writeInt(25);
 			dos.writeDouble(185.6);
 			dos.close();
@@ -22,10 +22,10 @@ public class DataStreamP {
 		
 		try {
 			DataInputStream dis = new DataInputStream(new FileInputStream("result.txt"));
-			System.out.println("ÀÌ¸§ : " + dis.readUTF()); //write¶§¿Í ¶È°°Àº ÇÔ¼ö¸¦ ½áÁà¾ß ÇÔ
-			System.out.println("³ªÀÌ : " + dis.readInt());
-			System.out.println("Å° : " + dis.readDouble()); //dis.readDouble()Àº error!
-													      //EOF - End Of File ¿¡·¯¸Ş½ÃÁö°¡ ¶ä
+			System.out.println("ì´ë¦„ : " + dis.readUTF()); //writeë•Œì™€ ë˜‘ê°™ì€ í•¨ìˆ˜ë¥¼ ì¨ì¤˜ì•¼ í•¨
+			System.out.println("ë‚˜ì´ : " + dis.readInt());
+			System.out.println("í‚¤ : " + dis.readDouble()); //dis.readDouble()ì€ error!
+													      //EOF - End Of File ì—ëŸ¬ë©”ì‹œì§€ê°€ ëœ¸
 		
 		} catch (IOException e) {
 			e.printStackTrace();

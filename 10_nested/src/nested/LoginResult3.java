@@ -14,9 +14,9 @@ public class LoginResult3 {
          @Override
          public void paint(Graphics g) {
             if(id.equals("angel") && pwd.equals("1004"))
-               g.drawString("·Î±×ÀÎ ¼º°ø", 30,100);
+               g.drawString("ë¡œê·¸ì¸ ì„±ê³µ", 30,100);
             else
-               g.drawString("·Î±×ÀÎ ½ÇÆĞ", 30,100);
+               g.drawString("ë¡œê·¸ì¸ ì‹¤íŒ¨", 30,100);
          }
          
       };

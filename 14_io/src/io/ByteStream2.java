@@ -8,21 +8,21 @@ import java.io.IOException;
 public class ByteStream2 {
 
 	public static void main(String[] args) throws IOException {
-		File file = new File("data.txt");//ÆÄÀÏ °´Ã¼ »ı¼º
+		File file = new File("data.txt");//íŒŒì¼ ê°ì²´ ìƒì„±
 		
 		FileInputStream fis = new FileInputStream(file);
 		BufferedInputStream bis = new BufferedInputStream(fis);
-		//¡Ú¿Ö ¿©±â¼­ Buffered???????
+		//â˜…ì™œ ì—¬ê¸°ì„œ Buffered???????
 		
-		//¹è¿­·Î Ãâ·ÂÇÏ±â À§ÇØ ÆÄÀÏÀÇ Å©±â¸¦ ¾Ë¾Æ³»¾ßÇÔ
-		int size = (int) file.length(); //ÆÄÀÏÀÇ Å©±â´Â longÅ¸ÀÔÀÓ
-		byte[] b = new byte[size]; //ÆÄÀÏÅ©±â ¸¸Å­ÀÇ ¹è¿­À» ¸¸µê
+		//ë°°ì—´ë¡œ ì¶œë ¥í•˜ê¸° ìœ„í•´ íŒŒì¼ì˜ í¬ê¸°ë¥¼ ì•Œì•„ë‚´ì•¼í•¨
+		int size = (int) file.length(); //íŒŒì¼ì˜ í¬ê¸°ëŠ” longíƒ€ì…ì„
+		byte[] b = new byte[size]; //íŒŒì¼í¬ê¸° ë§Œí¼ì˜ ë°°ì—´ì„ ë§Œë“¦
 		
-		bis.read(b, 0, size); //µ¥ÀÌÅÍ¸¦ ÇÑ±ÛÀÚ¾¿ÀÌ ¾Æ´Ñ ÇÑ²¨¹ø¿¡ ÀĞÀ½
-							  //ºÎºĞ¸¸ ¼±ÅÃÇØ¼­ ÀĞ´Â°Íµµ °¡´É
+		bis.read(b, 0, size); //ë°ì´í„°ë¥¼ í•œê¸€ìì”©ì´ ì•„ë‹Œ í•œêº¼ë²ˆì— ì½ìŒ
+							  //ë¶€ë¶„ë§Œ ì„ íƒí•´ì„œ ì½ëŠ”ê²ƒë„ ê°€ëŠ¥
 		
 		
-		//Ãâ·ÂÇÒ¶§ for¹® ¸»°í ¹®ÀÚ¿­·Î »ı¼º(byte[]À» StringÀ¸·Î »ı¼º) - ´Ù¿î·Îµå
+		//ì¶œë ¥í• ë•Œ forë¬¸ ë§ê³  ë¬¸ìì—´ë¡œ ìƒì„±(byte[]ì„ Stringìœ¼ë¡œ ìƒì„±) - ë‹¤ìš´ë¡œë“œ
 		String str = new String(b);
 		System.out.println(str);
 		

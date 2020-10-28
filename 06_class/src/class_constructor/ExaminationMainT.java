@@ -6,10 +6,10 @@ public class ExaminationMainT {
 
 	public static void main(String[] args) {
 		
-		//1¹ø¹®Á¦
+		//1ë²ˆë¬¸ì œ
 		ExaminationT aa = new ExaminationT();
 		aa.compare();
-		System.out.println("ÀÌ¸§\t1 2 3 4 5\tÁ¡¼ö");
+		System.out.println("ì´ë¦„\t1 2 3 4 5\tì ìˆ˜");
 		System.out.print(aa.getName() + "\t");
 		
 		for(int i = 0; i < aa.getOX().length; i++) {
@@ -18,13 +18,13 @@ public class ExaminationMainT {
 		System.out.println("\t" + aa.getScore());
 		
 		
-		//2¹ø¹®Á¦
+		//2ë²ˆë¬¸ì œ
 		Scanner scan = new Scanner(System.in);
-		System.out.print("ÀÎ¿ø¼ö ÀÔ·Â : ");
+		System.out.print("ì¸ì›ìˆ˜ ì…ë ¥ : ");
 		int count = scan.nextInt();
 		ExaminationT[] ar = new ExaminationT[count];
 		
-		//ÂüÁ¶
+		//ì°¸ì¡°
 //		ar[0] = new ExaminationT();
 //		ar[1] = new ExaminationT();
 //		
@@ -35,14 +35,14 @@ public class ExaminationMainT {
 			ar[i].compare();
 		}
 		
-		System.out.println("ÀÌ¸§\t1 2 3 4 5\tÁ¡¼ö");
+		System.out.println("ì´ë¦„\t1 2 3 4 5\tì ìˆ˜");
 //		System.out.print(ar[0].getName() + "\t");
 //		
 //		for(int i = 0; i < ar[0].getOX().length; i++) {
 //			System.out.print(ar[0].getOX()[i] + " ");
 //		}
 //		System.out.println("\t" + ar[0].getScore());
-		//¡ÚÂ÷ÀÌÁ¡
+		//â˜…ì°¨ì´ì 
 		for(int k = 0; k < ar.length; k++) {
 			System.out.print(ar[k].getName() + "\t");
 			

@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-3°³ÀÇ ¼ıÀÚ(a,b,c)¸¦ ÀÔ·Â¹Ş¾Æ¼­ ¼ø¼­´ë·Î Ãâ·ÂÇÏ½Ã¿À
+3ê°œì˜ ìˆ«ì(a,b,c)ë¥¼ ì…ë ¥ë°›ì•„ì„œ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 a : 68
 b : 50
 c : 45
@@ -23,7 +23,7 @@ public class IfTest3P {
 
 	public static void main(String[] args) throws IOException {
 
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		System.out.println("a : ");

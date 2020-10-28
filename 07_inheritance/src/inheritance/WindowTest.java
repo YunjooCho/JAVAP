@@ -1,69 +1,69 @@
 package inheritance;
 
 import java.awt.Color;
-import java.awt.Frame;//ÆÐÅ°Áö ¿Ü¿ì±â
+import java.awt.Frame;//íŒ¨í‚¤ì§€ ì™¸ìš°ê¸°
 import java.awt.Graphics;
 
 
-//1.»ó¼Ó
+//1.ìƒì†
 public class WindowTest extends Frame {
 	
-	//2.±âº»»ý¼ºÀÚ
+	//2.ê¸°ë³¸ìƒì„±ìž
 	public WindowTest() {
-		//Frame Å¬·¡½ºÀÇ »ý¼ºÀÚ¸¦ ÅëÇØ¼­ "³»°¡ ¸¸µç À©µµ¿ì"
-		//Frame(String title)À» »ç¿ë
-		//seTitle("³»°¡ ¸¸µç À©µµ¿ì");¶û °°Àº ±â´É
-		//String title = "³»°¡ ¸¸µç À©µµ¿ì";
-		//String title = new String("³»°¡ ¸¸µç À©µµ¿ì");
-		//super(new String("³»°¡ ¸¸µç À©µµ¿ì");
+		//Frame í´ëž˜ìŠ¤ì˜ ìƒì„±ìžë¥¼ í†µí•´ì„œ "ë‚´ê°€ ë§Œë“  ìœˆë„ìš°"
+		//Frame(String title)ì„ ì‚¬ìš©
+		//seTitle("ë‚´ê°€ ë§Œë“  ìœˆë„ìš°");ëž‘ ê°™ì€ ê¸°ëŠ¥
+		//String title = "ë‚´ê°€ ë§Œë“  ìœˆë„ìš°";
+		//String title = new String("ë‚´ê°€ ë§Œë“  ìœˆë„ìš°");
+		//super(new String("ë‚´ê°€ ë§Œë“  ìœˆë„ìš°");
 		//4.
-		super("³»°¡ ¸¸µç À©µµ¿ì");
-		//¸ÞÀÎ ¸Þ¼ÒµåÀÇ »ý¼º -> ºÎ¸ð »ý¼ºÀÚ -> ÀÚ½Ä»ý¼ºÀÚ
-		//¿À¹ö¶óÀÌµù ¾Æ´Ô(ÀÚ½Ä¿¡ ¶È°°Àº ÇüÅÂ°¡ ¾øÀ½)
-		//ºÎ¸ð(Frame)Å¬·¡½ºÀÇ ÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ý¼ºÀÚ, Ã¹Â°ÁÙ¿¡ ÀÔ·Â
-		//super();ÆÄ¶ó¹ÌÅÍ°¡ ¾ø´Â »ý¼ºÀÚ´Â ºÎ¸£Áö ¾ÊÀ½
-		//this´Â WindowTestÀÇ ³ª ÀÌ¹Ç·Î, ³ªÇÑÅ× String titleÆÄ¶ó¹ÌÅÍ°¡ ÀÖ´Â »ý¼ºÀÚ°¡ ÀÖÀ» ¶§ »ç¿ë°¡´É
+		super("ë‚´ê°€ ë§Œë“  ìœˆë„ìš°");
+		//ë©”ì¸ ë©”ì†Œë“œì˜ ìƒì„± -> ë¶€ëª¨ ìƒì„±ìž -> ìžì‹ìƒì„±ìž
+		//ì˜¤ë²„ë¼ì´ë”© ì•„ë‹˜(ìžì‹ì— ë˜‘ê°™ì€ í˜•íƒœê°€ ì—†ìŒ)
+		//ë¶€ëª¨(Frame)í´ëž˜ìŠ¤ì˜ íŒŒë¼ë¯¸í„°ê°€ ìžˆëŠ” ìƒì„±ìž, ì²«ì§¸ì¤„ì— ìž…ë ¥
+		//super();íŒŒë¼ë¯¸í„°ê°€ ì—†ëŠ” ìƒì„±ìžëŠ” ë¶€ë¥´ì§€ ì•ŠìŒ
+		//thisëŠ” WindowTestì˜ ë‚˜ ì´ë¯€ë¡œ, ë‚˜í•œí…Œ String titleíŒŒë¼ë¯¸í„°ê°€ ìžˆëŠ” ìƒì„±ìžê°€ ìžˆì„ ë•Œ ì‚¬ìš©ê°€ëŠ¥
 		
-		//paint() - À©µµ¿ì Ã¢ ¾È¿¡ ±×·ÁÁÖ´Â ¸Þ¼Òµå(windowÅ¬·¡½º)
+		//paint() - ìœˆë„ìš° ì°½ ì•ˆì— ê·¸ë ¤ì£¼ëŠ” ë©”ì†Œë“œ(windowí´ëž˜ìŠ¤)
 		
-		//System.out - ÄÜ¼ÖÃ¢¿¡ Ç¥½Ã
-		//System.out.println("µµÇü"); 
+		//System.out - ì½˜ì†”ì°½ì— í‘œì‹œ
+		//System.out.println("ë„í˜•"); 
 		
 		
-		//À©µµ¿ì ±âº» ¹ÙÅÁ»ö - Èò»ö, ±âº» ±Û¾¾»ö - °ËÁ¤
-		//¹ÙÅÁ»ö ¹Ù²Ù±â(staticÀÌ±â ¶§¹®¿¡ new»ý¼ºÇÊ¿äX), Å¬·¡½º ¿µ¿ª ¾ÈÀÌ¹Ç·Î  this°¡ ÇÊ¿ä
+		//ìœˆë„ìš° ê¸°ë³¸ ë°”íƒ•ìƒ‰ - í°ìƒ‰, ê¸°ë³¸ ê¸€ì”¨ìƒ‰ - ê²€ì •
+		//ë°”íƒ•ìƒ‰ ë°”ê¾¸ê¸°(staticì´ê¸° ë•Œë¬¸ì— newìƒì„±í•„ìš”X), í´ëž˜ìŠ¤ ì˜ì—­ ì•ˆì´ë¯€ë¡œ  thisê°€ í•„ìš”
 		//this.setBackground(Color.PINK);
 		
-		//ColorÀÇ »ý¼ºÀÚ¸¦ È£ÃâÇØ¼­ ¼±ÅÃÇÑ »öÀ¸·Î ÁöÁ¤
-		//Color c = new Color(251, 220, 225); - ¸Þ¸ð¸® »ý¼ºÇÏ¿© c¿¡ ÁÖ¼Ò°ªÁÜ, ¾ðÁ¦µçÁö ´Ù½Ã Ã£¾Æ°¥ ¼ö ÀÖÀ½
+		//Colorì˜ ìƒì„±ìžë¥¼ í˜¸ì¶œí•´ì„œ ì„ íƒí•œ ìƒ‰ìœ¼ë¡œ ì§€ì •
+		//Color c = new Color(251, 220, 225); - ë©”ëª¨ë¦¬ ìƒì„±í•˜ì—¬ cì— ì£¼ì†Œê°’ì¤Œ, ì–¸ì œë“ ì§€ ë‹¤ì‹œ ì°¾ì•„ê°ˆ ìˆ˜ ìžˆìŒ
 		//this.setBackground(c);
 		
 		//4.
-		this.setBackground(new Color(255, 220, 193));//¹è°æ»ö ¼³Á¤, ¸Þ¸ð¸® »ý¼ºÇÏÁö ¾Ê¾Ò±â ¶§¹®¿¡ 1È¸¿ë
-		setForeground(Color.YELLOW);//±ÛÀÚ»ö ¼³Á¤
+		this.setBackground(new Color(255, 220, 193));//ë°°ê²½ìƒ‰ ì„¤ì •, ë©”ëª¨ë¦¬ ìƒì„±í•˜ì§€ ì•Šì•˜ê¸° ë•Œë¬¸ì— 1íšŒìš©
+		setForeground(Color.YELLOW);//ê¸€ìžìƒ‰ ì„¤ì •
 		
 		
-		//3.Ã¢ÀÇ Å©±â Àâ±â
-		//setSize(300,400); //WindowÅ¬·¡½º¿¡¼­ »ó¼Ó¹ÞÀ½
-		//setBounds(xÀÇ À§Ä¡, yÀÇ À§Ä¡, ³Êºñ, ³ôÀÌ)
-		setBounds(700,100,300,400);//ÇØ»óµµ¶û °ü·ÃÀÖÀ½
+		//3.ì°½ì˜ í¬ê¸° ìž¡ê¸°
+		//setSize(300,400); //Windowí´ëž˜ìŠ¤ì—ì„œ ìƒì†ë°›ìŒ
+		//setBounds(xì˜ ìœ„ì¹˜, yì˜ ìœ„ì¹˜, ë„ˆë¹„, ë†’ì´)
+		setBounds(700,100,300,400);//í•´ìƒë„ëž‘ ê´€ë ¨ìžˆìŒ
 		setVisible(true);
 
 	}
 	
 	//3.
 	public static void main(String[] args) {
-		WindowTest aa = new WindowTest(); // Frame »ý¼ºÀÚ -> WindowTest »ý¼ºÀÚ
+		WindowTest aa = new WindowTest(); // Frame ìƒì„±ìž -> WindowTest ìƒì„±ìž
 	}
 	
-	//ÀÏÁ¤ÇÑ ½ÃÁ¡ÀÌ µÇ¸é JVM(¶Ç´Â ¿î¿µÃ¼Á¦)¿¡ ÀÇÇØ¼­ È£ÃâµÇ´Â ¸Þ¼Òµå - Call Back¸Þ¼Òµå
-	//java»Ó¸¸ ¾Æ´Ï¶ó ¾Èµå·ÎÀÌµå¿¡µµ ÀÖÀ½
-	//¾Èµå·ÎÀÌµå¿¡¼­´Â JVMÀÌ ¾Æ´Ñ ´Þºò¸Ó½Å¿¡ ÀÇÇØ È£ÃâµÊ
-	//main()µµ ÄÝ¹é¸Þ¼Òµå : RunAs¶§ È£Ãâ
-	//paint´Â setVisible(true);¶§ µü ÇÑ¹ø È£ÃâµÊ
+	//ì¼ì •í•œ ì‹œì ì´ ë˜ë©´ JVM(ë˜ëŠ” ìš´ì˜ì²´ì œ)ì— ì˜í•´ì„œ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œ - Call Backë©”ì†Œë“œ
+	//javaë¿ë§Œ ì•„ë‹ˆë¼ ì•ˆë“œë¡œì´ë“œì—ë„ ìžˆìŒ
+	//ì•ˆë“œë¡œì´ë“œì—ì„œëŠ” JVMì´ ì•„ë‹Œ ë‹¬ë¹…ë¨¸ì‹ ì— ì˜í•´ í˜¸ì¶œë¨
+	//main()ë„ ì½œë°±ë©”ì†Œë“œ : RunAsë•Œ í˜¸ì¶œ
+	//paintëŠ” setVisible(true);ë•Œ ë”± í•œë²ˆ í˜¸ì¶œë¨
 	//5.
-	public void paint(Graphics g) {//±¸Çö, À©µµ¿ì Ã¢ ¾È¿¡ ±Û¾¾ Ç¥±â, WindowÅ¬·¡½ºÀÇ ¿À¹ö¶óÀÌµå 
-		g.drawString("µµÇü", 100, 80);
+	public void paint(Graphics g) {//êµ¬í˜„, ìœˆë„ìš° ì°½ ì•ˆì— ê¸€ì”¨ í‘œê¸°, Windowí´ëž˜ìŠ¤ì˜ ì˜¤ë²„ë¼ì´ë“œ 
+		g.drawString("ë„í˜•", 100, 80);
 		g.drawLine(70, 120, 200, 300);
 		g.drawLine(200,120, 70, 300);
 		g.drawRect(70, 130, 120, 100);
@@ -73,8 +73,8 @@ public class WindowTest extends Frame {
 
 
 
-//»ó¼Ó
+//ìƒì†
 //is~a
-//WindowTest is a Frame À©µµ¿ìÅ×½ºÆ®´Â ÇÁ·¹ÀÓÀÌ´Ù
-//WindowTest°¡ Frame¿ªÇÒÀ» ÇÏ°Ú´Ù
-//Frame À©µµ¿ì Ã¢À» ¸¸µé¾îÁÖ´Â °Í(¾Èµå·ÎÀÌµå¿¡¼­µµ »ç¿ë)
+//WindowTest is a Frame ìœˆë„ìš°í…ŒìŠ¤íŠ¸ëŠ” í”„ë ˆìž„ì´ë‹¤
+//WindowTestê°€ Frameì—­í• ì„ í•˜ê² ë‹¤
+//Frame ìœˆë„ìš° ì°½ì„ ë§Œë“¤ì–´ì£¼ëŠ” ê²ƒ(ì•ˆë“œë¡œì´ë“œì—ì„œë„ ì‚¬ìš©)

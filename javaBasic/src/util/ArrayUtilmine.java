@@ -3,14 +3,14 @@ package util;
 import day0915.Student;
 import day0916.CarT;
 
-//¹è¿­ °ü·Ã ¸Ş¼Òµå¸¦ ¸ğ¾ÆµĞ Å¬·¡½º
+//ë°°ì—´ ê´€ë ¨ ë©”ì†Œë“œë¥¼ ëª¨ì•„ë‘” í´ë˜ìŠ¤
 public class ArrayUtilmine {
-	//3½Ã±îÁö
-	//¿©±â¿¡ ¿ì¸®°¡ µ¿ÀûÇÒ´ç¿¡¼­ »ç¿ëÇß´ø ¸Ş¼Òµåµé(indexOf, contains µîµî)À»
-	//Student[]°ú Car[]¿¡ »ç¿ëµÉ ¼ö ÀÖ°Ô ¸¸µå¼¼¿ä.
-    //¸ğµç ¸Ş¼Òµå´Â static¸Ş¼Òµå¿©¾ß¸¸ ÇÑ´Ù.
+	//3ì‹œê¹Œì§€
+	//ì—¬ê¸°ì— ìš°ë¦¬ê°€ ë™ì í• ë‹¹ì—ì„œ ì‚¬ìš©í–ˆë˜ ë©”ì†Œë“œë“¤(indexOf, contains ë“±ë“±)ì„
+	//Student[]ê³¼ Car[]ì— ì‚¬ìš©ë  ìˆ˜ ìˆê²Œ ë§Œë“œì„¸ìš”.
+    //ëª¨ë“  ë©”ì†Œë“œëŠ” staticë©”ì†Œë“œì—¬ì•¼ë§Œ í•œë‹¤.
 	
-	//1.size - ¹è¿­ Å©±â¸¦ È®ÀÎÇÏ´Â ¸Ş¼Òµå
+	//1.size - ë°°ì—´ í¬ê¸°ë¥¼ í™•ì¸í•˜ëŠ” ë©”ì†Œë“œ
 	
 	//1-1.Car[]
 	public static int size(CarT[] carArray) {
@@ -24,38 +24,38 @@ public class ArrayUtilmine {
 	
 	
 	
-	//2.add - ¹è¿­¿¡ »õ·Î¿î ¿ä¼Ò(¿©±â¼­´Â °´Ã¼)¸¦ Ãß°¡(¸¶Áö¸· ¹è¿­¿¡ Ãß°¡)ÇÏ´Â ¸Ş¼Òµå
+	//2.add - ë°°ì—´ì— ìƒˆë¡œìš´ ìš”ì†Œ(ì—¬ê¸°ì„œëŠ” ê°ì²´)ë¥¼ ì¶”ê°€(ë§ˆì§€ë§‰ ë°°ì—´ì— ì¶”ê°€)í•˜ëŠ” ë©”ì†Œë“œ
 	//2-1.CarT[]
 	public static CarT[] add(CarT[] carArray, CarT c) {
-		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù.
+		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤.
 		int size = carArray.length;
 		CarT[] temp = new CarT[size];
-		//temp¹è¿­ÀÇ ³»¿ëÀ» carArray¹è¿­¿¡ º¹»ç
+		//tempë°°ì—´ì˜ ë‚´ìš©ì„ carArrayë°°ì—´ì— ë³µì‚¬
 		for(int i = 0; i < size; i++) {
 			temp[i] = carArray[i];
 		}
-		//carArray¹è¿­ÀÇ Å©±â Áõ°¡
+		//carArrayë°°ì—´ì˜ í¬ê¸° ì¦ê°€
 		carArray = new CarT[size + 1];
 		for(int i = 0; i < size; i++) { 
 			carArray[i]=temp[i];
 		}
-		//¹è¿­ÀÇ °¡Àå ¸¶Áö¸· Ä­¿¡ c Ãß°¡
+		//ë°°ì—´ì˜ ê°€ì¥ ë§ˆì§€ë§‰ ì¹¸ì— c ì¶”ê°€
 		carArray[size] = c;
-		return carArray;//¹è¿­ ÀüÃ¼¸¦ ¹İÈ¯
+		return carArray;//ë°°ì—´ ì „ì²´ë¥¼ ë°˜í™˜
 	}
 	
 	//2-2.Student[]
 	public static Student[] add(Student[] studentArray, Student s) {
-		//ÇöÀç ¹è¿­À» ÀÓ½Ã ¹è¿­¿¡ º¹»çÇÑ´Ù.
+		//í˜„ì¬ ë°°ì—´ì„ ì„ì‹œ ë°°ì—´ì— ë³µì‚¬í•œë‹¤.
 		int size = studentArray.length;
 		Student[] temp = new Student[size];
 		for(int i = 0; i < size; i++) {
 			temp[i] = studentArray[i];
 		}
 		
-		//studentArrayÀÇ Å©±â¸¦ 1 ´Ã¸°´Ù.
-		studentArray = new Student [size + 1]; //sizeÀÎ ÀÌÀ¯ : temp¿¡ sizeÅ©±â ¸¸Å­ÀÇ ¹è¿­°ªÀÌ µé¾î°¡ ÀÖ±â ¶§¹®¿¡
-		//studentArray¿¡ tempÀÇ °ªÀ» º¹»çÇÑ´Ù
+		//studentArrayì˜ í¬ê¸°ë¥¼ 1 ëŠ˜ë¦°ë‹¤.
+		studentArray = new Student [size + 1]; //sizeì¸ ì´ìœ  : tempì— sizeí¬ê¸° ë§Œí¼ì˜ ë°°ì—´ê°’ì´ ë“¤ì–´ê°€ ìˆê¸° ë•Œë¬¸ì—
+		//studentArrayì— tempì˜ ê°’ì„ ë³µì‚¬í•œë‹¤
 		for(int i = 0; i < size; i++) {
 			studentArray[i] = temp[i];
 		}
@@ -66,11 +66,11 @@ public class ArrayUtilmine {
 	
     
 	
-	//3.contains - ¹è¿­¿¡ ÇØ´ç ¿ä¼Ò°¡ Á¸ÀçÇÏ´ÂÁö Ã¼Å©ÇÏ´Â ¸Ş¼Òµå
+	//3.contains - ë°°ì—´ì— í•´ë‹¹ ìš”ì†Œê°€ ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬í•˜ëŠ” ë©”ì†Œë“œ
 	//3-1.Car[]
 	public static boolean contains(CarT[] carArray, CarT c) {
 		for(int i = 0; i < carArray.length; i++) {
-			if(carArray[i].equals(c)) {//ÁÖ¼Ò°ªÀÌ¹Ç·Î °´Ã¼ ÇÊµåºñ±³¿ëÀÎ '=='´Â ¾µ ¼ö ¾øÀ½
+			if(carArray[i].equals(c)) {//ì£¼ì†Œê°’ì´ë¯€ë¡œ ê°ì²´ í•„ë“œë¹„êµìš©ì¸ '=='ëŠ” ì“¸ ìˆ˜ ì—†ìŒ
 				return true;
 			}
 		}
@@ -88,7 +88,7 @@ public class ArrayUtilmine {
 	}
 	
 	
-	//4.indexOf - ¹è¿­¿¡ ÇØ´ç ¿ä¼Ò°¡ ¸î¹ø ÀÎµ¦½º¿¡ Á¸ÀçÇÏ´ÂÁö Ã¼Å©
+	//4.indexOf - ë°°ì—´ì— í•´ë‹¹ ìš”ì†Œê°€ ëª‡ë²ˆ ì¸ë±ìŠ¤ì— ì¡´ì¬í•˜ëŠ”ì§€ ì²´í¬
 	//4-1.Car[]
 	public static int indexOf(CarT[] carArray, CarT c) {
 		for(int i = 0; i < carArray.length; i++) {
@@ -109,37 +109,37 @@ public class ArrayUtilmine {
 	}
 	
 	
-	//5.removeByIndex - ¹è¿­¿¡ ÇØ´ç ÀÎµ¦½º¸¦ »èÁ¦ÇÏ´Â ¸Ş¼Òµå
+	//5.removeByIndex - ë°°ì—´ì— í•´ë‹¹ ì¸ë±ìŠ¤ë¥¼ ì‚­ì œí•˜ëŠ” ë©”ì†Œë“œ
 	//5-1.Car[]
 	public static CarT[] removeByIndex(CarT[] carArray, int index) {
-		//À¯È¿¼º °ËÁõ
+		//ìœ íš¨ì„± ê²€ì¦
 		if(index < 0 || index >= carArray.length) {
 			return carArray;
 		}
 		
-		//ÀÓ½Ã¹è¿­¿¡ ÇöÀç ¹è¿­ º¹»ç
+		//ì„ì‹œë°°ì—´ì— í˜„ì¬ ë°°ì—´ ë³µì‚¬
 		CarT[] temp = new CarT[carArray.length];
 		
 		for(int i = 0; i < carArray.length; i++) {
 			temp[i] = carArray[i];
 		}
 		
-		//¿øº» ¹è¿­ÀÇ Å©±â Ãà¼Ò
+		//ì›ë³¸ ë°°ì—´ì˜ í¬ê¸° ì¶•ì†Œ
 		carArray = new CarT[carArray.length - 1];
 		
-		//indexÀÇ À§Ä¡¿¡ µû¸¥ Àß¶ó³»±â ½ÇÇà
+		//indexì˜ ìœ„ì¹˜ì— ë”°ë¥¸ ì˜ë¼ë‚´ê¸° ì‹¤í–‰
 		if(index == 0 ) {
-			//1.ÀÎµ¦½º°¡ 0ÀÏ ¶§
-			for(int i = 1; i < temp.length; i++) {//carArray.length´Â º¯°æÀÌ µÇ¾ú±â ¶§¹®¿¡ ¾²¸é ¾ÈµÊ
+			//1.ì¸ë±ìŠ¤ê°€ 0ì¼ ë•Œ
+			for(int i = 1; i < temp.length; i++) {//carArray.lengthëŠ” ë³€ê²½ì´ ë˜ì—ˆê¸° ë•Œë¬¸ì— ì“°ë©´ ì•ˆë¨
 				carArray[i-1] = temp[i];
 			}
 		}else if(index ==  temp.length - 1){
-			//2.ÀÎµ¦½º°¡ Á¦ÀÏ ¸¶Áö¸·ÀÏ ¶§
+			//2.ì¸ë±ìŠ¤ê°€ ì œì¼ ë§ˆì§€ë§‰ì¼ ë•Œ
 			for(int i = 0; i < temp.length - 1; i++) {
 				carArray[i] = temp[i];
 			}
 		}else {
-			//3.ÀÎµ¦½º°¡ Áß°£ÀÏ ¶§
+			//3.ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ ë•Œ
 			for(int i = 0; i < temp.length;i++) {
 				if(i < index) {
 					carArray[i] = temp[i];
@@ -154,37 +154,37 @@ public class ArrayUtilmine {
 	
 	//5-2.Student[]
 	public static Student[] removeByIndex(Student[] studentArray, int index) {
-		//¸ÕÀú Á¦°ÅÇÏ±â Àü¿¡ ÇØ´ç ÀÎµ¦½º°¡ Ã³¸®°¡´ÉÇÑ indexÀÎÁöºÎÅÍ Ã¼Å©ÇÑ´Ù
-		//¸¸¾à ºÒ°¡´ÉÇÑ ÀÎµ¦½º¶ó¸é ¹è¿­À» ±×´ë·Î ¸®ÅÏÇØÁÖ¸é µÈ´Ù.
-		//ÀÎµ¦½º°¡ °¡´ÉÇÑ ¹üÀ§ : 0 ~ student.length-1
-		//index´Â »èÁ¦ÇÒ ¹è¿­ÀÇ ÀÎµ¦½º¸¦ °¡¸®Å´
-		// indexÀÇ À¯È¿¼º °ËÁõ
+		//ë¨¼ì € ì œê±°í•˜ê¸° ì „ì— í•´ë‹¹ ì¸ë±ìŠ¤ê°€ ì²˜ë¦¬ê°€ëŠ¥í•œ indexì¸ì§€ë¶€í„° ì²´í¬í•œë‹¤
+		//ë§Œì•½ ë¶ˆê°€ëŠ¥í•œ ì¸ë±ìŠ¤ë¼ë©´ ë°°ì—´ì„ ê·¸ëŒ€ë¡œ ë¦¬í„´í•´ì£¼ë©´ ëœë‹¤.
+		//ì¸ë±ìŠ¤ê°€ ê°€ëŠ¥í•œ ë²”ìœ„ : 0 ~ student.length-1
+		//indexëŠ” ì‚­ì œí•  ë°°ì—´ì˜ ì¸ë±ìŠ¤ë¥¼ ê°€ë¦¬í‚´
+		// indexì˜ ìœ íš¨ì„± ê²€ì¦
 		if(index < 0 || index >= studentArray.length) {
 			return studentArray;
 		}
 		
-		// ÀÓ½Ã¹è¿­¿¡ ÇöÀç ¹è¿­ º¹»ç
+		// ì„ì‹œë°°ì—´ì— í˜„ì¬ ë°°ì—´ ë³µì‚¬
 		Student[] temp = new Student[studentArray.length];
 		for(int i = 0; i < studentArray.length; i++) {
 			temp[i] = studentArray[i];
 		}
 		
-		// ¿øº» ¹è¿­ÀÇ Å©±â Ãà¼Ò
+		// ì›ë³¸ ë°°ì—´ì˜ í¬ê¸° ì¶•ì†Œ
 		studentArray = new Student[studentArray.length-1];
 		
-		 //indexÀÇ À§Ä¡¿¡ µû¸¥ Àß¶ó³»±â ½ÇÇà
+		 //indexì˜ ìœ„ì¹˜ì— ë”°ë¥¸ ì˜ë¼ë‚´ê¸° ì‹¤í–‰
 		if(index == 0){
-			 //1. ÀÎµ¦½º°¡ Á¦ÀÏ ¾ÕÀÏ¶§
+			 //1. ì¸ë±ìŠ¤ê°€ ì œì¼ ì•ì¼ë•Œ
 			for(int i = 1; i < temp.length;i++) {
 				studentArray[i-1] = temp[i];
 			}
 		}else if(index == temp.length - 1) {
-			 //2. ÀÎµ¦½º°¡ Á¦ÀÏ ¸¶Áö¸·ÀÏ¶§
+			 //2. ì¸ë±ìŠ¤ê°€ ì œì¼ ë§ˆì§€ë§‰ì¼ë•Œ
 			for(int i = 0; i < studentArray.length - 1; i++) {
 				studentArray[i] = temp[i];
 			}
 		}else {
-			 //3. ÀÎµ¦½º°¡ Áß°£ÀÏ¶§
+			 //3. ì¸ë±ìŠ¤ê°€ ì¤‘ê°„ì¼ë•Œ
 			for(int i = 0; i < temp.length; i++) {
 				if(i < index) {
 					studentArray[i] = temp[i];
@@ -197,7 +197,7 @@ public class ArrayUtilmine {
 		
 	}
 	
-	//6.removeByelement - ÆÄ¶ó¹ÌÅÍ·Î ³Ñ¾î¿Â element°´Ã¼¸¦ »èÁ¦ÇÏ¿© ¸®ÅÏ
+	//6.removeByelement - íŒŒë¼ë¯¸í„°ë¡œ ë„˜ì–´ì˜¨ elementê°ì²´ë¥¼ ì‚­ì œí•˜ì—¬ ë¦¬í„´
 	//6-1.Student[]
 	public static Student[] removeByelement(Student[] studentArray, Student s) {
 		//int index = indexOf(studentArray, s);

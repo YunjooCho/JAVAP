@@ -3,9 +3,9 @@ package practice;
 
 public class CalTestP2 {
 	    
- 	    //¸Ş¼Òµå ¸¸µé±â<MethodTest3>
-	    int c = 25; //static int cµµ °¡´É
-		int d = 36; //static int dµµ °¡´É
+ 	    //ë©”ì†Œë“œ ë§Œë“¤ê¸°<MethodTest3>
+	    int c = 25; //static int cë„ ê°€ëŠ¥
+		int d = 36; //static int dë„ ê°€ëŠ¥
 				
 		public int sum(int c, int d) { 
 			return c + d;
@@ -26,13 +26,13 @@ public class CalTestP2 {
 	public static void main(String[] args) {
 		/*
 		 *  <CalcTest>
-		 *  º¯¼ö¿¡ ÀúÀåÇÏ¿© 320, 258ÀÇ ÇÕÀ» ±¸ÇÏ½Ã¿À
+		 *  ë³€ìˆ˜ì— ì €ì¥í•˜ì—¬ 320, 258ì˜ í•©ì„ êµ¬í•˜ì‹œì˜¤
 		 *  
-		 *  [½ÇÇà°á°ú]
+		 *  [ì‹¤í–‰ê²°ê³¼]
 		 *  320 + 258 = XXX
 		 *  320 - 258 = XXX(sub)
 		 *  320 * 258 = XXX(mul)
-		 *  320 / 258 = XXX(div) ¼Ò¼ıÁ¡ ÀÌÇÏ 2ÀÚ¸®
+		 *  320 / 258 = XXX(div) ì†Œìˆ«ì  ì´í•˜ 2ìë¦¬
 		 */
 			int a = 320, b = 258;
 			int sum = a + b;
@@ -40,27 +40,27 @@ public class CalTestP2 {
 			int mul = a * b;
 			double div = (double)a / b;
 			
-			System.out.println(a + "¿Í " + b + "ÀÇ ÇÕ : " + sum);
-			System.out.println(a + "¿Í " + b + "ÀÇ Â÷ : " + sub);
-			System.out.println(a + "¿Í " + b + "ÀÇ °ö : " + mul);
-			System.out.println(a + "¿Í " + b + "ÀÇ ¸ò : " + String.format("%.2f", div));
+			System.out.println(a + "ì™€ " + b + "ì˜ í•© : " + sum);
+			System.out.println(a + "ì™€ " + b + "ì˜ ì°¨ : " + sub);
+			System.out.println(a + "ì™€ " + b + "ì˜ ê³± : " + mul);
+			System.out.println(a + "ì™€ " + b + "ì˜ ëª« : " + String.format("%.2f", div));
 		    System.out.println();
 			
 		/* 
-		 *  µ¡¼À, »¬¼À, °ö¼À, ³ª´°¼À ¸Ş¼Òµå ¸¸µé±â
-		 *  ¼ıÀÚ´Â 25, 36
-		 *  ÇÊµå¿¡ ÀÛ¼º
+		 *  ë§ì…ˆ, ëº„ì…ˆ, ê³±ì…ˆ, ë‚˜ëˆ—ì…ˆ ë©”ì†Œë“œ ë§Œë“¤ê¸°
+		 *  ìˆ«ìëŠ” 25, 36
+		 *  í•„ë“œì— ì‘ì„±
 		 *  
 		 */
 			//int c = 25, d = 36;
 			
 			CalTestP2 calculation = new CalTestP2();
 			
-			System.out.println(calculation.c + "¿Í " + calculation.d + "ÀÇ ÇÕ : " + calculation.sum(calculation.c, calculation.d));
-			System.out.println(calculation.c + "¿Í " + calculation.d + "ÀÇ Â÷ : " + calculation.sub(calculation.c, calculation.d));
-			System.out.println(calculation.c + "¿Í " + calculation.d + "ÀÇ °ö : " + calculation.mul(calculation.c, calculation.d));
-			System.out.println(calculation.c + "¿Í " + calculation.d + "ÀÇ ¸ò : " + String.format("%.2f", calculation.div(calculation.c, calculation.d)));
-			//calculation.sum(calculation.c, calculation.d)°¡ ³Ê¹« ±æ °æ¿ì, int c¿Í d¾Õ¿¡ staticÀ» ÀÔ·ÂÇÏ±â
+			System.out.println(calculation.c + "ì™€ " + calculation.d + "ì˜ í•© : " + calculation.sum(calculation.c, calculation.d));
+			System.out.println(calculation.c + "ì™€ " + calculation.d + "ì˜ ì°¨ : " + calculation.sub(calculation.c, calculation.d));
+			System.out.println(calculation.c + "ì™€ " + calculation.d + "ì˜ ê³± : " + calculation.mul(calculation.c, calculation.d));
+			System.out.println(calculation.c + "ì™€ " + calculation.d + "ì˜ ëª« : " + String.format("%.2f", calculation.div(calculation.c, calculation.d)));
+			//calculation.sum(calculation.c, calculation.d)ê°€ ë„ˆë¬´ ê¸¸ ê²½ìš°, int cì™€ dì•ì— staticì„ ì…ë ¥í•˜ê¸°
 	}
 
 }

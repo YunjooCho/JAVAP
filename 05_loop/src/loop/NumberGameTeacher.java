@@ -1,23 +1,23 @@
 package loop;
 
 /*
-¼ıÀÚ¸ÂÃß±â °ÔÀÓ
-1~100»çÀÌÀÇ ³­¼ö¸¦ ¹ß»ıÇÏ¿© ¸ÂÃß´Â °ÔÀÓ
+ìˆ«ìë§ì¶”ê¸° ê²Œì„
+1~100ì‚¬ì´ì˜ ë‚œìˆ˜ë¥¼ ë°œìƒí•˜ì—¬ ë§ì¶”ëŠ” ê²Œì„
 
-[½ÇÇà°á°ú]
-¼ıÀÚ ÀÔ·Â : 50
-50º¸´Ù Å®´Ï´Ù
+[ì‹¤í–‰ê²°ê³¼]
+ìˆ«ì ì…ë ¥ : 50
+50ë³´ë‹¤ í½ë‹ˆë‹¤
 
-¼ıÀÚ ÀÔ·Â : 90
-90º¸´Ù ÀÛ½À´Ï´Ù
+ìˆ«ì ì…ë ¥ : 90
+90ë³´ë‹¤ ì‘ìŠµë‹ˆë‹¤
 
 ...
 
-¼ıÀÚ ÀÔ·Â : 87
-µùµ¿µ­ xx¹ø¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù        
+ìˆ«ì ì…ë ¥ : 87
+ë”©ë™ë… xxë²ˆë§Œì— ë§ì¶”ì…¨ìŠµë‹ˆë‹¤        
 
 continue(Y/N) : n
-ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù
+í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤
  */
 
 import java.io.BufferedReader;
@@ -27,30 +27,30 @@ import java.io.InputStreamReader;
 public class NumberGameTeacher {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸®»ı¼º
+		//ë©”ëª¨ë¦¬ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//º¯¼ö
+		//ë³€ìˆ˜
 		int com, user, count = 0;
 		String yn;
 		
-		for(;;) { //while(true)µµ °¡´É
+		for(;;) { //while(true)ë„ ê°€ëŠ¥
 			com = (int)(Math.random()*100)+1;
 		
 			while(true) {
 			
 			
-				//»ç¿ëÀÚ°¡ µ¥ÀÌÅÍ ÀÔ·Â
-				System.out.print("¼ıÀÚ ÀÔ·Â : ");
+				//ì‚¬ìš©ìê°€ ë°ì´í„° ì…ë ¥
+				System.out.print("ìˆ«ì ì…ë ¥ : ");
 				user = Integer.parseInt(br.readLine());
 				count++; //1,2,3,4,5,....
 			
-				//ºñ±³
+				//ë¹„êµ
 				if(com > user)
-					System.out.print(user + "º¸´Ù Å®´Ï´Ù\n");
+					System.out.print(user + "ë³´ë‹¤ í½ë‹ˆë‹¤\n");
 			
 				else if(com < user)
-					System.out.print(user + "º¸´Ù ÀÛ½À´Ï´Ù\n");
+					System.out.print(user + "ë³´ë‹¤ ì‘ìŠµë‹ˆë‹¤\n");
 			
 				else
 					break;
@@ -58,24 +58,24 @@ public class NumberGameTeacher {
 
 			
 			}//while
-			System.out.println("µùµ¿µ­~" + count + "¹ø ¸¸¿¡ ¸ÂÃß¼Ì½À´Ï´Ù");
+			System.out.println("ë”©ë™ë…~" + count + "ë²ˆ ë§Œì— ë§ì¶”ì…¨ìŠµë‹ˆë‹¤");
 			System.out.println("----------------------------------");
 			
 			while(true) {
 				System.out.print("continue(Y/N) : ");
 				yn = br.readLine();
 				
-				//ÀÌ while¹®À» ¹ş¾î³¯ ¹æ¹ıÀº Y/y/N/nÀÌ¸é  ºüÁ®³ª°¨
+				//ì´ whileë¬¸ì„ ë²—ì–´ë‚  ë°©ë²•ì€ Y/y/N/nì´ë©´  ë¹ ì ¸ë‚˜ê°
 				if(yn.contentEquals("Y")||yn.contentEquals("y")||yn.contentEquals("N")||yn.contentEquals("n"))
 					break;
-				//±× ¿ÜÀÇ ±ÛÀÚ´Â ¹İº¹¹® ½ÇÇà
-			}//continueÀÇ while
+				//ê·¸ ì™¸ì˜ ê¸€ìëŠ” ë°˜ë³µë¬¸ ì‹¤í–‰
+			}//continueì˜ while
 			
-				if(yn.equals("n")||yn.equals("N")) break; // for¹® ³ª°¡±â
+				if(yn.equals("n")||yn.equals("N")) break; // forë¬¸ ë‚˜ê°€ê¸°
 			
 
 		}//for
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 	}
 
 }

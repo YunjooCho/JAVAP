@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 
 public class MsPaintTP extends JFrame implements ActionListener {
 	
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private JLabel x1L, y1L, x2L, y2L, z1L, z2L;
 	private JTextField x1T, y1T, x2T, y2T, z1T, z2T;
 	private JCheckBox fill;
@@ -34,8 +34,8 @@ public class MsPaintTP extends JFrame implements ActionListener {
 	
 	
 	public MsPaintTP() {
-		super("±×¸² ±×¸®±â");
-		//3.ÄÄÆ÷³ÍÆ® »ı¼º
+		super("ê·¸ë¦¼ ê·¸ë¦¬ê¸°");
+		//3.ì»´í¬ë„ŒíŠ¸ ìƒì„±
 		x1L = new JLabel("X1");
 		y1L = new JLabel("Y1");
 		x2L = new JLabel("X2");
@@ -49,13 +49,13 @@ public class MsPaintTP extends JFrame implements ActionListener {
 		y2T = new JTextField("0", 4);
 		z1T = new JTextField("50", 4);
 		z2T = new JTextField("50", 4);
-		fill = new JCheckBox("Ã¤¿ì±â");
+		fill = new JCheckBox("ì±„ìš°ê¸°");
 		
-		line = new JRadioButton("¼±");
-		circle = new JRadioButton("¿ø");
-		rect = new JRadioButton("»ç°¢Çü",true); //true - ±âº»°ªÀ¸·Î ¼³Á¤
-		roundRect = new JRadioButton("µÕ±Ù »ç°¢Çü");
-		pen = new JRadioButton("¿¬ÇÊ");
+		line = new JRadioButton("ì„ ");
+		circle = new JRadioButton("ì›");
+		rect = new JRadioButton("ì‚¬ê°í˜•",true); //true - ê¸°ë³¸ê°’ìœ¼ë¡œ ì„¤ì •
+		roundRect = new JRadioButton("ë‘¥ê·¼ ì‚¬ê°í˜•");
+		pen = new JRadioButton("ì—°í•„");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(line);
@@ -65,9 +65,9 @@ public class MsPaintTP extends JFrame implements ActionListener {
 		group.add(pen);
 		
 		
-		color = new String[] {"»¡°­","ÃÊ·Ï","ÆÄ¶û","º¸¶ó","ÇÏ´Ã"};
+		color = new String[] {"ë¹¨ê°•","ì´ˆë¡","íŒŒë‘","ë³´ë¼","í•˜ëŠ˜"};
 		combo = new JComboBox<String>(color);
-		draw = new JButton("±×¸®±â");
+		draw = new JButton("ê·¸ë¦¬ê¸°");
 		
 		
 		JPanel p1 = new JPanel();
@@ -101,7 +101,7 @@ public class MsPaintTP extends JFrame implements ActionListener {
 		c.add("South", p2);
 		c.add("Center",canvas);
 		
-		//ÀÌº¥Æ®
+		//ì´ë²¤íŠ¸
 		draw.addActionListener(this);
 		
 		list =  new ArrayList<ShapeDTOP>();
@@ -134,7 +134,7 @@ public class MsPaintTP extends JFrame implements ActionListener {
 				
 				dto.setColor(combo.getSelectedIndex());
 				list.add(dto);
-				System.out.println("listÀÇ °³¼ö : " + list.size());
+				System.out.println("listì˜ ê°œìˆ˜ : " + list.size());
 			}
 		});
 		
@@ -145,7 +145,7 @@ public class MsPaintTP extends JFrame implements ActionListener {
 				y2T.setText(e.getY() + "");
 				canvas.repaint();
 				
-				//Ææ±â´É
+				//íœê¸°ëŠ¥
 				if(pen.isSelected()) {
 					ShapeDTOP dto = new ShapeDTOP();
 					
@@ -172,7 +172,7 @@ public class MsPaintTP extends JFrame implements ActionListener {
 		});
 		
 		
-		//2.ÇÁ·¹ÀÓ »ı¼º
+		//2.í”„ë ˆì„ ìƒì„±
 		setBounds(700, 300, 500, 500);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

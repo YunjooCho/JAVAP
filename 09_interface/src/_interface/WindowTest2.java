@@ -12,8 +12,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-//1. »ó¼Ó ¹× ÀÓÇÃ¸®¸àÆ®
-//FrameÀº BorderLayout(µ¿¼­³²ºÏ)
+//1. ìƒì† ë° ì„í”Œë¦¬ë©˜íŠ¸
+//Frameì€ BorderLayout(ë™ì„œë‚¨ë¶)
 public class WindowTest2 extends Frame implements ActionListener, MouseListener, WindowListener {
 	private Button redBtn, greenBtn, blueBtn, exitBtn;
 	private int x, y;
@@ -21,22 +21,22 @@ public class WindowTest2 extends Frame implements ActionListener, MouseListener,
 		new WindowTest2().init();
 	}
 	
-	//2. ÇÁ·¹ÀÓ ¼³Á¤
+	//2. í”„ë ˆì„ ì„¤ì •
 	public void init() {
-		redBtn = new Button("   »¡°­   ");
-		greenBtn = new Button("   ÃÊ·Ï   ");
-		blueBtn = new Button("   ÆÄ¶û   ");
-		exitBtn = new Button("   Á¾·á   ");
+		redBtn = new Button("   ë¹¨ê°•   ");
+		greenBtn = new Button("   ì´ˆë¡   ");
+		blueBtn = new Button("   íŒŒë‘   ");
+		exitBtn = new Button("   ì¢…ë£Œ   ");
 		
-		Panel p = new Panel(); //PanelÀº FlowLayOut(¼ø¼­¹èÄ¡ - Áß¾ÓÀ» Áß½ÉÀ¸·Î ³ª¶õÈ÷ ¹èÄ¡)
+		Panel p = new Panel(); //Panelì€ FlowLayOut(ìˆœì„œë°°ì¹˜ - ì¤‘ì•™ì„ ì¤‘ì‹¬ìœ¼ë¡œ ë‚˜ë€íˆ ë°°ì¹˜)
 		p.setBackground(new Color(119,200,250));
-		p.add(redBtn); //ÆÇ³Ú¿¡ °´Ã¼ Ãß°¡
+		p.add(redBtn); //íŒë„¬ì— ê°ì²´ ì¶”ê°€
 		p.add(greenBtn);
 		p.add(blueBtn);
 		p.add(exitBtn);
 		
-		this.add("North",p); //ÇÁ·¹ÀÓÀÇ À­ºÎºĞ¿¡ PanelÀÌ ÀâÈû. Panel À§¿¡ ¹öÆ° 3°³°¡ ÀâÈû
-							 //±ÛÀÚ¼ö¿¡ µû¶ó ¹öÆ°ÀÇ Å©±â°¡ Á¶Àı °¡´É
+		this.add("North",p); //í”„ë ˆì„ì˜ ìœ—ë¶€ë¶„ì— Panelì´ ì¡í˜. Panel ìœ„ì— ë²„íŠ¼ 3ê°œê°€ ì¡í˜
+							 //ê¸€ììˆ˜ì— ë”°ë¼ ë²„íŠ¼ì˜ í¬ê¸°ê°€ ì¡°ì ˆ ê°€ëŠ¥
 //		this.add("North", redBtn);
 //		this.add("South", greenBtn);
 //		this.add("Center", blueBtn);
@@ -45,11 +45,11 @@ public class WindowTest2 extends Frame implements ActionListener, MouseListener,
 		setBounds(900, 100, 300, 400);
 		setVisible(true);
 		
-		//4.ÀÌº¥Æ®
+		//4.ì´ë²¤íŠ¸
 		this.addWindowListener(this); 
-		//this - FrameÅ¬·¡½º(WindowTest2¿¡°Ô »ó¼Ó), FrameÃ¢
-		//addWindowListener() - ¸Ş¼Òµå¸í
-		//()±¸ÇöºÎ¸¦ ´©°¡ °®°í ÀÖ´ÂÁö
+		//this - Frameí´ë˜ìŠ¤(WindowTest2ì—ê²Œ ìƒì†), Frameì°½
+		//addWindowListener() - ë©”ì†Œë“œëª…
+		//()êµ¬í˜„ë¶€ë¥¼ ëˆ„ê°€ ê°–ê³  ìˆëŠ”ì§€
 		//redBtn.addActionListener(arg0);
 		redBtn.addActionListener(this);
 		greenBtn.addActionListener(this);
@@ -59,22 +59,22 @@ public class WindowTest2 extends Frame implements ActionListener, MouseListener,
 		this.addMouseListener(this);
 	}
 	
-	//5.ÇÁ·¹ÀÓ ¾È¿¡ ±Û¾¾ Ç¥±â
-	public void paint(Graphics g) {//WindowÅ¬·¡½º
-								   //setVisible(true)°¡ ½ÇÇàµÇ¸é ¹Ù·Î ¿©±â·Î ¿À±â¶§¹®¿¡ µÑ´Ù 0À¸·Î ³ª¿È
-								   //x = 0, y = 0ÀÌ µÊ
-								   //Äİ¹é¸Ş¼Òµå¶ó È£ÃâÀÌ ¾ÈµÊ
-		g.drawString("X : " + x + " \tY : " + y, x, y); //µÚ¿¡ x,y´Â °ªÀÌ Ãâ·ÂµÇ´Â °÷À» ÁöÁ¤
+	//5.í”„ë ˆì„ ì•ˆì— ê¸€ì”¨ í‘œê¸°
+	public void paint(Graphics g) {//Windowí´ë˜ìŠ¤
+								   //setVisible(true)ê°€ ì‹¤í–‰ë˜ë©´ ë°”ë¡œ ì—¬ê¸°ë¡œ ì˜¤ê¸°ë•Œë¬¸ì— ë‘˜ë‹¤ 0ìœ¼ë¡œ ë‚˜ì˜´
+								   //x = 0, y = 0ì´ ë¨
+								   //ì½œë°±ë©”ì†Œë“œë¼ í˜¸ì¶œì´ ì•ˆë¨
+		g.drawString("X : " + x + " \tY : " + y, x, y); //ë’¤ì— x,yëŠ” ê°’ì´ ì¶œë ¥ë˜ëŠ” ê³³ì„ ì§€ì •
 		
 	}
 
 	
-	//3.¿À¹ö¶óÀÌµå
+	//3.ì˜¤ë²„ë¼ì´ë“œ
 	//ActionListener
 	@Override
-	public void actionPerformed(ActionEvent e) { //ActionEvent e : EventObjectÅ¬·¡½º
-		if(e.getActionCommand() == "   »¡°­   ") {//Å¸ÀÌÆ²¸íÀ¸·Î ºñ±³&È£Ãâ
-		//if(e.getSource() == redBtn) {//°³Ã¼¸íÀ¸·Î ºñ±³&È£Ãâ
+	public void actionPerformed(ActionEvent e) { //ActionEvent e : EventObjectí´ë˜ìŠ¤
+		if(e.getActionCommand() == "   ë¹¨ê°•   ") {//íƒ€ì´í‹€ëª…ìœ¼ë¡œ ë¹„êµ&í˜¸ì¶œ
+		//if(e.getSource() == redBtn) {//ê°œì²´ëª…ìœ¼ë¡œ ë¹„êµ&í˜¸ì¶œ
 			this.setBackground(new Color(255,0,0));
 		}else if(e.getSource() == greenBtn) {
 			this.setBackground(new Color(0,255,0));
@@ -89,12 +89,12 @@ public class WindowTest2 extends Frame implements ActionListener, MouseListener,
 	//MouseListener
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		System.out.println("¸¶¿ì½º Å¬¸¯");
+		System.out.println("ë§ˆìš°ìŠ¤ í´ë¦­");
 		this.x = e.getX();
 		this.y = e.getY();
-		System.out.println("X : " + x + "\tY : " + y);//ÄÜ¼ÖÃ¢¿¡ ÂïÈû
+		System.out.println("X : " + x + "\tY : " + y);//ì½˜ì†”ì°½ì— ì°í˜
 	
-		repaint(); //JVM¿¡ ÀÇÇØ¼­ paint()°¡ È£ÃâµÊ
+		repaint(); //JVMì— ì˜í•´ì„œ paint()ê°€ í˜¸ì¶œë¨
 	}
 
 	@Override
@@ -119,7 +119,7 @@ public class WindowTest2 extends Frame implements ActionListener, MouseListener,
 
 	@Override
 	public void windowClosing(WindowEvent e) {
-		System.exit(0); //ÇÁ·Î±×·¥ °­Á¦ Á¾·á
+		System.exit(0); //í”„ë¡œê·¸ë¨ ê°•ì œ ì¢…ë£Œ
 	}
 
 	@Override

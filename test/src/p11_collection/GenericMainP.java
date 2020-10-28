@@ -16,13 +16,13 @@ public class GenericMainP {
 
 	public static void main(String[] args) {
 		GenericTestP<String> aa = new GenericTestP<String>();
-		aa.setA("È«±æµ¿");
-		System.out.println("ÀÌ¸§ = " + aa.getA());
+		aa.setA("í™ê¸¸ë™");
+		System.out.println("ì´ë¦„ = " + aa.getA());
 		
 		//aa.setA(25); - error!
 		GenericTestP<Integer> bb = new GenericTestP<Integer>();
 		bb.setA(25);
-		System.out.println("³ªÀÌ = " + bb.getA());
+		System.out.println("ë‚˜ì´ = " + bb.getA());
 	}
 
 }

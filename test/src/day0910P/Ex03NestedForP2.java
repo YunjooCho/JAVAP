@@ -2,10 +2,10 @@ package day0910P;
 
 import java.io.BufferedReader;
 
-//¼ºÀû °ü¸® ÇÁ·Î±×·¥
-//¿ì¸®°¡ »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·ÂÀ» ¹ŞµÇ
-//Á¦ÀÏ ¸¶Áö¸·¿¡ »ç¿ëÀÚ·ÎºÎÅÍ °è¼ÓÇÒÁö ¸»Áö¸¦ ÀÔ·Â ¹Ş¾Æ¼­
-//¸¸¾à »ç¿ëÀÚ°¡ Á¾·á¸¦ ¼±ÅÃÇÏ¸é ÇÁ·Î±×·¥ÀÌ Á¾·á°¡ µÇ´Â Çü½ÄÀ¸·Î ¸¸µé¾îº¸ÀÚ
+//ì„±ì  ê´€ë¦¬ í”„ë¡œê·¸ë¨
+//ìš°ë¦¬ê°€ ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ì„ ë°›ë˜
+//ì œì¼ ë§ˆì§€ë§‰ì— ì‚¬ìš©ìë¡œë¶€í„° ê³„ì†í• ì§€ ë§ì§€ë¥¼ ì…ë ¥ ë°›ì•„ì„œ
+//ë§Œì•½ ì‚¬ìš©ìê°€ ì¢…ë£Œë¥¼ ì„ íƒí•˜ë©´ í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œê°€ ë˜ëŠ” í˜•ì‹ìœ¼ë¡œ ë§Œë“¤ì–´ë³´ì
 
 
 import java.io.IOException;
@@ -16,37 +16,37 @@ public class Ex03NestedForP2 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//½ºÆ®¸µ ÃÊ±âÈ­ ¹æ¹ı
-		//1. »ı¼ºÀÚ
+		//ìŠ¤íŠ¸ë§ ì´ˆê¸°í™” ë°©ë²•
+		//1. ìƒì„±ì
 		String yn = new String();
-		System.out.println("1¹ø" + yn);
+		System.out.println("1ë²ˆ" + yn);
 		
 		//2.null
 		yn = null;
-		System.out.println("2¹ø" + yn);
+		System.out.println("2ë²ˆ" + yn);
 		
-		//3.¸®ÅÍ·²(°ø¹é)
+		//3.ë¦¬í„°ëŸ´(ê³µë°±)
 		yn = "";
-		System.out.println("3¹ø" + yn);
+		System.out.println("3ë²ˆ" + yn);
 		
-		//4.¸®ÅÍ·²
-		yn = "½ºÆ®¸µ";
-		System.out.println("4¹ø" + yn);
+		//4.ë¦¬í„°ëŸ´
+		yn = "ìŠ¤íŠ¸ë§";
+		System.out.println("4ë²ˆ" + yn);
 		
 		do {
-			System.out.print("ÀÌ¸§ : ");
+			System.out.print("ì´ë¦„ : ");
 			String name = br.readLine();
-			System.out.print("±¹¾î : ");
+			System.out.print("êµ­ì–´ : ");
 			int kor = Integer.parseInt(br.readLine());
-			System.out.print("¿µ¾î : ");
+			System.out.print("ì˜ì–´ : ");
 			int eng = Integer.parseInt(br.readLine());
-			System.out.print("¼öÇĞ : ");
+			System.out.print("ìˆ˜í•™ : ");
 			int math = Integer.parseInt(br.readLine());
 			
 			System.out.print("Continued(Y/N)? : ");
 			yn = br.readLine().toUpperCase();
 		}while(yn.equals("Y"));
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 	}
 
 }

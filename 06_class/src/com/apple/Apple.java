@@ -1,16 +1,16 @@
 package com.apple;
 
-import com.zoo.Zoo;//ZooÅ¬·¡½ºÀÇ À§Ä¡¸¦ ¾Ë·ÁÁÜ
+import com.zoo.Zoo;//Zooí´ë˜ìŠ¤ì˜ ìœ„ì¹˜ë¥¼ ì•Œë ¤ì¤Œ
 
 public class Apple {
 	public static void main(String[] args) {
-		 System.out.println("»¡°£ »ç°ú");
+		 System.out.println("ë¹¨ê°„ ì‚¬ê³¼");
 		 
-		 //ZooÅ¬·¡½ºÀÇ  tiger()¸Ş¼Òµå È£Ãâ
-		 Zoo zoo = new Zoo(); //tiger()°¡ staticÀÌ¸é »ı¼º¾ÈÇØµµ µÊ
-		 zoo.tiger();//Á¢±Ù Á¦ÇÑÀÚ - public : ´Ù¸¥ ÆĞÅ°Áö¶ó ¾ê¸¸ Á¢±Ù °¡´É
-		 //zoo.giraffe(); //error!Á¢±Ù Á¦ÇÑÀÚ - protected
-		 //zoo.elephant(); //error!Á¢±Ù Á¦ÇÑÀÚ - default
-		 //zoo.lion(); //error!Á¢±Ù Á¦ÇÑÀÚ - private
+		 //Zooí´ë˜ìŠ¤ì˜  tiger()ë©”ì†Œë“œ í˜¸ì¶œ
+		 Zoo zoo = new Zoo(); //tiger()ê°€ staticì´ë©´ ìƒì„±ì•ˆí•´ë„ ë¨
+		 zoo.tiger();//ì ‘ê·¼ ì œí•œì - public : ë‹¤ë¥¸ íŒ¨í‚¤ì§€ë¼ ì–˜ë§Œ ì ‘ê·¼ ê°€ëŠ¥
+		 //zoo.giraffe(); //error!ì ‘ê·¼ ì œí•œì - protected
+		 //zoo.elephant(); //error!ì ‘ê·¼ ì œí•œì - default
+		 //zoo.lion(); //error!ì ‘ê·¼ ì œí•œì - private
 	}
 }

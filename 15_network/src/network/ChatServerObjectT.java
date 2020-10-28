@@ -13,14 +13,14 @@ public class ChatServerObjectT {
    public ChatServerObjectT() {
       try {
          ss = new ServerSocket(9500);
-         System.out.println("¼­¹ö ÁØºñ ¿Ï·á");
+         System.out.println("ì„œë²„ ì¤€ë¹„ ì™„ë£Œ");
          
          list = new ArrayList<ChatHandlerObject>();
          
          while(true) {
-            Socket socket = ss.accept(); //³¬¾ÆÃ¦´Ù
-            ChatHandlerObject handler = new ChatHandlerObject(socket, list);//½º·¹µå »ı¼º
-            handler.start();//½º·¹µå ½ÃÀÛ - ½º·¹µå ½ÇÇà(run())
+            Socket socket = ss.accept(); //ë‚šì•„ì±ˆë‹¤
+            ChatHandlerObject handler = new ChatHandlerObject(socket, list);//ìŠ¤ë ˆë“œ ìƒì„±
+            handler.start();//ìŠ¤ë ˆë“œ ì‹œì‘ - ìŠ¤ë ˆë“œ ì‹¤í–‰(run())
             
             list.add(handler);
          }

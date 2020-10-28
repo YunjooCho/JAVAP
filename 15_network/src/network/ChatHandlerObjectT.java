@@ -17,14 +17,14 @@ public class ChatHandlerObjectT extends Thread {
       this.socket = socket;
       this.list = list;
       
-      //ois º¸´Ù ¸ÕÀú »ı¼ºµÇ¾î¾ß ÇÑ´Ù(¾È±×·¯¸é ÀÔÀå¸Ş¼¼Áö°¡ ¾È ¶á´Ù)
+      //ois ë³´ë‹¤ ë¨¼ì € ìƒì„±ë˜ì–´ì•¼ í•œë‹¤(ì•ˆê·¸ëŸ¬ë©´ ì…ì¥ë©”ì„¸ì§€ê°€ ì•ˆ ëœ¬ë‹¤)
       oos = new ObjectOutputStream(socket.getOutputStream());
       ois = new ObjectInputStream(socket.getInputStream());
    }
    
    @Override
    public void run() {
-      //Å¬¶óÀÌ¾ğÆ®·Î ºÎÅÍ ¹Ş´Â ÂÊ
+      //í´ë¼ì´ì–¸íŠ¸ë¡œ ë¶€í„° ë°›ëŠ” ìª½
       InfoDTO dto = null;
       String nickName = null;
       
@@ -33,17 +33,17 @@ public class ChatHandlerObjectT extends Thread {
             dto = (InfoDTO)ois.readObject();
             
             if(dto.getCommand() == Info.JOIN) {
-               //¸ğµç Å¬¶óÀÌ¾ğÆ®¿¡°Ô(³ª Æ÷ÇÔ) ÀÔÀå¸Ş¼¼Áö¸¦ º¸³»±â 
+               //ëª¨ë“  í´ë¼ì´ì–¸íŠ¸ì—ê²Œ(ë‚˜ í¬í•¨) ì…ì¥ë©”ì„¸ì§€ë¥¼ ë³´ë‚´ê¸° 
                InfoDTO sendDTO = new InfoDTO();
                sendDTO.setCommand(Info.SEND);
                nickName = dto.getNickName();
-               sendDTO.setMessage(nickName+"´Ô ÀÔÀåÇÏ¿´½À´Ï´Ù");
+               sendDTO.setMessage(nickName+"ë‹˜ ì…ì¥í•˜ì˜€ìŠµë‹ˆë‹¤");
                broadcast(sendDTO);
                
             }else if(dto.getCommand() == Info.EXIT) {
                InfoDTO sendDTO = new InfoDTO();
                
-               //quit¸¦ º¸³½ Å¬¶óÀÌ¾ğÆ®¿¡°Ô quit¸¦ º¸³»±â(³ª¿¡°Ô)
+               //quitë¥¼ ë³´ë‚¸ í´ë¼ì´ì–¸íŠ¸ì—ê²Œ quitë¥¼ ë³´ë‚´ê¸°(ë‚˜ì—ê²Œ)
                sendDTO.setCommand(Info.EXIT);
                oos.writeObject(sendDTO);
                oos.flush();
@@ -52,11 +52,11 @@ public class ChatHandlerObjectT extends Thread {
                oos.close();
                socket.close();
                
-               //³²Àº Å¬¶óÀÌ¾ğÆ®¿¡°ÔÁî  ÅğÀå¸Ş¼¼Áö º¸³»±â
+               //ë‚¨ì€ í´ë¼ì´ì–¸íŠ¸ì—ê²Œì¦ˆ  í‡´ì¥ë©”ì„¸ì§€ ë³´ë‚´ê¸°
                list.remove(this);
                
                sendDTO.setCommand(Info.SEND);
-               sendDTO.setMessage(nickName+"´Ô ÅğÀåÇÏ¿´½À´Ï´Ù");
+               sendDTO.setMessage(nickName+"ë‹˜ í‡´ì¥í•˜ì˜€ìŠµë‹ˆë‹¤");
                broadcast(sendDTO);
                
                break;

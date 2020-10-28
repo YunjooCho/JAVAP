@@ -1,5 +1,5 @@
 package day0916;
-//¼÷Á¦2´Â ÀÌ CarEx04Arry02¸¦ ¿Ï¼º½ÃÅ°¼¼¿ä
+//ìˆ™ì œ2ëŠ” ì´ CarEx04Arry02ë¥¼ ì™„ì„±ì‹œí‚¤ì„¸ìš”
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,86 +10,86 @@ import day0916.CarT;
 public class CarEx04Array02 {
 	private static int SIZE = 3;
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀ¸·Î Car °´Ã¼¸¦ ¸¸µé¾î¼­
-		//Car¹è¿­¿¡ ºñ¾îÀÖ´Â Ä­¿¡ ³Ö°í
-		//ºñ¾îÀÖ´Â Ä­ÀÌ ¾øÀ¸¸é "ºó Ä­ÀÌ ¾ø½À´Ï´Ù"¶ó°í ³ª¿À´Â ÇÁ·Î±×·¥À» ¸¸µé¾îº¸ÀÚ
+		//ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ìœ¼ë¡œ Car ê°ì²´ë¥¼ ë§Œë“¤ì–´ì„œ
+		//Carë°°ì—´ì— ë¹„ì–´ìˆëŠ” ì¹¸ì— ë„£ê³ 
+		//ë¹„ì–´ìˆëŠ” ì¹¸ì´ ì—†ìœ¼ë©´ "ë¹ˆ ì¹¸ì´ ì—†ìŠµë‹ˆë‹¤"ë¼ê³  ë‚˜ì˜¤ëŠ” í”„ë¡œê·¸ë¨ì„ ë§Œë“¤ì–´ë³´ì
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		CarT[] carArray = new CarT[SIZE];
 		
 		while(true) {
 			showMenu();
 			int userChoice = Integer.parseInt(bufferedReader.readLine());
-			//¸¸¾à ÀÔ·ÂÀ» ´­·¶À» ¶§
-			//ºóÄ­ÀÎÁö ¾Æ´ÑÁö´Â ¾î¶»°Ô ¾Ë ¼ö ÀÖÀ»±î?
+			//ë§Œì•½ ì…ë ¥ì„ ëˆŒë €ì„ ë•Œ
+			//ë¹ˆì¹¸ì¸ì§€ ì•„ë‹Œì§€ëŠ” ì–´ë–»ê²Œ ì•Œ ìˆ˜ ìˆì„ê¹Œ?
 			if(userChoice == 1) {
 				
 				if(findEmptyIndex(carArray) == -1) {
-					//ºóÄ­ÀÌ ¾øÀ¸¹Ç·Î °æ°í¸Ş½ÃÁö¸¸ Ãâ·Â
-					System.out.println("ºóÄ­ÀÌ ¾ø½À´Ï´Ù.");
+					//ë¹ˆì¹¸ì´ ì—†ìœ¼ë¯€ë¡œ ê²½ê³ ë©”ì‹œì§€ë§Œ ì¶œë ¥
+					System.out.println("ë¹ˆì¹¸ì´ ì—†ìŠµë‹ˆë‹¤.");
 				}else {
-					//ºóÄ­ÀÌ ÀÖÀ¸´Ï±î c°´Ã¼¸¦ ¸¸µé¾î ÁÖÀÚ
+					//ë¹ˆì¹¸ì´ ìˆìœ¼ë‹ˆê¹Œ cê°ì²´ë¥¼ ë§Œë“¤ì–´ ì£¼ì
 					CarT c = new CarT();
-					System.out.print("Â÷·® ¹øÈ£ : ");
+					System.out.print("ì°¨ëŸ‰ ë²ˆí˜¸ : ");
 					c.setNumber(bufferedReader.readLine());
 					
-					System.out.print("Â÷·® Á¾·ù : ");
+					System.out.print("ì°¨ëŸ‰ ì¢…ë¥˜ : ");
 					c.setType(bufferedReader.readLine());
 					
-					System.out.print("Â÷·® ¿¬½Ä : ");
+					System.out.print("ì°¨ëŸ‰ ì—°ì‹ : ");
 					c.setYear(Integer.parseInt(bufferedReader.readLine()));
 					
-					System.out.print("Â÷·® °¡°İ : ");
+					System.out.print("ì°¨ëŸ‰ ê°€ê²© : ");
 					c.setPrice(Integer.parseInt(bufferedReader.readLine()));
 					
-					System.out.print("Â÷·® »ö»ó : ");
+					System.out.print("ì°¨ëŸ‰ ìƒ‰ìƒ : ");
 					c.setColor(bufferedReader.readLine());
 					
 					carArray = add(carArray, c);
 				}
 				
 			}else if(userChoice == 2) {
-				//Ãâ·Â
-				//ÀÔ·Â°ªÀÌ ÀÖ´ÂÁö ¾ø´ÂÁö È®ÀÎ
-				printArray(carArray); //toString(), ¾îÁ¦Çß´ø printInfo(c1)¸¦ ¶°¿Ã·Áº¸±â
+				//ì¶œë ¥
+				//ì…ë ¥ê°’ì´ ìˆëŠ”ì§€ ì—†ëŠ”ì§€ í™•ì¸
+				printArray(carArray); //toString(), ì–´ì œí–ˆë˜ printInfo(c1)ë¥¼ ë– ì˜¬ë ¤ë³´ê¸°
 			}else if(userChoice == 3){
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}else {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Ş´º¸¦ ´Ù½Ã ¼±ÅÃÇØ ÁÖ¼¼¿ä");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ë¥¼ ë‹¤ì‹œ ì„ íƒí•´ ì£¼ì„¸ìš”");
 			}
-		}//¢º¸Ş´ºÀÇ while
+		}//â–¶ë©”ë‰´ì˜ while
 		
-	}//¢ºmain
+	}//â–¶main
 		
 	
 	
-	//1. ¹è¿­ÀÇ ºóÄ­À» Ã£¾ÆÁÖ´Â findEmptyIndex(CarT[] carArray)¸Ş¼Òµå
+	//1. ë°°ì—´ì˜ ë¹ˆì¹¸ì„ ì°¾ì•„ì£¼ëŠ” findEmptyIndex(CarT[] carArray)ë©”ì†Œë“œ
 	private static int findEmptyIndex(CarT[] carArray) {
 		for(int i = 0; i < carArray.length; i++) {
 			if(carArray[i] == null) {
-				return i; //Ä­ÀÌ ºñ¾îÀÖÀ»¶§ return, ¿©±â¿¡ µµ´ŞÇÏÁö ¸øÇÏ¸é ºóÄ­ÀÌ ¾ø´Ù´Â ¶æ, ¾Æ·¡ ¸®ÅÏÀ» ¸¸³ª -1¿Ã µ¹·ÁÁÜ
+				return i; //ì¹¸ì´ ë¹„ì–´ìˆì„ë•Œ return, ì—¬ê¸°ì— ë„ë‹¬í•˜ì§€ ëª»í•˜ë©´ ë¹ˆì¹¸ì´ ì—†ë‹¤ëŠ” ëœ», ì•„ë˜ ë¦¬í„´ì„ ë§Œë‚˜ -1ì˜¬ ëŒë ¤ì¤Œ
 			}
-		}//¢ºfor¹®
+		}//â–¶forë¬¸
 		return -1; 
-	}//1.¸Ş¼Òµå (index¸¦ ½áÁàµµ µÇ±ä ÇÒ°Å °°Àºµ¥ ¾Æ·¡¼­ »ç¿ëÇÏ¹Ç·Î ±»ÀÌ ÇÊ¿ä¾ø¾îº¸ÀÓ)
+	}//1.ë©”ì†Œë“œ (indexë¥¼ ì¨ì¤˜ë„ ë˜ê¸´ í• ê±° ê°™ì€ë° ì•„ë˜ì„œ ì‚¬ìš©í•˜ë¯€ë¡œ êµ³ì´ í•„ìš”ì—†ì–´ë³´ì„)
 	
 	
-	//2. ÆÄ¶ó¹ÌÅÍ·Î Car¹è¿­°ú Car°´Ã¼¸¦ ¹Ş¾Æ¼­ Car°´Ã¼¸¦ ¹è¿­¿¡ ³Ö¾î¼­
-	//   ±× ¹è¿­À» ¸®ÅÏÇÏ´Â add(Car[] carArray, Car c)¸Ş¼Òµå
-	private static CarT[] add(CarT[] carArray, CarT c) { //main¸Ş¼Òµå°¡ »ç¿ëÇÏ±â ¶§¹®¿¡  staticÀ» ºÙÀÓ
-		int index = findEmptyIndex(carArray); //»ó±â ¸Ş¼Òµå¸¦ °¡Á®¿È
-											  //ºóÄ­ÀÌ ¾øÀ¸¹Ç·Î °æ°í¸Ş½ÃÁö¸¸ Ãâ·Â
-											  //»ó±â ¸Ş¼Òµå¿¡¼­ -1ÀÌ ³ª¿Â °æ¿ì, ÄÚµåÀÇ Èå¸§¿¡ µû¶ó »ó±â ¸Ş¼Òµå°¡ È£ÃâµÈ 
-											  //main¸Ş¼Òµå ¾È¿¡¼­ if¹®(if(findEmptyIndex(carArray) == -1))À¸·Î °É·¯Áö±â ¶§¹®¿¡
-											  //¿©±â ¸Ş¼Òµå¿¡´Â -1ÀÚÃ¼°¡ µé¾î¿ÀÁö ¾ÊÀ½
-		System.out.println("ºóÄ­ÀÌ ¾ø½À´Ï´Ù.");
-		carArray[index] = c; //°´Ã¼ÀÇ ÁÖ¼Ò°ªÀÌ ¹è¿­¿¡ ¿¬°áµÊ
+	//2. íŒŒë¼ë¯¸í„°ë¡œ Carë°°ì—´ê³¼ Carê°ì²´ë¥¼ ë°›ì•„ì„œ Carê°ì²´ë¥¼ ë°°ì—´ì— ë„£ì–´ì„œ
+	//   ê·¸ ë°°ì—´ì„ ë¦¬í„´í•˜ëŠ” add(Car[] carArray, Car c)ë©”ì†Œë“œ
+	private static CarT[] add(CarT[] carArray, CarT c) { //mainë©”ì†Œë“œê°€ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì—  staticì„ ë¶™ì„
+		int index = findEmptyIndex(carArray); //ìƒê¸° ë©”ì†Œë“œë¥¼ ê°€ì ¸ì˜´
+											  //ë¹ˆì¹¸ì´ ì—†ìœ¼ë¯€ë¡œ ê²½ê³ ë©”ì‹œì§€ë§Œ ì¶œë ¥
+											  //ìƒê¸° ë©”ì†Œë“œì—ì„œ -1ì´ ë‚˜ì˜¨ ê²½ìš°, ì½”ë“œì˜ íë¦„ì— ë”°ë¼ ìƒê¸° ë©”ì†Œë“œê°€ í˜¸ì¶œëœ 
+											  //mainë©”ì†Œë“œ ì•ˆì—ì„œ ifë¬¸(if(findEmptyIndex(carArray) == -1))ìœ¼ë¡œ ê±¸ëŸ¬ì§€ê¸° ë•Œë¬¸ì—
+											  //ì—¬ê¸° ë©”ì†Œë“œì—ëŠ” -1ìì²´ê°€ ë“¤ì–´ì˜¤ì§€ ì•ŠìŒ
+		System.out.println("ë¹ˆì¹¸ì´ ì—†ìŠµë‹ˆë‹¤.");
+		carArray[index] = c; //ê°ì²´ì˜ ì£¼ì†Œê°’ì´ ë°°ì—´ì— ì—°ê²°ë¨
 		
 		return carArray;
 	}
 	
-	private static void printArray(CarT[] carArray) { //¹è¿­¿¡ ÀÖ´Â ³»¿ëÀ» Ãâ·ÂÇÏ´Âµ¥ ÀÖ¾î¼­ ¹è¿­ÀÇ ³»¿ëÀÌ nullÀÌ ¾Æ´Ñ °æ¿ì¸¸ Ãâ·Â
-		                                              //main¸Ş¼Òµå°¡ »ç¿ëÇÏ±â ¶§¹®¿¡  staticÀ» ºÙÀÓ
+	private static void printArray(CarT[] carArray) { //ë°°ì—´ì— ìˆëŠ” ë‚´ìš©ì„ ì¶œë ¥í•˜ëŠ”ë° ìˆì–´ì„œ ë°°ì—´ì˜ ë‚´ìš©ì´ nullì´ ì•„ë‹Œ ê²½ìš°ë§Œ ì¶œë ¥
+		                                              //mainë©”ì†Œë“œê°€ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì—  staticì„ ë¶™ì„
 		for(int i = 0; i < carArray.length; i++) {
 			if(carArray[i] != null) {
 				System.out.println(carArray[i]);
@@ -98,14 +98,14 @@ public class CarEx04Array02 {
 	}
 	
 	
-	//3.¸Ş´º ¸Ş¼Òµå
-	private static void showMenu() { //main¸Ş¼Òµå°¡ »ç¿ëÇÏ±â ¶§¹®¿¡  staticÀ» ºÙÀÓ
+	//3.ë©”ë‰´ ë©”ì†Œë“œ
+	private static void showMenu() { //mainë©”ì†Œë“œê°€ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì—  staticì„ ë¶™ì„
 		System.out.println("=====================");
-		System.out.println("Â÷·®°ü¸® ÇÁ·Î±×·¥");
-		System.out.println("1.ÀÔ·Â 2.Ãâ·Â 3. Á¾·á");
+		System.out.println("ì°¨ëŸ‰ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		System.out.println("1.ì…ë ¥ 2.ì¶œë ¥ 3. ì¢…ë£Œ");
 		System.out.println("=====================");
-		System.out.print("¸Ş´ºÀÔ·Â> ");
-	}//¸Ş´º ¸Ş¼Òµå
+		System.out.print("ë©”ë‰´ì…ë ¥> ");
+	}//ë©”ë‰´ ë©”ì†Œë“œ
 	
 	
 }//Class
@@ -114,40 +114,40 @@ public class CarEx04Array02 {
 	
 
 
-//¿¹Á¦ 1: ÇöÀç ÀÔ·Â ÇÏ´Â ÄÚµåµéÀ» 2°³ÀÇ ¸Ş¼Òµå·Î ³ª´©¼¼¿ä
-//		 ¸Ş¼Òµå 1: ÀÔ·ÂÇÒ index¸¦ Ã£´Â ¸Ş¼Òµå
-//		 ¸Ş¼Òµå 2: ¹è¿­¿¡ ÇØ´çÀ§Ä¡¿¡ Car °´Ã¼¸¦ ³Ö¾î¼­ ¹è¿­À» ´Ù½Ã ¸®ÅÏÇØÁÖ´Â ¸Ş¼Òµå
-//¿¹Á¦ 2: ÇöÀç Ãâ·Â ÇÏ´Â ÄÚµåµéÀ» ¸Ş¼Òµå·Î ºĞ¸®ÇÏ¼¼¿ä
-//¿¹Á¦ 3: ¸Ş´º¸¦ Ãâ·ÂÇÏ´Â ÄÚµåµéÀ» ¸Ş¼Òµå·Î ºĞ¸®ÇÏ¼¼¿ä  
+//ì˜ˆì œ 1: í˜„ì¬ ì…ë ¥ í•˜ëŠ” ì½”ë“œë“¤ì„ 2ê°œì˜ ë©”ì†Œë“œë¡œ ë‚˜ëˆ„ì„¸ìš”
+//		 ë©”ì†Œë“œ 1: ì…ë ¥í•  indexë¥¼ ì°¾ëŠ” ë©”ì†Œë“œ
+//		 ë©”ì†Œë“œ 2: ë°°ì—´ì— í•´ë‹¹ìœ„ì¹˜ì— Car ê°ì²´ë¥¼ ë„£ì–´ì„œ ë°°ì—´ì„ ë‹¤ì‹œ ë¦¬í„´í•´ì£¼ëŠ” ë©”ì†Œë“œ
+//ì˜ˆì œ 2: í˜„ì¬ ì¶œë ¥ í•˜ëŠ” ì½”ë“œë“¤ì„ ë©”ì†Œë“œë¡œ ë¶„ë¦¬í•˜ì„¸ìš”
+//ì˜ˆì œ 3: ë©”ë‰´ë¥¼ ì¶œë ¥í•˜ëŠ” ì½”ë“œë“¤ì„ ë©”ì†Œë“œë¡œ ë¶„ë¦¬í•˜ì„¸ìš”  
 
-//<Áú¹®>
-//1. -1. userChoice == 1 ¾Æ·¡°°ÀÌ Àû¿ë°¡´É??(x) - Â÷·®µ¥ÀÌÅÍ¸¦ 3¹ø ´Ù ÀÔ·ÂÇØ¾ß ¸Ş´º·Î ³Ñ¾î°¨
-//   -2. int index = -1;À» ¹Û¿¡¼­ ¼±¾ğÇÏ´Â ÀÌÀ¯?(x) - ´ÙÀ½ if¹®ÀÎ if(index == -1) {System.out.println("ºóÄ­ÀÌ ¾ø½À´Ï´Ù."); ¿¡¼­ index = -1À» Ã£Áö¸øÇØ ¿À·ù¹ß»ı
-//   -3. -1À» Áı¾î³Ö´Â ÀÌÀ¯´Â ÈÄ¿¡ ¹è¿­Å©±â°¡ ¹Ù²¸µµ Áßº¹µÇÁö ¾Ê±â À§ÇØ?? - <¼±»ı´Ô> : -1Àº ¹è¿­¿¡ Á¸ÀçÇÒ ¼ö ¾ø´Â ÀÎµ¦½ºÀÌ±â ¶§¹®¿¡
-//   -4. userChoiceÈå¸§ - 51¹ø carArray[index] = c;, °¶ÅÇ ÇÊ±âºÎºĞ ÂüÁ¶
-//<1-1Áú¹®¿¹½Ã>
+//<ì§ˆë¬¸>
+//1. -1. userChoice == 1 ì•„ë˜ê°™ì´ ì ìš©ê°€ëŠ¥??(x) - ì°¨ëŸ‰ë°ì´í„°ë¥¼ 3ë²ˆ ë‹¤ ì…ë ¥í•´ì•¼ ë©”ë‰´ë¡œ ë„˜ì–´ê°
+//   -2. int index = -1;ì„ ë°–ì—ì„œ ì„ ì–¸í•˜ëŠ” ì´ìœ ?(x) - ë‹¤ìŒ ifë¬¸ì¸ if(index == -1) {System.out.println("ë¹ˆì¹¸ì´ ì—†ìŠµë‹ˆë‹¤."); ì—ì„œ index = -1ì„ ì°¾ì§€ëª»í•´ ì˜¤ë¥˜ë°œìƒ
+//   -3. -1ì„ ì§‘ì–´ë„£ëŠ” ì´ìœ ëŠ” í›„ì— ë°°ì—´í¬ê¸°ê°€ ë°”ê»´ë„ ì¤‘ë³µë˜ì§€ ì•Šê¸° ìœ„í•´?? - <ì„ ìƒë‹˜> : -1ì€ ë°°ì—´ì— ì¡´ì¬í•  ìˆ˜ ì—†ëŠ” ì¸ë±ìŠ¤ì´ê¸° ë•Œë¬¸ì—
+//   -4. userChoiceíë¦„ - 51ë²ˆ carArray[index] = c;, ê°¤íƒ­ í•„ê¸°ë¶€ë¶„ ì°¸ì¡°
+//<1-1ì§ˆë¬¸ì˜ˆì‹œ>
 //if(userChoice == 1) {
 //	int index;
-//	for(int i = 0; i < carArray.length; i++) { //[0][1][2]µ¹·Á¼­ °ªÀÌ nullÀÌ¸é 
+//	for(int i = 0; i < carArray.length; i++) { //[0][1][2]ëŒë ¤ì„œ ê°’ì´ nullì´ë©´ 
 //		if(carArray[i] == null) {
 //			index = i;
 //			 System.out.println("i: " + i + "index: " + index);
 //			 System.out.println();
 //			 
 //			 CarT c = new CarT();
-//				System.out.print("¹øÈ£ : ");
+//				System.out.print("ë²ˆí˜¸ : ");
 //				c.setNumber(bufferedReader.readLine());
-//				System.out.print("Â÷Á¾ : ");
+//				System.out.print("ì°¨ì¢… : ");
 //				c.setType(bufferedReader.readLine());
-//				System.out.print("¿¬½Ä : ");
+//				System.out.print("ì—°ì‹ : ");
 //				c.setYear(Integer.parseInt(bufferedReader.readLine()));
-//				System.out.print("°¡°İ : ");
+//				System.out.print("ê°€ê²© : ");
 //				c.setPrice(Integer.parseInt(bufferedReader.readLine()));
-//				System.out.print("»ö»ó : ");
+//				System.out.print("ìƒ‰ìƒ : ");
 //				c.setColor(bufferedReader.readLine());
 //				carArray[index] = c;
 //		}else {
 //			index = -1;
-//			System.out.println("ºóÄ­ÀÌ ¾ø½À´Ï´Ù.");
+//			System.out.println("ë¹ˆì¹¸ì´ ì—†ìŠµë‹ˆë‹¤.");
 //		}
 //	}

@@ -7,10 +7,10 @@ import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-//1.»ó¼Ó
+//1.ìƒì†
 public class PackManP extends Frame {
 
-	//2.ÇÊµå ¼±¾ğ
+	//2.í•„ë“œ ì„ ì–¸
 	private Image img, foodImg;
 	private int x = 225;
 	private int y = 225;
@@ -21,7 +21,7 @@ public class PackManP extends Frame {
 	
 	public PackManP() {
 		
-		//3.ÇÁ·¹ÀÓ »ı¼º
+		//3.í”„ë ˆì„ ìƒì„±
 		setBounds(700, 300, 500, 500);
 		setVisible(true);
 		setResizable(false);
@@ -38,7 +38,7 @@ public class PackManP extends Frame {
 	public void paint(Graphics g) {
 		Image img = Toolkit.getDefaultToolkit().getImage("pacman.png");
 		
-		//¡Ú¡ÚÁÂÇ¥ ±ÔÄ¢Ã£±â, ¼±»ı´Ô Ç®ÀÌ ½Ä °è»êÇÏ±â
+		//â˜…â˜…ì¢Œí‘œ ê·œì¹™ì°¾ê¸°, ì„ ìƒë‹˜ í’€ì´ ì‹ ê³„ì‚°í•˜ê¸°
 		//g.drawImage(img, x, y, x+50, y+50, sel*50, sy1, sx2, sy2, observer)
 	}
 	

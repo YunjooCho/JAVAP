@@ -7,27 +7,27 @@ import java.util.ArrayList;
 
 public class BoardEx02 {
 	
-	//1.ÇÊµå ¼±¾ğ
+	//1.í•„ë“œ ì„ ì–¸
 	private static ArrayList<Board> list;
 	private static BufferedReader bufferedReader;
-	//int º¯¼ö¸¦ ÇÏ³ª ¸¸µé¾î¼­
-	//±ÛÀ» ¾µ ¶§¸¶´Ù ±× ¹øÈ£°¡ ¿Ã¶ó°¡°í
-	//»ç¿ëÀÚ°¡ ±ÛÀ» ¾µ ¶§ ±Û ¹øÈ£¸¦ Á÷Á¢ ÀÔ·ÂÇÏ´Â°Ô ¾Æ´Ï¶ó
-	//±× º¯¼öÀÇ °ªÀ» ¹Ş¾Æ¿Í¼­ ¾²´Â ¹æ¹ıÀ» ¸¸µé¾îº¸ÀÚ
+	//int ë³€ìˆ˜ë¥¼ í•˜ë‚˜ ë§Œë“¤ì–´ì„œ
+	//ê¸€ì„ ì“¸ ë•Œë§ˆë‹¤ ê·¸ ë²ˆí˜¸ê°€ ì˜¬ë¼ê°€ê³ 
+	//ì‚¬ìš©ìê°€ ê¸€ì„ ì“¸ ë•Œ ê¸€ ë²ˆí˜¸ë¥¼ ì§ì ‘ ì…ë ¥í•˜ëŠ”ê²Œ ì•„ë‹ˆë¼
+	//ê·¸ ë³€ìˆ˜ì˜ ê°’ì„ ë°›ì•„ì™€ì„œ ì“°ëŠ” ë°©ë²•ì„ ë§Œë“¤ì–´ë³´ì
 	private static int seq = 1;
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
-		//2.ÇÊµå ÃÊ±âÈ­
+		//2.í•„ë“œ ì´ˆê¸°í™”
 		list = new ArrayList<>();
 		bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		showMenu();
 	}
 	
-	//3. ¸Ş´º ¸Ş¼Òµå ÀÛ¼º
+	//3. ë©”ë‰´ ë©”ì†Œë“œ ì‘ì„±
 	private static void showMenu() throws NumberFormatException, IOException {
 		while(true) {
-			System.out.println("°Ô½ÃÆÇ °ü¸® ÇÁ·Î±×·¥");
-			System.out.println("1.ÀÔ·Â  2.Ãâ·Â  3.Á¾·á");
+			System.out.println("ê²Œì‹œíŒ ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+			System.out.println("1.ì…ë ¥  2.ì¶œë ¥  3.ì¢…ë£Œ");
 			System.out.print("> ");
 			int choice = validateNumber(1,3);
 			if(choice == 1) {
@@ -35,36 +35,36 @@ public class BoardEx02 {
 			}else if(choice == 2) {
 				selectAll();
 			}else if(choice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}
 			
 		}
 	}
 	
-	//6. ¹è¿­ Ãâ·Â ¸Ş¼Òµå
+	//6. ë°°ì—´ ì¶œë ¥ ë©”ì†Œë“œ
 	private static void selectAll() throws NumberFormatException, IOException {
-		System.out.println("===±Û¸ñ·Ï===");
+		System.out.println("===ê¸€ëª©ë¡===");
 		for(int i = 0; i < list.size();i++) {
-			System.out.printf("%d. %s\n", (i+1), list.get(i).getTitle()); //->±Û¹øÈ£ ¹Ş°í ¶Ç ÀÏ·Ã¹øÈ£ ¼ÂÆÃ?
+			System.out.printf("%d. %s\n", (i+1), list.get(i).getTitle()); //->ê¸€ë²ˆí˜¸ ë°›ê³  ë˜ ì¼ë ¨ë²ˆí˜¸ ì…‹íŒ…?
 		}
-		System.out.println("°³º°º¸±âÇÒ ±Û ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä(0Àº ¸ŞÀÎÀ¸·Î)");
+		System.out.println("ê°œë³„ë³´ê¸°í•  ê¸€ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”(0ì€ ë©”ì¸ìœ¼ë¡œ)");
 		int choice = validateNumber(0, list.size()) - 1;
 		if(choice == -1) {
-			System.out.println("¸ŞÀÎ ¸Ş´º·Î ÀÌµ¿ÇÕ´Ï´Ù.");
+			System.out.println("ë©”ì¸ ë©”ë‰´ë¡œ ì´ë™í•©ë‹ˆë‹¤.");
 		}else {
 			selectOne(choice);
 		}
 	}
 	
-	//7. »ó¼¼º¸±â ¸Ş¼Òµå(6¿¡¼­ ¼±ÅÃµÈ ÀÎµ¦½º)
+	//7. ìƒì„¸ë³´ê¸° ë©”ì†Œë“œ(6ì—ì„œ ì„ íƒëœ ì¸ë±ìŠ¤)
 	private static void selectOne(int index) throws NumberFormatException, IOException {
-		Board b = list.get(index);//add()¿Í´Â ¶Ç´Ù¸¥ °´Ã¼°¡ »ı¼ºµÇ¹Ç·Î ¿µÇâ ¾øÀ½
-		System.out.println("Á¦¸ñ : " + b.getTitle());
-		System.out.println("ÀÛ¼ºÀÚ : " + b.getWriter());
-		System.out.println("Á¦¸ñ : " + b.getContent());
+		Board b = list.get(index);//add()ì™€ëŠ” ë˜ë‹¤ë¥¸ ê°ì²´ê°€ ìƒì„±ë˜ë¯€ë¡œ ì˜í–¥ ì—†ìŒ
+		System.out.println("ì œëª© : " + b.getTitle());
+		System.out.println("ì‘ì„±ì : " + b.getWriter());
+		System.out.println("ì œëª© : " + b.getContent());
 		System.out.println("=========================");
-		System.out.println("1.¼öÁ¤  2.»èÁ¦  3.¸ñ·ÏÀ¸·Î");
+		System.out.println("1.ìˆ˜ì •  2.ì‚­ì œ  3.ëª©ë¡ìœ¼ë¡œ");
 		int choice = validateNumber(1,3);
 		if(choice == 1) {
 			update(index);
@@ -75,22 +75,22 @@ public class BoardEx02 {
 		}
 	}
 	
-	//8.7¿¡¼­ ¼öÁ¤À» ¼±ÅÃÇßÀ» ¶§ È£ÃâµÇ´Â ¸Ş¼Òµå(ÀÔ·Â ³»¿ë ¼öÁ¤ÇÏ±â)
+	//8.7ì—ì„œ ìˆ˜ì •ì„ ì„ íƒí–ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œ(ì…ë ¥ ë‚´ìš© ìˆ˜ì •í•˜ê¸°)
 	private static void update(int index) throws IOException {
-		System.out.print("Á¦¸ñ : ");
+		System.out.print("ì œëª© : ");
 		list.get(index).setTitle(bufferedReader.readLine());
-		System.out.print("ÀÛ¼ºÀÚ : ");
+		System.out.print("ì‘ì„±ì : ");
 		list.get(index).setWriter(bufferedReader.readLine());
-		System.out.print("³»¿ë : ");
+		System.out.print("ë‚´ìš© : ");
 		list.get(index).setContent(bufferedReader.readLine());
 		
 		selectOne(index);
 	}
 	
 	
-	//9.7¿¡¼­ »èÁ¦¸¦ ¼±ÅÃÇßÀ» ¶§ È£ÃâµÇ´Â ¸Ş¼Òµå(ÀÔ·Â ³»¿ë ¼öÁ¤ÇÏ±â)
+	//9.7ì—ì„œ ì‚­ì œë¥¼ ì„ íƒí–ˆì„ ë•Œ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œ(ì…ë ¥ ë‚´ìš© ìˆ˜ì •í•˜ê¸°)
 	private static void delete(int index) throws IOException{
-		System.out.println("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");
+		System.out.println("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 		String yn = bufferedReader.readLine();
 		if(yn.equals("y")) {
 			list.remove(index);
@@ -100,32 +100,32 @@ public class BoardEx02 {
 		}
 	}
  	
-	//5.±Û ÀÛ¼º ¸Ş¼Òµå(ÀÔ·ÂµÈ ³»¿ëÀ» ¹è¿­¿¡ Ãß°¡&¹è¿­µµ ÇÔ²² Áõ°¡)
+	//5.ê¸€ ì‘ì„± ë©”ì†Œë“œ(ì…ë ¥ëœ ë‚´ìš©ì„ ë°°ì—´ì— ì¶”ê°€&ë°°ì—´ë„ í•¨ê»˜ ì¦ê°€)
 	private static void add() throws NumberFormatException, IOException{
 		Board b = new Board();
 		b.setId(seq);
 		seq++;
 		
-		System.out.println("±Û Á¦¸ñ: ");
+		System.out.println("ê¸€ ì œëª©: ");
 		b.setTitle(bufferedReader.readLine());
 		
-		System.out.println("±Û ÀÛ¼ºÀÚ: ");
+		System.out.println("ê¸€ ì‘ì„±ì: ");
 		b.setWriter(bufferedReader.readLine());
 		
-		System.out.println("±Û ³»¿ë: ");
+		System.out.println("ê¸€ ë‚´ìš©: ");
 		b.setContent(bufferedReader.readLine());
 		
-		list.add(b);//¿©±â¼­ add´Â º» ¸Ş¼Òµå°¡ ¾Æ´Ñ ArrayList¾È¿¡ Æ÷ÇÔµÈ add¸Ş¼Òµå 
-		            //³»°¡ ArrayListBoard¿¡ ¸¸µç setInfo() + add() ÇüÅÂ
+		list.add(b);//ì—¬ê¸°ì„œ addëŠ” ë³¸ ë©”ì†Œë“œê°€ ì•„ë‹Œ ArrayListì•ˆì— í¬í•¨ëœ addë©”ì†Œë“œ 
+		            //ë‚´ê°€ ArrayListBoardì— ë§Œë“  setInfo() + add() í˜•íƒœ
 	}
 	
 	
-	//4.À¯È¿°ª È®ÀÎ ¸Ş¼Òµå ÀÛ¼º
+	//4.ìœ íš¨ê°’ í™•ì¸ ë©”ì†Œë“œ ì‘ì„±
 	private static int validateNumber(int minimum, int maximum) throws NumberFormatException, IOException{
 		System.out.print("> ");
 		int value = Integer.parseInt(bufferedReader.readLine());
 		while(value < minimum || value > maximum) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			System.out.println("> ");
 			value = Integer.parseInt(bufferedReader.readLine());
 		}

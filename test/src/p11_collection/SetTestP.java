@@ -8,11 +8,11 @@ public class SetTestP {
 
 	public static void main(String[] args) {
 		Set<String> set = new HashSet<String>();
-		set.add("È£¶ûÀÌ"); //ÀÔ·ÂÇÑ ¼ø¼­´ë·Î ÀúÀåµÊ, Á¦³×¸¯ÀÌ ¾ø¾î¼­ WarningÀÌ ¶ä
-		set.add("»çÀÚ");
-		set.add("È£¶ûÀÌ"); //Áßº¹Çã¿ëX, ¼ø¼­X
-		set.add("±â¸°");
-		set.add("ÄÚ³¢¸®");
+		set.add("í˜¸ë‘ì´"); //ì…ë ¥í•œ ìˆœì„œëŒ€ë¡œ ì €ì¥ë¨, ì œë„¤ë¦­ì´ ì—†ì–´ì„œ Warningì´ ëœ¸
+		set.add("ì‚¬ì");
+		set.add("í˜¸ë‘ì´"); //ì¤‘ë³µí—ˆìš©X, ìˆœì„œX
+		set.add("ê¸°ë¦°");
+		set.add("ì½”ë¼ë¦¬");
 
 		Iterator<String> it = set.iterator();
 		while(it.hasNext()) {

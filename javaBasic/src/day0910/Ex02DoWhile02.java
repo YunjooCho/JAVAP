@@ -1,12 +1,12 @@
 package day0910;
 
-//»ç¿ëÀÚ·ÎºÎÅÍ Á¡¼ö¸¦ ÀÔ·Â¹Þ¾Æ¼­
-//ÃÑÁ¡À» °è»êÇØÁÖ´Â ÇÁ·Î±×·¥
-//´Ü »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ Á¡¼ö°¡ Àß¸øµÈ Çü½Ä(0º¸´Ù Àû°Å³ª 100º¸´Ù Å« ¼Í¿ì)
-//ÀÏ ¶§¿¡´Â
-//¿Ã¹Ù¸¥ Á¡¼ö°¡ µé¾î¿Ã ¶§ ±îÁö
-//´Ù½Ã ÀÔ·Â¹Þ´Â´Ù.
-//ÀÔ·ÂÀ» ÇÒ ¶§¿¡´Â do whileÀ» »ç¿ëÇÏµµ·Ï ÇÑ´Ù.
+//ì‚¬ìš©ìžë¡œë¶€í„° ì ìˆ˜ë¥¼ ìž…ë ¥ë°›ì•„ì„œ
+//ì´ì ì„ ê³„ì‚°í•´ì£¼ëŠ” í”„ë¡œê·¸ëž¨
+//ë‹¨ ì‚¬ìš©ìžê°€ ìž…ë ¥í•œ ì ìˆ˜ê°€ ìž˜ëª»ëœ í˜•ì‹(0ë³´ë‹¤ ì ê±°ë‚˜ 100ë³´ë‹¤ í° ì…©ìš°)
+//ì¼ ë•Œì—ëŠ”
+//ì˜¬ë°”ë¥¸ ì ìˆ˜ê°€ ë“¤ì–´ì˜¬ ë•Œ ê¹Œì§€
+//ë‹¤ì‹œ ìž…ë ¥ë°›ëŠ”ë‹¤.
+//ìž…ë ¥ì„ í•  ë•Œì—ëŠ” do whileì„ ì‚¬ìš©í•˜ë„ë¡ í•œë‹¤.
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,36 +18,36 @@ public class Ex02DoWhile02 {
 		
 		
 	
-		//¸Þ¸ð¸® »ý¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//º¯¼ö
+		//ë³€ìˆ˜
 		int kor =0, eng = 0, math = 0;
 		
 		do {
 			if(kor > 100 || kor < 0) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ìž˜ëª» ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.println("±¹¾îÁ¡¼ö :");
+			System.out.println("êµ­ì–´ì ìˆ˜ :");
 			kor=Integer.parseInt(bufferedReader.readLine());
 		}while(kor > 100 || kor < 0);
 		do {
 			if(eng > 100 || eng < 0) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ìž˜ëª» ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.println("¿µ¾îÁ¡¼ö :");
+			System.out.println("ì˜ì–´ì ìˆ˜ :");
 			eng=Integer.parseInt(bufferedReader.readLine());
 		}while(eng > 100 || eng < 0);
 		do {
 			if(math > 100 || math < 0) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ìž˜ëª» ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.println("¼öÇÐÁ¡¼ö :");
+			System.out.println("ìˆ˜í•™ì ìˆ˜ :");
 			math=Integer.parseInt(bufferedReader.readLine());
 		}while(math > 100 || math < 0);
 		
 		int sum = kor + eng + math;
-		System.out.println("ÃÑÁ¡ :" + sum);
+		System.out.println("ì´ì  :" + sum);
 		
 		}//main
 	}//class

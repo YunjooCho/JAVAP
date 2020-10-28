@@ -7,52 +7,52 @@ import java.util.Locale;
 public class NumberTest {
 
 	public static void main(String[] args) {
-		//<Ãß»óÅ¬·¡½º>NumberFormatÀÇ È°¿ë
-		//1. ÀÚ½ÄÅ¬·¡½º¸¦ ÀÌ¿ëÇÑ »ı¼º
+		//<ì¶”ìƒí´ë˜ìŠ¤>NumberFormatì˜ í™œìš©
+		//1. ìì‹í´ë˜ìŠ¤ë¥¼ ì´ìš©í•œ ìƒì„±
 		NumberFormat nf = new DecimalFormat();
-		//3ÀÚ¸®¸¶´Ù ½°Ç¥¸¦ Âï°í ¼Ò¼öÀÌÇÏ 3Â°ÀÚ¸®±îÁö Ãâ·Â(ÀÚµ¿ ¹İ¿Ã¸²)
+		//3ìë¦¬ë§ˆë‹¤ ì‰¼í‘œë¥¼ ì°ê³  ì†Œìˆ˜ì´í•˜ 3ì§¸ìë¦¬ê¹Œì§€ ì¶œë ¥(ìë™ ë°˜ì˜¬ë¦¼)
 		System.out.println(nf.format(12345678.456789));
 		System.out.println(nf.format(12345678));
 		System.out.println();
 		
-		NumberFormat nf2 = new DecimalFormat("#,###.##¿ø");
-		//¼Ò¼öÁ¡ ÀÌÇÏÀÇ ¼ıÀÚ°¡ À¯È¿¼ıÀÚ°¡ ¾Æ´Ñ °ÍÀº Ç¥ÇöÇÏÁö ¾Ê´Â´Ù
-		//#,###.## & #,###.00 - .µÚ¿¡ 0ÀÌ ÀÖÀ¸¸é °ªÀÌ ¾ø´õ¶óµµ 0ÀÌ ´ë½Å Ãâ·Â
+		NumberFormat nf2 = new DecimalFormat("#,###.##ì›");
+		//ì†Œìˆ˜ì  ì´í•˜ì˜ ìˆ«ìê°€ ìœ íš¨ìˆ«ìê°€ ì•„ë‹Œ ê²ƒì€ í‘œí˜„í•˜ì§€ ì•ŠëŠ”ë‹¤
+		//#,###.## & #,###.00 - .ë’¤ì— 0ì´ ìˆìœ¼ë©´ ê°’ì´ ì—†ë”ë¼ë„ 0ì´ ëŒ€ì‹  ì¶œë ¥
 		System.out.println(nf2.format(12345678.456789));
 		System.out.println(nf2.format(12345678));
 		System.out.println();
 		
-		//¼Ò¼ıÁ¡ ÀÌÇÏÀÇ ¼ıÀÚ¿¡ °ªÀÌ ¾øÀ¸¸é 0À» °­Á¦·Î Ç¥½Ã(µÑÂ°ÀÚ¸®±îÁö)
-		NumberFormat nf3 = new DecimalFormat("#,###.00¿ø");
+		//ì†Œìˆ«ì  ì´í•˜ì˜ ìˆ«ìì— ê°’ì´ ì—†ìœ¼ë©´ 0ì„ ê°•ì œë¡œ í‘œì‹œ(ë‘˜ì§¸ìë¦¬ê¹Œì§€)
+		NumberFormat nf3 = new DecimalFormat("#,###.00ì›");
 		System.out.println(nf3.format(12345678.456789));
 		System.out.println(nf3.format(12345678));
 		System.out.println();
 		
 		
-		//2.NumberFormatÀÇ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÑ »ı¼º
+		//2.NumberFormatì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•œ ìƒì„±
 		//2-1. NumberFormat nf4 = NumberFormat.getInstance();
-			//getInstance()¸Ş¼Òµå°¡ ÀÎ½ºÅÏ½º ÀÚµ¿»ı¼º ¹× ÁÖ¼Ò°ªÀ» °Ç³»ÁÜ
-			//3ÀÚ¸®¸¶´Ù ½°Ç¥¸¦ Âï°í ¼Ò¼öÀÌÇÏ 3Â°ÀÚ¸®±îÁö Ãâ·Â(ÀÚµ¿ ¹İ¿Ã¸²)
+			//getInstance()ë©”ì†Œë“œê°€ ì¸ìŠ¤í„´ìŠ¤ ìë™ìƒì„± ë° ì£¼ì†Œê°’ì„ ê±´ë‚´ì¤Œ
+			//3ìë¦¬ë§ˆë‹¤ ì‰¼í‘œë¥¼ ì°ê³  ì†Œìˆ˜ì´í•˜ 3ì§¸ìë¦¬ê¹Œì§€ ì¶œë ¥(ìë™ ë°˜ì˜¬ë¦¼)
 		
-		//2-2.ÇöÀç ½Ã½ºÅÛÀÇ Áö¿ª ¶Ç´Â ÁöÁ¤ÇÑ Áö¿ªÀÇ ÅëÈ­°¡ ÇÔ²² Ç¥½Ã
-		NumberFormat nf4 = NumberFormat.getCurrencyInstance();//£Ü
+		//2-2.í˜„ì¬ ì‹œìŠ¤í…œì˜ ì§€ì—­ ë˜ëŠ” ì§€ì •í•œ ì§€ì—­ì˜ í†µí™”ê°€ í•¨ê»˜ í‘œì‹œ
+		NumberFormat nf4 = NumberFormat.getCurrencyInstance();//ï¿¦
 		nf4.setMaximumFractionDigits(2); // #,###.##
-			//¼Ò¼ö ÀÌÇÏ µÑÂ°ÀÚ¸®±îÁö Ç¥±â
+			//ì†Œìˆ˜ ì´í•˜ ë‘˜ì§¸ìë¦¬ê¹Œì§€ í‘œê¸°
 		nf4.setMinimumFractionDigits(2); // #,###.00
-			//¼Ò¼öÀÌÇÏ µÑÂ°ÀÚ¸®±îÁö °­Á¦·Î 0ÀÌ Ç¥½Ã
+			//ì†Œìˆ˜ì´í•˜ ë‘˜ì§¸ìë¦¬ê¹Œì§€ ê°•ì œë¡œ 0ì´ í‘œì‹œ
 		System.out.println(nf4.format(12345678.456789));
 		System.out.println(nf4.format(12345678));
 		System.out.println();
 		
-		NumberFormat nf5 = NumberFormat.getCurrencyInstance(Locale.US);//£¤
-		//NumberFormat nf5 = NumberFormat.getCurrencyInstance(Locale.JAPAN);//¡Í
-		//NumberFormat nf5 = NumberFormat.getCurrencyInstance(Locale.CHINA);//¡Í
-		//LocaleÀÇ import´Â util
+		NumberFormat nf5 = NumberFormat.getCurrencyInstance(Locale.US);//ï¼„
+		//NumberFormat nf5 = NumberFormat.getCurrencyInstance(Locale.JAPAN);//ï¿¥
+		//NumberFormat nf5 = NumberFormat.getCurrencyInstance(Locale.CHINA);//ï¿¥
+		//Localeì˜ importëŠ” util
 		//NumberFormat nf5 = NumberFormat.getCurrencyInstance();
 		nf5.setMaximumFractionDigits(2); // #,###.##
-			//¼Ò¼ö ÀÌÇÏ µÑÂ°ÀÚ¸®±îÁö Ç¥±â
+			//ì†Œìˆ˜ ì´í•˜ ë‘˜ì§¸ìë¦¬ê¹Œì§€ í‘œê¸°
 		nf5.setMinimumFractionDigits(2); // #,###.00
-			//¼Ò¼öÀÌÇÏ µÑÂ°ÀÚ¸®±îÁö °­Á¦·Î 0ÀÌ Ç¥½Ã
+			//ì†Œìˆ˜ì´í•˜ ë‘˜ì§¸ìë¦¬ê¹Œì§€ ê°•ì œë¡œ 0ì´ í‘œì‹œ
 		System.out.println(nf5.format(12345678.456789));
 		System.out.println(nf5.format(12345678));
 		System.out.println();

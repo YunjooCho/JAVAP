@@ -1,41 +1,41 @@
 package class_constructor;
 
 public class FinalMain {
-	public final String FRUIT = "»ç°ú"; //¹®ÀÚ¿­ ¸®ÅÍ·², Èü¿µ¿ª¿¡ ¸Ş¸ğ¸® »ı¼º
-	public final String FRUIT2; //Èü¿µ¿ª¿¡ ¸Ş¸ğ¸® »ı¼º
+	public final String FRUIT = "ì‚¬ê³¼"; //ë¬¸ìì—´ ë¦¬í„°ëŸ´, í™ì˜ì—­ì— ë©”ëª¨ë¦¬ ìƒì„±
+	public final String FRUIT2; //í™ì˜ì—­ì— ë©”ëª¨ë¦¬ ìƒì„±
 	
-	public static final String ANIMAL = "»çÀÚ";//finalÀº private ¾È¾¸(¾ğÁ¦µçÁö ¾µ ¼ö ÀÖ°Ô ÇØ¾ßÇÔ)
-						                      //public static final ÇüÅÂ¸¦ °¡Àå ¸¹ÀÌ »ç¿ë -static¿µ¿ª¿¡ ¸Ş¸ğ¸® »ı¼º
-	public static final String ANIMAL2;//static¿µ¿ª¿¡ ¸Ş¸ğ¸® »ı¼º
+	public static final String ANIMAL = "ì‚¬ì";//finalì€ private ì•ˆì”€(ì–¸ì œë“ ì§€ ì“¸ ìˆ˜ ìˆê²Œ í•´ì•¼í•¨)
+						                      //public static final í˜•íƒœë¥¼ ê°€ì¥ ë§ì´ ì‚¬ìš© -staticì˜ì—­ì— ë©”ëª¨ë¦¬ ìƒì„±
+	public static final String ANIMAL2;//staticì˜ì—­ì— ë©”ëª¨ë¦¬ ìƒì„±
 	
-	static {//staticÃÊ±âÈ­ ±¸¿ª (staticÀÌ ¼±¾ğµÇ¸é ÀÌ ±¸¿ª¿¡¼­¸¸ ÃÊ±âÈ­ ÇÒ ¼ö ÀÖÀ½)
-		ANIMAL2 = "±â¸°";
-		//FRUIT2 = "¹è"; -error : Cannot make a static reference to the non-static field FRUIT2
+	static {//staticì´ˆê¸°í™” êµ¬ì—­ (staticì´ ì„ ì–¸ë˜ë©´ ì´ êµ¬ì—­ì—ì„œë§Œ ì´ˆê¸°í™” í•  ìˆ˜ ìˆìŒ)
+		ANIMAL2 = "ê¸°ë¦°";
+		//FRUIT2 = "ë°°"; -error : Cannot make a static reference to the non-static field FRUIT2
 	}
 	
 	public FinalMain() {
-		FRUIT2 = "µş±â"; //staticÀ» ¼±¾ğÇÏÁö ¾ÊÀ¸¸é »ı¼ºÀÚ·Î ÃÊ±âÈ­°¡ °¡´É
+		FRUIT2 = "ë”¸ê¸°"; //staticì„ ì„ ì–¸í•˜ì§€ ì•Šìœ¼ë©´ ìƒì„±ìë¡œ ì´ˆê¸°í™”ê°€ ê°€ëŠ¥
 	}
 	
 	public static void main(String[] args) {
 		final int AGE = 10;
-		//AGE++; - error : finalÀÌ ¼±¾ğµÈ »ó¼ö°¡ µÈ °ªÀº º¯°æÇÒ ¼ö ¾ø´Ù. 
-		System.out.println("»ó¼ö = " + AGE);
+		//AGE++; - error : finalì´ ì„ ì–¸ëœ ìƒìˆ˜ê°€ ëœ ê°’ì€ ë³€ê²½í•  ìˆ˜ ì—†ë‹¤. 
+		System.out.println("ìƒìˆ˜ = " + AGE);
 		
 		final int AGE2;
-		AGE2 = 20; //Ã³À½ ÃÊ±âÈ­
+		AGE2 = 20; //ì²˜ìŒ ì´ˆê¸°í™”
 		//AGE2 = 30; - error : The final local variable AGE2 may already have been assigned
-		//ÆÄÀÌ³Î Áö¿ªÀÇ º¯¼ö AGE2(»ó¼ö)´Â ÀÌ¹Ì °ªÀÌ ÇÒ´çµÇ¾î ÀÖ½À´Ï´Ù. - ÀÌ¹Ì °ªÀÌ ÇÒ´çµÇ¾î ÀÖ´Â »ó¼ö´Â °ª º¯°æÀÌ ºÒ°¡´É(ÃÊ±âÈ­ ÈÄ ´ëÀÔÀÌ ºÒ°¡´É)
+		//íŒŒì´ë„ ì§€ì—­ì˜ ë³€ìˆ˜ AGE2(ìƒìˆ˜)ëŠ” ì´ë¯¸ ê°’ì´ í• ë‹¹ë˜ì–´ ìˆìŠµë‹ˆë‹¤. - ì´ë¯¸ ê°’ì´ í• ë‹¹ë˜ì–´ ìˆëŠ” ìƒìˆ˜ëŠ” ê°’ ë³€ê²½ì´ ë¶ˆê°€ëŠ¥(ì´ˆê¸°í™” í›„ ëŒ€ì…ì´ ë¶ˆê°€ëŠ¥)
 		
-		FinalMain fm = new FinalMain();//Èü¿µ¿ª¿¡ ¸Ş¸ğ¸® »ı¼º
+		FinalMain fm = new FinalMain();//í™ì˜ì—­ì— ë©”ëª¨ë¦¬ ìƒì„±
 		System.out.println("FRUIT = " + fm.FRUIT);
 		System.out.println("FRUIT2 = " + fm.FRUIT2);
 		
 		System.out.println("ANIMAL = " + FinalMain.ANIMAL);
 		System.out.println("ANMIMAL2 = " + ANIMAL2); 
-		//staticÀÌ ¼±¾ğµÇ¾î ÀÖÀ¸¸é ÀÚ±â ÀÚ½ÅÀÇ ±¸¿ªÀÌ¶ó Å¬·¡½º¸íÀ» »¬ ¼öµµ ÀÖÀ½
-		//staticÀÌ ¼±¾ğµÇ¾î ÀÖÁö ¾ÊÀ¸¸é ¾Õ¿¡ °´Ã¼¸íÀ» ³Ö¾îÁÖ¾î¾ß ÇÔ(Èü¿µ¿ª¿¡¼­ ºÒ·¯¿È)
-		//main¸Ş¼Òµå ¾È¿¡¼­´Â staticÀÇ ÃÊ±âÈ­°¡ ÀÌ·ç¾îÁú ¼ö ¾øÀ½
+		//staticì´ ì„ ì–¸ë˜ì–´ ìˆìœ¼ë©´ ìê¸° ìì‹ ì˜ êµ¬ì—­ì´ë¼ í´ë˜ìŠ¤ëª…ì„ ëº„ ìˆ˜ë„ ìˆìŒ
+		//staticì´ ì„ ì–¸ë˜ì–´ ìˆì§€ ì•Šìœ¼ë©´ ì•ì— ê°ì²´ëª…ì„ ë„£ì–´ì£¼ì–´ì•¼ í•¨(í™ì˜ì—­ì—ì„œ ë¶ˆëŸ¬ì˜´)
+		//mainë©”ì†Œë“œ ì•ˆì—ì„œëŠ” staticì˜ ì´ˆê¸°í™”ê°€ ì´ë£¨ì–´ì§ˆ ìˆ˜ ì—†ìŒ
 	}
 	
 	

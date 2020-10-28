@@ -1,24 +1,24 @@
 package if_switch;
 
 /*
-°¡À§(1), ¹ÙÀ§(2), º¸(3) °ÔÀÓ
+ê°€ìœ„(1), ë°”ìœ„(2), ë³´(3) ê²Œì„
 
-[½ÇÇà°á°ú]
-°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ¹øÈ£ ÀÔ·Â : 3 (user)
-ÄÄÇ»ÅÍ : ¹ÙÀ§   ³ª : º¸ÀÚ±â
+[ì‹¤í–‰ê²°ê³¼]
+ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥ : 3 (user)
+ì»´í“¨í„° : ë°”ìœ„   ë‚˜ : ë³´ìê¸°
 You Win!!
 
-°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ¹øÈ£ ÀÔ·Â : 3 (user)
-ÄÄÇ»ÅÍ : °¡À§   ³ª : º¸ÀÚ±â
+ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥ : 3 (user)
+ì»´í“¨í„° : ê°€ìœ„   ë‚˜ : ë³´ìê¸°
 You Lose!!
 
-°¡À§(1),¹ÙÀ§(2),º¸(3) Áß ¹øÈ£ ÀÔ·Â : 2 (user)
-ÄÄÇ»ÅÍ : °¡À§   ³ª : °¡À§
+ê°€ìœ„(1),ë°”ìœ„(2),ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥ : 2 (user)
+ì»´í“¨í„° : ê°€ìœ„   ë‚˜ : ê°€ìœ„
 You Draw!!
  */
-//com 1 ~ 3ÀÇ ³­¼ö, user Å°º¸µå ÀÔ·Â
-//¼ıÀÚ°¡ ¾Æ´Ñ ÇÑ±Û·Î Ç¥±â(°¡À§, ¹ÙÀ§, º¸)
-//µÎ ¼ıÀÚ¸¦ ºñ±³ÇÏ¿© ½ÂÆĞ¸¦ Ç¥±â - if¹®(9°³), system.out
+//com 1 ~ 3ì˜ ë‚œìˆ˜, user í‚¤ë³´ë“œ ì…ë ¥
+//ìˆ«ìê°€ ì•„ë‹Œ í•œê¸€ë¡œ í‘œê¸°(ê°€ìœ„, ë°”ìœ„, ë³´)
+//ë‘ ìˆ«ìë¥¼ ë¹„êµí•˜ì—¬ ìŠ¹íŒ¨ë¥¼ í‘œê¸° - ifë¬¸(9ê°œ), system.out
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,30 +27,30 @@ import java.io.InputStreamReader;
 public class RPSGame  {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º(Å°º¸µå ÀÔ·Â)
+		//ë©”ëª¨ë¦¬ ìƒì„±(í‚¤ë³´ë“œ ì…ë ¥)
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 				
-		System.out.println("°¡À§(1) ¹ÙÀ§(2) º¸(3) Áß ¹øÈ£ ÀÔ·Â: ");
+		System.out.println("ê°€ìœ„(1) ë°”ìœ„(2) ë³´(3) ì¤‘ ë²ˆí˜¸ ì…ë ¥: ");
 		int user = Integer.parseInt(br.readLine());
 		
 		
-		//³­¼ö -ÄÄÇ»ÅÍ°¡ ¹«ÀÛÀ§·Î ¹ß»ıÇÏ´Â ¼ö, 0 <= ³­¼ö < 1 (½Ç¼öÇü)
-		//a~b »çÀÌÀÇ ³­¼ö ¹ß»ı => (int)(math.random()*(b-a+1) + a);
+		//ë‚œìˆ˜ -ì»´í“¨í„°ê°€ ë¬´ì‘ìœ„ë¡œ ë°œìƒí•˜ëŠ” ìˆ˜, 0 <= ë‚œìˆ˜ < 1 (ì‹¤ìˆ˜í˜•)
+		//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(b-a+1) + a);
 		
-		//<¿¹Á¦>
+		//<ì˜ˆì œ>
 		//double a = Math.random();
 		//System.out.println(a); // 0.99999999999999999
 		//System.out.println(a*100); // 99.999999999999999
 		//System.out.println((int)(a*100)); // 99, 0~99
 		//System.out.println((int)(a*100)+1); // 1~100
 		
-		//<¿¹Á¦2>
+		//<ì˜ˆì œ2>
 		//int a = (int)(Math.random()*25+65);
 		//System.out.println((a)); //65~90
 		//System.out.println((char)a); //A~Z
 		
-		//comÀÇ °¡À§ ¹ÙÀ§ º¸
+		//comì˜ ê°€ìœ„ ë°”ìœ„ ë³´
 		double b = Math.random();
 		//System.out.println(b);
 		//System.out.println(b*3);
@@ -58,29 +58,29 @@ public class RPSGame  {
 		//System.out.println((int)(b*3)+1); // 1~3
 		
 		
-		//comÀÇ ¼ıÀÚ¸¦ ±Û¾¾·Î Ç¥±â
+		//comì˜ ìˆ«ìë¥¼ ê¸€ì”¨ë¡œ í‘œê¸°
 		int com = (int) ((b*3)+1);
-		System.out.println("ÄÄÇ»ÅÍ : ");
+		System.out.println("ì»´í“¨í„° : ");
 		if((int)(b*3)+1 == 1) {
-			System.out.println("°¡À§");
+			System.out.println("ê°€ìœ„");
 		}else if ((int)(b*3)+1 == 2) {
-			System.out.println("¹ÙÀ§");
+			System.out.println("ë°”ìœ„");
 		}else {
-			System.out.println("º¸");
+			System.out.println("ë³´");
 		}
 		System.out.println();
 		
-		//userÀÔ·Â
-		System.out.println("³ª : ");
+		//userì…ë ¥
+		System.out.println("ë‚˜ : ");
 		if (user == 1) {
-			System.out.println("°¡À§");
+			System.out.println("ê°€ìœ„");
 		}else if(user == 2){
-			System.out.println("¹ÙÀ§");
+			System.out.println("ë°”ìœ„");
 		}else {
-			System.out.println("º¸");
+			System.out.println("ë³´");
 		}
 		
-		//½ÂÆĞ°á°ú
+		//ìŠ¹íŒ¨ê²°ê³¼
 		 if(user == 1 ) {
 			if (com == 2) {
 				System.out.println("You Lose!");				

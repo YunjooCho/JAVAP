@@ -21,7 +21,7 @@ public class ForTestP {
 		
 		//<ForTest2>
 		/*
-		¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : 2  ¡ç System.in.read()
+		ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : 2  â† System.in.read()
 		2*1=2g
 		2*2=4
 		2*3=6
@@ -32,7 +32,7 @@ public class ForTestP {
 		2*8=16
 		2*9=18
 		 */
-		System.out.println("¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : ");
+		System.out.println("ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : ");
 		int dan = (int)System.in.read()-48;
 		for(int i = dan; i <= dan; i++) {
 			for(int j = 1; j <= 9; j++) {
@@ -44,10 +44,10 @@ public class ForTestP {
 		
 		//<ForTest3>
 		/*
-		  ´ë¹®ÀÚ(A~Z)¸¦ ¹«ÀÛÀ§·Î 100°³¸¦ ¹ß»ıÇÏ¿© 1ÁÙ¿¡ 10°³¾¿ Ãâ·ÂÇÏ½Ã¿À
-		ÀÌÁß¿¡¼­ A°¡ ¸î°³ÀÎÁö Ãâ·ÂÇÏ½Ã¿À
+		  ëŒ€ë¬¸ì(A~Z)ë¥¼ ë¬´ì‘ìœ„ë¡œ 100ê°œë¥¼ ë°œìƒí•˜ì—¬ 1ì¤„ì— 10ê°œì”© ì¶œë ¥í•˜ì‹œì˜¤
+		ì´ì¤‘ì—ì„œ Aê°€ ëª‡ê°œì¸ì§€ ì¶œë ¥í•˜ì‹œì˜¤
 
-		[½ÇÇà°á°ú]
+		[ì‹¤í–‰ê²°ê³¼]
 		H  D  D  R  A  Y  A  K  T  H
 		C  X  F  Z  B  S  L  Y  Q  D
 		H  K  O  H  O  B  Z  N  J  T
@@ -59,7 +59,7 @@ public class ForTestP {
 		H  G  Y  Z  V  P  I  R  L  G
 		Y  H  R  R  M  H  Y  S  B  P
 
-		AÀÇ °³¼ö = 6
+		Aì˜ ê°œìˆ˜ = 6
 		 */
 		
 		int alp;
@@ -84,7 +84,7 @@ public class ForTestP {
 			
 		}//for
 		System.out.println();
-		System.out.println("'A'ÀÇ °³¼ö : " + count);
+		System.out.println("'A'ì˜ ê°œìˆ˜ : " + count);
 
 	}
 

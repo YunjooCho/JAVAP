@@ -1,11 +1,11 @@
 package _interface;
 
 public interface InterA {
-	//»ó¼ö
-	public static final String NAME = "È«±æµ¿";
-	public int AGE = 25; //interface¾È¿¡¼­¸¸ °¡´ÉÇÑ static final°¡ »ı·«µÈ ÇüÅÂ, »ó¼öÀÓ
+	//ìƒìˆ˜
+	public static final String NAME = "í™ê¸¸ë™";
+	public int AGE = 25; //interfaceì•ˆì—ì„œë§Œ ê°€ëŠ¥í•œ static finalê°€ ìƒëµëœ í˜•íƒœ, ìƒìˆ˜ì„
 	
-	public abstract void aa();//Ãß»ó¸Ş¼Òµå
-	public void bb();//interface¾È¿¡¼­¸¸ abstract »ı·« °¡´É, bb()µµ Ãß»ó¸Ş¼Òµå
-	//public void cc() {} - error : body{}°¡ ÀÖÀ¸¸é ÀÏ¹İ ¸Ş¼ÒµåÀÌ¹Ç·Î ¿¡·¯¹ß»ı(ÀÎÅÍÆäÀÌ½º¿¡´Â Ãß»ó¸Ş¼Òµå¸¸ ¿Ã ¼ö ÀÖÀ½)
+	public abstract void aa();//ì¶”ìƒë©”ì†Œë“œ
+	public void bb();//interfaceì•ˆì—ì„œë§Œ abstract ìƒëµ ê°€ëŠ¥, bb()ë„ ì¶”ìƒë©”ì†Œë“œ
+	//public void cc() {} - error : body{}ê°€ ìˆìœ¼ë©´ ì¼ë°˜ ë©”ì†Œë“œì´ë¯€ë¡œ ì—ëŸ¬ë°œìƒ(ì¸í„°í˜ì´ìŠ¤ì—ëŠ” ì¶”ìƒë©”ì†Œë“œë§Œ ì˜¬ ìˆ˜ ìˆìŒ)
 }

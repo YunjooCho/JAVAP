@@ -4,99 +4,99 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//»ç¿ëÀÚ·ÎºÎÅÍ Â÷·® Á¤º¸¸¦ ÀÔ·Â¹Ş°í Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ¼¼¿ä
-//Á¶°Ç 1. ¸¸¾à ¾Æ¹«·± Á¤º¸°¡ ¾ø´Ù¸é Ãâ·ÂÀÌ µÇÁö ¾Ê°Ô ÇÏ½Ã¿À
-//Á¶°Ç 2. ¹«ÇÑ·çÇÁ¸¦ ÅëÇØ¼­ ÀÔ·Â°ú Ãâ·ÂÀ» »ç¿ëÀÚ°¡ ¼±ÅÃÇÏ´Â ¸¸Å­ ¹İº¹ÇÏ°Ô ¸¸µå¼¼¿ä
+//ì‚¬ìš©ìë¡œë¶€í„° ì°¨ëŸ‰ ì •ë³´ë¥¼ ì…ë ¥ë°›ê³  ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì„¸ìš”
+//ì¡°ê±´ 1. ë§Œì•½ ì•„ë¬´ëŸ° ì •ë³´ê°€ ì—†ë‹¤ë©´ ì¶œë ¥ì´ ë˜ì§€ ì•Šê²Œ í•˜ì‹œì˜¤
+//ì¡°ê±´ 2. ë¬´í•œë£¨í”„ë¥¼ í†µí•´ì„œ ì…ë ¥ê³¼ ì¶œë ¥ì„ ì‚¬ìš©ìê°€ ì„ íƒí•˜ëŠ” ë§Œí¼ ë°˜ë³µí•˜ê²Œ ë§Œë“œì„¸ìš”
 
-//¿¹½Ã:
-//1. ÀÔ·Â 2. Ãâ·Â 3. Á¾·á : 1
-//Â÷·® ¹øÈ£´Â? (00°¡ 0000)
-//Â÷·® Á¾·ù´Â .....
-//Â÷·® »ö»óÀº? (»¡°£»ö)
-//ÀÔ·Â¿Ï·á
-//1. ÀÔ·Â 2. Ãâ·Â 3. Á¾·á : 2 
-//(Â÷·®ÀÇ Á¤º¸°¡ Ãâ·ÂµÊ)
+//ì˜ˆì‹œ:
+//1. ì…ë ¥ 2. ì¶œë ¥ 3. ì¢…ë£Œ : 1
+//ì°¨ëŸ‰ ë²ˆí˜¸ëŠ”? (00ê°€ 0000)
+//ì°¨ëŸ‰ ì¢…ë¥˜ëŠ” .....
+//ì°¨ëŸ‰ ìƒ‰ìƒì€? (ë¹¨ê°„ìƒ‰)
+//ì…ë ¥ì™„ë£Œ
+//1. ì…ë ¥ 2. ì¶œë ¥ 3. ì¢…ë£Œ : 2 
+//(ì°¨ëŸ‰ì˜ ì •ë³´ê°€ ì¶œë ¥ë¨)
 
-//20ºĞ±îÁö
+//20ë¶„ê¹Œì§€
 public class CarEx02 {
 	
-	//1.¸Ş´º ¸Ş¼Òµå
+	//1.ë©”ë‰´ ë©”ì†Œë“œ
 	public static void showMenu() {
 		
 		System.out.println("============================");
-		System.out.print("1.ÀÔ·Â   2.Ãâ·Â    3. Á¾·á  : ");
+		System.out.print("1.ì…ë ¥   2.ì¶œë ¥    3. ì¢…ë£Œ  : ");
 
 	}
 	
 	
 	public static void main(String[] args) throws IOException {
-	 //2. Å°º¸µå ÀÔ·Â ¸Ş¸ğ¸® ¼±¾ğ
+	 //2. í‚¤ë³´ë“œ ì…ë ¥ ë©”ëª¨ë¦¬ ì„ ì–¸
 	 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	 CarT c = new CarT();
-	 //3.¸Ş´ºÃâ·Â
+	 //3.ë©”ë‰´ì¶œë ¥
 	 while(true) {
 		 
 		 showMenu();
 		 int choice = Integer.parseInt(bufferedReader.readLine());
 		 if(choice == 1) {
 			 
-			 //Â÷·® Á¤º¸ ÀÔ·Â
-			 System.out.print("¹øÈ£: ");
+			 //ì°¨ëŸ‰ ì •ë³´ ì…ë ¥
+			 System.out.print("ë²ˆí˜¸: ");
 			 c.setNumber(bufferedReader.readLine());
-			 System.out.print("Â÷Á¾: ");
+			 System.out.print("ì°¨ì¢…: ");
 			 c.setType(bufferedReader.readLine());
-			 System.out.print("¿¬½Ä: ");
+			 System.out.print("ì—°ì‹: ");
 			 c.setYear(Integer.parseInt(bufferedReader.readLine()));
-			 System.out.print("°¡°İ: ");
+			 System.out.print("ê°€ê²©: ");
 			 c.setPrice(Integer.parseInt(bufferedReader.readLine()));
-			 System.out.print("»ö»ó: ");
+			 System.out.print("ìƒ‰ìƒ: ");
 			 c.setColor(bufferedReader.readLine());
-			 //¡Ú³ªÁß¿¡ ¸Ş¼Òµå·Î ÀÔ·ÂÇÏµµ·Ï ÇØº¸±â insertCarinfo(bufferedReader);
+			 //â˜…ë‚˜ì¤‘ì— ë©”ì†Œë“œë¡œ ì…ë ¥í•˜ë„ë¡ í•´ë³´ê¸° insertCarinfo(bufferedReader);
 			 
 		 }else if(choice == 2) {
-			 //4. Â÷·® Á¤º¸ Ãâ·Â
-			 //¸¸¾à cÀÇ ÇÊµå°ªÀÌ 0ÀÌ°Å³ª ""ÀÌ¸é ¾Æ¹«·± Á¤º¸°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò´Ù´Â ¶æÀÌ¹Ç·Î
-			 //°æ°í¸Ş½ÃÁö¸¸ Ãâ·ÂÇÑ´Ù
-			 //nullÀÌ ¾Æ´Ñ ÀÌÀ¯´Â CarT.java¿¡¼­ ÃÊ±âÈ­ÇÏ¿© null°ªÀ» ¾ø¾Ú
+			 //4. ì°¨ëŸ‰ ì •ë³´ ì¶œë ¥
+			 //ë§Œì•½ cì˜ í•„ë“œê°’ì´ 0ì´ê±°ë‚˜ ""ì´ë©´ ì•„ë¬´ëŸ° ì •ë³´ê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ë‹¤ëŠ” ëœ»ì´ë¯€ë¡œ
+			 //ê²½ê³ ë©”ì‹œì§€ë§Œ ì¶œë ¥í•œë‹¤
+			 //nullì´ ì•„ë‹Œ ì´ìœ ëŠ” CarT.javaì—ì„œ ì´ˆê¸°í™”í•˜ì—¬ nullê°’ì„ ì—†ì•°
 			 if(c.getYear() == 0) {
-				 System.out.println("¾ÆÁ÷ ÀÔ·ÂµÈ Á¤º¸°¡ ¾ø½À´Ï´Ù");
+				 System.out.println("ì•„ì§ ì…ë ¥ëœ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤");
 			 }else {
-				 c.printInfo();//CarT.java¿¡ ÀÛ¼ºÇÑ ¸Ş¼Òµå
+				 c.printInfo();//CarT.javaì— ì‘ì„±í•œ ë©”ì†Œë“œ
 			 }
 			 
 		 }else if(choice == 3) {
-			 System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+			 System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 			 break;
 		 }else{
-			 System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¸Ş´º¸¦ ´Ù½Ã ¼±ÅÃÇÏ¼¼¿ä.");
+			 System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë©”ë‰´ë¥¼ ë‹¤ì‹œ ì„ íƒí•˜ì„¸ìš”.");
 		 }
 		 
 	 
-	 }//¸Ş´º¹İº¹ while
+	 }//ë©”ë‰´ë°˜ë³µ while
 	 
 	}
 	
 	
 
-//	//¡Ú³ªÁß¿¡ ¸Ş¼Òµå·Î ÀÔ·ÂÇÏµµ·Ï ÇØº¸±â
-//	//2.ÀÔ·Â ¸Ş¼Òµå
+//	//â˜…ë‚˜ì¤‘ì— ë©”ì†Œë“œë¡œ ì…ë ¥í•˜ë„ë¡ í•´ë³´ê¸°
+//	//2.ì…ë ¥ ë©”ì†Œë“œ
 //	public static void insertCarinfo(BufferedReader bufferedReader) throws IOException {
 //		
 //		String yn = new String();
 //		do{
 //		
-//		System.out.print("Â÷·® ¹øÈ£´Â? ");
+//		System.out.print("ì°¨ëŸ‰ ë²ˆí˜¸ëŠ”? ");
 //		c.setNumber(bufferedReader.readLine());
-//		System.out.print("Â÷·® Á¾·ù´Â? ");
+//		System.out.print("ì°¨ëŸ‰ ì¢…ë¥˜ëŠ”? ");
 //		c.setType(bufferedReader.readLine());
-//		System.out.print("Â÷·® »ö»óÀº? ");
+//		System.out.print("ì°¨ëŸ‰ ìƒ‰ìƒì€? ");
 //		c.setColor(bufferedReader.readLine());
 //	
-//		System.out.println("ÀÔ·ÂÀ» Á¾·áÇÏ½Ã°Ú½À´Ï±î(Y/N)?");
+//		System.out.println("ì…ë ¥ì„ ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ(Y/N)?");
 //		yn = bufferedReader.readLine().toUpperCase();
 //		
 //		}while(yn.equals("Y"));
-//			System.out.println("ÀÔ·ÂÀ» Á¾·áÇÕ´Ï´Ù");
+//			System.out.println("ì…ë ¥ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 //	     
 //		
 //		

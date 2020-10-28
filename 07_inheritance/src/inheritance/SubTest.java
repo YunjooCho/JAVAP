@@ -1,54 +1,54 @@
 package inheritance;
 
 public class SubTest extends SuperTest{
-	protected String name; //ÀÚ±â²¨
-	protected int age;     //ÀÚ±â²¨
-	//ÃÖÁ¾ ÀÚ±â²¨ 2°³  + ºÎ¸ğ²¨ 2°³(weight, height)·Î ÃÑ 4°³ÀÇ ÇÊµå »ç¿ë
-	//ÀÚ½ÄÅ¬·¡½º´Â Á¢±ÙÁ¦ÇÑÀÚ°¡ ¹«¾ùÀÌµç »ó°ü¾øÁö¸¸ ±âº» Ä¸½¶È­¸¦ À§ÇØ, private ¾Æ´Ï¸é  
-	//»ó¼ÓÀÌ ÀÖÀ» °æ¿ì protected »ç¿ë
+	protected String name; //ìê¸°êº¼
+	protected int age;     //ìê¸°êº¼
+	//ìµœì¢… ìê¸°êº¼ 2ê°œ  + ë¶€ëª¨êº¼ 2ê°œ(weight, height)ë¡œ ì´ 4ê°œì˜ í•„ë“œ ì‚¬ìš©
+	//ìì‹í´ë˜ìŠ¤ëŠ” ì ‘ê·¼ì œí•œìê°€ ë¬´ì—‡ì´ë“  ìƒê´€ì—†ì§€ë§Œ ê¸°ë³¸ ìº¡ìŠí™”ë¥¼ ìœ„í•´, private ì•„ë‹ˆë©´  
+	//ìƒì†ì´ ìˆì„ ê²½ìš° protected ì‚¬ìš©
 	
 	
 	public SubTest() {
-		System.out.println("SubTest ±âº» »ı¼ºÀÚ");
+		System.out.println("SubTest ê¸°ë³¸ ìƒì„±ì");
 	}
 	
 	public SubTest(double weight, double height, String name, int age) {
-		System.out.println("SubTest »ı¼ºÀÚ");
-//		this.weight = weight; ºÎ¸ğ²¨, ¸¸¾à ÀÚ½ÄÅ¬·¡½º¿¡ µ¿ÀÏ ÇÊµå°¡ ¼³Á¤µÇ¸é, this´Â ÀÚ½ÄÅ¬·¡½ºÀÇ ÇÊµå¸¦ °¡¸®Å´
-//		this.height = height; ºÎ¸ğ²¨
-		super.weight = weight; //ºÎ¸ğ²¨, »ó±â ³»¿ë°ú Ç¥±â¸¸ ´Ù¸§. super´Â ¿¹¾à¾î(Å¬·¡½º¸í »ó°ü¾øÀ½)
+		System.out.println("SubTest ìƒì„±ì");
+//		this.weight = weight; ë¶€ëª¨êº¼, ë§Œì•½ ìì‹í´ë˜ìŠ¤ì— ë™ì¼ í•„ë“œê°€ ì„¤ì •ë˜ë©´, thisëŠ” ìì‹í´ë˜ìŠ¤ì˜ í•„ë“œë¥¼ ê°€ë¦¬í‚´
+//		this.height = height; ë¶€ëª¨êº¼
+		super.weight = weight; //ë¶€ëª¨êº¼, ìƒê¸° ë‚´ìš©ê³¼ í‘œê¸°ë§Œ ë‹¤ë¦„. superëŠ” ì˜ˆì•½ì–´(í´ë˜ìŠ¤ëª… ìƒê´€ì—†ìŒ)
 		super.height = height;
 		this.name = name;
 		this.age = age;
 	}
 	
 	public void outPut() {
-		System.out.println("¸ö¹«°Ô = " + weight);//superµîÀ» ¼±¾ğÇÏÁö ¾Ê¾Æµµ ºÎ¸ğÅ¬·¡½º¿¡ Á¸ÀçÇÏ±â ¶§¹®¿¡ Á¤»óÀÛµ¿
-		System.out.println("Å° = " + height);//superµîÀ» ¼±¾ğÇÏÁö ¾Ê¾Æµµ ºÎ¸ğÅ¬·¡½º¿¡ Á¸ÀçÇÏ±â ¶§¹®¿¡ Á¤»óÀÛµ¿
-		System.out.println("ÀÌ¸§ = " + name);
-		System.out.println("³ªÀÌ = " + age);
+		System.out.println("ëª¸ë¬´ê²Œ = " + weight);//superë“±ì„ ì„ ì–¸í•˜ì§€ ì•Šì•„ë„ ë¶€ëª¨í´ë˜ìŠ¤ì— ì¡´ì¬í•˜ê¸° ë•Œë¬¸ì— ì •ìƒì‘ë™
+		System.out.println("í‚¤ = " + height);//superë“±ì„ ì„ ì–¸í•˜ì§€ ì•Šì•„ë„ ë¶€ëª¨í´ë˜ìŠ¤ì— ì¡´ì¬í•˜ê¸° ë•Œë¬¸ì— ì •ìƒì‘ë™
+		System.out.println("ì´ë¦„ = " + name);
+		System.out.println("ë‚˜ì´ = " + age);
 	}
 	
 	
 	public static void main(String[] args) {
 		SubTest a = new SubTest(); 
-		//ºÎ¸ğ ±âº» »ı¼ºÀÚ¿Í ÀÚ±âÀÚ½ÅÀÇ ±âº» »ı¼ºÀÚ µÑ´Ù È£Ãâ
+		//ë¶€ëª¨ ê¸°ë³¸ ìƒì„±ìì™€ ìê¸°ìì‹ ì˜ ê¸°ë³¸ ìƒì„±ì ë‘˜ë‹¤ í˜¸ì¶œ
 		System.out.println();
 		
-		SubTest aa = new SubTest(75.3, 185.5, "È«±æµ¿", 25); 
-		//ºÎ¸ğ ±âº» »ı¼ºÀÚ¿Í ÀÚ±âÀÚ½ÅÀÇ ÆÄ¶ó¹ÌÅÍ ÀÖ´Â »ı¼ºÀÚ µÑ´Ù È£Ãâ
-		aa.outPut();//outPut()¸¦ SubTest¿¡¼­ Ã£´Â´Ù. ¾øÀ¸¸é ºÎ¸ğÅ¬·¡½º¿¡ °¡¼­ Ã£´Â´Ù.
+		SubTest aa = new SubTest(75.3, 185.5, "í™ê¸¸ë™", 25); 
+		//ë¶€ëª¨ ê¸°ë³¸ ìƒì„±ìì™€ ìê¸°ìì‹ ì˜ íŒŒë¼ë¯¸í„° ìˆëŠ” ìƒì„±ì ë‘˜ë‹¤ í˜¸ì¶œ
+		aa.outPut();//outPut()ë¥¼ SubTestì—ì„œ ì°¾ëŠ”ë‹¤. ì—†ìœ¼ë©´ ë¶€ëª¨í´ë˜ìŠ¤ì— ê°€ì„œ ì°¾ëŠ”ë‹¤.
 		System.out.println();
 		
 		
-		aa.disp();//ºÎ¸ğÅ¬·¡½º ¸Ş¼Òµå. disp()¸¦ SubTest¿¡¼­ Ã£´Â´Ù. ¾øÀ¸¸é ºÎ¸ğÅ¬·¡½º¿¡ °¡¼­ Ã£´Â´Ù.
+		aa.disp();//ë¶€ëª¨í´ë˜ìŠ¤ ë©”ì†Œë“œ. disp()ë¥¼ SubTestì—ì„œ ì°¾ëŠ”ë‹¤. ì—†ìœ¼ë©´ ë¶€ëª¨í´ë˜ìŠ¤ì— ê°€ì„œ ì°¾ëŠ”ë‹¤.
 		System.out.println("-----------------------");
 		
-		SuperTest bb = new SubTest(35.8, 156.3, "ÄÚ³­", 13);
-		//bb.outPut(); -error : ÀÚ½ÄÅ¬·¡½º ¸Ş¼Òµå´Â ºÎ¸ğÅ¬·¡½º¿¡¼­ È£ÃâÇÒ ¼ö ¾øÀ½
+		SuperTest bb = new SubTest(35.8, 156.3, "ì½”ë‚œ", 13);
+		//bb.outPut(); -error : ìì‹í´ë˜ìŠ¤ ë©”ì†Œë“œëŠ” ë¶€ëª¨í´ë˜ìŠ¤ì—ì„œ í˜¸ì¶œí•  ìˆ˜ ì—†ìŒ
 		bb.disp();
 	}
 }
 
-//ÀÚ½ÄÅ¬·¡½º´Â ºÎ¸ğ »ı¼ºÀÚ¸¦ ¼±ÅÃÇØ¼­ È£ÃâÇÒ ¼ö ÀÖ´Ù.
-//¾Æ¹« ¸»ÀÌ ¾øÀ¸¸é ºÎ¸ğÀÇ ±âº» »ı¼ºÀÚ¸¦ È£ÃâÇÑ´Ù.
+//ìì‹í´ë˜ìŠ¤ëŠ” ë¶€ëª¨ ìƒì„±ìë¥¼ ì„ íƒí•´ì„œ í˜¸ì¶œí•  ìˆ˜ ìˆë‹¤.
+//ì•„ë¬´ ë§ì´ ì—†ìœ¼ë©´ ë¶€ëª¨ì˜ ê¸°ë³¸ ìƒì„±ìë¥¼ í˜¸ì¶œí•œë‹¤.

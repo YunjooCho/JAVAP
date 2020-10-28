@@ -1,12 +1,12 @@
 package p06_class;
 
 public class SungJukP {
-	//1.ÇÊµå¸í ¼±¾ğ
+	//1.í•„ë“œëª… ì„ ì–¸
 	private int kor, eng, math, tot;
 	private double avg;
 	private String name, grade;
 	
-	//2.»ı¼ºÀÚ
+	//2.ìƒì„±ì
 	public SungJukP(String name, int kor, int eng, int math) {
 		this.name = name;
 		this.kor = kor;
@@ -15,7 +15,7 @@ public class SungJukP {
 	}
 	
 	
-	//3.¸Ş¼Òµå
+	//3.ë©”ì†Œë“œ
 	public void calc() {
 		tot = kor + eng + math;
 		avg = tot / 3.0;

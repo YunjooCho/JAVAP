@@ -1,54 +1,54 @@
 package class_constructor;
 /*
-°´Ã¼¹è¿­
-°úÀÏ ÆÇ¸Å·® ±¸ÇÏ±â
-¿ùº° ¸ÅÃâÇÕ°èµµ ±¸ÇÏ½Ã¿À
+ê°ì²´ë°°ì—´
+ê³¼ì¼ íŒë§¤ëŸ‰ êµ¬í•˜ê¸°
+ì›”ë³„ ë§¤ì¶œí•©ê³„ë„ êµ¬í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 -------------------------------------
 PUM      JAN      FEB      MAR      TOT
 -------------------------------------
-»ç°ú       100       80       75        255
-Æ÷µµ        30       25       10        xxx
-µş±â        25       30       90        xxx
+ì‚¬ê³¼       100       80       75        255
+í¬ë„        30       25       10        xxx
+ë”¸ê¸°        25       30       90        xxx
 ------------------------------------
         xxx      xxx      xxx         
         
 */
 
-//static ¹®Á¦
-//¹è¿­? - ¤·¤·°´Ã¼¹è¿­(1ÀÎºĞ)
-//FruitÅ¬·¡½º¸¦ »ı¼ºÇÏ¿© Ã³¸®
-//main¸Ş¼Òµå´Â Ãâ·Â¿ë
-//BufferedReader ÇÊ¿äX
-//»ı¼ºÀÚ¸¦ ÅëÇØ µ¥ÀÌÅÍ ¹Ş±â
+//static ë¬¸ì œ
+//ë°°ì—´? - ã…‡ã…‡ê°ì²´ë°°ì—´(1ì¸ë¶„)
+//Fruití´ë˜ìŠ¤ë¥¼ ìƒì„±í•˜ì—¬ ì²˜ë¦¬
+//mainë©”ì†Œë“œëŠ” ì¶œë ¥ìš©
+//BufferedReader í•„ìš”X
+//ìƒì„±ìë¥¼ í†µí•´ ë°ì´í„° ë°›ê¸°
 //calcTot()
-//display()  - °úÀÏ¸í, 1¿ù, 2¿ù, 3¿ù, ÇÕ°è
-//output() - 1¿ùÀÇ ÇÕ°è, 2¿ùÀÇ ÇÕ°è, 3¿ùÀÇ ÇÕ°è¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+//display()  - ê³¼ì¼ëª…, 1ì›”, 2ì›”, 3ì›”, í•©ê³„
+//output() - 1ì›”ì˜ í•©ê³„, 2ì›”ì˜ í•©ê³„, 3ì›”ì˜ í•©ê³„ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 
 //class Fruit {
-//	     »ı¼ºÀÚ
-//	   calcTot() - ¸ğµç ÇÕ°è ±¸ÇÏ´Â ¸Ş¼Òµå
-//	   display() - °úÀÏ¸í, 1¿ù, 2¿ù, 3¿ù, ÇÕ°è
-//	   output() - 1¿ùÀÇ ÇÕ°è, 2¿ùÀÇ ÇÕ°è, 3¿ùÀÇ ÇÕ°è¸¦ Ãâ·ÁÇÏ´Â ¸Ş¼Òµå
+//	     ìƒì„±ì
+//	   calcTot() - ëª¨ë“  í•©ê³„ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
+//	   display() - ê³¼ì¼ëª…, 1ì›”, 2ì›”, 3ì›”, í•©ê³„
+//	   output() - 1ì›”ì˜ í•©ê³„, 2ì›”ì˜ í•©ê³„, 3ì›”ì˜ í•©ê³„ë¥¼ ì¶œë ¤í•˜ëŠ” ë©”ì†Œë“œ
 //	}
 
 
-//Â÷ÀÌÁ¡ : FruitÅ¬·¡½º »ı¼º
-//       get¸Ş¼Òµå »ç¿ë ¾ÈÇÔ
-//       Ãâ·ÂÀÌ ¹è¿­ÀÌ ¾Æ´Ñ 1ÀÎºĞ
+//ì°¨ì´ì  : Fruití´ë˜ìŠ¤ ìƒì„±
+//       getë©”ì†Œë“œ ì‚¬ìš© ì•ˆí•¨
+//       ì¶œë ¥ì´ ë°°ì—´ì´ ì•„ë‹Œ 1ì¸ë¶„
 
 class Fruit{
-	//1.ÇÊµå¸í
+	//1.í•„ë“œëª…
 		private String product;
 		private int jan, feb, mar, tot;
 		private static int jansum, febsum, marsum;
 		final static int SIZE = 3;
 		static FruitMainT[] arr;
-		//À§ ÇÊµå¸¦ String[] product, int[] jan µîÀ¸·Î ÀâÀº °æ¿ì´Â 1ÀÎºĞÀÌ ¾Æ´Ô
-		//¡Úprivate int price; - °¡°İÀ» ÀÔ·Â¹Ş¾Æ¼­ °è»êµµ ÇØº¸±â
+		//ìœ„ í•„ë“œë¥¼ String[] product, int[] jan ë“±ìœ¼ë¡œ ì¡ì€ ê²½ìš°ëŠ” 1ì¸ë¶„ì´ ì•„ë‹˜
+		//â˜…private int price; - ê°€ê²©ì„ ì…ë ¥ë°›ì•„ì„œ ê³„ì‚°ë„ í•´ë³´ê¸°
 		
-		//2.»ı¼ºÀÚ
+		//2.ìƒì„±ì
 		public Fruit(String product, int jan, int feb, int mar) {
 			this.product = product;
 			this.jan = jan;
@@ -56,7 +56,7 @@ class Fruit{
 			this.mar = mar;
 		}
 		
-		//3.¸Ş¼Òµå
+		//3.ë©”ì†Œë“œ
 //		public String getProduct() {
 //			return product;
 //		}
@@ -83,7 +83,7 @@ class Fruit{
 //		}
 		
 		public void calcTot() {
-			tot = jan + feb + mar;//this.°¡ »ı·«µÇ¾î ÀÖÀ½
+			tot = jan + feb + mar;//this.ê°€ ìƒëµë˜ì–´ ìˆìŒ
 			
 			jansum += jan;
 			febsum += feb;
@@ -105,7 +105,7 @@ class Fruit{
 		
 		public static void outPut() {
 			System.out.println("\t" + jansum + "\t" + febsum + "\t" + marsum);
-		}//outPut()À» µû·Î ÀâÀº ÀÌÀ¯ : disp()´Â main¿¡¼­ ¹İº¹µÇ¹Ç·Î µû·Î ºĞ¸®ÇÔ
+		}//outPut()ì„ ë”°ë¡œ ì¡ì€ ì´ìœ  : disp()ëŠ” mainì—ì„œ ë°˜ë³µë˜ë¯€ë¡œ ë”°ë¡œ ë¶„ë¦¬í•¨
 	
 }
 
@@ -114,11 +114,11 @@ public class FruitMainT {
 	
 	
 	public static void main(String[] args) {
-		//4.¹è¿­ »ı¼º
+		//4.ë°°ì—´ ìƒì„±
 		Fruit[] ar = new Fruit[3];
-		ar[0] = new Fruit("»ç°ú", 100, 80, 75);
-		ar[1] = new Fruit("Æ÷µµ", 30, 25, 10);
-		ar[2] = new Fruit("µş±â", 25, 30, 90);
+		ar[0] = new Fruit("ì‚¬ê³¼", 100, 80, 75);
+		ar[1] = new Fruit("í¬ë„", 30, 25, 10);
+		ar[2] = new Fruit("ë”¸ê¸°", 25, 30, 90);
 		
 		
 		System.out.println("-------------------------------------");

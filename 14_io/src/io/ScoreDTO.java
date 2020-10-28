@@ -3,7 +3,7 @@ package io;
 import java.io.Serializable;
 
 public class ScoreDTO implements Serializable, Comparable<ScoreDTO> {
-	private static final long serialVersionUTI = 1L; //serialVersionUID¿¡·¯°¡ ¶ã ¶§, error¶ã¶§ ÀÌ°Å ½áÁÖ¸é ÇØ°á °¡´É
+	private static final long serialVersionUTI = 1L; //serialVersionUIDì—ëŸ¬ê°€ ëœ° ë•Œ, errorëœ°ë•Œ ì´ê±° ì¨ì£¼ë©´ í•´ê²° ê°€ëŠ¥
 	
 	private String hak;
 	private String name;
@@ -57,7 +57,7 @@ public class ScoreDTO implements Serializable, Comparable<ScoreDTO> {
 	}
 	
 	
-	//ÀÇ¹Ì¾øÀ½ - ¼±»ı´Ô Ç®ÀÌ¿¡¼­´Â »ç¿ë ¾ÈÇÔ
+	//ì˜ë¯¸ì—†ìŒ - ì„ ìƒë‹˜ í’€ì´ì—ì„œëŠ” ì‚¬ìš© ì•ˆí•¨
 	@Override
 	public String toString() {
 		return String.format("%6s %6s %5d %5d %5d %5d %9.2f",
@@ -71,7 +71,7 @@ public class ScoreDTO implements Serializable, Comparable<ScoreDTO> {
 	
 	
 	@Override
-	public int compareTo(ScoreDTO s) { //³»¸²Â÷¼ø
+	public int compareTo(ScoreDTO s) { //ë‚´ë¦¼ì°¨ìˆœ
 		if(this.tot < s.tot) {
 			return 1;
 		}else if(this.tot > s.tot) {
@@ -80,6 +80,6 @@ public class ScoreDTO implements Serializable, Comparable<ScoreDTO> {
 			return 0;
 		}
 		
-		//return this.tot < s.tot ? 1 : -1; (³»¸²Â÷¼ø) (µğÆúÆ®(¿À¸§Â÷¼ø) < -1  / > 1)
+		//return this.tot < s.tot ? 1 : -1; (ë‚´ë¦¼ì°¨ìˆœ) (ë””í´íŠ¸(ì˜¤ë¦„ì°¨ìˆœ) < -1  / > 1)
 	}
 }

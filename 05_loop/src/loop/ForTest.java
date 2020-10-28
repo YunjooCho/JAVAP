@@ -9,7 +9,7 @@ public class ForTest {
 			System.out.println("Hello Kitty " + i);
 
 		}//for
-		System.out.println("Å»Ãâ : " + i); //(iº¯¼ö) º¯¼öÀÇ »ıÁ¸½Ã±â
+		System.out.println("íƒˆì¶œ : " + i); //(ië³€ìˆ˜) ë³€ìˆ˜ì˜ ìƒì¡´ì‹œê¸°
 		System.out.println();
 		
 		//10 9 8 7 6 5 4 3 2 1

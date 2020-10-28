@@ -7,11 +7,11 @@ import java.io.InputStreamReader;
 public class InputUtil {
 
 	
-	//23.ÀÔ·Â°ú °ü·ÃµÈ ¸Ş¼Òµå
+	//23.ì…ë ¥ê³¼ ê´€ë ¨ëœ ë©”ì†Œë“œ
 	public static int validateInt(int minimum, int maximum) throws IOException {
 		int parsedValue = stringToInt();
 		while(parsedValue < minimum || parsedValue > maximum) {
-			System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+			System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 			parsedValue = stringToInt();
 		}
 		return parsedValue;
@@ -22,11 +22,11 @@ public class InputUtil {
 		System.out.print("> ");
 		String userInput = bufferedReader.readLine();
 		while(!userInput.matches("\\d*")) {
-			System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ìˆ«ìë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			System.out.print("> ");
 			userInput = bufferedReader.readLine();
 		}
 		return Integer.parseInt(userInput);
-	}//stringToInt ÀÔ·ÂµÈ ±ÛÀÚ°¡ ¼ıÀÚ¸é Á¤¼öÈ­, ±ÛÀÚ¸é ¹İº¹¹® ½ÇÇà
+	}//stringToInt ì…ë ¥ëœ ê¸€ìê°€ ìˆ«ìë©´ ì •ìˆ˜í™”, ê¸€ìë©´ ë°˜ë³µë¬¸ ì‹¤í–‰
 
 }

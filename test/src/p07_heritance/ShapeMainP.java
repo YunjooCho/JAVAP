@@ -3,68 +3,68 @@ package p07_heritance;
 
 class ShapeTest{
 		
-		//ÇÊµå ¼±¾ğ
+		//í•„ë“œ ì„ ì–¸
 		protected double area;
 		
-		//»ı¼ºÀÚ
+		//ìƒì„±ì
 		public ShapeTest() {
-			System.out.println("ShapeMainP ±âº» »ı¼ºÀÚ");
+			System.out.println("ShapeMainP ê¸°ë³¸ ìƒì„±ì");
 		}
 		
 		
-		//¸Ş¼Òµå
+		//ë©”ì†Œë“œ
 		public void calcArea() {
-			System.out.println("µµÇüÀÇ ³ĞÀÌÀ» °è»êÇÕ´Ï´Ù.");
+			System.out.println("ë„í˜•ì˜ ë„“ì´ì„ ê³„ì‚°í•©ë‹ˆë‹¤.");
 		}
 		
 		public void dispArea() {
-			System.out.println("µµÇüÀÇ ³ĞÀÌ¸¦ Ãâ·ÂÇÕ´Ï´Ù.");
+			System.out.println("ë„í˜•ì˜ ë„“ì´ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.");
 		}
 }
 
 
-class SamTest extends ShapeTest{//»ó¼Ó(ÇÊµå¿Í ¸Ş¼Òµå »ç¿ë°¡´É)
-	//ÀÚ½ÄÅ¬·¡½ºÀÇ ÇÊµå
+class SamTest extends ShapeTest{//ìƒì†(í•„ë“œì™€ ë©”ì†Œë“œ ì‚¬ìš©ê°€ëŠ¥)
+	//ìì‹í´ë˜ìŠ¤ì˜ í•„ë“œ
 	protected int base, height;
 	
-	//ÀÚ½ÄÅ¬·¡½ºÀÇ »ı¼ºÀÚ
+	//ìì‹í´ë˜ìŠ¤ì˜ ìƒì„±ì
 	public SamTest(int base, int height) {
-		System.out.println("SamTest »ı¼ºÀÚ");
-		this.base = base; //¸Å°³º¯¼ö(ÆÄ¶ó¹ÌÅÍ)·Î ¹ŞÀº baseÀÇ °ªÀ» ÀÚ½ÄÅ¬·¡½º ÇÊµå base¿¡ ³Ñ°ÜÁÜ
-		this.height = height; //¸Å°³º¯¼ö(ÆÄ¶ó¹ÌÅÍ)·Î ¹ŞÀº heightÀÇ °ªÀ» ÀÚ½ÄÅ¬·¡½º ÇÊµå height¿¡ ³Ñ°ÜÁÜ
+		System.out.println("SamTest ìƒì„±ì");
+		this.base = base; //ë§¤ê°œë³€ìˆ˜(íŒŒë¼ë¯¸í„°)ë¡œ ë°›ì€ baseì˜ ê°’ì„ ìì‹í´ë˜ìŠ¤ í•„ë“œ baseì— ë„˜ê²¨ì¤Œ
+		this.height = height; //ë§¤ê°œë³€ìˆ˜(íŒŒë¼ë¯¸í„°)ë¡œ ë°›ì€ heightì˜ ê°’ì„ ìì‹í´ë˜ìŠ¤ í•„ë“œ heightì— ë„˜ê²¨ì¤Œ
 	}
 	
-	//ÀÚ½ÄÅ¬·¡½ºÀÇ ¸Ş¼Òµå(¿À¹ö¶óÀÌµå·Î ¾ÕÀ¸·Î´Â ÀÚ½ÄÅ¬·¡½ºÀÇ ¸Ş¼Òµå¹Û¿¡ ºÒ·¯¿Ã¼ö ¾øÀ½)
+	//ìì‹í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ(ì˜¤ë²„ë¼ì´ë“œë¡œ ì•ìœ¼ë¡œëŠ” ìì‹í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œë°–ì— ë¶ˆëŸ¬ì˜¬ìˆ˜ ì—†ìŒ)
 	@Override 
-	//¾î³ëÅ×ÀÌ¼Ç - ¿À¹ö¶óÀÌµå Àü¿å ¿¡·¯ °ËÃâÄÚµå
-	//¾î³ëÅ×ÀÌ¼ÇÀÌ ¾øÀ¸¸é ¿À¹ö¶óÀÌµå°¡ µÇÁö ¾Ê¾Æµµ ¾Æ¿¹ ´Ù¸¥ ¸Ş¼Òµå·Î ÀÎ½ÄÇÏ¿© ¿¡·¯°¡ °ËÃâµÇÁö ¾ÊÀ½
+	//ì–´ë…¸í…Œì´ì…˜ - ì˜¤ë²„ë¼ì´ë“œ ì „ìš• ì—ëŸ¬ ê²€ì¶œì½”ë“œ
+	//ì–´ë…¸í…Œì´ì…˜ì´ ì—†ìœ¼ë©´ ì˜¤ë²„ë¼ì´ë“œê°€ ë˜ì§€ ì•Šì•„ë„ ì•„ì˜ˆ ë‹¤ë¥¸ ë©”ì†Œë“œë¡œ ì¸ì‹í•˜ì—¬ ì—ëŸ¬ê°€ ê²€ì¶œë˜ì§€ ì•ŠìŒ
 	public void calcArea() {
 		
-		area = base * height / 2.0; //ºÎ¸ğÇÊµå¿¡ °ª ¹İÈ¯
+		area = base * height / 2.0; //ë¶€ëª¨í•„ë“œì— ê°’ ë°˜í™˜
 	}
 	
 	
 	@Override
 	public void dispArea() {
-		System.out.println("»ï°¢Çü ³ĞÀÌ = " + area); //ºÎ¸ğ ÇÊµå È£Ãâ
+		System.out.println("ì‚¼ê°í˜• ë„“ì´ = " + area); //ë¶€ëª¨ í•„ë“œ í˜¸ì¶œ
 	}
 }//SamTest
 
 
 class SaTest extends ShapeTest{
-	//ÀÚ½ÄÅ¬·¡½ºÀÇ ÇÊµå
+	//ìì‹í´ë˜ìŠ¤ì˜ í•„ë“œ
 	private int width, height;
 	
-	//ÀÚ½ÄÅ¬·¡½ºÀÇ »ı¼ºÀÚ
+	//ìì‹í´ë˜ìŠ¤ì˜ ìƒì„±ì
 	public SaTest(int width, int height) {
 		
-		System.out.println("SaTest »ı¼ºÀÚ");
+		System.out.println("SaTest ìƒì„±ì");
 		this.width = width;
 		this.height = height;
 		
 	}
 	
-	//ÀÚ½ÄÅ¬·¡½ºÀÇ ¸Ş¼Òµå
+	//ìì‹í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ
 	@Override
 	public void calcArea() {
 		
@@ -74,31 +74,31 @@ class SaTest extends ShapeTest{
 	@Override
 	public void dispArea() {
 		
-		System.out.println("»ç°¢Çü ³ĞÀÌ = " + area);
+		System.out.println("ì‚¬ê°í˜• ë„“ì´ = " + area);
 		
 	}
 }//SaTest
 
 
 class SadariTest extends ShapeTest{
-	//ÀÚ½ÄÅ¬·¡½º ÇÊµå
+	//ìì‹í´ë˜ìŠ¤ í•„ë“œ
 	private int top, bottom, height;
 	
-	//ÀÚ½ÄÅ¬·¡½º »ı¼ºÀÚ
+	//ìì‹í´ë˜ìŠ¤ ìƒì„±ì
 	public SadariTest(int top, int bottom, int height) {
-		System.out.println("SadariTest »ı¼ºÀÚ");
+		System.out.println("SadariTest ìƒì„±ì");
 		this.top = top;
 		this.bottom = bottom;
 		this.height = height;
 	}
 	
-	//ÀÚ½ÄÅ¬·¡½º ¸Ş¼Òµå
+	//ìì‹í´ë˜ìŠ¤ ë©”ì†Œë“œ
 	@Override
 	public void calcArea() {
 		area = (top + bottom) * height / 2.0;
 	}
 	public void dispArea() {
-		System.out.println("»ç´Ù¸®²Ã ³ĞÀÌ = " + area);
+		System.out.println("ì‚¬ë‹¤ë¦¬ê¼´ ë„“ì´ = " + area);
 	}
 	
 }

@@ -10,13 +10,13 @@ public class SnackTestP extends Thread {
 	
 	public static void main(String[] args) {
 		
-		SnackTestP aa = new SnackTestP("»õ¿ì±ø");
-		SnackTestP bb = new SnackTestP("Æú¶óÆ÷");
-		SnackTestP cc = new SnackTestP("¾çÆÄ¸µ");
+		SnackTestP aa = new SnackTestP("ìƒˆìš°ê¹¡");
+		SnackTestP bb = new SnackTestP("í´ë¼í¬");
+		SnackTestP cc = new SnackTestP("ì–‘íŒŒë§");
 		
-		aa.setName("»õ¿ì±ø");
-		bb.setName("Æú¶óÆ÷");
-		cc.setName("¾çÆÄ¸µ");
+		aa.setName("ìƒˆìš°ê¹¡");
+		bb.setName("í´ë¼í¬");
+		cc.setName("ì–‘íŒŒë§");
 		
 		aa.setPriority(10);
 		bb.setPriority(Thread.MIN_PRIORITY);

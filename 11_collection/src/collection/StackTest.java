@@ -6,16 +6,16 @@ import static java.lang.System.out;
 public class StackTest {
 
 	public static void main(String[] args) {
-		String[] groupA = {"¿ìÁîº£Å°½ºÅº","Äí¿şÀÌÆ®","»ç¿ìµğ","´ëÇÑ¹Î±¹"};
-		Stack<String> stack = new Stack<String>(); //Á¦³Ê¸¯Àº ÁÂÇ×°ú ¿ìÇ×ÀÌ °°Àº Å¬·¡½º¿©¾ß ÇÔ
+		String[] groupA = {"ìš°ì¦ˆë² í‚¤ìŠ¤íƒ„","ì¿ ì›¨ì´íŠ¸","ì‚¬ìš°ë””","ëŒ€í•œë¯¼êµ­"};
+		Stack<String> stack = new Stack<String>(); //ì œë„ˆë¦­ì€ ì¢Œí•­ê³¼ ìš°í•­ì´ ê°™ì€ í´ë˜ìŠ¤ì—¬ì•¼ í•¨
 		
 		for(int i = 0; i < groupA.length; i++) 
-			stack.push(groupA[i]); //ÇÑ¹®ÀåÀÏ¶§´Â {}À» »ı·«ÇÏ´Â °æ¿ìµµ ÀÖÀ½
-								   //¿ä¼Ò Ãß°¡
+			stack.push(groupA[i]); //í•œë¬¸ì¥ì¼ë•ŒëŠ” {}ì„ ìƒëµí•˜ëŠ” ê²½ìš°ë„ ìˆìŒ
+								   //ìš”ì†Œ ì¶”ê°€
 		
-		while( ! stack.isEmpty()) //½ºÅÃ¿¡ ÀÚ·á°¡ ºñ¾îÀÖÁö ¾Ê´Ù¸é - ºÎÁ¤(FALSE)ÀÇ ºÎÁ¤, ½ºÅÃÀÌ ´Ù ºñ¸é while¹®¿¡¼­ ºüÁ®³ª¿È
-			out.println( stack.pop() ); //ÇÑ¹®ÀåÀÏ¶§´Â {}À» »ı·«ÇÏ´Â °æ¿ìµµ ÀÖÀ½
-		     							//¿ä¼Ò Ãâ·Â(»èÁ¦?)
+		while( ! stack.isEmpty()) //ìŠ¤íƒì— ìë£Œê°€ ë¹„ì–´ìˆì§€ ì•Šë‹¤ë©´ - ë¶€ì •(FALSE)ì˜ ë¶€ì •, ìŠ¤íƒì´ ë‹¤ ë¹„ë©´ whileë¬¸ì—ì„œ ë¹ ì ¸ë‚˜ì˜´
+			out.println( stack.pop() ); //í•œë¬¸ì¥ì¼ë•ŒëŠ” {}ì„ ìƒëµí•˜ëŠ” ê²½ìš°ë„ ìˆìŒ
+		     							//ìš”ì†Œ ì¶œë ¥(ì‚­ì œ?)
 	}
 
 }

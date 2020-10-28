@@ -4,29 +4,29 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//·Î¶Ç ¹øÈ£Á¦ÀÛ±â 2¹ø
-//»ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ¸¦ ÀÔ·Â ¹Ş¾Æ¼­
-//6°³°¡ ´Ù ¸ÂÀ»½Ã: 1µî
-//5°³°¡ ¸ÂÀ»½Ã: 2µî
-//4°³: 3µî
-//3°³: 4µî
-//ÀÌ Ãâ·ÂµÇ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-//´Ü »ç¿ëÀÚ°¡ 1~45¸¦ ¹ş¾î³­ °ªÀ» ÀÔ·ÂÇÏ¸é
-//¿Ã¹Ù¸¥ °ªÀ» ÀÔ·ÂÇÒ¶§±îÁö ´Ù½Ã ÀÔ·ÂÀ» ÇÏ°Ô ¸¸µå¼¼¿ä
+//ë¡œë˜ ë²ˆí˜¸ì œì‘ê¸° 2ë²ˆ
+//ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ìë¥¼ ì…ë ¥ ë°›ì•„ì„œ
+//6ê°œê°€ ë‹¤ ë§ì„ì‹œ: 1ë“±
+//5ê°œê°€ ë§ì„ì‹œ: 2ë“±
+//4ê°œ: 3ë“±
+//3ê°œ: 4ë“±
+//ì´ ì¶œë ¥ë˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+//ë‹¨ ì‚¬ìš©ìê°€ 1~45ë¥¼ ë²—ì–´ë‚œ ê°’ì„ ì…ë ¥í•˜ë©´
+//ì˜¬ë°”ë¥¸ ê°’ì„ ì…ë ¥í• ë•Œê¹Œì§€ ë‹¤ì‹œ ì…ë ¥ì„ í•˜ê²Œ ë§Œë“œì„¸ìš”
 
-//ÇÁ·Î±×·¥ ¿¹½Ã:
-//·Î¶Ç¹øÈ£ ÃßÃ· ¿Ï·á
-//1¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 3
-//2¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 1
-//3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 1000
-//Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.
-//3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: -150
-//Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.
-//3¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 43
-//4¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 23
-//5¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 12
-//6¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä: 11
-//ÃÑ 4°³ ¸ÂÃß¼Ì½À´Ï´Ù. 3µî ´çÃ·ÀÔ´Ï´Ù!!! (55ºĞ±îÁö)
+//í”„ë¡œê·¸ë¨ ì˜ˆì‹œ:
+//ë¡œë˜ë²ˆí˜¸ ì¶”ì²¨ ì™„ë£Œ
+//1ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 3
+//2ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 1
+//3ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 1000
+//ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.
+//3ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: -150
+//ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.
+//3ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 43
+//4ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 23
+//5ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 12
+//6ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”: 11
+//ì´ 4ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 3ë“± ë‹¹ì²¨ì…ë‹ˆë‹¤!!! (55ë¶„ê¹Œì§€)
 
 import java.util.Random;
 
@@ -36,19 +36,19 @@ public class Ex10LottoNumbers02P {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//¹è¿­, º¯¼ö ¼±¾ğ
+		//ë°°ì—´, ë³€ìˆ˜ ì„ ì–¸
 		int[] lottoNumbers = new int[6];
 		int user;
 		int count = 1;
 		int correct = 0;
 		
 		
-		//³­¼ö ¹ß»ı, ¹è¿­¿¡ ÀÔ·Â
+		//ë‚œìˆ˜ ë°œìƒ, ë°°ì—´ì— ì…ë ¥
 		Random random = new Random();
 		for(int i = 0; i < SIZE; i++) {
 			lottoNumbers[i] = random.nextInt(MAX) + 1;
 		}
-		//Áßº¹ Á¦°Å
+		//ì¤‘ë³µ ì œê±°
 		for(int i = 0; i < SIZE; i++) {
 			for(int j = 0; j < SIZE; j++) {
 				if(i != j && lottoNumbers[i] == lottoNumbers[j]) {
@@ -57,7 +57,7 @@ public class Ex10LottoNumbers02P {
 				}
 			}
 		}
-		//Á¤·Ä
+		//ì •ë ¬
 		for(int i = 0; i < SIZE - 1; i++) {
 			if(lottoNumbers[i] > lottoNumbers[i+1]) {
 				int temp = lottoNumbers[i];
@@ -67,14 +67,14 @@ public class Ex10LottoNumbers02P {
 			}
 		}
 		
-		//»ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ ÀÔ·Â¹Ş±â
+		//ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ì ì…ë ¥ë°›ê¸°
 		for(int i = 0; i < SIZE; i++) {
-			System.out.print(count + "¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä :");
+			System.out.print(count + "ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” :");
 			user = Integer.parseInt(br.readLine());
 			count++;
 			if(user < 1 || user > 45) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-				System.out.print(count + "¹øÂ° ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä :");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+				System.out.print(count + "ë²ˆì§¸ ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” :");
 				user = Integer.parseInt(br.readLine());
 			}//if
 			
@@ -83,17 +83,17 @@ public class Ex10LottoNumbers02P {
 			}
 		}
 		
-		//°á°ú Ãâ·Â
+		//ê²°ê³¼ ì¶œë ¥
 		switch(correct) {
-		case 6 : System.out.println("ÃÑ " + correct + "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 1µî ÀÔ´Ï´Ù!!!");
+		case 6 : System.out.println("ì´ " + correct + "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 1ë“± ì…ë‹ˆë‹¤!!!");
 			     break;
-		case 5 : System.out.println("ÃÑ " + correct + "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 2µî ÀÔ´Ï´Ù!!!");
+		case 5 : System.out.println("ì´ " + correct + "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 2ë“± ì…ë‹ˆë‹¤!!!");
 			     break;
-		case 4 : System.out.println("ÃÑ " + correct + "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 3µî ÀÔ´Ï´Ù!!!");
+		case 4 : System.out.println("ì´ " + correct + "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 3ë“± ì…ë‹ˆë‹¤!!!");
 			     break;
-		case 3 : System.out.println("ÃÑ " + correct + "°³ ¸ÂÃß¼Ì½À´Ï´Ù. 4µî ÀÔ´Ï´Ù!!!");
+		case 3 : System.out.println("ì´ " + correct + "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. 4ë“± ì…ë‹ˆë‹¤!!!");
 			     break;
-	    default : System.out.println("ÃÑ " + correct + "°³ ¸ÂÃß¼Ì½À´Ï´Ù. ¼øÀ§±Ç ¹ÛÀÔ´Ï´Ù.");
+	    default : System.out.println("ì´ " + correct + "ê°œ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤. ìˆœìœ„ê¶Œ ë°–ì…ë‹ˆë‹¤.");
 	    		 break;
 		}
 	}

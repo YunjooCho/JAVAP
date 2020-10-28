@@ -1,8 +1,8 @@
 package if_switch;
 /*
-3°³ÀÇ ¼ıÀÚ(a,b,c)¸¦ ÀÔ·Â¹Ş¾Æ¼­ ¼ø¼­´ë·Î Ãâ·ÂÇÏ½Ã¿À
+3ê°œì˜ ìˆ«ì(a,b,c)ë¥¼ ì…ë ¥ë°›ì•„ì„œ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 a : 68
 b : 50
 c : 45
@@ -21,15 +21,15 @@ import java.io.InputStreamReader;
 public class IfTest3 {
 
 	public static void main(String[] args) throws IOException {
-				//¸Ş¸ğ¸® »ı¼º
+				//ë©”ëª¨ë¦¬ ìƒì„±
 				BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 				
-				//ÀÔ·Â
-				System.out.println("a ÀÔ·Â :");
+				//ì…ë ¥
+				System.out.println("a ì…ë ¥ :");
 				int a = Integer.parseInt(br.readLine());
-				System.out.println("b ÀÔ·Â :");
+				System.out.println("b ì…ë ¥ :");
 				int b = Integer.parseInt(br.readLine());
-				System.out.println("c ÀÔ·Â :");
+				System.out.println("c ì…ë ¥ :");
 				int c = Integer.parseInt(br.readLine());
 				
 				if (a < b) {

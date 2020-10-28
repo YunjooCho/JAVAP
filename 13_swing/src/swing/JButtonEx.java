@@ -9,36 +9,36 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 
-//Ä«µå µÚÁı±â °ÔÀÓ
+//ì¹´ë“œ ë’¤ì§‘ê¸° ê²Œì„
 public class JButtonEx extends JFrame {
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private Icon icon1 = new ImageIcon("image/jindo.jpg");
 	private Icon icon2 = new ImageIcon("image/liver.jpg");
 	private Icon icon3 = new ImageIcon("image/poodle.jpg");
 	private Icon icon4 = new ImageIcon("image/shizu.jpg");
 	
-	private JRadioButton[] jb = new JRadioButton[4]; //¿©·¯°³ÀÇ Ç×¸ñ Áß ÇÏ³ª¸¸ ¼±ÅÃÇÒ ¼ö ÀÖµµ·Ï ÇÏ±â À§ÇÑ ¹öÆ°
-	private ButtonGroup bg = new ButtonGroup();		 //ButtonGroup ¹öÆ°À» ¿©·¯°³ ¹­¾îÁÖ±â À§ÇÑ °Í
+	private JRadioButton[] jb = new JRadioButton[4]; //ì—¬ëŸ¬ê°œì˜ í•­ëª© ì¤‘ í•˜ë‚˜ë§Œ ì„ íƒí•  ìˆ˜ ìˆë„ë¡ í•˜ê¸° ìœ„í•œ ë²„íŠ¼
+	private ButtonGroup bg = new ButtonGroup();		 //ButtonGroup ë²„íŠ¼ì„ ì—¬ëŸ¬ê°œ ë¬¶ì–´ì£¼ê¸° ìœ„í•œ ê²ƒ
 	
-	//¡Ú´ÜÀÏ°´Ã¼, 4°³ ÀÌ»óÀÇ ¹è¿­°´Ã¼·Îµµ ¸¸µé¾îºÁ¼­ ¾î¶²½ÄÀ¸·Î ¹èÄ¡µÇ´Â °ÍÀÎÁö È®ÀÎ
+	//â˜…ë‹¨ì¼ê°ì²´, 4ê°œ ì´ìƒì˜ ë°°ì—´ê°ì²´ë¡œë„ ë§Œë“¤ì–´ë´ì„œ ì–´ë–¤ì‹ìœ¼ë¡œ ë°°ì¹˜ë˜ëŠ” ê²ƒì¸ì§€ í™•ì¸
 	public JButtonEx() {
-		super("Test");//À©µµ¿ì Ã¢ ÀÌ¸§Ç¥½Ã
+		super("Test");//ìœˆë„ìš° ì°½ ì´ë¦„í‘œì‹œ
 		Container con = this.getContentPane();
 		con.setLayout(new GridLayout(2,2));
 		for(int i = 0; i < jb.length; i++) {
-			jb[i] = new JRadioButton(i + 1 + "¹ø ¹öÆ°" , icon1); //±âº»È­¸éÀ¸·Î icon1ÀÌ °
+			jb[i] = new JRadioButton(i + 1 + "ë²ˆ ë²„íŠ¼" , icon1); //ê¸°ë³¸í™”ë©´ìœ¼ë¡œ icon1ì´ ëœ²
 			con.add(jb[i]); 
-			jb[i].setToolTipText(i + 1 + "¹øÂ° ¹öÆ°ÀÌ´Ù. ´­·¯....");
-			jb[i].setMnemonic(i+49);//´ÜÃàÅ°
-			jb[i].setRolloverIcon(icon2); //À§¾Æ·¡·Î ÇÒ¶§ Ãâ·ÂµÇ´Â ±×¸² liver
-			jb[i].setPressedIcon(icon3);  //´©¸£¸é Ãâ·ÂµÇ´Â ±×¸²          poodle
-			jb[i].setSelectedIcon(icon4); //¼±ÅÃ(µÇ¾î ÀÖ´Â »óÅÂ¿¡¼­ Å¬¸¯)ÇÏ¸é Ãâ·ÂµÇ´Â ±×¸² shizu
+			jb[i].setToolTipText(i + 1 + "ë²ˆì§¸ ë²„íŠ¼ì´ë‹¤. ëˆŒëŸ¬....");
+			jb[i].setMnemonic(i+49);//ë‹¨ì¶•í‚¤
+			jb[i].setRolloverIcon(icon2); //ìœ„ì•„ë˜ë¡œ í• ë•Œ ì¶œë ¥ë˜ëŠ” ê·¸ë¦¼ liver
+			jb[i].setPressedIcon(icon3);  //ëˆ„ë¥´ë©´ ì¶œë ¥ë˜ëŠ” ê·¸ë¦¼          poodle
+			jb[i].setSelectedIcon(icon4); //ì„ íƒ(ë˜ì–´ ìˆëŠ” ìƒíƒœì—ì„œ í´ë¦­)í•˜ë©´ ì¶œë ¥ë˜ëŠ” ê·¸ë¦¼ shizu
 			bg.add(jb[i]);
 		}
 		
-		pack();//Ã¢ÀÇ Å©±â¸¦ ¾Ë¸Â°Ô ¸ÂÃçÁÖ´Â(¿©±â¼­´Â »çÁøÀÇ »çÀÌÁî¿¡ ¸Â°Ô ¸ÂÃçÁØµí) ¸Ş¼Òµå
-			   //setBouns´ë½Å
-		setVisible(true); //ÇÁ·¹ÀÓÀº ÀÖ´Âµ¥(setVisible) Å©±â¸¦ Á¤ÇÏÁö ¾ÊÀº °Í»Ó, Å©±â´Â Ã·ºÎÇÑ »çÁøÀÇ Å©±â¿¡ µû¶ó ÀÚµ¿À¸·Î Á¶ÀıµÊ - Å©±â°¡ ÀÚÀ²È­ µÈ °Í
+		pack();//ì°½ì˜ í¬ê¸°ë¥¼ ì•Œë§ê²Œ ë§ì¶°ì£¼ëŠ”(ì—¬ê¸°ì„œëŠ” ì‚¬ì§„ì˜ ì‚¬ì´ì¦ˆì— ë§ê²Œ ë§ì¶°ì¤€ë“¯) ë©”ì†Œë“œ
+			   //setBounsëŒ€ì‹ 
+		setVisible(true); //í”„ë ˆì„ì€ ìˆëŠ”ë°(setVisible) í¬ê¸°ë¥¼ ì •í•˜ì§€ ì•Šì€ ê²ƒë¿, í¬ê¸°ëŠ” ì²¨ë¶€í•œ ì‚¬ì§„ì˜ í¬ê¸°ì— ë”°ë¼ ìë™ìœ¼ë¡œ ì¡°ì ˆë¨ - í¬ê¸°ê°€ ììœ¨í™” ëœ ê²ƒ
 	}
 	
 	
@@ -50,9 +50,9 @@ public class JButtonEx extends JFrame {
 }
 
 
-//¸ğµ¨Àº °´Ã¼?µ¥ÀÌÅÍ?ÀÇ ÀúÀå »èÁ¦¸¦ ´ã´ç
-//Á¦ÀÌ¸®½ºÆ®°¡ Ãâ·Â
+//ëª¨ë¸ì€ ê°ì²´?ë°ì´í„°?ì˜ ì €ì¥ ì‚­ì œë¥¼ ë‹´ë‹¹
+//ì œì´ë¦¬ìŠ¤íŠ¸ê°€ ì¶œë ¥
 
-//Tooltip : ¸¶¿ì½º °®´Ù´ë¸é ¸Ş½ÃÁöÇ³¼± °°Àº°Ô ¶ß´Â°Í
-//Mnemonic : ´ÜÃàÅ°
+//Tooltip : ë§ˆìš°ìŠ¤ ê°–ë‹¤ëŒ€ë©´ ë©”ì‹œì§€í’ì„  ê°™ì€ê²Œ ëœ¨ëŠ”ê²ƒ
+//Mnemonic : ë‹¨ì¶•í‚¤
 //

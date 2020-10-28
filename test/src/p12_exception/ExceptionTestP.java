@@ -4,31 +4,31 @@ import java.util.Scanner;
 
 public class ExceptionTestP {
 
-	public static void main(String[] args) { //callBack°ú À¯»ç, JVMÀÌ °¡Àå ¸ÕÀú È£ÃâÇÏ´Â ºÎºĞ, 
-		                                     //String[] args´Â µé¾î¿À´Â Å¸ÀÔÀÌ ÀüºÎ String&¹è¿­ Å¸ÀÔ
+	public static void main(String[] args) { //callBackê³¼ ìœ ì‚¬, JVMì´ ê°€ì¥ ë¨¼ì € í˜¸ì¶œí•˜ëŠ” ë¶€ë¶„, 
+		                                     //String[] argsëŠ” ë“¤ì–´ì˜¤ëŠ” íƒ€ì…ì´ ì „ë¶€ String&ë°°ì—´ íƒ€ì…
 		
-		System.out.println(args[0]); //Run ConfigurationÀ¸·Î °ª ÀÔ·Â
+		System.out.println(args[0]); //Run Configurationìœ¼ë¡œ ê°’ ì…ë ¥
 //		System.out.println(args[1]);
 //		System.out.println(args[2]);
 //		System.out.println(args[3]);
 		
 		if(args.length > 0) System.out.println(args[0]);	
 		
-		int num1 = Integer.parseInt(args[0]); //runas configuration¿¡ ¹®ÀÚ¸¦ ÀÔ·ÂÇÑ °æ¿ì ¿©±â¼­ ¿¡·¯°¡ ¶ä
+		int num1 = Integer.parseInt(args[0]); //runas configurationì— ë¬¸ìë¥¼ ì…ë ¥í•œ ê²½ìš° ì—¬ê¸°ì„œ ì—ëŸ¬ê°€ ëœ¸
 		System.out.println("num1 = " + num1);
 		
 		try {
 			Scanner scan = new Scanner(System.in);
-			System.out.println("¼ıÀÚ ÀÔ·Â : "); 
+			System.out.println("ìˆ«ì ì…ë ¥ : "); 
 			int num2 = scan.nextInt();
 			System.out.println("num2 = " + num2);
 			System.out.println("num1 / num2 = " + (num1 / num2));
 		} catch (NumberFormatException e){
-			System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä"); 
+			System.out.println("ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”"); 
 		} catch (ArithmeticException e){
-			System.out.println("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù");
+			System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 		} finally {
-			System.out.println("error°¡ ÀÖ°Ç ¾ø°Ç ¹«Á¶°Ç ½ÇÇà!!");
+			System.out.println("errorê°€ ìˆê±´ ì—†ê±´ ë¬´ì¡°ê±´ ì‹¤í–‰!!");
 		}
 		
 

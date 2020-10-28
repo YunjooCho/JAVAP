@@ -1,22 +1,22 @@
 package p12_exception;
 
-//1.»ó¼Ó
+//1.ìƒì†
 public class SynchronizedP extends Thread {
 
 	private static int count;
 	
 	public static void main(String[] args) {
-		//2.½º·¹µå »ı¼º
+		//2.ìŠ¤ë ˆë“œ ìƒì„±
 		SynchronizedP aa = new SynchronizedP();
 		SynchronizedP bb = new SynchronizedP();
 		SynchronizedP cc = new SynchronizedP();
 		
-		//3.½º·¹µå ÀÌ¸§ ¼³Á¤
+		//3.ìŠ¤ë ˆë“œ ì´ë¦„ ì„¤ì •
 		aa.setName("aa");
 		bb.setName("bb");
 		cc.setName("cc");
 		
-		//4.½º·¹µå ½ÃÀÛ
+		//4.ìŠ¤ë ˆë“œ ì‹œì‘
 		aa.start();
 		bb.start();
 		cc.start();
@@ -24,10 +24,10 @@ public class SynchronizedP extends Thread {
 	}
 	
 	@Override
-	//public synchronized void run() { //Áßº¹ ¼ıÀÚ ¹ß»ı
-	  public void run() {//Áßº¹ ¼ıÀÚ ¹ß»ı
-		//synchronized(this){//Áßº¹ ¼ıÀÚ ¹ß»ı
-		  synchronized(SynchronizedP.class) {//Áßº¹ ¹ß»ı ¾ÈÇÔ
+	//public synchronized void run() { //ì¤‘ë³µ ìˆ«ì ë°œìƒ
+	  public void run() {//ì¤‘ë³µ ìˆ«ì ë°œìƒ
+		//synchronized(this){//ì¤‘ë³µ ìˆ«ì ë°œìƒ
+		  synchronized(SynchronizedP.class) {//ì¤‘ë³µ ë°œìƒ ì•ˆí•¨
 			for(int i = 1; i <= 5; i++) {
 				count++;
 				System.out.println(Thread.currentThread().getName() + " : " + count);

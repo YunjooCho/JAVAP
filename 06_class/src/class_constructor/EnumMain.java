@@ -2,14 +2,14 @@ package class_constructor;
 
 /*
 class EnumColor{
-	public static final String RED = "»¡°­";
-	public static final String GREEN = "ÃÊ·Ï";
-	public static final String BLUE = "ÆÄ¶û";
-	public static final String MAGENTA = "º¸¶ó";
+	public static final String RED = "ë¹¨ê°•";
+	public static final String GREEN = "ì´ˆë¡";
+	public static final String BLUE = "íŒŒë‘";
+	public static final String MAGENTA = "ë³´ë¼";
 }
 */
 
-enum EnumColor{ //»ó¼öµéÀÇ ³ª¿­
+enum EnumColor{ //ìƒìˆ˜ë“¤ì˜ ë‚˜ì—´
 	RED, GREEN, BLUE, MAGENTA
 }
 
@@ -18,25 +18,25 @@ public class EnumMain {
 	EnumColor color;
 	
 	public static void main(String[] args) {
-		System.out.println(EnumColor.RED); //¢ºenumÈ£Ãâ
+		System.out.println(EnumColor.RED); //â–¶enumí˜¸ì¶œ
 		System.out.println();
 		
 		EnumMain em = new EnumMain();
-		em.colorName = "»¡°­";
-		em.color = EnumColor.RED; //¢ºº¯¼ö¿¡ enum°´Ã¼ ´ëÀÔ
+		em.colorName = "ë¹¨ê°•";
+		em.color = EnumColor.RED; //â–¶ë³€ìˆ˜ì— enumê°ì²´ ëŒ€ì…
 		System.out.println(em.colorName + "\t" + em.color);
 		
-		em.colorName = "º¸¶ó";
-		EnumColor VIOLET = EnumColor.MAGENTA; //enumÀÌ º¯¼öÃ³·³ »ç¿ëµÊ(º¯¼ö¿¡ ´ëÀÔ)
+		em.colorName = "ë³´ë¼";
+		EnumColor VIOLET = EnumColor.MAGENTA; //enumì´ ë³€ìˆ˜ì²˜ëŸ¼ ì‚¬ìš©ë¨(ë³€ìˆ˜ì— ëŒ€ì…)
 		System.out.println(em.colorName + "\t" + VIOLET);
 		System.out.println();
 		
-		for(EnumColor data : EnumColor.values()) {//values() - ¹è¿­
+		for(EnumColor data : EnumColor.values()) {//values() - ë°°ì—´
 			System.out.println(data + "\t"
-							 + data.ordinal()+ "\t" //Enum¹è¿­ÀÇ ÀÎµ¦½º ¼øÂ÷ÀûÀ¸·Î °¡Á®¿À±â
+							 + data.ordinal()+ "\t" //Enumë°°ì—´ì˜ ì¸ë±ìŠ¤ ìˆœì°¨ì ìœ¼ë¡œ ê°€ì ¸ì˜¤ê¸°
 							 + data.valueOf(data + "")); 
-							 //¹è¿­ ¾ÈÀÇ °ªÀ» ¹®ÀÚ¿­ÀÇ ÇüÅÂ·Î °¡Á®¿È(¹è¿­¾ÈÀÇ °ªÀÌ ()¾ÈÀÇ °ª°ú °°À¸¸é ¹®ÀÚ¿­ ÇüÅÂ·Î °¡Á®¿À±â)
-							 //data´Â enumÅ¸ÀÔ, valueOf()ÀÇ °ıÈ£ ¾ÈÀº StringÅ¸ÀÔÀÌ¿©¾ß ÇÏ±â ¶§¹®¿¡ ""·Î °­Á¦ º¯È¯½ÃÅ´
+							 //ë°°ì—´ ì•ˆì˜ ê°’ì„ ë¬¸ìì—´ì˜ í˜•íƒœë¡œ ê°€ì ¸ì˜´(ë°°ì—´ì•ˆì˜ ê°’ì´ ()ì•ˆì˜ ê°’ê³¼ ê°™ìœ¼ë©´ ë¬¸ìì—´ í˜•íƒœë¡œ ê°€ì ¸ì˜¤ê¸°)
+							 //dataëŠ” enumíƒ€ì…, valueOf()ì˜ ê´„í˜¸ ì•ˆì€ Stringíƒ€ì…ì´ì—¬ì•¼ í•˜ê¸° ë•Œë¬¸ì— ""ë¡œ ê°•ì œ ë³€í™˜ì‹œí‚´
 		}
 		System.out.println();
 	}

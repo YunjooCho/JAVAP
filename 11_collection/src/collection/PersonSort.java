@@ -9,58 +9,58 @@ public class PersonSort {
 	public static void main(String[] args) {
 		String[] ar = {"orange","apple","banana","pear","peach","applemango"};
 		
-		System.out.println("Á¤·Ä Àü = ");
+		System.out.println("ì •ë ¬ ì „ = ");
 		for(String data : ar) {
 			System.out.println(data + " ");
 		}
 		System.out.println();
 		
-		Arrays.sort(ar); //'¹è¿­'À» ³Ñ°ÜÁÖ¸é ÀÚµ¿À¸·Î ¼ø¼­´ë·Î ³ª¿­
+		Arrays.sort(ar); //'ë°°ì—´'ì„ ë„˜ê²¨ì£¼ë©´ ìë™ìœ¼ë¡œ ìˆœì„œëŒ€ë¡œ ë‚˜ì—´
 		
-		System.out.println("Á¤·Ä ÈÄ = ");
+		System.out.println("ì •ë ¬ í›„ = ");
 		for(String data : ar) {
 			System.out.println(data + " ");
 		}
 		System.out.println("\n");
 		
 		
-		PersonDTO aa =  new PersonDTO("È«±æµ¿", 25); //aa,bb,cc - Áö¿ªº¯¼ö, ÁÖ¼Ò°ªÀ» ´ã°í ÀÖÀ½
-		PersonDTO bb =  new PersonDTO("¶ÇÄ¡", 40);
-		PersonDTO cc =  new PersonDTO("µµ¿ì³Ê", 30);
-		//ÇöÀç ±âÁØÁ¡ÀÌ ¾øÀ¸¹Ç·Î PersonDTO¿¡¼­ ¼³Á¤ :compareTo(PersonDTO o) 
+		PersonDTO aa =  new PersonDTO("í™ê¸¸ë™", 25); //aa,bb,cc - ì§€ì—­ë³€ìˆ˜, ì£¼ì†Œê°’ì„ ë‹´ê³  ìˆìŒ
+		PersonDTO bb =  new PersonDTO("ë˜ì¹˜", 40);
+		PersonDTO cc =  new PersonDTO("ë„ìš°ë„ˆ", 30);
+		//í˜„ì¬ ê¸°ì¤€ì ì´ ì—†ìœ¼ë¯€ë¡œ PersonDTOì—ì„œ ì„¤ì • :compareTo(PersonDTO o) 
 		
 		ArrayList<PersonDTO> list = new ArrayList<PersonDTO>();
 		list.add(aa);
 		list.add(bb);
 		list.add(cc);
 		
-		System.out.println("Á¤·Ä Àü = " + list);
-		//Ãâ·Â°ª : [collection.PersonDTO@15db9742, collection.PersonDTO@6d06d69c, collection.PersonDTO@7852e922]
-		//toStringÀ¸·Î ¿À¹ö¶óÀÌµù
+		System.out.println("ì •ë ¬ ì „ = " + list);
+		//ì¶œë ¥ê°’ : [collection.PersonDTO@15db9742, collection.PersonDTO@6d06d69c, collection.PersonDTO@7852e922]
+		//toStringìœ¼ë¡œ ì˜¤ë²„ë¼ì´ë”©
 //		Test t = new Test();
 //		System.out.println(t);
 		
-		System.out.println("\n³ªÀÌ·Î Á¤·Ä - ³»¸²Â÷¼ø");
-		Collections.sort(list); //DTOÆÄÀÏ¿¡¼­ ComparableÀÎÅÍÆäÀÌ½º¸¦ implementsÇØ¾ß ÇÔ
-								//¹è¿­ - Arrays·Î Á¤·Ä, ¾î·¹ÀÌ¸®½ºÆ®´Â(¹è¿­¾Æ´Ô) Collection
-			                    //¶Ç´Â Comporator¸¦ »ç¿ëÇÏ¿© »õ·Î¿î ±âÁØÀ» Á¤ÇØÁÖ°í ÇØ´ç ±âÁØÀ¸·Î Á¤·Ä, ÀÌ¶§ sortÀÇ ¸Å°³º¯¼ö´Â 2°³
-		                        //Collection.sort(list,com) - comÀº »õ·Î¿î ±âÁØÀ» Á¤ÀÇÇÑ °´Ã¼
-		System.out.println("Á¤·Ä ÈÄ = " + list);
+		System.out.println("\në‚˜ì´ë¡œ ì •ë ¬ - ë‚´ë¦¼ì°¨ìˆœ");
+		Collections.sort(list); //DTOíŒŒì¼ì—ì„œ Comparableì¸í„°í˜ì´ìŠ¤ë¥¼ implementsí•´ì•¼ í•¨
+								//ë°°ì—´ - Arraysë¡œ ì •ë ¬, ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ëŠ”(ë°°ì—´ì•„ë‹˜) Collection
+			                    //ë˜ëŠ” Comporatorë¥¼ ì‚¬ìš©í•˜ì—¬ ìƒˆë¡œìš´ ê¸°ì¤€ì„ ì •í•´ì£¼ê³  í•´ë‹¹ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬, ì´ë•Œ sortì˜ ë§¤ê°œë³€ìˆ˜ëŠ” 2ê°œ
+		                        //Collection.sort(list,com) - comì€ ìƒˆë¡œìš´ ê¸°ì¤€ì„ ì •ì˜í•œ ê°ì²´
+		System.out.println("ì •ë ¬ í›„ = " + list);
 		System.out.println();
 		
 		
 		
-		//Á¤·Ä±âÁØÀ» ÀÌ¸§À¸·Î º¯°æ - »õ·Î¿î ±âÁØÁ¡ ¸¸µé±â
+		//ì •ë ¬ê¸°ì¤€ì„ ì´ë¦„ìœ¼ë¡œ ë³€ê²½ - ìƒˆë¡œìš´ ê¸°ì¤€ì  ë§Œë“¤ê¸°
 		Comparator<PersonDTO> com = new Comparator<PersonDTO>() {//(Comparator)
-			//Comparator´Â ÀÎÅÍÆäÀÌ½ºÀÌ¹Ç·Î new»ı¼º ÇÒ ¼ö ¾øÀ½ ->compare()¸Ş¼Òµå ¿À¹ö¶óÀÌµùÇÏ¿© ÇØ°á
-			public int compare(PersonDTO p1, PersonDTO p2) {//¿À¹ö¶óÀÌµù
-				return p1.getName().compareTo(p2.getName()) * -1; //ÀÚÃ¼ºñ±³ÈÄ °ªÀÌ ³Ñ¾î°¨, ¿À¸§Â÷¼ø(¿©±â¿¡ -1À» °öÇÏ¸é ³»¸²Â÷¼øÀÌ µÊ)
+			//ComparatorëŠ” ì¸í„°í˜ì´ìŠ¤ì´ë¯€ë¡œ newìƒì„± í•  ìˆ˜ ì—†ìŒ ->compare()ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë”©í•˜ì—¬ í•´ê²°
+			public int compare(PersonDTO p1, PersonDTO p2) {//ì˜¤ë²„ë¼ì´ë”©
+				return p1.getName().compareTo(p2.getName()) * -1; //ìì²´ë¹„êµí›„ ê°’ì´ ë„˜ì–´ê°, ì˜¤ë¦„ì°¨ìˆœ(ì—¬ê¸°ì— -1ì„ ê³±í•˜ë©´ ë‚´ë¦¼ì°¨ìˆœì´ ë¨)
 			}
 		}; 
-		//¿©±â¼­ ¸¸¾à DTO¿¡ ¿À¹ö¶óÀÌµùÇÑ compareTo°¡ ³»¸²Â÷¼øÀ¸·Î º¯°æµÇ¾úÀ» °æ¿ì, -1À» ÇÏ¸é ´Ù½Ã ¿À¸§Â÷¼øÀÌ µÊ?
-		//ÀâÀº ±âÁØÁ¡¿¡ ±Ù°ÅÇØ Ãâ·Â
-		System.out.println("\nÀÌ¸§À¸·Î Ãâ·Â - ¿À¸§Â÷¼ø");
-		Collections.sort(list,com); //±âº» ±âÁØÁ¡ÀÌ ¾Æ´Ñ »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ ±âÁØÁ¡À¸·Î Á¤·ÄÇÏµµ·Ï ÇÔ(com) - Comparator
-		System.out.println("Á¤·Ä ÈÄ = " + list);
+		//ì—¬ê¸°ì„œ ë§Œì•½ DTOì— ì˜¤ë²„ë¼ì´ë”©í•œ compareToê°€ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ë³€ê²½ë˜ì—ˆì„ ê²½ìš°, -1ì„ í•˜ë©´ ë‹¤ì‹œ ì˜¤ë¦„ì°¨ìˆœì´ ë¨?
+		//ì¡ì€ ê¸°ì¤€ì ì— ê·¼ê±°í•´ ì¶œë ¥
+		System.out.println("\nì´ë¦„ìœ¼ë¡œ ì¶œë ¥ - ì˜¤ë¦„ì°¨ìˆœ");
+		Collections.sort(list,com); //ê¸°ë³¸ ê¸°ì¤€ì ì´ ì•„ë‹Œ ì‚¬ìš©ìê°€ ì •ì˜í•œ ê¸°ì¤€ì ìœ¼ë¡œ ì •ë ¬í•˜ë„ë¡ í•¨(com) - Comparator
+		System.out.println("ì •ë ¬ í›„ = " + list);
 	}
 }

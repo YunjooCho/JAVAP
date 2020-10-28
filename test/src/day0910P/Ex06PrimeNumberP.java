@@ -2,35 +2,35 @@ package day0910P;
 
 
 
-//1ºÎÅÍ »ç¿ëÀÚ°¡ ÀÔ·ÂÇÏ´Â ¼ýÀÚ±îÁöÀÇ ¼Ò¼ö¸¦ ±¸ÇÏ´Â ÇÁ·Î±×·¥
-//¼Ò¼ö¶õ?
-//¾à¼ö°¡ 1°ú ÀÚ±â ÀÚ½Å¸¸ ÀÖ´Â ¼ýÀÚ
-//= Áï ¾à¼öÀÇ °¹¼ö°¡ 2ÀÎ ¼ýÀÚ
+//1ë¶€í„° ì‚¬ìš©ìžê°€ ìž…ë ¥í•˜ëŠ” ìˆ«ìžê¹Œì§€ì˜ ì†Œìˆ˜ë¥¼ êµ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨
+//ì†Œìˆ˜ëž€?
+//ì•½ìˆ˜ê°€ 1ê³¼ ìžê¸° ìžì‹ ë§Œ ìžˆëŠ” ìˆ«ìž
+//= ì¦‰ ì•½ìˆ˜ì˜ ê°¯ìˆ˜ê°€ 2ì¸ ìˆ«ìž
 
-//¾à¼ö¶õ?
-//a¸¦ b·Î ³ª´©¾î¼­ ³ª´² ¶³¾îÁö¸é(³ª¸ÓÁö°¡ 0)
-//b´Â aÀÇ ¾à¼ö°¡ µÈ´Ù.
-//¿¹½Ã : 6 / 3 Àº ³ª´² ¶³¾îÁö±â ¶§¹®¿¡
-//3Àº 6ÀÇ ¾à¼ö°¡ µÈ´Ù
-//Áï ¾à¼ö¶õ ³ª¸ÓÁö°¡ 0ÀÎ ¼ýÀÚ¸¦ ¾à¼ö¶ó°í ÇÑ´Ù
-//±×·¸´Ù¸é 2´Â 5ÀÇ ¾à¼öÀÎ°¡?
+//ì•½ìˆ˜ëž€?
+//aë¥¼ bë¡œ ë‚˜ëˆ„ì–´ì„œ ë‚˜ëˆ  ë–¨ì–´ì§€ë©´(ë‚˜ë¨¸ì§€ê°€ 0)
+//bëŠ” aì˜ ì•½ìˆ˜ê°€ ëœë‹¤.
+//ì˜ˆì‹œ : 6 / 3 ì€ ë‚˜ëˆ  ë–¨ì–´ì§€ê¸° ë•Œë¬¸ì—
+//3ì€ 6ì˜ ì•½ìˆ˜ê°€ ëœë‹¤
+//ì¦‰ ì•½ìˆ˜ëž€ ë‚˜ë¨¸ì§€ê°€ 0ì¸ ìˆ«ìžë¥¼ ì•½ìˆ˜ë¼ê³  í•œë‹¤
+//ê·¸ë ‡ë‹¤ë©´ 2ëŠ” 5ì˜ ì•½ìˆ˜ì¸ê°€?
 
-//¾î¶² ¼ýÀÚÀÇ °¡Àå Å« ¾à¼ö´Â ¾ó¸¶ÀÏ±î?
-//5ÀÇ °¡Àå Å« ¾à¼ö´Â 5´Ù.
-//1872ÀÇ °¡Àå Å« ¾à¼ö´Â 1872´Ù.
+//ì–´ë–¤ ìˆ«ìžì˜ ê°€ìž¥ í° ì•½ìˆ˜ëŠ” ì–¼ë§ˆì¼ê¹Œ?
+//5ì˜ ê°€ìž¥ í° ì•½ìˆ˜ëŠ” 5ë‹¤.
+//1872ì˜ ê°€ìž¥ í° ì•½ìˆ˜ëŠ” 1872ë‹¤.
 
-//¿¹½Ã
-//¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : 10
-//1ºÎÅÍ 10±îÁöÀÇ ¼Ò¼ö´Â
+//ì˜ˆì‹œ
+//ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš” : 10
+//1ë¶€í„° 10ê¹Œì§€ì˜ ì†Œìˆ˜ëŠ”
 //2
 //3
 //5
 //7
-//ÀÔ´Ï´Ù
+//ìž…ë‹ˆë‹¤
 
-//´ÙÁß for¹® ¸¸µé±â
-//i´Â ±× ¼ýÀÚ°¡ ¼Ò¼öÀÎÁö ¾Æ´ÑÁö °Ë»çÇÒ ¼ýÀÚ°¡ µÈ´Ù
-//j´Â ±× ¼ýÀÚ°¡ iÀÇ ¾à¼öÀÎÁö ¾Æ´ÑÁö Ã¼Å©ÇÒ ¼ýÀÚ°¡ µÈ´Ù
+//ë‹¤ì¤‘ forë¬¸ ë§Œë“¤ê¸°
+//iëŠ” ê·¸ ìˆ«ìžê°€ ì†Œìˆ˜ì¸ì§€ ì•„ë‹Œì§€ ê²€ì‚¬í•  ìˆ«ìžê°€ ëœë‹¤
+//jëŠ” ê·¸ ìˆ«ìžê°€ iì˜ ì•½ìˆ˜ì¸ì§€ ì•„ë‹Œì§€ ì²´í¬í•  ìˆ«ìžê°€ ëœë‹¤
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -42,13 +42,13 @@ public class Ex06PrimeNumberP {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.println("ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ");
 		int userNumber = Integer.parseInt(bufferedReader.readLine());
 		
 		
-		//´ÙÁß if¹®
+		//ë‹¤ì¤‘ ifë¬¸
 		
-		System.out.println(userNumber + "ÀÇ ¼Ò¼ö´Â ");
+		System.out.println(userNumber + "ì˜ ì†Œìˆ˜ëŠ” ");
 		for(int i = 1; i <= userNumber; i++) {
 			int count = 0;
 			for(int j = 1; j <= i; j++) {
@@ -63,7 +63,7 @@ public class Ex06PrimeNumberP {
 			
 			
 		}//for i
-	  System.out.println("ÀÔ´Ï´Ù");
+	  System.out.println("ìž…ë‹ˆë‹¤");
 
 	}
 

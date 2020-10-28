@@ -2,23 +2,23 @@ package day0911;
 
 
 
-//»ç¿ëÀÚ·ÎºÎÅÍ ¸îÇĞ³â ¸î¹øÂ° ½ÃÇèÁ¡¼öÀÎÁö ÀÔ·Â ¹Ş¾Æ¼­
-//ÇØ´ç À§Ä¡¿¡ Á¡¼ö¸¦ ³Ö´Â ÄÚµå¸¦ ±¸ÇöÇÏ½Ã¿À
-//Á¶°Ç1. Àß¸øµÈ ÇĞ³âÀÌ ÀÔ·ÂµÇÁö ¾Ê°Ô ÇÏ½Ã¿À
-//Á¶°Ç2. ¸î¹øÂ° ½ÃÇèÁ¤¼ö¸¦ ÀÔ·Â ¹ŞÀ» ¶§ Àß¸ø µÈ ¼ø¼­°¡ ÀÔ·ÂµÇÁö ¾Ê°Ô ÇÏ½Ã¿À
-//Á¶°Ç3. Á¡¼ö°¡ ¿Ã¹Ù¸¥ Á¡¼ö¸¸ ÀÔ·ÂµÇ±â ÇÏ½Ã¿À
+//ì‚¬ìš©ìë¡œë¶€í„° ëª‡í•™ë…„ ëª‡ë²ˆì§¸ ì‹œí—˜ì ìˆ˜ì¸ì§€ ì…ë ¥ ë°›ì•„ì„œ
+//í•´ë‹¹ ìœ„ì¹˜ì— ì ìˆ˜ë¥¼ ë„£ëŠ” ì½”ë“œë¥¼ êµ¬í˜„í•˜ì‹œì˜¤
+//ì¡°ê±´1. ì˜ëª»ëœ í•™ë…„ì´ ì…ë ¥ë˜ì§€ ì•Šê²Œ í•˜ì‹œì˜¤
+//ì¡°ê±´2. ëª‡ë²ˆì§¸ ì‹œí—˜ì •ìˆ˜ë¥¼ ì…ë ¥ ë°›ì„ ë•Œ ì˜ëª» ëœ ìˆœì„œê°€ ì…ë ¥ë˜ì§€ ì•Šê²Œ í•˜ì‹œì˜¤
+//ì¡°ê±´3. ì ìˆ˜ê°€ ì˜¬ë°”ë¥¸ ì ìˆ˜ë§Œ ì…ë ¥ë˜ê¸° í•˜ì‹œì˜¤
 
-//¿¹½Ã
-//¸îÇĞ³â Á¡¼öÀÔ´Ï±î? (ÀÔ·Â 4)
-//¿Ã¹Ù¸£Áö ¾ÊÀº ÇĞ³âÀÔ´Ï´Ù.
-//¸îÇĞ³â Á¡¼öÀÔ´Ï±î? (ÀÔ·Â 2)
-//¸î¹øÂ° ½ÃÇèÀÔ´Ï±î? (ÀÔ·Â -2)
-//¿Ã¹Ù¸£Áö ¾ÊÀº ¼ø¼­ÀÔ´Ï´Ù.
-//¸î¹øÂ° ½ÃÇèÀÔ´Ï±î? (ÀÔ·Â 1)
-//¸îÁ¡ÀÔ´Ï±î? (ÀÔ·Â 80)
-//2ÇĞ³â 1ÇĞ±â Áß°£ °í»ç ±¹¾î¿¡ 80Á¡ÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.
-//1ÇĞ³â 1ÇĞ±â Áß°£ 
-//±¹¾î 40 ¿µ¾î 50 ¼öÇĞ 45
+//ì˜ˆì‹œ
+//ëª‡í•™ë…„ ì ìˆ˜ì…ë‹ˆê¹Œ? (ì…ë ¥ 4)
+//ì˜¬ë°”ë¥´ì§€ ì•Šì€ í•™ë…„ì…ë‹ˆë‹¤.
+//ëª‡í•™ë…„ ì ìˆ˜ì…ë‹ˆê¹Œ? (ì…ë ¥ 2)
+//ëª‡ë²ˆì§¸ ì‹œí—˜ì…ë‹ˆê¹Œ? (ì…ë ¥ -2)
+//ì˜¬ë°”ë¥´ì§€ ì•Šì€ ìˆœì„œì…ë‹ˆë‹¤.
+//ëª‡ë²ˆì§¸ ì‹œí—˜ì…ë‹ˆê¹Œ? (ì…ë ¥ 1)
+//ëª‡ì ì…ë‹ˆê¹Œ? (ì…ë ¥ 80)
+//2í•™ë…„ 1í•™ê¸° ì¤‘ê°„ ê³ ì‚¬ êµ­ì–´ì— 80ì ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.
+//1í•™ë…„ 1í•™ê¸° ì¤‘ê°„ 
+//êµ­ì–´ 40 ì˜ì–´ 50 ìˆ˜í•™ 45
 
 
 import java.io.BufferedReader;
@@ -28,78 +28,78 @@ import java.io.InputStreamReader;
 public class Ex06HomeWork {
 	
 	
-	//1.¸Ş´º ¸Ş¼Òµå
+	//1.ë©”ë‰´ ë©”ì†Œë“œ
 	static void showMenu()  {
 		
 		System.out.println("===========================");
-		System.out.println(" ºñÆ®°íµîÇĞ±³ ±¹¿µ¼ö ¼ºÀû °ü¸® ÇÁ·Î±×·¥");
-		System.out.println(" 1.ÀÔ·Â\t2.Ãâ·Â\t3.Á¾·á");
+		System.out.println(" ë¹„íŠ¸ê³ ë“±í•™êµ êµ­ì˜ìˆ˜ ì„±ì  ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+		System.out.println(" 1.ì…ë ¥\t2.ì¶œë ¥\t3.ì¢…ë£Œ");
 		System.out.println("===========================");
-		System.out.print("¸Ş´º¼±ÅÃ > ");
+		System.out.print("ë©”ë‰´ì„ íƒ > ");
 	}
 	
 	
-	//3.¹è¿­ ÀÔ·Â ¸Ş¼Òµå
+	//3.ë°°ì—´ ì…ë ¥ ë©”ì†Œë“œ
 	static int validateScore(BufferedReader bufferedReader) throws NumberFormatException, IOException {
-		//mainÀ¸·ÎºÎÅÍ BufferedReaderº¯¼ö¸¦ ¹Ş¾Æ¿Í¼­ »ç¿ë
-		//main¸Ş¼Òµå¿¡ ÀÖ´Â korean, english, math¸¦ ¹Ş¾Æ¿Í score¿¡ ´ëÀÔ
-		//Å°º¸µå·Î ÀÔ·ÂÇÑ Á¡¼ö´Â ¿©±â¼­ ÇÊÅÍ¸µµÊ, 
-		//ÇÊÅÍ¸µµÈ °ªÀÌ ´Ù½Ã mainÀ¸·Î µ¹¾Æ°¡ º¯¼ö(korean, english, math)¿¡ ÀúÀåµÊ
+		//mainìœ¼ë¡œë¶€í„° BufferedReaderë³€ìˆ˜ë¥¼ ë°›ì•„ì™€ì„œ ì‚¬ìš©
+		//mainë©”ì†Œë“œì— ìˆëŠ” korean, english, mathë¥¼ ë°›ì•„ì™€ scoreì— ëŒ€ì…
+		//í‚¤ë³´ë“œë¡œ ì…ë ¥í•œ ì ìˆ˜ëŠ” ì—¬ê¸°ì„œ í•„í„°ë§ë¨, 
+		//í•„í„°ë§ëœ ê°’ì´ ë‹¤ì‹œ mainìœ¼ë¡œ ëŒì•„ê°€ ë³€ìˆ˜(korean, english, math)ì— ì €ì¥ë¨
 			
-			System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			int score = Integer.parseInt(bufferedReader.readLine());
 			
 			while(score < 0 || score > 100) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-				System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+				System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 				score = Integer.parseInt(bufferedReader.readLine());
 			}
-			return score; //while¹®¿¡ ÇØ´çÇÏÁö ¾Ê´Â °ª(À¯È¿ÇÑ Á¡¼ö)À» scoreº¯¼ö¿¡ ÀúÀå
+			return score; //whileë¬¸ì— í•´ë‹¹í•˜ì§€ ì•ŠëŠ” ê°’(ìœ íš¨í•œ ì ìˆ˜)ì„ scoreë³€ìˆ˜ì— ì €ì¥
 			
 		
 		}
 	
 	
-	//¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú¡Ú4.¹è¿­ Ãâ·Â ¸Ş¼Òµå
-	//¿ÜºÎ·ÎºÎÅÍ Á¤º¸°¡ ÇÊ¿äÇÑ °ÍÀº ´Ù ()¾È¿¡ ³Ö±â
+	//â˜…â˜…â˜…â˜…â˜…â˜…â˜…4.ë°°ì—´ ì¶œë ¥ ë©”ì†Œë“œ
+	//ì™¸ë¶€ë¡œë¶€í„° ì •ë³´ê°€ í•„ìš”í•œ ê²ƒì€ ë‹¤ ()ì•ˆì— ë„£ê¸°
 	static void printScore(BufferedReader bufferedReader, int score, int grade, int[][] korArray, int[][] engArray, int[][] mathArray) throws IOException {
 		
-		System.out.print("Ãâ·ÂÇÒ ÇĞ³â(1,2,3)À» ¼±ÅÃ : ");
+		System.out.print("ì¶œë ¥í•  í•™ë…„(1,2,3)ì„ ì„ íƒ : ");
 		int gradE = Integer.parseInt(bufferedReader.readLine());
 		
 		
 		while( gradE < 0 || gradE > 100) {
-			System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ÇĞ³âÀÔ´Ï´Ù.");
-			System.out.print("Ãâ·ÂÇÒ ÇĞ³â(1,2,3)À» ¼±ÅÃ : ");
+			System.out.println("ì˜¬ë°”ë¥´ì§€ ì•Šì€ í•™ë…„ì…ë‹ˆë‹¤.");
+			System.out.print("ì¶œë ¥í•  í•™ë…„(1,2,3)ì„ ì„ íƒ : ");
 			gradE = Integer.parseInt(bufferedReader.readLine());
 		}
 		
-		System.out.print("¸î¹øÂ°?(1-1ÇĞ±â Áß°£,2-1ÇĞ±â ±â¸»,3-2ÇĞ±â Áß°£,4-2ÇĞ±â ±â¸») : ");
+		System.out.print("ëª‡ë²ˆì§¸?(1-1í•™ê¸° ì¤‘ê°„,2-1í•™ê¸° ê¸°ë§,3-2í•™ê¸° ì¤‘ê°„,4-2í•™ê¸° ê¸°ë§) : ");
 		int whenScorE = Integer.parseInt(bufferedReader.readLine());
 		while(whenScorE < 1 || whenScorE > 4) {
-			System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ¼ø¼­ÀÔ´Ï´Ù.");
-			System.out.print("¸î¹øÂ°?(1-1ÇĞ±â Áß°£,2-1ÇĞ±â ±â¸»,3-2ÇĞ±â Áß°£,4-2ÇĞ±â ±â¸») : ");
+			System.out.println("ì˜¬ë°”ë¥´ì§€ ì•Šì€ ìˆœì„œì…ë‹ˆë‹¤.");
+			System.out.print("ëª‡ë²ˆì§¸?(1-1í•™ê¸° ì¤‘ê°„,2-1í•™ê¸° ê¸°ë§,3-2í•™ê¸° ì¤‘ê°„,4-2í•™ê¸° ê¸°ë§) : ");
 			whenScorE = Integer.parseInt(bufferedReader.readLine());					
 		}
 		
 		
 		System.out.println("==================================");
-		System.out.print(gradE + "ÇĞ³â");
+		System.out.print(gradE + "í•™ë…„");
 		switch (whenScorE) {
 		case 1:
-			System.out.println("1ÇĞ±â Áß°£");
+			System.out.println("1í•™ê¸° ì¤‘ê°„");
 			break;
 		case 2:
-			System.out.println("1ÇĞ±â ±â¸»");
+			System.out.println("1í•™ê¸° ê¸°ë§");
 			break;
 		case 3:
-			System.out.println("2ÇĞ±â Áß°£");
+			System.out.println("2í•™ê¸° ì¤‘ê°„");
 			break;
 		case 4:
-			System.out.println("2ÇĞ±â ±â¸»");
+			System.out.println("2í•™ê¸° ê¸°ë§");
 			break;
 		}
-		System.out.printf("±¹¾î : %d, ¿µ¾î : %d, ¼öÇĞ : %d\n", korArray[gradE-1][whenScorE-1], engArray[gradE-1][whenScorE-1], mathArray[gradE-1][whenScorE-1]);
+		System.out.printf("êµ­ì–´ : %d, ì˜ì–´ : %d, ìˆ˜í•™ : %d\n", korArray[gradE-1][whenScorE-1], engArray[gradE-1][whenScorE-1], mathArray[gradE-1][whenScorE-1]);
 	}
 		
 		
@@ -107,11 +107,11 @@ public class Ex06HomeWork {
 	
 	public static void main(String[] args) throws IOException {
 		
-		//Å°º¸µå ÀÔ·Â ¸Ş¸ğ¸® »ı¼º
+		//í‚¤ë³´ë“œ ì…ë ¥ ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//2.¹è¿­ ¼±¾ğ
-		// -±¹¾î, ¿µ¾î, ¼öÇĞ(o)
+		//2.ë°°ì—´ ì„ ì–¸
+		// -êµ­ì–´, ì˜ì–´, ìˆ˜í•™(o)
 		int[][] korArray = new int[3][4];
 		int[][] engArray = new int[3][4];
 		int[][] mathArray = new int[3][4];
@@ -120,53 +120,53 @@ public class Ex06HomeWork {
 		int whenScore = 0;
 		
 		
-		//1.¸Ş´º ¸Ş¼Òµå ¸¸µé±â
-		// -¸Ş¼Òµå (o)
-		// -ÀÔ·ÂÇÏ¸é ÇØ´ç ¸Ş´º·Î ³Ñ¾î°¡µµ·ÏÇÔ(o)
-		// -ÀÔ·Â¸Ş´º (o)
-		// -Ãâ·Â¸Ş´º (o)
-		// -Á¾·á¸Ş´º(o)
+		//1.ë©”ë‰´ ë©”ì†Œë“œ ë§Œë“¤ê¸°
+		// -ë©”ì†Œë“œ (o)
+		// -ì…ë ¥í•˜ë©´ í•´ë‹¹ ë©”ë‰´ë¡œ ë„˜ì–´ê°€ë„ë¡í•¨(o)
+		// -ì…ë ¥ë©”ë‰´ (o)
+		// -ì¶œë ¥ë©”ë‰´ (o)
+		// -ì¢…ë£Œë©”ë‰´(o)
 		while(true) {
 			showMenu();
 			int selectMenu = Integer.parseInt(bufferedReader.readLine());
 			if(selectMenu == 1) {		
-				//3.¹è¿­¿¡ Á¡¼öÀÔ·ÂÇÏ´Â ¸Ş¼Òµå ¸¸µé±â
-				// -ÇĞ³â, Áß°£/±â¸»(o)
-				// -±¹¾î, ¿µ¾î, ¼öÇĞ (ÇÏ³ª·Î ÅëÀÏ)(o)
+				//3.ë°°ì—´ì— ì ìˆ˜ì…ë ¥í•˜ëŠ” ë©”ì†Œë“œ ë§Œë“¤ê¸°
+				// -í•™ë…„, ì¤‘ê°„/ê¸°ë§(o)
+				// -êµ­ì–´, ì˜ì–´, ìˆ˜í•™ (í•˜ë‚˜ë¡œ í†µì¼)(o)
 				for(int i = 0; i < korArray.length; i++)  {
-					System.out.print("ÇĞ³â ÀÔ·Â(1,2,3) : ");
+					System.out.print("í•™ë…„ ì…ë ¥(1,2,3) : ");
 					grade = Integer.parseInt(bufferedReader.readLine());
 					
 					while(grade < 1 || grade > 3) {
-						System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ÇĞ³âÀÔ´Ï´Ù.");
-						System.out.print("ÇĞ³â ÀÔ·Â(1,2,3) : ");
+						System.out.println("ì˜¬ë°”ë¥´ì§€ ì•Šì€ í•™ë…„ì…ë‹ˆë‹¤.");
+						System.out.print("í•™ë…„ ì…ë ¥(1,2,3) : ");
 						grade = Integer.parseInt(bufferedReader.readLine());
 					}//while
 					for(int j = 0; j < korArray[i].length; j++) {
-						System.out.print("¸î¹øÂ°?(1-1ÇĞ±â Áß°£,2-1ÇĞ±â ±â¸»,3-2ÇĞ±â Áß°£,4-2ÇĞ±â ±â¸») : ");
+						System.out.print("ëª‡ë²ˆì§¸?(1-1í•™ê¸° ì¤‘ê°„,2-1í•™ê¸° ê¸°ë§,3-2í•™ê¸° ì¤‘ê°„,4-2í•™ê¸° ê¸°ë§) : ");
 						whenScore = Integer.parseInt(bufferedReader.readLine());
 						while(whenScore < 1 || whenScore > 4) {
-							System.out.println("¿Ã¹Ù¸£Áö ¾ÊÀº ¼ø¼­ÀÔ´Ï´Ù.");
-							System.out.print("¸î¹øÂ°?(1->1ÇĞ±â Áß°£,2->1ÇĞ±â ±â¸»,3->2ÇĞ±â Áß°£,4->2ÇĞ±â ±â¸») : ");
+							System.out.println("ì˜¬ë°”ë¥´ì§€ ì•Šì€ ìˆœì„œì…ë‹ˆë‹¤.");
+							System.out.print("ëª‡ë²ˆì§¸?(1->1í•™ê¸° ì¤‘ê°„,2->1í•™ê¸° ê¸°ë§,3->2í•™ê¸° ì¤‘ê°„,4->2í•™ê¸° ê¸°ë§) : ");
 							whenScore = Integer.parseInt(bufferedReader.readLine());
 						}//while
 						
-						System.out.print("±¹¾î ");
-						korArray[grade-1][whenScore-1] = validateScore(bufferedReader); //ÀÔ·Â¿ëÀÌ ¾Æ´Ñ ¸Ş¼Òµå·Î °ªÀ» ³Ñ°ÜÁÖ±â À§ÇÑ ³»¿ë
-						//korean¿¡ validateScoreÀÇ ¸Ş¼Òµå °á°ú°ª(score)ÀÌ ÀúÀå
+						System.out.print("êµ­ì–´ ");
+						korArray[grade-1][whenScore-1] = validateScore(bufferedReader); //ì…ë ¥ìš©ì´ ì•„ë‹Œ ë©”ì†Œë“œë¡œ ê°’ì„ ë„˜ê²¨ì£¼ê¸° ìœ„í•œ ë‚´ìš©
+						//koreanì— validateScoreì˜ ë©”ì†Œë“œ ê²°ê³¼ê°’(score)ì´ ì €ì¥
 						
-						System.out.print("¿µ¾î ");
-						engArray[grade-1][whenScore-1] = validateScore(bufferedReader);//ÀÔ·Â¿ëÀÌ ¾Æ´Ñ ¸Ş¼Òµå·Î °ªÀ» ³Ñ°ÜÁÖ±â À§ÇÑ ³»¿ë
+						System.out.print("ì˜ì–´ ");
+						engArray[grade-1][whenScore-1] = validateScore(bufferedReader);//ì…ë ¥ìš©ì´ ì•„ë‹Œ ë©”ì†Œë“œë¡œ ê°’ì„ ë„˜ê²¨ì£¼ê¸° ìœ„í•œ ë‚´ìš©
 						
-						System.out.print("¼öÇĞ ");
-						mathArray[grade-1][whenScore-1] = validateScore(bufferedReader);//ÀÔ·Â¿ëÀÌ ¾Æ´Ñ ¸Ş¼Òµå·Î °ªÀ» ³Ñ°ÜÁÖ±â À§ÇÑ ³»¿ë
+						System.out.print("ìˆ˜í•™ ");
+						mathArray[grade-1][whenScore-1] = validateScore(bufferedReader);//ì…ë ¥ìš©ì´ ì•„ë‹Œ ë©”ì†Œë“œë¡œ ê°’ì„ ë„˜ê²¨ì£¼ê¸° ìœ„í•œ ë‚´ìš©
 						
-					}//Á¡¼ö ÀÔ·Â ¹İº¹ for j(¾ğÁ¦)
-				}//Á¡¼ö ÀÔ·Â ¹İº¹  for i(ÇĞ³â)
+					}//ì ìˆ˜ ì…ë ¥ ë°˜ë³µ for j(ì–¸ì œ)
+				}//ì ìˆ˜ ì…ë ¥ ë°˜ë³µ  for i(í•™ë…„)
 			}else if(selectMenu == 2) {
-				//4.ÇÊ¿äÇÑ Á¡¼ö Ãâ·ÂÇÏ´Â ¸Ş¼Òµå ¸¸µé±â
-				// -ÇĞ³â, Áß°£/±â¸»
-				// -±¹¾î, ¿µ¾î, ¼öÇĞ
+				//4.í•„ìš”í•œ ì ìˆ˜ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ ë§Œë“¤ê¸°
+				// -í•™ë…„, ì¤‘ê°„/ê¸°ë§
+				// -êµ­ì–´, ì˜ì–´, ìˆ˜í•™
 				
 				
 				printScore(bufferedReader, grade, whenScore, korArray, engArray, mathArray);
@@ -174,7 +174,7 @@ public class Ex06HomeWork {
 				
 				
 			}else {
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 				break;
 			}
 		

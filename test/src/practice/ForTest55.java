@@ -1,20 +1,20 @@
 package practice;
 
 /*
-°ÅµìÁ¦°öÀ» ±¸ÇÏ½Ã¿À
-xÀÇ y½ÂÀ» °è»êÇÏ½Ã¿À
+ê±°ë“­ì œê³±ì„ êµ¬í•˜ì‹œì˜¤
+xì˜ yìŠ¹ì„ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-x°ª ÀÔ·Â : 2
-y°ª ÀÔ·Â : 5
-2ÀÇ 5½Â xx   (2*2*2*2*2)
+[ì‹¤í–‰ê²°ê³¼]
+xê°’ ìž…ë ¥ : 2
+yê°’ ìž…ë ¥ : 5
+2ì˜ 5ìŠ¹ xx   (2*2*2*2*2)
 
-x°ª ÀÔ·Â : 3
-y°ª ÀÔ·Â : 4
-3ÀÇ 4½Â xx   (3*3*3*3)
+xê°’ ìž…ë ¥ : 3
+yê°’ ìž…ë ¥ : 4
+3ì˜ 4ìŠ¹ xx   (3*3*3*3)
  */
-//¼±»ý´Ô Ç®ÀÌ
-//¡Ú1°³ÀÇ ¹®ÀÚÀÔ·ÂÀ¸·Î »ç¿ë
+//ì„ ìƒë‹˜ í’€ì´
+//â˜…1ê°œì˜ ë¬¸ìžìž…ë ¥ìœ¼ë¡œ ì‚¬ìš©
 
 
 import java.io.IOException;
@@ -22,35 +22,35 @@ import java.io.IOException;
 public class ForTest55 {
 	public static void main(String[] args) throws IOException{
 		
-		//º¯¼ö
+		//ë³€ìˆ˜
 		int x, y, calc = 1;
 		
-		//¹Ýº¹
+		//ë°˜ë³µ
 		for(int j = 1; j<=3; j++) {
-			//Å°º¸µå ÀÔ·Â
-			System.out.println("x°ª ÀÔ·Â : ");
-			x = System.in.read()-48; //intÇü
-			System.in.read(); //ÇÃ·¯½¬ »èÁ¦
-			System.in.read(); //ÇÃ·¯½¬ »èÁ¦
+			//í‚¤ë³´ë“œ ìž…ë ¥
+			System.out.println("xê°’ ìž…ë ¥ : ");
+			x = System.in.read()-48; //intí˜•
+			System.in.read(); //í”ŒëŸ¬ì‰¬ ì‚­ì œ
+			System.in.read(); //í”ŒëŸ¬ì‰¬ ì‚­ì œ
 			
-			System.out.println("y°ª ÀÔ·Â : ");
-			y = System.in.read()-48; //intÇü
-			System.in.read(); //ÇÃ·¯½¬ »èÁ¦
-			System.in.read(); //ÇÃ·¯½¬ »èÁ¦
+			System.out.println("yê°’ ìž…ë ¥ : ");
+			y = System.in.read()-48; //intí˜•
+			System.in.read(); //í”ŒëŸ¬ì‰¬ ì‚­ì œ
+			System.in.read(); //í”ŒëŸ¬ì‰¬ ì‚­ì œ
 			
 			
-			//°è»ê(for)
-			calc = 1; //ÃÊ±âÈ­
+			//ê³„ì‚°(for)
+			calc = 1; //ì´ˆê¸°í™”
 			for(int i = 1; i <= y; i++) {
 				calc *= x;
-			}//°è»êfor
+			}//ê³„ì‚°for
 			
-			//Ãâ·Â
-			System.out.println(x + "ÀÇ " + y + "½Â " + calc);
+			//ì¶œë ¥
+			System.out.println(x + "ì˜ " + y + "ìŠ¹ " + calc);
 			System.out.println("-----------------------------");
 			
 			
-		}//¹Ýº¹ for j	
+		}//ë°˜ë³µ for j	
 		
 		
 	}

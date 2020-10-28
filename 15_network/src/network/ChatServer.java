@@ -6,34 +6,34 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-//Ã¤ÆÃÃ¢ ¼­¹ö¸¦ º»ÀÎ°É·Î ¸¸µé±â
-//SeversocketÀ» ¸¸µé¾î ½ÇÇàÇÒ ÁØºñ¸¦ ÇÔ
+//ì±„íŒ…ì°½ ì„œë²„ë¥¼ ë³¸ì¸ê±¸ë¡œ ë§Œë“¤ê¸°
+//Seversocketì„ ë§Œë“¤ì–´ ì‹¤í–‰í•  ì¤€ë¹„ë¥¼ í•¨
 public class ChatServer {
 	private ServerSocket ss; 
-	private List<ChatHandler> list; //ChantHandler°´Ã¼¸¦ ´ã´Â list
+	private List<ChatHandler> list; //ChantHandlerê°ì²´ë¥¼ ë‹´ëŠ” list
 	
 	public ChatServer() {
 		try {
 			ss = new ServerSocket(9500);
 		} catch (IOException e) {
 			e.printStackTrace();
-		}//Æ÷Æ®°ª
-		System.out.println("¼­¹ö°¡ ÁØºñ ¿Ï·áµÇ¾ú½À´Ï´Ù"); //Å¬¶óÀÌ¾ğÆ®°¡ ³¬ÀÏ¶§±îÁö ¹«ÇÑÁ¤ ±â´Ù¸²
+		}//í¬íŠ¸ê°’
+		System.out.println("ì„œë²„ê°€ ì¤€ë¹„ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤"); //í´ë¼ì´ì–¸íŠ¸ê°€ ë‚šì¼ë•Œê¹Œì§€ ë¬´í•œì • ê¸°ë‹¤ë¦¼
 		
 		list = new ArrayList<ChatHandler>();
 		
-		while(true) { //Å¬¶óÀÌ¾ğÆ®¸¦ ³¬¾ÆÃ¦´Ù, ServerSocketÂÊ ¼ÒÄÏ¾È¿¡ ³Ö¾îÁØ´Ù
-				      //¿©·¯¸íÀÇ Å¬¶óÀÌ¾ğÆ®¸¦ ³¬¾ÆÃ¤±â À§ÇØ while¹®(¹«ÇÑ·çÇÁ)¸¦ µ¹¸²
-					  //Å¬¶óÀÌ¾ğÆ® ¼ÒÄÏÀÌ ½º·¹µå·Î µ¹°í ÀÖÀ¸¹Ç·Î ¼­¹öÂÊÀÇ ¼ÒÄÏ(ServerSocket ¾Æ´Ô)µµ °°ÀÌ ½º·¹µå·Î ¿òÁ÷¿©¾ß ÇÔ
-					  //¼­¹ö, ServersSocketÀº ÇÑ°³¸¸
+		while(true) { //í´ë¼ì´ì–¸íŠ¸ë¥¼ ë‚šì•„ì±ˆë‹¤, ServerSocketìª½ ì†Œì¼“ì•ˆì— ë„£ì–´ì¤€ë‹¤
+				      //ì—¬ëŸ¬ëª…ì˜ í´ë¼ì´ì–¸íŠ¸ë¥¼ ë‚šì•„ì±„ê¸° ìœ„í•´ whileë¬¸(ë¬´í•œë£¨í”„)ë¥¼ ëŒë¦¼
+					  //í´ë¼ì´ì–¸íŠ¸ ì†Œì¼“ì´ ìŠ¤ë ˆë“œë¡œ ëŒê³  ìˆìœ¼ë¯€ë¡œ ì„œë²„ìª½ì˜ ì†Œì¼“(ServerSocket ì•„ë‹˜)ë„ ê°™ì´ ìŠ¤ë ˆë“œë¡œ ì›€ì§ì—¬ì•¼ í•¨
+					  //ì„œë²„, ServersSocketì€ í•œê°œë§Œ
 			try {
 				Socket socket = ss.accept();
-				ChatHandler handler = new ChatHandler(socket, list); //¼ÒÄÏ¿¡ ´ã±ä ¸Ş½ÃÁö¿Í Å¬¶óÀÌ¾ğÆ®°¡ ¸î ¸íÀÌ³ª Á¢¼ÓÇß´ÂÁö Á¤º¸¸¦ ¸®½ºÆ®¿¡ º¸³¿
-																     //¼ÒÄÏ, br, pw°¡ µé¾îÀÖÀ½
-																	 //ChatHandler¿¡¼­ ¸Å°³°ªÀ» °¡Áö°í ÀÖ´Â »ı¼ºÀÚ¸¦ ÀÛ¼º
-																	 //½º·¹µå »ı¼º
-				handler.start();//½º·¹µå ½ÃÀÛ - ½º·¹µå ½ÇÇà(run())
-				list.add(handler); //list¿¡ ÇÚµé·¯°´Ã¼¸¦ Ãß°¡
+				ChatHandler handler = new ChatHandler(socket, list); //ì†Œì¼“ì— ë‹´ê¸´ ë©”ì‹œì§€ì™€ í´ë¼ì´ì–¸íŠ¸ê°€ ëª‡ ëª…ì´ë‚˜ ì ‘ì†í–ˆëŠ”ì§€ ì •ë³´ë¥¼ ë¦¬ìŠ¤íŠ¸ì— ë³´ëƒ„
+																     //ì†Œì¼“, br, pwê°€ ë“¤ì–´ìˆìŒ
+																	 //ChatHandlerì—ì„œ ë§¤ê°œê°’ì„ ê°€ì§€ê³  ìˆëŠ” ìƒì„±ìë¥¼ ì‘ì„±
+																	 //ìŠ¤ë ˆë“œ ìƒì„±
+				handler.start();//ìŠ¤ë ˆë“œ ì‹œì‘ - ìŠ¤ë ˆë“œ ì‹¤í–‰(run())
+				list.add(handler); //listì— í•¸ë“¤ëŸ¬ê°ì²´ë¥¼ ì¶”ê°€
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 

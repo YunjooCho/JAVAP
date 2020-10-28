@@ -1,11 +1,11 @@
 package class_constructor;
 /*
-x¿Í yÀÇ °ªÀ» ¹Ş¾Æ¼­ ÇÕ,Â÷,°ö,¸òÀ» ±¸ÇÏ½Ã¿À
+xì™€ yì˜ ê°’ì„ ë°›ì•„ì„œ í•©,ì°¨,ê³±,ëª«ì„ êµ¬í•˜ì‹œì˜¤
 
-Å¬·¡½º¸í : Compute
-ÇÊµå      : x, y, sum, sub, mul, div
-¸Ş¼Òµå   : »ı¼ºÀÚ¸¦ ÅëÇØ¼­ µ¥ÀÌÅÍ¸¦ ÁÖÀÔ
-        calc() - ÇÕ, Â÷, °ö, ¸òÀ» °è»ê
+í´ë˜ìŠ¤ëª… : Compute
+í•„ë“œ      : x, y, sum, sub, mul, div
+ë©”ì†Œë“œ   : ìƒì„±ìë¥¼ í†µí•´ì„œ ë°ì´í„°ë¥¼ ì£¼ì…
+        calc() - í•©, ì°¨, ê³±, ëª«ì„ ê³„ì‚°
         getX()
         getY()
         getSum()
@@ -13,7 +13,7 @@ x¿Í yÀÇ °ªÀ» ¹Ş¾Æ¼­ ÇÕ,Â÷,°ö,¸òÀ» ±¸ÇÏ½Ã¿À
         getMul()
         getDiv()
         
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 X      Y      SUM      SUB      MUL      DIV
 320    258
 256	   125
@@ -22,24 +22,24 @@ X      Y      SUM      SUB      MUL      DIV
 public class ComputeMain {
 
 	public static void main(String[] args) {
-		//°´Ã¼¹è¿­
-//		Compute[] ar = new Compute[3]; //¿©±â¼­ new´Â Compute¶ó´Â Å¬·¡½º¸¦ »ı¼ºÇÑ °ÍÀÌ ¾Æ´Ñ,
+		//ê°ì²´ë°°ì—´
+//		Compute[] ar = new Compute[3]; //ì—¬ê¸°ì„œ newëŠ” Computeë¼ëŠ” í´ë˜ìŠ¤ë¥¼ ìƒì„±í•œ ê²ƒì´ ì•„ë‹Œ,
 //
 
-	    //¹è¿­1
-		//¹æ 3°³ÀÎ ¹è¿­À» »ı¼ºÇÑ °ÍÀÌ´Ù.
+	    //ë°°ì—´1
+		//ë°© 3ê°œì¸ ë°°ì—´ì„ ìƒì„±í•œ ê²ƒì´ë‹¤.
 //		ar[0] = new Compute(320,258);
 //		ar[1] = new Compute(256,125);
 //		ar[2] = new Compute(452,365);
 		
-		//¹è¿­2
+		//ë°°ì—´2
 //		Compute[] ar = {new Compute(320, 258), new Compute(256,125), new Compute(452,365)};
-		//¹è¿­3
+		//ë°°ì—´3
 		Compute[] ar = new Compute[]{new Compute(320,258),
                                      new Compute(256, 125),
                                      new Compute(452, 365)};
-		//¹æÀÇ °¹¼ö¸¦ ÁöÁ¤ÇÑ °ÍÀÌ ¾Æ´Ô(µ¿ÀûÇÒ´ç)
-		//ÀÌÀü ¹æ¿¡ Ãß°¡ µÇ´Â °ÍÀº ¾î·¹ÀÌ¸®½ºÆ®, ±×³É ¹è¿­Àº »õ·Ó°Ô ¹è¿­À» »ı¼ºÇÏ´Â °Í
+		//ë°©ì˜ ê°¯ìˆ˜ë¥¼ ì§€ì •í•œ ê²ƒì´ ì•„ë‹˜(ë™ì í• ë‹¹)
+		//ì´ì „ ë°©ì— ì¶”ê°€ ë˜ëŠ” ê²ƒì€ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸, ê·¸ëƒ¥ ë°°ì—´ì€ ìƒˆë¡­ê²Œ ë°°ì—´ì„ ìƒì„±í•˜ëŠ” ê²ƒ
 		
 		System.out.println("X\tY\tSUM\tSUB\tMUL\tDIV\t");
 		/*
@@ -58,7 +58,7 @@ public class ComputeMain {
 //		ar[1].calc();
 //		ar[2].calc();
 		
-		for(Compute data : ar) { //length¸¦ ¾È½áµµ ¹è¿­ÀÇ Å©±â¸¸Å­ for¹®ÀÌ µ·´Ù.
+		for(Compute data : ar) { //lengthë¥¼ ì•ˆì¨ë„ ë°°ì—´ì˜ í¬ê¸°ë§Œí¼ forë¬¸ì´ ëˆë‹¤.
 			data.calc();
 			System.out.println(data.getX() + "\t" 
 					+data.getY() + "\t"
@@ -72,7 +72,7 @@ public class ComputeMain {
 }
 
 
-//Compute c = new Compute(320, 258);//´Ù¸¥ ÆĞÅ°Áö¿¡ ÀÖÀ¸¸é import°¡ ÇÊ¿ä
+//Compute c = new Compute(320, 258);//ë‹¤ë¥¸ íŒ¨í‚¤ì§€ì— ìˆìœ¼ë©´ importê°€ í•„ìš”
 //c.calc();
 //System.out.println(c.getX() + "\t" 
 //				+c.getY() + "\t"
@@ -81,7 +81,7 @@ public class ComputeMain {
 //				+ c.getMul() + "\t"
 //				+String.format("%.2f", c.getDiv()));
 //
-//Compute bb = new Compute(256, 125);//´Ù¸¥ ÆĞÅ°Áö¿¡ ÀÖÀ¸¸é import°¡ ÇÊ¿ä
+//Compute bb = new Compute(256, 125);//ë‹¤ë¥¸ íŒ¨í‚¤ì§€ì— ìˆìœ¼ë©´ importê°€ í•„ìš”
 //bb.calc();
 //System.out.println(bb.getX() + "\t" 
 //				+bb.getY() + "\t"
@@ -90,7 +90,7 @@ public class ComputeMain {
 //				+bb.getMul() + "\t"
 //				+String.format("%.2f", bb.getDiv()));
 //
-//Compute cc = new Compute(452, 365);//´Ù¸¥ ÆĞÅ°Áö¿¡ ÀÖÀ¸¸é import°¡ ÇÊ¿ä
+//Compute cc = new Compute(452, 365);//ë‹¤ë¥¸ íŒ¨í‚¤ì§€ì— ìˆìœ¼ë©´ importê°€ í•„ìš”
 //cc.calc();
 //System.out.println(cc.getX() + "\t" 
 //				+cc.getY() + "\t"

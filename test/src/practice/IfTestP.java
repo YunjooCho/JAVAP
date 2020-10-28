@@ -9,18 +9,18 @@ public class IfTestP {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); 
-		System.out.println("ÀÔ·Â : ");
+		System.out.println("ì…ë ¥ : ");
 		int num = Integer.parseInt(br.readLine());
 		
-		//ÀÔ·Â¹ŞÀº °ªÀÌ Â¦¼öÀÎÁö È¦¼öÀÎÁö È®ÀÎ
-		if (num % 2 == 0) System.out.println("Â¦¼ö");
-		else System.out.println("È¦¼ö");
+		//ì…ë ¥ë°›ì€ ê°’ì´ ì§ìˆ˜ì¸ì§€ í™€ìˆ˜ì¸ì§€ í™•ì¸
+		if (num % 2 == 0) System.out.println("ì§ìˆ˜");
+		else System.out.println("í™€ìˆ˜");
 		
 		
-		//´ë¹®ÀÚ&¼Ò¹®ÀÚ&Æ¯¼ö¹®ÀÚ
-		if (num >= 'A' && num <= 'Z') System.out.println("´ë¹®ÀÚ : " + (char)num);
-		else if(num >= 'a' && num <= 'z') System.out.println("¼Ò¹®ÀÚ : " + (char)num);
-		else System.out.println("¼ıÀÚ ¶Ç´Â Æ¯¼ö¹®ÀÚ");
+		//ëŒ€ë¬¸ì&ì†Œë¬¸ì&íŠ¹ìˆ˜ë¬¸ì
+		if (num >= 'A' && num <= 'Z') System.out.println("ëŒ€ë¬¸ì : " + (char)num);
+		else if(num >= 'a' && num <= 'z') System.out.println("ì†Œë¬¸ì : " + (char)num);
+		else System.out.println("ìˆ«ì ë˜ëŠ” íŠ¹ìˆ˜ë¬¸ì");
 	}
 
 }

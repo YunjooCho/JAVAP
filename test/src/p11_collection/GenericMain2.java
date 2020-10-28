@@ -19,14 +19,14 @@ class GenericTest2P<T>{
 public class GenericMain2 {
 
 	public static void main(String[] args) {
-		GenericTest2P<?> aa = new GenericTest2P<String>("È«±æµ¿");
+		GenericTest2P<?> aa = new GenericTest2P<String>("í™ê¸¸ë™");
 		//String name = aa.getA();
 		String name = (String)aa.getA();
-		System.out.println("ÀÌ¸§ = " + name);
+		System.out.println("ì´ë¦„ = " + name);
 		
 		GenericTest2P<?> bb = new GenericTest2P<Integer>(25);
 		int age = (int)bb.getA(); //autoUnboxing
-		System.out.println("³ªÀÌ = " + age);
+		System.out.println("ë‚˜ì´ = " + age);
 	}
 
 }

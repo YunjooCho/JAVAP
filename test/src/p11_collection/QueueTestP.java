@@ -7,19 +7,19 @@ public class QueueTestP {
 
 	public static void main(String[] args) {
 		
-		String[] item = {"¼Ò³ªÅ¸", "·º½ºÅæ","Á¦±Ô¾î"};
+		String[] item = {"ì†Œë‚˜íƒ€", "ë ‰ìŠ¤í†¤","ì œê·œì–´"};
 		LinkedList<String> q = new LinkedList<String>();
 		
 		for(String s : item) {
-			q.offer(s); //¿ä¼ÒÃß°¡ 
+			q.offer(s); //ìš”ì†Œì¶”ê°€ 
 		}
 		
-		out.println("qÀÇ Å©±â : " + q.size() + "\n");
+		out.println("qì˜ í¬ê¸° : " + q.size() + "\n");
 		String data = "";
 		
 		while((data = q.poll()) != null){
-			out.println(data + "»èÁ¦!");
-			out.println("qÀÇ Å©±â : " + q.size() + "\n");
+			out.println(data + "ì‚­ì œ!");
+			out.println("qì˜ í¬ê¸° : " + q.size() + "\n");
 		}//while
 		
 

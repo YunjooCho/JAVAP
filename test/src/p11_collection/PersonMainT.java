@@ -6,9 +6,9 @@ import java.util.Iterator;
 public class PersonMainT {
 	
 	public ArrayList<PersonDTOP> init(){ 
-		PersonDTOP aa = new PersonDTOP("È«±æµ¿", 25);
-		PersonDTOP bb = new PersonDTOP("¸ù½ÇÀÌ", 15);
-		PersonDTOP cc = new PersonDTOP("¹¶Ä¡", 15);
+		PersonDTOP aa = new PersonDTOP("í™ê¸¸ë™", 25);
+		PersonDTOP bb = new PersonDTOP("ëª½ì‹¤ì´", 15);
+		PersonDTOP cc = new PersonDTOP("ë­‰ì¹˜", 15);
 		
 		ArrayList<PersonDTOP> list = new ArrayList<PersonDTOP>();
 		list.add(aa); //get(0)
@@ -23,20 +23,20 @@ public class PersonMainT {
 		ArrayList<PersonDTOP> list = pm.init();
 		
 		for(int i = 0; i < list.size(); i++) {
-			System.out.println("ÀÌ¸§ = " + list.get(i).getName() + "\t ³ªÀÌ = " + list.get(i).getAge());
+			System.out.println("ì´ë¦„ = " + list.get(i).getName() + "\t ë‚˜ì´ = " + list.get(i).getAge());
 		}
 		
 		System.out.println("-----------------------------------");
 		
 		for(PersonDTOP dto : list) {
-			System.out.println("ÀÌ¸§ = " + dto.getName() + "\t ³ªÀÌ = " + dto.getAge());
+			System.out.println("ì´ë¦„ = " + dto.getName() + "\t ë‚˜ì´ = " + dto.getAge());
 		}
 		
 		System.out.println("-----------------------------------");
 		Iterator<PersonDTOP> it = list.iterator();
 		while(it.hasNext()) {
 			PersonDTOP dto = it.next();
-			System.out.println("ÀÌ¸§ = " + dto.getName() + "\t ³ªÀÌ = " + dto.getAge());
+			System.out.println("ì´ë¦„ = " + dto.getName() + "\t ë‚˜ì´ = " + dto.getAge());
 		}
 
 	}

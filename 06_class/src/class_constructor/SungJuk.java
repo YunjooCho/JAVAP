@@ -1,13 +1,13 @@
 package class_constructor;
-//Ä¸½¶È­
-//1ÀÎºĞ µ¥ÀÌÅÍ
+//ìº¡ìŠí™”
+//1ì¸ë¶„ ë°ì´í„°
 public class SungJuk {
 	
 	final public int SUBJECT_NUMBER = 3;
 	
-	//1.ÇÊµå¸í ¼±¾ğ
-	//¿©±â¼­ staticÀ» ¾²¸é class¿¡ ¸Ó¹°·¯´Â ÀÖÁö¸¸ class¼Ò¼ÓÀÌ ¾Æ´Ô
-	//¸Ş¸ğ¸®¿µ¿ªÀÌ ÇÏ³ª¸¸ ÀâÈ÷±â¶§¹®¿¡(°´Ã¼°¡ ÇÏ³ª¸¸ ÀÖÀ½) °ªÀÌ °°Àº °ÍÀÌ 3¹ø ³ª¿È
+	//1.í•„ë“œëª… ì„ ì–¸
+	//ì—¬ê¸°ì„œ staticì„ ì“°ë©´ classì— ë¨¸ë¬¼ëŸ¬ëŠ” ìˆì§€ë§Œ classì†Œì†ì´ ì•„ë‹˜
+	//ë©”ëª¨ë¦¬ì˜ì—­ì´ í•˜ë‚˜ë§Œ ì¡íˆê¸°ë•Œë¬¸ì—(ê°ì²´ê°€ í•˜ë‚˜ë§Œ ìˆìŒ) ê°’ì´ ê°™ì€ ê²ƒì´ 3ë²ˆ ë‚˜ì˜´
 	private String name;
 	private int kor;
 	private int eng;
@@ -16,10 +16,10 @@ public class SungJuk {
 	private double avg;
 	private String grade;
 	
-	//2.»ı¼ºÀÚ
-	public SungJuk(String name, int kor, int eng, int math) { //SungJukMain¿ë
+	//2.ìƒì„±ì
+	public SungJuk(String name, int kor, int eng, int math) { //SungJukMainìš©
 
-		this.name = name;//this : Å¬·¡½º²¨
+		this.name = name;//this : í´ë˜ìŠ¤êº¼
 		this.kor = kor;
 		this.eng = eng;
 		this.math = math;
@@ -37,7 +37,7 @@ public class SungJuk {
 
 	
 
-	//3.°è»ê¸Ş¼Òµå
+	//3.ê³„ì‚°ë©”ì†Œë“œ
 	public void calc() {
 		
 		tot = kor + eng + math;
@@ -105,8 +105,8 @@ public class SungJuk {
 	
 	}
 
-//¹è¿­  - index(¹æ ¹øÈ£)
-//	  - µ¿ÀÏÇÑ ÀÚ·áÇüÀÇ ¸ğÀÓ
+//ë°°ì—´  - index(ë°© ë²ˆí˜¸)
+//	  - ë™ì¼í•œ ìë£Œí˜•ì˜ ëª¨ì„
 
-//Å¬·¡½º - ÀÌ¸§(º¯¼ö¸í)À¸·Î °ü¸®
-//     - ´Ù¸¥ ÀÚ·áÇüÀ» ¹­¾î¼­ °ü¸® °¡´É
+//í´ë˜ìŠ¤ - ì´ë¦„(ë³€ìˆ˜ëª…)ìœ¼ë¡œ ê´€ë¦¬
+//     - ë‹¤ë¥¸ ìë£Œí˜•ì„ ë¬¶ì–´ì„œ ê´€ë¦¬ ê°€ëŠ¥

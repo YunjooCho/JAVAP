@@ -3,27 +3,27 @@ package practice;
 
 
 /*
-ÀÌ¸§(name),±¹¾î(kor),¿µ¾î(eng),¼öÇĞ(math)Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­ 
-ÃÑÁ¡(tot),Æò±Õ(avg), ÇĞÁ¡(grade)À» ±¸ÇÏ½Ã¿À
+ì´ë¦„(name),êµ­ì–´(kor),ì˜ì–´(eng),ìˆ˜í•™(math)ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ 
+ì´ì (tot),í‰ê· (avg), í•™ì (grade)ì„ êµ¬í•˜ì‹œì˜¤
 
-Æò±ÕÀÌ 90ÀÌ»óÀÌ¸é 'A'ÇĞÁ¡
-Æò±ÕÀÌ 80ÀÌ»óÀÌ¸é 'B'ÇĞÁ¡
-Æò±ÕÀÌ 70ÀÌ»óÀÌ¸é 'C'ÇĞÁ¡
-Æò±ÕÀÌ 60ÀÌ»óÀÌ¸é 'D'ÇĞÁ¡
-±×¿Ü´Â 'F'ÇĞÁ¡
+í‰ê· ì´ 90ì´ìƒì´ë©´ 'A'í•™ì 
+í‰ê· ì´ 80ì´ìƒì´ë©´ 'B'í•™ì 
+í‰ê· ì´ 70ì´ìƒì´ë©´ 'C'í•™ì 
+í‰ê· ì´ 60ì´ìƒì´ë©´ 'D'í•™ì 
+ê·¸ì™¸ëŠ” 'F'í•™ì 
 
 
-[½ÇÇà°á°ú]
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿ 
-±¹¾î ÀÔ·Â : 78  
-¿µ¾î ÀÔ·Â : 89  
-¼öÇĞ ÀÔ·Â : 100
+[ì‹¤í–‰ê²°ê³¼]
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™ 
+êµ­ì–´ ì…ë ¥ : 78  
+ì˜ì–´ ì…ë ¥ : 89  
+ìˆ˜í•™ ì…ë ¥ : 100
 
-   *** È«±æµ¿ ¼ºÀû ***
-±¹¾î      ¿µ¾î      ¼öÇĞ      ÃÑÁ¡      Æò±Õ      ÇĞÁ¡
+   *** í™ê¸¸ë™ ì„±ì  ***
+êµ­ì–´      ì˜ì–´      ìˆ˜í•™      ì´ì       í‰ê·       í•™ì 
 78     89   100    xxx   xx.xxx   x
  */
-//ÇĞÁ¡Àº switch¹® »ç¿ë
+//í•™ì ì€ switchë¬¸ ì‚¬ìš©
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,25 +32,25 @@ import java.io.InputStreamReader;
 public class SungJuckP {
 
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® ÀÔ·Â
+		//ë©”ëª¨ë¦¬ ì…ë ¥
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//Å°º¸µå ÀÔ·Â
-		System.out.println("ÀÌ¸§ ÀÔ·Â : ");
+		//í‚¤ë³´ë“œ ì…ë ¥
+		System.out.println("ì´ë¦„ ì…ë ¥ : ");
 		String name = br.readLine();
-		System.out.println("±¹¾î ÀÔ·Â : ");
+		System.out.println("êµ­ì–´ ì…ë ¥ : ");
 		int kor = Integer.parseInt(br.readLine());
-		System.out.println("¿µ¾î ÀÔ·Â : ");
+		System.out.println("ì˜ì–´ ì…ë ¥ : ");
 		int eng = Integer.parseInt(br.readLine());
-		System.out.println("¼öÇĞ ÀÔ·Â : ");
+		System.out.println("ìˆ˜í•™ ì…ë ¥ : ");
 		int math = Integer.parseInt(br.readLine());
 		
 		
-		//°è»ê½Ä
+		//ê³„ì‚°ì‹
 		int tot = kor + eng + math;
 		double avg = tot / 3.0;
 		
-		//ÇĞÁ¡
+		//í•™ì 
 		char grade;
 		switch ((int)avg / 10){
 		
@@ -67,9 +67,9 @@ public class SungJuckP {
 			
 		}
 		
-		//Ãâ·Â
-		System.out.println("*** " + name + " ¼ºÀûÇ¥ ***");
-		System.out.println("±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\tÇĞÁ¡");
+		//ì¶œë ¥
+		System.out.println("*** " + name + " ì„±ì í‘œ ***");
+		System.out.println("êµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \tí•™ì ");
 		System.out.println(kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + String.format("%.3f", avg) + "\t" + grade);
 
 	}

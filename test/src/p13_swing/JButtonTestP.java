@@ -11,7 +11,7 @@ import javax.swing.JRadioButton;
 
 public class JButtonTestP extends JFrame {
 	
-	//1.ÇÊµå¼±¾ð
+	//1.í•„ë“œì„ ì–¸
 	private Icon icon1 = new ImageIcon("image/jindo.jpg");
 	private Icon icon2 = new ImageIcon("image/liver.jpg");
 	private Icon icon3 = new ImageIcon("image/poodle.jpg");
@@ -25,9 +25,9 @@ public class JButtonTestP extends JFrame {
 		Container container = this.getContentPane();
 		container.setLayout(new GridLayout(2,2));
 		for(int i = 0; i < jb.length; i++) {
-			jb[i] = new JRadioButton(i + 1 + "¹ø ¹öÆ°", icon1);
+			jb[i] = new JRadioButton(i + 1 + "ë²ˆ ë²„íŠ¼", icon1);
 			container.add(jb[i]);
-			jb[i].setToolTipText(i + 1 + "¹øÂ° ¹öÆ°ÀÌ´Ù. ´­·¯....");
+			jb[i].setToolTipText(i + 1 + "ë²ˆì§¸ ë²„íŠ¼ì´ë‹¤. ëˆŒëŸ¬....");
 			jb[i].setMnemonic(i+49);
 			jb[i].setRolloverIcon(icon2);
 			jb[i].setPressedIcon(icon3);

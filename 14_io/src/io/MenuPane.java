@@ -9,25 +9,25 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-public class MenuPane extends JMenuBar { //ÇÁ·¹ÀÓ¿¡ ºÙ¾î¾ß ÇÔ(µ¶´Ü »ç¿ë ºÒ°¡)
+public class MenuPane extends JMenuBar { //í”„ë ˆì„ì— ë¶™ì–´ì•¼ í•¨(ë…ë‹¨ ì‚¬ìš© ë¶ˆê°€)
 
 	private JMenu fileM, editM, viewM;
 	private JMenuItem newM, openM, saveM, exitM, cutM, copyM, pasteM;
 	private TryNotepad note;
 	
 	public MenuPane() {
-		fileM = new JMenu("ÆÄÀÏ");
-		editM = new JMenu("ÆíÁı");
-		viewM = new JMenu("º¸±â");
+		fileM = new JMenu("íŒŒì¼");
+		editM = new JMenu("í¸ì§‘");
+		viewM = new JMenu("ë³´ê¸°");
 		
-		newM = new JMenuItem("»õ·Î¸¸µé±â");
-		openM = new JMenuItem("¿­±â");
-		saveM = new JMenuItem("ÀúÀå");
-		exitM = new JMenuItem("Á¾·á");
+		newM = new JMenuItem("ìƒˆë¡œë§Œë“¤ê¸°");
+		openM = new JMenuItem("ì—´ê¸°");
+		saveM = new JMenuItem("ì €ì¥");
+		exitM = new JMenuItem("ì¢…ë£Œ");
 		
-		cutM = new JMenuItem("Àß¶ó³»±â");
-		copyM = new JMenuItem("º¹»ç");
-		pasteM = new JMenuItem("ºÙ¿©³Ö±â");
+		cutM = new JMenuItem("ì˜ë¼ë‚´ê¸°");
+		copyM = new JMenuItem("ë³µì‚¬");
+		pasteM = new JMenuItem("ë¶™ì—¬ë„£ê¸°");
 		
 		
 		fileM.add(newM);
@@ -43,7 +43,7 @@ public class MenuPane extends JMenuBar { //ÇÁ·¹ÀÓ¿¡ ºÙ¾î¾ß ÇÔ(µ¶´Ü »ç¿ë ºÒ°¡)
 		add(editM);
 		add(viewM);
 		
-		//´ÜÃàÅ°
+		//ë‹¨ì¶•í‚¤
 		cutM.setAccelerator(KeyStroke.getKeyStroke('X',Event.ALT_MASK)); //ALT + X
 		copyM.setAccelerator(KeyStroke.getKeyStroke('C', Event.ALT_MASK)); //ALT + C
 		pasteM.setAccelerator(KeyStroke.getKeyStroke('V', Event.ALT_MASK));//ALT +V
@@ -122,5 +122,5 @@ public class MenuPane extends JMenuBar { //ÇÁ·¹ÀÓ¿¡ ºÙ¾î¾ß ÇÔ(µ¶´Ü »ç¿ë ºÒ°¡)
 
 }
 
-//»õ·Î¸¸µé±â, ¿­±â, ÀúÀå, Á¾·á´Â ÆÄÀÏ¸Ş´º¿¡ ºÎÂø
-//ÆÄÀÏ¸Ş´º´Â JBar(³ª)¿¡ ºÎÂø
+//ìƒˆë¡œë§Œë“¤ê¸°, ì—´ê¸°, ì €ì¥, ì¢…ë£ŒëŠ” íŒŒì¼ë©”ë‰´ì— ë¶€ì°©
+//íŒŒì¼ë©”ë‰´ëŠ” JBar(ë‚˜)ì— ë¶€ì°©

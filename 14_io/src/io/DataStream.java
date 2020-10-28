@@ -7,33 +7,33 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-//¹®ÀÚ°¡ ¾Æ´Ñ ¹ÙÀÌÆ® ´ÜÀ§·Î µé¾î°¬´Ù ³ª¿À´Â ÇüÅÂ È®ÀÎ
+//ë¬¸ìê°€ ì•„ë‹Œ ë°”ì´íŠ¸ ë‹¨ìœ„ë¡œ ë“¤ì–´ê°”ë‹¤ ë‚˜ì˜¤ëŠ” í˜•íƒœ í™•ì¸
 public class DataStream {
 
 	public static void main(String[] args) {
-		try { //°ªÀ» ´Ù¸¥ ¸ÅÃ¼¿¡ ÀúÀåÇÏ±â À§ÇØ ¹ÛÀ¸·Î »­
-			DataOutputStream dos = new DataOutputStream(new FileOutputStream("result.txt")); //¾ø´Â ÆÄÀÏÀº »ı¼ºÇØ¼­ ¸¸µé¾îÁÜ
-			dos.writeUTF("È«±æµ¿"); //ÃÖÁ¾ ¸ñÀûÁö : "result.txt" - °á°ú°ªÀÌ ÀÌ»óÇÏ°Ô ³ª¿È
-								  //³»ºÎÀûÀ¸·Î Serializable(Á÷·ÄÈ­) µÇ¾îÀÖÀ½, Comparableµµ µÇ¾îÀÖÀ½
+		try { //ê°’ì„ ë‹¤ë¥¸ ë§¤ì²´ì— ì €ì¥í•˜ê¸° ìœ„í•´ ë°–ìœ¼ë¡œ ëºŒ
+			DataOutputStream dos = new DataOutputStream(new FileOutputStream("result.txt")); //ì—†ëŠ” íŒŒì¼ì€ ìƒì„±í•´ì„œ ë§Œë“¤ì–´ì¤Œ
+			dos.writeUTF("í™ê¸¸ë™"); //ìµœì¢… ëª©ì ì§€ : "result.txt" - ê²°ê³¼ê°’ì´ ì´ìƒí•˜ê²Œ ë‚˜ì˜´
+								  //ë‚´ë¶€ì ìœ¼ë¡œ Serializable(ì§ë ¬í™”) ë˜ì–´ìˆìŒ, Comparableë„ ë˜ì–´ìˆìŒ
 			dos.writeInt(25);
-			//dos.writeDouble(185.3); //µğÆúÆ®
+			//dos.writeDouble(185.3); //ë””í´íŠ¸
 			dos.writeFloat(185.3f);
 			dos.close();
-		} catch (IOException e) {//FileNotFoundException ¿Í IOException¸¦ °°ÀÌ Ã³¸® -> IOExceptionÀÌ »óÀ§ÀÌ¹Ç·Î ´Ù¸¥ ¿¹¿ÜÃ³¸®µµ ÀüºÎ ÇØ°á
+		} catch (IOException e) {//FileNotFoundException ì™€ IOExceptionë¥¼ ê°™ì´ ì²˜ë¦¬ -> IOExceptionì´ ìƒìœ„ì´ë¯€ë¡œ ë‹¤ë¥¸ ì˜ˆì™¸ì²˜ë¦¬ë„ ì „ë¶€ í•´ê²°
 			e.printStackTrace();
 		} 
 		
 		
 		
-		//ÆÄÀÏ ¼ÓÀÇ µ¥ÀÌÅÍ´Â ±úÁ®µµ ´Ù½Ã ÀĞ¾î¿À¸é Á¤»óÀûÀ¸·Î º¸¿©Áü
-		//ÀĞ¾î¿À¸é¼­ Ãâ·Â
-		try { //´Ù¸¥ ¸ÅÃ¼¿¡ ÀúÀåµÇ¾î ÀÖ´Â °ªÀ» ÀĞ¾îµéÀÓ
-			DataInputStream dis = new DataInputStream(new FileInputStream("result.txt")); //¿©±â¼­ ½ÇÁ¸ÆÄÀÏ(""¾ÈÀÇ ÆÄÀÏ¸í)ÀÌ ¾øÀ¸¸é error!°¡ ¶³¾îÁü
-																						 //java.io.FileNotFoundExceptionÀÌ ³ªÅ¸³²
-			System.out.println("ÀÌ¸§ : " + dis.readUTF()); //write¶§¿Í ¶È°°Àº ÇÔ¼ö¸¦ ½áÁà¾ß ÇÔ
-			System.out.println("³ªÀÌ : " + dis.readInt());
-			System.out.println("Å° : " + dis.readFloat()); //dis.readDouble()Àº error!
-													      //EOF - End Of File ¿¡·¯¸Ş½ÃÁö°¡ ¶ä
+		//íŒŒì¼ ì†ì˜ ë°ì´í„°ëŠ” ê¹¨ì ¸ë„ ë‹¤ì‹œ ì½ì–´ì˜¤ë©´ ì •ìƒì ìœ¼ë¡œ ë³´ì—¬ì§
+		//ì½ì–´ì˜¤ë©´ì„œ ì¶œë ¥
+		try { //ë‹¤ë¥¸ ë§¤ì²´ì— ì €ì¥ë˜ì–´ ìˆëŠ” ê°’ì„ ì½ì–´ë“¤ì„
+			DataInputStream dis = new DataInputStream(new FileInputStream("result.txt")); //ì—¬ê¸°ì„œ ì‹¤ì¡´íŒŒì¼(""ì•ˆì˜ íŒŒì¼ëª…)ì´ ì—†ìœ¼ë©´ error!ê°€ ë–¨ì–´ì§
+																						 //java.io.FileNotFoundExceptionì´ ë‚˜íƒ€ë‚¨
+			System.out.println("ì´ë¦„ : " + dis.readUTF()); //writeë•Œì™€ ë˜‘ê°™ì€ í•¨ìˆ˜ë¥¼ ì¨ì¤˜ì•¼ í•¨
+			System.out.println("ë‚˜ì´ : " + dis.readInt());
+			System.out.println("í‚¤ : " + dis.readFloat()); //dis.readDouble()ì€ error!
+													      //EOF - End Of File ì—ëŸ¬ë©”ì‹œì§€ê°€ ëœ¸
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

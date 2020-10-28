@@ -8,7 +8,7 @@ public class ExceptionTest2 {
 
 	private int number;
 	
-	public static void main(String[] args) throws Exception { //±¸ÇöºÎ¿¡ ¿¹¿ÜÃ³¸®°¡ °É·ÁÀÖÀ¸¸é È£ÃâºÎ¿¡¼­µµ ¿¹¿ÜÃ³¸®°¡ ÇÊ¿äÇÔ
+	public static void main(String[] args) throws Exception { //êµ¬í˜„ë¶€ì— ì˜ˆì™¸ì²˜ë¦¬ê°€ ê±¸ë ¤ìˆìœ¼ë©´ í˜¸ì¶œë¶€ì—ì„œë„ ì˜ˆì™¸ì²˜ë¦¬ê°€ í•„ìš”í•¨
 		ExceptionTest2 ex = new ExceptionTest2();
 		ex.input();
 		ex.output();
@@ -17,7 +17,7 @@ public class ExceptionTest2 {
 	
 	public void input() throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : ");
+		System.out.print("ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : ");
 		number = Integer.parseInt(br.readLine());
 		
 	}
@@ -37,17 +37,17 @@ public class ExceptionTest2 {
 				System.out.println(number + "*" + i + "=" + (number*i));
 			}
 		}else {
-			//System.out.println("¹üÀ§ ÃÊ°ú");
+			//System.out.println("ë²”ìœ„ ì´ˆê³¼");
 			
-			//ÇÁ·Î±×·¡¸Ó°¡ °­Á¦·Î ExceptionÀ» ¹ß»ı
-			//¡Ú¡ÚÁß¿ä!!¡Ú¡Ú throws´Â ¿¹¹æ(¿¡·¯ ¹ß»ıÀ» ¹æÁö), throw ÀÏºÎ·¯ ¿¹¿ÜÃ³¸® ¹ß»ı
+			//í”„ë¡œê·¸ë˜ë¨¸ê°€ ê°•ì œë¡œ Exceptionì„ ë°œìƒ
+			//â˜…â˜…ì¤‘ìš”!!â˜…â˜… throwsëŠ” ì˜ˆë°©(ì—ëŸ¬ ë°œìƒì„ ë°©ì§€), throw ì¼ë¶€ëŸ¬ ì˜ˆì™¸ì²˜ë¦¬ ë°œìƒ
 			try {
-				//throw new Exception("¹üÀ§ ÃÊ°ú"); //°­Á¦·Î Exception¹ß»ı,()¾È¿¡ ¿øÇÏ´Â ¸Ş½ÃÁö¸¦ ÀÔ·ÂÇÏ¸é error¹ß»ı ½Ã °°ÀÌ Ç¥½ÃµÊ
-				                                 //¿¡·¯°¡ ¹ß»ıÇß´Ù´Â °ÍÀ» °­·ÂÇÏ°Ô ¾Ë·ÁÁÜ
-				throw new MakeException("¹üÀ§ ÃÊ°ú"); 
+				//throw new Exception("ë²”ìœ„ ì´ˆê³¼"); //ê°•ì œë¡œ Exceptionë°œìƒ,()ì•ˆì— ì›í•˜ëŠ” ë©”ì‹œì§€ë¥¼ ì…ë ¥í•˜ë©´ errorë°œìƒ ì‹œ ê°™ì´ í‘œì‹œë¨
+				                                 //ì—ëŸ¬ê°€ ë°œìƒí–ˆë‹¤ëŠ” ê²ƒì„ ê°•ë ¥í•˜ê²Œ ì•Œë ¤ì¤Œ
+				throw new MakeException("ë²”ìœ„ ì´ˆê³¼"); 
 				
 			} catch(Exception e){
-				e.printStackTrace(); //»¡°£ ¿¡·¯¸Ş½ÃÁö ¹ß»ı
+				e.printStackTrace(); //ë¹¨ê°„ ì—ëŸ¬ë©”ì‹œì§€ ë°œìƒ
 			}
 		}
 	}

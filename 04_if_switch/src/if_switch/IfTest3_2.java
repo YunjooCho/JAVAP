@@ -1,9 +1,9 @@
 package if_switch;
 
 /*
-3°³ÀÇ ¼ıÀÚ(a,b,c)¸¦ ÀÔ·Â¹Ş¾Æ¼­ ¼ø¼­´ë·Î Ãâ·ÂÇÏ½Ã¿À
+3ê°œì˜ ìˆ«ì(a,b,c)ë¥¼ ì…ë ¥ë°›ì•„ì„œ ìˆœì„œëŒ€ë¡œ ì¶œë ¥í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 a : 68
 b : 50
 c : 45
@@ -15,35 +15,35 @@ c : 45
 30, 45, 50
  */
 
-//¼±»ı´Ô Ç®ÀÌ
+//ì„ ìƒë‹˜ í’€ì´
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class IfTest3_2 {
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//ÀÔ·Â
-		System.out.println("a ÀÔ·Â :");
+		//ì…ë ¥
+		System.out.println("a ì…ë ¥ :");
 		int a = Integer.parseInt(br.readLine());
-		System.out.println("b ÀÔ·Â :");
+		System.out.println("b ì…ë ¥ :");
 		int b = Integer.parseInt(br.readLine());
-		System.out.println("c ÀÔ·Â :");
+		System.out.println("c ì…ë ¥ :");
 		int c = Integer.parseInt(br.readLine());
 		
 		
-		//if¹®
-		if(a < b && a < c) { //a°¡ °¡Àå ÀÛ´Ù¸é
+		//ifë¬¸
+		if(a < b && a < c) { //aê°€ ê°€ì¥ ì‘ë‹¤ë©´
 			if(b < c) System.out.println(a + "," + b + "," + c);
 			else System.out.println(a + "," + c + "," + b);			
 			
-		}else if (b < c) { //b°¡ °¡Àå ÀÛ´Ù¸é
+		}else if (b < c) { //bê°€ ê°€ì¥ ì‘ë‹¤ë©´
 			if(a < c) System.out.println(b + "," + a + "," + c);
 			else System.out.println(b + "," + c + "," + a);	
 			
-		}else { //c°¡ °¡Àå ÀÛ´Ù¸é
+		}else { //cê°€ ê°€ì¥ ì‘ë‹¤ë©´
 			if(a < b) System.out.println(c + "," + a + "," + b);
 			else System.out.println(c + "," + b + "," + a);
 		}

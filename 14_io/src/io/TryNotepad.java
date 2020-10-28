@@ -27,16 +27,16 @@ public class TryNotepad extends JFrame implements ActionListener {
 	
 	
 	public TryNotepad() {
-		super("°£´Ü ¸Ş¸ğÀå");
+		super("ê°„ë‹¨ ë©”ëª¨ì¥");
 		
 		output = new JTextArea();
 		JScrollPane scroll = new JScrollPane(output);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS); 
-		//½ºÅ©·ÑÀÌ Ç×»ó Ç¥½ÃµÇ¾î ÀÖÀ½
-		//°¡·Î ½ºÅ©·Ñ : scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		//ìŠ¤í¬ë¡¤ì´ í•­ìƒ í‘œì‹œë˜ì–´ ìˆìŒ
+		//ê°€ë¡œ ìŠ¤í¬ë¡¤ : scroll.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		
 		menu = new MenuPane();
-		this.setJMenuBar(menu); //JMenuBar¿µ¿ª(·¹ÀÌ¾Æ¿ô)¿¡ ¸Ş´º¸¦ ºÙÀÓ(´Ù¸¥°Ç ContentPaneÁö¸¸ ¸Ş´º¹Ù´Â JMenuBar
+		this.setJMenuBar(menu); //JMenuBarì˜ì—­(ë ˆì´ì•„ì›ƒ)ì— ë©”ë‰´ë¥¼ ë¶™ì„(ë‹¤ë¥¸ê±´ ContentPaneì§€ë§Œ ë©”ë‰´ë°”ëŠ” JMenuBar
 		
 		
 		Container c = this.getContentPane();
@@ -49,13 +49,13 @@ public class TryNotepad extends JFrame implements ActionListener {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				int result = JOptionPane.showConfirmDialog(TryNotepad.this, "º¯°æ³»¿ëÀ» ÀúÀåÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
-				if(result == JOptionPane.YES_OPTION) { //¿¹
+				int result = JOptionPane.showConfirmDialog(TryNotepad.this, "ë³€ê²½ë‚´ìš©ì„ ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì¢…ë£Œ", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+				if(result == JOptionPane.YES_OPTION) { //ì˜ˆ
 					saveDialog();
 					System.exit(0);
-				}else if(result == JOptionPane.NO_OPTION) {//¾Æ´Ï¿À
+				}else if(result == JOptionPane.NO_OPTION) {//ì•„ë‹ˆì˜¤
 					System.exit(0);
-				}//else if(result == JOptionPane.CANCEL_OPTION) {//Ãë¼Ò - ÀÚµ¿ ¼³Á¤ÀÌ¹Ç·Î ÇÊ¿ä¾øÀ½
+				}//else if(result == JOptionPane.CANCEL_OPTION) {//ì·¨ì†Œ - ìë™ ì„¤ì •ì´ë¯€ë¡œ í•„ìš”ì—†ìŒ
 //					return;
 //				}		
 			}
@@ -64,7 +64,7 @@ public class TryNotepad extends JFrame implements ActionListener {
 	}//TryNotePad()
 	
 	public void event() {
-		//ÀÌº¥Æ® È£ÃâÇÏ´Â ¸Ş¼Òµå
+		//ì´ë²¤íŠ¸ í˜¸ì¶œí•˜ëŠ” ë©”ì†Œë“œ
 		menu.getNewM().addActionListener(this);
 		menu.getOpenM().addActionListener(this);
 		menu.getSaveM().addActionListener(this);
@@ -83,7 +83,7 @@ public class TryNotepad extends JFrame implements ActionListener {
 			openDialog();
 			try {
 				fileRead(); 
-				//È£ÃâÇÑ ¸Ş¼Òµå¿¡ ¿¹¿ÜÃ³¸®°¡ µÇ¾îÀÖ¾î È£ÃâºÎ¿¡¼­µµ ¿¹¿ÜÃ³¸®°¡ ÇÊ¿ä, ¿©±â¼­´Â throws¸¦ °É ¼ö ¾øÀ¸¹Ç·Î  try~catch·Î ¿¹¿ÜÃ³¸®ÇÔ
+				//í˜¸ì¶œí•œ ë©”ì†Œë“œì— ì˜ˆì™¸ì²˜ë¦¬ê°€ ë˜ì–´ìˆì–´ í˜¸ì¶œë¶€ì—ì„œë„ ì˜ˆì™¸ì²˜ë¦¬ê°€ í•„ìš”, ì—¬ê¸°ì„œëŠ” throwsë¥¼ ê±¸ ìˆ˜ ì—†ìœ¼ë¯€ë¡œ  try~catchë¡œ ì˜ˆì™¸ì²˜ë¦¬í•¨
 			} catch (IOException e1) {
 				e1.printStackTrace();
 			}
@@ -91,13 +91,13 @@ public class TryNotepad extends JFrame implements ActionListener {
 			saveDialog();
 			fileWrite();
 		}else if(e.getSource() == menu.getExitM()) {
-			int result = JOptionPane.showConfirmDialog(TryNotepad.this, "º¯°æ³»¿ëÀ» ÀúÀåÇÏ½Ã°Ú½À´Ï±î?", "Á¾·á", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
-			if(result == JOptionPane.YES_OPTION) { //¿¹
+			int result = JOptionPane.showConfirmDialog(TryNotepad.this, "ë³€ê²½ë‚´ìš©ì„ ì €ì¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?", "ì¢…ë£Œ", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(result == JOptionPane.YES_OPTION) { //ì˜ˆ
 				saveDialog();
 				System.exit(0);
-			}else if(result == JOptionPane.NO_OPTION) {//¾Æ´Ï¿À
+			}else if(result == JOptionPane.NO_OPTION) {//ì•„ë‹ˆì˜¤
 				System.exit(0);
-			}//else if(result == JOptionPane.CANCEL_OPTION) {//Ãë¼Ò - ÀÚµ¿ ¼³Á¤ÀÌ¹Ç·Î ÇÊ¿ä¾øÀ½
+			}//else if(result == JOptionPane.CANCEL_OPTION) {//ì·¨ì†Œ - ìë™ ì„¤ì •ì´ë¯€ë¡œ í•„ìš”ì—†ìŒ
 //				return;
 //			}
 		}else if(e.getSource() == menu.getCutM()) {
@@ -115,17 +115,17 @@ public class TryNotepad extends JFrame implements ActionListener {
 		JFileChooser chooser = new JFileChooser();
 		int result = chooser.showSaveDialog(this);
 		if(result == JFileChooser.APPROVE_OPTION) {
-			file = chooser.getSelectedFile(); //ÆÄÀÏÀ» ÀúÀåÇÒ °æ·Î¸¦ °¡Á®¿È
-			fileWrite(); //¡Ùnull°ª ¿¡·¯ - ´ëÃ¥2, ¿©±â¼­ ÆÄÀÏÀÌ ¼±ÅÃµÈ °æ¿ì¿¡¸¸ fileWriter·Î ÀÌµ¿(Ãë¼ÒÀÇ °æ¿ì fileWrite()ÀÚÃ¼¸¦ ºÎ¸£Áö ¾ÊÀ½)
+			file = chooser.getSelectedFile(); //íŒŒì¼ì„ ì €ì¥í•  ê²½ë¡œë¥¼ ê°€ì ¸ì˜´
+			fileWrite(); //â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…2, ì—¬ê¸°ì„œ íŒŒì¼ì´ ì„ íƒëœ ê²½ìš°ì—ë§Œ fileWriterë¡œ ì´ë™(ì·¨ì†Œì˜ ê²½ìš° fileWrite()ìì²´ë¥¼ ë¶€ë¥´ì§€ ì•ŠìŒ)
 		}
-		JOptionPane.showMessageDialog(this, file); //¡Ùnull°ª ¿¡·¯ - Ãë¼Ò¸¦ ´©¸£´Â °æ¿ì fileÀÌ null°ªÀÎ Ã¤ÀÌ¹Ç·Î ¿¡·¯°¡ ¶ä
+		JOptionPane.showMessageDialog(this, file); //â˜†nullê°’ ì—ëŸ¬ - ì·¨ì†Œë¥¼ ëˆ„ë¥´ëŠ” ê²½ìš° fileì´ nullê°’ì¸ ì±„ì´ë¯€ë¡œ ì—ëŸ¬ê°€ ëœ¸
 	}
 
-	private void fileWrite()  { //°ªÀ» ¹ÛÀ¸·Î »©³¿(ÆÄÀÏÀ» ÀúÀå)
-		if(file == null) return; //¡Ùnull°ª ¿¡·¯ - ´ëÃ¥1, ¹Ø¿¡ ¹®ÀåÀ¸·Î °¡Áö¸»°í ºüÁ®³ª°¨
+	private void fileWrite()  { //ê°’ì„ ë°–ìœ¼ë¡œ ë¹¼ëƒ„(íŒŒì¼ì„ ì €ì¥)
+		if(file == null) return; //â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…1, ë°‘ì— ë¬¸ì¥ìœ¼ë¡œ ê°€ì§€ë§ê³  ë¹ ì ¸ë‚˜ê°
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(file));
-			String data = output.getText(); //µ¥ÀÌÅÍ´Â ÀÚµ¿À¸·Î ÇÑ²¨¹ø¿¡ ²¨³»Áü
+			String data = output.getText(); //ë°ì´í„°ëŠ” ìë™ìœ¼ë¡œ í•œêº¼ë²ˆì— êº¼ë‚´ì§
 			bw.write(data);
 			bw.close();
 		} catch (IOException e) {
@@ -135,14 +135,14 @@ public class TryNotepad extends JFrame implements ActionListener {
 	}
 	
 	private void fileRead() throws IOException {
-		output.setText(""); //¡Ùnull°ª ¿¡·¯ - ´ëÃ¥3-1,ÅØ½ºÆ®¸¦ ÃÊ±âÈ­ ÇÏ°í ÆÄÀÏÀ» ºÒ·¯³¿
-		BufferedReader br = new BufferedReader(new FileReader(file)); //file¿¡ ÀúÀåµÈ ³»¿ëÀ» ÀĞ¾îµéÀÓ
+		output.setText(""); //â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…3-1,í…ìŠ¤íŠ¸ë¥¼ ì´ˆê¸°í™” í•˜ê³  íŒŒì¼ì„ ë¶ˆëŸ¬ëƒ„
+		BufferedReader br = new BufferedReader(new FileReader(file)); //fileì— ì €ì¥ëœ ë‚´ìš©ì„ ì½ì–´ë“¤ì„
 		String line;
 		
-		while((line = br.readLine()) != null) { //ÆÄÀÏÀÌ ºñ¾îÀÖÁö ¾ÊÀ»¶§¸¸ ÀĞ¾îµéÀÓ(µ¤¾î¾²Áö ¸»°í Ãâ·ÂÁÙÀ» Ãß°¡ÇÏ¸ç ÀĞ¾îµéÀÓ)
-			//readLine() : ¿£ÅÍ°ª Àü±îÁö ÀĞÀ½(ÀĞ¾îµéÀÏ¶§ enter°¡ ¹İ¿µ¾ÈµÊ)
-			//µû¶ó¼­ °­Á¦·Î \nÀ» »ç¿ëÇÏ¿© ¿£ÅÍ¸¦ ³Ö¾îÁÜ
-			//output.setText(line); //µ¤¾î¾²±â È¿°ú ÀÔ·ÂµÈ ¹®Àå¿¡ ÁÙ¹Ù²ŞÀÌ ÀÖÀ¸¸é ±×°É ±âÁØÀ¸·Î µ¤¾î¾¸
+		while((line = br.readLine()) != null) { //íŒŒì¼ì´ ë¹„ì–´ìˆì§€ ì•Šì„ë•Œë§Œ ì½ì–´ë“¤ì„(ë®ì–´ì“°ì§€ ë§ê³  ì¶œë ¥ì¤„ì„ ì¶”ê°€í•˜ë©° ì½ì–´ë“¤ì„)
+			//readLine() : ì—”í„°ê°’ ì „ê¹Œì§€ ì½ìŒ(ì½ì–´ë“¤ì¼ë•Œ enterê°€ ë°˜ì˜ì•ˆë¨)
+			//ë”°ë¼ì„œ ê°•ì œë¡œ \nì„ ì‚¬ìš©í•˜ì—¬ ì—”í„°ë¥¼ ë„£ì–´ì¤Œ
+			//output.setText(line); //ë®ì–´ì“°ê¸° íš¨ê³¼ ì…ë ¥ëœ ë¬¸ì¥ì— ì¤„ë°”ê¿ˆì´ ìˆìœ¼ë©´ ê·¸ê±¸ ê¸°ì¤€ìœ¼ë¡œ ë®ì–´ì”€
 			output.append(line + "\n");
 		}//while
 		
@@ -150,19 +150,19 @@ public class TryNotepad extends JFrame implements ActionListener {
 	}
 	
 
-	private void openDialog() {//ÀúÀåÇÑ ÆÄÀÏÀ» ¿©´Â ¸Ş¼Òµå
-		//File file = null; //ÃÊ±âÈ­(Áö¿ªº¯¼ö´Â ¾²·¹±â°ªÀ» °¡Áö°í ÀÖÀ¸¹Ç·Î) - fileRead()¿¡¼­µµ »ç¿ëÇÏ±â À§ÇØ ÇÊµå·Î ¿Ã¸²
+	private void openDialog() {//ì €ì¥í•œ íŒŒì¼ì„ ì—¬ëŠ” ë©”ì†Œë“œ
+		//File file = null; //ì´ˆê¸°í™”(ì§€ì—­ë³€ìˆ˜ëŠ” ì“°ë ˆê¸°ê°’ì„ ê°€ì§€ê³  ìˆìœ¼ë¯€ë¡œ) - fileRead()ì—ì„œë„ ì‚¬ìš©í•˜ê¸° ìœ„í•´ í•„ë“œë¡œ ì˜¬ë¦¼
 		JFileChooser chooser = new JFileChooser();
-		int result = chooser.showOpenDialog(this); //³» ÇÁ·¹ÀÓÃ¢ À§¿¡¼­ ÆÄÀÏ ¿­±âÃ¢ ¶ß±â
-		if(result == JFileChooser.APPROVE_OPTION) { //¿©·¯°³ÀÇ ÆÄÀÏÀ» ºÒ·¯¿Ã¶© ÆÄÀÏ°´Ã¼¹è¿­À» °°´Â getSelectedFiles()¸Ş¼Òµå¸¦ »ç¿ë
-			file = chooser.getSelectedFile();//ÆÄÀÏÀ» °¡Á®¿Ã °æ·Î¸¦ °¡Á®¿È
+		int result = chooser.showOpenDialog(this); //ë‚´ í”„ë ˆì„ì°½ ìœ„ì—ì„œ íŒŒì¼ ì—´ê¸°ì°½ ëœ¨ê¸°
+		if(result == JFileChooser.APPROVE_OPTION) { //ì—¬ëŸ¬ê°œì˜ íŒŒì¼ì„ ë¶ˆëŸ¬ì˜¬ë• íŒŒì¼ê°ì²´ë°°ì—´ì„ ê°™ëŠ” getSelectedFiles()ë©”ì†Œë“œë¥¼ ì‚¬ìš©
+			file = chooser.getSelectedFile();//íŒŒì¼ì„ ê°€ì ¸ì˜¬ ê²½ë¡œë¥¼ ê°€ì ¸ì˜´
 			try {
-				fileRead(); //¡Ú¡Ú¡Ú¡Ú¡Ú¡ÚÀÌ ºÎºĞ ÇÑ¹ø ´õ Á¤¸®ÇØº¸±â  ¡Ùnull°ª ¿¡·¯ - ´ëÃ¥3-2, ÆÄÀÏÀ» ¼±ÅÃÇÑ °æ¿ì¿¡¸¸ ÇØ´ç ¸Ş¼Òµå¸¦ ºÒ·¯¿È
+				fileRead(); //â˜…â˜…â˜…â˜…â˜…â˜…ì´ ë¶€ë¶„ í•œë²ˆ ë” ì •ë¦¬í•´ë³´ê¸°  â˜†nullê°’ ì—ëŸ¬ - ëŒ€ì±…3-2, íŒŒì¼ì„ ì„ íƒí•œ ê²½ìš°ì—ë§Œ í•´ë‹¹ ë©”ì†Œë“œë¥¼ ë¶ˆëŸ¬ì˜´
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		JOptionPane.showMessageDialog(this, file); //Á¤¸» ºÒ·¯¿Ô´ÂÁö È®ÀÎ, ÆÄÀÏ °´Ã¼, ¸Ş½ÃÁöÃ¢¿¡ °æ·Î°¡ ÂïÈû
+		JOptionPane.showMessageDialog(this, file); //ì •ë§ ë¶ˆëŸ¬ì™”ëŠ”ì§€ í™•ì¸, íŒŒì¼ ê°ì²´, ë©”ì‹œì§€ì°½ì— ê²½ë¡œê°€ ì°í˜
 	}
 
 	public static void main(String[] args) {
@@ -176,5 +176,5 @@ public class TryNotepad extends JFrame implements ActionListener {
 
 
 
-//CtrlÀº À©µµ¿ì¿¡¼­ ¼³Á¤ÇÑ ³»¿ë
-//Alt·Î ´ëÃ³
+//Ctrlì€ ìœˆë„ìš°ì—ì„œ ì„¤ì •í•œ ë‚´ìš©
+//Altë¡œ ëŒ€ì²˜

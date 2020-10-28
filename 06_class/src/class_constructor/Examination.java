@@ -3,60 +3,60 @@ package class_constructor;
 import java.util.Scanner;
 
 /*
-5¹®Á¦ÀÇ ½ÃÇèÁö Ã¤Á¡ÇÏ´Â ÇÁ·Î±×·¥
-1¹øºÎÅÍ 5¹ø±îÁö ¸ğµç ´äÀº ÀüºÎ 1ÀÌ´Ù
-1¹®Á¦´ç 20Á¡¾¿ °è»êÇÑ´Ù
+5ë¬¸ì œì˜ ì‹œí—˜ì§€ ì±„ì í•˜ëŠ” í”„ë¡œê·¸ë¨
+1ë²ˆë¶€í„° 5ë²ˆê¹Œì§€ ëª¨ë“  ë‹µì€ ì „ë¶€ 1ì´ë‹¤
+1ë¬¸ì œë‹¹ 20ì ì”© ê³„ì‚°í•œë‹¤
 
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-´ä   ÀÔ·Â : 12311
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+ë‹µ   ì…ë ¥ : 12311
 
-ÀÌ¸§      1 2 3 4 5   Á¡¼ö
-È«±æµ¿   O X X O O   60
+ì´ë¦„      1 2 3 4 5   ì ìˆ˜
+í™ê¸¸ë™   O X X O O   60
 ----------------
-°´Ã¼ ¹è¿­
-ÀÎ¿ø¼ö ÀÔ·Â : 3
+ê°ì²´ ë°°ì—´
+ì¸ì›ìˆ˜ ì…ë ¥ : 3
 
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-´ä ÀÔ·Â    : 13211
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+ë‹µ ì…ë ¥    : 13211
 
-ÀÌ¸§ ÀÔ·Â : ÄÚ³­
-´ä ÀÔ·Â    : 11111
+ì´ë¦„ ì…ë ¥ : ì½”ë‚œ
+ë‹µ ì…ë ¥    : 11111
 
-ÀÌ¸§ ÀÔ·Â : ¶ÇÄ¡
-´ä ÀÔ·Â    : 13242
+ì´ë¦„ ì…ë ¥ : ë˜ì¹˜
+ë‹µ ì…ë ¥    : 13242
 
-ÀÌ¸§      1 2 3 4 5   Á¡¼ö
-È«±æµ¿    O X X O O   60
-ÄÚ³­      O O O O O   100
-¶ÇÄ¡      O X X X X   20
+ì´ë¦„      1 2 3 4 5   ì ìˆ˜
+í™ê¸¸ë™    O X X O O   60
+ì½”ë‚œ      O O O O O   100
+ë˜ì¹˜      O X X X X   20
 */
 public class Examination {
 	private String name;
-	private String dap; //"12311" - StringÀº ¹®ÀÚÀÇ ¹è¿­ÀÌ¶ó´Â Æ¯¼º ÀÌ¿ë
+	private String dap; //"12311" - Stringì€ ë¬¸ìì˜ ë°°ì—´ì´ë¼ëŠ” íŠ¹ì„± ì´ìš©
 	private char[] ox;
 	private int score;
-	public static final String JUNG = "11111"; //Á¤´ä
+	public static final String JUNG = "11111"; //ì •ë‹µ
 	
-	//»ı¼ºÀÚ - µ¥ÀÌÅÍÀÔ·Â
-	//ScannerÅ¬·¡½º
-	//1¹ø¹®Á¦
+	//ìƒì„±ì - ë°ì´í„°ì…ë ¥
+	//Scannerí´ë˜ìŠ¤
+	//1ë²ˆë¬¸ì œ
 	public Examination() {
 		Scanner scanner = new Scanner(System.in);
-	    System.out.println("<1¹ø¹®Á¦>");
-		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+	    System.out.println("<1ë²ˆë¬¸ì œ>");
+		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 		this.name = scanner.next();
-		System.out.print("´ä ÀÔ·Â : ");
+		System.out.print("ë‹µ ì…ë ¥ : ");
 		this.dap = scanner.next();
 	}
 	
-	//2¹ø¹®Á¦ //¡ÚÂ÷ÀÌÁ¡
+	//2ë²ˆë¬¸ì œ //â˜…ì°¨ì´ì 
 	public Examination(String name, String dap) {
 			this.name = name;
 			this.dap = dap;
 	}
 	
-	//¸Ş¼Òµå
-	//compare() - ºñ±³(°ø¿ë)
+	//ë©”ì†Œë“œ
+	//compare() - ë¹„êµ(ê³µìš©)
 	public void compare() {
 		ox = new char[JUNG.length()];
 		int count = 0;
@@ -71,7 +71,7 @@ public class Examination {
 		}
 	}
 	
-	//getter(°ø¿ë)
+	//getter(ê³µìš©)
 	public String getName() {
 		return name;
 	}

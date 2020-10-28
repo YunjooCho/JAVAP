@@ -6,11 +6,11 @@ import java.util.Iterator;
 public class PersonMainT {
 
 	public ArrayList<PersonDTO> init() {
-		PersonDTO aa =  new PersonDTO("È«±æµ¿", 25); //aa,bb,cc - Áö¿ªº¯¼ö, ÁÖ¼Ò°ªÀ» ´ã°í ÀÖÀ½
-		PersonDTO bb =  new PersonDTO("¶ÇÄ¡", 40);
-		PersonDTO cc =  new PersonDTO("µµ¿ì³Ê", 30);
+		PersonDTO aa =  new PersonDTO("í™ê¸¸ë™", 25); //aa,bb,cc - ì§€ì—­ë³€ìˆ˜, ì£¼ì†Œê°’ì„ ë‹´ê³  ìˆìŒ
+		PersonDTO bb =  new PersonDTO("ë˜ì¹˜", 40);
+		PersonDTO cc =  new PersonDTO("ë„ìš°ë„ˆ", 30);
 		
-		ArrayList<PersonDTO> list = new ArrayList<PersonDTO>(); //listµµ ÁÖ¼Ò°ªÀ» ´ã°íÀÖÀ½
+		ArrayList<PersonDTO> list = new ArrayList<PersonDTO>(); //listë„ ì£¼ì†Œê°’ì„ ë‹´ê³ ìˆìŒ
 		list.add(aa); //get(0)
 		list.add(bb); //get(1)
 		list.add(cc); //get(2)
@@ -24,19 +24,19 @@ public class PersonMainT {
 		ArrayList<PersonDTO> list = pm.init();
 		
 		for(int i = 0; i < list.size(); i++) {
-			System.out.println("ÀÌ¸§ = " + list.get(i).getName() + "\t ³ªÀÌ = " + list.get(i).getAge());
+			System.out.println("ì´ë¦„ = " + list.get(i).getName() + "\t ë‚˜ì´ = " + list.get(i).getAge());
 		}
 		
 		System.out.println("-----------------------------------");
-		for(PersonDTO dto : list) { //ÀÌ°É Á¦ÀÏ ¸¹ÀÌ »ç¿ë
-			System.out.println("ÀÌ¸§ = " + dto.getName() + "\t ³ªÀÌ = " + dto.getAge());
+		for(PersonDTO dto : list) { //ì´ê±¸ ì œì¼ ë§ì´ ì‚¬ìš©
+			System.out.println("ì´ë¦„ = " + dto.getName() + "\t ë‚˜ì´ = " + dto.getAge());
 		}
 		
 		System.out.println("-----------------------------------");
-		Iterator<PersonDTO> it = list.iterator(); //»èÁ¦¹®Á¦¿¡¼­´Â ÀÌ°É ¾¸
+		Iterator<PersonDTO> it = list.iterator(); //ì‚­ì œë¬¸ì œì—ì„œëŠ” ì´ê±¸ ì”€
 		while(it.hasNext()) {
-			PersonDTO dto = it.next(); //it.next() - °´Ã¼ÀÇ ÁÖ¼Ò°ª
-			System.out.println("ÀÌ¸§ = " + dto.getName() + "\t ³ªÀÌ = " + dto.getAge());
+			PersonDTO dto = it.next(); //it.next() - ê°ì²´ì˜ ì£¼ì†Œê°’
+			System.out.println("ì´ë¦„ = " + dto.getName() + "\t ë‚˜ì´ = " + dto.getAge());
 		}
 		
 	}

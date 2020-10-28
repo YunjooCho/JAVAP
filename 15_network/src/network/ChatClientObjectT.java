@@ -40,7 +40,7 @@ public class ChatClientObjectT extends JFrame implements ActionListener, Runnabl
       
       input = new JTextField();
       
-      send = new JButton("º¸³»±â");
+      send = new JButton("ë³´ë‚´ê¸°");
       
       JPanel p = new JPanel();
       p.setLayout(new BorderLayout());
@@ -72,22 +72,22 @@ public class ChatClientObjectT extends JFrame implements ActionListener, Runnabl
    }//ChatClientObject()
    
    public void service() {      
-      String serverIP = JOptionPane.showInputDialog(null,"¼­¹öIP¸¦ ÀÔ·ÂÇÏ¼¼¿ä","192.168.0.98");
+      String serverIP = JOptionPane.showInputDialog(null,"ì„œë²„IPë¥¼ ì…ë ¥í•˜ì„¸ìš”","192.168.0.98");
       if(serverIP==null || serverIP.length()==0){
-         System.out.println("¼­¹öIP°¡ ÀÔ·ÂµÇÁö ¾Ê¾Ò½À´Ï´Ù");
+         System.out.println("ì„œë²„IPê°€ ì…ë ¥ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤");
          System.exit(0);
       }
       
-      //´Ğ³×ÀÓ
+      //ë‹‰ë„¤ì„
       String nickName = JOptionPane.showInputDialog(null,
-                                       "´Ğ³×ÀÓÀ» ÀÔ·ÂÇÏ¼¼¿ä",
-                                       "´Ğ³×ÀÓ",
+                                       "ë‹‰ë„¤ì„ì„ ì…ë ¥í•˜ì„¸ìš”",
+                                       "ë‹‰ë„¤ì„",
                                        JOptionPane.INFORMATION_MESSAGE);
       if(nickName==null || nickName.length()==0){
          nickName="guest";
       }
       
-      //¼ÒÄÏ»ı¼º
+      //ì†Œì¼“ìƒì„±
       try {
          socket = new Socket(serverIP, 9500);
 
@@ -95,18 +95,18 @@ public class ChatClientObjectT extends JFrame implements ActionListener, Runnabl
          oos = new ObjectOutputStream(socket.getOutputStream());
          
       } catch (UnknownHostException e) {
-         System.out.println("¼­¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù");
+         System.out.println("ì„œë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
          e.printStackTrace();
          System.exit(0);
          
       } catch (IOException e) {
-         System.out.println("¼­¹ö¸¦ Ã£À» ¼ö ¾ø½À´Ï´Ù");
+         System.out.println("ì„œë²„ë¥¼ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
          e.printStackTrace();
          System.exit(0);
       }
       
       try {
-         //¼­¹ö·Î ´Ğ³×ÀÓ º¸³»±â
+         //ì„œë²„ë¡œ ë‹‰ë„¤ì„ ë³´ë‚´ê¸°
          InfoDTO dto = new InfoDTO();
          dto.setCommand(Info.JOIN);
          dto.setNickName(nickName);
@@ -117,20 +117,20 @@ public class ChatClientObjectT extends JFrame implements ActionListener, Runnabl
          e.printStackTrace();
       }
       
-      //½º·¹µå »ı¼º
+      //ìŠ¤ë ˆë“œ ìƒì„±
       Thread t = new Thread(this);
-      //½º·¹µå ½ÃÀÛ - ½º·¹µå ½ÇÇà(run())
+      //ìŠ¤ë ˆë“œ ì‹œì‘ - ìŠ¤ë ˆë“œ ì‹¤í–‰(run())
       t.start();
       
-      //ÀÌº¥Æ®
+      //ì´ë²¤íŠ¸
       send.addActionListener(this);
-      input.addActionListener(this); //JTextField¿¡¼­ ¿£ÅÍ
+      input.addActionListener(this); //JTextFieldì—ì„œ ì—”í„°
       
    }//service()
    
    @Override
    public void run() {
-      //¼­¹ö·ÎºÎÅÍ ¹Ş´Â ÂÊ
+      //ì„œë²„ë¡œë¶€í„° ë°›ëŠ” ìª½
       InfoDTO dto = null;
       
       while(true) {
@@ -162,7 +162,7 @@ public class ChatClientObjectT extends JFrame implements ActionListener, Runnabl
    
    @Override
    public void actionPerformed(ActionEvent e) {
-      //¼­¹ö·Î º¸³»´Â ÂÊ
+      //ì„œë²„ë¡œ ë³´ë‚´ëŠ” ìª½
       String msg = input.getText();
       
       InfoDTO dto = new InfoDTO();

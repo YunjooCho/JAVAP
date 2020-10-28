@@ -1,18 +1,18 @@
 package p03_method;
 /*
-10Áø¼ö 250À» 2Áø¼ö, 8Áø¼ö, 16Áø¼ö·Î º¯È¯ ÇÏ½Ã¿À
- ´Ü) IntegerÀÇ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÏ¿© ±¸ÇÏ½Ã¿À
+10ì§„ìˆ˜ 250ì„ 2ì§„ìˆ˜, 8ì§„ìˆ˜, 16ì§„ìˆ˜ë¡œ ë³€í™˜ í•˜ì‹œì˜¤
+ ë‹¨) Integerì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•˜ì—¬ êµ¬í•˜ì‹œì˜¤
 */
 public class MethodTestP {
 	public static void main(String[] args) {
 		int dec = 250;
-		String binary = Integer.toBinaryString(dec); //2Áø¼ö
-		String octal = Integer.toOctalString(dec);//8Áø¼ö
-		String hexa = Integer.toHexString(dec);//16Áø¼ö
+		String binary = Integer.toBinaryString(dec); //2ì§„ìˆ˜
+		String octal = Integer.toOctalString(dec);//8ì§„ìˆ˜
+		String hexa = Integer.toHexString(dec);//16ì§„ìˆ˜
 		
-		System.out.println("2Áø¼ö = " + binary);
-		System.out.println("8Áø¼ö = " + octal);
-		System.out.println("16Áø¼ö = " + hexa);
+		System.out.println("2ì§„ìˆ˜ = " + binary);
+		System.out.println("8ì§„ìˆ˜ = " + octal);
+		System.out.println("16ì§„ìˆ˜ = " + hexa);
 
 	}
 

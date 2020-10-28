@@ -8,7 +8,7 @@ import java.awt.Image;
 
 public class DrCanvasP extends Canvas {
 
-	//4.Äµ¹ö½º ¸¸µé±â
+	//4.ìº”ë²„ìŠ¤ ë§Œë“¤ê¸°
 	private MsPaintTP mp;
 	private ShapeDTOP dto;
 	private Image bufferImage;
@@ -29,14 +29,14 @@ public class DrCanvasP extends Canvas {
 			bufferG = bufferImage.getGraphics();
 		}
 		
-		//Áö¿ì±â(ÀÜ»ó¾ø¾Ö±â)
+		//ì§€ìš°ê¸°(ì”ìƒì—†ì• ê¸°)
 		Color c = this.getBackground();
 		bufferG.setColor(c);
 		bufferG.fillRect(0, 0, d.width, d.height);
 		
 		int x1, y1, x2, y2, z1, z2;
-		//ÀÌÀü ÀÛ¾÷ °¡Á®¿À±â
-		//<ÁÂÇ¥>
+		//ì´ì „ ì‘ì—… ê°€ì ¸ì˜¤ê¸°
+		//<ì¢Œí‘œ>
 		for(ShapeDTOP dto : mp.getList()) {
 			x1 = dto.getX1();
 			y1 = dto.getY1();
@@ -47,7 +47,7 @@ public class DrCanvasP extends Canvas {
 
 		
 		
-		//<»ö>
+		//<ìƒ‰>
 		switch(dto.getColor()) {
 			case 0 : bufferG.setColor(new Color(255,0,0));
 					 break;
@@ -62,7 +62,7 @@ public class DrCanvasP extends Canvas {
 		}
 		
 		
-		//<µµÇü>
+		//<ë„í˜•>
 		if(dto.getFill()) {
 			if(dto.getShape() == Figure.LINE) {
 				bufferG.drawLine(x1, y1, x2, y2);
@@ -87,8 +87,8 @@ public class DrCanvasP extends Canvas {
 		}
 	}
 		
-		//»õ·Î¿î ±×¸²
-		//<ÁÂÇ¥>
+		//ìƒˆë¡œìš´ ê·¸ë¦¼
+		//<ì¢Œí‘œ>
 		x1 = Integer.parseInt(mp.getX1T().getText().trim());
 		y1 = Integer.parseInt(mp.getY1T().getText().trim());
 		x2 = Integer.parseInt(mp.getX2T().getText().trim());
@@ -96,7 +96,7 @@ public class DrCanvasP extends Canvas {
 		z1 = Integer.parseInt(mp.getZ1T().getText().trim());
 		z2 = Integer.parseInt(mp.getZ2T().getText().trim());
 		
-		//<»ö>
+		//<ìƒ‰>
 		switch(mp.getCombo().getSelectedIndex()) {
 		 case 0 : bufferG.setColor(new Color(255,0,0));
 		 	      	break;
@@ -110,7 +110,7 @@ public class DrCanvasP extends Canvas {
 		 			break;
 		}
 		
-		//<µµÇü>
+		//<ë„í˜•>
 		if(mp.getFill().isSelected()) {
 			if(mp.getLine().isSelected()) {
 				bufferG.drawLine(x1, y1, x2, y2);

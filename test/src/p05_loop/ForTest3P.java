@@ -1,9 +1,9 @@
 package p05_loop;
 /*
-´ë¹®ÀÚ(A~Z)¸¦ ¹«ÀÛÀ§·Î 100°³¸¦ ¹ß»ıÇÏ¿© 1ÁÙ¿¡ 10°³¾¿ Ãâ·ÂÇÏ½Ã¿À
-ÀÌÁß¿¡¼­ A°¡ ¸î°³ÀÎÁö Ãâ·ÂÇÏ½Ã¿À
+ëŒ€ë¬¸ì(A~Z)ë¥¼ ë¬´ì‘ìœ„ë¡œ 100ê°œë¥¼ ë°œìƒí•˜ì—¬ 1ì¤„ì— 10ê°œì”© ì¶œë ¥í•˜ì‹œì˜¤
+ì´ì¤‘ì—ì„œ Aê°€ ëª‡ê°œì¸ì§€ ì¶œë ¥í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 H  D  D  R  A  Y  A  K  T  H
 C  X  F  Z  B  S  L  Y  Q  D
 H  K  O  H  O  B  Z  N  J  T
@@ -15,13 +15,13 @@ A  Y  C  I  U  Z  O  B  C  G
 H  G  Y  Z  V  P  I  R  L  G
 Y  H  R  R  M  H  Y  S  B  P
 
-AÀÇ °³¼ö = 6
+Aì˜ ê°œìˆ˜ = 6
 */
 public class ForTest3P {
 
 	public static void main(String[] args) {
-		//³­¼ö¸¦ 65 ~ 90 »çÀÌÀÇ ¼ıÀÚ¸¦ 100°³ ¹ß»ıÇÏ¿© Ãâ·ÂÇÏ½Ã¿À
-		//a~b »çÀÌÀÇ ³­¼ö ¹ß»ı => (int)(math.random()*(b-a+1) + a);
+		//ë‚œìˆ˜ë¥¼ 65 ~ 90 ì‚¬ì´ì˜ ìˆ«ìë¥¼ 100ê°œ ë°œìƒí•˜ì—¬ ì¶œë ¥í•˜ì‹œì˜¤
+		//a~b ì‚¬ì´ì˜ ë‚œìˆ˜ ë°œìƒ => (int)(math.random()*(b-a+1) + a);
 		int alp;
 		int count = 0;
 		
@@ -36,7 +36,7 @@ public class ForTest3P {
 			if((char)alp == 'Y') {
 				count++;
 			}
-		}System.out.println("YÀÇ °³¼ö = " + count);
+		}System.out.println("Yì˜ ê°œìˆ˜ = " + count);
 	}
 
 }

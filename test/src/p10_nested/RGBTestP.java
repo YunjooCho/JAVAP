@@ -12,20 +12,20 @@ import java.awt.event.WindowEvent;
 
 public class RGBTestP extends Frame {
 
-	//1.ÇÊµå¼±¾ğ
+	//1.í•„ë“œì„ ì–¸
 	private Button redBtn, greenBtn, blueBtn;
 	private DrCanvas canvas;
 	
-	//2.»ı¼ºÀÚ - ÇÊµå ÃÊ±âÈ­
+	//2.ìƒì„±ì - í•„ë“œ ì´ˆê¸°í™”
 	public RGBTestP() {
-		//ÇÁ·¹ÀÓ »ı¼º
+		//í”„ë ˆì„ ìƒì„±
 		setBounds(100,100, 200, 300);
 		setVisible(true);
 		
-		//¹öÆ° ÀÛ¼º
-		redBtn = new Button("»¡°­");
-		greenBtn = new Button("ÃÊ·Ï");
-		blueBtn = new Button("ÆÄ¶û");
+		//ë²„íŠ¼ ì‘ì„±
+		redBtn = new Button("ë¹¨ê°•");
+		greenBtn = new Button("ì´ˆë¡");
+		blueBtn = new Button("íŒŒë‘");
 		canvas = new DrCanvas();
 		
 		Panel panel = new Panel();
@@ -33,7 +33,7 @@ public class RGBTestP extends Frame {
 		panel.add(greenBtn);
 		panel.add(blueBtn);
 		
-		//ÀÌº¥Æ®
+		//ì´ë²¤íŠ¸
 		add("North", panel); 
 		add("Center", canvas);
 		redBtn.addActionListener(new ActionListener() {
@@ -64,7 +64,7 @@ public class RGBTestP extends Frame {
 		
 	}
 	
-	//3.CanvasÅ¬·¡½º(CanvasÃß°¡)
+	//3.Canvasí´ë˜ìŠ¤(Canvasì¶”ê°€)
 	class DrCanvas extends Canvas{
 		public DrCanvas() {
 			setBackground(new Color(255,255,0));

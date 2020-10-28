@@ -3,32 +3,32 @@ package abstractMethod;
 abstract class ShapeTest{
 	protected double area;
 	public ShapeTest() {
-		System.out.println("ShapeTest ±âº» »ı¼ºÀÚ");
+		System.out.println("ShapeTest ê¸°ë³¸ ìƒì„±ì");
 	}
 	
-	public abstract void calcArea();//¸Ş¸ğ¸® Â÷Áö ¾ÈÇÔ
+	public abstract void calcArea();//ë©”ëª¨ë¦¬ ì°¨ì§€ ì•ˆí•¨
 	
-	public abstract void dispArea();//¸Ş¸ğ¸® Â÷Áö ¾ÈÇÔ
+	public abstract void dispArea();//ë©”ëª¨ë¦¬ ì°¨ì§€ ì•ˆí•¨
 }
 
 class SamTest extends ShapeTest{
 	protected double base, height;
 	
 	public SamTest(double base, double height) {
-		System.out.println("SamTest »ı¼ºÀÚ");
+		System.out.println("SamTest ìƒì„±ì");
 		this.base = base;
 		this.height = height;
 	}
 	
-	@Override//¾î³ëÅ×ÀÌ¼Ç - ¿À¹ö¶óÀÌµå ÇÏ°íÀÚ ÇÏ´Â ¸Ş¼Òµå¿¡ ¸Ş¼Òµå¸íÀÌ ´Ş¶óµµ ¿¡·¯°¡ °ËÃâµÇÁö ¾ÊÀ½(´Ù¸¥ ¸Ş¼Òµå·Î ÀÎ½Ä)
-	//¶§¹®¿¡ ¾î³ëÅ×ÀÌ¼ÇÀ» ¾²¸é ¿À¹ö¶óÀÌµå°¡ µÆ´ÂÁö Ã¼Å©ÇÏ¿© µÇÁö ¾Ê¾ÒÀ¸¸é ¿¡·¯°¡ °ËÃâµÊ
+	@Override//ì–´ë…¸í…Œì´ì…˜ - ì˜¤ë²„ë¼ì´ë“œ í•˜ê³ ì í•˜ëŠ” ë©”ì†Œë“œì— ë©”ì†Œë“œëª…ì´ ë‹¬ë¼ë„ ì—ëŸ¬ê°€ ê²€ì¶œë˜ì§€ ì•ŠìŒ(ë‹¤ë¥¸ ë©”ì†Œë“œë¡œ ì¸ì‹)
+	//ë•Œë¬¸ì— ì–´ë…¸í…Œì´ì…˜ì„ ì“°ë©´ ì˜¤ë²„ë¼ì´ë“œê°€ ëëŠ”ì§€ ì²´í¬í•˜ì—¬ ë˜ì§€ ì•Šì•˜ìœ¼ë©´ ì—ëŸ¬ê°€ ê²€ì¶œë¨
 	public void calcArea() {
 		area = base * height / 2.0;
 	}
 	
 	@Override
 	public void dispArea() {
-		System.out.println("»ï°¢Çü ³ĞÀÌ = " + area);//ºÎ¸ğÅ¬·¡½º ÇÊµå¸¦ °¡Á®¿È
+		System.out.println("ì‚¼ê°í˜• ë„“ì´ = " + area);//ë¶€ëª¨í´ë˜ìŠ¤ í•„ë“œë¥¼ ê°€ì ¸ì˜´
 	}
 }
 
@@ -38,7 +38,7 @@ class SaTest extends ShapeTest{
 	protected double width, height;
 	
 	public SaTest(double width, double height) {
-		System.out.println("SaTest »ı¼ºÀÚ");
+		System.out.println("SaTest ìƒì„±ì");
 		this.width = width;
 		this.height = height;
 	}
@@ -50,7 +50,7 @@ class SaTest extends ShapeTest{
 	
 	@Override
 	public void dispArea() {
-		System.out.println("»ç°¢Çü ³ĞÀÌ = " + area);
+		System.out.println("ì‚¬ê°í˜• ë„“ì´ = " + area);
 	}
 	
 }
@@ -61,7 +61,7 @@ class SadariTest extends ShapeTest{
 	protected double top, bottom, height;
 	
 	public SadariTest(double top, double bottom, double height) {
-		System.out.println("SadariTest »ı¼ºÀÚ");
+		System.out.println("SadariTest ìƒì„±ì");
 		this.top = top;
 		this.bottom = bottom;
 		this.height =  height;
@@ -74,7 +74,7 @@ class SadariTest extends ShapeTest{
 	
 	@Override
 	public void dispArea() {
-		System.out.println("»ç´Ù¸®²Ã ³ĞÀÌ = " + area);
+		System.out.println("ì‚¬ë‹¤ë¦¬ê¼´ ë„“ì´ = " + area);
 	}
 }
 
@@ -82,10 +82,10 @@ class SadariTest extends ShapeTest{
 public class ShapeMain {
 	public static void main(String[] args) {
 		/*
-		//Å¬·¡½º »ı¼º
+		//í´ë˜ìŠ¤ ìƒì„±
 		SamTest sam = new SamTest(5,7); 
-		sam.calcArea();//ÀÚ½ÄÅ¬·¡½º ¸Ş¼Òµå°¡ Ãâ·Â(ºÎ¸ğ´Â Àı´ë Ãâ·Â¾ÈµÊ)
-		sam.dispArea();//ÀÚ½ÄÅ¬·¡½º ¸Ş¼Òµå°¡ Ãâ·Â(ºÎ¸ğ´Â Àı´ë Ãâ·Â¾ÈµÊ)
+		sam.calcArea();//ìì‹í´ë˜ìŠ¤ ë©”ì†Œë“œê°€ ì¶œë ¥(ë¶€ëª¨ëŠ” ì ˆëŒ€ ì¶œë ¥ì•ˆë¨)
+		sam.dispArea();//ìì‹í´ë˜ìŠ¤ ë©”ì†Œë“œê°€ ì¶œë ¥(ë¶€ëª¨ëŠ” ì ˆëŒ€ ì¶œë ¥ì•ˆë¨)
 		System.out.println();
 		
 		SaTest sa = new SaTest(7,9);
@@ -99,7 +99,7 @@ public class ShapeMain {
 		System.out.println();
 		*/
 		
-		//´ÙÇü¼º -> ºÎ¸ğ = ÀÚ½Ä, °áÇÕµµ°¡ ´À½¼ÇØÁø´Ù
+		//ë‹¤í˜•ì„± -> ë¶€ëª¨ = ìì‹, ê²°í•©ë„ê°€ ëŠìŠ¨í•´ì§„ë‹¤
 		ShapeTest shape;
 		shape = new SamTest(5,7);
 		shape.calcArea();
@@ -116,6 +116,6 @@ public class ShapeMain {
 		shape.dispArea();
 		System.out.println();
 		
-		//°¢°¢ÀÇ °³Ã¼¿¡ µ¤¾î¾º¾îÁü
+		//ê°ê°ì˜ ê°œì²´ì— ë®ì–´ì”Œì–´ì§
 	}
 }

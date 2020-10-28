@@ -1,19 +1,19 @@
 package com.zoo;
 
-public class Zoo {//ÆĞÅ°Áö¸íµµ ´Ù ´Ù¸£¹Ç·Î publicÀ¸·Î ZooÅ¬·¡½º ¿­¾îµÎ±â
+public class Zoo {//íŒ¨í‚¤ì§€ëª…ë„ ë‹¤ ë‹¤ë¥´ë¯€ë¡œ publicìœ¼ë¡œ Zooí´ë˜ìŠ¤ ì—´ì–´ë‘ê¸°
 	public void tiger() {
-		System.out.println("¹«¼­¿î È£¶ûÀÌ");
+		System.out.println("ë¬´ì„œìš´ í˜¸ë‘ì´");
 	}
 	
 	protected void giraffe() {
-		System.out.println("¸ñÀÌ ±ä ±â¸°");
+		System.out.println("ëª©ì´ ê¸´ ê¸°ë¦°");
 	}
 	
 	void elephant() {
-		System.out.println("¶×¶×ÇÑ ÄÚ³¢¸®");
+		System.out.println("ëš±ëš±í•œ ì½”ë¼ë¦¬");
 	}
 	
 	private void lion() {
-		System.out.println("¸ÚÁø »çÀÚ");
+		System.out.println("ë©‹ì§„ ì‚¬ì");
 	}
 }

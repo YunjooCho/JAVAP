@@ -7,30 +7,30 @@ import java.text.DecimalFormat;
 public class NumberTest {
 
 	public static void main(String[] args) {
-		//NumberFormatÀº Ãß»óÅ¬·¡½º
-		//1.ÀÚ½ÄÅ¬·¡½º·Î »ı¼º
+		//NumberFormatì€ ì¶”ìƒí´ë˜ìŠ¤
+		//1.ìì‹í´ë˜ìŠ¤ë¡œ ìƒì„±
 		NumberFormat nf = new DecimalFormat();
-		//3ÀÚ¸®¸¶´Ù ',' & ¼Ò¼öÀÌÇÏ 3ÂÅÀÚ¸®±îÁö Ãâ·Â(ÀÚµ¿ ¹İ¿Ã¸²)
+		//3ìë¦¬ë§ˆë‹¤ ',' & ì†Œìˆ˜ì´í•˜ 3ì©¨ìë¦¬ê¹Œì§€ ì¶œë ¥(ìë™ ë°˜ì˜¬ë¦¼)
 		System.out.println(nf.format(12345678.456789));
 		System.out.println(nf.format(12345678));
 		System.out.println();
 		
-		NumberFormat nf2 = new DecimalFormat("#,###.#¿ø");
+		NumberFormat nf2 = new DecimalFormat("#,###.#ì›");
 		System.out.println(nf2.format(12345678.456789));
 		System.out.println(nf2.format(12345678));
 		System.out.println();
 		
-		NumberFormat nf3 = new DecimalFormat("#,###.0¿ø");
+		NumberFormat nf3 = new DecimalFormat("#,###.0ì›");
 		System.out.println(nf3.format(12345678.456789));
 		System.out.println(nf3.format(12345678));
 		System.out.println();
 		
 		
-		//2.NumberFormatÀÇ ¸Ş¼Òµå¸¦ ÀÌ¿ëÇÑ »ı¼º
+		//2.NumberFormatì˜ ë©”ì†Œë“œë¥¼ ì´ìš©í•œ ìƒì„±
 		//NumberFormat nf4 = NumberFormat.getInstamce();
 		NumberFormat nf4 = NumberFormat.getCurrencyInstance();
-		nf4.setMaximumFractionDigits(2); //¼Ò¼ıÁ¡ ÀÌÇÏ µÑÂ°ÀÚ¸®±îÁö Ç¥½Ã
-		nf4.setMinimumFractionDigits(2); //¼Ò¼ıÁ¡ ÀÌÇÏ µÑÂ°ÀÚ¸®±îÁö °­Á¦·Î Ç¥½Ã
+		nf4.setMaximumFractionDigits(2); //ì†Œìˆ«ì  ì´í•˜ ë‘˜ì§¸ìë¦¬ê¹Œì§€ í‘œì‹œ
+		nf4.setMinimumFractionDigits(2); //ì†Œìˆ«ì  ì´í•˜ ë‘˜ì§¸ìë¦¬ê¹Œì§€ ê°•ì œë¡œ í‘œì‹œ
 		System.out.println(nf4.format(12345678.456789));
 		System.out.println(nf4.format(12345678));
 		System.out.println();

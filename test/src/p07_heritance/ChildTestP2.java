@@ -6,38 +6,38 @@ public class ChildTestP2 extends SuperTestP2{
 	 protected int age;
 	 
 	 public ChildTestP2() {
-		 System.out.println("ChildTestP2 ±âº» »ı¼ºÀÚ");
+		 System.out.println("ChildTestP2 ê¸°ë³¸ ìƒì„±ì");
 	 }
 	 
 	 public ChildTestP2(double weight, double height, String name, int age) {
-		 super(weight, height); //ºÎ¸ğ »ı¼ºÀÚ È£Ãâ, Á¦ÀÏ Ã¹Â°ÁÙ
-		 System.out.println("ChildTestP2 »ı¼ºÀÚ");
+		 super(weight, height); //ë¶€ëª¨ ìƒì„±ì í˜¸ì¶œ, ì œì¼ ì²«ì§¸ì¤„
+		 System.out.println("ChildTestP2 ìƒì„±ì");
 		 //super(weight, height); - error : Constructor call must be the first statement in a constructor
 		 this.name = name;
 		 this.age = age;
 	 }
 	 
-	 public void disp() {//¿À¹ö¶óÀÌµå
-		 System.out.println("ChildTestP2Å¬·¡½ºÀÇ disp()");
-		 System.out.println("¸ö¹«°Ô = " + weight);//superµîÀ» ¼±¾ğÇÏÁö ¾Ê¾Æµµ ºÎ¸ğÅ¬·¡½º¿¡ Á¸ÀçÇÏ±â ¶§¹®¿¡ Á¤»óÀÛµ¿
-		 System.out.println("Å° = " + height);
-		 System.out.println("ÀÌ¸§ = " + name);
-		 System.out.println("³ªÀÌ = " + age);
+	 public void disp() {//ì˜¤ë²„ë¼ì´ë“œ
+		 System.out.println("ChildTestP2í´ë˜ìŠ¤ì˜ disp()");
+		 System.out.println("ëª¸ë¬´ê²Œ = " + weight);//superë“±ì„ ì„ ì–¸í•˜ì§€ ì•Šì•„ë„ ë¶€ëª¨í´ë˜ìŠ¤ì— ì¡´ì¬í•˜ê¸° ë•Œë¬¸ì— ì •ìƒì‘ë™
+		 System.out.println("í‚¤ = " + height);
+		 System.out.println("ì´ë¦„ = " + name);
+		 System.out.println("ë‚˜ì´ = " + age);
 		 
 	 }
 	 
 	 
 	 public static void main(String[] args) {
-			ChildTestP2 aa = new ChildTestP2(75.3, 185.5, "È«±æµ¿", 25);
-			aa.disp(); //ÀÚ½ÄÅ¬·¡½ºÀÎ ChildTest¿¡¼­ ¸ÕÀú Ã£À½
+			ChildTestP2 aa = new ChildTestP2(75.3, 185.5, "í™ê¸¸ë™", 25);
+			aa.disp(); //ìì‹í´ë˜ìŠ¤ì¸ ChildTestì—ì„œ ë¨¼ì € ì°¾ìŒ
 			System.out.println();
 			
-			//ÀÚ½ÄÅ¬·¡½º¿¡ ºÎ¸ğÅ¬·¡½º¿Í µ¿ÀÏÇÑ ÀÌ¸§ÀÇ ¸Ş¼Òµå(disp())°¡ ÀÖ´Â °æ¿ì, 
-			//ºÎ¸ğÅ¬·¡½ºÀÇ ¸Ş¼Òµå´Â ÀÚ½ÄÅ¬·¡½º¿¡¼­ È£ÃâÇÒ ¼ö ¾ø´Ù.
-			//static ¾È¿¡¼­´Â this, super »ç¿ëÇÒ ¼ö ¾ø´Ù
+			//ìì‹í´ë˜ìŠ¤ì— ë¶€ëª¨í´ë˜ìŠ¤ì™€ ë™ì¼í•œ ì´ë¦„ì˜ ë©”ì†Œë“œ(disp())ê°€ ìˆëŠ” ê²½ìš°, 
+			//ë¶€ëª¨í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œëŠ” ìì‹í´ë˜ìŠ¤ì—ì„œ í˜¸ì¶œí•  ìˆ˜ ì—†ë‹¤.
+			//static ì•ˆì—ì„œëŠ” this, super ì‚¬ìš©í•  ìˆ˜ ì—†ë‹¤
 			
 			System.out.println("-----------------------");
-			SuperTestP2 bb = new ChildTestP2(35.8, 156.3, "ÄÚ³­", 13);
+			SuperTestP2 bb = new ChildTestP2(35.8, 156.3, "ì½”ë‚œ", 13);
 			bb.disp();
 		}
 }

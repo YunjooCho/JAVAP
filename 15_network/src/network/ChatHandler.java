@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.List;
 
-//³¬¾ÆÃ¤´Â °Ç Sever°¡ ÇÏÁö¸¸ ½ÇÁ¦·Î ioÃ³¸®(ÀÔÃâ·Â)ÇÏ´Â °Ç Handler
+//ë‚šì•„ì±„ëŠ” ê±´ Severê°€ í•˜ì§€ë§Œ ì‹¤ì œë¡œ ioì²˜ë¦¬(ì…ì¶œë ¥)í•˜ëŠ” ê±´ Handler
 public class ChatHandler extends Thread {
 	
 	private Socket  socket;
@@ -30,35 +30,35 @@ public class ChatHandler extends Thread {
 	 @Override
 	public void run() {
 		 String line;
-		//´Ğ³×ÀÓ ¹Ş´Â ÂÊ
+		//ë‹‰ë„¤ì„ ë°›ëŠ” ìª½
 		 try {
 			String nickName = br.readLine();
-			//¸ğµç Å¬¶óÀÌ¾ğÆ®¿¡°Ô ´Ğ³×ÀÓÁ¤º¸¸¦ º¸³¿(ÀÔÀå) - broadcast()»ç¿ë
-			broadcast(nickName + "´ÔÀÌ ÀÔÀåÇÏ¿´½À´Ï´Ù");
+			//ëª¨ë“  í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ë‹‰ë„¤ì„ì •ë³´ë¥¼ ë³´ëƒ„(ì…ì¥) - broadcast()ì‚¬ìš©
+			broadcast(nickName + "ë‹˜ì´ ì…ì¥í•˜ì˜€ìŠµë‹ˆë‹¤");
 			
 			while(true) {
 				line = br.readLine();
-				if(line == null || line.toLowerCase().equals("quiet")) { //ÅğÀå ÄÚµå°¡ µé¾î¿À¸é ¿¬°áÀ» ´Ù ²÷¾îÁÜ
-																		 //´©±º°¡ ´ë¹®ÀÚ·Î quiet¸¦ »ç¿ë ÇßÀ» ¼öµµ ÀÖÀ¸¹Ç·Î 
-																		 //ÀÔ·ÂµÈ °ªÀ» ¸ğµÎ ¼Ò¹®ÀÚ·Î ¹ŞÀ½
-																		 //line == null ½º·¹µå´Â mainÀÌ Á¾·áµÇ¾îµµ °è¼Ó ³²¾ÆÀÖ´Â °æ¿ì°¡ ÀÖÀ½
-					break; //while¹®À» ³ª¿È
+				if(line == null || line.toLowerCase().equals("quiet")) { //í‡´ì¥ ì½”ë“œê°€ ë“¤ì–´ì˜¤ë©´ ì—°ê²°ì„ ë‹¤ ëŠì–´ì¤Œ
+																		 //ëˆ„êµ°ê°€ ëŒ€ë¬¸ìë¡œ quietë¥¼ ì‚¬ìš© í–ˆì„ ìˆ˜ë„ ìˆìœ¼ë¯€ë¡œ 
+																		 //ì…ë ¥ëœ ê°’ì„ ëª¨ë‘ ì†Œë¬¸ìë¡œ ë°›ìŒ
+																		 //line == null ìŠ¤ë ˆë“œëŠ” mainì´ ì¢…ë£Œë˜ì–´ë„ ê³„ì† ë‚¨ì•„ìˆëŠ” ê²½ìš°ê°€ ìˆìŒ
+					break; //whileë¬¸ì„ ë‚˜ì˜´
 				}
 				
-				//¸Ş½ÃÁö¸¦ ¸ğµç Å¬¶óÀÌ¾ğÆ®¿¡°Ô º¸³»±â
+				//ë©”ì‹œì§€ë¥¼ ëª¨ë“  í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ë³´ë‚´ê¸°
 				broadcast("[" + nickName + "]" + line);
 				
 			}//while
 			
-			//quit¸¦ º¸³½ Å¬¶óÀÌ¾ğÆ®¿¡°Ô quit¸¦ ¸Ş½ÃÁö
+			//quitë¥¼ ë³´ë‚¸ í´ë¼ì´ì–¸íŠ¸ì—ê²Œ quitë¥¼ ë©”ì‹œì§€
 			pw.println("quit");
 			pw.flush();
 			
-			//³²Àº Å¬¶óÀÌ¾ğÆ®¿¡°Ô º¸³»´Â ÅğÀå¸Ş½ÃÁö
-			list.remove(this); //ÇöÀç ÇÚµé·¯ °´Ã¼°ªÀ» Áö¿ò
-			broadcast(nickName + "´ÔÀÌ ÅğÀåÇÏ¿´½À´Ï´Ù");
+			//ë‚¨ì€ í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ë³´ë‚´ëŠ” í‡´ì¥ë©”ì‹œì§€
+			list.remove(this); //í˜„ì¬ í•¸ë“¤ëŸ¬ ê°ì²´ê°’ì„ ì§€ì›€
+			broadcast(nickName + "ë‹˜ì´ í‡´ì¥í•˜ì˜€ìŠµë‹ˆë‹¤");
 			
-			br.close(); //51¹øÁÙ ÀÌÈÄ¿¡ ÇØ´ç ÄÚµùÀÌ ÀÔ·ÂµÇ¾îÀÖ¾îµµ Ã³¸®°¡´É
+			br.close(); //51ë²ˆì¤„ ì´í›„ì— í•´ë‹¹ ì½”ë”©ì´ ì…ë ¥ë˜ì–´ìˆì–´ë„ ì²˜ë¦¬ê°€ëŠ¥
 			pw.close();
 			socket.close();
 			

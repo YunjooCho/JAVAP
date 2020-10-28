@@ -1,8 +1,8 @@
 package p02_variable;
 
 public class Variable3P {
-	int a; //ÀÎ½ºÅÏ½º º¯¼ö
-	static int b;//Å¬·¡½º º¯¼ö
+	int a; //ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
+	static int b;//í´ë˜ìŠ¤ ë³€ìˆ˜
 	
 	static {
 		b = 100;
@@ -10,31 +10,31 @@ public class Variable3P {
 	
 	
 	public static void main(String[] args) {
-		int a = 10; //Áö¿ªº¯¼ö, ±âº»Çü
-			        //ÇÔ¼ö ¿µ¿ª¿¡ ¸Ş¸ğ¸®
-					//³ë¶õ ¹ØÁÙ - ÃÊ±âÈ­ ÇÊ¿ä
-		System.out.println("Áö¿ªº¯¼ö = " + a);
+		int a = 10; //ì§€ì—­ë³€ìˆ˜, ê¸°ë³¸í˜•
+			        //í•¨ìˆ˜ ì˜ì—­ì— ë©”ëª¨ë¦¬
+					//ë…¸ë€ ë°‘ì¤„ - ì´ˆê¸°í™” í•„ìš”
+		System.out.println("ì§€ì—­ë³€ìˆ˜ = " + a);
 		
-		Variable3P v;//°´Ã¼
-		//Èü ¿µ¿ª¿¡ ÀÌ¸§À» Á¤ÇÒ ¼ö ¾øÀ¸¹Ç·Î ÁÖ¼Ò°¡ µé¾î°¨
-		//ÁÖ¼Òº¸°ü(Variable3P°¡ ÀÖ´Â °÷À» °¡¸®Å´
+		Variable3P v;//ê°ì²´
+		//í™ ì˜ì—­ì— ì´ë¦„ì„ ì •í•  ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ì£¼ì†Œê°€ ë“¤ì–´ê°
+		//ì£¼ì†Œë³´ê´€(Variable3Pê°€ ìˆëŠ” ê³³ì„ ê°€ë¦¬í‚´
 		v = new Variable3P();
-		//Å¬·¡½º »ı¼º(»ı¼ºÀÚ ÇÔ¼ö)
-		//Èü ¿µ¿ª¿¡ »ı¼º, ÀÌ¸§À» Á¤ÇÒ ¼ö ¾øÀ½
-		//Variable3P¾ÈÀÇ ¸ğµç ÀÎ½ºÅÏ½º °ª, Å¬·¡½º °ªÀÌ ÀúÀå
-		System.out.println("ÇÊµå a = " + v.a);
+		//í´ë˜ìŠ¤ ìƒì„±(ìƒì„±ì í•¨ìˆ˜)
+		//í™ ì˜ì—­ì— ìƒì„±, ì´ë¦„ì„ ì •í•  ìˆ˜ ì—†ìŒ
+		//Variable3Pì•ˆì˜ ëª¨ë“  ì¸ìŠ¤í„´ìŠ¤ ê°’, í´ë˜ìŠ¤ ê°’ì´ ì €ì¥
+		System.out.println("í•„ë“œ a = " + v.a);
 		v.a = 20;
-		System.out.println("ÇÊµå a = " + v.a);
+		System.out.println("í•„ë“œ a = " + v.a);
 		
 		Variable3P v2 = new Variable3P();
-		System.out.println("ÇÊµå a = " + v2.a);
+		System.out.println("í•„ë“œ a = " + v2.a);
 		
 		int sum = v.a + v2.a;
-		System.out.println("ÇÕ = " + sum);
+		System.out.println("í•© = " + sum);
 		
-		System.out.println("ÇÊµå b = " + Variable3P.b);
-		System.out.println("ÇÊµå b = " + b);
-		System.out.println("ÇÊµå b = " + v.b);
+		System.out.println("í•„ë“œ b = " + Variable3P.b);
+		System.out.println("í•„ë“œ b = " + b);
+		System.out.println("í•„ë“œ b = " + v.b);
 
 	}
 

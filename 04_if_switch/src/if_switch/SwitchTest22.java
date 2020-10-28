@@ -8,13 +8,13 @@ import java.text.DecimalFormat;
 public class SwitchTest22 {
 	public static void main(String[] args) throws IOException {
 		      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		      DecimalFormat df = new DecimalFormat("#.0"); //.ÀÌÈÄ ¼Ò¼ıÀÚ¸®°¡ 000ÀÏ ¶§ »ı·«
+		      DecimalFormat df = new DecimalFormat("#.0"); //.ì´í›„ ì†Œìˆ«ìë¦¬ê°€ 000ì¼ ë•Œ ìƒëµ
 		      
-		      System.out.print("a ÀÔ·Â : ");
+		      System.out.print("a ì…ë ¥ : ");
 		      int a = Integer.parseInt(br.readLine());
-		      System.out.print("b ÀÔ·Â : ");
+		      System.out.print("b ì…ë ¥ : ");
 		      int b = Integer.parseInt(br.readLine());
-		      System.out.print("¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : ");
+		      System.out.print("ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : ");
 		      String op = br.readLine();
 		      
 		      double result=0;
@@ -23,12 +23,12 @@ public class SwitchTest22 {
 		      case "-" : result = a-b; break;
 		      case "*" : result = a*b; break;
 		      case "/" : result = (double)a/b; break;
-		      default  : System.out.println("¿¬»êÀÚ error"); 
-		               System.exit(0); //ÇÁ·Î±×·¥ °­Á¦ Á¾·á
+		      default  : System.out.println("ì—°ì‚°ì error"); 
+		               System.exit(0); //í”„ë¡œê·¸ë¨ ê°•ì œ ì¢…ë£Œ
 		               
 		      }//switch
 		      
-		      System.out.println(a+ op + b + " = "+ df.format(result)); //String.format »ç¿ë ¾ÈÇÔ
+		      System.out.println(a+ op + b + " = "+ df.format(result)); //String.format ì‚¬ìš© ì•ˆí•¨
 		   }
 
 	}

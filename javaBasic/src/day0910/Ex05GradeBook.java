@@ -4,54 +4,54 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//¼ºÀû °ü¸® ÇÁ·Î±×·¥
-//¿ì¸®°¡ »ç¿ëÀÚ·ÎºÎÅÍ ÀÔ·ÂÀ» ¹ŞµÇ
-//Á¦ÀÏ ¸¶Áö¸·¿¡ »ç¿ëÀÚ·ÎºÎÅÍ °è¼ÓÇÒÁö ¸»Áö¸¦ ÀÔ·Â ¹Ş¾Æ¼­
-//¸¸¾à »ç¿ëÀÚ°¡ Á¾·á¸¦ ¼±ÅÃÇÏ¸é ÇÁ·Î±×·¥ÀÌ Á¾·á°¡ µÇ´Â Çü½ÄÀ¸·Î ¸¸µé¾îº¸ÀÚ
+//ì„±ì  ê´€ë¦¬ í”„ë¡œê·¸ë¨
+//ìš°ë¦¬ê°€ ì‚¬ìš©ìë¡œë¶€í„° ì…ë ¥ì„ ë°›ë˜
+//ì œì¼ ë§ˆì§€ë§‰ì— ì‚¬ìš©ìë¡œë¶€í„° ê³„ì†í• ì§€ ë§ì§€ë¥¼ ì…ë ¥ ë°›ì•„ì„œ
+//ë§Œì•½ ì‚¬ìš©ìê°€ ì¢…ë£Œë¥¼ ì„ íƒí•˜ë©´ í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œê°€ ë˜ëŠ” í˜•ì‹ìœ¼ë¡œ ë§Œë“¤ì–´ë³´ì
 
 public class Ex05GradeBook {
 	public static void main(String[] args) throws IOException {
-		//¸Ş¸ğ¸® »ı¼º(ÃÊ±âÈ­µµ ½ÇÇà)
+		//ë©”ëª¨ë¦¬ ìƒì„±(ì´ˆê¸°í™”ë„ ì‹¤í–‰)
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//½ºÆ®¸µÀ» ÃÊ±âÈ­ ÇØÁÖ´Â ¹æ¹ı(Uppercase¸Ş¼Òµå¸¦ »ç¿ëÇÏ¹Ç·Î ÃÊ±âÈ­ ÇÊ¿ä)
-		//1¹ø »ı¼ºÀÚ
+		//ìŠ¤íŠ¸ë§ì„ ì´ˆê¸°í™” í•´ì£¼ëŠ” ë°©ë²•(Uppercaseë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ë¯€ë¡œ ì´ˆê¸°í™” í•„ìš”)
+		//1ë²ˆ ìƒì„±ì
 		String yn = new String();
-		System.out.println("1¹ø" + yn);
-		//2¹ø null
+		System.out.println("1ë²ˆ" + yn);
+		//2ë²ˆ null
 		yn = null;
-		System.out.println("2¹ø" + yn);
-		//3¹ø ¸®ÅÍ·²(°ø¹é)
+		System.out.println("2ë²ˆ" + yn);
+		//3ë²ˆ ë¦¬í„°ëŸ´(ê³µë°±)
 		yn = "";
-		System.out.println("3¹ø" + yn);
-		//4¹ø ¸®ÅÍ·²
-		yn = "½ºÆ®¸µ";
-		System.out.println("4¹ø" + yn);
+		System.out.println("3ë²ˆ" + yn);
+		//4ë²ˆ ë¦¬í„°ëŸ´
+		yn = "ìŠ¤íŠ¸ë§";
+		System.out.println("4ë²ˆ" + yn);
 		
 		do {
-			System.out.println("ÀÌ¸§ : ");
+			System.out.println("ì´ë¦„ : ");
 			String name = bufferedReader.readLine();
 			
-			System.out.println("±¹¾î : ");
+			System.out.println("êµ­ì–´ : ");
 			int kor = Integer.parseInt(bufferedReader.readLine());
 			
-			System.out.println("¿µ¾î : ");
+			System.out.println("ì˜ì–´ : ");
 			int eng = Integer.parseInt(bufferedReader.readLine());
 			
-			System.out.println("¼öÇĞ : ");
+			System.out.println("ìˆ˜í•™ : ");
 			int math = Integer.parseInt(bufferedReader.readLine());
 			
 			int sum = kor + eng + math;
-			System.out.println("ÃÑÁ¡ : " + sum);
+			System.out.println("ì´ì  : " + sum);
 			
-			System.out.println("°è¼ÓÇÏ½Ã°Ú½À´Ï±î? (y/n)");
+			System.out.println("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n)");
 			yn = bufferedReader.readLine();
-			yn = yn.toUpperCase();//±âÁ¸ÀÇ yn¿¡ ³Ö¾îÁÜ sum = sum + i °°Àº °Å?
+			yn = yn.toUpperCase();//ê¸°ì¡´ì˜ ynì— ë„£ì–´ì¤Œ sum = sum + i ê°™ì€ ê±°?
 			//yn = bufferedReader.readLine().toUpperCase();
-			//toUpperCase()¸Ş¼Òµå´Â
-			//ÇØ´ç ³»¿ëÀ» ¸ğµÎ ´ë¹®ÀÚ·Î ¹Ù²ãÁÖ´Â ¸Ş¼ÒµåÀÌ´Ù
+			//toUpperCase()ë©”ì†Œë“œëŠ”
+			//í•´ë‹¹ ë‚´ìš©ì„ ëª¨ë‘ ëŒ€ë¬¸ìë¡œ ë°”ê¿”ì£¼ëŠ” ë©”ì†Œë“œì´ë‹¤
 		}while(yn.equals("Y"));
-		System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+		System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 	}
 
 }

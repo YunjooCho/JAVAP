@@ -21,7 +21,7 @@ public class StudentEx01 {
 	
 	private static void showMenu() throws NumberFormatException, IOException {
 		while(true) {
-			System.out.println("1.ÀÔ·Â   2.Ãâ·Â   3.Á¾·á");
+			System.out.println("1.ì…ë ¥   2.ì¶œë ¥   3.ì¢…ë£Œ");
 			System.out.print("> ");
 			int choice = validateInt(1,3);
 			if(choice == 1) {
@@ -29,7 +29,7 @@ public class StudentEx01 {
 			}else if(choice == 2) {
 				selectAll();
 			}else if(choice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤");
 				break;
 			}
 				
@@ -37,21 +37,21 @@ public class StudentEx01 {
 	}
 	
 	private static void insert() throws IOException {
-		//list¿¡ Ãß°¡ÇÒ Student°´Ã¼¸¦ ÇÏ³ª ¸¸µç´Ù.
+		//listì— ì¶”ê°€í•  Studentê°ì²´ë¥¼ í•˜ë‚˜ ë§Œë“ ë‹¤.
 		Student s = new Student();
 		s.setId(id);
 		id++;
-		System.out.println("ÀÌ¸§");
+		System.out.println("ì´ë¦„");
 		System.out.print("> ");
 		s.setName(bufferedReader.readLine());
 		
-		System.out.println("±¹¾î Á¡¼ö");
+		System.out.println("êµ­ì–´ ì ìˆ˜");
 		s.setKorean(validateInt(0,100));
 		
-		System.out.println("¿µ¾î Á¡¼ö");
+		System.out.println("ì˜ì–´ ì ìˆ˜");
 		s.setEnglish(validateInt(0,100));
 		
-		System.out.println("¼öÇĞ Á¡¼ö");
+		System.out.println("ìˆ˜í•™ ì ìˆ˜");
 		s.setMath(validateInt(0,100));
 		
 		list.add(s);
@@ -61,7 +61,7 @@ public class StudentEx01 {
 		for(int i = 0; i < list.size();i++) {
 			System.out.printf("%d. %s\n", i+1, list.get(i).getName());
 		}
-		System.out.println("»ó¼¼º¸±âÇÒ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä (0Àº Á¾·á)");
+		System.out.println("ìƒì„¸ë³´ê¸°í•  ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš” (0ì€ ì¢…ë£Œ)");
 		int userChoice = validateInt(0, list.size()) - 1;
 		if(userChoice == -1) {
 			
@@ -72,10 +72,10 @@ public class StudentEx01 {
 	
 	private static void selectOne(int index) throws IOException {
 		Student s = list.get(index);
-		System.out.printf("ÀÌ¸§ : %s ÇĞ¹ø : %d\n", s.getName(), s.getId());
-		System.out.printf("±¹¾î : %d ¿µ¾î : %d ¼öÇĞ : %d", s.getKorean(), s.getEnglish(), s.getMath());
-		System.out.printf("ÃÑÁ¡ : %d Æò±Õ : %.2f\n", s.calculateSum(), s.calculateAverage());
-		System.out.println("1.¼öÁ¤   2. »èÁ¦   3.¸ñ·ÏÀ¸·Î");
+		System.out.printf("ì´ë¦„ : %s í•™ë²ˆ : %d\n", s.getName(), s.getId());
+		System.out.printf("êµ­ì–´ : %d ì˜ì–´ : %d ìˆ˜í•™ : %d", s.getKorean(), s.getEnglish(), s.getMath());
+		System.out.printf("ì´ì  : %d í‰ê·  : %.2f\n", s.calculateSum(), s.calculateAverage());
+		System.out.println("1.ìˆ˜ì •   2. ì‚­ì œ   3.ëª©ë¡ìœ¼ë¡œ");
 		int userChoice = validateInt(1,3);
 		if(userChoice == 1) {
 			update(index);
@@ -87,16 +87,16 @@ public class StudentEx01 {
 	}
 	
 	private static void update(int index) throws IOException {
-		System.out.println("ÀÌ¸§");
+		System.out.println("ì´ë¦„");
 		System.out.print("> ");
 		list.get(index).setName(bufferedReader.readLine());
-		System.out.println("±¹¾î");
+		System.out.println("êµ­ì–´");
 		System.out.print("> ");
 		list.get(index).setKorean(validateInt(0,100));
-		System.out.println("ÀÌ¸§");
+		System.out.println("ì´ë¦„");
 		System.out.print("> ");
 		list.get(index).setEnglish(validateInt(0,100));
-		System.out.println("ÀÌ¸§");
+		System.out.println("ì´ë¦„");
 		System.out.print("> ");
 		list.get(index).setMath(validateInt(0,100));
 		selectOne(index);
@@ -106,7 +106,7 @@ public class StudentEx01 {
 	
 	
 	private static void delete(int index) throws IOException {
-		System.out.println("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?");
+		System.out.println("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
 		System.out.print("> ");
 		String yn = bufferedReader.readLine().toUpperCase();
 		if(yn.equals("Y")) {
@@ -118,11 +118,11 @@ public class StudentEx01 {
 	}
 	
 	
-	//¼ıÀÚÀÇ À¯È¿°ªÈ®ÀÎ ¸Ş¼Òµå¿Í ¼ıÀÚ-±ÛÀÚ È®ÀÎ ¸Ş¼Òµå µû·Î ¸¸µé °Í!!!
+	//ìˆ«ìì˜ ìœ íš¨ê°’í™•ì¸ ë©”ì†Œë“œì™€ ìˆ«ì-ê¸€ì í™•ì¸ ë©”ì†Œë“œ ë”°ë¡œ ë§Œë“¤ ê²ƒ!!!
 	private static int stringToInteger() throws IOException {
 		String userInput = bufferedReader.readLine();
 		while(!userInput.matches("\\d*")) {
-			System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ìˆ«ìë§Œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			System.out.print("> ");
 			userInput = bufferedReader.readLine();
 		}
@@ -130,12 +130,12 @@ public class StudentEx01 {
 	}
 	
 	
-	//Å°º¸µå·Î ÀÔ·ÂµÈ °ªÀ» stringToInteger()¿¡¼­ ±ÛÀÚÀÏ¶© ¹İº¹¹® ½ÇÇà, ¼ıÀÚÀÏ¶© Á¤¼öÈ­ÇÏ¿© Ãâ·Â
-	//Á¤¼öÈ­µÈ °ªÀÌ À¯È¿ÇÑÁö È®ÀÎ
+	//í‚¤ë³´ë“œë¡œ ì…ë ¥ëœ ê°’ì„ stringToInteger()ì—ì„œ ê¸€ìì¼ë• ë°˜ë³µë¬¸ ì‹¤í–‰, ìˆ«ìì¼ë• ì •ìˆ˜í™”í•˜ì—¬ ì¶œë ¥
+	//ì •ìˆ˜í™”ëœ ê°’ì´ ìœ íš¨í•œì§€ í™•ì¸
 	private static int validateInt(int minimum, int maximum) throws IOException {
 		int value = stringToInteger(); 
 		while(value < minimum || value > maximum) {
-			System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			System.out.print("> ");
 			value = stringToInteger();
 		}

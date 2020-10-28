@@ -5,11 +5,11 @@ public class SubTestP extends SuperTestP{
 	protected int age;
 	
 	public SubTestP() {
-		System.out.println("SubTestP ±âº» »ı¼ºÀÚ");
+		System.out.println("SubTestP ê¸°ë³¸ ìƒì„±ì");
 	}
 	
 	public SubTestP(double weight, double height, String name, int age) {
-		System.out.println("SubTestP »ı¼ºÀÚ");
+		System.out.println("SubTestP ìƒì„±ì");
 		super.weight = weight;
 		super.height = height;
 		this.name = name;
@@ -17,23 +17,23 @@ public class SubTestP extends SuperTestP{
 	}
 	
 	public void output() {
-		System.out.println("¸ö¹«°Ô = " + weight);
-		System.out.println("Å° = " + height);
-		System.out.println("ÀÌ¸§ = " + name);
-		System.out.println("³ªÀÌ = " + age);
+		System.out.println("ëª¸ë¬´ê²Œ = " + weight);
+		System.out.println("í‚¤ = " + height);
+		System.out.println("ì´ë¦„ = " + name);
+		System.out.println("ë‚˜ì´ = " + age);
 	}
 	
 	public static void main(String[] args) {
 		SubTestP a = new SubTestP();
 		System.out.println();
 		
-		SubTestP aa = new SubTestP(75.3, 185.6, "È«±æµ¿", 25);
+		SubTestP aa = new SubTestP(75.3, 185.6, "í™ê¸¸ë™", 25);
 		aa.output();
 		System.out.println();
 		
-		aa.disp();//ºÎ¸ğÅ¬·¡½ºÀÇ ¸Ş¼Òµå¸¦ ºô·Á¿È
+		aa.disp();//ë¶€ëª¨í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ ë¹Œë ¤ì˜´
 		
-		SuperTestP bb = new SubTestP(35.8, 156.3, "ÄÚ³­", 13);
-		bb.disp();//bb.outpu()Àº »ç¿ëÇÒ¼ö ¾øÀ½
+		SuperTestP bb = new SubTestP(35.8, 156.3, "ì½”ë‚œ", 13);
+		bb.disp();//bb.outpu()ì€ ì‚¬ìš©í• ìˆ˜ ì—†ìŒ
 	}
 }

@@ -10,12 +10,12 @@ public class Compute {
 	private double div;
 	
 	
-	public Compute(int x, int y) { //µ¥ÀÌÅÍ¸¦ ¹Ş¾Æ ÇÊµå¿¡ °ªÀ» ³Ñ°ÜÁÜ
+	public Compute(int x, int y) { //ë°ì´í„°ë¥¼ ë°›ì•„ í•„ë“œì— ê°’ì„ ë„˜ê²¨ì¤Œ
 		this.x = x;
 		this.y = y;
 	}
 	
-	public void calc() {//»ı¼ºÀÚ·Î ÀÌ¹Ì ÇÊµå¿¡ °ªÀÌ Á¸ÀçÇÏ¹Ç·Î ÆÄ¶ó¹ÌÅÍ ÇÊ¿ä ¾øÀ½
+	public void calc() {//ìƒì„±ìë¡œ ì´ë¯¸ í•„ë“œì— ê°’ì´ ì¡´ì¬í•˜ë¯€ë¡œ íŒŒë¼ë¯¸í„° í•„ìš” ì—†ìŒ
 		
 		sum = x + y;
 		
@@ -36,7 +36,7 @@ public class Compute {
 	}
 	
 	public int getSum() {
-		//calc(); °á°ú°ªÀº °°À¸³ª ¸ŞÀÎ¿¡ ÇÑ¹ø¸¸ ½áÁÖ¸é ´õ °£´Ü
+		//calc(); ê²°ê³¼ê°’ì€ ê°™ìœ¼ë‚˜ ë©”ì¸ì— í•œë²ˆë§Œ ì¨ì£¼ë©´ ë” ê°„ë‹¨
 		return sum;
 	}
 	

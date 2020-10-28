@@ -15,31 +15,31 @@ public class JListEXP extends JFrame{
 		super("JLIst Test");
 		setLayout(new FlowLayout());
 		
-		//3.°ü¸® ¸®½ºÆ®¸¦ »ı¼º
+		//3.ê´€ë¦¬ ë¦¬ìŠ¤íŠ¸ë¥¼ ìƒì„±
 		String[] listData = {"Hong", "Gil", "Dong", "JAVA", "JSP"};
 		JList<String> list1 = new JList<String>(listData);
 		list1.setSelectedIndex(1);
 		
 		DefaultListModel<String> model = new DefaultListModel<String>();
-		JList<String> list2 = new JList<String>(model); //¸ğµ¨·Î Jlist°ü¸®
-		model.addElement("»ç°ú");
-		model.addElement("¹è");
-		model.addElement("µş±â");
-		model.addElement("¹Ù³ª³ª");
+		JList<String> list2 = new JList<String>(model); //ëª¨ë¸ë¡œ Jlistê´€ë¦¬
+		model.addElement("ì‚¬ê³¼");
+		model.addElement("ë°°");
+		model.addElement("ë”¸ê¸°");
+		model.addElement("ë°”ë‚˜ë‚˜");
 		list2.setSelectedIndex(3);
 		
 		Vector<String> vListData = new Vector<String>();
 		JList<String> list3 = new JList<String>(vListData);
 		JScrollPane scroll = new JScrollPane(list3);
-		vListData.add("Ãà±¸");
-		vListData.add("¾ß±¸");
-		vListData.add("³ó±¸");
-		vListData.add("¹è±¸");
-		vListData.add("Å×´Ï½º");
-		vListData.add("¼ö¿µ");
-		vListData.add("À°»ó");
-		vListData.add("ÅÂ±Çµµ");
-		vListData.add("À¯µµ");
+		vListData.add("ì¶•êµ¬");
+		vListData.add("ì•¼êµ¬");
+		vListData.add("ë†êµ¬");
+		vListData.add("ë°°êµ¬");
+		vListData.add("í…Œë‹ˆìŠ¤");
+		vListData.add("ìˆ˜ì˜");
+		vListData.add("ìœ¡ìƒ");
+		vListData.add("íƒœê¶Œë„");
+		vListData.add("ìœ ë„");
 		
 		class Student{
 			String id;
@@ -62,17 +62,17 @@ public class JListEXP extends JFrame{
 		list4.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		DefaultListModel<Student> model2 = (DefaultListModel<Student>) list4.getModel();
 		
-		model2.addElement(new Student("100","È«±æµ¿", "Àü»ê°ú"));
-		model2.addElement(new Student("200","¼Õ¿À°ø", "°ÇÃà°ú"));
-		model2.addElement(new Student("300","»ç¿ÀÁ¤", "Åä¸ñ°ú"));
-		model2.addElement(new Student("400","ÀúÆÈ°è", "°æ¿µÇĞ°ú"));
+		model2.addElement(new Student("100","í™ê¸¸ë™", "ì „ì‚°ê³¼"));
+		model2.addElement(new Student("200","ì†ì˜¤ê³µ", "ê±´ì¶•ê³¼"));
+		model2.addElement(new Student("300","ì‚¬ì˜¤ì •", "í† ëª©ê³¼"));
+		model2.addElement(new Student("400","ì €íŒ”ê³„", "ê²½ì˜í•™ê³¼"));
 		
 		add(list1);
 		add(list2);
 		add(scroll);
 		add(list4);
 		
-		//2.ÇÁ·¹ÀÓ »ı¼º
+		//2.í”„ë ˆì„ ìƒì„±
 		setBounds(800, 200, 400, 500);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);

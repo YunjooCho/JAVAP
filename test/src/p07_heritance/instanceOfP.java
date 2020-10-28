@@ -1,8 +1,8 @@
 package p07_heritance;
 
-class AA{} //ºÎ¸ğÅ¬·¡½º
+class AA{} //ë¶€ëª¨í´ë˜ìŠ¤
 
-class BB extends AA{} //ÀÚ½ÄÅ¬·¡½º
+class BB extends AA{} //ìì‹í´ë˜ìŠ¤
 
 
 public class instanceOfP {
@@ -11,14 +11,14 @@ public class instanceOfP {
 		BB bb = new BB();
 		AA aa2 = new BB();
 		
-		AA aa3 = aa; //»ı¼ºµÈ aa3°´Ã¼¿¡ aaÀÇ ÁÖ¼Ò°ªÀ» ´ëÀÔ?
+		AA aa3 = aa; //ìƒì„±ëœ aa3ê°ì²´ì— aaì˜ ì£¼ì†Œê°’ì„ ëŒ€ì…?
 		if(aa instanceof AA){
 			System.out.println("1.TRUE");
 		}else {
 			System.out.println("1.FALSE");
 		}
 		
-		AA aa4 = bb; //ºÎ¸ğ(AA)´Â ÀÚ½ÄÅ¬·¡½º(BB)¸¦ ÂüÁ¶ÇÒ ¼ö ÀÖ´Ù.
+		AA aa4 = bb; //ë¶€ëª¨(AA)ëŠ” ìì‹í´ë˜ìŠ¤(BB)ë¥¼ ì°¸ì¡°í•  ìˆ˜ ìˆë‹¤.
 		if(bb instanceof AA) {
 			System.out.println("2.TRUE");
 		}else {

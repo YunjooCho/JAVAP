@@ -1,15 +1,15 @@
 package day0921;
 
 public class Board {
-	//ÇÊµå
-	//°Ô½Ã±Û ¹øÈ£, Á¦¸ñ, ³»¿ë, ÀÛ¼ºÀÚ
+	//í•„ë“œ
+	//ê²Œì‹œê¸€ ë²ˆí˜¸, ì œëª©, ë‚´ìš©, ì‘ì„±ì
 	private int id;
 	private String title;
 	private String content;
 	private String writer;
 	
-	//ÀÚµ¿ °ÙÅÍ&¼ÂÅÍ ¸¸µé±â
-	//¿À¸¥ÂÊ ¸¶¿ì½º - [Source] - [Generate Getters and Setters....] - ¸¸µé ÇÊµåµéÀ» ¼±ÅÃ - [Generate]Å¬¸¯ 
+	//ìë™ ê²Ÿí„°&ì…‹í„° ë§Œë“¤ê¸°
+	//ì˜¤ë¥¸ìª½ ë§ˆìš°ìŠ¤ - [Source] - [Generate Getters and Setters....] - ë§Œë“¤ í•„ë“œë“¤ì„ ì„ íƒ - [Generate]í´ë¦­ 
 	public int getId() {
 		return id;
 	}
@@ -37,13 +37,13 @@ public class Board {
 	
 	public boolean equals(Object o) {
 		if(o instanceof Board) {
-			Board b = (Board)o; //°´Ã¼ o¾È¿¡ id¿Í titleÇÊµå°¡ ¾øÀ½(ÇÊµå°¡ ÀÖ´Â °ÍÀº BoardÀÇ °´Ã¼)
-								//Çüº¯È¯À» ÅëÇØ ÇÊµå°¡ Object¿¡µµ µé¾îÀÖ°Ô ÇÔ?
+			Board b = (Board)o; //ê°ì²´ oì•ˆì— idì™€ titleí•„ë“œê°€ ì—†ìŒ(í•„ë“œê°€ ìˆëŠ” ê²ƒì€ Boardì˜ ê°ì²´)
+								//í˜•ë³€í™˜ì„ í†µí•´ í•„ë“œê°€ Objectì—ë„ ë“¤ì–´ìˆê²Œ í•¨?
 			if(id == b.id && title.contentEquals(b.title))
 			return true;
 		}
 				
 		return false;
-	}//equals¸Ş¼Òµå
+	}//equalsë©”ì†Œë“œ
 	
 }

@@ -7,35 +7,35 @@ import java.io.IOException;
 public class Methode4P {
 
 	public static void main(String[] args) throws IOException {
-		System.out.println(Math.abs(-25)); //¡ÚÄ¿ÇÇ ÀÚÆÇ±â(300) Çü½Ä
+		System.out.println(Math.abs(-25)); //â˜…ì»¤í”¼ ìíŒê¸°(300) í˜•ì‹
 		
-		//³­¼ö - ÄÄÇ»ÅÍ°¡ ¹«ÀÛÀ§·Î ¹ß»ıÇÏ´Â ¼ö
-		System.out.println("³­¼ö = " + Math.random()); //¡ÚÄ¿ÇÇ ÀÚÆÇ°¡()Çü½Ä
+		//ë‚œìˆ˜ - ì»´í“¨í„°ê°€ ë¬´ì‘ìœ„ë¡œ ë°œìƒí•˜ëŠ” ìˆ˜
+		System.out.println("ë‚œìˆ˜ = " + Math.random()); //â˜…ì»¤í”¼ ìíŒê°€()í˜•ì‹
 		
-		//³­¼ö¸¸ Ã³¸®ÇÏ´Â Å¬·¡½º
+		//ë‚œìˆ˜ë§Œ ì²˜ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
 		Random r = new Random();
-		System.out.println("³­¼ö = " + r.nextDouble());
+		System.out.println("ë‚œìˆ˜ = " + r.nextDouble());
 		
-		//¼ıÀÚ 3ÀÚ¸®¸¶´Ù ,Âï´Â ¸Ş¼Òµå
+		//ìˆ«ì 3ìë¦¬ë§ˆë‹¤ ,ì°ëŠ” ë©”ì†Œë“œ
 		int num = 1234567;
 		DecimalFormat df = new DecimalFormat("#,###");
 		System.out.println(df.format(num));
 		
-		//Å°º¸µå ÀÔ·Â - 1°³ÀÇ ¹®ÀÚ
-		System.out.print("µ¥ÀÌÅÍ a : ");
+		//í‚¤ë³´ë“œ ì…ë ¥ - 1ê°œì˜ ë¬¸ì
+		System.out.print("ë°ì´í„° a : ");
 		char a = (char)System.in.read();
-		//flush -  ¹öÆÛ ºñ¿ì±â
+		//flush -  ë²„í¼ ë¹„ìš°ê¸°
 		System.in.read();
 		System.in.read();
 		
-		System.out.print("µ¥ÀÌÅÍ b : ");
+		System.out.print("ë°ì´í„° b : ");
 		char b = (char)System.in.read();
-		System.out.println("°á°ú = " + a + "\t" + b);
+		System.out.println("ê²°ê³¼ = " + a + "\t" + b);
 		
-		//»ç¿ëÀÚ Á¤ÀÇ ÇÔ¼ö
+		//ì‚¬ìš©ì ì •ì˜ í•¨ìˆ˜
 		Methode4P mt4 = new Methode4P();
 		char max = mt4.big(a,b);
-		System.out.println("Å« °ª = " + max);
+		System.out.println("í° ê°’ = " + max);
 	}
 
 	public char big(char a, char b) {

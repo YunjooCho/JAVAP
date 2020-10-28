@@ -1,18 +1,18 @@
 package class_constructor;
 
-public class StaticTest { //extends Object°¡ »ı·«µÇ¾î ÀÖÀ½
-	private int a; //ÇÊµå, ÀÎ½ºÅÏ½º º¯¼ö
-	private static int b; //ÇÊµå, Å¬·¡½º º¯¼ö, ´©ÀûÀÇ °³³ä
+public class StaticTest { //extends Objectê°€ ìƒëµë˜ì–´ ìˆìŒ
+	private int a; //í•„ë“œ, ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜
+	private static int b; //í•„ë“œ, í´ë˜ìŠ¤ ë³€ìˆ˜, ëˆ„ì ì˜ ê°œë…
 	
 	static {
-		System.out.println("ÃÊ±âÈ­ ¿µ¿ª"); //staticÀÇ ÃÊ±âÈ­
+		System.out.println("ì´ˆê¸°í™” ì˜ì—­"); //staticì˜ ì´ˆê¸°í™”
 		b = 3;
 	}
 	
 	public StaticTest() {
-		System.out.println("±âº» »ı¼ºÀÚ");
+		System.out.println("ê¸°ë³¸ ìƒì„±ì");
 		this.a = 3; 
-		//ÃÊ±âÈ­(staticÀº »ı¼ºÀÚ¿¡¼­ ÃÊ±âÈ­ µÇÁö ¾ÊÀ½), staticÀº ÀÌ¹Ì main¸Ş¼Òµå »ı¼º½Ã ¸¸µé¾îÁü
+		//ì´ˆê¸°í™”(staticì€ ìƒì„±ìì—ì„œ ì´ˆê¸°í™” ë˜ì§€ ì•ŠìŒ), staticì€ ì´ë¯¸ mainë©”ì†Œë“œ ìƒì„±ì‹œ ë§Œë“¤ì–´ì§
 		
 	}
 	
@@ -23,13 +23,13 @@ public class StaticTest { //extends Object°¡ »ı·«µÇ¾î ÀÖÀ½
 	
 	public void disp() {
 		System.out.println("a=" + this.a + "\t b=" + StaticTest.b); 
-		//this.aÀÇ this´Â »ı·«°¡´É
-		//StaticTest.bÀÇ StaticTest´Â »ı·«°¡´É
+		//this.aì˜ thisëŠ” ìƒëµê°€ëŠ¥
+		//StaticTest.bì˜ StaticTestëŠ” ìƒëµê°€ëŠ¥
 	}
 	
-	public static void output() { //ÀÎ½ºÅÏ½º º¯¼öµµ, super()µµ »ç¿ëÇÒ ¼ö ¾øÀ½
+	public static void output() { //ì¸ìŠ¤í„´ìŠ¤ ë³€ìˆ˜ë„, super()ë„ ì‚¬ìš©í•  ìˆ˜ ì—†ìŒ
 		//System.out.println("a=" + a + "\t b=" + StaticTest.b); 
-		//- error : static¸Ş¼Òµå¿¡´Â staticº¯¼ö¸¸ Á¢±Ù °¡´É
+		//- error : staticë©”ì†Œë“œì—ëŠ” staticë³€ìˆ˜ë§Œ ì ‘ê·¼ ê°€ëŠ¥
 		System.out.println("static method...");
 	}
 	
@@ -49,8 +49,8 @@ public class StaticTest { //extends Object°¡ »ı·«µÇ¾î ÀÖÀ½
 		st3.disp();
 		System.out.println();
 		
-		System.out.println("static ¸Ş¼Òµå È£Ãâ");
-		StaticTest.output();//Å¬·¡½º¸í »ı·« °¡´É
+		System.out.println("static ë©”ì†Œë“œ í˜¸ì¶œ");
+		StaticTest.output();//í´ë˜ìŠ¤ëª… ìƒëµ ê°€ëŠ¥
 		output();
 		st.output();
 		st2.output();

@@ -1,33 +1,33 @@
 package inheritance;
 /*
-//Å¬·¡½ºÀÇ ³»ºÎ ¸Ş¼Òµå ´Ù ¿Ü¿ìÁö ¾Ê¾Æµµ µÊ
+//í´ë˜ìŠ¤ì˜ ë‚´ë¶€ ë©”ì†Œë“œ ë‹¤ ì™¸ìš°ì§€ ì•Šì•„ë„ ë¨
 class Object{
-	public boolean equals(Object ob) //ÂüÁ¶°ª ºñ±³
-	public String toString(){} //ÆĞÅ°Áö¸í.Å¬·¡½º¸í@16Áø¼ö
-	public int hashCode(){}//10Áø¼ö
+	public boolean equals(Object ob) //ì°¸ì¡°ê°’ ë¹„êµ
+	public String toString(){} //íŒ¨í‚¤ì§€ëª….í´ë˜ìŠ¤ëª…@16ì§„ìˆ˜
+	public int hashCode(){}//10ì§„ìˆ˜
 }
 
 final class String extends Object{
-	public boolean equals(Object ob){} //¹®ÀÚ¿­ ºñ±³, ObjectÅ¬·¡½ºÀÇ equals()¸Ş¼Òµå ¿À¹ö¶óÀÌµå
+	public boolean equals(Object ob){} //ë¬¸ìì—´ ë¹„êµ, Objectí´ë˜ìŠ¤ì˜ equals()ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë“œ
 	public String toString(){} 
-	//¹®ÀÚ¿­(StringÅ¬·¡½º´Â javaÀÚÃ¼¿¡¼­ toString¿À¹ö¶óÀÌµùÀÌ µÇ¾îÀÖ¾î toString()¿À¹ö¶óÀÌµùÀ» »ç¿ëÀÚ°¡ ÇÏÁö ¾Ê¾Æµµ
-	             ÀÚµ¿À¸·Î ÁÖ¼Ò°ªÀÌ ¾Æ´Ñ ¹®ÀÚ¿­ÀÌ Ãâ·ÂµÊ)
-	//final·Î »ó¼ÓÀÌ ¸·ÇôÀÖ±â ¶§¹®¿¡ ÀÚ½ÄÅ¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµåµµ ºÒ°¡´É    
+	//ë¬¸ìì—´(Stringí´ë˜ìŠ¤ëŠ” javaìì²´ì—ì„œ toStringì˜¤ë²„ë¼ì´ë”©ì´ ë˜ì–´ìˆì–´ toString()ì˜¤ë²„ë¼ì´ë”©ì„ ì‚¬ìš©ìê°€ í•˜ì§€ ì•Šì•„ë„
+	             ìë™ìœ¼ë¡œ ì£¼ì†Œê°’ì´ ì•„ë‹Œ ë¬¸ìì—´ì´ ì¶œë ¥ë¨)
+	//finalë¡œ ìƒì†ì´ ë§‰í˜€ìˆê¸° ë•Œë¬¸ì— ìì‹í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë“œë„ ë¶ˆê°€ëŠ¥    
 	public int hasCode(){}
-	//¹®ÀÚ¿­À» 10Áø¼ö·Î º¯È¯
-	//¹®ÀÚ¿­ °è»ê½Ä¿¡ ÀÇÇØ¼­ ¸¸µé¾îÁø °ª
-	//¹®ÀÚ¿­Àº ¹«ÇÑÀÌ¹Ç·Î 10Áø¼ö·Î ´Ù Ç¥±âÇÒ ¼ö ¾ø´Ù
-	//´Ù¸¥ ¹®ÀÚ¿­ÀÌ¾îµµ °°Àº ÇØ½Ã°ªÀÌ ¹ß»ı ÇÒ ¼ö ÀÖ´Ù
-	//int´Â 21¾ï°³ÀÎµ¥ ¹İÇØ, ¹®ÀÚ¿­Àº ¹«ÇÑ´ë¶ó¼­ Ç¥½Ã°¡ ºÒ°¡´ÉÇÏ´Ù         
+	//ë¬¸ìì—´ì„ 10ì§„ìˆ˜ë¡œ ë³€í™˜
+	//ë¬¸ìì—´ ê³„ì‚°ì‹ì— ì˜í•´ì„œ ë§Œë“¤ì–´ì§„ ê°’
+	//ë¬¸ìì—´ì€ ë¬´í•œì´ë¯€ë¡œ 10ì§„ìˆ˜ë¡œ ë‹¤ í‘œê¸°í•  ìˆ˜ ì—†ë‹¤
+	//ë‹¤ë¥¸ ë¬¸ìì—´ì´ì–´ë„ ê°™ì€ í•´ì‹œê°’ì´ ë°œìƒ í•  ìˆ˜ ìˆë‹¤
+	//intëŠ” 21ì–µê°œì¸ë° ë°˜í•´, ë¬¸ìì—´ì€ ë¬´í•œëŒ€ë¼ì„œ í‘œì‹œê°€ ë¶ˆê°€ëŠ¥í•˜ë‹¤         
 
 */
 
-class Test2 extends Object{ //´Ù¸¥ °Íµéµµ extends Object°¡ »ı·«µÇ¾î ÀÖÀ½
+class Test2 extends Object{ //ë‹¤ë¥¸ ê²ƒë“¤ë„ extends Objectê°€ ìƒëµë˜ì–´ ìˆìŒ
 	@Override
-	public String toString() { //ObjectÅ¬·¡½º(ºÎ¸ğÅ¬·¡½º)ÀÇ toString()¸Å¼Òµå¸¦
-							   //Test2(ÀÚ½ÄÅ¬·¡½º)¿¡¼­ ¿À¹ö¶óÀÌµù(¿À¹ö¶óÀÌµå ÇÑ ÀÚ½Ä ¸Ş¼Òµå¸¸ È£ÃâµÊ)
+	public String toString() { //Objectí´ë˜ìŠ¤(ë¶€ëª¨í´ë˜ìŠ¤)ì˜ toString()ë§¤ì†Œë“œë¥¼
+							   //Test2(ìì‹í´ë˜ìŠ¤)ì—ì„œ ì˜¤ë²„ë¼ì´ë”©(ì˜¤ë²„ë¼ì´ë“œ í•œ ìì‹ ë©”ì†Œë“œë§Œ í˜¸ì¶œë¨)
 		//return super.toString();
-		return "°³¹ÙºÎ";
+		return "ê°œë°”ë¶€";
 	}
 }
 
@@ -36,34 +36,34 @@ public class ObjectMain {
 
 	public static void main(String[] args) {
 		Test2 t = new Test2();
-		System.out.println("°´Ã¼ t = " + t);
-		System.out.println("°´Ã¼ t = " + t.toString()); //toString()ÀÌ ÁÖ¼Ò°ª(16Áø¼ö)À» °¡Áö°í ÀÖÀ½
-		System.out.println("°´Ã¼ t = " + t.hashCode());
+		System.out.println("ê°ì²´ t = " + t);
+		System.out.println("ê°ì²´ t = " + t.toString()); //toString()ì´ ì£¼ì†Œê°’(16ì§„ìˆ˜)ì„ ê°€ì§€ê³  ìˆìŒ
+		System.out.println("ê°ì²´ t = " + t.hashCode());
 	
 		String str = "apple";
-		System.out.println("°´Ã¼ str = " + str);
-		System.out.println("°´Ã¼ str = " + str.toString());
-		System.out.println("°´Ã¼ str = " + str.hashCode()); //½Åºù¼ºÀÌ ¾ø´Â ¼ıÀÚ
+		System.out.println("ê°ì²´ str = " + str);
+		System.out.println("ê°ì²´ str = " + str.toString());
+		System.out.println("ê°ì²´ str = " + str.hashCode()); //ì‹ ë¹™ì„±ì´ ì—†ëŠ” ìˆ«ì
 		System.out.println(str);
 		System.out.println();
 		
 		String aa = new String("apple");
 		String bb = new String("apple");
-		System.out.println("aa==bb : " + (aa==bb)); //ÁÖ¼Ò°ª ºñ±³, false
-		System.out.println("aa.equals(bb): " + aa.equals(bb)); //¹®ÀÚ¿­ ºñ±³, true
+		System.out.println("aa==bb : " + (aa==bb)); //ì£¼ì†Œê°’ ë¹„êµ, false
+		System.out.println("aa.equals(bb): " + aa.equals(bb)); //ë¬¸ìì—´ ë¹„êµ, true
 		System.out.println();
 		
 		Object cc = new Object();
 		Object dd = new Object();
-		System.out.println("cc==dd : " + (cc==dd)); //ÁÖ¼Ò°ª ºñ±³, false
-		System.out.println("cc.equals(dd): " + cc.equals(dd)); //ÁÖ¼Ò°ª ºñ±³(ObjectÅ¬·¡½º°¡ ºÒ·ÈÀ¸¹Ç·Î), false
+		System.out.println("cc==dd : " + (cc==dd)); //ì£¼ì†Œê°’ ë¹„êµ, false
+		System.out.println("cc.equals(dd): " + cc.equals(dd)); //ì£¼ì†Œê°’ ë¹„êµ(Objectí´ë˜ìŠ¤ê°€ ë¶ˆë ¸ìœ¼ë¯€ë¡œ), false
 		System.out.println();
 		
 		Object ee = new String("apple");
 		Object ff = new String("apple");
-		System.out.println("ee==ff : " + (ee==ff)); //ÁÖ¼Ò°ª ºñ±³, false
-		System.out.println("ee.equals(ff): " + ee.equals(ff)); //OverrideµÈ ÀÚ½ÄÅ¬·¡½ºÀÇ equals()¸¦ È£Ãâ(´ÙÇü¼º) 
-		                                                       // ¹®ÀÚ¿­ ºñ±³, true
+		System.out.println("ee==ff : " + (ee==ff)); //ì£¼ì†Œê°’ ë¹„êµ, false
+		System.out.println("ee.equals(ff): " + ee.equals(ff)); //Overrideëœ ìì‹í´ë˜ìŠ¤ì˜ equals()ë¥¼ í˜¸ì¶œ(ë‹¤í˜•ì„±) 
+		                                                       // ë¬¸ìì—´ ë¹„êµ, true
 		System.out.println();
 		
 	}

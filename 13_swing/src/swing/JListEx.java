@@ -9,48 +9,48 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
 
-//Ç×¸ñÀÇ ³ª¿­
-//1.»ó¼Ó
+//í•­ëª©ì˜ ë‚˜ì—´
+//1.ìƒì†
 public class JListEx extends JFrame {
 
 	public JListEx() {
 		
-		//1. Å¸ÀÌÆ²
+		//1. íƒ€ì´í‹€
 		super("JList Test");
-		setLayout(new FlowLayout()); //¿ŞÂÊºÎÅÍ ÇÏ³ª¾¿ ¸®½ºÆ® Ãß°¡ 
+		setLayout(new FlowLayout()); //ì™¼ìª½ë¶€í„° í•˜ë‚˜ì”© ë¦¬ìŠ¤íŠ¸ ì¶”ê°€ 
 		
-		//3.°ü¸® ¸®½ºÆ®µé »ı¼º
-		//String¹è¿­À» ¸®½ºÆ®¿¡ Ãß°¡
+		//3.ê´€ë¦¬ ë¦¬ìŠ¤íŠ¸ë“¤ ìƒì„±
+		//Stringë°°ì—´ì„ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 		String[] listData = {"Hong", "Gil", "Dong", "JAVA","JSP"};
 		JList<String> list1 = new JList<String>(listData);
-		list1.setSelectedIndex(1); //[1]ÀÇ Ç×¸ñÀ» ¼±ÅÃ
+		list1.setSelectedIndex(1); //[1]ì˜ í•­ëª©ì„ ì„ íƒ
 		
 //=============================================================================================
 		
-		//model·Î Jlist°ü¸®
-		DefaultListModel<String> model = new DefaultListModel<String>(); //model¿¡ ÀÔ·Â
-		JList<String> list2 = new JList<String>(model); //¸ğµ¨·Î JList°ü¸®
-		model.addElement("»ç°ú");
-		model.addElement("¹è");
-		model.addElement("µş±â");
-		model.addElement("¹Ù³ª³ª");
+		//modelë¡œ Jlistê´€ë¦¬
+		DefaultListModel<String> model = new DefaultListModel<String>(); //modelì— ì…ë ¥
+		JList<String> list2 = new JList<String>(model); //ëª¨ë¸ë¡œ JListê´€ë¦¬
+		model.addElement("ì‚¬ê³¼");
+		model.addElement("ë°°");
+		model.addElement("ë”¸ê¸°");
+		model.addElement("ë°”ë‚˜ë‚˜");
 		list2.setSelectedIndex(1);
 		
 //=============================================================================================
 		
-		//vector, scroll »ç¿ë
-		Vector<String> vListData = new Vector<String>(); //Jlist¿¡ Vector¸¦ ºÙÀÓ
+		//vector, scroll ì‚¬ìš©
+		Vector<String> vListData = new Vector<String>(); //Jlistì— Vectorë¥¼ ë¶™ì„
 		JList<String> list3 = new JList<String>(vListData);
-		JScrollPane scroll = new JScrollPane(list3); //scroll¿¡ Jlist(Vector°¡ ºÙÀº)¸¦ ºÙÀÓ
-		vListData.add("Ãà±¸");
-		vListData.add("¾ß±¸");
-		vListData.add("³ó±¸");
-		vListData.add("¹è±¸");
-		vListData.add("Å×´Ï½º");
-		vListData.add("¼ö¿µ");
-		vListData.add("À°»ó");
-		vListData.add("ÅÂ±Çµµ");
-		vListData.add("À¯µµ");
+		JScrollPane scroll = new JScrollPane(list3); //scrollì— Jlist(Vectorê°€ ë¶™ì€)ë¥¼ ë¶™ì„
+		vListData.add("ì¶•êµ¬");
+		vListData.add("ì•¼êµ¬");
+		vListData.add("ë†êµ¬");
+		vListData.add("ë°°êµ¬");
+		vListData.add("í…Œë‹ˆìŠ¤");
+		vListData.add("ìˆ˜ì˜");
+		vListData.add("ìœ¡ìƒ");
+		vListData.add("íƒœê¶Œë„");
+		vListData.add("ìœ ë„");
 		list3.setSelectedIndex(1);
 		
 //=============================================================================================
@@ -71,28 +71,28 @@ public class JListEx extends JFrame {
 			}
 			
 		} 
-	    //¸®½ºÆ®¸¦ ¸¸µé¸é¼­ ¸ğµ¨»ı¼º, ¸ğµ¨°ªÀº getModelÀ» ÅëÇØ °¡Á®¿È(¸®½ºÆ®2¹øÀº ¼øÂ÷ÀûÀ¸·Î ÁøÇà)
+	    //ë¦¬ìŠ¤íŠ¸ë¥¼ ë§Œë“¤ë©´ì„œ ëª¨ë¸ìƒì„±, ëª¨ë¸ê°’ì€ getModelì„ í†µí•´ ê°€ì ¸ì˜´(ë¦¬ìŠ¤íŠ¸2ë²ˆì€ ìˆœì°¨ì ìœ¼ë¡œ ì§„í–‰)
 		JList<Student> list4 = new JList<Student>(new DefaultListModel<Student>());
 		list4.setSelectionMode(ListSelectionModel.SINGLE_SELECTION); 
-		//SINGLE_SELECTION : ÇÏ³ª¸¸ ¼±ÅÃ / ¾Æ´Ï¸é ÁÂ¸£¸¤ ¼±ÅÃµÊ
+		//SINGLE_SELECTION : í•˜ë‚˜ë§Œ ì„ íƒ / ì•„ë‹ˆë©´ ì¢Œë¥´ë¥µ ì„ íƒë¨
 		DefaultListModel<Student> model2 = (DefaultListModel<Student>)list4.getModel();
-		//DefaultListModelÀÌ ÀÚ½ÄÅ¬·¡½º
-		//ºÎ¸ğÅ¬·¡½ºÀÎ JList¿¡ ´ã°ÜÀÖ´ø ¸ğµ¨À» ÀÚ½ÄÅ¬·¡½º·Î ¿Å±è(Çüº¯È¯) 
-		model2.addElement(new Student("100","È«±æµ¿", "Àü»ê°ú"));
-		model2.addElement(new Student("200","¼Õ¿À°ø", "°ÇÃà°ú"));
-		model2.addElement(new Student("300","»ç¿ÀÁ¤", "Åä¸ñ°ú"));
-		model2.addElement(new Student("400","ÀúÆÈ°è", "°æ¿µÇĞ°ú")); //ÁÖ¼Ò°ªÀÌ ÀâÈ÷¹Ç·Î  toString¿À¹ö¶óÀÌµù ÇÊ¿ä
+		//DefaultListModelì´ ìì‹í´ë˜ìŠ¤
+		//ë¶€ëª¨í´ë˜ìŠ¤ì¸ JListì— ë‹´ê²¨ìˆë˜ ëª¨ë¸ì„ ìì‹í´ë˜ìŠ¤ë¡œ ì˜®ê¹€(í˜•ë³€í™˜) 
+		model2.addElement(new Student("100","í™ê¸¸ë™", "ì „ì‚°ê³¼"));
+		model2.addElement(new Student("200","ì†ì˜¤ê³µ", "ê±´ì¶•ê³¼"));
+		model2.addElement(new Student("300","ì‚¬ì˜¤ì •", "í† ëª©ê³¼"));
+		model2.addElement(new Student("400","ì €íŒ”ê³„", "ê²½ì˜í•™ê³¼")); //ì£¼ì†Œê°’ì´ ì¡íˆë¯€ë¡œ  toStringì˜¤ë²„ë¼ì´ë”© í•„ìš”
 		                                                        
 		
 
-		//ÇÁ·¹ÀÓ¿¡ ºÙÀÌ±â
+		//í”„ë ˆì„ì— ë¶™ì´ê¸°
 		add(list1);
 		add(list2);
-		add(scroll); //½ºÅ©·Ñ À§¿¡ list¸¦ ºÙÀÌ±â ¶§¹®¿¡ ¹ÙÅÁÀÌ µÇ´Â ½ºÅ©·ÑÀ» ºÒ·¯Áà¾ß ÇÔ
+		add(scroll); //ìŠ¤í¬ë¡¤ ìœ„ì— listë¥¼ ë¶™ì´ê¸° ë•Œë¬¸ì— ë°”íƒ•ì´ ë˜ëŠ” ìŠ¤í¬ë¡¤ì„ ë¶ˆëŸ¬ì¤˜ì•¼ í•¨
 		add(list4);
 		
 		
-		//2. ÇÁ·¹ÀÓ »ı¼º
+		//2. í”„ë ˆì„ ìƒì„±
 		setBounds(800, 200, 400, 500);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -106,5 +106,5 @@ public class JListEx extends JFrame {
 }
 
 
-//model : ³»ºÎ°ü¸®
-//Jlist : Ãâ·Â
+//model : ë‚´ë¶€ê´€ë¦¬
+//Jlist : ì¶œë ¥

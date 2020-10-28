@@ -8,32 +8,32 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class SungJukService {
-	//3.ÇÊµå ¼±¾ğ
-	private ArrayList<SungJukDTO> list = new ArrayList<SungJukDTO>();; //¶Ç´Â »ı¼ºÀÚ¿¡¼­ »ı¼º
+	//3.í•„ë“œ ì„ ì–¸
+	private ArrayList<SungJukDTO> list = new ArrayList<SungJukDTO>();; //ë˜ëŠ” ìƒì„±ìì—ì„œ ìƒì„±
 	Scanner scanner;
 	DecimalFormat df;
 	
 	
-	/* ÇÊµå ¼±¾ğÇÏÁö ¾ÊÀ»°æ¿ì´Â »ı¼ºÀÚ¿¡¼­ ¾î·¹ÀÌ¸®½ºÆ® »ı¼º
+	/* í•„ë“œ ì„ ì–¸í•˜ì§€ ì•Šì„ê²½ìš°ëŠ” ìƒì„±ìì—ì„œ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ìƒì„±
 	public SungJukService(){
 		list = new ArrayList<SungJukDTO>();
 	}
 	 */
 	
 	
-	//4.menu¸Ş¼Òµå
+	//4.menuë©”ì†Œë“œ
 	public void menu() {
 		while(true) {
 			System.out.println();
 			System.out.println("*****************");
-			System.out.println("   1.ÀÔ·Â");
-			System.out.println("   2.Ãâ·Â");
-			System.out.println("   3.°Ë»ö");
-			System.out.println("   4.»èÁ¦");
-			System.out.println("   5.Á¤·Ä");
-			System.out.println("   6.³¡");
+			System.out.println("   1.ì…ë ¥");
+			System.out.println("   2.ì¶œë ¥");
+			System.out.println("   3.ê²€ìƒ‰");
+			System.out.println("   4.ì‚­ì œ");
+			System.out.println("   5.ì •ë ¬");
+			System.out.println("   6.ë");
 			System.out.println("*****************");
-			System.out.print("¹øÈ£ : ");
+			System.out.print("ë²ˆí˜¸ : ");
 			scanner = new Scanner(System.in);
 			int number = scanner.nextInt();
 			if(number == 1) {
@@ -49,42 +49,42 @@ public class SungJukService {
 			}else if(number == 6) {
 				break;
 			}else {
-				System.out.println("1~6 Áß¿¡ ¼±ÅÃÇÏ¼¼¿ä");
+				System.out.println("1~6 ì¤‘ì— ì„ íƒí•˜ì„¸ìš”");
 			}
 			
 		}
 	}
 	
-	//5.insertArticle¸Ş¼Òµå
-	public void insertArticle() {//privateµµ °¡´É
+	//5.insertArticleë©”ì†Œë“œ
+	public void insertArticle() {//privateë„ ê°€ëŠ¥
 		scanner = new Scanner(System.in);
 		SungJukDTO dto = new SungJukDTO();
-		System.out.print("¹øÈ£ ÀÔ·Â : ");
+		System.out.print("ë²ˆí˜¸ ì…ë ¥ : ");
 		dto.setNo(scanner.nextInt());
-		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 		dto.setName(scanner.next());
-		System.out.print("±¹¾î ÀÔ·Â : ");
+		System.out.print("êµ­ì–´ ì…ë ¥ : ");
 		dto.setKor(scanner.nextInt());
-		System.out.print("¿µ¾î ÀÔ·Â : ");
+		System.out.print("ì˜ì–´ ì…ë ¥ : ");
 		dto.setEng(scanner.nextInt());
-		System.out.print("¼öÇĞ ÀÔ·Â : ");
+		System.out.print("ìˆ˜í•™ ì…ë ¥ : ");
 		dto.setMath(scanner.nextInt());
 		dto.calc();
 		list.add(dto);
-		//ÀÌ ¾È¿¡ main()À» ³ÖÀ¸¸é ¿ø·¡ ¸Ş´º¸Ş¼Òµå°¡ È£ÃâµÇ´Â °ÍÀÌ ¾Æ´Ñ »õ·Î¿î ¸Ş´º¸Ş¼Òµå°¡ »ı¼ºµÊ, ¿ø·¡ ¸Ş´º·Î µ¹¾Æ°¡°í ½ÍÀ¸¸é }°¡ ³¡³ª¸é
-		//ÀÚµ¿À¸·Î ¿ø·¡ menu()¸Ş¼Òµå·Î µ¹¾Æ°¨
+		//ì´ ì•ˆì— main()ì„ ë„£ìœ¼ë©´ ì›ë˜ ë©”ë‰´ë©”ì†Œë“œê°€ í˜¸ì¶œë˜ëŠ” ê²ƒì´ ì•„ë‹Œ ìƒˆë¡œìš´ ë©”ë‰´ë©”ì†Œë“œê°€ ìƒì„±ë¨, ì›ë˜ ë©”ë‰´ë¡œ ëŒì•„ê°€ê³  ì‹¶ìœ¼ë©´ }ê°€ ëë‚˜ë©´
+		//ìë™ìœ¼ë¡œ ì›ë˜ menu()ë©”ì†Œë“œë¡œ ëŒì•„ê°
 		
-		//<¼±»ı´Ô Ç®ÀÌ>
+		//<ì„ ìƒë‹˜ í’€ì´>
 //		scanner = new Scanner(System.in);
-//		System.out.print("¹øÈ£ ÀÔ·Â : ");
+//		System.out.print("ë²ˆí˜¸ ì…ë ¥ : ");
 //		int no = scanner.nextInt();
-//		System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+//		System.out.print("ì´ë¦„ ì…ë ¥ : ");
 //		String name = scanner.next();
-//		System.out.print("±¹¾î ÀÔ·Â : ");
+//		System.out.print("êµ­ì–´ ì…ë ¥ : ");
 //		int kor = scanner.nextInt();
-//		System.out.print("¿µ¾î ÀÔ·Â : ");
+//		System.out.print("ì˜ì–´ ì…ë ¥ : ");
 //		int eng = scanner.nextInt();
-//		System.out.print("¼öÇĞ ÀÔ·Â : ");
+//		System.out.print("ìˆ˜í•™ ì…ë ¥ : ");
 //		int math = scanner.nextInt();
 //		
 //		SungJukDTO dto = new SungJukDTO();
@@ -97,10 +97,10 @@ public class SungJukService {
 //		list.add(dto);
 	}
 	
-	//6.printArticle¸Ş¼Òµå
+	//6.printArticleë©”ì†Œë“œ
 	public void printArticle() {
 //		df = new DecimalFormat("#,###.###");
-//		System.out.println("¹øÈ£\tÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+//		System.out.println("ë²ˆí˜¸\tì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
 //		for(int i = 0; i < list.size(); i++) {
 //			System.out.println(list.get(i).getNo() + "\t" 
 //                    + list.get(i).getName() + "\t"
@@ -111,20 +111,20 @@ public class SungJukService {
 //                    + df.format(list.get(i).getAvg()));
 //		}
 		
-		//<¼±»ı´Ô Ç®ÀÌ>
-		System.out.println("¹øÈ£\tÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
-		for(SungJukDTO dto : list){//toString()¿À¹ö¶óÀÌµù ÇÏÁö ¾ÊÀ¸¸é Å¬·¡½º@16Áø¼ö°¡ Ãâ·ÂµÊ 
+		//<ì„ ìƒë‹˜ í’€ì´>
+		System.out.println("ë²ˆí˜¸\tì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
+		for(SungJukDTO dto : list){//toString()ì˜¤ë²„ë¼ì´ë”© í•˜ì§€ ì•Šìœ¼ë©´ í´ë˜ìŠ¤@16ì§„ìˆ˜ê°€ ì¶œë ¥ë¨ 
 			System.out.println(dto); 
 			}
 	}
 	
-	//7.searchArticle()¸Ş¼Òµå
+	//7.searchArticle()ë©”ì†Œë“œ
 	public void searchArticle() {
 		int count = 0;
 		scanner = new Scanner(System.in);
-		System.out.print("°Ë»öÇÒ ÀÌ¸§ : ");
+		System.out.print("ê²€ìƒ‰í•  ì´ë¦„ : ");
 		String name = scanner.next();
-		System.out.println("¹øÈ£\tÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+		System.out.println("ë²ˆí˜¸\tì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
 		for(int i = 0; i < list.size(); i++) {
 			if(name.equals(list.get(i).getName())) {
 				df = new DecimalFormat("#,###.###");
@@ -136,24 +136,24 @@ public class SungJukService {
 		                    + list.get(i).getTot()  + "\t"
 		                    + df.format(list.get(i).getAvg()));
 				count++;
-			}//if¹®
+			}//ifë¬¸
 			
-			//<¼±»ı´Ô Ç®ÀÌ>
-			//int sw = 0; //½ºÀ§Ä¡ º¯¼ö
+			//<ì„ ìƒë‹˜ í’€ì´>
+			//int sw = 0; //ìŠ¤ìœ„ì¹˜ ë³€ìˆ˜
 			//if(SungJukDTO dto : list{
 			//  if(dto.getName().equals(name)){
 			//		System.out.pritnln(dto);
-			//      sw = 1;  //ÇÑ¹øµµ °°Àº °ªÀÌ ³ª¿Â ÀûÀÌ ¾øÀ¸¸é sw = 0ÀÓ
+			//      sw = 1;  //í•œë²ˆë„ ê°™ì€ ê°’ì´ ë‚˜ì˜¨ ì ì´ ì—†ìœ¼ë©´ sw = 0ì„
 			//}
-		}//for¹®
+		}//forë¬¸
 		if(count == 0) {
-			System.out.println("Ã£°íÀÚ ÇÏ´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ì°¾ê³ ì í•˜ëŠ” ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤.");
 		}
 	}
 	
-	//8.deleteArticle()¸Ş¼Òµå
-	public void deleteArticle() { //¡ÚÃ³À½¿¡¸¸ ½ÇÇàµÇ°í µÎ¹øÂ° ÀÌÈÄ´Â ¾ÈµÊ, °°Àº±ÛÀÚ°¡ 3°³ÀÎ °æ¿ì, Ã¹¹øÂ° µÎ¹øÂ° µ¥ÀÌÅÍ¸¸ Áö¿öÁü //Áö±İÀº µÊ - ¼±»ı´Ô²² ¿©Âåº¸±â
-		//<³» Ç®ÀÌ>
+	//8.deleteArticle()ë©”ì†Œë“œ
+	public void deleteArticle() { //â˜…ì²˜ìŒì—ë§Œ ì‹¤í–‰ë˜ê³  ë‘ë²ˆì§¸ ì´í›„ëŠ” ì•ˆë¨, ê°™ì€ê¸€ìê°€ 3ê°œì¸ ê²½ìš°, ì²«ë²ˆì§¸ ë‘ë²ˆì§¸ ë°ì´í„°ë§Œ ì§€ì›Œì§ //ì§€ê¸ˆì€ ë¨ - ì„ ìƒë‹˜ê»˜ ì—¬ì­¤ë³´ê¸°
+		//<ë‚´ í’€ì´>
 //		int count = 0;
 //		for(int i = 0; i < list.size(); i++) {
 //			for(int j = 0; j < list.size(); j++) {
@@ -162,14 +162,14 @@ public class SungJukService {
 //					++count;
 //					list.remove(j-count);
 //					j = -1;	
-//					System.out.println("µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ¿´½À´Ï´Ù");
+//					System.out.println("ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤");
 //				}//if
 //		}//for j
 //		}//for i
 		
 		
-		//<¼±»ı´Ô Ç®ÀÌ>
-		System.out.print("»èÁ¦ÇÒ ÀÌ¸§ ÀÔ·Â : ");
+		//<ì„ ìƒë‹˜ í’€ì´>
+		System.out.print("ì‚­ì œí•  ì´ë¦„ ì…ë ¥ : ");
 		scanner = new Scanner(System.in);
 		String name = scanner.next();
 		int sw = 0;
@@ -179,12 +179,12 @@ public class SungJukService {
 //				sw = 1;
 //			}
 //		}
-		//java.util.ConcurrentModificationException ¿¡·¯ ¹ß»ı ÀÌÀ¯ : ¿©·¯°³ÀÇ µ¿ÀÏÇÑ ÀÌ¸§À» °¡Áø °´Ã¼°¡ ÀÖ´Â °æ¿ì
-		//¸ÕÀú ÀÖ´ø °´Ã¼(Ç×¸ñ)ÀÌ »èÁ¦µÇ¾î ÀÎµ¦½º°¡ ÀçÇÒ´çµÊ(ÀÎµ¦½º°ªÀÌ »èÁ¦µÈ µ¥ÀÌÅÍ µÚ¿¡ °ÍµéÀº ¾ÕÀ¸·Î ´ç°ÜÁü)
-		//ÇØ°á¹æ¹ı : IteratorÇÊ¿ä
-		// 1. Iteratorº¯¼ö°¡ °¡¸®Å°´Â °´Ã¼¸¦ »èÁ¦ÇÒ °´Ã¼ ´ÙÀ½°´Ã¼·Î º¯°æ
-		// 2. »èÁ¦ÇÒ °´Ã¼¸¦ »èÁ¦
-		//À§ÀÇ ÇØ°á¹æ¹ı¿¡ ´ëÇØ, ÇÑ±Û ÆÄÀÏ¿¡ °³³ä ±×¸² ÀÖÀ½, ÂüÁ¶ÇÒ °Í
+		//java.util.ConcurrentModificationException ì—ëŸ¬ ë°œìƒ ì´ìœ  : ì—¬ëŸ¬ê°œì˜ ë™ì¼í•œ ì´ë¦„ì„ ê°€ì§„ ê°ì²´ê°€ ìˆëŠ” ê²½ìš°
+		//ë¨¼ì € ìˆë˜ ê°ì²´(í•­ëª©)ì´ ì‚­ì œë˜ì–´ ì¸ë±ìŠ¤ê°€ ì¬í• ë‹¹ë¨(ì¸ë±ìŠ¤ê°’ì´ ì‚­ì œëœ ë°ì´í„° ë’¤ì— ê²ƒë“¤ì€ ì•ìœ¼ë¡œ ë‹¹ê²¨ì§)
+		//í•´ê²°ë°©ë²• : Iteratorí•„ìš”
+		// 1. Iteratorë³€ìˆ˜ê°€ ê°€ë¦¬í‚¤ëŠ” ê°ì²´ë¥¼ ì‚­ì œí•  ê°ì²´ ë‹¤ìŒê°ì²´ë¡œ ë³€ê²½
+		// 2. ì‚­ì œí•  ê°ì²´ë¥¼ ì‚­ì œ
+		//ìœ„ì˜ í•´ê²°ë°©ë²•ì— ëŒ€í•´, í•œê¸€ íŒŒì¼ì— ê°œë… ê·¸ë¦¼ ìˆìŒ, ì°¸ì¡°í•  ê²ƒ
 		Iterator<SungJukDTO> it = list.iterator();
 		while(it.hasNext()) {
 			SungJukDTO dto = it.next();
@@ -193,61 +193,61 @@ public class SungJukService {
 			sw = 1;
 			}
 		}
-		if(sw == 0) System.out.println("Ã£°íÀÚ ÇÏ´Â ÀÌ¸§ÀÌ ¾ø½À´Ï´Ù");
-		else System.out.println("µ¥ÀÌÅÍ¸¦ »èÁ¦ÇÏ¿´½À´Ï´Ù"); //ÇÑ¹ø¸¸ ÂïÈû
+		if(sw == 0) System.out.println("ì°¾ê³ ì í•˜ëŠ” ì´ë¦„ì´ ì—†ìŠµë‹ˆë‹¤");
+		else System.out.println("ë°ì´í„°ë¥¼ ì‚­ì œí•˜ì˜€ìŠµë‹ˆë‹¤"); //í•œë²ˆë§Œ ì°í˜
 	}
 	
 	
 	
-	//9.sortArticle()¸Ş¼Òµå
-	//comparator È¤Àº comparable µÑ Áß ÇÏ³ª »ç¿ëÇÏ¸é µÊ
-	//[comparable] - ÀÎÅÍÆäÀÌ½º(java.lang), StringÅ¬·¡½º
-	// 1.DTO¿¡ ComparableÀ» implementsÇÏ±â
-	// 2.DTO¿¡ compareTo()¸Ş¼Òµå ±¸Çö(ÀÎÅÍÆäÀÌ½º) - ¿À¸§Â÷¼ø/³»¸²Â÷¼ø °áÁ¤ -1,1À» ¾î¶»°Ô ³ÖÀ» °ÍÀÎÁö¿¡ µû¶ó ¼±ÅÃ°¡´É
-	// 3.toString()¸Ş¼Òµå ¿À¹ö¶óÀÌµå(Ãâ·ÂÇü½Ä °áÁ¤)
-	// 4.ÇØ´ç ºÎºĞ¿¡ Collection.sort(list) 2¿¡¼­ ±¸ÇöÇÑ ³»¿ë´ë·Î Á¤·ÄÇÏµµ·Ï ÀÔ·Â
-	// 5.Ãâ·Â
-	//[comparator] - ÀÎÅÍÆäÀÌ½º(java.util)
-	// 1.Comparator »ı¼º(ÀÍ¸í³»ºÎÅ¬·¡½º »ç¿ë) - ¿À¸§Â÷¼ø, ³»¸²Â÷¼ø °áÁ¤ -1À» compareToºÎºĞ¿¡ °öÇÒÁö °öÇÏÁö ¾ÊÀ»Áö¿¡ µû¶ó ¼±ÅÃ°¡´É
-	//    ÀÍ¸í³»ºÎÅ¬·¡½º »ç¿ë ÀÌÀ¯ : Comparator´Â ÀÎÅÍÆäÀÌ½ºÀÌ¹Ç·Î new»ı¼ºÀÌ ºÒ°¡´É
-	// 2.Compare¸Ş¼Òµå, CompareTo¸Ş¼Òµå¸¦ »ç¿ëÇÏ¿© »õ·Î¿î ±âÁØ ºñ±³
-	// 3.ÇØ´ç ºÎºĞ¿¡  Collections.sort(list,com) »õ·Î¿î ±âÁØÀ¸·Î Á¤·ÄÇÏµµ·Ï ÀÔ·Â
-	// 4.Ãâ·Â
+	//9.sortArticle()ë©”ì†Œë“œ
+	//comparator í˜¹ì€ comparable ë‘˜ ì¤‘ í•˜ë‚˜ ì‚¬ìš©í•˜ë©´ ë¨
+	//[comparable] - ì¸í„°í˜ì´ìŠ¤(java.lang), Stringí´ë˜ìŠ¤
+	// 1.DTOì— Comparableì„ implementsí•˜ê¸°
+	// 2.DTOì— compareTo()ë©”ì†Œë“œ êµ¬í˜„(ì¸í„°í˜ì´ìŠ¤) - ì˜¤ë¦„ì°¨ìˆœ/ë‚´ë¦¼ì°¨ìˆœ ê²°ì • -1,1ì„ ì–´ë–»ê²Œ ë„£ì„ ê²ƒì¸ì§€ì— ë”°ë¼ ì„ íƒê°€ëŠ¥
+	// 3.toString()ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë“œ(ì¶œë ¥í˜•ì‹ ê²°ì •)
+	// 4.í•´ë‹¹ ë¶€ë¶„ì— Collection.sort(list) 2ì—ì„œ êµ¬í˜„í•œ ë‚´ìš©ëŒ€ë¡œ ì •ë ¬í•˜ë„ë¡ ì…ë ¥
+	// 5.ì¶œë ¥
+	//[comparator] - ì¸í„°í˜ì´ìŠ¤(java.util)
+	// 1.Comparator ìƒì„±(ìµëª…ë‚´ë¶€í´ë˜ìŠ¤ ì‚¬ìš©) - ì˜¤ë¦„ì°¨ìˆœ, ë‚´ë¦¼ì°¨ìˆœ ê²°ì • -1ì„ compareToë¶€ë¶„ì— ê³±í• ì§€ ê³±í•˜ì§€ ì•Šì„ì§€ì— ë”°ë¼ ì„ íƒê°€ëŠ¥
+	//    ìµëª…ë‚´ë¶€í´ë˜ìŠ¤ ì‚¬ìš© ì´ìœ  : ComparatorëŠ” ì¸í„°í˜ì´ìŠ¤ì´ë¯€ë¡œ newìƒì„±ì´ ë¶ˆê°€ëŠ¥
+	// 2.Compareë©”ì†Œë“œ, CompareToë©”ì†Œë“œë¥¼ ì‚¬ìš©í•˜ì—¬ ìƒˆë¡œìš´ ê¸°ì¤€ ë¹„êµ
+	// 3.í•´ë‹¹ ë¶€ë¶„ì—  Collections.sort(list,com) ìƒˆë¡œìš´ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬í•˜ë„ë¡ ì…ë ¥
+	// 4.ì¶œë ¥
 	public void sortArticle() {
 		while(true) {
-			System.out.println("1. ÀÌ¸§À¸·Î ¿À¸§Â÷¼ø");
-			System.out.println("2. ÃÑÁ¡À¸·Î ³»¸²Â÷¼ø");
-			System.out.println("3. ÀÌÀü¸Ş´º");
-			System.out.print("¹øÈ£ ÀÔ·Â : ");
+			System.out.println("1. ì´ë¦„ìœ¼ë¡œ ì˜¤ë¦„ì°¨ìˆœ");
+			System.out.println("2. ì´ì ìœ¼ë¡œ ë‚´ë¦¼ì°¨ìˆœ");
+			System.out.println("3. ì´ì „ë©”ë‰´");
+			System.out.print("ë²ˆí˜¸ ì…ë ¥ : ");
 			scanner =  new Scanner(System.in);
 			int num = scanner.nextInt();
 			if(num == 1) { //comparator
 				Comparator<SungJukDTO> com = new Comparator<SungJukDTO>() {
 					@Override
 					public int compare(SungJukDTO s1, SungJukDTO s2) {
-						return s1.getName().compareTo(s2.getName()); //¹®ÀÚ¿­ ºñ±³ - StringÅ¬·¡½ºÀÇ compareTo()
+						return s1.getName().compareTo(s2.getName()); //ë¬¸ìì—´ ë¹„êµ - Stringí´ë˜ìŠ¤ì˜ compareTo()
 					}
 				};
-				Collections.sort(list,com); //compare()ÇÔ¼ö¸¦ ºÒ·¯³¿(»õ·Î Á¤ÀÇÇÑ ±âÁØÀ¸·Î Á¤·Ä)
+				Collections.sort(list,com); //compare()í•¨ìˆ˜ë¥¼ ë¶ˆëŸ¬ëƒ„(ìƒˆë¡œ ì •ì˜í•œ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬)
 				printArticle();
 			}else if(num == 2) {//comparable
-				Collections.sort(list);//Á¤·ÄÀÇ ±âÁØÁ¡À» ÀâÁö ¾ÊÀ¸¸é ¿¡·¯°¡ ¶ä(DTO¿¡ ±âÁØ¼³Á¤)
-				                       //comparator È¤Àº comparable µÑ Áß ÇÏ³ª »ç¿ëÇÏ¸é µÊ(implements ¶Ç´Â Comparator»ı¼º)
+				Collections.sort(list);//ì •ë ¬ì˜ ê¸°ì¤€ì ì„ ì¡ì§€ ì•Šìœ¼ë©´ ì—ëŸ¬ê°€ ëœ¸(DTOì— ê¸°ì¤€ì„¤ì •)
+				                       //comparator í˜¹ì€ comparable ë‘˜ ì¤‘ í•˜ë‚˜ ì‚¬ìš©í•˜ë©´ ë¨(implements ë˜ëŠ” Comparatorìƒì„±)
 				printArticle();
 				
-				//<¼±»ı´Ô Ç®ÀÌ>
+				//<ì„ ìƒë‹˜ í’€ì´>
 //				Comparator<SungJukDTO> com = new Comparator<SungJukDTO>() {
 //				@Override
 //				public int compare(SungJukDTO s1, SungJukDTO s2) {
-//					return s1.getTot() < s2.getTot() ? -1 : 1; - ¿À¸§Â÷¼ø //¹®ÀÚ¿­ ºñ±³ - StringÅ¬·¡½ºÀÇ compareTo()
-//				    return s1.getTot() < s2.getTot() ? 1 : -1; - ³»¸²Â÷¼ø
+//					return s1.getTot() < s2.getTot() ? -1 : 1; - ì˜¤ë¦„ì°¨ìˆœ //ë¬¸ìì—´ ë¹„êµ - Stringí´ë˜ìŠ¤ì˜ compareTo()
+//				    return s1.getTot() < s2.getTot() ? 1 : -1; - ë‚´ë¦¼ì°¨ìˆœ
 //				}
 //			    };
 //				Collections.sort(list,com);
 //				printArticle();
 				
 			}else if(num == 3) {
-				System.out.println("¸ŞÀÎ ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù");
+				System.out.println("ë©”ì¸ ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 				break;
 			}
 		}

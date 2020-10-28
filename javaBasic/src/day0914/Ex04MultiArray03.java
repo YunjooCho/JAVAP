@@ -6,43 +6,43 @@ import java.io.InputStreamReader;
 
 public class Ex04MultiArray03 {
 
-	//ÃÖ´ë ÇĞ»ı ¼ö Ã¼Å©¿ë »ó¼ö
+	//ìµœëŒ€ í•™ìƒ ìˆ˜ ì²´í¬ìš© ìƒìˆ˜
 	   final static int STUDENT_SIZE = 10;
-	   //¹İÀÇ ÃÑ °¹¼ö
+	   //ë°˜ì˜ ì´ ê°¯ìˆ˜
 	   final static int CLASS_NUMBER = 4;
 	   
 	   public static void main(String[] args) throws NumberFormatException, IOException {
-	      // ÀÔ·ÂÀ» ¹ŞÀ»¶§ »ç¿ëÇÒ BufferedReader º¯¼ö (= °´Ã¼) »ı¼º
+	      // ì…ë ¥ì„ ë°›ì„ë•Œ ì‚¬ìš©í•  BufferedReader ë³€ìˆ˜ (= ê°ì²´) ìƒì„±
 	      BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-	      // Á¡¼ö¸¦ ÀúÀåÇÒ int[][][] scoreArray »ı¼º
-	      //3Â÷¿ø : int[][][] scoreArray = new int[CLASS_NUMBER][][];
+	      // ì ìˆ˜ë¥¼ ì €ì¥í•  int[][][] scoreArray ìƒì„±
+	      //3ì°¨ì› : int[][][] scoreArray = new int[CLASS_NUMBER][][];
 	      
-	      //2Â÷¿ø
+	      //2ì°¨ì›
 	      int[][] koreanArray = new int[CLASS_NUMBER][];
 	      int[][] englishArray = new int[CLASS_NUMBER][];
 	      int[][] mathArray = new int[CLASS_NUMBER][];
 	      
 	      while(true) {
-	         //¸Ş´º ¸Ş¼Òµå È£Ãâ
+	         //ë©”ë‰´ ë©”ì†Œë“œ í˜¸ì¶œ
 	         showMenu();
 	         int choice = Integer.parseInt(bufferedReader.readLine());
 	         if(choice == 1) {
-	            //¼ºÀûÀ» ÀÔ·ÂÇÏ±â
+	            //ì„±ì ì„ ì…ë ¥í•˜ê¸°
 	            
-	            //1. ¹İÀ» ¼±ÅÃÇÑ´Ù.
+	            //1. ë°˜ì„ ì„ íƒí•œë‹¤.
 	            int classNumber = selectClassNumber(bufferedReader);
-	            //2. ÇĞ»ı ±Ô¸ğ¸¦ ¼±ÅÃÇÑ´Ù.
+	            //2. í•™ìƒ ê·œëª¨ë¥¼ ì„ íƒí•œë‹¤.
 	            int studentSize = selectStudentSize(bufferedReader);
-	            //3. for¹®À» ÀÌ¿ëÇØ¼­ ÇĞ»ıÀÇ ¼ºÀûÀ» Â÷·Ê´ë·Î ³Ö¾îÁØ´Ù.
-	            //3Â÷¿ø : scoreArray[classNumber] = new int[studentSize][3];
+	            //3. forë¬¸ì„ ì´ìš©í•´ì„œ í•™ìƒì˜ ì„±ì ì„ ì°¨ë¡€ëŒ€ë¡œ ë„£ì–´ì¤€ë‹¤.
+	            //3ì°¨ì› : scoreArray[classNumber] = new int[studentSize][3];
 	            
 	            koreanArray[classNumber] = new int[studentSize];
 	            englishArray[classNumber] = new int[studentSize];
 	            mathArray[classNumber] = new int[studentSize];
 	            
 	            for(int i = 0; i < koreanArray[classNumber].length; i++) {
-	               System.out.println((i+1)+"¹ø ÇĞ»ıÀÇ Á¡¼ö ÀÔ·Â");
-	               //3Â÷¿ø
+	               System.out.println((i+1)+"ë²ˆ í•™ìƒì˜ ì ìˆ˜ ì…ë ¥");
+	               //3ì°¨ì›
 //	               scoreArray[classNumber][i][0] = validateScore(bufferedReader, 1);
 //	               scoreArray[classNumber][i][1] = validateScore(bufferedReader, 2);
 //	               scoreArray[classNumber][i][2] = validateScore(bufferedReader, 3);
@@ -53,46 +53,46 @@ public class Ex04MultiArray03 {
 	            }
 	            
 	         }else if(choice == 2) {
-	            //¼ºÀûÀ» Ãâ·ÂÇÏ±â
-	            //1. ¹İÀ» ÀÔ·Â¹Ş´Â´Ù.
+	            //ì„±ì ì„ ì¶œë ¥í•˜ê¸°
+	            //1. ë°˜ì„ ì…ë ¥ë°›ëŠ”ë‹¤.
 	            int classNumber = selectClassNumber(bufferedReader);
 	            
-	            //2. ÇØ´ç ¹İÀÌ ÃÊ±âÈ­µÇ¾ú´ÂÁö Ã¼Å©ÇÑ´Ù.
+	            //2. í•´ë‹¹ ë°˜ì´ ì´ˆê¸°í™”ë˜ì—ˆëŠ”ì§€ ì²´í¬í•œë‹¤.
 	            if(koreanArray[classNumber] == null) {
-	               //¾ÆÁ÷ ÃÊ±âÈ­ ¾ÈµÇÀÖÀ¸¹Ç·Î °æ°í ¸Ş½ÃÁö Ãâ·Â
-	               System.out.println("¾ÆÁ÷ ÀÔ·ÂÀÌ µÇÁö ¾ÊÀº ¹İÀÔ´Ï´Ù.");
+	               //ì•„ì§ ì´ˆê¸°í™” ì•ˆë˜ìˆìœ¼ë¯€ë¡œ ê²½ê³  ë©”ì‹œì§€ ì¶œë ¥
+	               System.out.println("ì•„ì§ ì…ë ¥ì´ ë˜ì§€ ì•Šì€ ë°˜ì…ë‹ˆë‹¤.");
 	            }else {
-	            //3. ÃÊ±âÈ­ µÇ¾îÀÖÀ¸¸é Ãâ·ÂÇÑ´Ù.
+	            //3. ì´ˆê¸°í™” ë˜ì–´ìˆìœ¼ë©´ ì¶œë ¥í•œë‹¤.
 	               for(int i = 0; i < koreanArray[classNumber].length; i++) {
 	                  System.out.println("=======================");
-	                  System.out.println((i+1)+"¹ø ÇĞ»ıÀÇ Á¡¼ö");
-	                  System.out.printf("±¹¾î:%3dÁ¡ ¿µ¾î:%3dÁ¡ ¼öÇĞ:%3dÁ¡\n", 
+	                  System.out.println((i+1)+"ë²ˆ í•™ìƒì˜ ì ìˆ˜");
+	                  System.out.printf("êµ­ì–´:%3dì  ì˜ì–´:%3dì  ìˆ˜í•™:%3dì \n", 
 	                        koreanArray[classNumber][i], englishArray[classNumber][i], mathArray[classNumber][i]);
 	               }
 	            }
 	         }else if(choice == 3) {
-	            System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+	            System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 	            break;
 	         }else {
-	            System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+	            System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	         }
 	      }
 	   }
 	   static void showMenu() {
 	      System.out.println("======================");
-	      System.out.println("ºñÆ®°íµîÇĞ±³ ¼ºÀû°ü¸® ÇÁ·Î±×·¥");
+	      System.out.println("ë¹„íŠ¸ê³ ë“±í•™êµ ì„±ì ê´€ë¦¬ í”„ë¡œê·¸ë¨");
 	      System.out.println("======================");
-	      System.out.println("|\t1. ÀÔ·Â\t|");
-	      System.out.println("|\t2. Ãâ·Â\t|");
-	      System.out.println("|\t3. Á¾·á\t|");
+	      System.out.println("|\t1. ì…ë ¥\t|");
+	      System.out.println("|\t2. ì¶œë ¥\t|");
+	      System.out.println("|\t3. ì¢…ë£Œ\t|");
 	   }
 	   static int selectClassNumber(BufferedReader reader) throws NumberFormatException, IOException {
-	      System.out.println("¹İÀ» ¼±ÅÃÇØÁÖ¼¼¿ä");
+	      System.out.println("ë°˜ì„ ì„ íƒí•´ì£¼ì„¸ìš”");
 	      System.out.print("> ");
 	      int classNumber = Integer.parseInt(reader.readLine());
 	      while(classNumber < 1 || classNumber > CLASS_NUMBER) {
-	         System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-	         System.out.println("¹İÀ» ¼±ÅÃÇØÁÖ¼¼¿ä");
+	         System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+	         System.out.println("ë°˜ì„ ì„ íƒí•´ì£¼ì„¸ìš”");
 	         System.out.print("> ");
 	         classNumber = Integer.parseInt(reader.readLine());
 	      }
@@ -100,13 +100,13 @@ public class Ex04MultiArray03 {
 	      return classNumber - 1;
 	   }
 	   static int selectStudentSize(BufferedReader reader) throws NumberFormatException, IOException {
-	      System.out.println("ÇĞ»ı ¼ıÀÚ¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä");
+	      System.out.println("í•™ìƒ ìˆ«ìë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”");
 	      System.out.print("> ");
 	      int studentSize = Integer.parseInt(reader.readLine());
 	      
 	      while(studentSize < 0 || studentSize > STUDENT_SIZE) {
-	         System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-	         System.out.println("ÇĞ»ı ¼ıÀÚ¸¦ ¼±ÅÃÇØÁÖ¼¼¿ä");
+	         System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+	         System.out.println("í•™ìƒ ìˆ«ìë¥¼ ì„ íƒí•´ì£¼ì„¸ìš”");
 	         System.out.print("> ");
 	         studentSize = Integer.parseInt(reader.readLine());
 	      }
@@ -117,21 +117,21 @@ public class Ex04MultiArray03 {
 	      String message = new String();
 	      switch(code) {
 	      case 1:
-	         message = "±¹¾î";
+	         message = "êµ­ì–´";
 	         break;
 	      case 2:
-	         message = "¿µ¾î";
+	         message = "ì˜ì–´";
 	         break;
 	      case 3:
-	         message = "¼öÇĞ";
+	         message = "ìˆ˜í•™";
 	         break;
 	      }
-	      message += " Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.";
+	      message += " ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.";
 	      System.out.println(message);
 	      System.out.print("> ");
 	      int score = Integer.parseInt(reader.readLine());
 	      while(score < 0 || score > 100) {
-	         System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+	         System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	         System.out.println(message);
 	         System.out.print("> ");
 	         score = Integer.parseInt(reader.readLine());

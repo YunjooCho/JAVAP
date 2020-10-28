@@ -11,10 +11,10 @@ enum Figure{
 	LINE, CIRCLE, RECT, ROUND_RECT, PEN
 }
 
-//ÀÛ¾÷ µÇµ¹¸®±â ¹Ø¹ÙÅÁ ¸¸µé±â(±×·È´ø ±×¸² ³²¾ÆÀÖ±â) - µÇµ¹¸®±â À§ÇØ ±â¾ïÇØ¾ßÇÒ ¿ä¼ÒµéÀ» Á¤ÀÇ
-//¸¶¿ì½º¿¡¼­ ¼ÕÀ» ¶¿ ¶¼(µµÇüÀÌ ´Ù ±×·ÁÁ³À»¶§) - ÀÌº¥Æ® mouseRelease
+//ì‘ì—… ë˜ëŒë¦¬ê¸° ë°‘ë°”íƒ• ë§Œë“¤ê¸°(ê·¸ë ¸ë˜ ê·¸ë¦¼ ë‚¨ì•„ìˆê¸°) - ë˜ëŒë¦¬ê¸° ìœ„í•´ ê¸°ì–µí•´ì•¼í•  ìš”ì†Œë“¤ì„ ì •ì˜
+//ë§ˆìš°ìŠ¤ì—ì„œ ì†ì„ ë—„ ë–¼(ë„í˜•ì´ ë‹¤ ê·¸ë ¤ì¡Œì„ë•Œ) - ì´ë²¤íŠ¸ mouseRelease
 public class ShapeDTO {
-//	public static final int LINE = 0; //°¡µ¶¼ºÀ» ³ôÀÓ(´©°¡ºÁµµ ¼±¿¡ ´ëÇÑ °Í)
+//	public static final int LINE = 0; //ê°€ë…ì„±ì„ ë†’ì„(ëˆ„ê°€ë´ë„ ì„ ì— ëŒ€í•œ ê²ƒ)
 //	public static final int CIRCLE = 1;
 //	public static final int RECT = 2;
 //	public static final int ROUND_RECT = 3;
@@ -23,8 +23,8 @@ public class ShapeDTO {
 	
 	private int x1, y1, x2, y2, z1, z2;
 	private boolean fill;
-	//private boolean line, circle, rect, roundRect; //µµÇüÀº ÇÑ ¼¼Æ®·Î Àâ¾Æ¾ßÇÔ(true, false, false....´Â Á¾·ù°¡ ´Ù¾çÇØÁö¸é ¾î·Á¿ò)
-												     //°¢°¢¿¡ ¼ıÀÚ¸¦ ¸Å°Ü (0,1,2,3....)intÇüÀ¸·Î ÀâÀ½
+	//private boolean line, circle, rect, roundRect; //ë„í˜•ì€ í•œ ì„¸íŠ¸ë¡œ ì¡ì•„ì•¼í•¨(true, false, false....ëŠ” ì¢…ë¥˜ê°€ ë‹¤ì–‘í•´ì§€ë©´ ì–´ë ¤ì›€)
+												     //ê°ê°ì— ìˆ«ìë¥¼ ë§¤ê²¨ (0,1,2,3....)intí˜•ìœ¼ë¡œ ì¡ìŒ
 	//private int shape;
 	private Figure shape; //enum
 	private int color;
@@ -87,7 +87,7 @@ public class ShapeDTO {
 	}
 	
 	
-	//¢ºÂü°í¿ëÀ¸·Î È¥ÀÚ ÀÛ¼ºÇØ º» °ÍÀÓ, ½ÇÁ¦ ¼ö¾÷¿¡¼± ÀÛ¼º¾ÈÇÔ
+	//â–¶ì°¸ê³ ìš©ìœ¼ë¡œ í˜¼ì ì‘ì„±í•´ ë³¸ ê²ƒì„, ì‹¤ì œ ìˆ˜ì—…ì—ì„  ì‘ì„±ì•ˆí•¨
 	public String toString() {
 		return "x1 = " + x1 
 			  +"y1 = " + y1
@@ -106,7 +106,7 @@ public class ShapeDTO {
 
 
 
-//1.ÇÁ·¹ÀÓ »ı¼º -ÇÊµå, »ı¼ºÀÚ, getter/setter(TextField¿¡ ÀÔ·ÂµÈ °ªÀ» Åä´ë·Î ±×¸²À» ±×¸®±â À§ÇØ)
-//2.DrCavas »ı¼º - ÇÊµå, »ı¼ºÀÚ
-//  -1. »õ·Î¿î ±×¸²
-//  -2. ±âÁ¸ÀÇ ±×¸²À» ¾î·¹ÀÌ¸®½ºÆ®¿¡ ÀúÀåÇÏ¿© Ãâ·Â
+//1.í”„ë ˆì„ ìƒì„± -í•„ë“œ, ìƒì„±ì, getter/setter(TextFieldì— ì…ë ¥ëœ ê°’ì„ í† ëŒ€ë¡œ ê·¸ë¦¼ì„ ê·¸ë¦¬ê¸° ìœ„í•´)
+//2.DrCavas ìƒì„± - í•„ë“œ, ìƒì„±ì
+//  -1. ìƒˆë¡œìš´ ê·¸ë¦¼
+//  -2. ê¸°ì¡´ì˜ ê·¸ë¦¼ì„ ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ì— ì €ì¥í•˜ì—¬ ì¶œë ¥

@@ -11,7 +11,7 @@ public class BoardExP {
 		
 		//11-2.
 		UserViewerP userViewer = new UserViewerP();
-		userViewer.index(); //¢º¿¹Àü showMene¿Í À¯»ç, È¨ÆäÀÌÁö ÀüÁ¦ Ãâ·Â(¿¹) ·Î±×ÀÎ -> ¸ÞÀÎ¸Þ´º Ãâ·Â
+		userViewer.index(); //â–¶ì˜ˆì „ showMeneì™€ ìœ ì‚¬, í™ˆíŽ˜ì´ì§€ ì „ì œ ì¶œë ¥(ì˜ˆ) ë¡œê·¸ì¸ -> ë©”ì¸ë©”ë‰´ ì¶œë ¥
 
 	}
 

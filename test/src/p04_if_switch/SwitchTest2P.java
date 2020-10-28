@@ -5,23 +5,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /*
-2°³ÀÇ Á¤¼öÇü ¼ıÀÚ¿Í ¿¬»êÀÚ(+,-,*,/)¸¦ ÀÔ·ÂÇÏ¿© °è»êÇÏ½Ã¿À
+2ê°œì˜ ì •ìˆ˜í˜• ìˆ«ìì™€ ì—°ì‚°ì(+,-,*,/)ë¥¼ ì…ë ¥í•˜ì—¬ ê³„ì‚°í•˜ì‹œì˜¤
 
-[½ÇÇà°á°ú]
-a ÀÔ·Â : 25
-b ÀÔ·Â : 36
-¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : +
+[ì‹¤í–‰ê²°ê³¼]
+a ì…ë ¥ : 25
+b ì…ë ¥ : 36
+ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : +
 25 + 36 = xx
 
-a ÀÔ·Â : 25
-b ÀÔ·Â : 36
-¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : /
+a ì…ë ¥ : 25
+b ì…ë ¥ : 36
+ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : /
 25 / 36 = 0.xxx
 
-a ÀÔ·Â : 25
-b ÀÔ·Â : 36
-¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : $
-¿¬»êÀÚ error
+a ì…ë ¥ : 25
+b ì…ë ¥ : 36
+ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : $
+ì—°ì‚°ì error
  */
 
 public class SwitchTest2P {
@@ -29,11 +29,11 @@ public class SwitchTest2P {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		System.out.print("a ÀÔ·Â : ");
+		System.out.print("a ì…ë ¥ : ");
 		int a = Integer.parseInt(br.readLine());
-		System.out.print("b ÀÔ·Â : ");
+		System.out.print("b ì…ë ¥ : ");
 		int b = Integer.parseInt(br.readLine());
-		System.out.print("¿¬»êÀÚ(+,-,*,/) ÀÔ·Â : ");
+		System.out.print("ì—°ì‚°ì(+,-,*,/) ì…ë ¥ : ");
 		String y = br.readLine();
 		
 		
@@ -46,7 +46,7 @@ public class SwitchTest2P {
 			       break;
 		case "/" : System.out.println(a + y + b + "= " + (a / b));
 				   break;
-		default : System.out.println("¿¬»êÀÚ error");
+		default : System.out.println("ì—°ì‚°ì error");
 		}
 		
 

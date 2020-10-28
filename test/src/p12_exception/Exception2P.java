@@ -17,7 +17,7 @@ public class Exception2P {
 	
 	public void input() throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("¿øÇÏ´Â ´ÜÀ» ÀÔ·Â : ");
+		System.out.println("ì›í•˜ëŠ” ë‹¨ì„ ì…ë ¥ : ");
 		number = Integer.parseInt(br.readLine());
 		
 	}
@@ -28,7 +28,7 @@ public class Exception2P {
 			}
 		}else {
 			try {
-				throw new MakeExceptionP("¹üÀ§ ÃÊ°ú");
+				throw new MakeExceptionP("ë²”ìœ„ ì´ˆê³¼");
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

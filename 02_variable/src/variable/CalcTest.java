@@ -2,13 +2,13 @@ package variable;
 
 
 /*
- *  º¯¼ö¿¡ ÀúÀåÇÏ¿© 320, 258ÀÇ ÇÕÀ» ±¸ÇÏ½Ã¿À
+ *  ë³€ìˆ˜ì— ì €ì¥í•˜ì—¬ 320, 258ì˜ í•©ì„ êµ¬í•˜ì‹œì˜¤
  *  
- *  [½ÇÇà°á°ú]
+ *  [ì‹¤í–‰ê²°ê³¼]
  *  320 + 258 = XXX
  *  320 - 258 = XXX(sub)
  *  320 * 258 = XXX(mul)
- *  320 / 258 = XXX(div) ¼Ò¼ıÁ¡ ÀÌÇÏ 2ÀÚ¸®
+ *  320 / 258 = XXX(div) ì†Œìˆ«ì  ì´í•˜ 2ìë¦¬
  */
 
 public class CalcTest {
@@ -17,8 +17,8 @@ public class CalcTest {
 		short c = 320;
 		short d = 258;
 		short sum2 = (short)(c + d); 
-		//JAVA Æ¯¼º »ó, ¿¬»ê ÈÄ °á°ú°ªÀº ¸¸µå½Ã intÇüÀ¸·Î »êÃâµÊ (short)¸¦ Àû¾î Çüº¯È¯ ½ÃÅ´
-		System.out.println("shortÇü : " + c + " + " + d + " = " + sum2);
+		//JAVA íŠ¹ì„± ìƒ, ì—°ì‚° í›„ ê²°ê³¼ê°’ì€ ë§Œë“œì‹œ intí˜•ìœ¼ë¡œ ì‚°ì¶œë¨ (short)ë¥¼ ì ì–´ í˜•ë³€í™˜ ì‹œí‚´
+		System.out.println("shortí˜• : " + c + " + " + d + " = " + sum2);
 		System.out.println();
 		
 		int a = 320;
@@ -26,7 +26,7 @@ public class CalcTest {
 		int sum = a + b;
 		int sub = a - b;
 		int mul = a * b;
-		double div = (double)a / b; // °­Á¦ Çüº¯È¯ ¡Ø(double)À» ÀÔ·ÂÇÏ¿© º¯È¯ / ÀÚµ¿ Çüº¯È¯
+		double div = (double)a / b; // ê°•ì œ í˜•ë³€í™˜ â€»(double)ì„ ì…ë ¥í•˜ì—¬ ë³€í™˜ / ìë™ í˜•ë³€í™˜
 		System.out.println(a + " + " + b + " = " + sum);
 		System.out.println(a + " - " + b + " = " + sub);
 		System.out.println(a + " * " + b + " = " + mul);

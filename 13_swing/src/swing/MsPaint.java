@@ -14,12 +14,12 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-//±×¸²ÆÇ Æ²¸¸ ¸¸µé¾î¿À±â(Ä«ÅåÀÇ »çÁø ÂüÁ¶)
+//ê·¸ë¦¼íŒ í‹€ë§Œ ë§Œë“¤ì–´ì˜¤ê¸°(ì¹´í†¡ì˜ ì‚¬ì§„ ì°¸ì¡°)
 
 
 public class MsPaint extends JFrame {
 	
-	//2.ÇÊµå¼±¾ğ
+	//2.í•„ë“œì„ ì–¸
 	private JLabel x1L, y1L, x2L, y2L, z1L, z2L;
 	private JTextField x1T, y1T, x2T, y2T, z1T, z2T;
 	private JCheckBox fill;
@@ -30,9 +30,9 @@ public class MsPaint extends JFrame {
 	private DrCanvas can;
 	
 	public MsPaint() {
-		super("¹Ì´Ï ±×¸²ÆÇ");
+		super("ë¯¸ë‹ˆ ê·¸ë¦¼íŒ");
 		
-		//3.ÇÊµå¿¡ ¼±¾ğµÈ µµ±¸ »ı¼º
+		//3.í•„ë“œì— ì„ ì–¸ëœ ë„êµ¬ ìƒì„±
 		JPanel p = new JPanel();
 		x1L = new JLabel("X1");
 		y1L = new JLabel("Y1");
@@ -47,7 +47,7 @@ public class MsPaint extends JFrame {
 		z1T = new JTextField("           ");
 		z2T = new JTextField("           ");
 		
-		fill = new JCheckBox("Ã¤¿ì±â");
+		fill = new JCheckBox("ì±„ìš°ê¸°");
 		
 		
 		p.add(x1L);
@@ -67,14 +67,14 @@ public class MsPaint extends JFrame {
 		
 		
 		JPanel p2 = new JPanel();
-		line = new JRadioButton("¼±");
-		circle = new JRadioButton("¿ø");
-		rect = new JRadioButton("»ç°¢Çü");
-		roundRect = new JRadioButton("µÕ±Ù»ç°¢Çü");
-		pen= new JRadioButton("Ææ");
-		color = new String[]{"»¡°­","ÃÊ·Ï","ÆÄ¶û","º¸¶ó","ÇÏ´Ã"}; 
+		line = new JRadioButton("ì„ ");
+		circle = new JRadioButton("ì›");
+		rect = new JRadioButton("ì‚¬ê°í˜•");
+		roundRect = new JRadioButton("ë‘¥ê·¼ì‚¬ê°í˜•");
+		pen= new JRadioButton("íœ");
+		color = new String[]{"ë¹¨ê°•","ì´ˆë¡","íŒŒë‘","ë³´ë¼","í•˜ëŠ˜"}; 
 		combo = new JComboBox<String>(color);
-		draw = new JButton("±×¸®±â");
+		draw = new JButton("ê·¸ë¦¬ê¸°");
 		
 		p2.add(line);
 		p2.add(circle);
@@ -90,7 +90,7 @@ public class MsPaint extends JFrame {
 		
 		
 		
-		//1.ÇÁ·¹ÀÓ ¸¸µé±â
+		//1.í”„ë ˆì„ ë§Œë“¤ê¸°
 		setBounds(800, 300, 500, 300);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -106,7 +106,7 @@ public class MsPaint extends JFrame {
 	
 }
 
-class DrCanvas extends Canvas{ //ÇÁ·¹ÀÓ À§¿¡ Äµ¹ö½º¸¦ »ı¼º
+class DrCanvas extends Canvas{ //í”„ë ˆì„ ìœ„ì— ìº”ë²„ìŠ¤ë¥¼ ìƒì„±
 	public DrCanvas() {
 		this.setBackground(new Color(255,255,255));	
 	}
@@ -121,13 +121,13 @@ class DrCanvas extends Canvas{ //ÇÁ·¹ÀÓ À§¿¡ Äµ¹ö½º¸¦ »ı¼º
 
 //checkbox
 //jcombobox
-//¼¾ÅÍ¿¡ ±×¸²±×¸± °ø°£ - Canvas
+//ì„¼í„°ì— ê·¸ë¦¼ê·¸ë¦´ ê³µê°„ - Canvas
 
-//1. JOptionPane.showMessageDialog(this, "»ç¿ëÁßÀÎ ¾ÆÀÌµğ ÀÔ´Ï´Ù");
+//1. JOptionPane.showMessageDialog(this, "ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë”” ì…ë‹ˆë‹¤");
 //
 //2. delete()
 //
-//3. ±×¸®ÆÇ - Æ² ¸¸ ÀÛ¼ºÇÏ¼¼¿ä
+//3. ê·¸ë¦¬íŒ - í‹€ ë§Œ ì‘ì„±í•˜ì„¸ìš”
 //Project : 13_swing
 //
 //Class   : MsPaint.java
@@ -139,4 +139,4 @@ class DrCanvas extends Canvas{ //ÇÁ·¹ÀÓ À§¿¡ Äµ¹ö½º¸¦ »ı¼º
 //private JComboBox<String> combo;
 //private JButton draw;
 //private DrCanvas can;
-//»çÀÌÁî °íÁ¤ ÇÊ¿ä X
+//ì‚¬ì´ì¦ˆ ê³ ì • í•„ìš” X

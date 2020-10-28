@@ -2,15 +2,15 @@ package p07_heritance;
 
 
 public class SubTestP2 extends SuperTestP2 {
-	protected String name; //ÀÚ½ÄÅ¬·¡½º
-	protected int age; //ÀÚ½ÄÅ¬·¡½º
+	protected String name; //ìì‹í´ë˜ìŠ¤
+	protected int age; //ìì‹í´ë˜ìŠ¤
 	
 	public SubTestP2() {
-		System.out.println("SubTestP2 ±âº» »ı¼ºÀÚ");
+		System.out.println("SubTestP2 ê¸°ë³¸ ìƒì„±ì");
 	}
 	
 	public SubTestP2(double weight, double height, String name, int age) {
-		System.out.println("SubTestP2 »ı¼ºÀÚ");
+		System.out.println("SubTestP2 ìƒì„±ì");
 		super.weight = weight;
 		super.height = height;
 		this.name = name;
@@ -18,25 +18,25 @@ public class SubTestP2 extends SuperTestP2 {
 	}
 	
 	public void outPut() {
-		System.out.println("¸ö¹«°Ô = " + weight);//superµîÀ» ¼±¾ğÇÏÁö ¾Ê¾Æµµ ºÎ¸ğÅ¬·¡½º¿¡ Á¸ÀçÇÏ±â ¶§¹®¿¡ Á¤»óÀÛµ¿
-		System.out.println("Å° = " + height);//superµîÀ» ¼±¾ğÇÏÁö ¾Ê¾Æµµ ºÎ¸ğÅ¬·¡½º¿¡ Á¸ÀçÇÏ±â ¶§¹®¿¡ Á¤»óÀÛµ¿
-		System.out.println("ÀÌ¸§ = " + name);
-		System.out.println("³ªÀÌ = " + age);
+		System.out.println("ëª¸ë¬´ê²Œ = " + weight);//superë“±ì„ ì„ ì–¸í•˜ì§€ ì•Šì•„ë„ ë¶€ëª¨í´ë˜ìŠ¤ì— ì¡´ì¬í•˜ê¸° ë•Œë¬¸ì— ì •ìƒì‘ë™
+		System.out.println("í‚¤ = " + height);//superë“±ì„ ì„ ì–¸í•˜ì§€ ì•Šì•„ë„ ë¶€ëª¨í´ë˜ìŠ¤ì— ì¡´ì¬í•˜ê¸° ë•Œë¬¸ì— ì •ìƒì‘ë™
+		System.out.println("ì´ë¦„ = " + name);
+		System.out.println("ë‚˜ì´ = " + age);
 	}
 	
 	public static void main(String[] args) {
 		SubTestP2 sub = new SubTestP2();
 		System.out.println();
 		
-		SubTestP2 sub2 = new SubTestP2(75.3, 185.5, "È«±æµ¿", 25);
+		SubTestP2 sub2 = new SubTestP2(75.3, 185.5, "í™ê¸¸ë™", 25);
 		sub2.outPut();
 		System.out.println();
 		
-		sub2.disp(); //ºÎ¸ğÅ¬·¡½º ¸Ş¼Òµå
+		sub2.disp(); //ë¶€ëª¨í´ë˜ìŠ¤ ë©”ì†Œë“œ
 		System.out.println("----------------------------------");
 		
-		SuperTestP2 bb = new SubTestP2(35.8, 156.3, "ÄÚ³­", 13);
-		//bb.outPut(); //-error : ÀÚ½ÄÅ¬·¡½º ¸Ş¼Òµå´Â ºÎ¸ğÅ¬·¡½º¿¡¼­ È£ÃâÇÒ ¼ö ¾øÀ½
+		SuperTestP2 bb = new SubTestP2(35.8, 156.3, "ì½”ë‚œ", 13);
+		//bb.outPut(); //-error : ìì‹í´ë˜ìŠ¤ ë©”ì†Œë“œëŠ” ë¶€ëª¨í´ë˜ìŠ¤ì—ì„œ í˜¸ì¶œí•  ìˆ˜ ì—†ìŒ
 		bb.disp();
 	}
 }

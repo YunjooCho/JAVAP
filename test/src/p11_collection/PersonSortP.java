@@ -9,53 +9,53 @@ public class PersonSortP {
 	public static void main(String[] args) {
 		String[] ar = {"orange","apple","banana","pear","peach","applemango"};
 		
-		System.out.println("Á¤·Ä Àü = ");
+		System.out.println("ì •ë ¬ ì „ = ");
 		for(String fruit : ar) {
 			System.out.println(fruit + " ");
 		}
 		System.out.println();
 		
-		Arrays.sort(ar); //¹è¿­À» ³Ñ°ÜÁÖ¸é ÀÚµ¿À¸·Î ¼ø¼­´ë·Î ³ª¿­
+		Arrays.sort(ar); //ë°°ì—´ì„ ë„˜ê²¨ì£¼ë©´ ìë™ìœ¼ë¡œ ìˆœì„œëŒ€ë¡œ ë‚˜ì—´
 		
-		System.out.println("Á¤·Ä ÈÄ = ");
+		System.out.println("ì •ë ¬ í›„ = ");
 		for(String fruit : ar) {
 			System.out.println(fruit + " ");
 		}
 		System.out.println();
 		
-		PersonDTOP aa = new PersonDTOP("¸ù½Ç", 15);
-		PersonDTOP bb = new PersonDTOP("¹¶Ä¡", 14);
-		PersonDTOP cc = new PersonDTOP("¹°", 1000);
+		PersonDTOP aa = new PersonDTOP("ëª½ì‹¤", 15);
+		PersonDTOP bb = new PersonDTOP("ë­‰ì¹˜", 14);
+		PersonDTOP cc = new PersonDTOP("ë¬¼", 1000);
 		
 		ArrayList<PersonDTOP> list = new ArrayList<PersonDTOP>();
 		list.add(aa);
 		list.add(bb);
 		list.add(cc);
 		
-		System.out.println("Á¤·Ä Àü = "); //toString¿À¹ö¶óÀÌµù
+		System.out.println("ì •ë ¬ ì „ = "); //toStringì˜¤ë²„ë¼ì´ë”©
 		for(PersonDTOP dto : list) {
 			System.out.println(dto);
 		}
 		
-		System.out.println("\n³ªÀÌ·Î Á¤·Ä - ³»¸²Â÷¼ø");
+		System.out.println("\në‚˜ì´ë¡œ ì •ë ¬ - ë‚´ë¦¼ì°¨ìˆœ");
 		Collections.sort(list);
 		
-		System.out.println("Á¤·Ä ÈÄ = ");
+		System.out.println("ì •ë ¬ í›„ = ");
 		for(PersonDTOP dto : list) {
 			System.out.println(dto);
 		}
 		System.out.println();
 		
-		//»õ·Î¿î ±âÁØÁ¡ ¸¸µé±â
+		//ìƒˆë¡œìš´ ê¸°ì¤€ì  ë§Œë“¤ê¸°
 		Comparator<PersonDTOP> com = new Comparator<PersonDTOP>() {
 			public int compare(PersonDTOP p1, PersonDTOP p2) {
 				return p1.getName().compareTo(p2.getName()); 
 			}
 		};
 		
-		System.out.println("\nÀÌ¸§À¸·Î Ãâ·Â - ¿À¸§Â÷¼ø");
+		System.out.println("\nì´ë¦„ìœ¼ë¡œ ì¶œë ¥ - ì˜¤ë¦„ì°¨ìˆœ");
 		Collections.sort(list,com);
-		System.out.println("Á¤·Ä ÈÄ = " + list);
+		System.out.println("ì •ë ¬ í›„ = " + list);
 		
 	}
 }

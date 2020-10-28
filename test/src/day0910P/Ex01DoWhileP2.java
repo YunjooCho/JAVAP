@@ -8,37 +8,37 @@ public class Ex01DoWhileP2 {
 	public static void main(String[] args) throws IOException {
 		int number = 5;
 		while(number > 5) {
-			System.out.println("¹İº¹ÀÌ µÉ±î¿ä?");
+			System.out.println("ë°˜ë³µì´ ë ê¹Œìš”?");
 		}
 		
-		//Do~WhileÀº ¹«Á¶°Ç ÇÑ¹ø ½ÇÇàµÈ´Ù
+		//Do~Whileì€ ë¬´ì¡°ê±´ í•œë²ˆ ì‹¤í–‰ëœë‹¤
 		do {
-			System.out.println("dowhile : ¹İº¹ÀÌ µÉ±î¿ä?");
+			System.out.println("dowhile : ë°˜ë³µì´ ë ê¹Œìš”?");
 		}while(number > 5);
 		
 		
-		//»ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ¸¦ ÀÔ·Â ¹ŞµÇ
-		//10º¸´Ù Å« ¼ö°¡ ³ª¿À¸é ´Ù½Ã ÀÔ·Â¹Şµµ·Ï ¸¸µé¾î º¸ÀÚ
+		//ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ìë¥¼ ì…ë ¥ ë°›ë˜
+		//10ë³´ë‹¤ í° ìˆ˜ê°€ ë‚˜ì˜¤ë©´ ë‹¤ì‹œ ì…ë ¥ë°›ë„ë¡ ë§Œë“¤ì–´ ë³´ì
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		String number2 = br.readLine();
 		int stringToInt = Integer.parseInt(number2);
 		
 		while(stringToInt > 10) {
-			System.out.println("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			System.out.println("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”");
 			number2 = br.readLine();
 			stringToInt = Integer.parseInt(number2);
 		}
-		System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ö : " + stringToInt);
+		System.out.println("ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ˜ : " + stringToInt);
 		
-		//do~while¹®
+		//do~whileë¬¸
 		int userNumber = 0;
 		do {
 			if(userNumber > 0) {
-				System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.print("¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä(dowhile) : ");
+			System.out.print("ìˆ«ìë¥¼ ì…ë ¥í•˜ì„¸ìš”(dowhile) : ");
 			userNumber = Integer.parseInt(br.readLine());
 		}while(userNumber > 10);
 		System.out.println("userNumber : " + userNumber);

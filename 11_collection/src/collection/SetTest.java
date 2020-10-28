@@ -7,15 +7,15 @@ import java.util.Set;
 public class SetTest {
 
 	public static void main(String[] args) {
-		//Set - Ãß»ó¸Ş¼Òµå 15°³
+		//Set - ì¶”ìƒë©”ì†Œë“œ 15ê°œ
 		//Implementing Classes - HashSet
-		//get()»ç¿ë ¸øÇÔ, Áßº¹Çã¿ë ¾ÈµÊ, ¼ø¼­°¡ µÚÁ×¹ÚÁ×
+		//get()ì‚¬ìš© ëª»í•¨, ì¤‘ë³µí—ˆìš© ì•ˆë¨, ìˆœì„œê°€ ë’¤ì£½ë°•ì£½
 		Set<String> set = new HashSet<String>();
-		set.add("È£¶ûÀÌ"); //ÀÔ·ÂÇÑ ¼ø¼­´ë·Î ÀúÀåµÊ, Á¦³×¸¯ÀÌ ¾ø¾î¼­ WarningÀÌ ¶ä
-		set.add("»çÀÚ");
-		set.add("È£¶ûÀÌ"); //Áßº¹Çã¿ëX, ¼ø¼­X
-		set.add("±â¸°");
-		set.add("ÄÚ³¢¸®");
+		set.add("í˜¸ë‘ì´"); //ì…ë ¥í•œ ìˆœì„œëŒ€ë¡œ ì €ì¥ë¨, ì œë„¤ë¦­ì´ ì—†ì–´ì„œ Warningì´ ëœ¸
+		set.add("ì‚¬ì");
+		set.add("í˜¸ë‘ì´"); //ì¤‘ë³µí—ˆìš©X, ìˆœì„œX
+		set.add("ê¸°ë¦°");
+		set.add("ì½”ë¼ë¦¬");
 		
 		
 		Iterator<String> it = set.iterator();

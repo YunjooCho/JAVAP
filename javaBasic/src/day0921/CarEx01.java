@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import day0916.CarT;
 import util.ArrayUtil;
 
-//ÀÚµ¿Â÷ °ü¸® ÇÁ·Î±×·¥À» ArrayList·Î ÀÛ¼ºÇÏ¼¼¿ä(
+//ìë™ì°¨ ê´€ë¦¬ í”„ë¡œê·¸ë¨ì„ ArrayListë¡œ ì‘ì„±í•˜ì„¸ìš”(
 public class CarEx01 {
-	//ÇÊµå¼±¾ğ
+	//í•„ë“œì„ ì–¸
 	private static ArrayList<CarT> carList;
 	private static BufferedReader bufferedReader;
 	
@@ -25,18 +25,18 @@ public class CarEx01 {
 
 	private static void showMenu() throws NumberFormatException, IOException {
 		while(true) {
-			System.out.println("Â÷·® °ü¸® ÇÁ·Î±×·¥");
-			System.out.println("1. ÀÔ·Â  2. Ãâ·Â  3. Á¾·á");
+			System.out.println("ì°¨ëŸ‰ ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+			System.out.println("1. ì…ë ¥  2. ì¶œë ¥  3. ì¢…ë£Œ");
 			System.out.print("> ");
 			int choice = validateNumber(1,3);
 			if(choice == 1) {
-				//ÀÔ·Â ¸Ş¼Òµå È£Ãâ
+				//ì…ë ¥ ë©”ì†Œë“œ í˜¸ì¶œ
 				add();
 			}else if(choice == 2) {
-				//Ãâ·Â ¸Ş¼Òµå È£Ãâ
+				//ì¶œë ¥ ë©”ì†Œë“œ í˜¸ì¶œ
 				printAll();
 			}else if(choice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 				break;
 			}
 		}//while
@@ -45,7 +45,7 @@ public class CarEx01 {
 	private static int validateNumber(int minimum, int maximum) throws NumberFormatException, IOException {
 		int value = Integer.parseInt(bufferedReader.readLine());
 		while(value < minimum || value > maximum) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 			value = Integer.parseInt(bufferedReader.readLine());
 		}
 		return value;
@@ -53,38 +53,38 @@ public class CarEx01 {
 	
 	private static void add() throws NumberFormatException, IOException {
 		CarT c = new CarT();
-		System.out.print("Â÷·® ¹øÈ£ : ");
+		System.out.print("ì°¨ëŸ‰ ë²ˆí˜¸ : ");
 		c.setNumber(bufferedReader.readLine());
-		while(carList.contains(c)) {//°´Ã¼¹è¿­->¾î·¹ÀÌ¸®½ºÆ® ¼öÁ¤ºÎºĞ
-			System.out.println("ÀÌ¹Ì Á¸ÀçÇÏ´Â Â÷·®¹øÈ£ÀÔ´Ï´Ù.");
-			System.out.print("Â÷·® ¹øÈ£: ");
+		while(carList.contains(c)) {//ê°ì²´ë°°ì—´->ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ìˆ˜ì •ë¶€ë¶„
+			System.out.println("ì´ë¯¸ ì¡´ì¬í•˜ëŠ” ì°¨ëŸ‰ë²ˆí˜¸ì…ë‹ˆë‹¤.");
+			System.out.print("ì°¨ëŸ‰ ë²ˆí˜¸: ");
 			c.setNumber(bufferedReader.readLine());
 		}
-		System.out.print("Â÷·® Á¾·ù : ");
+		System.out.print("ì°¨ëŸ‰ ì¢…ë¥˜ : ");
 		c.setType(bufferedReader.readLine());
-		System.out.print("Â÷·® ¿¬½Ä : ");
+		System.out.print("ì°¨ëŸ‰ ì—°ì‹ : ");
 		c.setYear(validateNumber(2000, 2020));
-		System.out.print("Â÷·® °¡°İ : ");
+		System.out.print("ì°¨ëŸ‰ ê°€ê²© : ");
 		c.setPrice(Integer.parseInt(bufferedReader.readLine()));
-		System.out.print("Â÷·® »ö»ó : ");
+		System.out.print("ì°¨ëŸ‰ ìƒ‰ìƒ : ");
 		c.setColor(bufferedReader.readLine());
 		
-		carList.add(c);//°´Ã¼¹è¿­->¾î·¹ÀÌ¸®½ºÆ® ¼öÁ¤ºÎºĞ
+		carList.add(c);//ê°ì²´ë°°ì—´->ì–´ë ˆì´ë¦¬ìŠ¤íŠ¸ ìˆ˜ì •ë¶€ë¶„
 	}//add
 	
 	
 	private static void printAll() throws NumberFormatException, IOException {
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=");
-		System.out.println("    Â÷ ·® ¸ñ ·Ï");
-		System.out.println("ÀÏ·Ã¹øÈ£   |  Â÷·®¹øÈ£");
+		System.out.println("    ì°¨ ëŸ‰ ëª© ë¡");
+		System.out.println("ì¼ë ¨ë²ˆí˜¸   |  ì°¨ëŸ‰ë²ˆí˜¸");
 		for(int i = 0; i < carList.size();i++) {
 			System.out.printf("%d.\t%s\n", (i+1), carList.get(i).getNumber());
 		}
 		System.out.println("=-=-=-=-=-=-=-=-=-=-=");
-		System.out.print("»ó¼¼Á¤º¸¸¦ È®ÀÎÇÒ Â÷·®ÀÇ ÀÏ·Ã¹øÈ£¸¦ ¼±ÅÃÇÏ¼¼¿ä(0Àº ¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°¡±â):");
+		System.out.print("ìƒì„¸ì •ë³´ë¥¼ í™•ì¸í•  ì°¨ëŸ‰ì˜ ì¼ë ¨ë²ˆí˜¸ë¥¼ ì„ íƒí•˜ì„¸ìš”(0ì€ ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°€ê¸°):");
 		int number = validateNumber(0, carList.size()) - 1;
 		if(number == -1) {
-			System.out.println("¸ŞÀÎ¸Ş´º·Î µ¹¾Æ°©´Ï´Ù");
+			System.out.println("ë©”ì¸ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤");
 		}else {
 			printOne(number);
 		}
@@ -95,29 +95,29 @@ public class CarEx01 {
 		DecimalFormat df = new DecimalFormat("#,###");
 		CarT c = carList.get(index);
 		System.out.println("-------------------------------------------");
-		System.out.printf("Â÷·® ¹øÈ£ : %s, Â÷·® Á¾·ù : %s\n", c.getNumber(), c.getType());
-		System.out.printf("Â÷·® ¿¬½Ä : %d³â, Â÷·® °¡°İ : %s\n¿ø", c.getYear(), df.format((long)c.getPrice()));
-		System.out.printf("Â÷·® »ö»ó : %s\n", c.getColor());
+		System.out.printf("ì°¨ëŸ‰ ë²ˆí˜¸ : %s, ì°¨ëŸ‰ ì¢…ë¥˜ : %s\n", c.getNumber(), c.getType());
+		System.out.printf("ì°¨ëŸ‰ ì—°ì‹ : %dë…„, ì°¨ëŸ‰ ê°€ê²© : %s\nì›", c.getYear(), df.format((long)c.getPrice()));
+		System.out.printf("ì°¨ëŸ‰ ìƒ‰ìƒ : %s\n", c.getColor());
 		System.out.println("-------------------------------------------");
-		System.out.println("1.µî·ÏÁ¤º¸ ¼öÁ¤  2.µî·ÏÁ¤º¸ »èÁ¦  3.Â÷·® ¸ñ·ÏÀ¸·Î µ¹¾Æ°¡±â");
+		System.out.println("1.ë“±ë¡ì •ë³´ ìˆ˜ì •  2.ë“±ë¡ì •ë³´ ì‚­ì œ  3.ì°¨ëŸ‰ ëª©ë¡ìœ¼ë¡œ ëŒì•„ê°€ê¸°");
 		int selectNumber = validateNumber(1,3);
 		if(selectNumber == 1) {
 			update(index);
 		}else if(selectNumber == 2) {
 			delete(index);
 		}else if(selectNumber == 3) {
-			System.out.println("Â÷·® ¸ñ·ÏÀ¸·Î µ¹¾Æ°©´Ï´Ù.");
+			System.out.println("ì°¨ëŸ‰ ëª©ë¡ìœ¼ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 		}
 	}
 	
 	
 	private static void update(int index) throws NumberFormatException, IOException {
 		
-		System.out.print("Â÷·® »ö»ó : ");
+		System.out.print("ì°¨ëŸ‰ ìƒ‰ìƒ : ");
 		carList.get(index).setColor(bufferedReader.readLine());
-		System.out.print("Â÷·® ¿¬½Ä : ");
+		System.out.print("ì°¨ëŸ‰ ì—°ì‹ : ");
 		carList.get(index).setYear(Integer.parseInt(bufferedReader.readLine()));
-		System.out.print("Â÷·® °¡°İ : ");
+		System.out.print("ì°¨ëŸ‰ ê°€ê²© : ");
 		carList.get(index).setPrice(Integer.parseInt(bufferedReader.readLine()));
 		
 		printOne(index);
@@ -126,7 +126,7 @@ public class CarEx01 {
 	
 	
 	private static void delete(int index) throws IOException {
-		System.out.print("Á¤¸»·Î »èÁ¦ÇÏ½Ã°Ú½À´Ï±î?(Y/N): ");
+		System.out.print("ì •ë§ë¡œ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N): ");
 		String yn = new String();
 		yn = bufferedReader.readLine().toUpperCase();
 		if(yn.equals("Y")) {
@@ -135,7 +135,7 @@ public class CarEx01 {
 		}else if(yn.equals("N")) {
 			printOne(index);
 		}else {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			yn = new String().toUpperCase();
 		}
 	}

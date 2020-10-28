@@ -1,26 +1,26 @@
 package loop;
 
 /*
-´õÇÏ±â ¿¬½À ÇÁ·Î±×·¥
-10~99 »çÀÌÀÇ ³­¼ö¸¦ 2°³(a, b) ¹ß»ýÇÏ¿© ÇÕÀ» ±¸ÇÏ´Â ÇÁ·Î±×·¥
-¹®Á¦¼ö´Â ÃÑ 5¹®Á¦¸¦ Á¦°øÇÑ´Ù - for
-1¹®Á¦´ç Á¡¼ö 20Á¡¾¿ °è»ê
+ë”í•˜ê¸° ì—°ìŠµ í”„ë¡œê·¸ëž¨
+10~99 ì‚¬ì´ì˜ ë‚œìˆ˜ë¥¼ 2ê°œ(a, b) ë°œìƒí•˜ì—¬ í•©ì„ êµ¬í•˜ëŠ” í”„ë¡œê·¸ëž¨
+ë¬¸ì œìˆ˜ëŠ” ì´ 5ë¬¸ì œë¥¼ ì œê³µí•œë‹¤ - for
+1ë¬¸ì œë‹¹ ì ìˆ˜ 20ì ì”© ê³„ì‚°
 
-[½ÇÇà°á°ú]
+[ì‹¤í–‰ê²°ê³¼]
 [1] 25 + 36 = 45
-Æ²·È´Ù
+í‹€ë ¸ë‹¤
 
 [2] 78 + 10 = 88
-µùµ¿µ­
+ë”©ë™ëŽ…
 ...
 
 [5] 12 + 25 = 37
-µùµ¿µ­
+ë”©ë™ëŽ…
 
-´ç½ÅÀÇ ÃÑ x¹®Á¦¸¦ ¸ÂÃß¾î¼­ xxÁ¡ ÀÔ´Ï´Ù
+ë‹¹ì‹ ì˜ ì´ xë¬¸ì œë¥¼ ë§žì¶”ì–´ì„œ xxì  ìž…ë‹ˆë‹¤
 
-¶Ç ÇÒ·¡ (Y/N) : n
-ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù
+ë˜ í• ëž˜ (Y/N) : n
+í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤
  */
 
 
@@ -37,23 +37,23 @@ public class AddGameTeacher {
 	      
 	      while(true) {
 	         count=0;
-	         for(int i=1; i<=5; i++){//5¹®Á¦
+	         for(int i=1; i<=5; i++){//5ë¬¸ì œ
 	            a = (int)(Math.random()*90)+10;//10~99
 	            b = (int)(Math.random()*90)+10;
 	            
-	            System.out.print("[¹®Á¦"+i+"] "+a + " + " + b + " = ");
+	            System.out.print("[ë¬¸ì œ"+i+"] "+a + " + " + b + " = ");
 	            user = Integer.parseInt(br.readLine());
 	            
 	            if((a+b) == user) {
-	               System.out.println("µùµ¿µ­");
+	               System.out.println("ë”©ë™ëŽ…");
 	               count++;
 	            }else {
-	               System.out.println("Æ²·È´Ù");
+	               System.out.println("í‹€ë ¸ë‹¤");
 	            }
 	         }//for
 	         
 	         System.out.println();
-	         System.out.println("´ç½ÅÀÇ ÃÑ "+count+"¹®Á¦¸¦ ¸ÂÃß¾î¼­ "+count*20+"Á¡ ÀÔ´Ï´Ù");
+	         System.out.println("ë‹¹ì‹ ì˜ ì´ "+count+"ë¬¸ì œë¥¼ ë§žì¶”ì–´ì„œ "+count*20+"ì  ìž…ë‹ˆë‹¤");
 	         
 	         while(true) {
 	            System.out.print("\n continue(y/n) : ");
@@ -62,13 +62,13 @@ public class AddGameTeacher {
 	            br.read();
 	            
 	            if(yn=='Y' || yn=='y' || yn=='N' || yn=='n') break;
-	            else System.out.println("Àß¸øµÈ ¹®ÀÚÀÔ´Ï´Ù");
+	            else System.out.println("ìž˜ëª»ëœ ë¬¸ìžìž…ë‹ˆë‹¤");
 	         }//while
 	         
 	         if(yn=='N' || yn=='n') break;
 	      
 	      }//while
 	      
-	      System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+	      System.out.println("í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 	   }
 }

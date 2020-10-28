@@ -10,52 +10,52 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public class RunRace extends Frame implements ActionListener{ //Racer°¡ ½º·¹µå°¡ µÊ
-	//1.ÇÊµå ¼±¾ğ
-	private Button btn; //Ãâ¹ß¹öÆ°
-	private int count;  //¸» ¸¶¸® ¼ö
-	private Racer[] r;  //¸» ¸¶¸® ¼ö¸¸Å­ÀÇ °´Ã¼ »ı¼º
+public class RunRace extends Frame implements ActionListener{ //Racerê°€ ìŠ¤ë ˆë“œê°€ ë¨
+	//1.í•„ë“œ ì„ ì–¸
+	private Button btn; //ì¶œë°œë²„íŠ¼
+	private int count;  //ë§ ë§ˆë¦¬ ìˆ˜
+	private Racer[] r;  //ë§ ë§ˆë¦¬ ìˆ˜ë§Œí¼ì˜ ê°ì²´ ìƒì„±
 	
-	//-.»ı¼ºÀÚ(±âº»»ı¼ºÀÚ)
+	//-.ìƒì„±ì(ê¸°ë³¸ìƒì„±ì)
 	public RunRace () {
 		
 	}
 	
 	
-	//2.»ı¼ºÀÚ(¹®ÀÚ¿­À» ÆÄ¶ó¹ÌÅÍ·Î ÇÏ´Â »ı¼ºÀÚ) - ÇÁ·¹ÀÓ, ¹öÆ°, ¸¶¸®¼ö, ¹è¿­, »çÁøÀ» ¿Ã¸± ÆĞ³Î
-	public RunRace(String[] args) { //String[] args´Â Run ConfigurationÀ¸·Î °ªÀ» ¹ŞÀ½
-		//4.»ı¼º
-		btn = new Button("Ãâ¹ß");
+	//2.ìƒì„±ì(ë¬¸ìì—´ì„ íŒŒë¼ë¯¸í„°ë¡œ í•˜ëŠ” ìƒì„±ì) - í”„ë ˆì„, ë²„íŠ¼, ë§ˆë¦¬ìˆ˜, ë°°ì—´, ì‚¬ì§„ì„ ì˜¬ë¦´ íŒ¨ë„
+	public RunRace(String[] args) { //String[] argsëŠ” Run Configurationìœ¼ë¡œ ê°’ì„ ë°›ìŒ
+		//4.ìƒì„±
+		btn = new Button("ì¶œë°œ");
 		count = Integer.parseInt(args[0]);
-		r = new Racer[count]; //Äµ¹ö½ºÅ¬·¡½º - 1.¹è¿­»ı¼º
+		r = new Racer[count]; //ìº”ë²„ìŠ¤í´ë˜ìŠ¤ - 1.ë°°ì—´ìƒì„±
 		
-		//7.»çÁøÀ» ¿Ã¸± ÆĞ³ÎÀ» Ãß°¡
+		//7.ì‚¬ì§„ì„ ì˜¬ë¦´ íŒ¨ë„ì„ ì¶”ê°€
 		Panel p = new Panel(new FlowLayout(FlowLayout.RIGHT)); 
-		//PanelÀÇ Layout : FlowLayout
-		//FlowLayoutÀÇ ±âº»Àº CenterÀÌÁö¸¸, Right·Î º¯È¯ÇÏ¿© ¹öÆ°ÀÇ À§Ä¡¸¦ ¿Å±è
+		//Panelì˜ Layout : FlowLayout
+		//FlowLayoutì˜ ê¸°ë³¸ì€ Centerì´ì§€ë§Œ, Rightë¡œ ë³€í™˜í•˜ì—¬ ë²„íŠ¼ì˜ ìœ„ì¹˜ë¥¼ ì˜®ê¹€
 		p.add(btn);
 		
 		for(int i = 0; i < count; i++) {
-			r[i] = new Racer(args[i+1]); //2.Å¬·¡½º »ı¼º
-			add("Center",r[i]); //¹Ø¿¡ °ãÃÄ¼­ º¸ÀÌÁö ¾ÊÀ½
+			r[i] = new Racer(args[i+1]); //2.í´ë˜ìŠ¤ ìƒì„±
+			add("Center",r[i]); //ë°‘ì— ê²¹ì³ì„œ ë³´ì´ì§€ ì•ŠìŒ
 		}
-		//5.¹öÆ° ¿Ã¸®±â
+		//5.ë²„íŠ¼ ì˜¬ë¦¬ê¸°
 		add("South",p);
 //		add("Center",r);
-//		add("Center", r[0]); //½ÇÁ¦·Î °¡¿îµ¥ Ãú·ÂµÇÁö ¾Ê´Â ÀÌÀ¯´Â ÀÌ¹ÌÁö Å©±â°¡ ÀÛ±â ¶§¹®¿¡ FlowLayout°ú ´Ù¸£°Ô ¼¾ÅÍÁß½ÉÀÌ ¾Æ´Ñ°¡º½
+//		add("Center", r[0]); //ì‹¤ì œë¡œ ê°€ìš´ë° ì¸¨ë ¥ë˜ì§€ ì•ŠëŠ” ì´ìœ ëŠ” ì´ë¯¸ì§€ í¬ê¸°ê°€ ì‘ê¸° ë•Œë¬¸ì— FlowLayoutê³¼ ë‹¤ë¥´ê²Œ ì„¼í„°ì¤‘ì‹¬ì´ ì•„ë‹Œê°€ë´„
 //		add("Center", r[1]);
 //		add("Center", r[2]);
 		
 		
-		//3.ÆĞ³Î¿¡ ÇØ´ç °´Ã¼¸¦ Ãß°¡ÇÏ¿© ÇÁ·¹ÀÓ¿¡ Ãâ·Â
-		Panel p2  = new Panel(new GridLayout(count,1)); //ÇÁ·¹ÀÓÀº ÇÏ³ª ÀÌ»ó ¿Ã¶ó°¡Áö ¾Ê¾Æ Panel¿¡ ³Ö¾î¼­ Ãâ·ÂÇÔ
+		//3.íŒ¨ë„ì— í•´ë‹¹ ê°ì²´ë¥¼ ì¶”ê°€í•˜ì—¬ í”„ë ˆì„ì— ì¶œë ¥
+		Panel p2  = new Panel(new GridLayout(count,1)); //í”„ë ˆì„ì€ í•˜ë‚˜ ì´ìƒ ì˜¬ë¼ê°€ì§€ ì•Šì•„ Panelì— ë„£ì–´ì„œ ì¶œë ¥í•¨
 		for(int i = 0; i < count; i++) {
 			p2.add(r[i]);
 			
 		}
 		add("Center", p2);
 		
-		//3. ÇÁ·¹ÀÓ Ã¢ »ı¼º - ¸» »ı¼ºÈÄ ¹Ø¿¡ ³»·Á¿À´Â°Ô ÁÁÀ½
+		//3. í”„ë ˆì„ ì°½ ìƒì„± - ë§ ìƒì„±í›„ ë°‘ì— ë‚´ë ¤ì˜¤ëŠ”ê²Œ ì¢‹ìŒ
 		setBounds(700,300,600,400);
 		setVisible(true);
 		setResizable(false);
@@ -66,7 +66,7 @@ public class RunRace extends Frame implements ActionListener{ //Racer°¡ ½º·¹µå°¡
 			}
 		});
 		
-		//ÀÌº¥Æ®
+		//ì´ë²¤íŠ¸
 		btn.addActionListener(this);
 		
 	}
@@ -75,33 +75,33 @@ public class RunRace extends Frame implements ActionListener{ //Racer°¡ ½º·¹µå°¡
 		return count;
 	}
 
-	//¿À¹ö¶óÀÌµå
+	//ì˜¤ë²„ë¼ì´ë“œ
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		 //¹öÆ° ºñÈ°¼ºÈ­
+		 //ë²„íŠ¼ ë¹„í™œì„±í™”
 		 btn.setEnabled(false);
 		 
-		 //¹è¿­ »ı¼º 
+		 //ë°°ì—´ ìƒì„± 
 		 Thread[] t = new Thread[count];
-		 //½º·¹µå »ı¼º
+		 //ìŠ¤ë ˆë“œ ìƒì„±
 		 for(int i = 0; i < count; i++) {
-			 t[i] = new Thread(r[i]); //racer¸¦ ½º·¹µå·Î ¸¸µé°í ½ÍÀº °Í
-			 t[i].setPriority((int)(Math.random()*10+1)); //¿ì¼±¼øÀ§ - ¾î¶² ¸» °´Ã¼°¡ ¸ÕÀú Ãâ¹ßÇÒÁö ¸ğ¸§
-			 //½º·¹µå ½ÃÀÛ - ½º·¹µå ½ÇÇà(¿î¿µÃ¼Á¦) - run()
+			 t[i] = new Thread(r[i]); //racerë¥¼ ìŠ¤ë ˆë“œë¡œ ë§Œë“¤ê³  ì‹¶ì€ ê²ƒ
+			 t[i].setPriority((int)(Math.random()*10+1)); //ìš°ì„ ìˆœìœ„ - ì–´ë–¤ ë§ ê°ì²´ê°€ ë¨¼ì € ì¶œë°œí• ì§€ ëª¨ë¦„
+			 //ìŠ¤ë ˆë“œ ì‹œì‘ - ìŠ¤ë ˆë“œ ì‹¤í–‰(ìš´ì˜ì²´ì œ) - run()
 			 t[i].start();
 		 }//for
 	}
 
 	public static void main(String[] args) {
-		//String[] args¸¦ ÅëÇØ ¸»ÀÇ ¸¶¸®¼ö¿Í °¢ ¸»ÀÇ ÀÌ¸§À» ÀÔ·ÂÇÔ
-		if(args.length < 2) { //¸Å°³º¯¼öÀÇ °¹¼ö //¡Ú2°¡ ¾îµğ¼­ ³ª¿Â ¼ıÀÚÀÎÁö ´Ù½Ã Á¤¸®
-			System.out.println("Usage : java RunRace count name1, ..."); // »ç¿ë¹ı : ¸»ÀÇ ¸¶¸®¼ö¿Í ÀÌ¸§ ÀÔ·Â
-			 															 // Run Configuration »ç¿ë
-			System.exit(0);//Çü½ÄÀÌ Æ²¸®¸é(ÀÔ·Â°ª(¸Å°³°ª)ÀÌ Á¦´ë·Î ÀÔ·ÂµÇÁö ¾ÊÀº °æ¿ì, °­Á¦ Á¾·á)
+		//String[] argsë¥¼ í†µí•´ ë§ì˜ ë§ˆë¦¬ìˆ˜ì™€ ê° ë§ì˜ ì´ë¦„ì„ ì…ë ¥í•¨
+		if(args.length < 2) { //ë§¤ê°œë³€ìˆ˜ì˜ ê°¯ìˆ˜ //â˜…2ê°€ ì–´ë””ì„œ ë‚˜ì˜¨ ìˆ«ìì¸ì§€ ë‹¤ì‹œ ì •ë¦¬
+			System.out.println("Usage : java RunRace count name1, ..."); // ì‚¬ìš©ë²• : ë§ì˜ ë§ˆë¦¬ìˆ˜ì™€ ì´ë¦„ ì…ë ¥
+			 															 // Run Configuration ì‚¬ìš©
+			System.exit(0);//í˜•ì‹ì´ í‹€ë¦¬ë©´(ì…ë ¥ê°’(ë§¤ê°œê°’)ì´ ì œëŒ€ë¡œ ì…ë ¥ë˜ì§€ ì•Šì€ ê²½ìš°, ê°•ì œ ì¢…ë£Œ)
 		}
 		
-		if(Integer.parseInt(args[0]) != args.length -1) { //args.length - 1 ÇÏ´Â ÀÌÀ¯ : ¸Å°³°ªÀÌ ¸¶¸®¼ö + ¾Öµé ÀÌ¸§À¸·Î ¸¶¸®¼öÇ×¸ñ ¶§¹®¿¡ ¸» ¼öº¸´Ù 1°³ ´õ ÀÖÀ½
-			System.out.println("¸» ¸¶¸®¼ö¿Í ÀÌ¸§ÀÇ °³¼ö°¡ ¸ÂÁö ¾Ê½À´Ï´Ù.");
+		if(Integer.parseInt(args[0]) != args.length -1) { //args.length - 1 í•˜ëŠ” ì´ìœ  : ë§¤ê°œê°’ì´ ë§ˆë¦¬ìˆ˜ + ì• ë“¤ ì´ë¦„ìœ¼ë¡œ ë§ˆë¦¬ìˆ˜í•­ëª© ë•Œë¬¸ì— ë§ ìˆ˜ë³´ë‹¤ 1ê°œ ë” ìˆìŒ
+			System.out.println("ë§ ë§ˆë¦¬ìˆ˜ì™€ ì´ë¦„ì˜ ê°œìˆ˜ê°€ ë§ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 		

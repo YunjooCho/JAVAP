@@ -1,19 +1,19 @@
 package method;
 
 /*
- ÀÌ¸§(name), ±¹¾î(kor), ¿µ¾î(eng), ¼öÇĞ(math)Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­ ÃÑÁ¡(tot),Æò±Õ(avg)¸¦ ±¸ÇÏ½Ã¿À
+ ì´ë¦„(name), êµ­ì–´(kor), ì˜ì–´(eng), ìˆ˜í•™(math)ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ ì´ì (tot),í‰ê· (avg)ë¥¼ êµ¬í•˜ì‹œì˜¤
 
-ÃÑÁ¡ = ±¹¾î + ¿µ¾î + ¼öÇĞ
-Æò±Õ = ÃÑÁ¡ / °ú¸ñ¼ö
+ì´ì  = êµ­ì–´ + ì˜ì–´ + ìˆ˜í•™
+í‰ê·  = ì´ì  / ê³¼ëª©ìˆ˜
 
-[½ÇÇà°á°ú]
-ÀÌ¸§ ÀÔ·Â : È«±æµ¿
-±¹¾î ÀÔ·Â : 95
-¿µ¾î ÀÔ·Â : 90
-¼öÇĞ ÀÔ·Â : 91
+[ì‹¤í–‰ê²°ê³¼]
+ì´ë¦„ ì…ë ¥ : í™ê¸¸ë™
+êµ­ì–´ ì…ë ¥ : 95
+ì˜ì–´ ì…ë ¥ : 90
+ìˆ˜í•™ ì…ë ¥ : 91
 
-   *** È«±æµ¿ ¼ºÀû ***
-±¹¾î      ¿µ¾î      ¼öÇĞ      ÃÑÁ¡      Æò±Õ
+   *** í™ê¸¸ë™ ì„±ì  ***
+êµ­ì–´      ì˜ì–´      ìˆ˜í•™      ì´ì       í‰ê· 
 95      90      91      xxx      xx.xxx
  */
 
@@ -25,40 +25,40 @@ public class SungJuk {
 	
 	public static void main(String[] args) throws IOException {
 		
-		//¸Ş¸ğ¸® »ı¼º
+		//ë©”ëª¨ë¦¬ ìƒì„±
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		//ÀÔ·Â
-		System.out.println("[½ÇÇà°á°ú]");
-		System.out.println("ÀÌ¸§ÀÔ·Â : ");
+		//ì…ë ¥
+		System.out.println("[ì‹¤í–‰ê²°ê³¼]");
+		System.out.println("ì´ë¦„ì…ë ¥ : ");
 		String name = br.readLine();
-		System.out.println("±¹¾î : ");
+		System.out.println("êµ­ì–´ : ");
 		int kor = Integer.parseInt(br.readLine());
-		System.out.println("¿µ¾î : ");
+		System.out.println("ì˜ì–´ : ");
 		int eng = Integer.parseInt(br.readLine());
-		System.out.println("¼öÇĞ : ");
+		System.out.println("ìˆ˜í•™ : ");
 		int math = Integer.parseInt(br.readLine());
 		
-		//ÃÑÁ¡ ¸Ş¼Òµå, Æò±Õ ¸Ş¼Òµå
+		//ì´ì  ë©”ì†Œë“œ, í‰ê·  ë©”ì†Œë“œ
 		SungJuk sungJuk = new SungJuk(); 
 		int tot = sungJuk.calcTot(kor, eng, math);
 		double avg = sungJuk.calcAvg(tot);
 		
 		
-		//ÃÑÁ¡&Æò±Õ ´Ù¸¥ Ç®ÀÌ
+		//ì´ì &í‰ê·  ë‹¤ë¥¸ í’€ì´
 		//int tot = kor + eng + math;
 		//double avg = (double)tot / 3;
 		
-		//Ãâ·Â
-		System.out.println("\t *** " + name + " ¼ºÀû ***");
-		System.out.println("±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ");
+		//ì¶œë ¥
+		System.out.println("\t *** " + name + " ì„±ì  ***");
+		System.out.println("êµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· ");
 		System.out.println(kor + "\t" + eng + "\t" + math + "\t" + tot + "\t" + String.format("%.3f", avg));
 		
 
 	}
 
 	public int calcTot(int kor, int eng, int math) { 
-		//±¸Çö, ko = kor & en = eng & ma = math·Î Àâ¾Æµµ µÊ(¸Ş¸ğ¸®°¡ ´Ù¸§)
+		//êµ¬í˜„, ko = kor & en = eng & ma = mathë¡œ ì¡ì•„ë„ ë¨(ë©”ëª¨ë¦¬ê°€ ë‹¤ë¦„)
 		return kor + eng + math;
 			
 	}

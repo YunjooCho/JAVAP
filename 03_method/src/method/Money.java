@@ -2,29 +2,29 @@ package method;
 
 
 /*
-  ±İ¾×(money)ÀÌ 5679¿øÀÏ¶§ ´ÙÀ½°ú °°ÀÌ Ãâ·ÂÇÏ½Ã¿À
-  (/, % ¿¬»êÀÚ·Î Ç®±â)
+  ê¸ˆì•¡(money)ì´ 5679ì›ì¼ë•Œ ë‹¤ìŒê³¼ ê°™ì´ ì¶œë ¥í•˜ì‹œì˜¤
+  (/, % ì—°ì‚°ìë¡œ í’€ê¸°)
  
- [½ÇÇà°á°ú]
-  ±İ¾× : 5679¿ø
-  Ãµ¿ø : 5Àå
-  ¹é¿ø : 6°³
-  ½Ê¿ø : 7°³
-  ÀÏ¿ø : 9°³
+ [ì‹¤í–‰ê²°ê³¼]
+  ê¸ˆì•¡ : 5679ì›
+  ì²œì› : 5ì¥
+  ë°±ì› : 6ê°œ
+  ì‹­ì› : 7ê°œ
+  ì¼ì› : 9ê°œ
  */
 public class Money {
 
 	public static void main(String[] args) {
       int money = 5679;
       
-      System.out.println("[½ÇÇà°á°ú]");
-      System.out.println("±İ¾× : " + money + "¿ø");
-      System.out.println("Ãµ¿ø : " + (money / 1000) + "Àå");
-      System.out.println("¹é¿ø : " + (money % 1000 / 100) + "°³");
-      System.out.println("½Ê¿ø : " + (money % 1000 % 100 / 10) + "°³");
-      System.out.println("ÀÏ¿ø : " + (money % 1000 % 100 % 10) + "°³");
+      System.out.println("[ì‹¤í–‰ê²°ê³¼]");
+      System.out.println("ê¸ˆì•¡ : " + money + "ì›");
+      System.out.println("ì²œì› : " + (money / 1000) + "ì¥");
+      System.out.println("ë°±ì› : " + (money % 1000 / 100) + "ê°œ");
+      System.out.println("ì‹­ì› : " + (money % 1000 % 100 / 10) + "ê°œ");
+      System.out.println("ì¼ì› : " + (money % 1000 % 100 % 10) + "ê°œ");
       
-      //<´Ù¸¥Ç®ÀÌ>
+      //<ë‹¤ë¥¸í’€ì´>
       //int thousand = money / 1000;
       //int thousand_mod = money % 1000;
       //int hundred = thousand_mod / 100;
@@ -32,11 +32,11 @@ public class Money {
       //int ten = hundred_mod / 10;
       //int one = hundred_mod % 10;
       
-      //System.out.println("±İ¾× : " + money + "¿ø");
-      //System.out.println("Ãµ¿ø : " + thousand + "Àå");
-      //System.out.println("¹é¿ø : " + hundred + "°³");
-      //System.out.println("½Ê¿ø : " + ten + "°³");
-      //System.out.println("ÀÏ¿ø : " + one + "°³");
+      //System.out.println("ê¸ˆì•¡ : " + money + "ì›");
+      //System.out.println("ì²œì› : " + thousand + "ì¥");
+      //System.out.println("ë°±ì› : " + hundred + "ê°œ");
+      //System.out.println("ì‹­ì› : " + ten + "ê°œ");
+      //System.out.println("ì¼ì› : " + one + "ê°œ");
       
       
 

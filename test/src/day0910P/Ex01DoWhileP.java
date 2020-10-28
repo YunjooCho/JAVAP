@@ -4,26 +4,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//»ç¿ëÀÚ·ÎºÎÅÍ ¼ıÀÚ¸¦ ÀÔ·Â ¹ŞµÇ
-//10º¸´Ù Å« ¼ö°¡ ³ª¿À¸é ´Ù½Ã ÀÔ·Â¹Şµµ·Ï ¸¸µé¾î º¸ÀÚ
+//ì‚¬ìš©ìë¡œë¶€í„° ìˆ«ìë¥¼ ì…ë ¥ ë°›ë˜
+//10ë³´ë‹¤ í° ìˆ˜ê°€ ë‚˜ì˜¤ë©´ ë‹¤ì‹œ ì…ë ¥ë°›ë„ë¡ ë§Œë“¤ì–´ ë³´ì
 public class Ex01DoWhileP {
 
 	public static void main(String[] args) throws IOException {
-	//¸Ş¸ğ¸®»ı¼º
+	//ë©”ëª¨ë¦¬ìƒì„±
 	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 	
 	int number;
 	
-	//¹İº¹¹®
+	//ë°˜ë³µë¬¸
 	do {
-		System.out.print("¼ıÀÚ ÀÔ·Â : ");
+		System.out.print("ìˆ«ì ì…ë ¥ : ");
 		number = Integer.parseInt(bufferedReader.readLine());
 		
 		if(number > 10) {
-			System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+			System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
 		}
 	}while(number > 10);
-	System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ıÀÚ : " + number);
+	System.out.println("ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ«ì : " + number);
 	}
 
 }

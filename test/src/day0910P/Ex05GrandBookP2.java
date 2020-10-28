@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//»ç¿ëÀÚ·ÎºÎÅÍ Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ¼­
-//ÃÑÁ¡À» °è»êÇØÁÖ´Â ÇÁ·Î±×·¥
-//´Ü »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ Á¡¼ö°¡ Àß¸øµÈ Çü½Ä(0º¸´Ù Àû°Å³ª 100º¸´Ù Å« ¼Í¿ì)
-//ÀÏ ¶§¿¡´Â
-//¿Ã¹Ù¸¥ Á¡¼ö°¡ µé¾î¿Ã ¶§ ±îÁö
-//´Ù½Ã ÀÔ·Â¹Ş´Â´Ù.
-//ÀÔ·ÂÀ» ÇÒ ¶§¿¡´Â do whileÀ» »ç¿ëÇÏµµ·Ï ÇÑ´Ù.
+//ì‚¬ìš©ìë¡œë¶€í„° ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ì„œ
+//ì´ì ì„ ê³„ì‚°í•´ì£¼ëŠ” í”„ë¡œê·¸ë¨
+//ë‹¨ ì‚¬ìš©ìê°€ ì…ë ¥í•œ ì ìˆ˜ê°€ ì˜ëª»ëœ í˜•ì‹(0ë³´ë‹¤ ì ê±°ë‚˜ 100ë³´ë‹¤ í° ì…©ìš°)
+//ì¼ ë•Œì—ëŠ”
+//ì˜¬ë°”ë¥¸ ì ìˆ˜ê°€ ë“¤ì–´ì˜¬ ë•Œ ê¹Œì§€
+//ë‹¤ì‹œ ì…ë ¥ë°›ëŠ”ë‹¤.
+//ì…ë ¥ì„ í•  ë•Œì—ëŠ” do whileì„ ì‚¬ìš©í•˜ë„ë¡ í•œë‹¤.
 
 public class Ex05GrandBookP2 {
 
@@ -21,30 +21,30 @@ public class Ex05GrandBookP2 {
 
 		do {
 			if(kor < 0 || kor > 100) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.print("±¹¾îÁ¡¼ö : ");
+			System.out.print("êµ­ì–´ì ìˆ˜ : ");
 			kor = Integer.parseInt(br.readLine());
 		}while(kor < 0 || kor > 100);
 		
 		do {
 			if(eng < 0 || eng > 100) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
-			System.out.print("¿µ¾îÁ¡¼ö : ");
+			System.out.print("ì˜ì–´ì ìˆ˜ : ");
 			eng = Integer.parseInt(br.readLine());
 		}while(eng < 0 || eng > 100);
 		
 		do {
-			System.out.print("¼öÇĞÁ¡¼ö : ");
+			System.out.print("ìˆ˜í•™ì ìˆ˜ : ");
 			math = Integer.parseInt(br.readLine());
 			if(math < 0 || math > 100) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
 			}
 		}while(math < 0 || math > 100);
 		
 		int sum = kor + eng + math;
-		System.out.println("ÃÑÁ¡  = " + sum);
+		System.out.println("ì´ì   = " + sum);
 			
 			
 	}

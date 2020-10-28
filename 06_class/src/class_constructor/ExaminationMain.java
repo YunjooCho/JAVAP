@@ -7,50 +7,50 @@ public class ExaminationMain {
 	
 	
 	public static void main(String[] args) {
-		//System.in.read(); - 1°³ÀÇ ¹®ÀÚ
+		//System.in.read(); - 1ê°œì˜ ë¬¸ì
 		//BufferedReader
-		//JDK 5.0 - Scanner : ±âº» »ı¼ºÀÚ°¡ ¾øÀ½
+		//JDK 5.0 - Scanner : ê¸°ë³¸ ìƒì„±ìê°€ ì—†ìŒ
 		Scanner scan = new Scanner(System.in); 
 		//Scanner scan = new Scanner(); - error : The constructor Scanner() is undefined
-		//InputStream Å¸ÀÔ : System.in
-		//Socketµµ InputStream Å¸ÀÔ (Ã¤ÆÃ)
-		//flush´Â ±âº» ÇÊ¿ä ¾øÀ¸³ª ¹İº¹¹®À¸·Î µ¹¸± ¶§ ¸øÀĞ´Â °æ¿ì°¡ ÀÖÀ½
-		//¿¹¿ÜÃ³¸® ÇÊ¿ä ¾øÀ½, import¹® ÇÊ¿äÇÔ
-		//System.out.print("¹®ÀÚ¿­ ÀÔ·Â : ");
-		//String str = scan.next();//¹®ÀÚ¿­ ¹ŞÀ½
+		//InputStream íƒ€ì… : System.in
+		//Socketë„ InputStream íƒ€ì… (ì±„íŒ…)
+		//flushëŠ” ê¸°ë³¸ í•„ìš” ì—†ìœ¼ë‚˜ ë°˜ë³µë¬¸ìœ¼ë¡œ ëŒë¦´ ë•Œ ëª»ì½ëŠ” ê²½ìš°ê°€ ìˆìŒ
+		//ì˜ˆì™¸ì²˜ë¦¬ í•„ìš” ì—†ìŒ, importë¬¸ í•„ìš”í•¨
+		//System.out.print("ë¬¸ìì—´ ì…ë ¥ : ");
+		//String str = scan.next();//ë¬¸ìì—´ ë°›ìŒ
 		
-		//Á¤¼ö
+		//ì •ìˆ˜
 		//scan.nextInt();
 		//scan.nextDouble();	
 		
-		//1¹ø¹®Á¦ //¡ÚÂ÷ÀÌÁ¡
+		//1ë²ˆë¬¸ì œ //â˜…ì°¨ì´ì 
 		Examination ex = new Examination();
-		System.out.println("ÀÌ¸§\t1 2 3 4 5\tÁ¡¼ö");
+		System.out.println("ì´ë¦„\t1 2 3 4 5\tì ìˆ˜");
 		ex.compare();
 		System.out.println(ex.getName() + "\t"
 					     + ex.getOx(0) + " " + ex.getOx(1) + " " + ex.getOx(2) + " "
 					     + ex.getOx(3) + " " + ex.getOx(4) + "\t"
 					     + ex.getScore());
 		
-		//2¹ø¹®Á¦
+		//2ë²ˆë¬¸ì œ
 		Scanner scanner = new Scanner(System.in);
 		System.out.println();
-		System.out.println("<2¹ø¹®Á¦>");
-		System.out.print("ÀÎ¿ø¼ö ÀÔ·Â : ");
+		System.out.println("<2ë²ˆë¬¸ì œ>");
+		System.out.print("ì¸ì›ìˆ˜ ì…ë ¥ : ");
 		int people = scanner.nextInt();
 		Examination[] arr = new Examination[people];
 		for(int i = 0; i < arr.length; i++) {
-			System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+			System.out.print("ì´ë¦„ ì…ë ¥ : ");
 			String name = scanner.next();
-			System.out.print("´ä ÀÔ·Â : ");
+			System.out.print("ë‹µ ì…ë ¥ : ");
 			String dap = scanner.next();
-			arr[i] = new Examination(name, dap); //¡ÚÂ÷ÀÌÁ¡
+			arr[i] = new Examination(name, dap); //â˜…ì°¨ì´ì 
 			arr[i].compare();
 			System.out.println();
 		}
 		
-		//¡ÚÂ÷ÀÌÁ¡ - ¼±»ı´Ô Ç®ÀÌ ÂüÁ¶
-		System.out.println("ÀÌ¸§\t1 2 3 4 5\tÁ¡¼ö");
+		//â˜…ì°¨ì´ì  - ì„ ìƒë‹˜ í’€ì´ ì°¸ì¡°
+		System.out.println("ì´ë¦„\t1 2 3 4 5\tì ìˆ˜");
 		for(int i = 0; i < arr.length; i++) {
 			System.out.println(arr[i].getName() + "\t"
 				     + arr[i].getOx(0) + " " + arr[i].getOx(1) + " " + arr[i].getOx(2) + " "

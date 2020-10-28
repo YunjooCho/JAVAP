@@ -7,7 +7,7 @@ import java.awt.Graphics;
 public class WindowTestP extends Frame {
 	
 	public WindowTestP() {
-		super("³»°¡ ¸¸µç À©µµ¿ì");//»ı¼ºÀÚ·Î ´Ù¸¥ »ı¼ºÀÚ(ºÎ¸ğÅ¬·¡½º »ı¼ºÀÚ) È£Ãâ, Á¦ÀÏ Ã¹ÁÙ¿¡ ¿Í¾ßÇÔ
+		super("ë‚´ê°€ ë§Œë“  ìœˆë„ìš°");//ìƒì„±ìë¡œ ë‹¤ë¥¸ ìƒì„±ì(ë¶€ëª¨í´ë˜ìŠ¤ ìƒì„±ì) í˜¸ì¶œ, ì œì¼ ì²«ì¤„ì— ì™€ì•¼í•¨
 		setBounds(700, 100, 300, 400);
 		setVisible(true);
 		this.setBackground(new Color(255, 220, 193));
@@ -15,7 +15,7 @@ public class WindowTestP extends Frame {
 	}
 	
 	public void paint(Graphics g) {
-		g.drawString("µµÇü", 100, 100);
+		g.drawString("ë„í˜•", 100, 100);
 		g.drawLine(70, 120, 200, 300);
 		g.drawLine(200, 120, 70, 300);
 		g.drawRect(70, 120, 120, 180);

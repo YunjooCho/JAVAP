@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 import day0915.Student;
 import util.ArrayUtil;
 
-// ÇĞ»ı µî·Ï¿¡ Ãß°¡ÀûÀÎ ¸Ş¼Òµå¸¦ ´õ ¸¸µé¾îº¸ÀÚ
-// 1. ¸¸¾à ÇĞ»ı¹øÈ£¿Í ÀÌ¸§ÀÌ °°Àº ÇĞ»ıÀÌ ÀÔ·Â µÇ¸é 
-//    Àß¸ø ÀÔ·ÂÇß´Ù°í ¾Ë·ÁÁÖ°í 
-//    Áßº¹ÀÌ ¾Æ´Ñ ÇĞ»ıÀÌ ÀÔ·ÂµÉ¶§±îÁö ´Ù½Ã ÀÔ·ÂÀ» ¹ŞÀÚ
-// 2. Àß¸øµÈ Á¡¼ö´Â Àß¸ø ÀÔ·ÂÇß´Ù°í ¾Ë·ÁÁÖ°í
-//    ¿Ã¹Ù¸¥ Á¡¼ö°¡ µé¾î¿Ã¶§ ±îÁö ´Ù½Ã ÀÔ·ÂÀ» ¹ŞÀÚ
+// í•™ìƒ ë“±ë¡ì— ì¶”ê°€ì ì¸ ë©”ì†Œë“œë¥¼ ë” ë§Œë“¤ì–´ë³´ì
+// 1. ë§Œì•½ í•™ìƒë²ˆí˜¸ì™€ ì´ë¦„ì´ ê°™ì€ í•™ìƒì´ ì…ë ¥ ë˜ë©´ 
+//    ì˜ëª» ì…ë ¥í–ˆë‹¤ê³  ì•Œë ¤ì£¼ê³  
+//    ì¤‘ë³µì´ ì•„ë‹Œ í•™ìƒì´ ì…ë ¥ë ë•Œê¹Œì§€ ë‹¤ì‹œ ì…ë ¥ì„ ë°›ì
+// 2. ì˜ëª»ëœ ì ìˆ˜ëŠ” ì˜ëª» ì…ë ¥í–ˆë‹¤ê³  ì•Œë ¤ì£¼ê³ 
+//    ì˜¬ë°”ë¥¸ ì ìˆ˜ê°€ ë“¤ì–´ì˜¬ë•Œ ê¹Œì§€ ë‹¤ì‹œ ì…ë ¥ì„ ë°›ì
 public class StudentEx02T {
    private static BufferedReader bufferedReader;
    private static Student[] studentArray;
@@ -27,83 +27,83 @@ public class StudentEx02T {
 
    private static void showMenu() throws NumberFormatException, IOException {
       while (true) {
-         System.out.println("ºñÆ® ¼ºÀû °ü¸® ÇÁ·Î±×·¥");
-         System.out.println("1. ÀÔ·Â 2. Ãâ·Â 3. Á¾·á");
+         System.out.println("ë¹„íŠ¸ ì„±ì  ê´€ë¦¬ í”„ë¡œê·¸ë¨");
+         System.out.println("1. ì…ë ¥ 2. ì¶œë ¥ 3. ì¢…ë£Œ");
          System.out.print("> ");
          int userChoice = Integer.parseInt(bufferedReader.readLine());
          if (userChoice == 1) {
-            //ÀÔ·Â ¸Ş¼Òµå ½ÇÇà
+            //ì…ë ¥ ë©”ì†Œë“œ ì‹¤í–‰
             add();
          } else if (userChoice == 2) {
-            //Ãâ·Â ¸Ş¼Òµå ½ÇÇà
+            //ì¶œë ¥ ë©”ì†Œë“œ ì‹¤í–‰
             printArray();
          } else if (userChoice == 3) {
-            System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+            System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
             break;
          } else {
-            System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+            System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
          }
       }
    }
    
    private static void printArray() throws NumberFormatException, IOException {
       System.out.println("==============================");
-      System.out.println("¹øÈ£\tÀÌ¸§");
+      System.out.println("ë²ˆí˜¸\tì´ë¦„");
       System.out.println("==============================");
       for(int i = 0; i < studentArray.length; i++) {
          System.out.printf("%d\t%s\n", (i+1), studentArray[i].getName());
       }
-      System.out.println("»ó¼¼º¸±âÇÒ ¹øÈ£¸¦ ´­·¯ÁÖ¼¼¿ä(0Àº µÚ·Î°¡±â): ");
+      System.out.println("ìƒì„¸ë³´ê¸°í•  ë²ˆí˜¸ë¥¼ ëˆŒëŸ¬ì£¼ì„¸ìš”(0ì€ ë’¤ë¡œê°€ê¸°): ");
       int userChoice = Integer.parseInt(bufferedReader.readLine())-1;
-      //¸¸¾à userChoice°¡ ¿Ã¹Ù¸£Áö ¾ÊÀ¸¸é, ´Ù½Ã ÀÔ·ÂÀ» ÇÏµµ·Ï ½ÃÅ²´Ù.
-      //userchoice°¡ ¿Ã¹Ù¸£Áö ¾ÊÀº °æ¿ì´Â ¸îºÎÅÍ ¸îÀÎ°¡?
-      //userChocie°¡ -1¹Ì¸¸ÀÌ°Å³ª studentArray.length - 1 ÃÊ°úÀÌ¸é
-      while(userChoice < -1 || userChoice > studentArray.length - 1) {//»ç¿ëÀÚ´Â 0ºÎÅÍ ¹è¿­Å©±â¸¸Å­ ÀÔ·ÂÇÏÁö¸¸ ½ÇÁ¦·Î 
-    	  															  //userChoice¿¡ ÀÔ·ÂµÇ´Â °ªÀº -1 ~ (Array.length-1)ÀÓ
-         System.out.println("Àß¸øµÈ ¹øÈ£ÀÔ´Ï´Ù.");
-         System.out.print("»ó¼¼º¸±âÇÒ ¹øÈ£¸¦ ´­·¯ÁÖ¼¼¿ä: ");
+      //ë§Œì•½ userChoiceê°€ ì˜¬ë°”ë¥´ì§€ ì•Šìœ¼ë©´, ë‹¤ì‹œ ì…ë ¥ì„ í•˜ë„ë¡ ì‹œí‚¨ë‹¤.
+      //userchoiceê°€ ì˜¬ë°”ë¥´ì§€ ì•Šì€ ê²½ìš°ëŠ” ëª‡ë¶€í„° ëª‡ì¸ê°€?
+      //userChocieê°€ -1ë¯¸ë§Œì´ê±°ë‚˜ studentArray.length - 1 ì´ˆê³¼ì´ë©´
+      while(userChoice < -1 || userChoice > studentArray.length - 1) {//ì‚¬ìš©ìëŠ” 0ë¶€í„° ë°°ì—´í¬ê¸°ë§Œí¼ ì…ë ¥í•˜ì§€ë§Œ ì‹¤ì œë¡œ 
+    	  															  //userChoiceì— ì…ë ¥ë˜ëŠ” ê°’ì€ -1 ~ (Array.length-1)ì„
+         System.out.println("ì˜ëª»ëœ ë²ˆí˜¸ì…ë‹ˆë‹¤.");
+         System.out.print("ìƒì„¸ë³´ê¸°í•  ë²ˆí˜¸ë¥¼ ëˆŒëŸ¬ì£¼ì„¸ìš”: ");
          userChoice = Integer.parseInt(bufferedReader.readLine()) - 1;
       }
       if(userChoice == -1) {
-         //¸Ş½ÃÁö ¸¸ Ãâ·Â
-         System.out.println("¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+         //ë©”ì‹œì§€ ë§Œ ì¶œë ¥
+         System.out.println("ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
       }else {
-         //»ó¼¼º¸±â ¸Ş¼Òµå È£Ãâ
+         //ìƒì„¸ë³´ê¸° ë©”ì†Œë“œ í˜¸ì¶œ
          printOne(userChoice);
       }
    }
    
    private static void printOne(int index) throws NumberFormatException, IOException {
-      System.out.printf("%sÇĞ»ıÀÇ Á¤º¸\n", studentArray[index].getName());
-      System.out.printf("ÇĞ¹ø: %d ÀÌ¸§: %s\n", studentArray[index].getId(), studentArray[index].getName());
-      System.out.printf("±¹¾î: %03dÁ¡ ¿µ¾î: %03dÁ¡ ¼öÇĞ: %03dÁ¡\n", 
+      System.out.printf("%sí•™ìƒì˜ ì •ë³´\n", studentArray[index].getName());
+      System.out.printf("í•™ë²ˆ: %d ì´ë¦„: %s\n", studentArray[index].getId(), studentArray[index].getName());
+      System.out.printf("êµ­ì–´: %03dì  ì˜ì–´: %03dì  ìˆ˜í•™: %03dì \n", 
             studentArray[index].getKorean(), studentArray[index].getEnglish(), studentArray[index].getMath());
-      System.out.printf("ÃÑÁ¡: %03dÁ¡ Æò±Õ: %.2fÁ¡\n", studentArray[index].calculateSum(), studentArray[index].calculateAverage());
-      //¼öÁ¤, »èÁ¦¸¦ À§ÇÑ ÀÔ·ÂÀ» ¹Ş´Â´Ù.
+      System.out.printf("ì´ì : %03dì  í‰ê· : %.2fì \n", studentArray[index].calculateSum(), studentArray[index].calculateAverage());
+      //ìˆ˜ì •, ì‚­ì œë¥¼ ìœ„í•œ ì…ë ¥ì„ ë°›ëŠ”ë‹¤.
       System.out.println("=====================================");
-      System.out.println("1. ¼öÁ¤ 2. »èÁ¦ 3. ¸ñ·ÏÀ¸·Î");
+      System.out.println("1. ìˆ˜ì • 2. ì‚­ì œ 3. ëª©ë¡ìœ¼ë¡œ");
       int userChoice = Integer.parseInt(bufferedReader.readLine());
       if(userChoice == 1) {
-         //¼öÁ¤ ¸Ş¼Òµå È£Ãâ
-         System.out.print("±¹¾î: ");
+         //ìˆ˜ì • ë©”ì†Œë“œ í˜¸ì¶œ
+         System.out.print("êµ­ì–´: ");
          studentArray[index].setKorean(validateScore());
          
-         System.out.print("¿µ¾î: ");
+         System.out.print("ì˜ì–´: ");
          studentArray[index].setEnglish(validateScore());
          
-         System.out.print("¼öÇĞ: ");
+         System.out.print("ìˆ˜í•™: ");
          studentArray[index].setMath(validateScore());
          
          printOne(index);
          
       }else if(userChoice == 2) {
-         //»èÁ¦ ¸Ş¼Òµå È£Ãâ
-         //»èÁ¦½Ã¿¡´Â Á¤¸» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î? y/n ¹°¾îºÁ¼­
-         //´Ù½Ã ¿ä ¸Ş¼Òµå·Î µ¹¾Æ¿Â´Ù.
-         System.out.print("Á¤¸» »èÁ¦ÇÏ½Ã°Ú½À´Ï±î? (y/n): ");
+         //ì‚­ì œ ë©”ì†Œë“œ í˜¸ì¶œ
+         //ì‚­ì œì‹œì—ëŠ” ì •ë§ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? y/n ë¬¼ì–´ë´ì„œ
+         //ë‹¤ì‹œ ìš” ë©”ì†Œë“œë¡œ ëŒì•„ì˜¨ë‹¤.
+         System.out.print("ì •ë§ ì‚­ì œí•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n): ");
          String agree = bufferedReader.readLine();
          if(agree.equals("y")) {
-            //»èÁ¦ÇÏ°í ÇĞ»ı¸ñ·Ï º¸±â·Î ÀÌµ¿
+            //ì‚­ì œí•˜ê³  í•™ìƒëª©ë¡ ë³´ê¸°ë¡œ ì´ë™
             studentArray = ArrayUtil.removeByIndex(studentArray, index);
             printArray();
          }else if(agree.equals("n")) {
@@ -122,35 +122,35 @@ public class StudentEx02T {
    
    private static Student setStudentInfo() throws NumberFormatException, IOException {
       Student s = new Student();
-      System.out.print("ÇĞ»ı ÀÌ¸§: ");
+      System.out.print("í•™ìƒ ì´ë¦„: ");
       s.setName(bufferedReader.readLine());
       
-      System.out.print("ÇĞ»ı ¹øÈ£: ");
+      System.out.print("í•™ìƒ ë²ˆí˜¸: ");
       s.setId(Integer.parseInt(bufferedReader.readLine()));
-      // ¿ì¸®°¡ ÀÌ¸§°ú ¹øÈ£¸¦ ÀÔ·ÂÇÏ°í ³ª¼­
-      // ¸¸¾à ÇØ´ç ÀÌ¸§°ú ¹øÈ£°¡ Áßº¹ÀÌ¸é
-      // Áßº¹ÀÎ°É ¾Ë·ÁÁÖ°í
-      // ´Ù½Ã ÀÌ¸§°ú ¹øÈ£¸¦ ÀÔ·Â¹Ş°Ô ÇÑ´Ù.
-      // Áï ¾î·¹ÀÌÀ¯Æ¿ÀÇ containsÀÇ °á°ú°ªÀÌ trueÀÎ µ¿¾È¿¡´Â
-      // °è¼Ó ÀÔ·ÂÀ» ¹ŞÀ¸¸é µÇ´Â °ÍÀÌ´Ù!
+      // ìš°ë¦¬ê°€ ì´ë¦„ê³¼ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ê³  ë‚˜ì„œ
+      // ë§Œì•½ í•´ë‹¹ ì´ë¦„ê³¼ ë²ˆí˜¸ê°€ ì¤‘ë³µì´ë©´
+      // ì¤‘ë³µì¸ê±¸ ì•Œë ¤ì£¼ê³ 
+      // ë‹¤ì‹œ ì´ë¦„ê³¼ ë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ê²Œ í•œë‹¤.
+      // ì¦‰ ì–´ë ˆì´ìœ í‹¸ì˜ containsì˜ ê²°ê³¼ê°’ì´ trueì¸ ë™ì•ˆì—ëŠ”
+      // ê³„ì† ì…ë ¥ì„ ë°›ìœ¼ë©´ ë˜ëŠ” ê²ƒì´ë‹¤!
       while(ArrayUtil.contains(studentArray, s)) {
-         //Áßº¹µÈ ÀÌ¸§°ú ¹øÈ£ÀÌ¹Ç·Î ´Ù½Ã ÀÔ·ÂÀ» ¹Ş´Â´Ù.
-         System.out.println("Áßº¹µÈ ÇĞ»ıÀÔ´Ï´Ù.");
-         System.out.println("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
-         System.out.print("ÇĞ»ı ÀÌ¸§: ");
+         //ì¤‘ë³µëœ ì´ë¦„ê³¼ ë²ˆí˜¸ì´ë¯€ë¡œ ë‹¤ì‹œ ì…ë ¥ì„ ë°›ëŠ”ë‹¤.
+         System.out.println("ì¤‘ë³µëœ í•™ìƒì…ë‹ˆë‹¤.");
+         System.out.println("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
+         System.out.print("í•™ìƒ ì´ë¦„: ");
          s.setName(bufferedReader.readLine());
          
-         System.out.print("ÇĞ»ı ¹øÈ£: ");
+         System.out.print("í•™ìƒ ë²ˆí˜¸: ");
          s.setId(Integer.parseInt(bufferedReader.readLine()));
       }
       
-      System.out.print("±¹¾î Á¡¼ö: ");
+      System.out.print("êµ­ì–´ ì ìˆ˜: ");
       s.setKorean(validateScore());
       
-      System.out.print("¿µ¾î Á¡¼ö: ");
+      System.out.print("ì˜ì–´ ì ìˆ˜: ");
       s.setEnglish(validateScore());
       
-      System.out.print("¼öÇĞ Á¡¼ö: ");
+      System.out.print("ìˆ˜í•™ ì ìˆ˜: ");
       s.setMath(validateScore());
       
       return s;
@@ -160,8 +160,8 @@ public class StudentEx02T {
       int score = Integer.parseInt(bufferedReader.readLine());
       
       while(score < 0 || score > 100) {
-         System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
-         System.out.print("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+         System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+         System.out.print("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
          score= Integer.parseInt(bufferedReader.readLine());
       }
       

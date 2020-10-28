@@ -4,79 +4,79 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//2°³ÀÇ ¹è¿­À» µ¿½Ã¿¡ »ç¿ëÇØ¼­
-//ÀÌ¸§°ú ÃÑÁ¡À» µ¿½Ã¿¡ °ü¸®ÇØº¸ÀÚ
+//2ê°œì˜ ë°°ì—´ì„ ë™ì‹œì— ì‚¬ìš©í•´ì„œ
+//ì´ë¦„ê³¼ ì´ì ì„ ë™ì‹œì— ê´€ë¦¬í•´ë³´ì
 public class Ex01Array {
-	final static int SIZE = 5; //´õÀÌ»ó °ªÀ» ¹Ù²ÙÁö ¸øÇÔ(¹è¿­ÀÇ Å©±â´Â º¯ÇÏÁö ¾ÊÀ½), ÇÑ°èÄ¡´Â ¾øÀ½
+	final static int SIZE = 5; //ë”ì´ìƒ ê°’ì„ ë°”ê¾¸ì§€ ëª»í•¨(ë°°ì—´ì˜ í¬ê¸°ëŠ” ë³€í•˜ì§€ ì•ŠìŒ), í•œê³„ì¹˜ëŠ” ì—†ìŒ
 	public static void main(String[] args) throws IOException{
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		
-		//ÀÌ¸§À» ´ã´çÇÒ ¹è¿­À» ÇÏ³ª ¸¸µéÀÚ
+		//ì´ë¦„ì„ ë‹´ë‹¹í•  ë°°ì—´ì„ í•˜ë‚˜ ë§Œë“¤ì
 		String[] nameArray = new String[SIZE];
-		//ÃÑÁ¡À» ´ã´çÇÒ ¹è¿­À» ÇÏ³ª ¸¸µéÀÚ
+		//ì´ì ì„ ë‹´ë‹¹í•  ë°°ì—´ì„ í•˜ë‚˜ ë§Œë“¤ì
 		int[] sumArray =  new int[SIZE];
 		
-		//Â÷·Ê´ë·Î ÀÔ·ÂÀ» ÇØº¸ÀÚ
+		//ì°¨ë¡€ëŒ€ë¡œ ì…ë ¥ì„ í•´ë³´ì
 		for(int i = 0; i < SIZE; i++) {
-			System.out.println((i+1) + "¹ø ÇĞ»ıÀÇ ÀÌ¸§ : ");
+			System.out.println((i+1) + "ë²ˆ í•™ìƒì˜ ì´ë¦„ : ");
 			nameArray[i] = bufferedReader.readLine();
-			System.out.print(nameArray[i] + " ÇĞ»ıÀÇ ±¹¾îÁ¡¼ö : ");
+			System.out.print(nameArray[i] + " í•™ìƒì˜ êµ­ì–´ì ìˆ˜ : ");
 			int kor = Integer.parseInt(bufferedReader.readLine());
 			while( kor < 0 || kor > 100) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-				System.out.print(nameArray[i] + " ÇĞ»ıÀÇ ±¹¾îÁ¡¼ö : ");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+				System.out.print(nameArray[i] + " í•™ìƒì˜ êµ­ì–´ì ìˆ˜ : ");
 				kor = Integer.parseInt(bufferedReader.readLine());
 			}
-			System.out.print(nameArray[i] + " ÇĞ»ıÀÇ ¿µ¾îÁ¡¼ö : ");
+			System.out.print(nameArray[i] + " í•™ìƒì˜ ì˜ì–´ì ìˆ˜ : ");
 			int eng = Integer.parseInt(bufferedReader.readLine());
 			while( eng < 0 || eng > 100) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-				System.out.print(nameArray[i] + " ÇĞ»ıÀÇ ¿µ¾îÁ¡¼ö");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+				System.out.print(nameArray[i] + " í•™ìƒì˜ ì˜ì–´ì ìˆ˜");
 				eng = Integer.parseInt(bufferedReader.readLine());
 			}
-			System.out.print(nameArray[i] + " ÇĞ»ıÀÇ ¼öÇĞÁ¡¼ö : ");
+			System.out.print(nameArray[i] + " í•™ìƒì˜ ìˆ˜í•™ì ìˆ˜ : ");
 			int math = Integer.parseInt(bufferedReader.readLine());
 			while ( math < 0 || math > 100) {
-				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù");
-				System.out.print(nameArray[i] + " ÇĞ»ıÀÇ ¼öÇĞÁ¡¼ö : ");
+				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤");
+				System.out.print(nameArray[i] + " í•™ìƒì˜ ìˆ˜í•™ì ìˆ˜ : ");
 				math = Integer.parseInt(bufferedReader.readLine());
 			}
 			sumArray[i] = kor + eng + math;
 		}
-		//º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¸é ±× ÇĞ»ıÀÇ Á¤º¸¸¦ Ãâ·ÂÇÏ°Ô ¸¸µé¾îº¸ÀÚ
-		System.out.println("º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(1~5) : ");
+		//ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ë©´ ê·¸ í•™ìƒì˜ ì •ë³´ë¥¼ ì¶œë ¥í•˜ê²Œ ë§Œë“¤ì–´ë³´ì
+		System.out.println("ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”(1~5) : ");
 		int userChoice = Integer.parseInt(bufferedReader.readLine()) - 1;
 			
-		System.out.println(nameArray[userChoice] + " ÇĞ»ıÀÇ ÃÑÁ¡ :" + sumArray[userChoice]);
+		System.out.println(nameArray[userChoice] + " í•™ìƒì˜ ì´ì  :" + sumArray[userChoice]);
 		
-		//20ºĞµ¿¾È ¿©·¯ºĞµéÀº Ãâ·ÂÇÏ´Â ºÎºĞÀ»
-		//¹«ÇÑ·çÇÁ·Î ¸¸µå½Ã°í
-		//¸¸¾à »ç¿ëÀÚ°¡ º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÒ ¶§ -1À» ÀÔ·ÂÇÏ¸é ÇÁ·Î±×·¥ÀÌ Á¾·á
-		//È¤Àº »ç¿ëÀÚ°¡ Àß¸øµÈ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¸é Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä ¶ó°í ÀÔ·ÂÇÏ°Ô °³Á¶ÇØº¸±â
-		//¿¹½Ã
-		//º¸°í½ÍÀº ÇĞ»ı : 3
-		//3¹ø ÇĞ»ıÀÇ ÃÑÁ¡ : 218Á¡
-		//º¸°í½ÍÀº ÇĞ»ı : 99
-		//Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù
-		//º¸°í½ÍÀº ÇĞ»ı : -1
-		//»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù			
+		//20ë¶„ë™ì•ˆ ì—¬ëŸ¬ë¶„ë“¤ì€ ì¶œë ¥í•˜ëŠ” ë¶€ë¶„ì„
+		//ë¬´í•œë£¨í”„ë¡œ ë§Œë“œì‹œê³ 
+		//ë§Œì•½ ì‚¬ìš©ìê°€ ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•  ë•Œ -1ì„ ì…ë ¥í•˜ë©´ í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œ
+		//í˜¹ì€ ì‚¬ìš©ìê°€ ì˜ëª»ëœ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ë©´ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš” ë¼ê³  ì…ë ¥í•˜ê²Œ ê°œì¡°í•´ë³´ê¸°
+		//ì˜ˆì‹œ
+		//ë³´ê³ ì‹¶ì€ í•™ìƒ : 3
+		//3ë²ˆ í•™ìƒì˜ ì´ì  : 218ì 
+		//ë³´ê³ ì‹¶ì€ í•™ìƒ : 99
+		//ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤
+		//ë³´ê³ ì‹¶ì€ í•™ìƒ : -1
+		//ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤			
 		
 		while(true) {
-	         System.out.println("º¸°í ½ÍÀº ÇĞ»ıÀÇ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä(1~5, -1Àº Á¾·á): ");
+	         System.out.println("ë³´ê³  ì‹¶ì€ í•™ìƒì˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”(1~5, -1ì€ ì¢…ë£Œ): ");
 	         System.out.print("> ");
 	         userChoice = Integer.parseInt(bufferedReader.readLine());
 	         if(userChoice == -1) {
-	            //»ç¿ëÀÚ°¡ Á¾·á¸¦ ¼±ÅÃÇßÀ» ¶§
-	            System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+	            //ì‚¬ìš©ìê°€ ì¢…ë£Œë¥¼ ì„ íƒí–ˆì„ ë•Œ
+	            System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 	            break;
 	         }else if(userChoice >= 1 && userChoice <= 5) {
-	            //ÇĞ»ı ¹øÈ£°¡ À¯È¿ÇÒ¶§
+	            //í•™ìƒ ë²ˆí˜¸ê°€ ìœ íš¨í• ë•Œ
 	            int index = userChoice - 1;
-	            System.out.println(nameArray[index]+" ÇĞ»ıÀÇ ÃÑÁ¡: "+sumArray[index]);
-	            //System.out.println(nameArray[userChoice - 1]+" ÇĞ»ıÀÇ ÃÑÁ¡: "+sumArray[userChoice - 1]);µµ °¡´É
+	            System.out.println(nameArray[index]+" í•™ìƒì˜ ì´ì : "+sumArray[index]);
+	            //System.out.println(nameArray[userChoice - 1]+" í•™ìƒì˜ ì´ì : "+sumArray[userChoice - 1]);ë„ ê°€ëŠ¥
 	         }else {
-	            //Àß¸øÀÔ·ÂÇßÀ» ¶§
-	            System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+	            //ì˜ëª»ì…ë ¥í–ˆì„ ë•Œ
+	            System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 	         }
 	      }
 		

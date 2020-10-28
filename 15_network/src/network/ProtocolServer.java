@@ -11,52 +11,52 @@ import java.net.Socket;
 public class ProtocolServer {
 	
 	private ServerSocket ss;
-	private BufferedReader br; //Å¬¶óÀÌ¾ğÆ®¿Í µ¿ÀÏÇÏ°Ô ¸Ş½ÃÁö¸¦ ÁÖ°í¹ŞÀ» ¼ö ÀÖ´Â ±â´ÉÀÌ ÇÊ¿ä(¼ÒÄÏÀ» ¸¸µé¾îÁÖ¾î¾ß ÇÔ)
+	private BufferedReader br; //í´ë¼ì´ì–¸íŠ¸ì™€ ë™ì¼í•˜ê²Œ ë©”ì‹œì§€ë¥¼ ì£¼ê³ ë°›ì„ ìˆ˜ ìˆëŠ” ê¸°ëŠ¥ì´ í•„ìš”(ì†Œì¼“ì„ ë§Œë“¤ì–´ì£¼ì–´ì•¼ í•¨)
 	private BufferedWriter bw;
 	private Socket socket;
 	
 	public ProtocolServer() {
 		try {
-			ss = new ServerSocket(9500);//Æ÷Æ®°ª
-			System.out.println("¼­¹ö°¡ ÁØºñ ¿Ï·áµÇ¾ú½À´Ï´Ù"); //Å¬¶óÀÌ¾ğÆ®°¡ ³¬ÀÏ¶§±îÁö ¹«ÇÑÁ¤ ±â´Ù¸²(ÇÑ ¸í¸¸ ÀâÀ» ¼ö ÀÖÀ½)
+			ss = new ServerSocket(9500);//í¬íŠ¸ê°’
+			System.out.println("ì„œë²„ê°€ ì¤€ë¹„ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤"); //í´ë¼ì´ì–¸íŠ¸ê°€ ë‚šì¼ë•Œê¹Œì§€ ë¬´í•œì • ê¸°ë‹¤ë¦¼(í•œ ëª…ë§Œ ì¡ì„ ìˆ˜ ìˆìŒ)
 			
-			socket = ss.accept(); //Å¬¶óÀÌ¾ğÆ®¸¦ ³¬¾ÆÃ¨
+			socket = ss.accept(); //í´ë¼ì´ì–¸íŠ¸ë¥¼ ë‚šì•„ì±”
 			br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 			
 		} catch (IOException e) {
-			System.out.println("Å¬¶óÀÌ¾ğÆ®¿Í ¿¬°áÀÌ ¾ÈµÇ¾ú½À´Ï´Ù");
+			System.out.println("í´ë¼ì´ì–¸íŠ¸ì™€ ì—°ê²°ì´ ì•ˆë˜ì—ˆìŠµë‹ˆë‹¤");
 			e.printStackTrace();
-			System.exit(0); //¿¬°áÀÌ ²÷¾îÁö¸é Á¾·á½ÃÄÑ¹ö¸²
+			System.exit(0); //ì—°ê²°ì´ ëŠì–´ì§€ë©´ ì¢…ë£Œì‹œì¼œë²„ë¦¼
 		}
 		
    //-------------------------------------------------------------
 		String line, msg;
 		while(true) {
-			//Å¬¶óÀÌ¾ğÆ®·ÎºÎÅÍ ¿À´Â ¸Ş¼¼Áö ÀĞ±â
+			//í´ë¼ì´ì–¸íŠ¸ë¡œë¶€í„° ì˜¤ëŠ” ë©”ì„¸ì§€ ì½ê¸°
 			try {
-				line = br.readLine(); //Client¿¡¼­ bw.write(msg + "\n")ÀÇ '\n'À» ²ÀÇØÁÖ¾î¾ß ¹®Á¦ ¾øÀÌ ÀĞ¾îµéÀÓ(¾Æ´Ï¸é ¹®ÀåÀÇ ³¡À» Ã£¾Æ´Ù´Ô)
-									  //"100 : angel"    "200 : angel"   "300 : angel : ¾È³ç" À» ÀĞÀ½
+				line = br.readLine(); //Clientì—ì„œ bw.write(msg + "\n")ì˜ '\n'ì„ ê¼­í•´ì£¼ì–´ì•¼ ë¬¸ì œ ì—†ì´ ì½ì–´ë“¤ì„(ì•„ë‹ˆë©´ ë¬¸ì¥ì˜ ëì„ ì°¾ì•„ë‹¤ë‹˜)
+									  //"100 : angel"    "200 : angel"   "300 : angel : ì•ˆë…•" ì„ ì½ìŒ
 				
-				//Å¬¶óÀÌ¾ğÆ®·Î º¸³»±â(ÂÉ°³¼­ º¸³»±â)
+				//í´ë¼ì´ì–¸íŠ¸ë¡œ ë³´ë‚´ê¸°(ìª¼ê°œì„œ ë³´ë‚´ê¸°)
 				String[] ar = line.split(":");
-				if(ar[0].equals(Protocol.ENTER)) { //Protocol¿¡¼­ Á¤ÀÇÇÑ »ó¼ö°¡ ¹è¿­ 0¹øÂ°¿¡ µé¾îÀÖ´Ù¸é
-					bw.write(ar[1] + "´Ô ÀÔÀå\n"); //ÁÙ¹Ù²ŞÀ» ÇØ¾ß Å¬¶óÀÌ¾ğÆ®ÂÊ¿¡¼­ ÀĞ¾îµéÀÓ
-					System.out.println(ar[1] + "´Ô ÀÔÀå\n");
+				if(ar[0].equals(Protocol.ENTER)) { //Protocolì—ì„œ ì •ì˜í•œ ìƒìˆ˜ê°€ ë°°ì—´ 0ë²ˆì§¸ì— ë“¤ì–´ìˆë‹¤ë©´
+					bw.write(ar[1] + "ë‹˜ ì…ì¥\n"); //ì¤„ë°”ê¿ˆì„ í•´ì•¼ í´ë¼ì´ì–¸íŠ¸ìª½ì—ì„œ ì½ì–´ë“¤ì„
+					System.out.println(ar[1] + "ë‹˜ ì…ì¥\n");
 					bw.flush();
-				}else if(ar[0].equals(Protocol.EXIT)) { //200ÀÌ µé¾î¿À¸é ¹Ù·Î ²¨Á®¹ö¸²
-					bw.write(ar[1] + "´Ô ÅğÀå\n"); //Á¾·á ¸Ş½ÃÁö º¸³»±â "angel´Ô ÅğÀå"
-					System.out.println(ar[1] + "´Ô ÅğÀå\n");
+				}else if(ar[0].equals(Protocol.EXIT)) { //200ì´ ë“¤ì–´ì˜¤ë©´ ë°”ë¡œ êº¼ì ¸ë²„ë¦¼
+					bw.write(ar[1] + "ë‹˜ í‡´ì¥\n"); //ì¢…ë£Œ ë©”ì‹œì§€ ë³´ë‚´ê¸° "angelë‹˜ í‡´ì¥"
+					System.out.println(ar[1] + "ë‹˜ í‡´ì¥\n");
 					bw.flush();
 					
-					br.close(); //Å¬¶óÀÌ¾ğÆ®¿Í ¼­¹ö ¾çÂÊ¿¡ ¼ÒÄÏÀÌ ÀÖÀ¸¹Ç·Î ¾çÂÊ´Ù close()ÇØÁà¾ß ²÷¾îÁü(¿©±â¼­´Â Å¬¶óÀÌ¾ğÆ®ÂÊ¸¸ ²÷¾îÁØ °Í)
+					br.close(); //í´ë¼ì´ì–¸íŠ¸ì™€ ì„œë²„ ì–‘ìª½ì— ì†Œì¼“ì´ ìˆìœ¼ë¯€ë¡œ ì–‘ìª½ë‹¤ close()í•´ì¤˜ì•¼ ëŠì–´ì§(ì—¬ê¸°ì„œëŠ” í´ë¼ì´ì–¸íŠ¸ìª½ë§Œ ëŠì–´ì¤€ ê²ƒ)
 					bw.close();
 					socket.close();
 					
-					System.exit(0); //ÇÁ·Î±×·¥ Á¾·á
+					System.exit(0); //í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 				}else if(ar[0].equals(Protocol.SEND_MESSAGE)) {
-					bw.write("[" + ar[1] + "]" + ar[2] + "\n"); //¸Ş½ÃÁö º¸³»±â
-					bw.flush();//¹öÆÛºñ¿ì±â
+					bw.write("[" + ar[1] + "]" + ar[2] + "\n"); //ë©”ì‹œì§€ ë³´ë‚´ê¸°
+					bw.flush();//ë²„í¼ë¹„ìš°ê¸°
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

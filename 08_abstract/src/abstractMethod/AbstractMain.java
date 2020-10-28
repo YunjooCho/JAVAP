@@ -5,22 +5,22 @@ import java.util.GregorianCalendar;
 
 public  class AbstractMain extends AbstractTest {
 
-	public void setName(String name) {//Ãß»ó¸Þ¼Òµå´Â ÀüºÎ ÀÚ½ÄÅ¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµù ÇØÁà¾ß ÇÔ
+	public void setName(String name) {//ì¶”ìƒë©”ì†Œë“œëŠ” ì „ë¶€ ìžì‹í´ëž˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë”© í•´ì¤˜ì•¼ í•¨
 		this.name = name;
 	}
 	
 	public static void main(String[] args) {
-		//Å¬·¡½º »ý¼º
-		//AbstractTest at = new AbstractTest(); - Ãß»óÅ¬·¡½º´Â ÀÚ±âÀÚ½ÅÀ» new(»ý¼º)ÇÒ ¼ö ¾ø´Ù.
-		//ÀÌÀ¯ : Ãß»óÅ¬·¡½º¿¡¼­´Â ÀÎ½ºÅÏ½º¸¦ »ý¼ºÇÒ ¼ö ¾ø´Ù.
-		//ÀÚ½Ä Å¬·¡½º ÀÌ¿ë
-		// 1. ¹Ýµå½Ã ÀÚ½ÄÅ¬·¡½º´Â ºÎ¸ðÅ¬·¡½ºÀÇ Ãß»ó¸Þ¼Òµå¸¦ OverrideÇØ¾ß ÇÑ´Ù
+		//í´ëž˜ìŠ¤ ìƒì„±
+		//AbstractTest at = new AbstractTest(); - ì¶”ìƒí´ëž˜ìŠ¤ëŠ” ìžê¸°ìžì‹ ì„ new(ìƒì„±)í•  ìˆ˜ ì—†ë‹¤.
+		//ì´ìœ  : ì¶”ìƒí´ëž˜ìŠ¤ì—ì„œëŠ” ì¸ìŠ¤í„´ìŠ¤ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ë‹¤.
+		//ìžì‹ í´ëž˜ìŠ¤ ì´ìš©
+		// 1. ë°˜ë“œì‹œ ìžì‹í´ëž˜ìŠ¤ëŠ” ë¶€ëª¨í´ëž˜ìŠ¤ì˜ ì¶”ìƒë©”ì†Œë“œë¥¼ Overrideí•´ì•¼ í•œë‹¤
 		
 		AbstractTest at = new AbstractMain(); 
-		//Ãß»óÅ¬·¡½º´Â Ãß»ó¸Þ¼Òµå ¶§¹®¿¡ ÀÚ±â ÀÚ½ÅÀ» »ý¼ºÇÒ ¼ö ¾øÀ¸¹Ç·Î ÀÚ½ÄÅ¬·¡½ºÀÇ ¸Þ¼Òµå(Ãß»ó¸Þ¼ÒµåX)¸¦ ÅëÇØ »ý¼ºÀ» ÇÑ´Ù 
-		//´ÙÇü¼º, ¸ðµç ºÎ¸ð´Â ÀÚ½ÄÅ¬·¡½º¸¦ ÂüÁ¶ÇÒ ¼ö ÀÖ´Ù
-		//ºÎ¸ðÅ¬·¡½ºÀÇ Æ²À» °¡Á®¿Í ÀÚ½ÄÅ¬·¡½º¸¦ ¸¸µê
-		at.setName("È«±æµ¿"); //¿À¹ö¶óÀÌµù - º»ÀÎ(AbstractMain,ÀÚ½ÄÅ¬·¡½º)ÀÇ ¸Þ¼Òµå¸¸ÀÌ È£ÃâµÉ ¼ö ÀÖÀ½
+		//ì¶”ìƒí´ëž˜ìŠ¤ëŠ” ì¶”ìƒë©”ì†Œë“œ ë•Œë¬¸ì— ìžê¸° ìžì‹ ì„ ìƒì„±í•  ìˆ˜ ì—†ìœ¼ë¯€ë¡œ ìžì‹í´ëž˜ìŠ¤ì˜ ë©”ì†Œë“œ(ì¶”ìƒë©”ì†Œë“œX)ë¥¼ í†µí•´ ìƒì„±ì„ í•œë‹¤ 
+		//ë‹¤í˜•ì„±, ëª¨ë“  ë¶€ëª¨ëŠ” ìžì‹í´ëž˜ìŠ¤ë¥¼ ì°¸ì¡°í•  ìˆ˜ ìžˆë‹¤
+		//ë¶€ëª¨í´ëž˜ìŠ¤ì˜ í‹€ì„ ê°€ì ¸ì™€ ìžì‹í´ëž˜ìŠ¤ë¥¼ ë§Œë“¦
+		at.setName("í™ê¸¸ë™"); //ì˜¤ë²„ë¼ì´ë”© - ë³¸ì¸(AbstractMain,ìžì‹í´ëž˜ìŠ¤)ì˜ ë©”ì†Œë“œë§Œì´ í˜¸ì¶œë  ìˆ˜ ìžˆìŒ
 		System.out.println(at.getName());
 	
 		

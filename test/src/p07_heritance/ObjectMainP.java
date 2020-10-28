@@ -1,42 +1,42 @@
 package p07_heritance;
 /*
 class Object{
-	public boolean equals(Object ob)//ÂüÁ¶°ª ºñ±³
-	public String toString(){} //ÆĞÅ°Áö¸í.Å¬·¡½º¸í@16Áø¼ö
-	public int hashCode(){}//10Áø¼ö
+	public boolean equals(Object ob)//ì°¸ì¡°ê°’ ë¹„êµ
+	public String toString(){} //íŒ¨í‚¤ì§€ëª….í´ë˜ìŠ¤ëª…@16ì§„ìˆ˜
+	public int hashCode(){}//10ì§„ìˆ˜
 }
 
 final class String extends Object{
-	public boolean equals(Objectob){} //¹®ÀÚ¿­ ºñ±³, ObjectÅ¬·¡½ºÀÇ equals()¸Ş¼Òµå ¿À¹ö¶óÀÌµå
+	public boolean equals(Objectob){} //ë¬¸ìì—´ ë¹„êµ, Objectí´ë˜ìŠ¤ì˜ equals()ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë“œ
 	public String toString(){}
-	//¹®ÀÚ¿­
-	//final·Î »ó¼ÓÀÌ ¸·ÇôÀÖ±â ¶§¹®¿¡ ÀÚ½ÄÅ¬·¡½º¿¡¼­ ¿À¹ö¶óÀÌµå ºÒ°¡´É
+	//ë¬¸ìì—´
+	//finalë¡œ ìƒì†ì´ ë§‰í˜€ìˆê¸° ë•Œë¬¸ì— ìì‹í´ë˜ìŠ¤ì—ì„œ ì˜¤ë²„ë¼ì´ë“œ ë¶ˆê°€ëŠ¥
     public int hashCode(){}
-    //¹®ÀÚ¿­À» 10Áø¼ö·Î º¯È¯
-    //¹®ÀÚ¿­ °è»ê½Ä¿¡ ÀÇÇØ¼­ ¸¸µé¾îÁø °ª
-    //¹®ÀÚ¿­Àº ¹«ÇÑÀÌ¹Ç·Î 10Áø¼ö·Î ´Ù Ç¥±âÇÒ ¼ö ¾ø´Ù
+    //ë¬¸ìì—´ì„ 10ì§„ìˆ˜ë¡œ ë³€í™˜
+    //ë¬¸ìì—´ ê³„ì‚°ì‹ì— ì˜í•´ì„œ ë§Œë“¤ì–´ì§„ ê°’
+    //ë¬¸ìì—´ì€ ë¬´í•œì´ë¯€ë¡œ 10ì§„ìˆ˜ë¡œ ë‹¤ í‘œê¸°í•  ìˆ˜ ì—†ë‹¤
 }
   
  */
 
 class Test extends Object{
 	public String toString() {
-		return "°³¹ÙºÎ";
+		return "ê°œë°”ë¶€";
 	}
 }
 
 public class ObjectMainP {
 	public static void main(String[] args) {
 		Test t = new Test();
-		System.out.println("°´Ã¼ t = " + t);
-		System.out.println("°´Ã¼ t = " + t.toString()); //toString()ÀÌ ÁÖ¼Ò°ª(16Áø¼ö)À» °¡Áö°í ÀÖÀ½
-		System.out.println("°´Ã¼ t = " + t.hashCode());
+		System.out.println("ê°ì²´ t = " + t);
+		System.out.println("ê°ì²´ t = " + t.toString()); //toString()ì´ ì£¼ì†Œê°’(16ì§„ìˆ˜)ì„ ê°€ì§€ê³  ìˆìŒ
+		System.out.println("ê°ì²´ t = " + t.hashCode());
 		System.out.println();
 		
 		String str = "apple";
-		System.out.println("°´Ã¼ str = " + str);
-		System.out.println("°´Ã¼ str = " + str.toString());
-		System.out.println("°´Ã¼ str = " + str.hashCode()); //½Åºù¼ºÀÌ ¾ø´Â ¼ıÀÚ
+		System.out.println("ê°ì²´ str = " + str);
+		System.out.println("ê°ì²´ str = " + str.toString());
+		System.out.println("ê°ì²´ str = " + str.hashCode()); //ì‹ ë¹™ì„±ì´ ì—†ëŠ” ìˆ«ì
 		System.out.println(str);
 		System.out.println();
 		

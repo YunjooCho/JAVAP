@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 import util.ArrayUtil;
 
-//µ¿ÀûÇÒ´çÀ» ÀÌ¿ëÇÑ °Ô½ÃÆÇ ÇÁ·Î±×·¥
+//ë™ì í• ë‹¹ì„ ì´ìš©í•œ ê²Œì‹œíŒ í”„ë¡œê·¸ë¨
 public class BoardEx01 {
 	private static Board[] boardArray;
 	private static BufferedReader bufferedReader;
@@ -20,8 +20,8 @@ public class BoardEx01 {
 	
 	private static void showMenu() throws NumberFormatException, IOException {
 		while(true) {
-			System.out.println("°Ô½ÃÆÇ ÇÁ·Î±×·¥");
-			System.out.println("1. ÀÔ·Â  2. ¸ñ·Ïº¸±â  3. Á¾·á");
+			System.out.println("ê²Œì‹œíŒ í”„ë¡œê·¸ë¨");
+			System.out.println("1. ì…ë ¥  2. ëª©ë¡ë³´ê¸°  3. ì¢…ë£Œ");
 			System.out.print("> ");
 			int choice = Integer.parseInt(bufferedReader.readLine());
 			if(choice == 1) {
@@ -29,7 +29,7 @@ public class BoardEx01 {
 			}else if(choice == 2) {
 				selectAll();
 			}else if(choice == 3) {
-				System.out.println("»ç¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
+				System.out.println("ì‚¬ìš©í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
 				break;
 			}
 		}
@@ -44,13 +44,13 @@ public class BoardEx01 {
 	private static Board setBoardInfo() throws NumberFormatException, IOException {
 		Board b = new Board();
 		
-		System.out.println("°Ô½Ã±Û ¹øÈ£: ");
+		System.out.println("ê²Œì‹œê¸€ ë²ˆí˜¸: ");
 		b.setId(Integer.parseInt(bufferedReader.readLine()));
-		System.out.println("°Ô½Ã±Û Á¦¸ñ: ");
+		System.out.println("ê²Œì‹œê¸€ ì œëª©: ");
 		b.setContent(bufferedReader.readLine());
-		System.out.print("°Ô½Ã±Û ³»¿ë: ");
+		System.out.print("ê²Œì‹œê¸€ ë‚´ìš©: ");
 	    b.setContent(bufferedReader.readLine());
-		System.out.println("ÀÛ¼ºÀÚ: ");
+		System.out.println("ì‘ì„±ì: ");
 		b.setWriter(bufferedReader.readLine());
 		
 		return b;
@@ -59,15 +59,15 @@ public class BoardEx01 {
 	
 	private static void selectAll() throws NumberFormatException, IOException{
 		System.out.println("=========");
-		System.out.println("¹øÈ£  |  Á¦¸ñ");
+		System.out.println("ë²ˆí˜¸  |  ì œëª©");
 		for(int i = 0; i < boardArray.length; i++) {
 			System.out.printf("%d. %s\n", (i+1), boardArray[i].getTitle());
 			
 		}//for
-		System.out.println("»ó¼¼º¸±â ÇÒ ¹øÈ£ (0Àº ¸Ş´º·Î)");
+		System.out.println("ìƒì„¸ë³´ê¸° í•  ë²ˆí˜¸ (0ì€ ë©”ë‰´ë¡œ)");
 		int choice = validateNumber(0, boardArray.length) - 1;
 		if(choice == -1) {
-			System.out.println("¸Ş´º·Î µ¹¾Æ°©´Ï´Ù.");
+			System.out.println("ë©”ë‰´ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤.");
 		}else {
 			selectOne(choice);
 		}
@@ -76,12 +76,12 @@ public class BoardEx01 {
 	
 	
 	private static void selectOne(int index) throws NumberFormatException, IOException {
-		Board b= boardArray[index]; //boardArray[index]´Â °´Ã¼
-		System.out.println("±Û¹øÈ£ : " + b.getId());
-		System.out.println("Á¦¸ñ : " + b.getTitle());
-		System.out.println("ÀÛ¼ºÀÚ : " + b.getWriter());
-		System.out.println("³»¿ë : " + b.getContent());
-		System.out.println("1. ¼öÁ¤ 2. »èÁ¦ 3.¸Ş´º·Î");
+		Board b= boardArray[index]; //boardArray[index]ëŠ” ê°ì²´
+		System.out.println("ê¸€ë²ˆí˜¸ : " + b.getId());
+		System.out.println("ì œëª© : " + b.getTitle());
+		System.out.println("ì‘ì„±ì : " + b.getWriter());
+		System.out.println("ë‚´ìš© : " + b.getContent());
+		System.out.println("1. ìˆ˜ì • 2. ì‚­ì œ 3.ë©”ë‰´ë¡œ");
 		int choice = validateNumber(1,3);
 		if(choice == 1) {
 			update(index);
@@ -94,18 +94,18 @@ public class BoardEx01 {
 	
 	
 	private static void update(int index) throws IOException {
-		System.out.println("Á¦¸ñ: ");
+		System.out.println("ì œëª©: ");
 		boardArray[index].setTitle(bufferedReader.readLine());
-		System.out.println("³»¿ë: ");
+		System.out.println("ë‚´ìš©: ");
 		boardArray[index].setContent(bufferedReader.readLine());
-		System.out.println("ÀÛ¼ºÀÚ: ");
+		System.out.println("ì‘ì„±ì: ");
 		boardArray[index].setWriter(bufferedReader.readLine());
 		selectOne(index);
 	}//update
 	
 	
 	private static void deleteIndex(int index) throws IOException {
-		System.out.println("Á¤¸»·Î ÇØ´ç ±ÛÀ» Áö¿ì½Ã°Ú½À´Ï±î? (y/n)");
+		System.out.println("ì •ë§ë¡œ í•´ë‹¹ ê¸€ì„ ì§€ìš°ì‹œê² ìŠµë‹ˆê¹Œ? (y/n)");
 		String yn = bufferedReader.readLine();
 		if(yn.equals("y")) {
 			boardArray = ArrayUtil.removeByIndex(boardArray, index);
@@ -121,7 +121,7 @@ public class BoardEx01 {
 		System.out.print("> ");
 		int value = Integer.parseInt(bufferedReader.readLine());
 		while(value < minimum || value > maximum) {
-			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			System.out.println("> ");
 			value = Integer.parseInt(bufferedReader.readLine());
 		}

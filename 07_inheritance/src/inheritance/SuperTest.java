@@ -5,7 +5,7 @@ public class SuperTest {
 	protected double height;
 	
 	public SuperTest() {
-		System.out.println("SuperTest ±âº» »ı¼ºÀÚ");
+		System.out.println("SuperTest ê¸°ë³¸ ìƒì„±ì");
 	}
 	
 	public SuperTest(double weight, double height){
@@ -14,9 +14,9 @@ public class SuperTest {
 	}
 	
 	public void disp() {
-		System.out.println("SuperTestÅ¬·¡½ºÀÇ disp()");
-		System.out.println("¸ö¹«°Ô = " + weight);
-		System.out.println("Å° = " + height);
+		System.out.println("SuperTestí´ë˜ìŠ¤ì˜ disp()");
+		System.out.println("ëª¸ë¬´ê²Œ = " + weight);
+		System.out.println("í‚¤ = " + height);
 	}
 }
 
